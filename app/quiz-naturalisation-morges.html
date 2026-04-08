@@ -625,6 +625,23 @@ footer {
   .exam-verdict.fail { background: #2a0e0e; color: #f08080; border-color: #e05050; }
 }
 .exam-threshold { font-size: .75rem; color: var(--muted); margin-top: 6px; }
+
+/* ── Flashcard screen ────────────────────────── */
+.fc-streak-badge {
+  font-size: .74rem; font-weight: 700; color: var(--primary);
+  background: var(--primary-lt); padding: 3px 9px;
+  border-radius: 10px; letter-spacing: 1px; flex-shrink: 0;
+}
+
+.fc-session-bar {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 19;
+  background: var(--card-bg); border-top: 1px solid var(--border);
+  box-shadow: 0 -2px 8px rgba(0,0,0,.06);
+  padding: 9px 16px 14px;
+  text-align: center;
+  font-size: .73rem; color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
 </style>
 </head>
 <body>
@@ -658,8 +675,7 @@ footer {
         <span class="btn-main-icon">📝</span>
         Examen blanc
       </button>
-      <button class="btn-main"
-        onclick="showPlaceholder('Flashcards','🃏','Révisez chaque question avec des cartes interactives recto-verso.')">
+      <button class="btn-main" onclick="startFlashcards()">
         <span class="btn-main-icon">🃏</span>
         Flashcards
       </button>
@@ -743,7 +759,15 @@ footer {
     <div id="examResultContent"></div>
   </section>
 
+  <!-- ── FLASHCARD ─────────────────────────────────── -->
+  <section class="screen" id="screenFlashcard" style="padding-bottom:60px">
+    <div id="fcContent"></div>
+  </section>
+
 </main>
+
+<!-- Session bar: visible only during Flashcards -->
+<div class="fc-session-bar hidden" id="fcSessionBar"></div>
 
 <footer>
   Questionnaire corrigé &bull; 08.04.2026 &bull; 160 questions &bull; Ville de Morges
@@ -1197,6 +1221,11 @@ function goBack() {
   // Stop exam timer if leaving exam screen mid-exam
   if (document.getElementById('screenExam').classList.contains('active') && !exam.finished) {
     if (exam._interval) { clearInterval(exam._interval); exam._interval = null; }
+  }
+  // Stop flashcard auto-advance and hide session bar
+  if (document.getElementById('screenFlashcard').classList.contains('active')) {
+    if (fc._autoTimer) { clearTimeout(fc._autoTimer); fc._autoTimer = null; }
+    document.getElementById('fcSessionBar').classList.add('hidden');
   }
   if (_backTarget.id === 'screenHome') {
     showHome();
@@ -1783,6 +1812,152 @@ function showExamResult() {
       <button class="btn-main" style="width:100%;min-height:52px;" onclick="startExam()">🔄&ensp;Nouvel examen</button>
       <button class="btn-outline" onclick="showHome()">← Retour à l'accueil</button>
     </div>`;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   FLASHCARDS
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+const FC_RECENT_MAX = 15;
+
+let fc = {
+  session:    { total: 0, bycat: { geo:0, his:0, pol:0, soc:0 } },
+  recentIds:  [],
+  current:    null,
+  answered:   false,
+  _autoTimer: null
+};
+
+function startFlashcards() {
+  fc.session    = { total: 0, bycat: { geo:0, his:0, pol:0, soc:0 } };
+  fc.recentIds  = [];
+  fc.answered   = false;
+  if (fc._autoTimer) { clearTimeout(fc._autoTimer); fc._autoTimer = null; }
+
+  _activateScreen('screenFlashcard', 'Flashcards',
+    { id:'screenHome', title:'Quiz Naturalisation – Morges' });
+
+  document.getElementById('fcSessionBar').classList.remove('hidden');
+  updateFcSessionBar();
+  nextFlashcard();
+}
+
+/* ── Pick next question ────────────────────────
+   Score = streak * 3  +  catApprisesPct * 5  +  jitter
+   Lower score → higher priority.
+   Excludes recently seen questions.
+   ─────────────────────────────────────────────── */
+function pickFcQuestion() {
+  const stats = getStats();
+
+  // % apprises (streak ≥ 3) per category
+  const catPct = {};
+  for (const cat of Object.keys(CATS)) {
+    const qs = QUESTIONS.filter(q => q.cat === cat);
+    catPct[cat] = qs.filter(q => { const s = stats[q.id]; return s && s.streak >= 3; }).length / qs.length;
+  }
+
+  // Exclude recent; if pool is empty (very small bank), reset recent list
+  let pool = QUESTIONS.filter(q => !fc.recentIds.includes(q.id));
+  if (pool.length === 0) { fc.recentIds = []; pool = [...QUESTIONS]; }
+
+  // Score each candidate
+  const scored = pool.map(q => {
+    const streak = (stats[q.id] ? stats[q.id].streak : 0);
+    const score  = streak * 3 + catPct[q.cat] * 5 + Math.random();
+    return { q, score };
+  });
+
+  scored.sort((a, b) => a.score - b.score);
+  return scored[0].q;
+}
+
+function nextFlashcard() {
+  if (fc._autoTimer) { clearTimeout(fc._autoTimer); fc._autoTimer = null; }
+  fc.answered = false;
+
+  const q = pickFcQuestion();
+  fc.current = prepareQ(q);
+
+  fc.recentIds.push(q.id);
+  if (fc.recentIds.length > FC_RECENT_MAX) fc.recentIds.shift();
+
+  renderFlashcard();
+}
+
+function renderFlashcard() {
+  const q = fc.current;
+  const catLabel = CATS[q.cat].icon + ' ' + CATS[q.cat].label + ' · ' + LEVELS[q.lvl];
+  const stats    = getStats();
+  const streak   = stats[q.id] ? stats[q.id].streak : 0;
+  const streakHtml = streak > 0
+    ? `<span class="fc-streak-badge">${'★'.repeat(Math.min(streak, 5))}</span>`
+    : '';
+
+  const optsHtml = q.shuffledOpts.map((opt, i) => `
+    <button class="quiz-opt" id="fcopt-${i}" onclick="selectFcOpt(${i})">
+      <span class="opt-letter">${LETTERS[i]}</span>
+      <span class="opt-text">${opt}</span>
+    </button>`).join('');
+
+  document.getElementById('fcContent').innerHTML = `
+    <div class="quiz-header" style="margin-bottom:14px">
+      <span class="quiz-cat-badge">${catLabel}</span>
+      ${streakHtml}
+    </div>
+    <div class="quiz-q-text">${q.q}</div>
+    <div class="quiz-options">${optsHtml}</div>
+    <div class="quiz-feedback hidden" id="fcFeedback"></div>
+    <button class="btn-next hidden" id="fcNext" onclick="nextFlashcard()">Suivante →</button>`;
+}
+
+function selectFcOpt(i) {
+  if (fc.answered) return;
+  fc.answered = true;
+
+  const q       = fc.current;
+  const correct = (i === q.correctIdx);
+
+  // Update stats
+  recordAnswer(q.id, correct);
+
+  // Session counter
+  fc.session.total++;
+  fc.session.bycat[q.cat]++;
+
+  // Disable + colour options
+  document.querySelectorAll('.quiz-opt').forEach(b => { b.disabled = true; });
+  document.getElementById(`fcopt-${q.correctIdx}`).classList.add('state-correct');
+  if (!correct) document.getElementById(`fcopt-${i}`).classList.add('state-wrong');
+
+  // Feedback
+  const fb = document.getElementById('fcFeedback');
+  fb.classList.remove('hidden');
+  if (correct) {
+    fb.className = 'quiz-feedback state-correct';
+    fb.innerHTML = `<span class="fb-icon">✓</span>
+      <span class="fb-body">Bonne réponse !</span>`;
+  } else {
+    fb.className = 'quiz-feedback state-wrong';
+    fb.innerHTML = `<span class="fb-icon">✗</span>
+      <span class="fb-body">Mauvaise réponse — La bonne réponse est&nbsp;:
+        <strong>${q.shuffledOpts[q.correctIdx]}</strong></span>`;
+  }
+
+  document.getElementById('fcNext').classList.remove('hidden');
+  updateFcSessionBar();
+
+  // Auto-advance after 1.5 s; button cancels the timer
+  fc._autoTimer = setTimeout(nextFlashcard, 1500);
+}
+
+function updateFcSessionBar() {
+  const bar = document.getElementById('fcSessionBar');
+  if (!bar) return;
+  const c        = fc.session;
+  const catParts = Object.entries(CATS)
+    .map(([k, m]) => `${m.label.slice(0, 3)} ${c.bycat[k]}`)
+    .join(' · ');
+  bar.textContent = `Session : ${c.total} carte${c.total !== 1 ? 's' : ''} — ${catParts}`;
 }
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
