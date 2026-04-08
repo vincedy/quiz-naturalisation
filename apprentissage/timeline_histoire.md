@@ -6,6 +6,7 @@
 |---|---|
 | **1286** | Fondazione della Ville de Morges + costruzione del Château |
 | **1291** | Pacte fédéral — nascita della Svizzera (Uri, Schwytz, Unterwald, serment au Grütli) |
+| **1er août** | Fête nationale suisse — si celebra ogni anno il pacte fédéral del 1291 |
 | **1207–1536** | Pays de Vaud sotto la **Savoie** |
 | **1506** | La Garde Suisse protegge il **Pape** (fino ad oggi) |
 | **1515** | Costruzione dell'Hôtel de Ville de Morges |
@@ -19,6 +20,8 @@
 | **1969** | Audrey Hepburn sposa Andrea Dotti all'Hôtel de Ville de Morges |
 | **1971** | Droit de vote aux femmes (niveau fédéral, années 70). Primo cantone = **Vaud** |
 | **1993** | Grand-Rue de Morges diventa pedonale |
+| **14 avril 2017** | Inaugurazione del **Parlement vaudois** a Lausanne |
+| **14 avril 2018** | Riapertura del **Château Saint-Maire** (Château cantonal) dopo 2+ anni di lavori |
 | **2002** | Svizzera entra all'ONU |
 | **2003** | Costituzione attuale del Canton de Vaud |
 
@@ -42,3 +45,4 @@
 - **Mme de Staël** = château de Coppet (donna politica valdo-genevoise).
 - **Guillaume Tell** = personnage **légendaire** (non storico). Si è battuto contro seigneurs étrangers.
 - **Devise CH** = "**Un pour tous, tous pour un**" (NON "L'union fait la force" = Belgio!)
+- **14 avril** è una data simbolica per Vaud (entrée 1803, Parlement 2017, Château 2018). Tre eventi diversi, stessa data.
