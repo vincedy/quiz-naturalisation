@@ -500,6 +500,130 @@ footer {
 }
 .btn-outline:hover { background: var(--primary); color: #fff; }
 @media (prefers-color-scheme: dark) { .btn-outline:hover { color: #0d1b0f; } }
+
+/* ── Home card metrics ───────────────────────── */
+.progress-metrics {
+  display: flex; justify-content: space-between; margin-top: 6px; margin-bottom: 4px;
+}
+.progress-metric { font-size: .72rem; color: var(--muted); }
+.progress-metric.star { color: var(--primary); font-weight: 600; }
+
+/* ── Exam screen ─────────────────────────────── */
+.exam-sticky {
+  position: sticky; top: 56px; z-index: 15;
+  background: var(--bg); border-bottom: 1px solid var(--border);
+  box-shadow: 0 2px 8px rgba(0,0,0,.08);
+  margin: -20px -16px 0; padding: 10px 16px 8px;
+}
+.exam-timer-row {
+  display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;
+}
+.exam-timer {
+  display: inline-flex; align-items: center; gap: 5px;
+  background: #22a349; color: #fff;
+  font-size: 1.05rem; font-weight: 700; font-variant-numeric: tabular-nums;
+  padding: 6px 14px; border-radius: 8px; letter-spacing: .04em;
+}
+.exam-timer.warn { background: #d94040; }
+
+.btn-terminate {
+  height: 36px; padding: 0 14px;
+  border: 1.5px solid #d94040; border-radius: 8px;
+  background: transparent; color: #d94040;
+  font-family: inherit; font-size: .82rem; font-weight: 700;
+  cursor: pointer; touch-action: manipulation; transition: all .15s;
+}
+.btn-terminate:hover { background: #d94040; color: #fff; }
+
+.exam-nav-scroll {
+  display: flex; gap: 5px;
+  overflow-x: auto; padding-bottom: 2px;
+  scrollbar-width: none; -webkit-overflow-scrolling: touch;
+}
+.exam-nav-scroll::-webkit-scrollbar { display: none; }
+
+.exam-nav-btn {
+  min-width: 34px; height: 34px; flex-shrink: 0;
+  border: 1.5px solid var(--border); border-radius: 7px;
+  background: var(--card-bg); color: var(--muted);
+  font-family: inherit; font-size: .78rem; font-weight: 700;
+  cursor: pointer; touch-action: manipulation; transition: all .1s;
+}
+.exam-nav-btn.is-current  { border-color: var(--primary); background: var(--primary); color: #fff; }
+.exam-nav-btn.is-answered { border-color: var(--primary); background: var(--primary-lt); color: var(--primary); }
+.exam-nav-btn.is-correct  { border-color: #22a349; background: #22a349; color: #fff; }
+.exam-nav-btn.is-wrong    { border-color: #d94040; background: #d94040; color: #fff; }
+@media (prefers-color-scheme: dark) {
+  .exam-nav-btn.is-current { color: #0d1b0f; }
+  .exam-nav-btn.is-correct { background: #3db96a; border-color: #3db96a; }
+  .exam-nav-btn.is-wrong   { background: #e05050; border-color: #e05050; }
+}
+
+.exam-content { padding-top: 16px; }
+.exam-q-meta {
+  display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;
+}
+.exam-cat-badge {
+  font-size: .74rem; font-weight: 600; color: var(--primary);
+  background: var(--primary-lt); padding: 3px 10px; border-radius: 10px;
+  max-width: 65%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.exam-counter { font-size: .78rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.exam-q-text { font-size: 1.08rem; font-weight: 600; line-height: 1.45; margin-bottom: 18px; }
+.exam-options { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+
+.exam-opt {
+  display: flex; align-items: center; gap: 12px;
+  min-height: 52px; padding: 11px 16px;
+  border: 2px solid var(--border); border-radius: var(--radius);
+  background: var(--card-bg); color: var(--fg);
+  font-family: inherit; font-size: .94rem; font-weight: 500;
+  text-align: left; cursor: pointer; touch-action: manipulation;
+  transition: border-color .1s, background .1s; width: 100%; box-shadow: var(--shadow);
+}
+.exam-opt:hover:not(:disabled) { border-color: var(--primary); background: var(--primary-lt); }
+.exam-opt:disabled { cursor: default; }
+.exam-opt.is-selected { border-color: var(--primary); background: var(--primary-lt); color: var(--primary); }
+.exam-opt.is-selected .opt-letter { background: var(--primary); color: #fff; }
+@media (prefers-color-scheme: dark) { .exam-opt.is-selected .opt-letter { color: #0d1b0f; } }
+.exam-opt.state-correct { border-color: #22a349; background: #e6f7ed; color: #1a5c30; }
+.exam-opt.state-wrong   { border-color: #d94040; background: #fdf0f0; color: #922929; }
+@media (prefers-color-scheme: dark) {
+  .exam-opt.state-correct { border-color: #3db96a; background: #0d2e18; color: #6ddb96; }
+  .exam-opt.state-wrong   { border-color: #e05050; background: #2a0e0e; color: #f08080; }
+}
+.exam-opt.state-correct .opt-letter { background: #22a349; color: #fff; }
+.exam-opt.state-wrong   .opt-letter { background: #d94040; color: #fff; }
+@media (prefers-color-scheme: dark) {
+  .exam-opt.state-correct .opt-letter { background: #3db96a; }
+  .exam-opt.state-wrong   .opt-letter { background: #e05050; }
+}
+
+.exam-nav-buttons {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px;
+}
+.btn-exam-nav {
+  min-height: 48px; border: 2px solid var(--primary); border-radius: var(--radius);
+  background: transparent; color: var(--primary);
+  font-family: inherit; font-size: .92rem; font-weight: 700;
+  cursor: pointer; touch-action: manipulation; transition: all .15s;
+}
+.btn-exam-nav:hover { background: var(--primary); color: #fff; }
+.btn-exam-nav:disabled { opacity: .3; cursor: not-allowed; background: transparent; }
+@media (prefers-color-scheme: dark) { .btn-exam-nav:hover { color: #0d1b0f; } }
+
+/* ── Exam result badge ───────────────────────── */
+.exam-verdict {
+  display: inline-block; padding: 8px 24px; border-radius: 24px;
+  font-size: 1rem; font-weight: 700; margin: 10px auto;
+}
+.exam-verdict.pass { background: #e6f7ed; color: #1a5c30; border: 2px solid #22a349; }
+.exam-verdict.fail { background: #fdf0f0; color: #922929; border: 2px solid #d94040; }
+@media (prefers-color-scheme: dark) {
+  .exam-verdict.pass { background: #0d2e18; color: #6ddb96; border-color: #3db96a; }
+  .exam-verdict.fail { background: #2a0e0e; color: #f08080; border-color: #e05050; }
+}
+.exam-threshold { font-size: .75rem; color: var(--muted); margin-top: 6px; }
 </style>
 </head>
 <body>
@@ -529,8 +653,7 @@ footer {
         <span class="btn-main-icon">📚</span>
         Entraînement
       </button>
-      <button class="btn-main"
-        onclick="showPlaceholder('Examen blanc','📝','Simulez un examen de naturalisation avec 40 questions tirées au hasard.')">
+      <button class="btn-main" onclick="startExam()">
         <span class="btn-main-icon">📝</span>
         Examen blanc
       </button>
@@ -599,6 +722,23 @@ footer {
   <!-- ── RESULT ─────────────────────────────────────── -->
   <section class="screen" id="screenResult">
     <div id="resultContent"><!-- filled by JS --></div>
+  </section>
+
+  <!-- ── EXAM ──────────────────────────────────────── -->
+  <section class="screen" id="screenExam">
+    <div class="exam-sticky" id="examSticky">
+      <div class="exam-timer-row">
+        <span class="exam-timer" id="examTimer">⏱ 60:00</span>
+        <button class="btn-terminate" onclick="terminateExam()">Terminer ✓</button>
+      </div>
+      <div class="exam-nav-scroll" id="examNavScroll"></div>
+    </div>
+    <div class="exam-content" id="examContent"></div>
+  </section>
+
+  <!-- ── EXAM RESULT ───────────────────────────────── -->
+  <section class="screen" id="screenExamResult">
+    <div id="examResultContent"></div>
   </section>
 
 </main>
@@ -1052,6 +1192,10 @@ function _activateScreen(id, title, backTo) {
 
 function goBack() {
   if (!_backTarget) return;
+  // Stop exam timer if leaving exam screen mid-exam
+  if (document.getElementById('screenExam').classList.contains('active') && !exam.finished) {
+    if (exam._interval) { clearInterval(exam._interval); exam._interval = null; }
+  }
   if (_backTarget.id === 'screenHome') {
     showHome();
   } else if (_backTarget.id === 'screenConfig') {
@@ -1077,29 +1221,28 @@ function showPlaceholder(title, icon, desc) {
    BARRES DE PROGRESSION (accueil)
    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 function renderProgressGrid() {
-  const progress = getProgress();
-  const grid = document.getElementById('progressGrid');
+  const stats = getStats();
+  const grid  = document.getElementById('progressGrid');
   grid.innerHTML = '';
   for (const [catKey, catMeta] of Object.entries(CATS)) {
-    const qs    = QUESTIONS.filter(q => q.cat === catKey);
-    const total = qs.length;
-    const done  = qs.filter(q => progress[q.id] === true).length;
-    const pct   = total > 0 ? Math.round(done / total * 100) : 0;
-    const lvlHtml = ['ch','vd','mo'].map(lvl => {
-      const sub = qs.filter(q => q.lvl === lvl);
-      const sd  = sub.filter(q => progress[q.id] === true).length;
-      return `<span class="progress-lvl">${LEVELS[lvl]}&nbsp;${sd}/${sub.length}</span>`;
-    }).join('');
+    const qs       = QUESTIONS.filter(q => q.cat === catKey);
+    const total    = qs.length;
+    const correctes = qs.filter(q => { const s = stats[q.id]; return s && s.streak >= 1; }).length;
+    const apprises  = qs.filter(q => { const s = stats[q.id]; return s && s.streak >= 3; }).length;
+    const pct = total > 0 ? Math.round(apprises / total * 100) : 0;
     grid.insertAdjacentHTML('beforeend', `
       <div class="progress-card">
         <div class="progress-card-header">
           <span class="progress-cat-label">${catMeta.icon}&ensp;${catMeta.label}</span>
-          <span class="progress-score">${done}&thinsp;/&thinsp;${total}</span>
+          <span class="progress-score">${apprises}&thinsp;/&thinsp;${total}</span>
         </div>
         <div class="progress-bar-track">
           <div class="progress-bar-fill" style="width:${pct}%"></div>
         </div>
-        <div class="progress-lvls">${lvlHtml}</div>
+        <div class="progress-metrics">
+          <span class="progress-metric">${correctes}/${total} correctes</span>
+          <span class="progress-metric star">${apprises}/${total} apprises ★</span>
+        </div>
       </div>`);
   }
 }
@@ -1392,6 +1535,270 @@ function reviewErrors() {
   quiz.errors  = [];
   quiz.results = {};
   startTraining(ids);
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   EXAMEN BLANC
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+const EXAM_TOTAL    = 48;
+const EXAM_PER_LVL  = 4;   // 4 CH + 4 VD + 4 Morges = 12 per cat
+const EXAM_DURATION = 3600; // seconds (60 min)
+const EXAM_PASS     = 34;   // minimum to pass
+const EXAMS_KEY     = 'qnm_exams';
+
+let exam = {
+  questions: [],   // [{...q, shuffledOpts, correctIdx}]
+  answers:   [],   // [null | selectedIdx] — null = unanswered
+  current:   0,
+  timerSec:  EXAM_DURATION,
+  _interval: null,
+  finished:  false
+};
+
+function getExams() {
+  try { return JSON.parse(localStorage.getItem(EXAMS_KEY) || '[]'); } catch { return []; }
+}
+
+/* Build exactly 48 questions: 4 CH + 4 VD + 4 Morges per category */
+function buildExamPool() {
+  const pool = [];
+  for (const cat of Object.keys(CATS)) {
+    for (const lvl of ['ch', 'vd', 'mo']) {
+      const sub = QUESTIONS.filter(q => q.cat === cat && q.lvl === lvl);
+      pool.push(...shuffle(sub).slice(0, EXAM_PER_LVL));
+    }
+  }
+  return shuffle(pool).map(prepareQ);
+}
+
+function startExam() {
+  exam.questions = buildExamPool();
+  exam.answers   = new Array(exam.questions.length).fill(null);
+  exam.current   = 0;
+  exam.timerSec  = EXAM_DURATION;
+  exam.finished  = false;
+  if (exam._interval) clearInterval(exam._interval);
+
+  _activateScreen('screenExam', 'Examen blanc', { id:'screenHome', title:'Quiz Naturalisation – Morges' });
+  renderExamNav();
+  renderExamQuestion();
+  startExamTimer();
+}
+
+/* ── Timer ──────────────────────────────────────── */
+function startExamTimer() {
+  exam._interval = setInterval(() => {
+    exam.timerSec--;
+    updateExamTimer();
+    if (exam.timerSec <= 0) {
+      clearInterval(exam._interval);
+      terminateExam();
+    }
+  }, 1000);
+}
+
+function updateExamTimer() {
+  const m = Math.floor(exam.timerSec / 60).toString().padStart(2, '0');
+  const s = (exam.timerSec % 60).toString().padStart(2, '0');
+  const el = document.getElementById('examTimer');
+  if (!el) return;
+  el.textContent = `⏱ ${m}:${s}`;
+  el.classList.toggle('warn', exam.timerSec < 300); // warn under 5 min
+}
+
+/* ── Nav bar ────────────────────────────────────── */
+function renderExamNav() {
+  const nav = document.getElementById('examNavScroll');
+  if (!nav) return;
+  nav.innerHTML = exam.questions.map((q, i) => `
+    <button class="exam-nav-btn${i === exam.current ? ' is-current' : ''}"
+            id="enb-${i}" onclick="examGoTo(${i})">${i + 1}</button>`).join('');
+}
+
+function updateExamNavBtn(i) {
+  const btn = document.getElementById(`enb-${i}`);
+  if (!btn) return;
+  const answered  = exam.answers[i] !== null;
+  const isCurrent = i === exam.current;
+  btn.className = 'exam-nav-btn';
+  if (exam.finished) {
+    const q = exam.questions[i];
+    if (answered && exam.answers[i] === q.correctIdx) btn.classList.add('is-correct');
+    else if (answered) btn.classList.add('is-wrong');
+    // unanswered stays neutral
+  } else {
+    if (isCurrent) btn.classList.add('is-current');
+    else if (answered) btn.classList.add('is-answered');
+  }
+}
+
+function examGoTo(i) {
+  if (exam.finished) return;
+  const prev = exam.current;
+  exam.current = i;
+  updateExamNavBtn(prev);
+  updateExamNavBtn(i);
+  renderExamQuestion();
+  // scroll nav to keep current in view
+  const btn = document.getElementById(`enb-${i}`);
+  if (btn) btn.scrollIntoView({ inline:'center', behavior:'smooth' });
+}
+
+/* ── Question display ───────────────────────────── */
+function renderExamQuestion() {
+  const q   = exam.questions[exam.current];
+  const idx = exam.current;
+  const sel = exam.answers[idx]; // null or index
+  const cat = CATS[q.cat].icon + ' ' + CATS[q.cat].label + ' · ' + LEVELS[q.lvl];
+
+  const optsHtml = q.shuffledOpts.map((opt, i) => {
+    let cls = 'exam-opt';
+    if (sel === i) cls += ' is-selected';
+    return `<button class="${cls}" id="eopt-${i}" onclick="selectExamOpt(${i})"
+              ${exam.finished ? 'disabled' : ''}>
+      <span class="opt-letter">${LETTERS[i]}</span>
+      <span class="opt-text">${opt}</span>
+    </button>`;
+  }).join('');
+
+  const prevDis = idx === 0 ? 'disabled' : '';
+  const nextDis = idx === exam.questions.length - 1 ? 'disabled' : '';
+
+  document.getElementById('examContent').innerHTML = `
+    <div class="exam-q-meta">
+      <span class="exam-cat-badge">${cat}</span>
+      <span class="exam-counter">${idx + 1} / ${exam.questions.length}</span>
+    </div>
+    <div class="exam-q-text">${q.q}</div>
+    <div class="exam-options">${optsHtml}</div>
+    <div class="exam-nav-buttons">
+      <button class="btn-exam-nav" ${prevDis} onclick="examPrev()">← Précédente</button>
+      <button class="btn-exam-nav" ${nextDis} onclick="examNext()">Suivante →</button>
+    </div>`;
+}
+
+function selectExamOpt(i) {
+  if (exam.finished) return;
+  const prev = exam.answers[exam.current];
+  exam.answers[exam.current] = i;
+
+  // Update option visuals
+  document.querySelectorAll('.exam-opt').forEach((b, idx) => {
+    b.classList.toggle('is-selected', idx === i);
+  });
+
+  if (prev === null) {
+    // First selection — update nav btn to answered
+    updateExamNavBtn(exam.current);
+  }
+}
+
+function examPrev() {
+  if (exam.current > 0) examGoTo(exam.current - 1);
+}
+
+function examNext() {
+  if (exam.current < exam.questions.length - 1) examGoTo(exam.current + 1);
+}
+
+/* ── Terminate / Save / Result ───────────────────── */
+function terminateExam() {
+  if (exam._interval) { clearInterval(exam._interval); exam._interval = null; }
+  exam.finished = true;
+
+  // Record stats for each answered question
+  const stats = getStats();
+  exam.questions.forEach((q, i) => {
+    const sel = exam.answers[i];
+    if (sel === null) return; // unanswered — no stat change
+    const correct = sel === q.correctIdx;
+    if (!stats[q.id]) stats[q.id] = { attempts:0, correctCount:0, streak:0, lastSeen:0 };
+    const s = stats[q.id];
+    s.attempts++;
+    s.lastSeen = Date.now();
+    if (correct) { s.correctCount++; s.streak++; } else { s.streak = 0; }
+  });
+  saveStats(stats);
+
+  // Save exam session
+  saveExamSession();
+
+  // Color nav buttons
+  exam.questions.forEach((q, i) => updateExamNavBtn(i));
+
+  showExamResult();
+}
+
+function saveExamSession() {
+  const details = exam.questions.map((q, i) => ({
+    id: q.id, cat: q.cat, lvl: q.lvl,
+    answered: exam.answers[i] !== null,
+    correct:  exam.answers[i] === q.correctIdx
+  }));
+  const score   = details.filter(d => d.correct).length;
+  const session = {
+    date:   new Date().toISOString(),
+    score,
+    total:  exam.questions.length,
+    passed: score >= EXAM_PASS,
+    details
+  };
+  const exams = getExams();
+  exams.push(session);
+  localStorage.setItem(EXAMS_KEY, JSON.stringify(exams));
+}
+
+function showExamResult() {
+  _activateScreen('screenExamResult', 'Résultat examen', { id:'screenHome', title:'Quiz Naturalisation – Morges' });
+
+  const total     = exam.questions.length;
+  const score     = exam.questions.filter((q, i) => exam.answers[i] === q.correctIdx).length;
+  const unanswered = exam.answers.filter(a => a === null).length;
+  const pct       = Math.round(score / total * 100);
+  const passed    = score >= EXAM_PASS;
+
+  // Per-category breakdown
+  const bycat = {};
+  exam.questions.forEach((q, i) => {
+    if (!bycat[q.cat]) bycat[q.cat] = { total:0, correct:0 };
+    bycat[q.cat].total++;
+    if (exam.answers[i] === q.correctIdx) bycat[q.cat].correct++;
+  });
+
+  const catsHtml = Object.entries(bycat).map(([cat, s]) => {
+    const cp = s.total > 0 ? Math.round(s.correct / s.total * 100) : 0;
+    return `
+      <div class="result-cat-row">
+        <div class="result-cat-info">
+          <div class="result-cat-name">${CATS[cat].icon}&ensp;${CATS[cat].label}</div>
+          <div class="result-mini-track"><div class="result-mini-fill" style="width:${cp}%"></div></div>
+        </div>
+        <span class="result-cat-score">${s.correct} / ${s.total}</span>
+      </div>`;
+  }).join('');
+
+  const unansweredNote = unanswered > 0
+    ? `<p style="font-size:.82rem;color:var(--muted);margin-bottom:12px;">${unanswered} question${unanswered>1?'s':''} sans réponse</p>`
+    : '';
+
+  document.getElementById('examResultContent').innerHTML = `
+    <div class="result-header">
+      <div class="result-emoji">${passed ? '🎉' : '📚'}</div>
+      <div class="result-score-big">${score} / ${total}</div>
+      <div class="result-pct">${pct}&thinsp;%</div>
+      <div style="margin-top:10px;">
+        <span class="exam-verdict ${passed ? 'pass' : 'fail'}">
+          ${passed ? '✓ Examen réussi' : '✗ Examen échoué'}
+        </span>
+      </div>
+      <div class="exam-threshold">Seuil de réussite : ${EXAM_PASS} / ${total} (${Math.round(EXAM_PASS/total*100)}&thinsp;%)</div>
+    </div>
+    ${unansweredNote}
+    <div class="result-cats">${catsHtml}</div>
+    <div class="result-actions">
+      <button class="btn-main" style="width:100%;min-height:52px;" onclick="startExam()">🔄&ensp;Nouvel examen</button>
+      <button class="btn-outline" onclick="showHome()">← Retour à l'accueil</button>
+    </div>`;
 }
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
