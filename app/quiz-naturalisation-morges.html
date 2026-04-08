@@ -325,26 +325,9 @@ footer {
 .cfg-cat-card {
   background: var(--card-bg); border: 1px solid var(--border);
   border-radius: var(--radius); padding: 14px 16px;
-  margin-bottom: 8px; box-shadow: var(--shadow); transition: opacity .2s;
+  margin-bottom: 8px; box-shadow: var(--shadow);
 }
-.cfg-cat-card.off { opacity: .42; }
 .cfg-cat-header { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
-
-/* Toggle switch */
-.toggle-wrap { position: relative; width: 44px; height: 24px; flex-shrink: 0; cursor: pointer; }
-.toggle-wrap input { opacity: 0; width: 0; height: 0; position: absolute; }
-.toggle-knob {
-  position: absolute; inset: 0; background: var(--border); border-radius: 12px;
-  transition: background .2s; pointer-events: none;
-}
-.toggle-knob::before {
-  content: ''; position: absolute; width: 20px; height: 20px; top: 2px; left: 2px;
-  background: #fff; border-radius: 50%; transition: transform .2s;
-  box-shadow: 0 1px 4px rgba(0,0,0,.25);
-}
-.toggle-wrap input:checked + .toggle-knob { background: var(--primary); }
-.toggle-wrap input:checked + .toggle-knob::before { transform: translateX(20px); }
-
 .cfg-cat-name { font-size: .95rem; font-weight: 700; flex: 1; }
 .cfg-count-badge {
   font-size: .92rem; font-weight: 700; color: var(--primary);
@@ -597,9 +580,10 @@ footer {
     <div class="cfg-section">
       <div class="cfg-section-title">Questions à inclure</div>
       <div class="pill-group" id="cfgStatusGroup">
-        <button class="pill active" data-st="all"    onclick="setStatus('all')">Toutes</button>
-        <button class="pill"        data-st="unseen" onclick="setStatus('unseen')">Jamais vues</button>
-        <button class="pill"        data-st="failed" onclick="setStatus('failed')">Échouées</button>
+        <button class="pill active" data-st="all"     onclick="setStatus('all')">Toutes</button>
+        <button class="pill"        data-st="unseen"  onclick="setStatus('unseen')">Jamais vues</button>
+        <button class="pill"        data-st="failed"  onclick="setStatus('failed')">Échouées</button>
+        <button class="pill"        data-st="learned" onclick="setStatus('learned')">Apprises ★</button>
       </div>
     </div>
 
@@ -1124,11 +1108,18 @@ function renderProgressGrid() {
    CONFIGURATION ENTRAÎNEMENT
    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 const cfg = {
-  cats:   { geo: true,  his: true,  pol: true,  soc: true },
-  counts: { geo: 40,    his: 40,    pol: 40,    soc: 40   },
+  counts: { geo: 40, his: 40, pol: 40, soc: 40 },
   lvl:    'all',
   status: 'all'
 };
+
+/* Filtre une pool selon cfg.status */
+function applyStatusFilter(pool, stats) {
+  if (cfg.status === 'unseen')  return pool.filter(q => !stats[q.id] || stats[q.id].attempts === 0);
+  if (cfg.status === 'failed')  return pool.filter(q => { const s = stats[q.id]; return s && (s.attempts - s.correctCount) > 0; });
+  if (cfg.status === 'learned') return pool.filter(q => { const s = stats[q.id]; return s && s.streak >= 3; });
+  return pool; // 'all'
+}
 
 function showConfig() {
   _activateScreen('screenConfig', 'Entraînement', { id:'screenHome', title:'Quiz Naturalisation – Morges' });
@@ -1140,41 +1131,17 @@ function renderConfigCats() {
   const list = document.getElementById('cfgCatList');
   list.innerHTML = '';
   for (const [cat, meta] of Object.entries(CATS)) {
-    const on = cfg.cats[cat];
     list.insertAdjacentHTML('beforeend', `
-      <div class="cfg-cat-card${on ? '' : ' off'}" id="cfg-card-${cat}">
+      <div class="cfg-cat-card" id="cfg-card-${cat}">
         <div class="cfg-cat-header">
-          <label class="toggle-wrap">
-            <input type="checkbox" ${on ? 'checked' : ''} onchange="toggleCat('${cat}')">
-            <span class="toggle-knob"></span>
-          </label>
           <span class="cfg-cat-name">${meta.icon}&ensp;${meta.label}</span>
-          <span class="cfg-count-badge" id="cfg-badge-${cat}">${on ? cfg.counts[cat] : 0}</span>
+          <span class="cfg-count-badge" id="cfg-badge-${cat}">${cfg.counts[cat]}</span>
         </div>
-        <div id="cfg-slider-wrap-${cat}" ${on ? '' : 'class="hidden"'}>
-          <input class="cfg-slider" type="range" min="0" max="40" value="${cfg.counts[cat]}"
-                 id="cfg-slider-${cat}" oninput="onSlider('${cat}', +this.value)">
-          <div class="cfg-avail-label" id="cfg-avail-${cat}"></div>
-        </div>
+        <input class="cfg-slider" type="range" min="0" max="40" value="${cfg.counts[cat]}"
+               id="cfg-slider-${cat}" oninput="onSlider('${cat}', +this.value)">
+        <div class="cfg-avail-label" id="cfg-avail-${cat}"></div>
       </div>`);
   }
-}
-
-function toggleCat(cat) {
-  cfg.cats[cat] = !cfg.cats[cat];
-  const card = document.getElementById(`cfg-card-${cat}`);
-  const wrap = document.getElementById(`cfg-slider-wrap-${cat}`);
-  const badge = document.getElementById(`cfg-badge-${cat}`);
-  if (cfg.cats[cat]) {
-    card.classList.remove('off');
-    wrap.classList.remove('hidden');
-    badge.textContent = cfg.counts[cat];
-  } else {
-    card.classList.add('off');
-    wrap.classList.add('hidden');
-    badge.textContent = '0';
-  }
-  refreshAvail();
 }
 
 function onSlider(cat, val) {
@@ -1183,36 +1150,33 @@ function onSlider(cat, val) {
   refreshAvailTotals();
 }
 
+/* Appelé à chaque changement de filtre (lvl ou status) :
+   remet chaque slider au max disponible pour le nouveau filtre. */
 function refreshAvail() {
   const stats = getStats();
   for (const cat of Object.keys(CATS)) {
     let pool = QUESTIONS.filter(q => q.cat === cat);
     if (cfg.lvl !== 'all') pool = pool.filter(q => q.lvl === cfg.lvl);
-    if (cfg.status === 'unseen') pool = pool.filter(q => !stats[q.id] || stats[q.id].attempts === 0);
-    if (cfg.status === 'failed') pool = pool.filter(q => {
-      const s = stats[q.id];
-      return s && (s.attempts - s.correctCount) > 0;
-    });
-    const avail = pool.length;
+    pool = applyStatusFilter(pool, stats);
+
+    const avail  = pool.length;
     const slider = document.getElementById(`cfg-slider-${cat}`);
     const lbl    = document.getElementById(`cfg-avail-${cat}`);
     if (!slider) continue;
-    slider.max = avail;
-    if (cfg.counts[cat] > avail) {
-      cfg.counts[cat] = avail;
-      slider.value = avail;
-      if (cfg.cats[cat]) document.getElementById(`cfg-badge-${cat}`).textContent = avail;
-    }
+
+    // Toujours resetter au max disponible quand le filtre change
+    slider.max   = avail;
+    slider.value = avail;
+    cfg.counts[cat] = avail;
+    document.getElementById(`cfg-badge-${cat}`).textContent = avail;
+
     if (lbl) lbl.textContent = `${avail} question${avail !== 1 ? 's' : ''} disponible${avail !== 1 ? 's' : ''}`;
   }
   refreshAvailTotals();
 }
 
 function refreshAvailTotals() {
-  let total = 0;
-  for (const [cat, on] of Object.entries(cfg.cats)) {
-    if (on) total += cfg.counts[cat];
-  }
+  const total = Object.values(cfg.counts).reduce((a, b) => a + b, 0);
   const btn = document.getElementById('btnStart');
   if (total === 0) {
     btn.textContent = 'Aucune question sélectionnée';
@@ -1270,15 +1234,11 @@ function buildPool(errorIds) {
   }
   const stats = getStats();
   const selected = [];
-  for (const [cat, on] of Object.entries(cfg.cats)) {
-    if (!on || cfg.counts[cat] === 0) continue;
+  for (const cat of Object.keys(CATS)) {
+    if (cfg.counts[cat] === 0) continue;
     let pool = QUESTIONS.filter(q => q.cat === cat);
     if (cfg.lvl !== 'all') pool = pool.filter(q => q.lvl === cfg.lvl);
-    if (cfg.status === 'unseen') pool = pool.filter(q => !stats[q.id] || stats[q.id].attempts === 0);
-    if (cfg.status === 'failed') pool = pool.filter(q => {
-      const s = stats[q.id];
-      return s && (s.attempts - s.correctCount) > 0;
-    });
+    pool = applyStatusFilter(pool, stats);
     selected.push(...shuffle(pool).slice(0, cfg.counts[cat]));
   }
   return shuffle(selected).map(prepareQ);
