@@ -312,6 +312,211 @@ footer {
   color: var(--muted);
   border-top: 1px solid var(--border);
 }
+
+/* ── Utilities ───────────────────────────────── */
+.hidden { display: none !important; }
+
+/* ── Config screen ───────────────────────────── */
+.cfg-section { margin-bottom: 22px; }
+.cfg-section-title {
+  font-size: .72rem; font-weight: 700; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--muted); margin-bottom: 10px;
+}
+.cfg-cat-card {
+  background: var(--card-bg); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 14px 16px;
+  margin-bottom: 8px; box-shadow: var(--shadow); transition: opacity .2s;
+}
+.cfg-cat-card.off { opacity: .42; }
+.cfg-cat-header { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+
+/* Toggle switch */
+.toggle-wrap { position: relative; width: 44px; height: 24px; flex-shrink: 0; cursor: pointer; }
+.toggle-wrap input { opacity: 0; width: 0; height: 0; position: absolute; }
+.toggle-knob {
+  position: absolute; inset: 0; background: var(--border); border-radius: 12px;
+  transition: background .2s; pointer-events: none;
+}
+.toggle-knob::before {
+  content: ''; position: absolute; width: 20px; height: 20px; top: 2px; left: 2px;
+  background: #fff; border-radius: 50%; transition: transform .2s;
+  box-shadow: 0 1px 4px rgba(0,0,0,.25);
+}
+.toggle-wrap input:checked + .toggle-knob { background: var(--primary); }
+.toggle-wrap input:checked + .toggle-knob::before { transform: translateX(20px); }
+
+.cfg-cat-name { font-size: .95rem; font-weight: 700; flex: 1; }
+.cfg-count-badge {
+  font-size: .92rem; font-weight: 700; color: var(--primary);
+  min-width: 28px; text-align: right; font-variant-numeric: tabular-nums;
+}
+
+/* Range slider */
+.cfg-slider {
+  -webkit-appearance: none; appearance: none;
+  width: 100%; height: 6px; background: var(--progress-track);
+  border-radius: 3px; outline: none; cursor: pointer; margin-bottom: 5px;
+}
+.cfg-slider::-webkit-slider-thumb {
+  -webkit-appearance: none; width: 24px; height: 24px; border-radius: 50%;
+  background: var(--primary); cursor: pointer; box-shadow: 0 1px 4px rgba(0,0,0,.25);
+}
+.cfg-slider::-moz-range-thumb {
+  width: 24px; height: 24px; border-radius: 50%; background: var(--primary);
+  cursor: pointer; border: none; box-shadow: 0 1px 4px rgba(0,0,0,.25);
+}
+.cfg-avail-label { font-size: .71rem; color: var(--muted); }
+
+/* Pill groups */
+.pill-group { display: flex; flex-wrap: wrap; gap: 8px; }
+.pill {
+  min-height: 44px; padding: 8px 18px;
+  border: 1.5px solid var(--border); border-radius: 22px;
+  background: var(--card-bg); color: var(--fg);
+  font-family: inherit; font-size: .88rem; font-weight: 600;
+  cursor: pointer; touch-action: manipulation; transition: all .15s;
+}
+.pill.active { background: var(--primary); border-color: var(--primary); color: #fff; }
+.pill:hover:not(.active) { border-color: var(--primary); color: var(--primary); }
+@media (prefers-color-scheme: dark) { .pill.active { color: #0d1b0f; } }
+
+/* Start button */
+.btn-start {
+  display: block; width: 100%; min-height: 56px;
+  border: none; border-radius: var(--radius);
+  background: var(--primary); color: #fff;
+  font-family: inherit; font-size: 1.05rem; font-weight: 700;
+  cursor: pointer; touch-action: manipulation;
+  transition: background .15s, opacity .15s; margin-top: 24px;
+}
+.btn-start:hover { background: var(--primary-hover); }
+.btn-start:disabled { opacity: .38; cursor: not-allowed; background: var(--primary); }
+@media (prefers-color-scheme: dark) { .btn-start { color: #0d1b0f; } }
+
+/* ── Quiz screen ─────────────────────────────── */
+.quiz-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.quiz-cat-badge {
+  font-size: .74rem; font-weight: 600; color: var(--primary);
+  background: var(--primary-lt); padding: 3px 10px; border-radius: 10px;
+  max-width: 65%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.quiz-counter { font-size: .78rem; color: var(--muted); font-variant-numeric: tabular-nums; flex-shrink: 0; }
+.quiz-bar-track {
+  height: 5px; background: var(--progress-track); border-radius: 3px;
+  overflow: hidden; margin-bottom: 20px;
+}
+.quiz-bar-fill { height: 100%; background: var(--primary); border-radius: 3px; transition: width .3s ease; }
+.quiz-q-text { font-size: 1.08rem; font-weight: 600; line-height: 1.45; margin-bottom: 20px; }
+.quiz-options { display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
+
+.quiz-opt {
+  display: flex; align-items: center; gap: 12px;
+  min-height: 54px; padding: 12px 16px;
+  border: 2px solid var(--border); border-radius: var(--radius);
+  background: var(--card-bg); color: var(--fg);
+  font-family: inherit; font-size: .94rem; font-weight: 500;
+  text-align: left; cursor: pointer; touch-action: manipulation;
+  transition: border-color .15s, background .15s; width: 100%;
+  box-shadow: var(--shadow);
+}
+.quiz-opt:hover:not(:disabled) { border-color: var(--primary); background: var(--primary-lt); }
+.quiz-opt:disabled { cursor: default; }
+.quiz-opt.state-correct {
+  border-color: #22a349; background: #e6f7ed; color: #1a5c30;
+}
+.quiz-opt.state-wrong {
+  border-color: #d94040; background: #fdf0f0; color: #922929;
+}
+@media (prefers-color-scheme: dark) {
+  .quiz-opt.state-correct { border-color: #3db96a; background: #0d2e18; color: #6ddb96; }
+  .quiz-opt.state-wrong   { border-color: #e05050; background: #2a0e0e; color: #f08080; }
+}
+
+.opt-letter {
+  display: flex; align-items: center; justify-content: center;
+  width: 28px; height: 28px; border-radius: 50%;
+  background: var(--progress-track); color: var(--muted);
+  font-size: .78rem; font-weight: 700; flex-shrink: 0;
+  transition: background .15s, color .15s;
+}
+.quiz-opt.state-correct .opt-letter { background: #22a349; color: #fff; }
+.quiz-opt.state-wrong   .opt-letter { background: #d94040; color: #fff; }
+@media (prefers-color-scheme: dark) {
+  .quiz-opt.state-correct .opt-letter { background: #3db96a; }
+  .quiz-opt.state-wrong   .opt-letter { background: #e05050; }
+}
+.opt-text { flex: 1; line-height: 1.4; }
+
+.quiz-feedback {
+  border-radius: var(--radius); padding: 12px 16px; margin-bottom: 16px;
+  font-size: .9rem; font-weight: 600; display: flex; align-items: flex-start; gap: 8px;
+}
+.quiz-feedback.state-correct {
+  background: #e6f7ed; color: #1a5c30; border: 1px solid #b8e8ca;
+}
+.quiz-feedback.state-wrong {
+  background: #fdf0f0; color: #922929; border: 1px solid #f5c0c0;
+}
+@media (prefers-color-scheme: dark) {
+  .quiz-feedback.state-correct { background: #0d2e18; color: #6ddb96; border-color: #1e5030; }
+  .quiz-feedback.state-wrong   { background: #2a0e0e; color: #f08080; border-color: #5a1a1a; }
+}
+.fb-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; }
+.fb-body { flex: 1; }
+
+.btn-next {
+  display: block; width: 100%; min-height: 52px;
+  border: none; border-radius: var(--radius);
+  background: var(--primary); color: #fff;
+  font-family: inherit; font-size: 1rem; font-weight: 700;
+  cursor: pointer; touch-action: manipulation; transition: background .15s;
+}
+.btn-next:hover { background: var(--primary-hover); }
+@media (prefers-color-scheme: dark) { .btn-next { color: #0d1b0f; } }
+
+/* ── Result screen ───────────────────────────── */
+.result-header { text-align: center; padding: 20px 0 18px; }
+.result-emoji { font-size: 3rem; margin-bottom: 10px; }
+.result-score-big { font-size: 2.4rem; font-weight: 800; color: var(--primary); }
+.result-pct { font-size: .95rem; color: var(--muted); margin-top: 2px; }
+
+.result-cats { display: grid; gap: 8px; margin: 20px 0 24px; }
+.result-cat-row {
+  display: flex; align-items: center; gap: 12px;
+  background: var(--card-bg); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 12px 16px; box-shadow: var(--shadow);
+}
+.result-cat-info { flex: 1; }
+.result-cat-name { font-size: .88rem; font-weight: 600; margin-bottom: 4px; }
+.result-mini-track { height: 5px; background: var(--progress-track); border-radius: 3px; overflow: hidden; }
+.result-mini-fill  { height: 100%; background: var(--progress-fill); border-radius: 3px; }
+.result-cat-score {
+  font-size: .88rem; font-weight: 700; color: var(--primary);
+  min-width: 44px; text-align: right; font-variant-numeric: tabular-nums; flex-shrink: 0;
+}
+
+.result-actions { display: flex; flex-direction: column; gap: 12px; }
+.btn-danger {
+  display: block; width: 100%; min-height: 52px;
+  border: none; border-radius: var(--radius);
+  background: #c0392b; color: #fff;
+  font-family: inherit; font-size: .95rem; font-weight: 700;
+  cursor: pointer; touch-action: manipulation; transition: background .15s;
+}
+.btn-danger:hover { background: #a93226; }
+.btn-danger:disabled { opacity: .35; cursor: not-allowed; background: #c0392b; }
+
+/* shared outline button (full width variant) */
+.btn-outline {
+  display: block; width: 100%; min-height: 44px; padding: 10px 28px;
+  border: 2px solid var(--primary); border-radius: 24px;
+  background: transparent; color: var(--primary);
+  font-family: inherit; font-size: .95rem; font-weight: 700;
+  cursor: pointer; touch-action: manipulation; transition: background .15s, color .15s;
+  text-align: center;
+}
+.btn-outline:hover { background: var(--primary); color: #fff; }
+@media (prefers-color-scheme: dark) { .btn-outline:hover { color: #0d1b0f; } }
 </style>
 </head>
 <body>
@@ -337,8 +542,7 @@ footer {
     </div>
 
     <div class="btn-grid">
-      <button class="btn-main"
-        onclick="showPlaceholder('Entraînement','📚','Répondez à des questions à votre rythme, sans limite de temps ni pression.')">
+      <button class="btn-main" onclick="showConfig()">
         <span class="btn-main-icon">📚</span>
         Entraînement
       </button>
@@ -370,6 +574,47 @@ footer {
       <span class="ph-coming">En développement</span>
       <button class="btn-outline" onclick="goBack()">&#8592;&nbsp; Retour à l'accueil</button>
     </div>
+  </section>
+
+  <!-- ── CONFIG ─────────────────────────────────────── -->
+  <section class="screen" id="screenConfig">
+
+    <div class="cfg-section">
+      <div class="cfg-section-title">Catégories &amp; nombre de questions</div>
+      <div id="cfgCatList"><!-- filled by JS --></div>
+    </div>
+
+    <div class="cfg-section">
+      <div class="cfg-section-title">Niveau</div>
+      <div class="pill-group" id="cfgLvlGroup">
+        <button class="pill active" data-lvl="all"  onclick="setLvl('all')">Tous</button>
+        <button class="pill"        data-lvl="ch"   onclick="setLvl('ch')">🇨🇭 Suisse</button>
+        <button class="pill"        data-lvl="vd"   onclick="setLvl('vd')">Vaud</button>
+        <button class="pill"        data-lvl="mo"   onclick="setLvl('mo')">Morges</button>
+      </div>
+    </div>
+
+    <div class="cfg-section">
+      <div class="cfg-section-title">Questions à inclure</div>
+      <div class="pill-group" id="cfgStatusGroup">
+        <button class="pill active" data-st="all"    onclick="setStatus('all')">Toutes</button>
+        <button class="pill"        data-st="unseen" onclick="setStatus('unseen')">Jamais vues</button>
+        <button class="pill"        data-st="failed" onclick="setStatus('failed')">Échouées</button>
+      </div>
+    </div>
+
+    <button class="btn-start" id="btnStart" onclick="startTraining(null)">Démarrer</button>
+
+  </section>
+
+  <!-- ── QUIZ ───────────────────────────────────────── -->
+  <section class="screen" id="screenQuiz">
+    <div id="quizContent"><!-- filled by JS --></div>
+  </section>
+
+  <!-- ── RESULT ─────────────────────────────────────── -->
+  <section class="screen" id="screenResult">
+    <div id="resultContent"><!-- filled by JS --></div>
   </section>
 
 </main>
@@ -774,37 +1019,93 @@ const CATS = {
   pol: { label: 'Politique',   icon: '⚖️' },
   soc: { label: 'Social',      icon: '🤝' }
 };
+const LEVELS = { ch: 'Suisse', vd: 'Canton de Vaud', mo: 'Morges' };
+const LETTERS = ['A', 'B', 'C', 'D'];
 
-const LEVELS = {
-  ch: 'Suisse',
-  vd: 'Canton de Vaud',
-  mo: 'Commune de Morges'
-};
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   LOCALSTORAGE — clé unique "qnm_stats"
+   { [id]: { attempts, correctCount, streak, lastSeen } }
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+const STATS_KEY = 'qnm_stats';
 
-/* ── Progression (localStorage) ──────────────────────────────── */
-function getProgress() {
-  try { return JSON.parse(localStorage.getItem('qnm_progress') || '{}'); }
+function getStats() {
+  try { return JSON.parse(localStorage.getItem(STATS_KEY) || '{}'); }
   catch { return {}; }
 }
+function saveStats(s) { localStorage.setItem(STATS_KEY, JSON.stringify(s)); }
 
-/* ── Rendu des barres de progression ─────────────────────────── */
+function recordAnswer(qId, correct) {
+  const stats = getStats();
+  if (!stats[qId]) stats[qId] = { attempts:0, correctCount:0, streak:0, lastSeen:0 };
+  const s = stats[qId];
+  s.attempts++;
+  s.lastSeen = Date.now();
+  if (correct) { s.correctCount++; s.streak++; } else { s.streak = 0; }
+  saveStats(stats);
+}
+
+/* ── Dérive progress depuis stats (pour barre d'accueil) ──────── */
+function getProgress() {
+  const stats = getStats();
+  const out = {};
+  for (const [id, s] of Object.entries(stats)) out[id] = s.correctCount > 0;
+  return out;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   NAVIGATION — stack simple
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+let _backTarget = null;   // { id, title }
+
+function _activateScreen(id, title, backTo) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.getElementById('appTitle').textContent = title;
+  _backTarget = backTo || null;
+  document.getElementById('btnBack').classList.toggle('visible', !!backTo);
+  window.scrollTo(0, 0);
+}
+
+function goBack() {
+  if (!_backTarget) return;
+  if (_backTarget.id === 'screenHome') {
+    showHome();
+  } else if (_backTarget.id === 'screenConfig') {
+    showConfig();
+  } else {
+    showHome();
+  }
+}
+
+function showHome() {
+  _activateScreen('screenHome', 'Quiz Naturalisation – Morges', null);
+  renderProgressGrid();
+}
+
+function showPlaceholder(title, icon, desc) {
+  document.getElementById('phTitle').textContent = title;
+  document.getElementById('phIcon').textContent  = icon;
+  document.getElementById('phDesc').textContent  = desc;
+  _activateScreen('screenPlaceholder', title, { id:'screenHome', title:'Quiz Naturalisation – Morges' });
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   BARRES DE PROGRESSION (accueil)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 function renderProgressGrid() {
   const progress = getProgress();
   const grid = document.getElementById('progressGrid');
   grid.innerHTML = '';
-
   for (const [catKey, catMeta] of Object.entries(CATS)) {
     const qs    = QUESTIONS.filter(q => q.cat === catKey);
     const total = qs.length;
     const done  = qs.filter(q => progress[q.id] === true).length;
     const pct   = total > 0 ? Math.round(done / total * 100) : 0;
-
-    const lvlHtml = ['ch', 'vd', 'mo'].map(lvl => {
-      const sub     = qs.filter(q => q.lvl === lvl);
-      const subDone = sub.filter(q => progress[q.id] === true).length;
-      return `<span class="progress-lvl">${LEVELS[lvl]}&nbsp;${subDone}/${sub.length}</span>`;
+    const lvlHtml = ['ch','vd','mo'].map(lvl => {
+      const sub = qs.filter(q => q.lvl === lvl);
+      const sd  = sub.filter(q => progress[q.id] === true).length;
+      return `<span class="progress-lvl">${LEVELS[lvl]}&nbsp;${sd}/${sub.length}</span>`;
     }).join('');
-
     grid.insertAdjacentHTML('beforeend', `
       <div class="progress-card">
         <div class="progress-card-header">
@@ -819,27 +1120,323 @@ function renderProgressGrid() {
   }
 }
 
-/* ── Navigation ───────────────────────────────────────────────── */
-function showScreen(id, title, showBack) {
-  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-  document.getElementById('appTitle').textContent = title;
-  document.getElementById('btnBack').classList.toggle('visible', !!showBack);
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   CONFIGURATION ENTRAÎNEMENT
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+const cfg = {
+  cats:   { geo: true,  his: true,  pol: true,  soc: true },
+  counts: { geo: 40,    his: 40,    pol: 40,    soc: 40   },
+  lvl:    'all',
+  status: 'all'
+};
+
+function showConfig() {
+  _activateScreen('screenConfig', 'Entraînement', { id:'screenHome', title:'Quiz Naturalisation – Morges' });
+  renderConfigCats();
+  refreshAvail();
 }
 
-function goBack() {
-  showScreen('screenHome', 'Quiz Naturalisation – Morges', false);
-  renderProgressGrid();
+function renderConfigCats() {
+  const list = document.getElementById('cfgCatList');
+  list.innerHTML = '';
+  for (const [cat, meta] of Object.entries(CATS)) {
+    const on = cfg.cats[cat];
+    list.insertAdjacentHTML('beforeend', `
+      <div class="cfg-cat-card${on ? '' : ' off'}" id="cfg-card-${cat}">
+        <div class="cfg-cat-header">
+          <label class="toggle-wrap">
+            <input type="checkbox" ${on ? 'checked' : ''} onchange="toggleCat('${cat}')">
+            <span class="toggle-knob"></span>
+          </label>
+          <span class="cfg-cat-name">${meta.icon}&ensp;${meta.label}</span>
+          <span class="cfg-count-badge" id="cfg-badge-${cat}">${on ? cfg.counts[cat] : 0}</span>
+        </div>
+        <div id="cfg-slider-wrap-${cat}" ${on ? '' : 'class="hidden"'}>
+          <input class="cfg-slider" type="range" min="0" max="40" value="${cfg.counts[cat]}"
+                 id="cfg-slider-${cat}" oninput="onSlider('${cat}', +this.value)">
+          <div class="cfg-avail-label" id="cfg-avail-${cat}"></div>
+        </div>
+      </div>`);
+  }
 }
 
-function showPlaceholder(title, icon, desc) {
-  document.getElementById('phTitle').textContent  = title;
-  document.getElementById('phIcon').textContent   = icon;
-  document.getElementById('phDesc').textContent   = desc;
-  showScreen('screenPlaceholder', title, true);
+function toggleCat(cat) {
+  cfg.cats[cat] = !cfg.cats[cat];
+  const card = document.getElementById(`cfg-card-${cat}`);
+  const wrap = document.getElementById(`cfg-slider-wrap-${cat}`);
+  const badge = document.getElementById(`cfg-badge-${cat}`);
+  if (cfg.cats[cat]) {
+    card.classList.remove('off');
+    wrap.classList.remove('hidden');
+    badge.textContent = cfg.counts[cat];
+  } else {
+    card.classList.add('off');
+    wrap.classList.add('hidden');
+    badge.textContent = '0';
+  }
+  refreshAvail();
 }
 
-/* ── Init ─────────────────────────────────────────────────────── */
+function onSlider(cat, val) {
+  cfg.counts[cat] = val;
+  document.getElementById(`cfg-badge-${cat}`).textContent = val;
+  refreshAvailTotals();
+}
+
+function refreshAvail() {
+  const stats = getStats();
+  for (const cat of Object.keys(CATS)) {
+    let pool = QUESTIONS.filter(q => q.cat === cat);
+    if (cfg.lvl !== 'all') pool = pool.filter(q => q.lvl === cfg.lvl);
+    if (cfg.status === 'unseen') pool = pool.filter(q => !stats[q.id] || stats[q.id].attempts === 0);
+    if (cfg.status === 'failed') pool = pool.filter(q => {
+      const s = stats[q.id];
+      return s && (s.attempts - s.correctCount) > 0;
+    });
+    const avail = pool.length;
+    const slider = document.getElementById(`cfg-slider-${cat}`);
+    const lbl    = document.getElementById(`cfg-avail-${cat}`);
+    if (!slider) continue;
+    slider.max = avail;
+    if (cfg.counts[cat] > avail) {
+      cfg.counts[cat] = avail;
+      slider.value = avail;
+      if (cfg.cats[cat]) document.getElementById(`cfg-badge-${cat}`).textContent = avail;
+    }
+    if (lbl) lbl.textContent = `${avail} question${avail !== 1 ? 's' : ''} disponible${avail !== 1 ? 's' : ''}`;
+  }
+  refreshAvailTotals();
+}
+
+function refreshAvailTotals() {
+  let total = 0;
+  for (const [cat, on] of Object.entries(cfg.cats)) {
+    if (on) total += cfg.counts[cat];
+  }
+  const btn = document.getElementById('btnStart');
+  if (total === 0) {
+    btn.textContent = 'Aucune question sélectionnée';
+    btn.disabled = true;
+  } else {
+    btn.textContent = `Démarrer  (${total} question${total !== 1 ? 's' : ''})`;
+    btn.disabled = false;
+  }
+}
+
+function setLvl(lvl) {
+  cfg.lvl = lvl;
+  document.querySelectorAll('#cfgLvlGroup .pill').forEach(p =>
+    p.classList.toggle('active', p.dataset.lvl === lvl));
+  refreshAvail();
+}
+
+function setStatus(st) {
+  cfg.status = st;
+  document.querySelectorAll('#cfgStatusGroup .pill').forEach(p =>
+    p.classList.toggle('active', p.dataset.st === st));
+  refreshAvail();
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   QUIZ ENGINE
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+let quiz = {
+  questions: [],       // [{...q, shuffledOpts, correctIdx}]
+  current:   0,
+  answered:  false,
+  errors:    [],       // ids des questions ratées
+  results:   {}        // { id: boolean }
+};
+
+/* Fisher-Yates */
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function prepareQ(q) {
+  const correct   = q.opts[0];          // ans est toujours 0
+  const shuffled  = shuffle([...q.opts]);
+  return { ...q, shuffledOpts: shuffled, correctIdx: shuffled.indexOf(correct) };
+}
+
+function buildPool(errorIds) {
+  if (errorIds && errorIds.length) {
+    return shuffle(errorIds.map(id => QUESTIONS.find(q => q.id === id)).filter(Boolean)).map(prepareQ);
+  }
+  const stats = getStats();
+  const selected = [];
+  for (const [cat, on] of Object.entries(cfg.cats)) {
+    if (!on || cfg.counts[cat] === 0) continue;
+    let pool = QUESTIONS.filter(q => q.cat === cat);
+    if (cfg.lvl !== 'all') pool = pool.filter(q => q.lvl === cfg.lvl);
+    if (cfg.status === 'unseen') pool = pool.filter(q => !stats[q.id] || stats[q.id].attempts === 0);
+    if (cfg.status === 'failed') pool = pool.filter(q => {
+      const s = stats[q.id];
+      return s && (s.attempts - s.correctCount) > 0;
+    });
+    selected.push(...shuffle(pool).slice(0, cfg.counts[cat]));
+  }
+  return shuffle(selected).map(prepareQ);
+}
+
+function startTraining(errorIds) {
+  quiz.questions = buildPool(errorIds);
+  quiz.current   = 0;
+  quiz.answered  = false;
+  quiz.errors    = [];
+  quiz.results   = {};
+  if (quiz.questions.length === 0) return;
+  const title = errorIds ? 'Révision des erreurs' : 'Entraînement';
+  const back  = errorIds
+    ? { id:'screenHome',   title:'Quiz Naturalisation – Morges' }
+    : { id:'screenConfig', title:'Entraînement' };
+  _activateScreen('screenQuiz', title, back);
+  renderQuestion();
+}
+
+/* ── Affichage d'une question ─────────────────── */
+function renderQuestion() {
+  const q     = quiz.questions[quiz.current];
+  const total = quiz.questions.length;
+  const idx   = quiz.current;
+  const pct   = (idx / total * 100).toFixed(0);
+
+  const catLabel = CATS[q.cat].icon + ' ' + CATS[q.cat].label + ' · ' + LEVELS[q.lvl];
+
+  const optsHtml = q.shuffledOpts.map((opt, i) => `
+    <button class="quiz-opt" id="qopt-${i}" onclick="selectOpt(${i})">
+      <span class="opt-letter">${LETTERS[i]}</span>
+      <span class="opt-text">${opt}</span>
+    </button>`).join('');
+
+  document.getElementById('quizContent').innerHTML = `
+    <div class="quiz-header">
+      <span class="quiz-cat-badge">${catLabel}</span>
+      <span class="quiz-counter">${idx + 1} / ${total}</span>
+    </div>
+    <div class="quiz-bar-track">
+      <div class="quiz-bar-fill" style="width:${pct}%"></div>
+    </div>
+    <div class="quiz-q-text">${q.q}</div>
+    <div class="quiz-options">${optsHtml}</div>
+    <div class="quiz-feedback hidden" id="quizFeedback"></div>
+    <button class="btn-next hidden" id="btnNext" onclick="nextQuestion()">
+      ${idx + 1 < total ? 'Question suivante →' : 'Voir les résultats →'}
+    </button>`;
+
+  quiz.answered = false;
+}
+
+/* ── Sélection d'une option ───────────────────── */
+function selectOpt(i) {
+  if (quiz.answered) return;
+  quiz.answered = true;
+
+  const q       = quiz.questions[quiz.current];
+  const correct = (i === q.correctIdx);
+
+  recordAnswer(q.id, correct);
+  quiz.results[q.id] = correct;
+  if (!correct) quiz.errors.push(q.id);
+
+  // Désactiver tous les boutons
+  document.querySelectorAll('.quiz-opt').forEach(b => { b.disabled = true; });
+
+  // Colorer
+  document.getElementById(`qopt-${q.correctIdx}`).classList.add('state-correct');
+  if (!correct) document.getElementById(`qopt-${i}`).classList.add('state-wrong');
+
+  // Feedback
+  const fb = document.getElementById('quizFeedback');
+  fb.classList.remove('hidden');
+  if (correct) {
+    fb.className = 'quiz-feedback state-correct';
+    fb.innerHTML = `<span class="fb-icon">✓</span>
+      <span class="fb-body">Bonne réponse !</span>`;
+  } else {
+    fb.className = 'quiz-feedback state-wrong';
+    fb.innerHTML = `<span class="fb-icon">✗</span>
+      <span class="fb-body">Mauvaise réponse — La bonne réponse est&nbsp;:
+        <strong>${q.shuffledOpts[q.correctIdx]}</strong></span>`;
+  }
+
+  document.getElementById('btnNext').classList.remove('hidden');
+}
+
+/* ── Question suivante ────────────────────────── */
+function nextQuestion() {
+  quiz.current++;
+  if (quiz.current >= quiz.questions.length) {
+    showResult();
+  } else {
+    renderQuestion();
+  }
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   RÉSULTATS
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+function showResult() {
+  _activateScreen('screenResult', 'Résultats', { id:'screenHome', title:'Quiz Naturalisation – Morges' });
+
+  const total   = quiz.questions.length;
+  const correct = Object.values(quiz.results).filter(Boolean).length;
+  const pct     = total > 0 ? Math.round(correct / total * 100) : 0;
+  const emoji   = pct >= 80 ? '🎉' : pct >= 50 ? '📊' : '📚';
+  const errCount = quiz.errors.length;
+
+  // Breakdown par catégorie
+  const bycat = {};
+  for (const q of quiz.questions) {
+    if (!bycat[q.cat]) bycat[q.cat] = { total:0, correct:0 };
+    bycat[q.cat].total++;
+    if (quiz.results[q.id]) bycat[q.cat].correct++;
+  }
+
+  const catsHtml = Object.entries(bycat).map(([cat, s]) => {
+    const cp = s.total > 0 ? Math.round(s.correct / s.total * 100) : 0;
+    return `
+      <div class="result-cat-row">
+        <div class="result-cat-info">
+          <div class="result-cat-name">${CATS[cat].icon}&ensp;${CATS[cat].label}</div>
+          <div class="result-mini-track">
+            <div class="result-mini-fill" style="width:${cp}%"></div>
+          </div>
+        </div>
+        <span class="result-cat-score">${s.correct} / ${s.total}</span>
+      </div>`;
+  }).join('');
+
+  document.getElementById('resultContent').innerHTML = `
+    <div class="result-header">
+      <div class="result-emoji">${emoji}</div>
+      <div class="result-score-big">${correct} / ${total}</div>
+      <div class="result-pct">${pct}&thinsp;%</div>
+    </div>
+    <div class="result-cats">${catsHtml}</div>
+    <div class="result-actions">
+      <button class="btn-danger" ${errCount === 0 ? 'disabled' : ''} onclick="reviewErrors()">
+        ✗&ensp;Réviser les erreurs${errCount > 0 ? ` (${errCount})` : ''}
+      </button>
+      <button class="btn-outline" onclick="showHome()">← Retour à l'accueil</button>
+    </div>`;
+}
+
+function reviewErrors() {
+  const ids = [...quiz.errors];
+  quiz.errors  = [];
+  quiz.results = {};
+  startTraining(ids);
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   INIT
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 renderProgressGrid();
 </script>
 
