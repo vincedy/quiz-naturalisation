@@ -3,7 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2d6e3e">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Quiz Natu">
 <title>Quiz Naturalisation – Morges</title>
+<script>
+  (function(){
+    var icon='data:image/svg+xml,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192"><rect width="192" height="192" rx="32" fill="#2d6e3e"/><text x="96" y="135" font-size="88" font-family="Arial,sans-serif" font-weight="bold" fill="#ffffff" text-anchor="middle">QN</text></svg>');
+    var m=JSON.stringify({name:"Quiz Naturalisation Morges",short_name:"Quiz Natu",start_url:".",display:"standalone",theme_color:"#2d6e3e",background_color:"#f5fbf6",icons:[{src:icon,sizes:"192x192",type:"image/svg+xml"},{src:icon,sizes:"512x512",type:"image/svg+xml"}]});
+    var l=document.createElement('link');l.rel='manifest';l.href='data:application/manifest+json,'+encodeURIComponent(m);
+    document.head.appendChild(l);
+  })();
+</script>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
