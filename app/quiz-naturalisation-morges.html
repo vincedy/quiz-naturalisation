@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz Naturalisation – Morges</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:             #f5fbf6;
+  --fg:             #162218;
+  --primary:        #2d6e3e;
+  --primary-hover:  #1e5430;
+  --primary-lt:     #e6f4ea;
+  --accent:         #4a9e5c;
+  --border:         #c2dfc9;
+  --card-bg:        #ffffff;
+  --progress-track: #d0e8d7;
+  --progress-fill:  #2d6e3e;
+  --muted:          #4e7a58;
+  --shadow:         0 2px 12px rgba(45,110,62,.12);
+  --radius:         14px;
+  --bar-h:          56px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:             #0d1b0f;
+    --fg:             #dff0e3;
+    --primary:        #52b56c;
+    --primary-hover:  #6dcf87;
+    --primary-lt:     #142018;
+    --accent:         #6dcf87;
+    --border:         #1b3d22;
+    --card-bg:        #111e14;
+    --progress-track: #193022;
+    --progress-fill:  #52b56c;
+    --muted:          #7aaa84;
+    --shadow:         0 2px 12px rgba(0,0,0,.45);
+  }
+}
+
+html, body {
+  min-height: 100dvh;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui,
+               "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.55;
+}
+
+/* ── App bar ─────────────────────────────────── */
+.app-bar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  height: var(--bar-h);
+  background: var(--primary);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.25);
+}
+
+.app-bar-title {
+  flex: 1;
+  font-size: 1.05rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#btnBack {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: none;
+  background: transparent;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border-radius: 50%;
+  flex-shrink: 0;
+  touch-action: manipulation;
+  transition: background .15s;
+}
+#btnBack.visible { display: flex; }
+#btnBack:hover { background: rgba(255,255,255,.18); }
+
+/* ── Main layout ─────────────────────────────── */
+main {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 20px 16px 48px;
+}
+
+.screen { display: none; }
+.screen.active { display: block; }
+
+/* ── Home header ─────────────────────────────── */
+.home-header {
+  text-align: center;
+  padding: 8px 0 24px;
+}
+
+.canton-badge {
+  display: inline-block;
+  background: var(--primary);
+  color: #fff;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  padding: 4px 14px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+
+.home-header h2 {
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 4px;
+}
+
+.home-header .subtitle {
+  font-size: .88rem;
+  color: var(--muted);
+}
+
+/* ── Progress cards ──────────────────────────── */
+.progress-grid {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.progress-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 16px 12px;
+  box-shadow: var(--shadow);
+}
+
+.progress-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 9px;
+}
+
+.progress-cat-label {
+  font-size: .95rem;
+  font-weight: 700;
+}
+
+.progress-score {
+  font-size: .8rem;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.progress-bar-track {
+  height: 9px;
+  background: var(--progress-track);
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: var(--progress-fill);
+  border-radius: 5px;
+  transition: width .45s cubic-bezier(.4,0,.2,1);
+}
+
+.progress-lvls {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.progress-lvl {
+  font-size: .7rem;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.progress-lvl::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  background: var(--progress-fill);
+  border-radius: 2px;
+  opacity: .65;
+  flex-shrink: 0;
+}
+
+/* ── Main action buttons ─────────────────────── */
+.btn-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.btn-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 88px;
+  padding: 18px 12px;
+  gap: 8px;
+  border: none;
+  border-radius: var(--radius);
+  background: var(--primary);
+  color: #fff;
+  font-family: inherit;
+  font-size: .92rem;
+  font-weight: 700;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: background .15s, transform .1s;
+  box-shadow: var(--shadow);
+  user-select: none;
+}
+
+.btn-main:hover  { background: var(--primary-hover); }
+.btn-main:active { transform: scale(.96); }
+
+@media (prefers-color-scheme: dark) {
+  .btn-main { color: #0d1b0f; }
+  .btn-main:hover { background: var(--primary-hover); }
+}
+
+.btn-main-icon {
+  font-size: 1.75rem;
+  line-height: 1;
+}
+
+/* ── Placeholder screen ──────────────────────── */
+.placeholder-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 16px;
+  padding: 56px 24px 32px;
+}
+
+.ph-icon { font-size: 3.2rem; }
+
+.ph-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.ph-desc {
+  color: var(--muted);
+  font-size: .92rem;
+  max-width: 300px;
+}
+
+.ph-coming {
+  display: inline-block;
+  border: 1.5px dashed var(--border);
+  color: var(--muted);
+  font-size: .8rem;
+  padding: 6px 18px;
+  border-radius: 20px;
+}
+
+.btn-outline {
+  min-height: 44px;
+  padding: 10px 28px;
+  border: 2px solid var(--primary);
+  border-radius: 24px;
+  background: transparent;
+  color: var(--primary);
+  font-family: inherit;
+  font-size: .95rem;
+  font-weight: 700;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: background .15s, color .15s;
+}
+.btn-outline:hover {
+  background: var(--primary);
+  color: #fff;
+}
+@media (prefers-color-scheme: dark) {
+  .btn-outline:hover { color: #0d1b0f; }
+}
+
+/* ── Footer ──────────────────────────────────── */
+footer {
+  text-align: center;
+  padding: 10px 16px;
+  font-size: .7rem;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+}
+</style>
+</head>
+<body>
+
+<header class="app-bar">
+  <button id="btnBack" onclick="goBack()" aria-label="Retour à l'accueil">&#8592;</button>
+  <span class="app-bar-title" id="appTitle">Quiz Naturalisation – Morges</span>
+</header>
+
+<main>
+
+  <!-- ── HOME ──────────────────────────────────────── -->
+  <section class="screen active" id="screenHome">
+
+    <div class="home-header">
+      <div class="canton-badge">Canton de Vaud &bull; Morges</div>
+      <h2>Quiz Naturalisation</h2>
+      <p class="subtitle">160 questions &bull; 4 catégories &bull; 3 niveaux</p>
+    </div>
+
+    <div class="progress-grid" id="progressGrid">
+      <!-- rendu par JS -->
+    </div>
+
+    <div class="btn-grid">
+      <button class="btn-main"
+        onclick="showPlaceholder('Entraînement','📚','Répondez à des questions à votre rythme, sans limite de temps ni pression.')">
+        <span class="btn-main-icon">📚</span>
+        Entraînement
+      </button>
+      <button class="btn-main"
+        onclick="showPlaceholder('Examen blanc','📝','Simulez un examen de naturalisation avec 40 questions tirées au hasard.')">
+        <span class="btn-main-icon">📝</span>
+        Examen blanc
+      </button>
+      <button class="btn-main"
+        onclick="showPlaceholder('Flashcards','🃏','Révisez chaque question avec des cartes interactives recto-verso.')">
+        <span class="btn-main-icon">🃏</span>
+        Flashcards
+      </button>
+      <button class="btn-main"
+        onclick="showPlaceholder('Statistiques','📊','Consultez votre progression et vos résultats par catégorie.')">
+        <span class="btn-main-icon">📊</span>
+        Statistiques
+      </button>
+    </div>
+
+  </section>
+
+  <!-- ── PLACEHOLDER ───────────────────────────────── -->
+  <section class="screen" id="screenPlaceholder">
+    <div class="placeholder-wrap">
+      <div class="ph-icon" id="phIcon">🚧</div>
+      <div class="ph-title" id="phTitle">Fonctionnalité à venir</div>
+      <p class="ph-desc" id="phDesc">Cette section sera disponible prochainement.</p>
+      <span class="ph-coming">En développement</span>
+      <button class="btn-outline" onclick="goBack()">&#8592;&nbsp; Retour à l'accueil</button>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  Questionnaire corrigé &bull; 08.04.2026 &bull; 160 questions &bull; Ville de Morges
+</footer>
+
+<script>
+/* =====================================================================
+   DONNÉES — bloc JSON à mettre à jour si le questionnaire change.
+   Dernière mise à jour : 08.04.2026
+   Source : questions_correction_08.04.2026.pdf
+
+   Structure de chaque entrée :
+     id   : numéro de la question (1–160)
+     cat  : "geo" | "his" | "pol" | "soc"
+     lvl  : "ch" (Suisse) | "vd" (Canton de Vaud) | "mo" (Commune de Morges)
+     q    : texte de la question
+     opts : tableau de 4 options ; opts[ans] est toujours la bonne réponse
+     ans  : toujours 0 — l'application mélange les options à l'affichage
+   ===================================================================== */
+const QUESTIONS = [
+
+  /* ── Géographie · Suisse ──────────────────────────────────────── */
+  {id:1,  cat:"geo", lvl:"ch", q:"Quel est le plus grand canton suisse (superficie) ?",
+   opts:["Grisons","Zurich","Valais","Vaud"], ans:0},
+  {id:2,  cat:"geo", lvl:"ch", q:"Combien y a-t-il de cantons en Suisse ?",
+   opts:["26","28","25","23"], ans:0},
+  {id:3,  cat:"geo", lvl:"ch", q:"Quel est le plus grand lac entièrement suisse ?",
+   opts:["Le Lac de Neuchâtel","Le Lac Léman","Le Lac Majeur","Le Lac de Zurich"], ans:0},
+  {id:4,  cat:"geo", lvl:"ch", q:"Quel canton est officiellement bilingue (deux langues officielles) ?",
+   opts:["Fribourg","Genève","Bâle","Vaud"], ans:0},
+  {id:5,  cat:"geo", lvl:"ch", q:"La prairie du Grütli se trouve au bord du …",
+   opts:["Lac des Quatre-Cantons","Lac de Bienne","Lac de Constance","Lac de Zurich"], ans:0},
+  {id:6,  cat:"geo", lvl:"ch", q:"Combien y a-t-il d'habitants en Suisse ?",
+   opts:["Environ 9 millions","Environ 10 millions","Environ 6 millions","Environ 5 millions"], ans:0},
+  {id:7,  cat:"geo", lvl:"ch", q:"Le Palais fédéral se trouve à …",
+   opts:["Berne","Zurich","Fribourg","Lucerne"], ans:0},
+  {id:8,  cat:"geo", lvl:"ch", q:"On parle le romanche dans le canton …",
+   opts:["des Grisons","de Saint-Gall","du Valais","d'Uri"], ans:0},
+  {id:9,  cat:"geo", lvl:"ch", q:"Quel pays n'a pas de frontière avec la Suisse ?",
+   opts:["Belgique","Italie","France","Allemagne"], ans:0},
+  {id:10, cat:"geo", lvl:"ch", q:"Le lac Léman est situé en Suisse et en …",
+   opts:["France","Italie","Autriche","Allemagne"], ans:0},
+  {id:11, cat:"geo", lvl:"ch", q:"Quelle est la plus grande ville de Suisse ?",
+   opts:["Zurich","Genève","Berne","Bâle"], ans:0},
+  {id:12, cat:"geo", lvl:"ch", q:"Le plus haut sommet suisse est …",
+   opts:["La Pointe Dufour","La Dent Blanche","Le Cervin","La Jungfrau"], ans:0},
+  {id:13, cat:"geo", lvl:"ch", q:"Le Cervin se trouve dans le canton …",
+   opts:["du Valais","de Neuchâtel","de Genève","de Vaud"], ans:0},
+  {id:14, cat:"geo", lvl:"ch", q:"Le canton le plus au nord de la Suisse est …",
+   opts:["Schaffhouse","Grisons","Bâle","Uri"], ans:0},
+  {id:15, cat:"geo", lvl:"ch", q:"Une de ces réponses n'indique pas une région naturelle de la Suisse. Laquelle ?",
+   opts:["Piémont","Jura","Alpes","Plateau"], ans:0},
+  {id:16, cat:"geo", lvl:"ch", q:"Quelle est la capitale de la Suisse ?",
+   opts:["Berne","Zurich","Bâle","Genève"], ans:0},
+
+  /* ── Géographie · Canton de Vaud ──────────────────────────────── */
+  {id:17, cat:"geo", lvl:"vd", q:"De quelle couleur est le drapeau vaudois ?",
+   opts:["Vert et blanc","Bleu et blanc","Rouge et blanc","Rouge et noir"], ans:0},
+  {id:18, cat:"geo", lvl:"vd", q:"Quels mots figurent sur le drapeau du Canton de Vaud ?",
+   opts:["Liberté et patrie","Liberté, égalité, fraternité","Forts et libres","Liberté et prospérité"], ans:0},
+  {id:19, cat:"geo", lvl:"vd", q:"Au bord de quel lac se trouve la ville d'Yverdon-les-Bains ?",
+   opts:["Lac de Neuchâtel","Lac Léman","Lac de Joux","Lac Majeur"], ans:0},
+  {id:20, cat:"geo", lvl:"vd", q:"Quel est le chef-lieu du canton de Vaud ?",
+   opts:["Lausanne","Nyon","Montreux","Aigle"], ans:0},
+  {id:21, cat:"geo", lvl:"vd", q:"Lausanne se trouve au bord du …",
+   opts:["Lac Léman","Lac Noir","Lac des Quatre-Cantons","Lac de Joux"], ans:0},
+  {id:22, cat:"geo", lvl:"vd", q:"Quel canton n'a pas de frontière commune avec le canton de Vaud ?",
+   opts:["Jura","Valais","Fribourg","Genève"], ans:0},
+  {id:23, cat:"geo", lvl:"vd", q:"Quel fleuve traverse le lac Léman ?",
+   opts:["Le Rhône","Le Doubs","La Sarine","Le Rhin"], ans:0},
+  {id:24, cat:"geo", lvl:"vd", q:"Le plus haut sommet vaudois est …",
+   opts:["Le sommet des Diablerets","La Dent de Jaman","Les Pléiades","Les Rochers de Naye"], ans:0},
+  {id:25, cat:"geo", lvl:"vd", q:"Quel château célèbre se trouve au bord du lac Léman ?",
+   opts:["Le château de Chillon","Le château de Gruyère","Le château de Grandson","Le château de Lenzbourg"], ans:0},
+  {id:26, cat:"geo", lvl:"vd", q:"Quelle région a été classée au patrimoine mondial de l'UNESCO en juin 2007 ?",
+   opts:["Lavaux","Le Signal de Bougy","Les Diablerets","Le Gros-de-Vaud"], ans:0},
+  {id:27, cat:"geo", lvl:"vd", q:"Combien de personnes habitent le canton de Vaud ?",
+   opts:["Environ 850'000","Environ 2 millions","Environ 500'000","Environ 1,2 million"], ans:0},
+  {id:28, cat:"geo", lvl:"vd", q:"Quelle rivière traverse le canton de Vaud ?",
+   opts:["La Venoge","Le Doubs","La Limmat","L'Aar"], ans:0},
+  {id:29, cat:"geo", lvl:"vd", q:"Le chef-lieu du district Riviera-Pays d'Enhaut est …",
+   opts:["Vevey","Payerne","Nyon","Echallens"], ans:0},
+  {id:30, cat:"geo", lvl:"vd", q:"Sur la population du canton de Vaud, les résidents étrangers représentent …",
+   opts:["environ 30 %","environ 10 %","environ 20 %","environ 25 %"], ans:0},
+  {id:31, cat:"geo", lvl:"vd", q:"Un de ces monuments ne se trouve pas en ville de Lausanne. Lequel ?",
+   opts:["Statue de Charlie Chaplin","Notre-Dame du Valentin","Château Saint-Maire","Palais de Rumine"], ans:0},
+  {id:32, cat:"geo", lvl:"vd", q:"Quel est le terminus du LEB (chemin de fer) ?",
+   opts:["Bercher","Boulens","Begnins","Blonay"], ans:0},
+
+  /* ── Géographie · Commune de Morges ───────────────────────────── */
+  {id:33, cat:"geo", lvl:"mo", q:"Quelles sont les communes qui touchent la commune de Morges ?",
+   opts:["Préverenges, Lonay, Echichens, Chigny et Tolochenaz",
+         "Préverenges, Echichens, St-Prex, Vufflens-le-Château et Denges",
+         "Lonay, Tolochenaz, St-Sulpice, Echandens et Etoy",
+         "Echichens, Chigny, Aubonne, Allaman et Rolle"], ans:0},
+  {id:34, cat:"geo", lvl:"mo", q:"Quelles sont les deux rivières qui touchent le territoire morgien ?",
+   opts:["La Morges et le Bief","La Venoge et le Boiron","La Morges et la Versoix","Le Bief et le Talent"], ans:0},
+  {id:35, cat:"geo", lvl:"mo", q:"Combien de grands parcs publics compte la Ville de Morges au bord du lac ?",
+   opts:["2","5","1","3"], ans:0},
+  {id:36, cat:"geo", lvl:"mo", q:"Quels sont les noms des parcs publics de la Ville de Morges au bord du lac ?",
+   opts:["Parc de Vertou et Parc de l'Indépendance",
+         "Parc de Vertou et Parc des Nations",
+         "Parc de l'Indépendance et Parc du Temple",
+         "Parc du Temple et Parc de Vidy"], ans:0},
+  {id:37, cat:"geo", lvl:"mo", q:"Savez-vous ce qui est représenté sur le drapeau de la Ville de Morges ?",
+   opts:["Les deux rivières : La Morges et le Bief","Le château","Un coq","Un poisson"], ans:0},
+  {id:38, cat:"geo", lvl:"mo", q:"Quelle est l'altitude la plus basse ?",
+   opts:["374 mètres","180 mètres","264 mètres","905 mètres"], ans:0},
+  {id:39, cat:"geo", lvl:"mo", q:"Quelle est la surface de la Ville ?",
+   opts:["3,83 km²","3,50 km²","2,86 km²","8,32 km²"], ans:0},
+  {id:40, cat:"geo", lvl:"mo", q:"Qu'est-ce qui délimite le territoire communal au Nord ?",
+   opts:["Le vignoble","Le Lac Léman","Le collège de Marcelin","Le Bief"], ans:0},
+
+  /* ── Histoire · Suisse ────────────────────────────────────────── */
+  {id:41, cat:"his", lvl:"ch", q:"Le plus ancien pacte de la Confédération a été signé en 1291 par les cantons de …",
+   opts:["Uri, Schwytz, Unterwald","Vaud, Genève, Neuchâtel","Bâle, Soleure, Argovie","Uri, Glaris, Grisons"], ans:0},
+  {id:42, cat:"his", lvl:"ch", q:"Quelle est la date souvent considérée comme celle de la naissance de la Suisse ?",
+   opts:["1291","1296","1294","1390"], ans:0},
+  {id:43, cat:"his", lvl:"ch", q:"Les premiers Confédérés ont prêté serment …",
+   opts:["Sur la plaine du Grütli","Au château de Chillon","Sur le Pont de la Chapelle à Lucerne","Au Palais de Rumine"], ans:0},
+  {id:44, cat:"his", lvl:"ch", q:"Guillaume Tell était …",
+   opts:["Un personnage légendaire qui s'est battu contre des seigneurs étrangers",
+         "Un célèbre soldat au service d'une puissance étrangère",
+         "Un aristocrate de la famille des Habsbourg",
+         "Un chef de la guerre des paysans"], ans:0},
+  {id:45, cat:"his", lvl:"ch", q:"Le drapeau suisse s'inspire du drapeau d'un canton. Lequel ?",
+   opts:["Schwytz","Vaud","Berne","Valais"], ans:0},
+  {id:46, cat:"his", lvl:"ch", q:"Quelle guerre civile entre cantons conservateurs et cantons progressistes a favorisé la création de la Suisse moderne ?",
+   opts:["La guerre du Sonderbund","La bataille de Sempach","La guerre de Cent Ans","La guerre de Sécession"], ans:0},
+  {id:47, cat:"his", lvl:"ch", q:"La première Constitution fédérale date de …",
+   opts:["1848","1291","1515","1874"], ans:0},
+  {id:48, cat:"his", lvl:"ch", q:"Quelle est la devise de la Confédération ?",
+   opts:["L'union fait la force","Un pour tous, tous pour un","Liberté et patrie","Liberté, égalité, fraternité"], ans:0},
+  {id:49, cat:"his", lvl:"ch", q:"Qu'est-ce qu'on fête le 1er août ?",
+   opts:["Le pacte fédéral de Uri, Schwytz et Unterwald",
+         "L'alliance des 26 cantons",
+         "L'accord entre les 7 cantons romands",
+         "La victoire des 8 cantons primitifs"], ans:0},
+  {id:50, cat:"his", lvl:"ch", q:"La Landsgemeinde est …",
+   opts:["Une assemblée pendant laquelle on vote à main levée","Un plat typique","Une danse","Une bataille"], ans:0},
+  {id:51, cat:"his", lvl:"ch", q:"Qui a fondé la Croix-Rouge ?",
+   opts:["Henri Dunant","Major Davel","Albert Hofmann","Henri Guisan"], ans:0},
+  {id:52, cat:"his", lvl:"ch", q:"Pendant les deux guerres mondiales, la Suisse …",
+   opts:["Est restée neutre","A combattu aux côtés de la France","A combattu aux côtés des États-Unis","A combattu aux côtés de l'Allemagne"], ans:0},
+  {id:53, cat:"his", lvl:"ch", q:"Les femmes suisses ont obtenu le droit de vote au niveau fédéral dans …",
+   opts:["Les années 70","Les années 60","Les années 50","Les années 80"], ans:0},
+  {id:54, cat:"his", lvl:"ch", q:"Quel canton est devenu le 26ème canton suisse ?",
+   opts:["Jura","Neuchâtel","Vaud","Valais"], ans:0},
+  {id:55, cat:"his", lvl:"ch", q:"La Suisse est entrée à l'ONU en …",
+   opts:["2002","1989","1945","1920"], ans:0},
+  {id:56, cat:"his", lvl:"ch", q:"La Suisse n'est pas dans l'UE (Union Européenne), mais elle a passé avec l'UE des …",
+   opts:["Accords bilatéraux","Accords institutionnels","Accords militaires","Accords unilatéraux"], ans:0},
+
+  /* ── Histoire · Canton de Vaud ────────────────────────────────── */
+  {id:57, cat:"his", lvl:"vd", q:"Le nom VAUD signifie …",
+   opts:["pays des forêts","pays des forts (valides)","pays des vallées","pays des bouchons vaudois"], ans:0},
+  {id:58, cat:"his", lvl:"vd", q:"De 1207 à 1536, le Pays de Vaud faisait partie …",
+   opts:["de la Savoie","de l'Italie","de la France","du Val d'Aoste"], ans:0},
+  {id:59, cat:"his", lvl:"vd", q:"Au XVIe siècle, le Pays de Vaud a été conquis par le canton …",
+   opts:["de Berne","de Genève","du Valais","du Jura"], ans:0},
+  {id:60, cat:"his", lvl:"vd", q:"Le canton de Vaud est devenu officiellement protestant en …",
+   opts:["1536","1291","1798","1803"], ans:0},
+  {id:61, cat:"his", lvl:"vd", q:"Le principal réformateur vaudois est …",
+   opts:["Pierre Viret","Jean Calvin","Martin Luther","John Knox"], ans:0},
+  {id:62, cat:"his", lvl:"vd", q:"Qui était le Major Davel ?",
+   opts:["Un patriote vaudois","Une figure légendaire","Un peintre","Le vainqueur du Sonderbund"], ans:0},
+  {id:63, cat:"his", lvl:"vd", q:"Le Major Davel est mort …",
+   opts:["Décapité (la tête coupée)","Sur le champ de bataille","Pendu","Dans son lit"], ans:0},
+  {id:64, cat:"his", lvl:"vd", q:"On célèbre l'indépendance vaudoise le …",
+   opts:["24 janvier","1er août","1er mai","14 juillet"], ans:0},
+  {id:65, cat:"his", lvl:"vd", q:"L'indépendance vaudoise date de …",
+   opts:["1798","1902","1848","1291"], ans:0},
+  {id:66, cat:"his", lvl:"vd", q:"Le Canton de Vaud est entré dans la Confédération en …",
+   opts:["1803","1291","1515","1848"], ans:0},
+  {id:67, cat:"his", lvl:"vd", q:"Quelle femme politique d'origine valdo-genevoise a habité le château de Coppet ?",
+   opts:["Mme de Staël","Jeanne d'Arc","Anna Göldin","Ella Maillart"], ans:0},
+  {id:68, cat:"his", lvl:"vd", q:"Que représente la date du 14 avril 1803 pour le Canton de Vaud ?",
+   opts:["L'entrée du Pays de Vaud dans la Confédération","L'indépendance vaudoise","La naissance du Général Guisan","La date d'exécution du Major Davel"], ans:0},
+  {id:69, cat:"his", lvl:"vd", q:"Le premier canton suisse à accorder le droit de vote aux femmes est le canton …",
+   opts:["de Vaud","du Valais","de Bâle","de Zurich"], ans:0},
+  {id:70, cat:"his", lvl:"vd", q:"L'actuelle Constitution du Canton de Vaud date de …",
+   opts:["2003","1848","1885","1945"], ans:0},
+  {id:71, cat:"his", lvl:"vd", q:"Qui était le général de l'armée suisse pendant la deuxième guerre mondiale ?",
+   opts:["Le vaudois Henri Guisan","L'argovien Hans Herzog","Le zurichois Ulrich Wille","Le genevois Guillaume Henri Dufour"], ans:0},
+  {id:72, cat:"his", lvl:"vd", q:"En quelle année l'Exposition nationale a-t-elle été organisée à Lausanne ?",
+   opts:["En 1964","En 2002","En 1930","En 1956"], ans:0},
+
+  /* ── Histoire · Commune de Morges ─────────────────────────────── */
+  {id:73, cat:"his", lvl:"mo", q:"Quelle est la date de la fondation de la Ville de Morges ?",
+   opts:["1286","1291","1803","1515"], ans:0},
+  {id:74, cat:"his", lvl:"mo", q:"Quelle personnalité est liée à l'histoire de la Ville de Morges ?",
+   opts:["Ignace Paderewski","Charlie Chaplin","Guillaume Tell","Coco Chanel"], ans:0},
+  {id:75, cat:"his", lvl:"mo", q:"Par qui était dominée la Ville de Morges entre 1536 et 1798 ?",
+   opts:["Par les Bernois qui installent un bailli au Château",
+         "Par Napoléon qui installe ses quartiers dans le Temple",
+         "Par Jules César qui prend possession du château",
+         "Par la Ville de Genève sur ordre de Jean Calvin"], ans:0},
+  {id:76, cat:"his", lvl:"mo", q:"Quelle est la date de la construction du Château ?",
+   opts:["1286","1648","1515","1920"], ans:0},
+  {id:77, cat:"his", lvl:"mo", q:"De quand date la construction de l'Hôtel de Ville ?",
+   opts:["De 1515","De 1291","De 1803","De 1712"], ans:0},
+  {id:78, cat:"his", lvl:"mo", q:"En quelle année Audrey Hepburn a-t-elle épousé Andrea Dotti à l'Hôtel de Ville de Morges ?",
+   opts:["En 1969","En 1954","En 1971","En 1982"], ans:0},
+  {id:79, cat:"his", lvl:"mo", q:"A quoi se réfère le nom « Beausobre » ?",
+   opts:["Une famille morgienne","Une marque de voiture","Un nom d'oiseau","Un nom d'un bateau"], ans:0},
+  {id:80, cat:"his", lvl:"mo", q:"En quelle année la Grand-Rue est-elle devenue piétonne ?",
+   opts:["En 1993","En 2000","En 1975","En 1989"], ans:0},
+
+  /* ── Politique · Suisse ───────────────────────────────────────── */
+  {id:81, cat:"pol", lvl:"ch", q:"Qui préside le Conseil fédéral en 2026 ?",
+   opts:["Guy Parmelin","Karin Keller-Sutter","Beat Jans","Ignazio Cassis"], ans:0},
+  {id:82, cat:"pol", lvl:"ch", q:"Combien de membres compte le Conseil fédéral ?",
+   opts:["7","5","8","9"], ans:0},
+  {id:83, cat:"pol", lvl:"ch", q:"Pour combien de temps est élu/e le/la président/e de la Confédération ?",
+   opts:["1 an","4 ans","5 ans","2 ans"], ans:0},
+  {id:84, cat:"pol", lvl:"ch", q:"Quels sont les 3 pouvoirs du système politique en Suisse ?",
+   opts:["Législatif, exécutif, judiciaire","Parlementaire, civil, religieux","Syndical, médiatique, judiciaire","Législatif, religieux, syndical"], ans:0},
+  {id:85, cat:"pol", lvl:"ch", q:"Les citoyens peuvent demander une consultation populaire (votation) sur un nouveau texte de loi par …",
+   opts:["un référendum","le lobbying","une manifestation","une grève"], ans:0},
+  {id:86, cat:"pol", lvl:"ch", q:"Quelle chambre du Parlement fédéral représente le peuple ?",
+   opts:["Le Conseil national","Le Conseil des Etats","Le Conseil fédéral","Le Grand Conseil"], ans:0},
+  {id:87, cat:"pol", lvl:"ch", q:"Le Palais fédéral est le siège …",
+   opts:["du Parlement","du Musée national suisse","de l'Université","de la Télévision suisse"], ans:0},
+  {id:88, cat:"pol", lvl:"ch", q:"Dans quel texte de loi suisse se trouvent les droits fondamentaux ?",
+   opts:["Constitution","Code pénal","Code civil","Règlement communal"], ans:0},
+  {id:89, cat:"pol", lvl:"ch", q:"Qui élit les membres du Tribunal fédéral ?",
+   opts:["l'Assemblée fédérale","le Conseil fédéral","le peuple et les cantons","les communes"], ans:0},
+  {id:90, cat:"pol", lvl:"ch", q:"La Suisse est gouvernée par …",
+   opts:["Un Conseil fédéral","Un Président","Un Roi","Un Premier ministre"], ans:0},
+  {id:91, cat:"pol", lvl:"ch", q:"Quel est le rôle du pouvoir législatif ?",
+   opts:["Il élabore les lois","Il vérifie les lois","Il applique les lois","Il contrôle les routes"], ans:0},
+  {id:92, cat:"pol", lvl:"ch", q:"Quel est le rôle du pouvoir exécutif ?",
+   opts:["Il applique les lois et gouverne","Il décide des lois qui régissent l'Etat","Il s'assure que les lois soient bien appliquées","Il élit le gouvernement"], ans:0},
+  {id:93, cat:"pol", lvl:"ch", q:"Qui représente le pouvoir législatif au niveau fédéral ?",
+   opts:["Le Parlement fédéral","Le Conseil d'Etat","Le Grand Conseil","La Croix-Rouge"], ans:0},
+  {id:94, cat:"pol", lvl:"ch", q:"En Suisse, qui élit le Conseil fédéral ?",
+   opts:["L'Assemblée fédérale (le Conseil national et le Conseil des Etats)","Le Conseil d'Etat","Le peuple","Les cantons"], ans:0},
+  {id:95, cat:"pol", lvl:"ch", q:"Quel parti politique suisse est de gauche ?",
+   opts:["Parti socialiste (PS)","Parti libéral-radical (PLR)","Union démocratique du centre (UDC)","Le Centre"], ans:0},
+  {id:96, cat:"pol", lvl:"ch", q:"Le Tribunal fédéral se trouve à …",
+   opts:["Lausanne","Genève","Berne","Fribourg"], ans:0},
+
+  /* ── Politique · Canton de Vaud ───────────────────────────────── */
+  {id:97,  cat:"pol", lvl:"vd", q:"Quel est le nom de la Présidente du Conseil d'Etat vaudois ?",
+   opts:["Christelle Luisier Brodard","Rebecca Ruiz","Isabelle Moret","Nuria Gorrite"], ans:0},
+  {id:98,  cat:"pol", lvl:"vd", q:"Qui est le syndic de Lausanne ?",
+   opts:["Grégoire Junod","Daniel Brélaz","Guy Parmelin","Pierre-Yves Maillard"], ans:0},
+  {id:99,  cat:"pol", lvl:"vd", q:"Qui représente le pouvoir législatif au niveau cantonal ?",
+   opts:["Le Grand Conseil","Le Conseil d'Etat","Le Parlement fédéral","La Croix-Rouge"], ans:0},
+  {id:100, cat:"pol", lvl:"vd", q:"Qui représente le pouvoir exécutif dans le canton de Vaud ?",
+   opts:["Le Conseil d'Etat","Le Tribunal cantonal","Le Grand Conseil","Le Conseil fédéral"], ans:0},
+  {id:101, cat:"pol", lvl:"vd", q:"Qui élit le Conseil d'Etat vaudois ?",
+   opts:["Le peuple","La Municipalité","Le Grand Conseil","Le Conseil fédéral"], ans:0},
+  {id:102, cat:"pol", lvl:"vd", q:"Que signifie DSAS ?",
+   opts:["Département de la santé et de l'action sociale",
+         "Département du soleil et des affaires solaires",
+         "Département du sport et de l'activité sportive",
+         "Département du social et des associations sportives"], ans:0},
+  {id:103, cat:"pol", lvl:"vd", q:"Dans le canton de Vaud, les personnes de nationalité étrangère peuvent à certaines conditions voter, élire et être élues au niveau …",
+   opts:["communal","fédéral","fédéral, cantonal et communal","cantonal"], ans:0},
+  {id:104, cat:"pol", lvl:"vd", q:"Pour combien d'années est élu le Conseil d'Etat ?",
+   opts:["5 ans","10 ans","1 an","2 ans"], ans:0},
+  {id:105, cat:"pol", lvl:"vd", q:"Combien de membres compte le Grand Conseil vaudois ?",
+   opts:["150","250","350","20"], ans:0},
+  {id:106, cat:"pol", lvl:"vd", q:"Quel est le pouvoir judiciaire dans le canton de Vaud ?",
+   opts:["Tribunal cantonal","Grand Conseil","Conseil d'Etat","Municipalité"], ans:0},
+  {id:107, cat:"pol", lvl:"vd", q:"Où se trouve le siège du Conseil d'Etat vaudois ?",
+   opts:["Château cantonal (Château Saint-Maire)","Musée olympique","La Cité","Cathédrale de Lausanne"], ans:0},
+  {id:108, cat:"pol", lvl:"vd", q:"Quel est le rôle du Ministère public ?",
+   opts:["Conduire les investigations et défendre la société devant les tribunaux",
+         "Informer les médias des affaires politiques courantes du canton",
+         "Organiser les votations et les élections dans le canton",
+         "Surveiller la sphère publique et le fonctionnement des transports"], ans:0},
+  {id:109, cat:"pol", lvl:"vd", q:"Quelles sont les unités administratives ou politiques du canton de Vaud ?",
+   opts:["Districts, arrondissements et communes","Demi-cantons, villes et quartiers","Sous-cantons, communes et quartiers","Arrondissements, communes et quartiers"], ans:0},
+  {id:110, cat:"pol", lvl:"vd", q:"Combien de signatures faut-il obtenir pour qu'une initiative populaire soit soumise au vote au niveau cantonal ?",
+   opts:["12'000 signatures en 4 mois","1000 signatures en 1 semaine","aucune signature","200 signatures en 1 année"], ans:0},
+  {id:111, cat:"pol", lvl:"vd", q:"Qui est le porte-parole officiel du gouvernement vaudois ?",
+   opts:["Le Chancelier d'Etat","Les préfets","Les députés","La presse vaudoise"], ans:0},
+  {id:112, cat:"pol", lvl:"vd", q:"A partir de quel âge les citoyennes et citoyens suisses peuvent voter au niveau cantonal ?",
+   opts:["18 ans","15 ans","17 ans","21 ans"], ans:0},
+
+  /* ── Politique · Commune de Morges ────────────────────────────── */
+  {id:113, cat:"pol", lvl:"mo", q:"Combien de membres compte la Municipalité de Morges ?",
+   opts:["7","5","3","9"], ans:0},
+  {id:114, cat:"pol", lvl:"mo", q:"Quel(le) ancien(ne) syndic(que) est devenu(e) Conseiller(ère) d'Etat ?",
+   opts:["Nuria Gorrite","Eric Voruz","Francine Jeanprêtre","Jean-Michel Pellegrino"], ans:0},
+  {id:115, cat:"pol", lvl:"mo", q:"Qui est le Syndic ou la Syndique de la Municipalité de Morges ?",
+   opts:["Mélanie Wyss-Pittet","Sylvie Podio","Jean-Jacques Aubert","Eric Züger"], ans:0},
+  {id:116, cat:"pol", lvl:"mo", q:"À Morges, combien de personnes siègent au Conseil communal ?",
+   opts:["100 membres","50 membres","75 membres","150 membres"], ans:0},
+  {id:117, cat:"pol", lvl:"mo", q:"Combien de séances le Conseil communal a-t-il par année ?",
+   opts:["10 séances par année","2 séances par année","15 séances par année","8 séances par année"], ans:0},
+  {id:118, cat:"pol", lvl:"mo", q:"Selon quel type de scrutin la Municipalité est-elle élue ?",
+   opts:["Le scrutin majoritaire à 2 tours","A main levée","Le scrutin proportionnel","Le scrutin majoritaire"], ans:0},
+  {id:119, cat:"pol", lvl:"mo", q:"Comment se nomme l'association scolaire intercommunale de Morges et environ ?",
+   opts:["ASIME","ARCAM","PRM","ERM"], ans:0},
+  {id:120, cat:"pol", lvl:"mo", q:"Combien d'années dure une législation communale ?",
+   opts:["5 ans","7 ans","6 ans","3 ans"], ans:0},
+
+  /* ── Social · Suisse ──────────────────────────────────────────── */
+  {id:121, cat:"soc", lvl:"ch", q:"Quelle est la langue officielle la plus parlée en Suisse ?",
+   opts:["Allemand","Français","Italien","Romanche"], ans:0},
+  {id:122, cat:"soc", lvl:"ch", q:"Qu'est-ce que la « barrière de roesti » ou « Röstigraben » ?",
+   opts:["Les différences de mentalité entre la Suisse romande et la Suisse alémanique",
+         "Un plat typiquement suisse","Le titre d'une chanson","Un quartier de la ville de Berne"], ans:0},
+  {id:123, cat:"soc", lvl:"ch", q:"Que signifie l'abréviation CH ?",
+   opts:["Confédération helvétique","Centre helvétique","Commune helvétique","Communauté helvétique"], ans:0},
+  {id:124, cat:"soc", lvl:"ch", q:"Qu'est-ce que le « Schwyzerdütsch » ?",
+   opts:["Le dialecte suisse-allemand","Une spécialité culinaire","Une montagne","Un sport"], ans:0},
+  {id:125, cat:"soc", lvl:"ch", q:"Quel héros de l'indépendance suisse est toujours représenté avec une arbalète et une pomme ?",
+   opts:["Guillaume Tell","Major Davel","Charlemagne","Heidi"], ans:0},
+  {id:126, cat:"soc", lvl:"ch", q:"Quelles sont les 4 langues nationales de la Suisse ?",
+   opts:["français, allemand, italien, romanche","allemand, français, anglais, romanche","français, italien, suisse-allemand, romanche","anglais, français, italien, espagnol"], ans:0},
+  {id:127, cat:"soc", lvl:"ch", q:"Quel personnage féminin se trouve sur plusieurs pièces de monnaie suisse ?",
+   opts:["Helvetia","Heidi","Ursula Andress","Marie"], ans:0},
+  {id:128, cat:"soc", lvl:"ch", q:"En Suisse, payer des impôts est …",
+   opts:["une obligation","une liberté","un choix","une possibilité facultative"], ans:0},
+  {id:129, cat:"soc", lvl:"ch", q:"Quel aliment compose principalement les « rösti » (plat typique suisse) ?",
+   opts:["La pomme de terre","La carotte","L'oignon","Le chou"], ans:0},
+  {id:130, cat:"soc", lvl:"ch", q:"Dans quelle ville peut-on voir la statue de Guillaume Tell ?",
+   opts:["Altdorf","Schwytz","Genève","Sion"], ans:0},
+  {id:131, cat:"soc", lvl:"ch", q:"Qu'est-ce qu'un cor des Alpes ?",
+   opts:["Un instrument de musique","Un animal","Une fleur","Un champignon"], ans:0},
+  {id:132, cat:"soc", lvl:"ch", q:"Dans quelle ville suisse se trouve la « fosse aux ours » ?",
+   opts:["Berne","Martigny","Zurich","Bâle"], ans:0},
+  {id:133, cat:"soc", lvl:"ch", q:"Que protège la Garde Suisse depuis 1506 ?",
+   opts:["Le Pape","Le Carnaval de Bâle","Le Parlement","Le siège du CIO"], ans:0},
+  {id:134, cat:"soc", lvl:"ch", q:"Où se fête le plus grand carnaval de Suisse ?",
+   opts:["Bâle","Lausanne","Genève","Sion"], ans:0},
+  {id:135, cat:"soc", lvl:"ch", q:"Citez un sport national",
+   opts:["La lutte","Le base-ball","Le cricket","Le waterpolo"], ans:0},
+  {id:136, cat:"soc", lvl:"ch", q:"Tout homme de nationalité suisse est en principe astreint au …",
+   opts:["Service militaire","Concours d'admission des sapeurs-pompiers","Travail","Service civil"], ans:0},
+
+  /* ── Social · Canton de Vaud ──────────────────────────────────── */
+  {id:137, cat:"soc", lvl:"vd", q:"Quel est le plat culinaire typique du canton de Vaud ?",
+   opts:["Le papet","La raclette","Les rösti","La fondue"], ans:0},
+  {id:138, cat:"soc", lvl:"vd", q:"Dans quel canton l'italien est-elle la langue principale ?",
+   opts:["Tessin","Valais","Saint-Gall","Glaris"], ans:0},
+  {id:139, cat:"soc", lvl:"vd", q:"Où se trouvent le Musée Olympique et le siège du Comité international olympique (CIO) ?",
+   opts:["Lausanne","Villeneuve","Morges","Genève"], ans:0},
+  {id:140, cat:"soc", lvl:"vd", q:"Où a lieu chaque année le meeting d'athlétisme « Athletissima » ?",
+   opts:["Lausanne","Payerne","Vevey","Montreux"], ans:0},
+  {id:141, cat:"soc", lvl:"vd", q:"Dans quelle ville a lieu le festival du « Paléo » ?",
+   opts:["Nyon","Morges","Lausanne","Montreux"], ans:0},
+  {id:142, cat:"soc", lvl:"vd", q:"Où se déroule le Festival de Jazz créé par Claude Nobs ?",
+   opts:["Montreux","Yverdon-les-Bains","Nyon","Genève"], ans:0},
+  {id:143, cat:"soc", lvl:"vd", q:"Quel célèbre ballet est établi à Lausanne ?",
+   opts:["Ballet Béjart","Ballet Jobin","Ballet Juvet","Ballet Godard"], ans:0},
+  {id:144, cat:"soc", lvl:"vd", q:"Où se trouve le musée créé à la mémoire de Charlie Chaplin ?",
+   opts:["Corsier-sur-Vevey","Yverdon-les-Bains","Nyon","Lausanne"], ans:0},
+  {id:145, cat:"soc", lvl:"vd", q:"Quel bâtiment a été inauguré à Lausanne le 14 avril 2017 ?",
+   opts:["Parlement vaudois","Maison du sport international","Palais de Beaulieu","Opéra de Lausanne"], ans:0},
+  {id:146, cat:"soc", lvl:"vd", q:"Où est célébrée la « Fête des Vignerons » ?",
+   opts:["Vevey","Morges","Aigle","Sion"], ans:0},
+  {id:147, cat:"soc", lvl:"vd", q:"Quelle grande école polytechnique se trouve dans la région de Lausanne ?",
+   opts:["l'EPFL","l'UNIL","la HEP","la HEG"], ans:0},
+  {id:148, cat:"soc", lvl:"vd", q:"A quelle date symbolique le Château cantonal Saint-Maire a-t-il ouvert ses portes après plus de deux ans de travaux ?",
+   opts:["14 avril 2018","25 décembre 2017","15 novembre 1315","14 février 2000"], ans:0},
+  {id:149, cat:"soc", lvl:"vd", q:"Quel grand tennisman suisse et vaudois est né à Lausanne en 1985 ?",
+   opts:["Stanislas Wawrinka","Marc Rosset","Yannick Noah","Roger Federer"], ans:0},
+  {id:150, cat:"soc", lvl:"vd", q:"Le réseau de transport public dans le canton de Vaud s'appelle …",
+   opts:["mobilis","transN","tpf","tpg"], ans:0},
+  {id:151, cat:"soc", lvl:"vd", q:"Dans quelle ville vaudoise y a-t-il un métro ?",
+   opts:["Lausanne","Vevey","Nyon","Montreux"], ans:0},
+  {id:152, cat:"soc", lvl:"vd", q:"Dans quelle ville se trouve le musée de l'alimentation ?",
+   opts:["Vevey","Rolle","Gland","Yverdon-les-Bains"], ans:0},
+
+  /* ── Social · Commune de Morges ───────────────────────────────── */
+  {id:153, cat:"soc", lvl:"mo", q:"Quel musée existe à Morges ?",
+   opts:["Musée Alexis Forel","Musée du Léman","Musée de l'Hermitage","Musée de l'Elysée"], ans:0},
+  {id:154, cat:"soc", lvl:"mo", q:"Pouvez-vous citer deux théâtres à Morges ?",
+   opts:["Le théâtre de Beausobre et le théâtre Trois P'tits Tours",
+         "Le théâtre de Beausobre et le théâtre de Beaulieu",
+         "Le théâtre du Léman et le théâtre de Vidy",
+         "Le théâtre de Vidy et le théâtre Trois P'tits Tours"], ans:0},
+  {id:155, cat:"soc", lvl:"mo", q:"Quel est le nom du collège secondaire de Morges ?",
+   opts:["Collège de Beausobre","Collège de Marcelin","Collège du Bluard","Collège de l'Elysée"], ans:0},
+  {id:156, cat:"soc", lvl:"mo", q:"Quel est le nom du club de football morgien ?",
+   opts:["Forward-Morges Football-club","Neuchâtel Xamax FCS","Lausanne-Sport","Servette-Football"], ans:0},
+  {id:157, cat:"soc", lvl:"mo", q:"Savez-vous à quelle commune étrangère est jumelée la Ville de Morges ?",
+   opts:["Vertou, Ville française","Pékin, Ville chinoise","Rome, Ville italienne","Vienne, Ville autrichienne"], ans:0},
+  {id:158, cat:"soc", lvl:"mo", q:"Savez-vous quels sont les jours de marché à Morges ?",
+   opts:["Les mercredis et samedis matin","Les vendredis et samedis matin","Les lundis après-midi et samedis matin","Les lundis matin et mercredis après-midi"], ans:0},
+  {id:159, cat:"soc", lvl:"mo", q:"Où se déroule le marché de Noël de Morges ?",
+   opts:["Dans le parc du Château","Dans le parc de l'Indépendance","Sur la place du Temple","Dans la Grand-Rue"], ans:0},
+  {id:160, cat:"soc", lvl:"mo", q:"Quelle manifestation n'est pas organisée en ville de Morges ?",
+   opts:["Festival de la Cité","Le livre sur les quais","Paillote festival","La Grande Table"], ans:0}
+
+];
+/* ===================================================================== */
+
+
+/* ── Métadonnées ──────────────────────────────────────────────── */
+const CATS = {
+  geo: { label: 'Géographie',  icon: '🗺️' },
+  his: { label: 'Histoire',    icon: '🏛️' },
+  pol: { label: 'Politique',   icon: '⚖️' },
+  soc: { label: 'Social',      icon: '🤝' }
+};
+
+const LEVELS = {
+  ch: 'Suisse',
+  vd: 'Canton de Vaud',
+  mo: 'Commune de Morges'
+};
+
+/* ── Progression (localStorage) ──────────────────────────────── */
+function getProgress() {
+  try { return JSON.parse(localStorage.getItem('qnm_progress') || '{}'); }
+  catch { return {}; }
+}
+
+/* ── Rendu des barres de progression ─────────────────────────── */
+function renderProgressGrid() {
+  const progress = getProgress();
+  const grid = document.getElementById('progressGrid');
+  grid.innerHTML = '';
+
+  for (const [catKey, catMeta] of Object.entries(CATS)) {
+    const qs    = QUESTIONS.filter(q => q.cat === catKey);
+    const total = qs.length;
+    const done  = qs.filter(q => progress[q.id] === true).length;
+    const pct   = total > 0 ? Math.round(done / total * 100) : 0;
+
+    const lvlHtml = ['ch', 'vd', 'mo'].map(lvl => {
+      const sub     = qs.filter(q => q.lvl === lvl);
+      const subDone = sub.filter(q => progress[q.id] === true).length;
+      return `<span class="progress-lvl">${LEVELS[lvl]}&nbsp;${subDone}/${sub.length}</span>`;
+    }).join('');
+
+    grid.insertAdjacentHTML('beforeend', `
+      <div class="progress-card">
+        <div class="progress-card-header">
+          <span class="progress-cat-label">${catMeta.icon}&ensp;${catMeta.label}</span>
+          <span class="progress-score">${done}&thinsp;/&thinsp;${total}</span>
+        </div>
+        <div class="progress-bar-track">
+          <div class="progress-bar-fill" style="width:${pct}%"></div>
+        </div>
+        <div class="progress-lvls">${lvlHtml}</div>
+      </div>`);
+  }
+}
+
+/* ── Navigation ───────────────────────────────────────────────── */
+function showScreen(id, title, showBack) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.getElementById('appTitle').textContent = title;
+  document.getElementById('btnBack').classList.toggle('visible', !!showBack);
+}
+
+function goBack() {
+  showScreen('screenHome', 'Quiz Naturalisation – Morges', false);
+  renderProgressGrid();
+}
+
+function showPlaceholder(title, icon, desc) {
+  document.getElementById('phTitle').textContent  = title;
+  document.getElementById('phIcon').textContent   = icon;
+  document.getElementById('phDesc').textContent   = desc;
+  showScreen('screenPlaceholder', title, true);
+}
+
+/* ── Init ─────────────────────────────────────────────────────── */
+renderProgressGrid();
+</script>
+
+</body>
+</html>
