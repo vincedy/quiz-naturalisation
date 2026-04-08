@@ -711,6 +711,104 @@ footer {
 .btn-export:hover { background: var(--primary); color: #fff; }
 @media (prefers-color-scheme: dark) { .btn-export:hover { color: #0d1b0f; } }
 
+/* ── 3-column button row ─────────────────────── */
+.btn-grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  margin-top: 10px;
+}
+.btn-grid-3 .btn-main {
+  min-height: 72px;
+  padding: 12px 6px;
+  font-size: .78rem;
+  gap: 5px;
+}
+.btn-grid-3 .btn-main-icon { font-size: 1.45rem; }
+
+/* ── Apprendre hub ───────────────────────────── */
+.learn-hub { display: grid; gap: 10px; margin-top: 4px; }
+.learn-card {
+  display: flex; align-items: center; gap: 14px;
+  background: var(--card-bg); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 16px;
+  box-shadow: var(--shadow); cursor: pointer; touch-action: manipulation;
+  transition: border-color .15s, background .15s;
+  width: 100%; text-align: left; font-family: inherit; color: var(--fg);
+}
+.learn-card:hover { border-color: var(--primary); background: var(--primary-lt); }
+.learn-card-icon { font-size: 1.6rem; flex-shrink: 0; }
+.learn-card-body { flex: 1; }
+.learn-card-title { font-size: 1rem; font-weight: 700; }
+.learn-card-sub { font-size: .76rem; color: var(--muted); margin-top: 2px; }
+.learn-card-chevron { font-size: 1rem; color: var(--muted); flex-shrink: 0; }
+
+/* ── Markdown content pages ──────────────────── */
+.md-content { font-size: .88rem; line-height: 1.65; }
+.md-content h2 {
+  font-size: .98rem; font-weight: 700; color: var(--primary);
+  margin: 22px 0 10px; padding-bottom: 4px;
+  border-bottom: 1px solid var(--border);
+}
+.md-content h2:first-child { margin-top: 0; }
+.md-content h3 {
+  font-size: .8rem; font-weight: 700; color: var(--muted);
+  text-transform: uppercase; letter-spacing: .06em; margin: 14px 0 6px;
+}
+.md-content ul { padding-left: 20px; margin: 0 0 10px; }
+.md-content li { margin-bottom: 5px; }
+.md-table-wrap { overflow-x: auto; margin: 0 0 14px; -webkit-overflow-scrolling: touch; }
+.md-content table {
+  border-collapse: collapse; font-size: .8rem; white-space: nowrap;
+}
+.md-content th {
+  background: var(--primary-lt); color: var(--primary);
+  font-weight: 700; padding: 7px 10px; text-align: left;
+  border: 1px solid var(--border);
+}
+.md-content td {
+  padding: 6px 10px; border: 1px solid var(--border);
+  vertical-align: top; white-space: normal;
+}
+.md-content tbody tr:nth-child(even) td { background: rgba(45,110,62,.04); }
+@media (prefers-color-scheme: dark) {
+  .md-content tbody tr:nth-child(even) td { background: rgba(255,255,255,.04); }
+}
+.md-highlight {
+  background: var(--primary-lt); border: 1px solid var(--border);
+  border-radius: 10px; padding: 10px 14px; margin: 8px 0 12px;
+  font-size: .82rem; line-height: 1.6;
+}
+.md-trap {
+  background: #fdf0f0; border: 1px solid #f5c0c0;
+  border-radius: 10px; padding: 10px 14px; margin: 8px 0 12px;
+  font-size: .82rem; line-height: 1.7;
+}
+@media (prefers-color-scheme: dark) {
+  .md-highlight { background: rgba(82,181,108,.08); border-color: var(--border); }
+  .md-trap { background: #2a0e0e; border-color: #5a1a1a; }
+}
+
+/* ── Flashcard config ────────────────────────── */
+.fc-cat-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+}
+.fc-cat-toggle {
+  display: flex; align-items: center; gap: 10px;
+  background: var(--card-bg); border: 2px solid var(--border);
+  border-radius: var(--radius); padding: 13px 14px;
+  cursor: pointer; touch-action: manipulation; transition: all .15s;
+  font-family: inherit; font-size: .88rem; font-weight: 600; color: var(--fg);
+  text-align: left;
+}
+.fc-cat-toggle.active {
+  border-color: var(--primary); background: var(--primary-lt); color: var(--primary);
+}
+@media (prefers-color-scheme: dark) { .fc-cat-toggle.active { color: var(--fg); } }
+.fc-cat-toggle-icon { font-size: 1.2rem; flex-shrink: 0; }
+.fc-toggle-check { margin-left: auto; font-size: 1rem; opacity: 0; }
+.fc-cat-toggle.active .fc-toggle-check { opacity: 1; }
+
 /* ── Flashcard screen ────────────────────────── */
 .fc-streak-badge {
   font-size: .74rem; font-weight: 700; color: var(--primary);
@@ -756,10 +854,12 @@ footer {
         <span class="btn-main-icon">📚</span>
         Entraînement
       </button>
-      <button class="btn-main" onclick="startFlashcards()">
+      <button class="btn-main" onclick="showFcConfig()">
         <span class="btn-main-icon">🃏</span>
         Flashcards
       </button>
+    </div>
+    <div class="btn-grid-3">
       <button class="btn-main" onclick="startExam()">
         <span class="btn-main-icon">📝</span>
         Examen blanc
@@ -767,6 +867,10 @@ footer {
       <button class="btn-main" onclick="showStats()">
         <span class="btn-main-icon">📊</span>
         Statistiques
+      </button>
+      <button class="btn-main" onclick="showLearn()">
+        <span class="btn-main-icon">🎓</span>
+        Apprendre
       </button>
     </div>
 
@@ -851,6 +955,58 @@ footer {
   <!-- ── STATISTIQUES ──────────────────────────────── -->
   <section class="screen" id="screenStats">
     <div id="statsContent"></div>
+  </section>
+
+  <!-- ── FLASHCARD CONFIG ──────────────────────────── -->
+  <section class="screen" id="screenFcConfig">
+    <div style="margin-bottom:20px">
+      <div class="stat-section-title">Catégories</div>
+      <div class="fc-cat-grid" id="fcCatGrid"></div>
+    </div>
+    <button class="btn-start" id="fcStartBtn" onclick="launchFlashcards()">Démarrer</button>
+  </section>
+
+  <!-- ── APPRENDRE HUB ─────────────────────────────── -->
+  <section class="screen" id="screenLearn">
+    <div class="learn-hub">
+      <button class="learn-card" onclick="showLearnPage('pol')">
+        <span class="learn-card-icon">⚖️</span>
+        <span class="learn-card-body">
+          <div class="learn-card-title">Politique</div>
+          <div class="learn-card-sub">Schéma 3 niveaux × 3 pouvoirs · Noms 2026</div>
+        </span>
+        <span class="learn-card-chevron">›</span>
+      </button>
+      <button class="learn-card" onclick="showLearnPage('his')">
+        <span class="learn-card-icon">🏛️</span>
+        <span class="learn-card-body">
+          <div class="learn-card-title">Histoire</div>
+          <div class="learn-card-sub">Timeline complète · Dates clés · Pièges</div>
+        </span>
+        <span class="learn-card-chevron">›</span>
+      </button>
+      <button class="learn-card" onclick="showLearnPage('num')">
+        <span class="learn-card-icon">🔢</span>
+        <span class="learn-card-body">
+          <div class="learn-card-title">Numéros</div>
+          <div class="learn-card-sub">Membres, mandats, signatures, habitants</div>
+        </span>
+        <span class="learn-card-chevron">›</span>
+      </button>
+      <button class="learn-card" onclick="showLearnPage('fai')">
+        <span class="learn-card-icon">💡</span>
+        <span class="learn-card-body">
+          <div class="learn-card-title">Faits divers</div>
+          <div class="learn-card-sub">Lieux, personnes, sport, culture, Morges</div>
+        </span>
+        <span class="learn-card-chevron">›</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ── APPRENDRE PAGE ─────────────────────────────── -->
+  <section class="screen" id="screenLearnPage">
+    <div id="learnPageContent"></div>
   </section>
 
 </main>
@@ -1320,6 +1476,8 @@ function goBack() {
     showHome();
   } else if (_backTarget.id === 'screenConfig') {
     showConfig();
+  } else if (_backTarget.id === 'screenLearn') {
+    showLearn();
   } else {
     showHome();
   }
@@ -2071,23 +2229,270 @@ function resetStats() {
 }
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   FLASHCARDS
+   APPRENDRE
    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-const FC_RECENT_MAX = 15;
+function showLearn() {
+  _activateScreen('screenLearn', 'Apprendre',
+    { id:'screenHome', title:'Quiz Naturalisation – Morges' });
+}
 
-let fc = {
-  session:    { total: 0, bycat: { geo:0, his:0, pol:0, soc:0 } },
-  recentIds:  [],
-  current:    null,
-  answered:   false,
-  selected:   null,
-  _autoTimer: null
-};
+function showLearnPage(key) {
+  const page = LEARN_PAGES[key];
+  document.getElementById('learnPageContent').innerHTML = page.html;
+  _activateScreen('screenLearnPage', page.title,
+    { id:'screenLearn', title:'Apprendre' });
+  window.scrollTo(0, 0);
+}
 
-function startFlashcards() {
-  fc.session    = { total: 0, bycat: { geo:0, his:0, pol:0, soc:0 } };
-  fc.recentIds  = [];
-  fc.answered   = false;
+const LEARN_PAGES = {
+
+pol: {
+  title: '⚖️ Politique',
+  html: `<div class="md-content">
+<h2>Structure : 3 niveaux × 3 pouvoirs</h2>
+<div class="md-table-wrap"><table>
+<thead><tr><th></th><th>Législatif</th><th>Exécutif</th><th>Judiciaire</th></tr></thead>
+<tbody>
+<tr><td><strong>Fédéral</strong></td>
+    <td>Assemblée fédérale<br>= Conseil national (200)<br>+ Conseil des États (46)</td>
+    <td>Conseil fédéral (7)<br>Élu par l'Assemblée fédérale<br>Président : 1 an</td>
+    <td>Tribunal fédéral<br>Lausanne<br>Élu par l'Assemblée fédérale</td></tr>
+<tr><td><strong>Canton VD</strong></td>
+    <td>Grand Conseil (150)</td>
+    <td>Conseil d'État (7)<br>Élu par le peuple — 5 ans<br>Château Saint-Maire</td>
+    <td>Tribunal cantonal</td></tr>
+<tr><td><strong>Morges</strong></td>
+    <td>Conseil communal (100)<br>10 séances/an</td>
+    <td>Municipalité (7)<br>Scrutin majoritaire 2 tours<br>Législature 5 ans</td>
+    <td>—</td></tr>
+</tbody></table></div>
+<h2>Rôles</h2>
+<ul>
+<li>Législatif = <strong>élabore</strong> les lois</li>
+<li>Exécutif = <strong>applique</strong> les lois et gouverne</li>
+<li>Judiciaire = s'assure que les lois soient bien appliquées</li>
+<li>Ministère public = conduit les investigations et défend la société devant les tribunaux</li>
+<li>Chancelier d'État = porte-parole du gouvernement VD</li>
+<li>Droits fondamentaux → <strong>Constitution</strong></li>
+<li>Référendum = consultation populaire sur une loi</li>
+<li>Initiative cantonale = <strong>12'000 signatures en 4 mois</strong></li>
+<li>Unités administratives VD = <strong>districts, arrondissements, communes</strong></li>
+<li>Vote dès <strong>18 ans</strong> — Étrangers : <strong>communal uniquement</strong></li>
+</ul>
+<h2>Noms 2026</h2>
+<div class="md-table-wrap"><table>
+<thead><tr><th>Rôle</th><th>Nom</th></tr></thead>
+<tbody>
+<tr><td>Président CF 2026</td><td><strong>Guy Parmelin</strong> (vaudois, UDC)</td></tr>
+<tr><td>Présidente Conseil d'État VD</td><td><strong>Christelle Luisier Brodard</strong></td></tr>
+<tr><td>Syndic Lausanne</td><td><strong>Grégoire Junod</strong></td></tr>
+<tr><td>Syndique Morges</td><td><strong>Mélanie Wyss-Pittet</strong></td></tr>
+<tr><td>Ancien syndic Morges → CE</td><td><strong>Nuria Gorrite</strong></td></tr>
+</tbody></table></div>
+<h2>Extra</h2>
+<ul>
+<li>Palais fédéral = siège du <strong>Parlement</strong></li>
+<li>La Suisse est gouvernée par un <strong>Conseil fédéral</strong></li>
+<li>PS = gauche</li>
+<li>DSAS = Département de la <strong>santé</strong> et de l'<strong>action sociale</strong></li>
+<li>ASIME = association scolaire intercommunale Morges</li>
+</ul>
+</div>`
+},
+
+his: {
+  title: '🏛️ Histoire',
+  html: `<div class="md-content">
+<h2>Chronologie complète</h2>
+<div class="md-table-wrap"><table>
+<thead><tr><th>Date</th><th>Événement</th></tr></thead>
+<tbody>
+<tr><td><strong>1207–1536</strong></td><td>Pays de Vaud sous la <strong>Savoie</strong></td></tr>
+<tr><td><strong>1286</strong></td><td>Fondation de Morges + construction du Château</td></tr>
+<tr><td><strong>1291</strong></td><td>Pacte fédéral — naissance de la Suisse<br>(Uri, Schwytz, Unterwald, serment au Grütli)</td></tr>
+<tr><td><strong>1506</strong></td><td>La Garde Suisse protège le <strong>Pape</strong> (jusqu'à aujourd'hui)</td></tr>
+<tr><td><strong>1515</strong></td><td>Construction de l'Hôtel de Ville de Morges</td></tr>
+<tr><td><strong>1536</strong></td><td>Berne conquiert le Pays de Vaud → Vaud devient <strong>protestant</strong><br>Réformateur : <strong>Pierre Viret</strong></td></tr>
+<tr><td><strong>1536–1798</strong></td><td>Morges dominée par les <strong>Bernois</strong> (un bailli au Château)</td></tr>
+<tr><td><strong>1798</strong></td><td><strong>Indépendance vaudoise</strong> — fêtée le <strong>24 janvier</strong></td></tr>
+<tr><td><strong>14 avril 1803</strong></td><td>Vaud entre dans la Confédération<br>(≠ l'indépendance ! Deux événements distincts)</td></tr>
+<tr><td><strong>1848</strong></td><td>Première Constitution fédérale<br>Précédée par la guerre du <strong>Sonderbund</strong></td></tr>
+<tr><td><strong>1964</strong></td><td>Exposition nationale à <strong>Lausanne</strong></td></tr>
+<tr><td><strong>1969</strong></td><td>Audrey Hepburn épouse Andrea Dotti à l'Hôtel de Ville de Morges</td></tr>
+<tr><td><strong>1971</strong></td><td>Droit de vote aux femmes au niveau fédéral<br>Premier canton : <strong>Vaud</strong></td></tr>
+<tr><td><strong>1993</strong></td><td>Grand-Rue de Morges devient piétonne</td></tr>
+<tr><td><strong>2002</strong></td><td>La Suisse entre à l'ONU</td></tr>
+<tr><td><strong>2003</strong></td><td>Constitution actuelle du Canton de Vaud</td></tr>
+</tbody></table></div>
+<h2>Les 5 dates-clé de Vaud</h2>
+<div class="md-highlight">
+<strong>1286</strong> → Morges naît<br>
+<strong>1536</strong> → Berne arrive (+ protestantisme)<br>
+<strong>1798</strong> → Vaud libre (fêté le 24 janvier)<br>
+<strong>1803</strong> → Vaud dans la Confédération (5 ans après !)<br>
+<strong>1848</strong> → Constitution fédérale
+</div>
+<h2>Pièges à éviter</h2>
+<div class="md-trap">
+⚠️ <strong>24 janvier</strong> = fête de l'indépendance ≠ <strong>14 avril</strong> = entrée dans la Confédération<br>
+⚠️ <strong>1798</strong> = indépendance, <strong>1803</strong> = confédération. Ne pas confondre.<br>
+⚠️ Constitution VD = <strong>2003</strong>, Constitution CH = <strong>1848</strong><br>
+⚠️ Vaud 1207–1536 = <strong>Savoie</strong> (pas France, pas Italie)<br>
+⚠️ Major Davel = patriote vaudois, mort <strong>décapité</strong> (pas au combat)<br>
+⚠️ Guillaume Tell = personnage <strong>légendaire</strong> (pas historique)<br>
+⚠️ Devise CH = "<strong>Un pour tous, tous pour un</strong>" ("L'union fait la force" = Belgique !)
+</div>
+</div>`
+},
+
+num: {
+  title: '🔢 Numéros',
+  html: `<div class="md-content">
+<h2>Membres par organe</h2>
+<div class="md-table-wrap"><table>
+<thead><tr><th>Organe</th><th>Membres</th><th>Mandat</th><th>Élu par</th></tr></thead>
+<tbody>
+<tr><td><strong>Conseil fédéral</strong></td><td><strong>7</strong></td><td>Président <strong>1 an</strong></td><td>Assemblée fédérale</td></tr>
+<tr><td>Conseil national</td><td><strong>200</strong></td><td>—</td><td>Peuple</td></tr>
+<tr><td>Conseil des États</td><td><strong>46</strong></td><td>—</td><td>Varie par canton</td></tr>
+<tr><td>Grand Conseil VD</td><td><strong>150</strong></td><td>—</td><td>Peuple</td></tr>
+<tr><td><strong>Conseil d'État VD</strong></td><td><strong>7</strong></td><td><strong>5 ans</strong></td><td>Peuple</td></tr>
+<tr><td><strong>Municipalité Morges</strong></td><td><strong>7</strong></td><td><strong>5 ans</strong></td><td>Peuple (scrutin maj. 2 tours)</td></tr>
+<tr><td>Conseil communal Morges</td><td><strong>100</strong></td><td>—</td><td>Peuple</td></tr>
+</tbody></table></div>
+<h2>Autres chiffres</h2>
+<div class="md-table-wrap"><table>
+<thead><tr><th>Quoi</th><th>Chiffre</th></tr></thead>
+<tbody>
+<tr><td>Séances Conseil communal Morges</td><td><strong>10</strong> par année</td></tr>
+<tr><td>Signatures initiative cantonale</td><td><strong>12'000</strong> en <strong>4 mois</strong></td></tr>
+<tr><td>Âge pour voter</td><td><strong>18 ans</strong></td></tr>
+<tr><td>Cantons en Suisse</td><td><strong>26</strong></td></tr>
+<tr><td>Habitants Suisse</td><td>Environ <strong>9 millions</strong></td></tr>
+<tr><td>Habitants Canton de Vaud</td><td>Environ <strong>850'000</strong></td></tr>
+<tr><td>Résidents étrangers VD</td><td>Environ <strong>30 %</strong></td></tr>
+<tr><td>Surface Morges</td><td><strong>3,83 km²</strong></td></tr>
+<tr><td>Altitude la plus basse Morges</td><td><strong>374 mètres</strong></td></tr>
+<tr><td>Parcs au bord du lac Morges</td><td><strong>2</strong> (Vertou + Indépendance)</td></tr>
+</tbody></table></div>
+<h2>Astuces mnémotechniques</h2>
+<div class="md-highlight">
+<strong>Tous les exécutifs = 7</strong><br>
+Conseil fédéral = 7 · Conseil d'État VD = 7 · Municipalité Morges = 7<br><br>
+<strong>Président CF vs Conseil d'État :</strong><br>
+Président CF = <strong>1 an</strong> (fédéral) · Conseil d'État = <strong>5 ans</strong> (cantonal)<br><br>
+<strong>Morges :</strong> Exécutif (Municipalité) = <strong>7</strong> · Législatif (Conseil communal) = <strong>100</strong> · Séances = <strong>10</strong>/an
+</div>
+</div>`
+},
+
+fai: {
+  title: '💡 Faits divers',
+  html: `<div class="md-content">
+<h2>Lieux : "Où se trouve X ?"</h2>
+<div class="md-table-wrap"><table>
+<thead><tr><th>Quoi</th><th>Où</th></tr></thead>
+<tbody>
+<tr><td>Palais fédéral</td><td><strong>Berne</strong></td></tr>
+<tr><td>Tribunal fédéral</td><td><strong>Lausanne</strong></td></tr>
+<tr><td>Siège Conseil d'État VD</td><td><strong>Château Saint-Maire</strong></td></tr>
+<tr><td>Statua Guillaume Tell</td><td><strong>Altdorf</strong> (chef-lieu d'Uri)</td></tr>
+<tr><td>Musée de l'alimentation</td><td><strong>Vevey</strong></td></tr>
+<tr><td>Musée Chaplin</td><td><strong>Corsier-sur-Vevey</strong></td></tr>
+<tr><td>Fête des Vignerons</td><td><strong>Vevey</strong></td></tr>
+<tr><td>Musée Olympique + CIO</td><td><strong>Lausanne</strong></td></tr>
+<tr><td>Fosse aux ours</td><td><strong>Berne</strong></td></tr>
+<tr><td>Plus grand carnaval</td><td><strong>Bâle</strong></td></tr>
+<tr><td>Paléo festival</td><td><strong>Nyon</strong></td></tr>
+<tr><td>Festival Jazz (Claude Nobs)</td><td><strong>Montreux</strong></td></tr>
+<tr><td>Athletissima</td><td><strong>Lausanne</strong></td></tr>
+<tr><td>Métro vaudois</td><td><strong>Lausanne</strong></td></tr>
+</tbody></table></div>
+<div class="md-highlight">💡 <strong>Vevey</strong> = alimentation + fêtes + Chaplin (Corsier)</div>
+<h2>Personnes</h2>
+<div class="md-table-wrap"><table>
+<thead><tr><th>Qui</th><th>Quoi</th></tr></thead>
+<tbody>
+<tr><td><strong>Mme de Staël</strong></td><td>Château de Coppet — femme politique valdo-genevoise</td></tr>
+<tr><td><strong>Major Davel</strong></td><td>Patriote vaudois — mort <strong>décapité</strong></td></tr>
+<tr><td><strong>Guillaume Tell</strong></td><td>Héros <strong>légendaire</strong> — arbalète + pomme — statua à Altdorf</td></tr>
+<tr><td><strong>Henri Dunant</strong></td><td>Fondateur de la Croix-Rouge</td></tr>
+<tr><td><strong>Stan Wawrinka</strong></td><td>Tennisman vaudois — né à Lausanne en <strong>1985</strong></td></tr>
+<tr><td><strong>Henri Guisan</strong></td><td>Général suisse WW2 — <strong>vaudois</strong></td></tr>
+<tr><td><strong>Pierre Viret</strong></td><td>Réformateur vaudois (pas Calvin, pas Luther)</td></tr>
+<tr><td><strong>Ignace Paderewski</strong></td><td>Pianiste polonais lié à Morges</td></tr>
+</tbody></table></div>
+<h2>Sport &amp; culture</h2>
+<div class="md-table-wrap"><table>
+<thead><tr><th>Question</th><th>Réponse</th></tr></thead>
+<tbody>
+<tr><td>Sport national suisse</td><td><strong>La lutte</strong></td></tr>
+<tr><td>Plat typique VD</td><td><strong>Le papet</strong> (pas raclette, pas rösti)</td></tr>
+<tr><td>Rösti — ingrédient principal</td><td><strong>Pomme de terre</strong></td></tr>
+<tr><td>Ballet célèbre Lausanne</td><td><strong>Ballet Béjart</strong></td></tr>
+<tr><td>Bâtiment inauguré 14 avril 2017</td><td><strong>Parlement vaudois</strong></td></tr>
+<tr><td>Transport public VD</td><td><strong>mobilis</strong></td></tr>
+<tr><td>Château Saint-Maire rouvert</td><td><strong>14 avril 2018</strong></td></tr>
+<tr><td>École polytechnique Lausanne</td><td><strong>EPFL</strong> (pas UNIL)</td></tr>
+<tr><td>Collège secondaire Morges</td><td><strong>Collège de Beausobre</strong></td></tr>
+<tr><td>Club football Morges</td><td><strong>Forward-Morges</strong></td></tr>
+<tr><td>Festival pas à Morges</td><td><strong>Festival de la Cité</strong> (= Lausanne)</td></tr>
+<tr><td>Garde Suisse protège depuis 1506</td><td><strong>Le Pape</strong></td></tr>
+</tbody></table></div>
+<h2>Morges — fiche rapide</h2>
+<div class="md-table-wrap"><table>
+<thead><tr><th>Quoi</th><th>Réponse</th></tr></thead>
+<tbody>
+<tr><td>Communes limitrophes</td><td>Préverenges, Lonay, Echichens, Chigny, Tolochenaz</td></tr>
+<tr><td>Deux rivières</td><td><strong>La Morges</strong> et <strong>le Bief</strong></td></tr>
+<tr><td>Drapeau Morges</td><td>Les deux rivières (Morges + Bief)</td></tr>
+<tr><td>Parcs au bord du lac</td><td><strong>Vertou</strong> + <strong>Indépendance</strong></td></tr>
+<tr><td>Jumelée avec</td><td><strong>Vertou</strong> (ville française)</td></tr>
+<tr><td>Jours de marché</td><td>Mercredis et samedis matin</td></tr>
+<tr><td>Marché de Noël</td><td>Parc du Château</td></tr>
+<tr><td>Musée</td><td><strong>Alexis Forel</strong></td></tr>
+<tr><td>Théâtres</td><td>Beausobre + Trois P'tits Tours</td></tr>
+<tr><td>Fondation + Château</td><td><strong>1286</strong></td></tr>
+<tr><td>Dominée 1536–1798 par</td><td>Les Bernois (bailli au Château)</td></tr>
+<tr><td>Hôtel de Ville construit</td><td><strong>1515</strong></td></tr>
+<tr><td>Hepburn + Dotti</td><td><strong>1969</strong></td></tr>
+<tr><td>Grand-Rue piétonne</td><td><strong>1993</strong></td></tr>
+</tbody></table></div>
+</div>`
+}
+
+}; // end LEARN_PAGES
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   FLASHCARD CONFIG
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+function showFcConfig() {
+  _activateScreen('screenFcConfig', 'Flashcards',
+    { id:'screenHome', title:'Quiz Naturalisation – Morges' });
+  renderFcCatGrid();
+}
+
+function renderFcCatGrid() {
+  document.getElementById('fcCatGrid').innerHTML = Object.entries(CATS).map(([k, m]) => `
+    <button class="fc-cat-toggle${fc.cats[k] ? ' active' : ''}" onclick="toggleFcCat('${k}')">
+      <span class="fc-cat-toggle-icon">${m.icon}</span>
+      <span>${m.label}</span>
+      <span class="fc-toggle-check">✓</span>
+    </button>`).join('');
+  const any = Object.values(fc.cats).some(Boolean);
+  document.getElementById('fcStartBtn').disabled = !any;
+}
+
+function toggleFcCat(cat) {
+  fc.cats[cat] = !fc.cats[cat];
+  renderFcCatGrid();
+}
+
+function launchFlashcards() {
+  fc.session   = { total: 0, bycat: { geo:0, his:0, pol:0, soc:0 } };
+  fc.recentIds = [];
+  fc.answered  = false;
+  fc.selected  = null;
   if (fc._autoTimer) { clearTimeout(fc._autoTimer); fc._autoTimer = null; }
 
   _activateScreen('screenFlashcard', 'Flashcards',
@@ -2097,6 +2502,20 @@ function startFlashcards() {
   updateFcSessionBar();
   nextFlashcard();
 }
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   FLASHCARDS
+const FC_RECENT_MAX = 15;
+
+let fc = {
+  session:    { total: 0, bycat: { geo:0, his:0, pol:0, soc:0 } },
+  recentIds:  [],
+  current:    null,
+  answered:   false,
+  selected:   null,
+  _autoTimer: null,
+  cats:       { geo:true, his:true, pol:true, soc:true }
+};
 
 /* ── Pick next question ────────────────────────
    Score = streak * 3  +  catApprisesPct * 5  +  jitter
@@ -2113,9 +2532,10 @@ function pickFcQuestion() {
     catPct[cat] = qs.filter(q => { const s = stats[q.id]; return s && s.streak >= 3; }).length / qs.length;
   }
 
-  // Exclude recent; if pool is empty (very small bank), reset recent list
-  let pool = QUESTIONS.filter(q => !fc.recentIds.includes(q.id));
-  if (pool.length === 0) { fc.recentIds = []; pool = [...QUESTIONS]; }
+  // Exclude recent; filter by active categories
+  const active = QUESTIONS.filter(q => fc.cats[q.cat]);
+  let pool = active.filter(q => !fc.recentIds.includes(q.id));
+  if (pool.length === 0) { fc.recentIds = []; pool = active.length ? active : [...QUESTIONS]; }
 
   // Score each candidate
   const scored = pool.map(q => {
