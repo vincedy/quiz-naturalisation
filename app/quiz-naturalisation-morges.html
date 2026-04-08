@@ -404,6 +404,9 @@ footer {
 }
 .quiz-opt:hover:not(:disabled) { border-color: var(--primary); background: var(--primary-lt); }
 .quiz-opt:disabled { cursor: default; }
+.quiz-opt.is-selected { border-color: var(--primary); background: var(--primary-lt); color: var(--primary); }
+.quiz-opt.is-selected .opt-letter { background: var(--primary); color: #fff; }
+@media (prefers-color-scheme: dark) { .quiz-opt.is-selected .opt-letter { color: #0d1b0f; } }
 .quiz-opt.state-correct {
   border-color: #22a349; background: #e6f7ed; color: #1a5c30;
 }
@@ -1382,6 +1385,7 @@ let quiz = {
   questions: [],       // [{...q, shuffledOpts, correctIdx}]
   current:   0,
   answered:  false,
+  selected:  null,     // highlighted option before confirmation
   errors:    [],       // ids des questions ratées
   results:   {}        // { id: boolean }
 };
@@ -1458,47 +1462,46 @@ function renderQuestion() {
     </div>
     <div class="quiz-q-text">${q.q}</div>
     <div class="quiz-options">${optsHtml}</div>
-    <div class="quiz-feedback hidden" id="quizFeedback"></div>
+    <button class="btn-next hidden" id="btnConfirm" onclick="confirmOpt()">Confirmer</button>
     <button class="btn-next hidden" id="btnNext" onclick="nextQuestion()">
       ${idx + 1 < total ? 'Question suivante →' : 'Voir les résultats →'}
     </button>`;
 
   quiz.answered = false;
+  quiz.selected = null;
 }
 
-/* ── Sélection d'une option ───────────────────── */
+/* ── Sélection (surbrillance) ─────────────────── */
 function selectOpt(i) {
   if (quiz.answered) return;
+  quiz.selected = i;
+  document.querySelectorAll('.quiz-opt').forEach((b, idx) => {
+    b.classList.toggle('is-selected', idx === i);
+  });
+  document.getElementById('btnConfirm').classList.remove('hidden');
+}
+
+/* ── Confirmation ─────────────────────────────── */
+function confirmOpt() {
+  if (quiz.answered || quiz.selected === null) return;
   quiz.answered = true;
 
-  const q       = quiz.questions[quiz.current];
+  const i = quiz.selected;
+  const q = quiz.questions[quiz.current];
   const correct = (i === q.correctIdx);
 
   recordAnswer(q.id, correct);
   quiz.results[q.id] = correct;
   if (!correct) quiz.errors.push(q.id);
 
-  // Désactiver tous les boutons
-  document.querySelectorAll('.quiz-opt').forEach(b => { b.disabled = true; });
-
-  // Colorer
+  document.querySelectorAll('.quiz-opt').forEach(b => {
+    b.classList.remove('is-selected');
+    b.disabled = true;
+  });
   document.getElementById(`qopt-${q.correctIdx}`).classList.add('state-correct');
   if (!correct) document.getElementById(`qopt-${i}`).classList.add('state-wrong');
 
-  // Feedback
-  const fb = document.getElementById('quizFeedback');
-  fb.classList.remove('hidden');
-  if (correct) {
-    fb.className = 'quiz-feedback state-correct';
-    fb.innerHTML = `<span class="fb-icon">✓</span>
-      <span class="fb-body">Bonne réponse !</span>`;
-  } else {
-    fb.className = 'quiz-feedback state-wrong';
-    fb.innerHTML = `<span class="fb-icon">✗</span>
-      <span class="fb-body">Mauvaise réponse — La bonne réponse est&nbsp;:
-        <strong>${q.shuffledOpts[q.correctIdx]}</strong></span>`;
-  }
-
+  document.getElementById('btnConfirm').classList.add('hidden');
   document.getElementById('btnNext').classList.remove('hidden');
 }
 
@@ -1824,6 +1827,7 @@ let fc = {
   recentIds:  [],
   current:    null,
   answered:   false,
+  selected:   null,
   _autoTimer: null
 };
 
@@ -1874,6 +1878,7 @@ function pickFcQuestion() {
 function nextFlashcard() {
   if (fc._autoTimer) { clearTimeout(fc._autoTimer); fc._autoTimer = null; }
   fc.answered = false;
+  fc.selected = null;
 
   const q = pickFcQuestion();
   fc.current = prepareQ(q);
@@ -1906,47 +1911,44 @@ function renderFlashcard() {
     </div>
     <div class="quiz-q-text">${q.q}</div>
     <div class="quiz-options">${optsHtml}</div>
-    <div class="quiz-feedback hidden" id="fcFeedback"></div>
+    <button class="btn-next hidden" id="fcConfirm" onclick="confirmFcOpt()">Confirmer</button>
     <button class="btn-next hidden" id="fcNext" onclick="nextFlashcard()">Suivante →</button>`;
 }
 
+/* ── Sélection (surbrillance) ─────────────────── */
 function selectFcOpt(i) {
   if (fc.answered) return;
+  fc.selected = i;
+  document.querySelectorAll('.quiz-opt').forEach((b, idx) => {
+    b.classList.toggle('is-selected', idx === i);
+  });
+  document.getElementById('fcConfirm').classList.remove('hidden');
+}
+
+/* ── Confirmation ─────────────────────────────── */
+function confirmFcOpt() {
+  if (fc.answered || fc.selected === null) return;
   fc.answered = true;
 
+  const i       = fc.selected;
   const q       = fc.current;
   const correct = (i === q.correctIdx);
 
-  // Update stats
   recordAnswer(q.id, correct);
-
-  // Session counter
   fc.session.total++;
   fc.session.bycat[q.cat]++;
 
-  // Disable + colour options
-  document.querySelectorAll('.quiz-opt').forEach(b => { b.disabled = true; });
+  document.querySelectorAll('.quiz-opt').forEach(b => {
+    b.classList.remove('is-selected');
+    b.disabled = true;
+  });
   document.getElementById(`fcopt-${q.correctIdx}`).classList.add('state-correct');
   if (!correct) document.getElementById(`fcopt-${i}`).classList.add('state-wrong');
 
-  // Feedback
-  const fb = document.getElementById('fcFeedback');
-  fb.classList.remove('hidden');
-  if (correct) {
-    fb.className = 'quiz-feedback state-correct';
-    fb.innerHTML = `<span class="fb-icon">✓</span>
-      <span class="fb-body">Bonne réponse !</span>`;
-  } else {
-    fb.className = 'quiz-feedback state-wrong';
-    fb.innerHTML = `<span class="fb-icon">✗</span>
-      <span class="fb-body">Mauvaise réponse — La bonne réponse est&nbsp;:
-        <strong>${q.shuffledOpts[q.correctIdx]}</strong></span>`;
-  }
-
+  document.getElementById('fcConfirm').classList.add('hidden');
   document.getElementById('fcNext').classList.remove('hidden');
   updateFcSessionBar();
 
-  // Auto-advance after 1.5 s; button cancels the timer
   fc._autoTimer = setTimeout(nextFlashcard, 1500);
 }
 
