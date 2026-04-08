@@ -5,10 +5,10 @@
     "niveau": "Suisse",
     "question": "Quel est le plus grand canton suisse (superficie) ?",
     "bonne_reponse": "Grisons",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:48:46.363Z"
   },
   {
     "id": 2,
@@ -16,10 +16,10 @@
     "niveau": "Suisse",
     "question": "Combien y a-t-il de cantons en Suisse ?",
     "bonne_reponse": "26",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T10:37:11.709Z"
   },
   {
     "id": 3,
@@ -27,10 +27,10 @@
     "niveau": "Suisse",
     "question": "Quel est le plus grand lac entièrement suisse ?",
     "bonne_reponse": "Le Lac de Neuchâtel",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:48:36.826Z"
   },
   {
     "id": 4,
@@ -38,10 +38,10 @@
     "niveau": "Suisse",
     "question": "Quel canton est officiellement bilingue (deux langues officielles) ?",
     "bonne_reponse": "Fribourg",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:04:45.561Z"
   },
   {
     "id": 5,
@@ -50,9 +50,9 @@
     "question": "La prairie du Grütli se trouve au bord du …",
     "bonne_reponse": "Lac des Quatre-Cantons",
     "attempts": 1,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": "2026-04-08T10:22:13.178Z"
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T12:15:00.723Z"
   },
   {
     "id": 6,
@@ -60,10 +60,10 @@
     "niveau": "Suisse",
     "question": "Combien y a-t-il d'habitants en Suisse ?",
     "bonne_reponse": "Environ 9 millions",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 2,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:57:16.020Z"
   },
   {
     "id": 7,
@@ -71,10 +71,10 @@
     "niveau": "Suisse",
     "question": "Le Palais fédéral se trouve à …",
     "bonne_reponse": "Berne",
-    "attempts": 0,
+    "attempts": 1,
     "correctCount": 0,
     "streak": 0,
-    "lastSeen": null
+    "lastSeen": "2026-04-08T12:15:28.544Z"
   },
   {
     "id": 8,
@@ -82,10 +82,10 @@
     "niveau": "Suisse",
     "question": "On parle le romanche dans le canton …",
     "bonne_reponse": "des Grisons",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:04:51.268Z"
   },
   {
     "id": 9,
@@ -93,10 +93,10 @@
     "niveau": "Suisse",
     "question": "Quel pays n'a pas de frontière avec la Suisse ?",
     "bonne_reponse": "Belgique",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:54:34.301Z"
   },
   {
     "id": 10,
@@ -104,10 +104,10 @@
     "niveau": "Suisse",
     "question": "Le lac Léman est situé en Suisse et en …",
     "bonne_reponse": "France",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:49:35.015Z"
   },
   {
     "id": 11,
@@ -115,10 +115,10 @@
     "niveau": "Suisse",
     "question": "Quelle est la plus grande ville de Suisse ?",
     "bonne_reponse": "Zurich",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:51:55.397Z"
   },
   {
     "id": 12,
@@ -126,10 +126,10 @@
     "niveau": "Suisse",
     "question": "Le plus haut sommet suisse est …",
     "bonne_reponse": "La Pointe Dufour",
-    "attempts": 0,
+    "attempts": 1,
     "correctCount": 0,
     "streak": 0,
-    "lastSeen": null
+    "lastSeen": "2026-04-08T12:11:03.349Z"
   },
   {
     "id": 13,
@@ -140,7 +140,7 @@
     "attempts": 1,
     "correctCount": 1,
     "streak": 1,
-    "lastSeen": "2026-04-08T10:22:11.886Z"
+    "lastSeen": "2026-04-08T11:48:11.834Z"
   },
   {
     "id": 14,
@@ -148,10 +148,10 @@
     "niveau": "Suisse",
     "question": "Le canton le plus au nord de la Suisse est …",
     "bonne_reponse": "Schaffhouse",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 2,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:59:51.452Z"
   },
   {
     "id": 15,
@@ -159,10 +159,10 @@
     "niveau": "Suisse",
     "question": "Une de ces réponses n'indique pas une région naturelle de la Suisse. Laquelle ?",
     "bonne_reponse": "Piémont",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:49:58.602Z"
   },
   {
     "id": 16,
@@ -170,10 +170,10 @@
     "niveau": "Suisse",
     "question": "Quelle est la capitale de la Suisse ?",
     "bonne_reponse": "Berne",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:06:54.861Z"
   },
   {
     "id": 17,
@@ -181,10 +181,10 @@
     "niveau": "Canton de Vaud",
     "question": "De quelle couleur est le drapeau vaudois ?",
     "bonne_reponse": "Vert et blanc",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:07:20.114Z"
   },
   {
     "id": 18,
@@ -192,10 +192,10 @@
     "niveau": "Canton de Vaud",
     "question": "Quels mots figurent sur le drapeau du Canton de Vaud ?",
     "bonne_reponse": "Liberté et patrie",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T10:36:20.147Z"
   },
   {
     "id": 19,
@@ -203,10 +203,10 @@
     "niveau": "Canton de Vaud",
     "question": "Au bord de quel lac se trouve la ville d'Yverdon-les-Bains ?",
     "bonne_reponse": "Lac de Neuchâtel",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T12:12:57.460Z"
   },
   {
     "id": 20,
@@ -214,10 +214,10 @@
     "niveau": "Canton de Vaud",
     "question": "Quel est le chef-lieu du canton de Vaud ?",
     "bonne_reponse": "Lausanne",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:56:50.353Z"
   },
   {
     "id": 21,
@@ -225,10 +225,10 @@
     "niveau": "Canton de Vaud",
     "question": "Lausanne se trouve au bord du …",
     "bonne_reponse": "Lac Léman",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:07:33.013Z"
   },
   {
     "id": 22,
@@ -236,10 +236,10 @@
     "niveau": "Canton de Vaud",
     "question": "Quel canton n'a pas de frontière commune avec le canton de Vaud ?",
     "bonne_reponse": "Jura",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:07:27.945Z"
   },
   {
     "id": 23,
@@ -247,10 +247,10 @@
     "niveau": "Canton de Vaud",
     "question": "Quel fleuve traverse le lac Léman ?",
     "bonne_reponse": "Le Rhône",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:50:57.365Z"
   },
   {
     "id": 24,
@@ -258,10 +258,10 @@
     "niveau": "Canton de Vaud",
     "question": "Le plus haut sommet vaudois est …",
     "bonne_reponse": "Le sommet des Diablerets",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:53:01.932Z"
   },
   {
     "id": 25,
@@ -269,10 +269,10 @@
     "niveau": "Canton de Vaud",
     "question": "Quel château célèbre se trouve au bord du lac Léman ?",
     "bonne_reponse": "Le château de Chillon",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T10:35:34.235Z"
   },
   {
     "id": 26,
@@ -280,10 +280,10 @@
     "niveau": "Canton de Vaud",
     "question": "Quelle région a été classée au patrimoine mondial de l'UNESCO en juin 2007 ?",
     "bonne_reponse": "Lavaux",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T10:35:55.326Z"
   },
   {
     "id": 27,
@@ -291,10 +291,10 @@
     "niveau": "Canton de Vaud",
     "question": "Combien de personnes habitent le canton de Vaud ?",
     "bonne_reponse": "Environ 850'000",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 2,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:57:39.481Z"
   },
   {
     "id": 28,
@@ -302,10 +302,10 @@
     "niveau": "Canton de Vaud",
     "question": "Quelle rivière traverse le canton de Vaud ?",
     "bonne_reponse": "La Venoge",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:07:12.048Z"
   },
   {
     "id": 29,
@@ -313,10 +313,10 @@
     "niveau": "Canton de Vaud",
     "question": "Le chef-lieu du district Riviera-Pays d'Enhaut est …",
     "bonne_reponse": "Vevey",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:49:47.241Z"
   },
   {
     "id": 30,
@@ -324,10 +324,10 @@
     "niveau": "Canton de Vaud",
     "question": "Sur la population du canton de Vaud, les résidents étrangers représentent …",
     "bonne_reponse": "environ 30 %",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:52:08.062Z"
   },
   {
     "id": 31,
@@ -335,10 +335,10 @@
     "niveau": "Canton de Vaud",
     "question": "Un de ces monuments ne se trouve pas en ville de Lausanne. Lequel ?",
     "bonne_reponse": "Statue de Charlie Chaplin",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:07:07.105Z"
   },
   {
     "id": 32,
@@ -346,10 +346,10 @@
     "niveau": "Canton de Vaud",
     "question": "Quel est le terminus du LEB (chemin de fer) ?",
     "bonne_reponse": "Bercher",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T12:12:21.771Z"
   },
   {
     "id": 33,
@@ -357,10 +357,10 @@
     "niveau": "Morges",
     "question": "Quelles sont les communes qui touchent la commune de Morges ?",
     "bonne_reponse": "Préverenges, Lonay, Echichens, Chigny et Tolochenaz",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 2,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:05:47.702Z"
   },
   {
     "id": 34,
@@ -368,10 +368,10 @@
     "niveau": "Morges",
     "question": "Quelles sont les deux rivières qui touchent le territoire morgien ?",
     "bonne_reponse": "La Morges et le Bief",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:58:23.546Z"
   },
   {
     "id": 35,
@@ -379,10 +379,10 @@
     "niveau": "Morges",
     "question": "Combien de grands parcs publics compte la Ville de Morges au bord du lac ?",
     "bonne_reponse": "2",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T10:37:08.456Z"
   },
   {
     "id": 36,
@@ -390,10 +390,10 @@
     "niveau": "Morges",
     "question": "Quels sont les noms des parcs publics de la Ville de Morges au bord du lac ?",
     "bonne_reponse": "Parc de Vertou et Parc de l'Indépendance",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:06:51.559Z"
   },
   {
     "id": 37,
@@ -401,10 +401,10 @@
     "niveau": "Morges",
     "question": "Savez-vous ce qui est représenté sur le drapeau de la Ville de Morges ?",
     "bonne_reponse": "Les deux rivières : La Morges et le Bief",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:55:25.824Z"
   },
   {
     "id": 38,
@@ -412,10 +412,10 @@
     "niveau": "Morges",
     "question": "Quelle est l'altitude la plus basse ?",
     "bonne_reponse": "374 mètres",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T12:12:47.599Z"
   },
   {
     "id": 39,
@@ -423,10 +423,10 @@
     "niveau": "Morges",
     "question": "Quelle est la surface de la Ville ?",
     "bonne_reponse": "3,83 km²",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:48:19.075Z"
   },
   {
     "id": 40,
@@ -434,10 +434,10 @@
     "niveau": "Morges",
     "question": "Qu'est-ce qui délimite le territoire communal au Nord ?",
     "bonne_reponse": "Le vignoble",
-    "attempts": 0,
+    "attempts": 1,
     "correctCount": 0,
     "streak": 0,
-    "lastSeen": null
+    "lastSeen": "2026-04-08T11:54:05.804Z"
   },
   {
     "id": 41,
@@ -445,10 +445,10 @@
     "niveau": "Suisse",
     "question": "Le plus ancien pacte de la Confédération a été signé en 1291 par les cantons de …",
     "bonne_reponse": "Uri, Schwytz, Unterwald",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:49:15.798Z"
   },
   {
     "id": 42,
@@ -456,10 +456,10 @@
     "niveau": "Suisse",
     "question": "Quelle est la date souvent considérée comme celle de la naissance de la Suisse ?",
     "bonne_reponse": "1291",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:06:23.162Z"
   },
   {
     "id": 43,
@@ -467,10 +467,10 @@
     "niveau": "Suisse",
     "question": "Les premiers Confédérés ont prêté serment …",
     "bonne_reponse": "Sur la plaine du Grütli",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:04:28.568Z"
   },
   {
     "id": 44,
@@ -478,10 +478,10 @@
     "niveau": "Suisse",
     "question": "Guillaume Tell était …",
     "bonne_reponse": "Un personnage légendaire qui s'est battu contre des seigneurs étrangers",
-    "attempts": 0,
+    "attempts": 1,
     "correctCount": 0,
     "streak": 0,
-    "lastSeen": null
+    "lastSeen": "2026-04-08T11:04:39.187Z"
   },
   {
     "id": 45,
@@ -489,10 +489,10 @@
     "niveau": "Suisse",
     "question": "Le drapeau suisse s'inspire du drapeau d'un canton. Lequel ?",
     "bonne_reponse": "Schwytz",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T12:10:52.507Z"
   },
   {
     "id": 46,
@@ -500,10 +500,10 @@
     "niveau": "Suisse",
     "question": "Quelle guerre civile entre cantons conservateurs et cantons progressistes a favorisé la création de la Suisse moderne ?",
     "bonne_reponse": "La guerre du Sonderbund",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 2,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T12:00:40.646Z"
   },
   {
     "id": 47,
@@ -511,10 +511,10 @@
     "niveau": "Suisse",
     "question": "La première Constitution fédérale date de …",
     "bonne_reponse": "1848",
-    "attempts": 0,
+    "attempts": 1,
     "correctCount": 0,
     "streak": 0,
-    "lastSeen": null
+    "lastSeen": "2026-04-08T11:58:32.992Z"
   },
   {
     "id": 48,
@@ -522,10 +522,10 @@
     "niveau": "Suisse",
     "question": "Quelle est la devise de la Confédération ?",
     "bonne_reponse": "L'union fait la force",
-    "attempts": 0,
+    "attempts": 1,
     "correctCount": 0,
     "streak": 0,
-    "lastSeen": null
+    "lastSeen": "2026-04-08T11:06:35.672Z"
   },
   {
     "id": 49,
@@ -533,10 +533,10 @@
     "niveau": "Suisse",
     "question": "Qu'est-ce qu'on fête le 1er août ?",
     "bonne_reponse": "Le pacte fédéral de Uri, Schwytz et Unterwald",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:51:32.411Z"
   },
   {
     "id": 50,
@@ -544,10 +544,10 @@
     "niveau": "Suisse",
     "question": "La Landsgemeinde est …",
     "bonne_reponse": "Une assemblée pendant laquelle on vote à main levée",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:06:01.349Z"
   },
   {
     "id": 51,
@@ -555,10 +555,10 @@
     "niveau": "Suisse",
     "question": "Qui a fondé la Croix-Rouge ?",
     "bonne_reponse": "Henri Dunant",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T12:14:12.508Z"
   },
   {
     "id": 52,
@@ -566,10 +566,10 @@
     "niveau": "Suisse",
     "question": "Pendant les deux guerres mondiales, la Suisse …",
     "bonne_reponse": "Est restée neutre",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:49:30.971Z"
   },
   {
     "id": 53,
@@ -577,10 +577,10 @@
     "niveau": "Suisse",
     "question": "Les femmes suisses ont obtenu le droit de vote au niveau fédéral dans …",
     "bonne_reponse": "Les années 70",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 2,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T12:00:47.137Z"
   },
   {
     "id": 54,
@@ -588,10 +588,10 @@
     "niveau": "Suisse",
     "question": "Quel canton est devenu le 26ème canton suisse ?",
     "bonne_reponse": "Jura",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:56:59.089Z"
   },
   {
     "id": 55,
@@ -599,10 +599,10 @@
     "niveau": "Suisse",
     "question": "La Suisse est entrée à l'ONU en …",
     "bonne_reponse": "2002",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 2,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:59:13.437Z"
   },
   {
     "id": 56,
@@ -610,10 +610,10 @@
     "niveau": "Suisse",
     "question": "La Suisse n'est pas dans l'UE (Union Européenne), mais elle a passé avec l'UE des …",
     "bonne_reponse": "Accords bilatéraux",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T12:13:48.838Z"
   },
   {
     "id": 57,
@@ -621,10 +621,10 @@
     "niveau": "Canton de Vaud",
     "question": "Le nom VAUD signifie …",
     "bonne_reponse": "pays des forêts",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 2,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:59:20.951Z"
   },
   {
     "id": 58,
@@ -632,10 +632,10 @@
     "niveau": "Canton de Vaud",
     "question": "De 1207 à 1536, le Pays de Vaud faisait partie …",
     "bonne_reponse": "de la Savoie",
-    "attempts": 0,
+    "attempts": 1,
     "correctCount": 0,
     "streak": 0,
-    "lastSeen": null
+    "lastSeen": "2026-04-08T11:57:53.235Z"
   },
   {
     "id": 59,
@@ -643,10 +643,10 @@
     "niveau": "Canton de Vaud",
     "question": "Au XVIe siècle, le Pays de Vaud a été conquis par le canton …",
     "bonne_reponse": "de Berne",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 2,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:58:55.618Z"
   },
   {
     "id": 60,
@@ -654,10 +654,10 @@
     "niveau": "Canton de Vaud",
     "question": "Le canton de Vaud est devenu officiellement protestant en …",
     "bonne_reponse": "1536",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T12:15:17.640Z"
   },
   {
     "id": 61,
@@ -665,10 +665,10 @@
     "niveau": "Canton de Vaud",
     "question": "Le principal réformateur vaudois est …",
     "bonne_reponse": "Pierre Viret",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:49:26.195Z"
   },
   {
     "id": 62,
@@ -676,10 +676,10 @@
     "niveau": "Canton de Vaud",
     "question": "Qui était le Major Davel ?",
     "bonne_reponse": "Un patriote vaudois",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 2,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:50:51.439Z"
   },
   {
     "id": 63,
@@ -687,10 +687,10 @@
     "niveau": "Canton de Vaud",
     "question": "Le Major Davel est mort …",
     "bonne_reponse": "Décapité (la tête coupée)",
-    "attempts": 0,
+    "attempts": 1,
     "correctCount": 0,
     "streak": 0,
-    "lastSeen": null
+    "lastSeen": "2026-04-08T12:12:00.600Z"
   },
   {
     "id": 64,
@@ -701,7 +701,7 @@
     "attempts": 1,
     "correctCount": 0,
     "streak": 0,
-    "lastSeen": "2026-04-08T10:22:10.503Z"
+    "lastSeen": "2026-04-08T12:12:26.348Z"
   },
   {
     "id": 65,
@@ -709,10 +709,10 @@
     "niveau": "Canton de Vaud",
     "question": "L'indépendance vaudoise date de …",
     "bonne_reponse": "1798",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 2,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T12:01:04.268Z"
   },
   {
     "id": 66,
@@ -720,10 +720,10 @@
     "niveau": "Canton de Vaud",
     "question": "Le Canton de Vaud est entré dans la Confédération en …",
     "bonne_reponse": "1803",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:54:29.275Z"
   },
   {
     "id": 67,
@@ -731,10 +731,10 @@
     "niveau": "Canton de Vaud",
     "question": "Quelle femme politique d'origine valdo-genevoise a habité le château de Coppet ?",
     "bonne_reponse": "Mme de Staël",
-    "attempts": 0,
+    "attempts": 1,
     "correctCount": 0,
     "streak": 0,
-    "lastSeen": null
+    "lastSeen": "2026-04-08T11:51:07.833Z"
   },
   {
     "id": 68,
@@ -742,10 +742,10 @@
     "niveau": "Canton de Vaud",
     "question": "Que représente la date du 14 avril 1803 pour le Canton de Vaud ?",
     "bonne_reponse": "L'entrée du Pays de Vaud dans la Confédération",
-    "attempts": 0,
+    "attempts": 1,
     "correctCount": 0,
     "streak": 0,
-    "lastSeen": null
+    "lastSeen": "2026-04-08T11:55:58.117Z"
   },
   {
     "id": 69,
@@ -753,10 +753,10 @@
     "niveau": "Canton de Vaud",
     "question": "Le premier canton suisse à accorder le droit de vote aux femmes est le canton …",
     "bonne_reponse": "de Vaud",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 2,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:53:21.366Z"
   },
   {
     "id": 70,
@@ -764,10 +764,10 @@
     "niveau": "Canton de Vaud",
     "question": "L'actuelle Constitution du Canton de Vaud date de …",
     "bonne_reponse": "2003",
-    "attempts": 0,
+    "attempts": 2,
     "correctCount": 0,
     "streak": 0,
-    "lastSeen": null
+    "lastSeen": "2026-04-08T12:00:03.427Z"
   },
   {
     "id": 71,
@@ -775,10 +775,10 @@
     "niveau": "Canton de Vaud",
     "question": "Qui était le général de l'armée suisse pendant la deuxième guerre mondiale ?",
     "bonne_reponse": "Le vaudois Henri Guisan",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:51:24.428Z"
   },
   {
     "id": 72,
@@ -789,7 +789,7 @@
     "attempts": 1,
     "correctCount": 0,
     "streak": 0,
-    "lastSeen": "2026-04-08T10:22:09.178Z"
+    "lastSeen": "2026-04-08T12:00:55.349Z"
   },
   {
     "id": 73,
@@ -797,10 +797,10 @@
     "niveau": "Morges",
     "question": "Quelle est la date de la fondation de la Ville de Morges ?",
     "bonne_reponse": "1286",
-    "attempts": 0,
+    "attempts": 1,
     "correctCount": 0,
     "streak": 0,
-    "lastSeen": null
+    "lastSeen": "2026-04-08T12:13:54.707Z"
   },
   {
     "id": 74,
@@ -808,10 +808,10 @@
     "niveau": "Morges",
     "question": "Quelle personnalité est liée à l'histoire de la Ville de Morges ?",
     "bonne_reponse": "Ignace Paderewski",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:08:12.924Z"
   },
   {
     "id": 75,
@@ -819,10 +819,10 @@
     "niveau": "Morges",
     "question": "Par qui était dominée la Ville de Morges entre 1536 et 1798 ?",
     "bonne_reponse": "Par les Bernois qui installent un bailli au Château",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:54:46.377Z"
   },
   {
     "id": 76,
@@ -830,10 +830,10 @@
     "niveau": "Morges",
     "question": "Quelle est la date de la construction du Château ?",
     "bonne_reponse": "1286",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:05:38.489Z"
   },
   {
     "id": 77,
@@ -841,10 +841,10 @@
     "niveau": "Morges",
     "question": "De quand date la construction de l'Hôtel de Ville ?",
     "bonne_reponse": "De 1515",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T12:13:03.312Z"
   },
   {
     "id": 78,
@@ -852,10 +852,10 @@
     "niveau": "Morges",
     "question": "En quelle année Audrey Hepburn a-t-elle épousé Andrea Dotti à l'Hôtel de Ville de Morges ?",
     "bonne_reponse": "En 1969",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:05:31.963Z"
   },
   {
     "id": 79,
@@ -863,10 +863,10 @@
     "niveau": "Morges",
     "question": "A quoi se réfère le nom « Beausobre » ?",
     "bonne_reponse": "Une famille morgienne",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:06:44.610Z"
   },
   {
     "id": 80,
@@ -874,10 +874,10 @@
     "niveau": "Morges",
     "question": "En quelle année la Grand-Rue est-elle devenue piétonne ?",
     "bonne_reponse": "En 1993",
-    "attempts": 0,
+    "attempts": 1,
     "correctCount": 0,
     "streak": 0,
-    "lastSeen": null
+    "lastSeen": "2026-04-08T11:50:19.340Z"
   },
   {
     "id": 81,
@@ -885,10 +885,10 @@
     "niveau": "Suisse",
     "question": "Qui préside le Conseil fédéral en 2026 ?",
     "bonne_reponse": "Guy Parmelin",
-    "attempts": 0,
+    "attempts": 1,
     "correctCount": 0,
     "streak": 0,
-    "lastSeen": null
+    "lastSeen": "2026-04-08T11:54:20.229Z"
   },
   {
     "id": 82,
@@ -896,10 +896,10 @@
     "niveau": "Suisse",
     "question": "Combien de membres compte le Conseil fédéral ?",
     "bonne_reponse": "7",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:55:13.025Z"
   },
   {
     "id": 83,
@@ -907,10 +907,10 @@
     "niveau": "Suisse",
     "question": "Pour combien de temps est élu/e le/la président/e de la Confédération ?",
     "bonne_reponse": "1 an",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 2,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:58:38.233Z"
   },
   {
     "id": 84,
@@ -918,10 +918,10 @@
     "niveau": "Suisse",
     "question": "Quels sont les 3 pouvoirs du système politique en Suisse ?",
     "bonne_reponse": "Législatif, exécutif, judiciaire",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T12:12:52.584Z"
   },
   {
     "id": 85,
@@ -929,10 +929,10 @@
     "niveau": "Suisse",
     "question": "Les citoyens peuvent demander une consultation populaire (votation) sur un nouveau texte de loi par …",
     "bonne_reponse": "un référendum",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:50:04.026Z"
   },
   {
     "id": 86,
@@ -940,10 +940,10 @@
     "niveau": "Suisse",
     "question": "Quelle chambre du Parlement fédéral représente le peuple ?",
     "bonne_reponse": "Le Conseil national",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T12:13:29.230Z"
   },
   {
     "id": 87,
@@ -951,10 +951,10 @@
     "niveau": "Suisse",
     "question": "Le Palais fédéral est le siège …",
     "bonne_reponse": "du Parlement",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:04:57.269Z"
   },
   {
     "id": 88,
@@ -962,10 +962,10 @@
     "niveau": "Suisse",
     "question": "Dans quel texte de loi suisse se trouvent les droits fondamentaux ?",
     "bonne_reponse": "Constitution",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:59:10.133Z"
   },
   {
     "id": 89,
@@ -973,10 +973,10 @@
     "niveau": "Suisse",
     "question": "Qui élit les membres du Tribunal fédéral ?",
     "bonne_reponse": "l'Assemblée fédérale",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 2,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:57:12.917Z"
   },
   {
     "id": 90,
@@ -984,10 +984,10 @@
     "niveau": "Suisse",
     "question": "La Suisse est gouvernée par …",
     "bonne_reponse": "Un Conseil fédéral",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T12:13:21.415Z"
   },
   {
     "id": 91,
@@ -995,10 +995,10 @@
     "niveau": "Suisse",
     "question": "Quel est le rôle du pouvoir législatif ?",
     "bonne_reponse": "Il élabore les lois",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T12:11:53.892Z"
   },
   {
     "id": 92,
@@ -1006,10 +1006,10 @@
     "niveau": "Suisse",
     "question": "Quel est le rôle du pouvoir exécutif ?",
     "bonne_reponse": "Il applique les lois et gouverne",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:57:08.164Z"
   },
   {
     "id": 93,
@@ -1017,10 +1017,10 @@
     "niveau": "Suisse",
     "question": "Qui représente le pouvoir législatif au niveau fédéral ?",
     "bonne_reponse": "Le Parlement fédéral",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T12:15:11.150Z"
   },
   {
     "id": 94,
@@ -1028,10 +1028,10 @@
     "niveau": "Suisse",
     "question": "En Suisse, qui élit le Conseil fédéral ?",
     "bonne_reponse": "L'Assemblée fédérale (le Conseil national et le Conseil des Etats)",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T12:00:11.149Z"
   },
   {
     "id": 95,
@@ -1039,10 +1039,10 @@
     "niveau": "Suisse",
     "question": "Quel parti politique suisse est de gauche ?",
     "bonne_reponse": "Parti socialiste (PS)",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:05:03.976Z"
   },
   {
     "id": 96,
@@ -1050,10 +1050,10 @@
     "niveau": "Suisse",
     "question": "Le Tribunal fédéral se trouve à …",
     "bonne_reponse": "Lausanne",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:56:46.615Z"
   },
   {
     "id": 97,
@@ -1061,10 +1061,10 @@
     "niveau": "Canton de Vaud",
     "question": "Quel est le nom de la Présidente du Conseil d'Etat vaudois ?",
     "bonne_reponse": "Christelle Luisier Brodard",
-    "attempts": 0,
+    "attempts": 1,
     "correctCount": 0,
     "streak": 0,
-    "lastSeen": null
+    "lastSeen": "2026-04-08T12:12:09.138Z"
   },
   {
     "id": 98,
@@ -1075,7 +1075,7 @@
     "attempts": 1,
     "correctCount": 0,
     "streak": 0,
-    "lastSeen": "2026-04-08T10:22:15.603Z"
+    "lastSeen": "2026-04-08T12:11:38.503Z"
   },
   {
     "id": 99,
@@ -1083,10 +1083,10 @@
     "niveau": "Canton de Vaud",
     "question": "Qui représente le pouvoir législatif au niveau cantonal ?",
     "bonne_reponse": "Le Grand Conseil",
-    "attempts": 0,
+    "attempts": 1,
     "correctCount": 0,
     "streak": 0,
-    "lastSeen": null
+    "lastSeen": "2026-04-08T11:55:45.315Z"
   },
   {
     "id": 100,
@@ -1094,10 +1094,10 @@
     "niveau": "Canton de Vaud",
     "question": "Qui représente le pouvoir exécutif dans le canton de Vaud ?",
     "bonne_reponse": "Le Conseil d'Etat",
-    "attempts": 0,
+    "attempts": 1,
     "correctCount": 0,
     "streak": 0,
-    "lastSeen": null
+    "lastSeen": "2026-04-08T12:13:40.092Z"
   },
   {
     "id": 101,
@@ -1105,10 +1105,10 @@
     "niveau": "Canton de Vaud",
     "question": "Qui élit le Conseil d'Etat vaudois ?",
     "bonne_reponse": "Le peuple",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:51:40.075Z"
   },
   {
     "id": 102,
@@ -1116,10 +1116,10 @@
     "niveau": "Canton de Vaud",
     "question": "Que signifie DSAS ?",
     "bonne_reponse": "Département de la santé et de l'action sociale",
-    "attempts": 0,
+    "attempts": 1,
     "correctCount": 0,
     "streak": 0,
-    "lastSeen": null
+    "lastSeen": "2026-04-08T11:57:35.326Z"
   },
   {
     "id": 103,
@@ -1127,10 +1127,10 @@
     "niveau": "Canton de Vaud",
     "question": "Dans le canton de Vaud, les personnes de nationalité étrangère peuvent à certaines conditions voter, élire et être élues au niveau …",
     "bonne_reponse": "communal",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:59:57.386Z"
   },
   {
     "id": 104,
@@ -1138,10 +1138,10 @@
     "niveau": "Canton de Vaud",
     "question": "Pour combien d'années est élu le Conseil d'Etat ?",
     "bonne_reponse": "5 ans",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:57:58.911Z"
   },
   {
     "id": 105,
@@ -1149,10 +1149,10 @@
     "niveau": "Canton de Vaud",
     "question": "Combien de membres compte le Grand Conseil vaudois ?",
     "bonne_reponse": "150",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:51:36.339Z"
   },
   {
     "id": 106,
@@ -1160,10 +1160,10 @@
     "niveau": "Canton de Vaud",
     "question": "Quel est le pouvoir judiciaire dans le canton de Vaud ?",
     "bonne_reponse": "Tribunal cantonal",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T12:01:41.784Z"
   },
   {
     "id": 107,
@@ -1171,10 +1171,10 @@
     "niveau": "Canton de Vaud",
     "question": "Où se trouve le siège du Conseil d'Etat vaudois ?",
     "bonne_reponse": "Château cantonal (Château Saint-Maire)",
-    "attempts": 0,
+    "attempts": 1,
     "correctCount": 0,
     "streak": 0,
-    "lastSeen": null
+    "lastSeen": "2026-04-08T11:48:26.724Z"
   },
   {
     "id": 108,
@@ -1182,10 +1182,10 @@
     "niveau": "Canton de Vaud",
     "question": "Quel est le rôle du Ministère public ?",
     "bonne_reponse": "Conduire les investigations et défendre la société devant les tribunaux",
-    "attempts": 0,
+    "attempts": 1,
     "correctCount": 0,
     "streak": 0,
-    "lastSeen": null
+    "lastSeen": "2026-04-08T11:59:34.823Z"
   },
   {
     "id": 109,
@@ -1193,10 +1193,10 @@
     "niveau": "Canton de Vaud",
     "question": "Quelles sont les unités administratives ou politiques du canton de Vaud ?",
     "bonne_reponse": "Districts, arrondissements et communes",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:55:08.173Z"
   },
   {
     "id": 110,
@@ -1204,10 +1204,10 @@
     "niveau": "Canton de Vaud",
     "question": "Combien de signatures faut-il obtenir pour qu'une initiative populaire soit soumise au vote au niveau cantonal ?",
     "bonne_reponse": "12'000 signatures en 4 mois",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:51:51.003Z"
   },
   {
     "id": 111,
@@ -1215,10 +1215,10 @@
     "niveau": "Canton de Vaud",
     "question": "Qui est le porte-parole officiel du gouvernement vaudois ?",
     "bonne_reponse": "Le Chancelier d'Etat",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:07:52.862Z"
   },
   {
     "id": 112,
@@ -1226,10 +1226,10 @@
     "niveau": "Canton de Vaud",
     "question": "A partir de quel âge les citoyennes et citoyens suisses peuvent voter au niveau cantonal ?",
     "bonne_reponse": "18 ans",
-    "attempts": 0,
+    "attempts": 1,
     "correctCount": 0,
     "streak": 0,
-    "lastSeen": null
+    "lastSeen": "2026-04-08T11:48:07.508Z"
   },
   {
     "id": 113,
@@ -1237,10 +1237,10 @@
     "niveau": "Morges",
     "question": "Combien de membres compte la Municipalité de Morges ?",
     "bonne_reponse": "7",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 2,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T12:00:33.063Z"
   },
   {
     "id": 114,
@@ -1248,10 +1248,10 @@
     "niveau": "Morges",
     "question": "Quel(le) ancien(ne) syndic(que) est devenu(e) Conseiller(ère) d'Etat ?",
     "bonne_reponse": "Nuria Gorrite",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 2,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:52:01.872Z"
   },
   {
     "id": 115,
@@ -1259,10 +1259,10 @@
     "niveau": "Morges",
     "question": "Qui est le Syndic ou la Syndique de la Municipalité de Morges ?",
     "bonne_reponse": "Mélanie Wyss-Pittet",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:48:55.692Z"
   },
   {
     "id": 116,
@@ -1270,10 +1270,10 @@
     "niveau": "Morges",
     "question": "À Morges, combien de personnes siègent au Conseil communal ?",
     "bonne_reponse": "100 membres",
-    "attempts": 0,
+    "attempts": 1,
     "correctCount": 0,
     "streak": 0,
-    "lastSeen": null
+    "lastSeen": "2026-04-08T12:00:19.213Z"
   },
   {
     "id": 117,
@@ -1281,10 +1281,10 @@
     "niveau": "Morges",
     "question": "Combien de séances le Conseil communal a-t-il par année ?",
     "bonne_reponse": "10 séances par année",
-    "attempts": 0,
+    "attempts": 1,
     "correctCount": 0,
     "streak": 0,
-    "lastSeen": null
+    "lastSeen": "2026-04-08T12:00:26.747Z"
   },
   {
     "id": 118,
@@ -1292,10 +1292,10 @@
     "niveau": "Morges",
     "question": "Selon quel type de scrutin la Municipalité est-elle élue ?",
     "bonne_reponse": "Le scrutin majoritaire à 2 tours",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:59:00.579Z"
   },
   {
     "id": 119,
@@ -1303,10 +1303,10 @@
     "niveau": "Morges",
     "question": "Comment se nomme l'association scolaire intercommunale de Morges et environ ?",
     "bonne_reponse": "ASIME",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 2,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:57:45.796Z"
   },
   {
     "id": 120,
@@ -1314,10 +1314,10 @@
     "niveau": "Morges",
     "question": "Combien d'années dure une législation communale ?",
     "bonne_reponse": "5 ans",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T12:14:41.833Z"
   },
   {
     "id": 121,
@@ -1325,10 +1325,10 @@
     "niveau": "Suisse",
     "question": "Quelle est la langue officielle la plus parlée en Suisse ?",
     "bonne_reponse": "Allemand",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T12:14:22.277Z"
   },
   {
     "id": 122,
@@ -1336,10 +1336,10 @@
     "niveau": "Suisse",
     "question": "Qu'est-ce que la « barrière de roesti » ou « Röstigraben » ?",
     "bonne_reponse": "Les différences de mentalité entre la Suisse romande et la Suisse alémanique",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:59:43.213Z"
   },
   {
     "id": 123,
@@ -1347,10 +1347,10 @@
     "niveau": "Suisse",
     "question": "Que signifie l'abréviation CH ?",
     "bonne_reponse": "Confédération helvétique",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:03:42.578Z"
   },
   {
     "id": 124,
@@ -1358,10 +1358,10 @@
     "niveau": "Suisse",
     "question": "Qu'est-ce que le « Schwyzerdütsch » ?",
     "bonne_reponse": "Le dialecte suisse-allemand",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:59:17.771Z"
   },
   {
     "id": 125,
@@ -1369,10 +1369,10 @@
     "niveau": "Suisse",
     "question": "Quel héros de l'indépendance suisse est toujours représenté avec une arbalète et une pomme ?",
     "bonne_reponse": "Guillaume Tell",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T12:00:59.602Z"
   },
   {
     "id": 126,
@@ -1380,10 +1380,10 @@
     "niveau": "Suisse",
     "question": "Quelles sont les 4 langues nationales de la Suisse ?",
     "bonne_reponse": "français, allemand, italien, romanche",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:58:18.628Z"
   },
   {
     "id": 127,
@@ -1391,10 +1391,10 @@
     "niveau": "Suisse",
     "question": "Quel personnage féminin se trouve sur plusieurs pièces de monnaie suisse ?",
     "bonne_reponse": "Helvetia",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 2,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T12:01:11.193Z"
   },
   {
     "id": 128,
@@ -1402,10 +1402,10 @@
     "niveau": "Suisse",
     "question": "En Suisse, payer des impôts est …",
     "bonne_reponse": "une obligation",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:52:49.185Z"
   },
   {
     "id": 129,
@@ -1413,10 +1413,10 @@
     "niveau": "Suisse",
     "question": "Quel aliment compose principalement les « rösti » (plat typique suisse) ?",
     "bonne_reponse": "La pomme de terre",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T10:36:31.229Z"
   },
   {
     "id": 130,
@@ -1424,10 +1424,10 @@
     "niveau": "Suisse",
     "question": "Dans quelle ville peut-on voir la statue de Guillaume Tell ?",
     "bonne_reponse": "Altdorf",
-    "attempts": 0,
+    "attempts": 1,
     "correctCount": 0,
     "streak": 0,
-    "lastSeen": null
+    "lastSeen": "2026-04-08T11:52:33.239Z"
   },
   {
     "id": 131,
@@ -1435,10 +1435,10 @@
     "niveau": "Suisse",
     "question": "Qu'est-ce qu'un cor des Alpes ?",
     "bonne_reponse": "Un instrument de musique",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T12:11:49.315Z"
   },
   {
     "id": 132,
@@ -1446,10 +1446,10 @@
     "niveau": "Suisse",
     "question": "Dans quelle ville suisse se trouve la « fosse aux ours » ?",
     "bonne_reponse": "Berne",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:03:30.399Z"
   },
   {
     "id": 133,
@@ -1457,10 +1457,10 @@
     "niveau": "Suisse",
     "question": "Que protège la Garde Suisse depuis 1506 ?",
     "bonne_reponse": "Le Pape",
-    "attempts": 0,
+    "attempts": 1,
     "correctCount": 0,
     "streak": 0,
-    "lastSeen": null
+    "lastSeen": "2026-04-08T12:15:39.847Z"
   },
   {
     "id": 134,
@@ -1468,10 +1468,10 @@
     "niveau": "Suisse",
     "question": "Où se fête le plus grand carnaval de Suisse ?",
     "bonne_reponse": "Bâle",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T12:14:47.509Z"
   },
   {
     "id": 135,
@@ -1479,10 +1479,10 @@
     "niveau": "Suisse",
     "question": "Citez un sport national",
     "bonne_reponse": "La lutte",
-    "attempts": 0,
+    "attempts": 1,
     "correctCount": 0,
     "streak": 0,
-    "lastSeen": null
+    "lastSeen": "2026-04-08T11:05:22.776Z"
   },
   {
     "id": 136,
@@ -1490,10 +1490,10 @@
     "niveau": "Suisse",
     "question": "Tout homme de nationalité suisse est en principe astreint au …",
     "bonne_reponse": "Service militaire",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:52:25.042Z"
   },
   {
     "id": 137,
@@ -1501,10 +1501,10 @@
     "niveau": "Canton de Vaud",
     "question": "Quel est le plat culinaire typique du canton de Vaud ?",
     "bonne_reponse": "Le papet",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:55:51.391Z"
   },
   {
     "id": 138,
@@ -1513,9 +1513,9 @@
     "question": "Dans quel canton l'italien est-elle la langue principale ?",
     "bonne_reponse": "Tessin",
     "attempts": 1,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": "2026-04-08T10:22:06.603Z"
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:48:50.408Z"
   },
   {
     "id": 139,
@@ -1523,10 +1523,10 @@
     "niveau": "Canton de Vaud",
     "question": "Où se trouvent le Musée Olympique et le siège du Comité international olympique (CIO) ?",
     "bonne_reponse": "Lausanne",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T10:37:46.322Z"
   },
   {
     "id": 140,
@@ -1534,10 +1534,10 @@
     "niveau": "Canton de Vaud",
     "question": "Où a lieu chaque année le meeting d'athlétisme « Athletissima » ?",
     "bonne_reponse": "Lausanne",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T10:36:02.158Z"
   },
   {
     "id": 141,
@@ -1545,10 +1545,10 @@
     "niveau": "Canton de Vaud",
     "question": "Dans quelle ville a lieu le festival du « Paléo » ?",
     "bonne_reponse": "Nyon",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:50:25.124Z"
   },
   {
     "id": 142,
@@ -1556,10 +1556,10 @@
     "niveau": "Canton de Vaud",
     "question": "Où se déroule le Festival de Jazz créé par Claude Nobs ?",
     "bonne_reponse": "Montreux",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:50:44.847Z"
   },
   {
     "id": 143,
@@ -1567,10 +1567,10 @@
     "niveau": "Canton de Vaud",
     "question": "Quel célèbre ballet est établi à Lausanne ?",
     "bonne_reponse": "Ballet Béjart",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T12:14:18.542Z"
   },
   {
     "id": 144,
@@ -1578,10 +1578,10 @@
     "niveau": "Canton de Vaud",
     "question": "Où se trouve le musée créé à la mémoire de Charlie Chaplin ?",
     "bonne_reponse": "Corsier-sur-Vevey",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:58:05.537Z"
   },
   {
     "id": 145,
@@ -1589,10 +1589,10 @@
     "niveau": "Canton de Vaud",
     "question": "Quel bâtiment a été inauguré à Lausanne le 14 avril 2017 ?",
     "bonne_reponse": "Parlement vaudois",
-    "attempts": 0,
+    "attempts": 1,
     "correctCount": 0,
     "streak": 0,
-    "lastSeen": null
+    "lastSeen": "2026-04-08T10:37:29.572Z"
   },
   {
     "id": 146,
@@ -1601,9 +1601,9 @@
     "question": "Où est célébrée la « Fête des Vignerons » ?",
     "bonne_reponse": "Vevey",
     "attempts": 1,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": "2026-04-08T10:22:14.387Z"
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:53:10.506Z"
   },
   {
     "id": 147,
@@ -1611,10 +1611,10 @@
     "niveau": "Canton de Vaud",
     "question": "Quelle grande école polytechnique se trouve dans la région de Lausanne ?",
     "bonne_reponse": "l'EPFL",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T10:36:38.151Z"
   },
   {
     "id": 148,
@@ -1622,10 +1622,10 @@
     "niveau": "Canton de Vaud",
     "question": "A quelle date symbolique le Château cantonal Saint-Maire a-t-il ouvert ses portes après plus de deux ans de travaux ?",
     "bonne_reponse": "14 avril 2018",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 2,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:52:40.868Z"
   },
   {
     "id": 149,
@@ -1633,10 +1633,10 @@
     "niveau": "Canton de Vaud",
     "question": "Quel grand tennisman suisse et vaudois est né à Lausanne en 1985 ?",
     "bonne_reponse": "Stanislas Wawrinka",
-    "attempts": 0,
+    "attempts": 1,
     "correctCount": 0,
     "streak": 0,
-    "lastSeen": null
+    "lastSeen": "2026-04-08T11:57:20.323Z"
   },
   {
     "id": 150,
@@ -1644,10 +1644,10 @@
     "niveau": "Canton de Vaud",
     "question": "Le réseau de transport public dans le canton de Vaud s'appelle …",
     "bonne_reponse": "mobilis",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 2,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:57:25.525Z"
   },
   {
     "id": 151,
@@ -1655,10 +1655,10 @@
     "niveau": "Canton de Vaud",
     "question": "Dans quelle ville vaudoise y a-t-il un métro ?",
     "bonne_reponse": "Lausanne",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T10:36:41.816Z"
   },
   {
     "id": 152,
@@ -1666,10 +1666,10 @@
     "niveau": "Canton de Vaud",
     "question": "Dans quelle ville se trouve le musée de l'alimentation ?",
     "bonne_reponse": "Vevey",
-    "attempts": 0,
+    "attempts": 1,
     "correctCount": 0,
     "streak": 0,
-    "lastSeen": null
+    "lastSeen": "2026-04-08T12:11:32.360Z"
   },
   {
     "id": 153,
@@ -1677,10 +1677,10 @@
     "niveau": "Morges",
     "question": "Quel musée existe à Morges ?",
     "bonne_reponse": "Musée Alexis Forel",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:52:13.114Z"
   },
   {
     "id": 154,
@@ -1688,10 +1688,10 @@
     "niveau": "Morges",
     "question": "Pouvez-vous citer deux théâtres à Morges ?",
     "bonne_reponse": "Le théâtre de Beausobre et le théâtre Trois P'tits Tours",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:05:14.604Z"
   },
   {
     "id": 155,
@@ -1699,10 +1699,10 @@
     "niveau": "Morges",
     "question": "Quel est le nom du collège secondaire de Morges ?",
     "bonne_reponse": "Collège de Beausobre",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 2,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:59:47.932Z"
   },
   {
     "id": 156,
@@ -1710,10 +1710,10 @@
     "niveau": "Morges",
     "question": "Quel est le nom du club de football morgien ?",
     "bonne_reponse": "Forward-Morges Football-club",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:52:45.244Z"
   },
   {
     "id": 157,
@@ -1721,10 +1721,10 @@
     "niveau": "Morges",
     "question": "Savez-vous à quelle commune étrangère est jumelée la Ville de Morges ?",
     "bonne_reponse": "Vertou, Ville française",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T12:14:06.165Z"
   },
   {
     "id": 158,
@@ -1735,7 +1735,7 @@
     "attempts": 1,
     "correctCount": 1,
     "streak": 1,
-    "lastSeen": "2026-04-08T10:22:03.774Z"
+    "lastSeen": "2026-04-08T12:14:51.654Z"
   },
   {
     "id": 159,
@@ -1743,10 +1743,10 @@
     "niveau": "Morges",
     "question": "Où se déroule le marché de Noël de Morges ?",
     "bonne_reponse": "Dans le parc du Château",
-    "attempts": 0,
-    "correctCount": 0,
-    "streak": 0,
-    "lastSeen": null
+    "attempts": 1,
+    "correctCount": 1,
+    "streak": 1,
+    "lastSeen": "2026-04-08T11:03:37.390Z"
   },
   {
     "id": 160,
@@ -1754,9 +1754,9 @@
     "niveau": "Morges",
     "question": "Quelle manifestation n'est pas organisée en ville de Morges ?",
     "bonne_reponse": "Festival de la Cité",
-    "attempts": 0,
+    "attempts": 1,
     "correctCount": 0,
     "streak": 0,
-    "lastSeen": null
+    "lastSeen": "2026-04-08T10:36:25.311Z"
   }
 ]
