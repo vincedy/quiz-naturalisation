@@ -51,6 +51,7 @@ Vevey = cibo + feste + Chaplin. Tre cose: musée alimentation, Fête des Vignero
 | Club football Morges | **Forward-Morges** |
 | Festival pas à Morges | **Festival de la Cité** (= Lausanne) |
 | Garde Suisse protège depuis 1506 | **Le Pape** |
+| Personnage féminin sur les pièces de monnaie | **Helvetia** |
 
 ## Géographie — i 3 errori
 
@@ -59,6 +60,7 @@ Vevey = cibo + feste + Chaplin. Tre cose: musée alimentation, Fête des Vignero
 | Palais fédéral se trouve à | **Berne** |
 | Plus haut sommet suisse | **Pointe Dufour** (non Cervin!) |
 | Limite nord territoire Morges | **Le vignoble** |
+| Canton le plus au nord de la Suisse | **Schaffhouse** |
 
 ## Morges — scheda rapida
 
