@@ -629,6 +629,88 @@ footer {
 }
 .exam-threshold { font-size: .75rem; color: var(--muted); margin-top: 6px; }
 
+/* ── Statistics screen ───────────────────────── */
+.stat-section { margin-bottom: 28px; }
+.stat-section-title {
+  font-size: .72rem; font-weight: 700; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--muted); margin-bottom: 10px;
+}
+.stat-cat-card {
+  background: var(--card-bg); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 14px 16px 12px;
+  margin-bottom: 10px; box-shadow: var(--shadow);
+}
+.stat-cat-title {
+  font-size: .95rem; font-weight: 700; margin-bottom: 8px;
+}
+.stat-cat-metrics {
+  display: flex; justify-content: space-between; margin-bottom: 6px;
+}
+.stat-cat-metric { font-size: .72rem; color: var(--muted); }
+.stat-cat-metric.star { color: var(--primary); font-weight: 600; }
+.stat-lvl-row {
+  display: flex; gap: 12px; flex-wrap: wrap; margin-top: 6px;
+}
+.stat-lvl-item { font-size: .7rem; color: var(--muted); }
+.stat-attempts { font-size: .7rem; color: var(--muted); margin-top: 4px; }
+
+.stat-fail-card {
+  background: var(--card-bg); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 11px 14px;
+  margin-bottom: 8px; box-shadow: var(--shadow);
+  display: flex; align-items: flex-start; gap: 12px;
+}
+.stat-fail-rank {
+  font-size: .78rem; font-weight: 700; color: var(--muted);
+  min-width: 22px; padding-top: 1px; flex-shrink: 0;
+}
+.stat-fail-body { flex: 1; min-width: 0; }
+.stat-fail-q {
+  font-size: .88rem; font-weight: 500; line-height: 1.35;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  margin-bottom: 3px;
+}
+.stat-fail-meta { font-size: .7rem; color: var(--muted); }
+.stat-fail-badge {
+  flex-shrink: 0; font-size: .78rem; font-weight: 700;
+  color: #d94040; background: #fdf0f0; border-radius: 8px;
+  padding: 3px 8px; align-self: center;
+}
+@media (prefers-color-scheme: dark) {
+  .stat-fail-badge { color: #f08080; background: #2a0e0e; }
+}
+
+.stat-exam-row {
+  background: var(--card-bg); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 11px 14px;
+  margin-bottom: 8px; box-shadow: var(--shadow);
+  display: flex; align-items: center; gap: 10px;
+}
+.stat-exam-date { font-size: .78rem; color: var(--muted); flex: 1; }
+.stat-exam-score { font-size: .88rem; font-weight: 700; color: var(--primary); font-variant-numeric: tabular-nums; }
+.stat-exam-badge {
+  font-size: .72rem; font-weight: 700; padding: 3px 9px;
+  border-radius: 10px;
+}
+.stat-exam-badge.pass { background: #e6f7ed; color: #1a5c30; }
+.stat-exam-badge.fail { background: #fdf0f0; color: #922929; }
+@media (prefers-color-scheme: dark) {
+  .stat-exam-badge.pass { background: #0d2e18; color: #6ddb96; }
+  .stat-exam-badge.fail { background: #2a0e0e; color: #f08080; }
+}
+.stat-empty { font-size: .88rem; color: var(--muted); text-align: center; padding: 20px 0; }
+
+.btn-export {
+  display: block; width: 100%; min-height: 48px;
+  border: 2px solid var(--primary); border-radius: var(--radius);
+  background: transparent; color: var(--primary);
+  font-family: inherit; font-size: .92rem; font-weight: 700;
+  cursor: pointer; touch-action: manipulation;
+  transition: background .15s, color .15s; text-align: center;
+}
+.btn-export:hover { background: var(--primary); color: #fff; }
+@media (prefers-color-scheme: dark) { .btn-export:hover { color: #0d1b0f; } }
+
 /* ── Flashcard screen ────────────────────────── */
 .fc-streak-badge {
   font-size: .74rem; font-weight: 700; color: var(--primary);
@@ -682,8 +764,7 @@ footer {
         <span class="btn-main-icon">📝</span>
         Examen blanc
       </button>
-      <button class="btn-main"
-        onclick="showPlaceholder('Statistiques','📊','Consultez votre progression et vos résultats par catégorie.')">
+      <button class="btn-main" onclick="showStats()">
         <span class="btn-main-icon">📊</span>
         Statistiques
       </button>
@@ -765,6 +846,11 @@ footer {
   <!-- ── FLASHCARD ─────────────────────────────────── -->
   <section class="screen" id="screenFlashcard" style="padding-bottom:60px">
     <div id="fcContent"></div>
+  </section>
+
+  <!-- ── STATISTIQUES ──────────────────────────────── -->
+  <section class="screen" id="screenStats">
+    <div id="statsContent"></div>
   </section>
 
 </main>
@@ -1815,6 +1901,173 @@ function showExamResult() {
       <button class="btn-main" style="width:100%;min-height:52px;" onclick="startExam()">🔄&ensp;Nouvel examen</button>
       <button class="btn-outline" onclick="showHome()">← Retour à l'accueil</button>
     </div>`;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   STATISTIQUES
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+function showStats() {
+  _activateScreen('screenStats', 'Statistiques',
+    { id:'screenHome', title:'Quiz Naturalisation – Morges' });
+  renderStats();
+}
+
+function renderStats() {
+  const stats = getStats();
+  const exams = getExams();
+  let html = '';
+
+  /* ── 1. Progression par catégorie ─────────────── */
+  html += `<div class="stat-section">
+    <div class="stat-section-title">Progression par catégorie</div>`;
+
+  for (const [catKey, catMeta] of Object.entries(CATS)) {
+    const qs         = QUESTIONS.filter(q => q.cat === catKey);
+    const total      = qs.length;
+    const correctes  = qs.filter(q => { const s = stats[q.id]; return s && s.streak >= 1; }).length;
+    const apprises   = qs.filter(q => { const s = stats[q.id]; return s && s.streak >= 3; }).length;
+    const attempts   = qs.reduce((acc, q) => acc + (stats[q.id] ? stats[q.id].attempts : 0), 0);
+    const pctBar     = total > 0 ? Math.round(apprises / total * 100) : 0;
+
+    const lvlHtml = [
+      { key:'ch', label:'Suisse',  total:16 },
+      { key:'vd', label:'Vaud',    total:16 },
+      { key:'mo', label:'Morges',  total:8  }
+    ].map(({ key, label, total: t }) => {
+      const sub = qs.filter(q => q.lvl === key);
+      const apr = sub.filter(q => { const s = stats[q.id]; return s && s.streak >= 3; }).length;
+      const cor = sub.filter(q => { const s = stats[q.id]; return s && s.streak >= 1; }).length;
+      return `<span class="stat-lvl-item">${label}&nbsp;${apr}/${t} ★&nbsp;·&nbsp;${cor}/${t}</span>`;
+    }).join('');
+
+    html += `
+    <div class="stat-cat-card">
+      <div class="stat-cat-title">${catMeta.icon}&ensp;${catMeta.label}</div>
+      <div class="progress-bar-track" style="margin-bottom:6px">
+        <div class="progress-bar-fill" style="width:${pctBar}%"></div>
+      </div>
+      <div class="stat-cat-metrics">
+        <span class="stat-cat-metric">${correctes}/${total} correctes</span>
+        <span class="stat-cat-metric star">${apprises}/${total} apprises ★</span>
+      </div>
+      <div class="stat-lvl-row">${lvlHtml}</div>
+      <div class="stat-attempts">${attempts} tentative${attempts !== 1 ? 's' : ''} au total</div>
+    </div>`;
+  }
+  html += `</div>`;
+
+  /* ── 2. Questions les plus échouées ───────────── */
+  const failed = QUESTIONS
+    .map(q => {
+      const s = stats[q.id];
+      const fails = s ? (s.attempts - s.correctCount) : 0;
+      return { q, fails };
+    })
+    .filter(x => x.fails > 0)
+    .sort((a, b) => b.fails - a.fails)
+    .slice(0, 10);
+
+  html += `<div class="stat-section">
+    <div class="stat-section-title">Questions les plus échouées</div>`;
+
+  if (failed.length === 0) {
+    html += `<div class="stat-empty">Aucun échec enregistré</div>`;
+  } else {
+    failed.forEach(({ q, fails }, rank) => {
+      const catLabel = CATS[q.cat].label;
+      const lvlLabel = LEVELS[q.lvl];
+      const qText    = q.q.length > 72 ? q.q.slice(0, 69) + '…' : q.q;
+      html += `
+      <div class="stat-fail-card">
+        <span class="stat-fail-rank">#${rank + 1}</span>
+        <div class="stat-fail-body">
+          <div class="stat-fail-q">${qText}</div>
+          <div class="stat-fail-meta">${catLabel} · ${lvlLabel}</div>
+        </div>
+        <span class="stat-fail-badge">${fails}✗</span>
+      </div>`;
+    });
+  }
+  html += `</div>`;
+
+  /* ── 3. Historique examens blancs ─────────────── */
+  html += `<div class="stat-section">
+    <div class="stat-section-title">Historique examens blancs</div>`;
+
+  if (exams.length === 0) {
+    html += `<div class="stat-empty">Aucun examen passé</div>`;
+  } else {
+    [...exams].reverse().forEach(e => {
+      const d    = new Date(e.date);
+      const date = d.toLocaleDateString('fr-CH', { day:'2-digit', month:'2-digit', year:'numeric' });
+      const time = d.toLocaleTimeString('fr-CH', { hour:'2-digit', minute:'2-digit' });
+      const pct  = Math.round(e.score / e.total * 100);
+      const cls  = e.passed ? 'pass' : 'fail';
+      const lbl  = e.passed ? 'Réussi' : 'Échoué';
+      html += `
+      <div class="stat-exam-row">
+        <div class="stat-exam-date">${date} ${time}</div>
+        <span class="stat-exam-score">${e.score}/${e.total}&thinsp;(${pct}%)</span>
+        <span class="stat-exam-badge ${cls}">${lbl}</span>
+      </div>`;
+    });
+  }
+  html += `</div>`;
+
+  /* ── 4 & 5. Actions ───────────────────────────── */
+  html += `
+  <div class="stat-section">
+    <div class="stat-section-title">Actions</div>
+    <div style="display:flex;flex-direction:column;gap:12px;">
+      <button class="btn-export" onclick="exportStats()">
+        ⬇︎&ensp;Télécharger les statistiques (JSON)
+      </button>
+      <button class="btn-danger" onclick="resetStats()">
+        🗑&ensp;Réinitialiser toutes les statistiques
+      </button>
+    </div>
+  </div>`;
+
+  document.getElementById('statsContent').innerHTML = html;
+}
+
+function exportStats() {
+  const stats = getStats();
+  const payload = QUESTIONS.map(q => {
+    const s = stats[q.id] || { attempts:0, correctCount:0, streak:0, lastSeen:null };
+    return {
+      id:            q.id,
+      categorie:     CATS[q.cat].label,
+      niveau:        LEVELS[q.lvl],
+      question:      q.q,
+      bonne_reponse: q.opts[0],
+      attempts:      s.attempts,
+      correctCount:  s.correctCount,
+      streak:        s.streak,
+      lastSeen:      s.lastSeen ? new Date(s.lastSeen).toISOString() : null
+    };
+  });
+
+  const json     = JSON.stringify(payload, null, 2);
+  const date     = new Date().toISOString().slice(0, 10);
+  const filename = `quiz-stats-${date}.json`;
+  const blob     = new Blob([json], { type: 'application/json' });
+  const url      = URL.createObjectURL(blob);
+  const a        = document.createElement('a');
+  a.href         = url;
+  a.download     = filename;
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+function resetStats() {
+  const ok = confirm(
+    'Réinitialiser toutes les statistiques ?\n\nCela effacera définitivement vos scores, streaks et l\'historique des examens.'
+  );
+  if (!ok) return;
+  localStorage.removeItem(STATS_KEY);
+  localStorage.removeItem(EXAMS_KEY);
+  showHome();
 }
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
