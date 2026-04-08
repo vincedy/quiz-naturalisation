@@ -6,7 +6,7 @@
 |---|---|---|---|
 | **Fédéral** | Assemblée fédérale = Conseil national (200) + Conseil des États (46) | Conseil fédéral (7, élu par l'Assemblée fédérale, président 1 an) | Tribunal fédéral (Lausanne, élu par l'Assemblée fédérale) |
 | **Canton VD** | Grand Conseil (150) | Conseil d'État (7, élu par le peuple, 5 ans, Château Saint-Maire) | Tribunal cantonal |
-| **Morges** | Conseil communal (100, 10 séances/an) | Municipalité (5, scrutin majoritaire 2 tours, législature 5 ans) | — |
+| **Morges** | Conseil communal (100, 10 séances/an) | Municipalité (7, scrutin majoritaire 2 tours, législature 5 ans) | — |
 
 ## RUOLI
 
@@ -25,10 +25,10 @@
 
 | Ruolo | Nome |
 |---|---|
-| Président CF 2026 | **Karin Keller-Sutter** |
+| Président CF 2026 | **Guy Parmelin** (vaudois, UDC) |
 | Présidente Conseil d'État VD | **Christelle Luisier Brodard** |
 | Syndic Lausanne | **Grégoire Junod** |
-| Syndique Morges | **Mélanie Wyss-Piet** |
+| Syndique Morges | **Mélanie Wyss-Pittet** |
 | Ancien syndic Morges → CE | **Nuria Gorrite** |
 
 ## EXTRA
