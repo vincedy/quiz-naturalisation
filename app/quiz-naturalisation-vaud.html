@@ -6,10 +6,10 @@
 <meta name="theme-color" content="#2d6e3e">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Quiz Natu">
-<title>Quiz Naturalisation – Morges</title>
+<title>Quiz Naturalisation</title>
 <script>
   (function(){
-    var m=JSON.stringify({name:"Quiz Naturalisation Morges",short_name:"Quiz Naturalisation",start_url:"https://vincedy.github.io/quiz-naturalisation/app/quiz-naturalisation-morges.html",display:"standalone",theme_color:"#2d6e3e",background_color:"#f5fbf6",icons:[{src:"icon.png",sizes:"192x192",type:"image/png"},{src:"icon.png",sizes:"512x512",type:"image/png"}]});
+    var m=JSON.stringify({name:"Quiz Naturalisation Vaud",short_name:"Quiz Naturalisation",start_url:"https://vincedy.github.io/quiz-naturalisation/app/quiz-naturalisation-vaud.html",display:"standalone",theme_color:"#2d6e3e",background_color:"#f5fbf6",icons:[{src:"icon.png",sizes:"192x192",type:"image/png"},{src:"icon.png",sizes:"512x512",type:"image/png"}]});
     var l=document.createElement('link');l.rel='manifest';l.href='data:application/manifest+json,'+encodeURIComponent(m);
     document.head.appendChild(l);
   })();
@@ -799,6 +799,14 @@ footer {
   .md-trap { background: #2a0e0e; border-color: #5a1a1a; }
 }
 
+.commune-switcher {
+  display: inline-block; margin-top: 6px;
+  background: none; border: 1px solid var(--border);
+  border-radius: 20px; padding: 4px 14px;
+  font-size: .78rem; color: var(--primary); cursor: pointer;
+}
+.commune-switcher:hover { background: var(--primary-lt); }
+
 .md-pre {
   background: #f0f0f0; color: #162218;
   font-size: 0.7em; line-height: 1.4;
@@ -851,18 +859,36 @@ footer {
 
 <header class="app-bar">
   <button id="btnBack" onclick="goBack()" aria-label="Retour à l'accueil">&#8592;</button>
-  <span class="app-bar-title" id="appTitle">Quiz Naturalisation – Morges</span>
+  <span class="app-bar-title" id="appTitle">Quiz Naturalisation</span>
 </header>
 
 <main>
 
   <!-- ── HOME ──────────────────────────────────────── -->
+  <!-- ── COMMUNE SELECT ──────────────────────────────── -->
+  <section class="screen" id="screenCommuneSelect">
+    <div style="display:flex;flex-direction:column;align-items:center;padding:40px 20px;gap:24px;">
+      <div style="font-size:2.5rem;">🏛️</div>
+      <h2 style="font-size:1.3rem;font-weight:700;text-align:center;">Choisissez votre commune</h2>
+      <p style="font-size:.88rem;color:var(--muted);text-align:center;">Vous pourrez changer votre choix depuis l'accueil.</p>
+      <button class="btn-main" style="width:100%;max-width:320px;" onclick="selectCommune('morges')">
+        <span class="btn-main-icon">🏰</span>Morges
+      </button>
+      <button class="btn-main" style="width:100%;max-width:320px;" onclick="selectCommune('gland')">
+        <span class="btn-main-icon">🌿</span>Gland
+      </button>
+    </div>
+  </section>
+
   <section class="screen active" id="screenHome">
 
     <div class="home-header">
-      <div class="canton-badge">Canton de Vaud &bull; Morges</div>
+      <div class="canton-badge">Canton de Vaud</div>
       <h2>Quiz Naturalisation</h2>
       <p class="subtitle">160 questions &bull; 4 catégories &bull; 3 niveaux</p>
+      <button class="commune-switcher" id="communeSwitcherBtn" onclick="showCommuneSwitcher()">
+        Commune : <span id="communeSwitcherLabel">Morges</span> ▼
+      </button>
     </div>
 
     <div class="progress-grid" id="progressGrid">
@@ -921,7 +947,7 @@ footer {
         <button class="pill active" data-lvl="all"  onclick="setLvl('all')">Tous</button>
         <button class="pill"        data-lvl="ch"   onclick="setLvl('ch')">🇨🇭 Suisse</button>
         <button class="pill"        data-lvl="vd"   onclick="setLvl('vd')">Vaud</button>
-        <button class="pill"        data-lvl="mo"   onclick="setLvl('mo')">Morges</button>
+        <button class="pill" id="communeLvlPill" data-lvl="mo" onclick="setLvl(communeLvl())">Morges</button>
       </div>
     </div>
 
@@ -1421,7 +1447,79 @@ const QUESTIONS = [
   {id:159, cat:"soc", lvl:"mo", q:"Où se déroule le marché de Noël de Morges ?",
    opts:["Dans le parc du Château","Dans le parc de l'Indépendance","Sur la place du Temple","Dans la Grand-Rue"], ans:0},
   {id:160, cat:"soc", lvl:"mo", q:"Quelle manifestation n'est pas organisée en ville de Morges ?",
-   opts:["Festival de la Cité","Le livre sur les quais","Paillote festival","La Grande Table"], ans:0}
+   opts:["Festival de la Cité","Le livre sur les quais","Paillote festival","La Grande Table"], ans:0},
+
+  /* ── Géographie · Gland ───────────────────────────────────────── */
+  {id:201, cat:"geo", lvl:"gl", q:"Quelles sont les communes voisines de Gland ?",
+   opts:["Prangins, Vich, Luins, Eysins et Dully","Rolle, Bursins, Nyon, Grens et Tannay","Begnins, Prangins, Vich, Luins et Dully","Saint-Cergue, Marchissy, Féchy, Morges et Lausanne"], ans:0},
+  {id:202, cat:"geo", lvl:"gl", q:"Quel est approximativement le nombre d'habitants sur la commune de Gland ?",
+   opts:["13'000","2'300","7'200","31'000"], ans:0},
+  {id:203, cat:"geo", lvl:"gl", q:"Notre ville est bordée par deux cours d'eau, lesquels ?",
+   opts:["Serine et Lavasson","Lavasson et l'Asse","Rhône et Broye","Venoge et Arbogne"], ans:0},
+  {id:204, cat:"geo", lvl:"gl", q:"A quelle altitude se situe la ville de Gland ?",
+   opts:["431 mètres","0 mètre","1'208 mètres","2'200 mètres"], ans:0},
+  {id:205, cat:"geo", lvl:"gl", q:"Quelle est approximativement la superficie de Gland ?",
+   opts:["830 hectares","60 hectares","1'000 hectares","3'000 hectares"], ans:0},
+  {id:206, cat:"geo", lvl:"gl", q:"Quels sont les lieux de promenades à Gland ?",
+   opts:["La promenade du Golf et le sentier des Toblerones","Le bois de Chêne et le zoo de la Garenne","Le bois du Boiron et le sentier du Rochat","La Venoge et la Maison de la Rivière"], ans:0},
+  {id:207, cat:"geo", lvl:"gl", q:"Dans quel district se trouve Gland ?",
+   opts:["Nyon","Morges","Gland","Lausanne"], ans:0},
+  {id:208, cat:"geo", lvl:"gl", q:"Nommez deux quartiers de Gland :",
+   opts:["La Cité-Ouest et les Avouillons","L'Asse et le Boiron","La Cité-Ouest et le Lignon","Les Uttins et la Levratte"], ans:0},
+
+  /* ── Histoire · Gland ─────────────────────────────────────────── */
+  {id:209, cat:"his", lvl:"gl", q:"Quand s'installèrent les premiers hommes au Creux de la Dullive à Gland ?",
+   opts:["Il y a 5'000 ans","Il y a 500 ans","Il y a 10'000 ans","Il y a 100 ans"], ans:0},
+  {id:210, cat:"his", lvl:"gl", q:"Quel endroit est un site historique et a été habité par les Helvètes environ 450 ans avant Jésus-Christ ?",
+   opts:["La Lignière","Eikenøtt","La Cité-Ouest","Les Avouillons"], ans:0},
+  {id:211, cat:"his", lvl:"gl", q:"Gland est devenu une commune libre en 1798, suite à quel événement ?",
+   opts:["L'Indépendance vaudoise","Le serment du Grütli","La Constitution fédérale","L'élection du premier Syndic"], ans:0},
+  {id:212, cat:"his", lvl:"gl", q:"La première Municipalité a été créée en :",
+   opts:["1799","1901","1942","2010"], ans:0},
+  {id:213, cat:"his", lvl:"gl", q:"En quelle année a eu lieu la première inauguration de la gare de Gland ?",
+   opts:["1858","1630","1703","2009"], ans:0},
+  {id:214, cat:"his", lvl:"gl", q:"Quel transport reliait Gland et Begnins de 1906 à 1954 ?",
+   opts:["Tramway","Télécabine","Train","Métro"], ans:0},
+  {id:215, cat:"his", lvl:"gl", q:"En quelle année une cloche a été installée pour appeler au culte, sonner les alarmes et écarter le danger de la foudre ?",
+   opts:["1739","1824","1910","2000"], ans:0},
+  {id:216, cat:"his", lvl:"gl", q:"Où se trouve le Musée Romain ?",
+   opts:["Nyon","Mies","Saint-Cergue","Perroy"], ans:0},
+
+  /* ── Politique · Gland ────────────────────────────────────────── */
+  {id:217, cat:"pol", lvl:"gl", q:"Quelles sont les autorités élues par le peuple à Gland ?",
+   opts:["Le Législatif (Conseil communal) et l'Exécutif (la Municipalité)","Le Juge et le Syndic","Le Président du Conseil communal et l'Huissier","Le Directeur de l'école et le Président de l'USLG"], ans:0},
+  {id:218, cat:"pol", lvl:"gl", q:"De combien de personnes est composée la Municipalité de Gland ?",
+   opts:["7","1","21","47"], ans:0},
+  {id:219, cat:"pol", lvl:"gl", q:"Qui élit le Conseil Communal et la Municipalité ?",
+   opts:["Les citoyens et citoyennes de Gland qui ont 18 ans révolus et le droit de vote","Les citoyens et citoyennes suisses dès 16 ans","Les étrangers résidant en Suisse depuis 2 ans","Les Bourgeois de Gland ayant le droit de vote"], ans:0},
+  {id:220, cat:"pol", lvl:"gl", q:"Où se trouve le Tribunal du district de Nyon ?",
+   opts:["Nyon","Gland","Lausanne","Morges"], ans:0},
+  {id:221, cat:"pol", lvl:"gl", q:"Où se déroulent les séances du Conseil communal de Gland ?",
+   opts:["A la salle communale dans la Maison de Commune","A la grande salle de Montoly","Au Théâtre de Grand-Champ","A l'école des Tuillières"], ans:0},
+  {id:222, cat:"pol", lvl:"gl", q:"Le Conseil communal en tant que pouvoir législatif peut …",
+   opts:["Adopter les comptes communaux","Elire le Conseil Fédéral","Retirer le permis de conduire à une personne qui a conduit en état d'ivresse","Construire un pont pour traverser le lac Léman"], ans:0},
+  {id:223, cat:"pol", lvl:"gl", q:"Quel est le Chef-lieu du district de Nyon ?",
+   opts:["Nyon","Gland","Morges","Coppet"], ans:0},
+  {id:224, cat:"pol", lvl:"gl", q:"De combien de personnes est composé le Conseil communal de Gland ?",
+   opts:["75","46","150","200"], ans:0},
+
+  /* ── Social · Gland ───────────────────────────────────────────── */
+  {id:225, cat:"soc", lvl:"gl", q:"Où se trouve le Marché hebdomadaire de Gland ?",
+   opts:["A la Cité-Ouest","A Mauverney","A la Place de la Gare","A Eikenøtt"], ans:0},
+  {id:226, cat:"soc", lvl:"gl", q:"Où se trouve le Théâtre de Gland ?",
+   opts:["A Grand-Champ","A Mauverney","A la gare","A Eikenøtt"], ans:0},
+  {id:227, cat:"soc", lvl:"gl", q:"Combien de clubs et sociétés sportives y a-t-il à Gland ?",
+   opts:["35","3","11","106"], ans:0},
+  {id:228, cat:"soc", lvl:"gl", q:"Quel est le nom de l'Espace d'échange, de rencontre et de création ?",
+   opts:["La Pépinière","Le Chêne","La Jardinière","Le Pommier"], ans:0},
+  {id:229, cat:"soc", lvl:"gl", q:"Quel est le nom du réseau des boîtes à livres de la Ville ?",
+   opts:["Délivrez-moi","Lisez-moi","Feuilletez-moi","Survolez-moi"], ans:0},
+  {id:230, cat:"soc", lvl:"gl", q:"Quel festival international de cinéma a lieu à Nyon et au Théâtre de Grand-Champ à Gland ?",
+   opts:["Visions du réel","Ciné Festival","Festival du film français d'Helvétie","Festival international du film de Locarno"], ans:0},
+  {id:231, cat:"soc", lvl:"gl", q:"Quelle fête annuelle organisée par la ville de Gland met à l'honneur différentes nationalités et cultures ?",
+   opts:["La Fête Multiculturelle","La Fête des voisins","La Fête du Chêne","La Fête du 1er août"], ans:0},
+  {id:232, cat:"soc", lvl:"gl", q:"Quel est le sobriquet (surnom) des habitants de Gland ?",
+   opts:["Les croqueraves","Les tâte-poules","Les mangeurs de foie","Les plantes-saules"], ans:0}
 
 ];
 /* ===================================================================== */
@@ -1434,8 +1532,27 @@ const CATS = {
   pol: { label: 'Politique',   icon: '⚖️' },
   soc: { label: 'Social',      icon: '🤝' }
 };
-const LEVELS = { ch: 'Suisse', vd: 'Canton de Vaud', mo: 'Morges' };
+const LEVELS = { ch: 'Suisse', vd: 'Canton de Vaud', mo: 'Morges', gl: 'Gland' };
 const LETTERS = ['A', 'B', 'C', 'D'];
+
+/* ── Communes ──────────────────────────────────────────────────── */
+const COMMUNES = {
+  morges: { name: 'Morges', lvl: 'mo' },
+  gland:  { name: 'Gland',  lvl: 'gl' }
+};
+const COMMUNE_KEY = 'qnm_commune';
+
+function getCommune()   { return localStorage.getItem(COMMUNE_KEY) || 'morges'; }
+function setCommune(k)  { localStorage.setItem(COMMUNE_KEY, k); }
+function communeLvl()   { return COMMUNES[getCommune()].lvl; }
+function communeName()  { return COMMUNES[getCommune()].name; }
+
+/* Questions actives = CH + VD + commune sélectionnée (exclut l'autre commune) */
+function communeActiveQuestions() {
+  const lvl = communeLvl();
+  const otherLvls = Object.values(COMMUNES).map(c => c.lvl).filter(l => l !== lvl);
+  return QUESTIONS.filter(q => !otherLvls.includes(q.lvl));
+}
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
    LOCALSTORAGE — clé unique "qnm_stats"
@@ -1448,6 +1565,22 @@ function getStats() {
   catch { return {}; }
 }
 function saveStats(s) { localStorage.setItem(STATS_KEY, JSON.stringify(s)); }
+
+/* ── Init commune ──────────────────────────────────────────────── */
+function initCommune() {
+  if (localStorage.getItem(COMMUNE_KEY)) return; // already chosen
+  if (localStorage.getItem(STATS_KEY)) {          // existing user → assume Morges
+    setCommune('morges');
+    return;
+  }
+  // New user → show selection screen
+  _activateScreen('screenCommuneSelect', 'Quiz Naturalisation', null);
+}
+
+function selectCommune(key) {
+  setCommune(key);
+  showHome();
+}
 
 function recordAnswer(qId, correct) {
   const stats = getStats();
@@ -1504,15 +1637,38 @@ function goBack() {
 }
 
 function showHome() {
-  _activateScreen('screenHome', 'Quiz Naturalisation – Morges', null);
+  _activateScreen('screenHome', 'Quiz Naturalisation', null);
+  const lbl = document.getElementById('communeSwitcherLabel');
+  if (lbl) lbl.textContent = communeName();
+  updateCommunePill();
   renderProgressGrid();
+}
+
+function updateCommunePill() {
+  const pill = document.getElementById('communeLvlPill');
+  if (!pill) return;
+  const lvl  = communeLvl();
+  pill.dataset.lvl  = lvl;
+  pill.textContent  = communeName();
+  // Re-sync active state if the current filter matches this level
+  if (cfg.lvl === lvl) pill.classList.add('active');
+  else pill.classList.remove('active');
+}
+
+function showCommuneSwitcher() {
+  const choices = Object.entries(COMMUNES)
+    .map(([k, c]) => `<button class="btn-main" style="width:100%;max-width:320px;" onclick="selectCommune('${k}')">${c.name}</button>`)
+    .join('');
+  document.getElementById('screenCommuneSelect').querySelector('h2').textContent = 'Changer de commune';
+  // Re-use the commune select screen
+  _activateScreen('screenCommuneSelect', 'Quiz Naturalisation', { id:'screenHome', title:'Quiz Naturalisation' });
 }
 
 function showPlaceholder(title, icon, desc) {
   document.getElementById('phTitle').textContent = title;
   document.getElementById('phIcon').textContent  = icon;
   document.getElementById('phDesc').textContent  = desc;
-  _activateScreen('screenPlaceholder', title, { id:'screenHome', title:'Quiz Naturalisation – Morges' });
+  _activateScreen('screenPlaceholder', title, { id:'screenHome', title:'Quiz Naturalisation' });
 }
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -1522,8 +1678,9 @@ function renderProgressGrid() {
   const stats = getStats();
   const grid  = document.getElementById('progressGrid');
   grid.innerHTML = '';
+  const activeQs = communeActiveQuestions();
   for (const [catKey, catMeta] of Object.entries(CATS)) {
-    const qs       = QUESTIONS.filter(q => q.cat === catKey);
+    const qs       = activeQs.filter(q => q.cat === catKey);
     const total    = qs.length;
     const correctes = qs.filter(q => { const s = stats[q.id]; return s && s.streak >= 1; }).length;
     const apprises  = qs.filter(q => { const s = stats[q.id]; return s && s.streak >= 3; }).length;
@@ -1563,7 +1720,8 @@ function applyStatusFilter(pool, stats) {
 }
 
 function showConfig() {
-  _activateScreen('screenConfig', 'Entraînement', { id:'screenHome', title:'Quiz Naturalisation – Morges' });
+  _activateScreen('screenConfig', 'Entraînement', { id:'screenHome', title:'Quiz Naturalisation' });
+  updateCommunePill();
   renderConfigCats();
   refreshAvail();
 }
@@ -1595,8 +1753,9 @@ function onSlider(cat, val) {
    remet chaque slider au max disponible pour le nouveau filtre. */
 function refreshAvail() {
   const stats = getStats();
+  const active = communeActiveQuestions();
   for (const cat of Object.keys(CATS)) {
-    let pool = QUESTIONS.filter(q => q.cat === cat);
+    let pool = active.filter(q => q.cat === cat);
     if (cfg.lvl !== 'all') pool = pool.filter(q => q.lvl === cfg.lvl);
     pool = applyStatusFilter(pool, stats);
 
@@ -1675,10 +1834,11 @@ function buildPool(errorIds) {
     return shuffle(errorIds.map(id => QUESTIONS.find(q => q.id === id)).filter(Boolean)).map(prepareQ);
   }
   const stats = getStats();
+  const active = communeActiveQuestions();
   const selected = [];
   for (const cat of Object.keys(CATS)) {
     if (cfg.counts[cat] === 0) continue;
-    let pool = QUESTIONS.filter(q => q.cat === cat);
+    let pool = active.filter(q => q.cat === cat);
     if (cfg.lvl !== 'all') pool = pool.filter(q => q.lvl === cfg.lvl);
     pool = applyStatusFilter(pool, stats);
     selected.push(...shuffle(pool).slice(0, cfg.counts[cat]));
@@ -1695,7 +1855,7 @@ function startTraining(errorIds) {
   if (quiz.questions.length === 0) return;
   const title = errorIds ? 'Révision des erreurs' : 'Entraînement';
   const back  = errorIds
-    ? { id:'screenHome',   title:'Quiz Naturalisation – Morges' }
+    ? { id:'screenHome',   title:'Quiz Naturalisation' }
     : { id:'screenConfig', title:'Entraînement' };
   _activateScreen('screenQuiz', title, back);
   renderQuestion();
@@ -1783,7 +1943,7 @@ function nextQuestion() {
    RÉSULTATS
    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 function showResult() {
-  _activateScreen('screenResult', 'Résultats', { id:'screenHome', title:'Quiz Naturalisation – Morges' });
+  _activateScreen('screenResult', 'Résultats', { id:'screenHome', title:'Quiz Naturalisation' });
 
   const total   = quiz.questions.length;
   const correct = Object.values(quiz.results).filter(Boolean).length;
@@ -1861,7 +2021,7 @@ function getExams() {
 function buildExamPool() {
   const pool = [];
   for (const cat of Object.keys(CATS)) {
-    for (const lvl of ['ch', 'vd', 'mo']) {
+    for (const lvl of ['ch', 'vd', communeLvl()]) {
       const sub = QUESTIONS.filter(q => q.cat === cat && q.lvl === lvl);
       pool.push(...shuffle(sub).slice(0, EXAM_PER_LVL));
     }
@@ -1877,7 +2037,7 @@ function startExam() {
   exam.finished   = false;
   if (exam._interval) clearInterval(exam._interval);
 
-  _activateScreen('screenExam', 'Examen blanc', { id:'screenHome', title:'Quiz Naturalisation – Morges' });
+  _activateScreen('screenExam', 'Examen blanc', { id:'screenHome', title:'Quiz Naturalisation' });
   renderExamNav();
   renderExamQuestion();
   startExamTimer();
@@ -2029,7 +2189,7 @@ function saveExamSession() {
 }
 
 function showExamResult() {
-  _activateScreen('screenExamResult', 'Résultat examen', { id:'screenHome', title:'Quiz Naturalisation – Morges' });
+  _activateScreen('screenExamResult', 'Résultat examen', { id:'screenHome', title:'Quiz Naturalisation' });
 
   const total     = exam.questions.length;
   const score     = exam.questions.filter((q, i) => exam.answers[i] === q.correctIdx).length;
@@ -2086,7 +2246,7 @@ function showExamResult() {
    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 function showStats() {
   _activateScreen('screenStats', 'Statistiques',
-    { id:'screenHome', title:'Quiz Naturalisation – Morges' });
+    { id:'screenHome', title:'Quiz Naturalisation' });
   renderStats();
 }
 
@@ -2099,8 +2259,9 @@ function renderStats() {
   html += `<div class="stat-section">
     <div class="stat-section-title">Progression par catégorie</div>`;
 
+  const activeQs2 = communeActiveQuestions();
   for (const [catKey, catMeta] of Object.entries(CATS)) {
-    const qs         = QUESTIONS.filter(q => q.cat === catKey);
+    const qs         = activeQs2.filter(q => q.cat === catKey);
     const total      = qs.length;
     const correctes  = qs.filter(q => { const s = stats[q.id]; return s && s.streak >= 1; }).length;
     const apprises   = qs.filter(q => { const s = stats[q.id]; return s && s.streak >= 3; }).length;
@@ -2110,7 +2271,7 @@ function renderStats() {
     const lvlHtml = [
       { key:'ch', label:'Suisse',  total:16 },
       { key:'vd', label:'Vaud',    total:16 },
-      { key:'mo', label:'Morges',  total:8  }
+      { key: communeLvl(), label: communeName(), total: 8 }
     ].map(({ key, label, total: t }) => {
       const sub = qs.filter(q => q.lvl === key);
       const apr = sub.filter(q => { const s = stats[q.id]; return s && s.streak >= 3; }).length;
@@ -2135,7 +2296,7 @@ function renderStats() {
   html += `</div>`;
 
   /* ── 2. Questions les plus échouées ───────────── */
-  const failed = QUESTIONS
+  const failed = communeActiveQuestions()
     .map(q => {
       const s = stats[q.id];
       const fails = s ? (s.attempts - s.correctCount) : 0;
@@ -2253,7 +2414,7 @@ function resetStats() {
    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 function showLearn() {
   _activateScreen('screenLearn', 'Apprendre',
-    { id:'screenHome', title:'Quiz Naturalisation – Morges' });
+    { id:'screenHome', title:'Quiz Naturalisation' });
 }
 
 function showLearnPage(key) {
@@ -2575,7 +2736,7 @@ fai: {
    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 function showFcConfig() {
   _activateScreen('screenFcConfig', 'Flashcards',
-    { id:'screenHome', title:'Quiz Naturalisation – Morges' });
+    { id:'screenHome', title:'Quiz Naturalisation' });
   renderFcCatGrid();
 }
 
@@ -2605,7 +2766,7 @@ function launchFlashcards() {
   if (fc._autoTimer) { clearTimeout(fc._autoTimer); fc._autoTimer = null; }
 
   _activateScreen('screenFlashcard', 'Flashcards',
-    { id:'screenHome', title:'Quiz Naturalisation – Morges' });
+    { id:'screenHome', title:'Quiz Naturalisation' });
 
   document.getElementById('fcSessionBar').classList.remove('hidden');
   updateFcSessionBar();
@@ -2639,7 +2800,7 @@ function buildDeck() {
     const qs = QUESTIONS.filter(q => q.cat === cat);
     catPct[cat] = qs.filter(q => { const s = stats[q.id]; return s && s.streak >= 3; }).length / qs.length;
   }
-  const active = QUESTIONS.filter(q => fc.cats[q.cat]);
+  const active = communeActiveQuestions().filter(q => fc.cats[q.cat]);
   const scored = active.map(q => {
     const streak = (stats[q.id] ? stats[q.id].streak : 0);
     const score  = streak * 3 + catPct[q.cat] * 5 + Math.random();
@@ -2739,6 +2900,7 @@ function updateFcSessionBar() {
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
    INIT
    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+initCommune();
 renderProgressGrid();
 </script>
 
