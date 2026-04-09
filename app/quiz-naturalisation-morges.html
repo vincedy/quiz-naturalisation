@@ -1546,7 +1546,7 @@ const cfg = {
 /* Filtre une pool selon cfg.status */
 function applyStatusFilter(pool, stats) {
   if (cfg.status === 'unseen')  return pool.filter(q => !stats[q.id] || stats[q.id].attempts === 0);
-  if (cfg.status === 'failed')  return pool.filter(q => { const s = stats[q.id]; return s && (s.attempts - s.correctCount) > 0; });
+  if (cfg.status === 'failed')  return pool.filter(q => { const s = stats[q.id]; return s && s.attempts > 0 && s.streak === 0; });
   if (cfg.status === 'correct') return pool.filter(q => { const s = stats[q.id]; return s && s.streak >= 1 && s.streak < 3; });
   if (cfg.status === 'learned') return pool.filter(q => { const s = stats[q.id]; return s && s.streak >= 3; });
   return pool; // 'all'
