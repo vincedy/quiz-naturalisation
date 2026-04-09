@@ -799,6 +799,16 @@ footer {
   .md-trap { background: #2a0e0e; border-color: #5a1a1a; }
 }
 
+.md-pre {
+  background: #f0f0f0; color: #162218;
+  font-size: 0.7em; line-height: 1.4;
+  overflow-x: auto; padding: 0.8em;
+  border-radius: 6px; margin: 8px 0 12px;
+}
+@media (prefers-color-scheme: dark) {
+  .md-pre { background: #1a2a1e; color: #d4eada; }
+}
+
 /* ── Flashcard config ────────────────────────── */
 .fc-cat-grid {
   display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
@@ -2259,35 +2269,107 @@ const LEARN_PAGES = {
 pol: {
   title: '⚖️ Politique',
   html: `<div class="md-content">
-<h2>Structure : 3 niveaux × 3 pouvoirs</h2>
+<h2>QUI ÉLIT QUI — Les 3 niveaux</h2>
+<pre class="md-pre">
+═══════════════════════════════════════════════════════════
+                       PEUPLE
+             (vote directement pour ↓)
+═══════════════════════════════════════════════════════════
+                         │
+       ┌─────────────────┼─────────────────┐
+       ▼                 ▼                 ▼
+  FÉDÉRAL           CANTONAL          COMMUNAL
+                    (Vaud)            (Morges)
+
+LÉGISLATIF        LÉGISLATIF        LÉGISLATIF
+(fait les lois)   (fait les lois)   (fait les lois)
+┌──────────────┐  ┌──────────────┐  ┌──────────────┐
+│ Parlement    │  │ Grand        │  │ Conseil      │
+│ fédéral      │  │ Conseil      │  │ communal     │
+│ = Assemblée  │  │              │  │              │
+│   fédérale   │  │ 150 membres  │  │ 100 membres  │
+│              │  │              │  │ 10 séances   │
+│ CN  (200)    │  │              │  │              │
+│ +CE  (46)    │  │              │  │              │
+└──────┬───────┘  └──────────────┘  └──────────────┘
+       │
+       │ EXCEPTION :
+       │ élit ↓
+       │
+EXÉCUTIF          EXÉCUTIF          EXÉCUTIF
+(gouverne)        (gouverne)        (gouverne)
+┌──────────────┐  ┌──────────────┐  ┌──────────────┐
+│ Conseil      │  │ Conseil      │  │ Municipalité │
+│ fédéral      │  │ d'État       │  │              │
+│              │  │              │  │              │
+│ 7 membres    │  │ 7 membres    │  │ 7 membres    │
+│ prés. 1 an   │  │ 5 ans        │  │ 5 ans        │
+│              │  │ Château      │  │ scrutin maj. │
+│ ÉLU PAR LE   │  │ Saint-Maire  │  │ 2 tours      │
+│ PARLEMENT !  │  │              │  │              │
+│ PAS par le   │  │ ÉLU PAR LE   │  │ ÉLU PAR LE   │
+│ peuple !     │  │ PEUPLE       │  │ PEUPLE       │
+└──────────────┘  └──────────────┘  └──────────────┘
+
+JUDICIAIRE        JUDICIAIRE
+(juge)            (juge)
+┌──────────────┐  ┌──────────────┐
+│ Tribunal     │  │ Tribunal     │  (pas de niveau
+│ fédéral      │  │ cantonal     │   judiciaire
+│ Lausanne     │  │              │   communal)
+│              │  │              │
+│ ÉLU PAR LE   │  │              │
+│ PARLEMENT !  │  │              │
+└──────────────┘  └──────────────┘
+</pre>
+<h2>Règle d'or</h2>
+<ul>
+<li>Le <strong>peuple</strong> élit TOUS les législatifs (3 niveaux) + les exécutifs cantonal et communal</li>
+<li><strong>EXCEPTION :</strong> le Conseil fédéral et le Tribunal fédéral sont élus par l'<strong>Assemblée fédérale</strong>, PAS par le peuple</li>
+<li><strong>Tous les exécutifs = 7 membres. Toujours.</strong></li>
+</ul>
+<h2>Parlement fédéral = Assemblée fédérale</h2>
+<p>Deux noms, même chose. Composé de deux chambres :</p>
+<ul>
+<li><strong>Conseil national</strong> = 200 membres = chambre du <strong>peuple</strong> (national → nation → peuple)</li>
+<li><strong>Conseil des États</strong> = 46 membres = chambre des <strong>cantons</strong> (états → états → cantons)</li>
+<li><strong>Palais fédéral</strong> (Berne) = où siège le Parlement</li>
+</ul>
+<p>Ensemble, ils élisent :</p>
+<ul>
+<li>le <strong>Conseil fédéral</strong> (gouvernement, 7 membres)</li>
+<li>le <strong>Tribunal fédéral</strong> (justice, Lausanne)</li>
+</ul>
+<h2>Noms : chaque nom n'existe qu'à un seul niveau</h2>
 <div class="md-table-wrap"><table>
-<thead><tr><th></th><th>Législatif</th><th>Exécutif</th><th>Judiciaire</th></tr></thead>
+<thead><tr><th>Nom</th><th>Niveau</th><th>Rôle</th></tr></thead>
 <tbody>
-<tr><td><strong>Fédéral</strong></td>
-    <td>Assemblée fédérale<br>= Conseil national (200)<br>+ Conseil des États (46)</td>
-    <td>Conseil fédéral (7)<br>Élu par l'Assemblée fédérale<br>Président : 1 an</td>
-    <td>Tribunal fédéral<br>Lausanne<br>Élu par l'Assemblée fédérale</td></tr>
-<tr><td><strong>Canton VD</strong></td>
-    <td>Grand Conseil (150)</td>
-    <td>Conseil d'État (7)<br>Élu par le peuple — 5 ans<br>Château Saint-Maire</td>
-    <td>Tribunal cantonal</td></tr>
-<tr><td><strong>Morges</strong></td>
-    <td>Conseil communal (100)<br>10 séances/an</td>
-    <td>Municipalité (7)<br>Scrutin majoritaire 2 tours<br>Législature 5 ans</td>
-    <td>—</td></tr>
+<tr><td>Parlement / Assemblée fédérale</td><td>Fédéral</td><td>Législatif</td></tr>
+<tr><td>Conseil national</td><td>Fédéral</td><td>Chambre du peuple</td></tr>
+<tr><td>Conseil des États</td><td>Fédéral</td><td>Chambre des cantons</td></tr>
+<tr><td>Conseil fédéral</td><td>Fédéral</td><td>Exécutif</td></tr>
+<tr><td>Tribunal fédéral</td><td>Fédéral</td><td>Judiciaire</td></tr>
+<tr><td>Grand Conseil</td><td>Cantonal</td><td>Législatif</td></tr>
+<tr><td>Conseil d'État</td><td>Cantonal</td><td>Exécutif</td></tr>
+<tr><td>Tribunal cantonal</td><td>Cantonal</td><td>Judiciaire</td></tr>
+<tr><td>Conseil communal</td><td>Communal</td><td>Législatif</td></tr>
+<tr><td>Municipalité</td><td>Communal</td><td>Exécutif</td></tr>
 </tbody></table></div>
 <h2>Rôles</h2>
 <ul>
 <li>Législatif = <strong>élabore</strong> les lois</li>
 <li>Exécutif = <strong>applique</strong> les lois et gouverne</li>
 <li>Judiciaire = s'assure que les lois soient bien appliquées</li>
-<li>Ministère public = conduit les investigations et défend la société devant les tribunaux</li>
-<li>Chancelier d'État = porte-parole du gouvernement VD</li>
-<li>Droits fondamentaux → <strong>Constitution</strong></li>
+<li>Ministère public = conduit les <strong>investigations</strong> et défend la <strong>société</strong> devant les tribunaux</li>
+<li>Chancelier d'État = <strong>porte-parole</strong> du gouvernement VD</li>
+<li>Droits fondamentaux → dans la <strong>Constitution</strong> (pas Code civil, pas Code pénal)</li>
 <li>Référendum = consultation populaire sur une loi</li>
 <li>Initiative cantonale = <strong>12'000 signatures en 4 mois</strong></li>
 <li>Unités administratives VD = <strong>districts, arrondissements, communes</strong></li>
-<li>Vote dès <strong>18 ans</strong> — Étrangers : <strong>communal uniquement</strong></li>
+<li>Vote dès <strong>18 ans</strong> / étrangers votent au niveau <strong>communal uniquement</strong></li>
+<li>PS (Parti socialiste) = <strong>gauche</strong></li>
+<li>DSAS = Département de la <strong>santé</strong> et de l'<strong>action sociale</strong></li>
+<li>ASIME = association scolaire intercommunale Morges</li>
 </ul>
 <h2>Noms 2026</h2>
 <div class="md-table-wrap"><table>
@@ -2297,16 +2379,17 @@ pol: {
 <tr><td>Présidente Conseil d'État VD</td><td><strong>Christelle Luisier Brodard</strong></td></tr>
 <tr><td>Syndic Lausanne</td><td><strong>Grégoire Junod</strong></td></tr>
 <tr><td>Syndique Morges</td><td><strong>Mélanie Wyss-Pittet</strong></td></tr>
-<tr><td>Ancien syndic Morges → CE</td><td><strong>Nuria Gorrite</strong></td></tr>
+<tr><td>Ancienne syndique Morges → CE</td><td><strong>Nuria Gorrite</strong></td></tr>
 </tbody></table></div>
-<h2>Extra</h2>
-<ul>
-<li>Palais fédéral = siège du <strong>Parlement</strong></li>
-<li>La Suisse est gouvernée par un <strong>Conseil fédéral</strong></li>
-<li>PS = gauche</li>
-<li>DSAS = Département de la <strong>santé</strong> et de l'<strong>action sociale</strong></li>
-<li>ASIME = association scolaire intercommunale Morges</li>
-</ul>
+<h2>Durées</h2>
+<div class="md-table-wrap"><table>
+<thead><tr><th>Quoi</th><th>Durée</th></tr></thead>
+<tbody>
+<tr><td>Président de la Confédération</td><td><strong>1 an</strong> (rotation annuelle)</td></tr>
+<tr><td>Conseil d'État VD</td><td><strong>5 ans</strong></td></tr>
+<tr><td>Législature communale Morges</td><td><strong>5 ans</strong></td></tr>
+</tbody></table></div>
+<div class="md-highlight">Astuce : <strong>1</strong> = fédéral, <strong>5</strong> = cantonal et communal.</div>
 </div>`
 },
 
