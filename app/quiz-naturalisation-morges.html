@@ -2597,7 +2597,9 @@ function toggleFcCat(cat) {
 
 function launchFlashcards() {
   fc.session   = { total: 0, bycat: { geo:0, his:0, pol:0, soc:0 } };
-  fc.recentIds = [];
+  fc.deck      = buildDeck();
+  fc.deckPos   = 0;
+  fc.cycle     = 1;
   fc.answered  = false;
   fc.selected  = null;
   if (fc._autoTimer) { clearTimeout(fc._autoTimer); fc._autoTimer = null; }
@@ -2613,11 +2615,11 @@ function launchFlashcards() {
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
    FLASHCARDS
    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-const FC_RECENT_MAX = 15;
-
 let fc = {
   session:    { total: 0, bycat: { geo:0, his:0, pol:0, soc:0 } },
-  recentIds:  [],
+  deck:       [],
+  deckPos:    0,
+  cycle:      1,
   current:    null,
   answered:   false,
   selected:   null,
@@ -2625,35 +2627,26 @@ let fc = {
   cats:       { geo:true, his:true, pol:true, soc:true }
 };
 
-/* ── Pick next question ────────────────────────
+/* ── Build deck ────────────────────────────────
    Score = streak * 3  +  catApprisesPct * 5  +  jitter
-   Lower score → higher priority.
-   Excludes recently seen questions.
+   Lower score → higher priority (weak questions first).
+   Returns ALL active questions ordered by score.
    ─────────────────────────────────────────────── */
-function pickFcQuestion() {
+function buildDeck() {
   const stats = getStats();
-
-  // % apprises (streak ≥ 3) per category
   const catPct = {};
   for (const cat of Object.keys(CATS)) {
     const qs = QUESTIONS.filter(q => q.cat === cat);
     catPct[cat] = qs.filter(q => { const s = stats[q.id]; return s && s.streak >= 3; }).length / qs.length;
   }
-
-  // Exclude recent; filter by active categories
   const active = QUESTIONS.filter(q => fc.cats[q.cat]);
-  let pool = active.filter(q => !fc.recentIds.includes(q.id));
-  if (pool.length === 0) { fc.recentIds = []; pool = active.length ? active : [...QUESTIONS]; }
-
-  // Score each candidate
-  const scored = pool.map(q => {
+  const scored = active.map(q => {
     const streak = (stats[q.id] ? stats[q.id].streak : 0);
     const score  = streak * 3 + catPct[q.cat] * 5 + Math.random();
     return { q, score };
   });
-
   scored.sort((a, b) => a.score - b.score);
-  return scored[0].q;
+  return scored.map(s => s.q);
 }
 
 function nextFlashcard() {
@@ -2661,12 +2654,16 @@ function nextFlashcard() {
   fc.answered = false;
   fc.selected = null;
 
-  const q = pickFcQuestion();
-  fc.current = prepareQ(q);
+  if (fc.deckPos >= fc.deck.length) {
+    fc.deck    = buildDeck();
+    fc.deckPos = 0;
+    fc.cycle++;
+  }
 
-  fc.recentIds.push(q.id);
-  if (fc.recentIds.length > FC_RECENT_MAX) fc.recentIds.shift();
+  fc.current = prepareQ(fc.deck[fc.deckPos]);
+  fc.deckPos++;
 
+  updateFcSessionBar();
   renderFlashcard();
 }
 
@@ -2736,11 +2733,7 @@ function confirmFcOpt() {
 function updateFcSessionBar() {
   const bar = document.getElementById('fcSessionBar');
   if (!bar) return;
-  const c        = fc.session;
-  const catParts = Object.entries(CATS)
-    .map(([k, m]) => `${m.label.slice(0, 3)} ${c.bycat[k]}`)
-    .join(' · ');
-  bar.textContent = `Session : ${c.total} carte${c.total !== 1 ? 's' : ''} — ${catParts}`;
+  bar.textContent = `Carte ${fc.deckPos}/${fc.deck.length} — Cycle ${fc.cycle}`;
 }
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
