@@ -800,8 +800,8 @@ footer {
 }
 
 /* Commune-conditional sections */
-[data-commune="morges"] .commune-gland { display: none; }
-[data-commune="gland"]  .commune-morges { display: none; }
+body.commune-active-morges .commune-gland { display: none; }
+body.commune-active-gland  .commune-morges { display: none; }
 
 .commune-switcher {
   display: inline-block; margin-top: 6px;
@@ -1581,9 +1581,14 @@ function initCommune() {
   _activateScreen('screenCommuneSelect', 'Quiz Naturalisation', null);
 }
 
+function applyCommuneCSS(key) {
+  document.body.classList.remove('commune-active-morges', 'commune-active-gland');
+  document.body.classList.add('commune-active-' + (key || getCommune()));
+}
+
 function selectCommune(key) {
   setCommune(key);
-  document.body.dataset.commune = key;
+  applyCommuneCSS(key);
   showHome();
 }
 
@@ -2425,6 +2430,7 @@ function showLearn() {
 function showLearnPage(key) {
   const page = LEARN_PAGES[key];
   document.getElementById('learnPageContent').innerHTML = page.html;
+  applyCommuneCSS();
   _activateScreen('screenLearnPage', page.title,
     { id:'screenLearn', title:'Apprendre' });
   window.scrollTo(0, 0);
@@ -2436,58 +2442,37 @@ pol: {
   title: '⚖️ Politique',
   html: `<div class="md-content">
 <h2>QUI ÉLIT QUI — Les 3 niveaux</h2>
-<pre class="md-pre">
-═══════════════════════════════════════════════════════════
-                       PEUPLE
-             (vote directement pour ↓)
-═══════════════════════════════════════════════════════════
-                         │
-       ┌─────────────────┼─────────────────┐
-       ▼                 ▼                 ▼
-  FÉDÉRAL           CANTONAL          COMMUNAL
-                    (Vaud)            (Morges)
-
-LÉGISLATIF        LÉGISLATIF        LÉGISLATIF
-(fait les lois)   (fait les lois)   (fait les lois)
-┌──────────────┐  ┌──────────────┐  ┌──────────────┐
-│ Parlement    │  │ Grand        │  │ Conseil      │
-│ fédéral      │  │ Conseil      │  │ communal     │
-│ = Assemblée  │  │              │  │              │
-│   fédérale   │  │ 150 membres  │  │ 100 membres  │
-│              │  │              │  │ 10 séances   │
-│ CN  (200)    │  │              │  │              │
-│ +CE  (46)    │  │              │  │              │
-└──────┬───────┘  └──────────────┘  └──────────────┘
-       │
-       │ EXCEPTION :
-       │ élit ↓
-       │
-EXÉCUTIF          EXÉCUTIF          EXÉCUTIF
-(gouverne)        (gouverne)        (gouverne)
-┌──────────────┐  ┌──────────────┐  ┌──────────────┐
-│ Conseil      │  │ Conseil      │  │ Municipalité │
-│ fédéral      │  │ d'État       │  │              │
-│              │  │              │  │              │
-│ 7 membres    │  │ 7 membres    │  │ 7 membres    │
-│ prés. 1 an   │  │ 5 ans        │  │ 5 ans        │
-│              │  │ Château      │  │ scrutin maj. │
-│ ÉLU PAR LE   │  │ Saint-Maire  │  │ 2 tours      │
-│ PARLEMENT !  │  │              │  │              │
-│ PAS par le   │  │ ÉLU PAR LE   │  │ ÉLU PAR LE   │
-│ peuple !     │  │ PEUPLE       │  │ PEUPLE       │
-└──────────────┘  └──────────────┘  └──────────────┘
-
-JUDICIAIRE        JUDICIAIRE
-(juge)            (juge)
-┌──────────────┐  ┌──────────────┐
-│ Tribunal     │  │ Tribunal     │  (pas de niveau
-│ fédéral      │  │ cantonal     │   judiciaire
-│ Lausanne     │  │              │   communal)
-│              │  │              │
-│ ÉLU PAR LE   │  │              │
-│ PARLEMENT !  │  │              │
-└──────────────┘  └──────────────┘
-</pre>
+<p style="text-align:center;font-weight:bold;margin-bottom:4px;">PEUPLE — vote directement pour ↓</p>
+<div class="md-table-wrap"><table>
+<thead><tr>
+  <th>FÉDÉRAL</th>
+  <th>CANTONAL<br><small style="font-weight:normal;">(Vaud)</small></th>
+  <th>COMMUNAL</th>
+</tr></thead>
+<tbody>
+<tr><th colspan="3" style="text-align:left;">LÉGISLATIF — élabore les lois</th></tr>
+<tr style="vertical-align:top;">
+  <td>Parlement fédéral<br>= Assemblée fédérale<br>CN (200) · CE (46)</td>
+  <td>Grand Conseil<br>150 membres</td>
+  <td>Conseil communal<br>
+    <div class="commune-morges">100 membres · 10 séances/an</div>
+    <div class="commune-gland">75 membres · —</div>
+  </td>
+</tr>
+<tr><td colspan="3"><em>⚠️ EXCEPTION : le Parlement fédéral élit ↓ le <strong>Conseil fédéral</strong> et le <strong>Tribunal fédéral</strong> — pas le peuple</em></td></tr>
+<tr><th colspan="3" style="text-align:left;">EXÉCUTIF — applique les lois et gouverne</th></tr>
+<tr style="vertical-align:top;">
+  <td><strong>Conseil fédéral</strong><br>7 membres · Président 1 an<br><strong>ÉLU PAR LE PARLEMENT !</strong></td>
+  <td>Conseil d'État<br>7 membres · 5 ans<br>Château Saint-Maire<br>ÉLU PAR LE PEUPLE</td>
+  <td>Municipalité<br>7 membres · 5 ans<br>scrutin maj. 2 tours<br>ÉLU PAR LE PEUPLE</td>
+</tr>
+<tr><th colspan="3" style="text-align:left;">JUDICIAIRE — s'assure que les lois soient bien appliquées</th></tr>
+<tr style="vertical-align:top;">
+  <td>Tribunal fédéral · Lausanne<br><strong>ÉLU PAR LE PARLEMENT !</strong></td>
+  <td>Tribunal cantonal</td>
+  <td><em>(pas de niveau judiciaire communal)</em></td>
+</tr>
+</tbody></table></div>
 <h2>Règle d'or</h2>
 <ul>
 <li>Le <strong>peuple</strong> élit TOUS les législatifs (3 niveaux) + les exécutifs cantonal et communal</li>
@@ -2535,8 +2520,16 @@ JUDICIAIRE        JUDICIAIRE
 <li>Vote dès <strong>18 ans</strong> / étrangers votent au niveau <strong>communal uniquement</strong></li>
 <li>PS (Parti socialiste) = <strong>gauche</strong></li>
 <li>DSAS = Département de la <strong>santé</strong> et de l'<strong>action sociale</strong></li>
-<li>ASIME = association scolaire intercommunale Morges</li>
+<li class="commune-morges">ASIME = association scolaire intercommunale Morges</li>
 </ul>
+<div class="commune-gland">
+<div class="md-table-wrap"><table>
+<thead><tr><th>Gland — commune</th><th>Réponse</th></tr></thead>
+<tbody>
+<tr><td>Séances du Conseil communal</td><td>Salle communale dans la <strong>Maison de Commune</strong></td></tr>
+<tr><td>Le CC (pouvoir législatif) peut</td><td><strong>Adopter les comptes communaux</strong></td></tr>
+</tbody></table></div>
+</div>
 <h2>Noms 2026</h2>
 <div class="md-table-wrap"><table>
 <thead><tr><th>Rôle</th><th>Nom</th></tr></thead>
@@ -2544,8 +2537,8 @@ JUDICIAIRE        JUDICIAIRE
 <tr><td>Président CF 2026</td><td><strong>Guy Parmelin</strong> (vaudois, UDC)</td></tr>
 <tr><td>Présidente Conseil d'État VD</td><td><strong>Christelle Luisier Brodard</strong></td></tr>
 <tr><td>Syndic Lausanne</td><td><strong>Grégoire Junod</strong></td></tr>
-<tr><td>Syndique Morges</td><td><strong>Mélanie Wyss-Pittet</strong></td></tr>
-<tr><td>Ancienne syndique Morges → CE</td><td><strong>Nuria Gorrite</strong></td></tr>
+<tr class="commune-morges"><td>Syndique Morges</td><td><strong>Mélanie Wyss-Pittet</strong></td></tr>
+<tr class="commune-morges"><td>Ancienne syndique Morges → CE</td><td><strong>Nuria Gorrite</strong></td></tr>
 </tbody></table></div>
 <h2>Durées</h2>
 <div class="md-table-wrap"><table>
@@ -2553,7 +2546,8 @@ JUDICIAIRE        JUDICIAIRE
 <tbody>
 <tr><td>Président de la Confédération</td><td><strong>1 an</strong> (rotation annuelle)</td></tr>
 <tr><td>Conseil d'État VD</td><td><strong>5 ans</strong></td></tr>
-<tr><td>Législature communale Morges</td><td><strong>5 ans</strong></td></tr>
+<tr class="commune-morges"><td>Législature communale Morges</td><td><strong>5 ans</strong></td></tr>
+<tr class="commune-gland"><td>Législature communale Gland</td><td><strong>5 ans</strong></td></tr>
 </tbody></table></div>
 <div class="md-highlight">Astuce : <strong>1</strong> = fédéral, <strong>5</strong> = cantonal et communal.</div>
 </div>`
@@ -2578,9 +2572,9 @@ his: {
 <tr><td><strong>14 avril 1803</strong></td><td>Vaud entre dans la Confédération<br>(≠ l'indépendance ! Deux événements distincts)</td></tr>
 <tr><td><strong>1848</strong></td><td>Première Constitution fédérale<br>Précédée par la guerre du <strong>Sonderbund</strong></td></tr>
 <tr><td><strong>1964</strong></td><td>Exposition nationale à <strong>Lausanne</strong></td></tr>
-<tr><td><strong>1969</strong></td><td>Audrey Hepburn épouse Andrea Dotti à l'Hôtel de Ville de Morges</td></tr>
+<tr class="commune-morges"><td><strong>1969</strong></td><td>Audrey Hepburn épouse Andrea Dotti à l'Hôtel de Ville de Morges</td></tr>
 <tr><td><strong>1971</strong></td><td>Droit de vote aux femmes au niveau fédéral<br>Premier canton : <strong>Vaud</strong></td></tr>
-<tr><td><strong>1993</strong></td><td>Grand-Rue de Morges devient piétonne</td></tr>
+<tr class="commune-morges"><td><strong>1993</strong></td><td>Grand-Rue de Morges devient piétonne</td></tr>
 <tr><td><strong>14 avril 2017</strong></td><td>Inauguration du <strong>Parlement vaudois</strong> à Lausanne</td></tr>
 <tr><td><strong>14 avril 2018</strong></td><td>Réouverture du <strong>Château Saint-Maire</strong> après 2+ ans de travaux</td></tr>
 <tr><td><strong>2002</strong></td><td>La Suisse entre à l'ONU</td></tr>
@@ -2634,8 +2628,10 @@ num: {
 <tr><td>Conseil des États</td><td><strong>46</strong></td><td>—</td><td>Varie par canton</td></tr>
 <tr><td>Grand Conseil VD</td><td><strong>150</strong></td><td>—</td><td>Peuple</td></tr>
 <tr><td><strong>Conseil d'État VD</strong></td><td><strong>7</strong></td><td><strong>5 ans</strong></td><td>Peuple</td></tr>
-<tr><td><strong>Municipalité Morges</strong></td><td><strong>7</strong></td><td><strong>5 ans</strong></td><td>Peuple (scrutin maj. 2 tours)</td></tr>
-<tr><td>Conseil communal Morges</td><td><strong>100</strong></td><td>—</td><td>Peuple</td></tr>
+<tr class="commune-morges"><td><strong>Municipalité Morges</strong></td><td><strong>7</strong></td><td><strong>5 ans</strong></td><td>Peuple (scrutin maj. 2 tours)</td></tr>
+<tr class="commune-morges"><td>Conseil communal Morges</td><td><strong>100</strong></td><td>—</td><td>Peuple</td></tr>
+<tr class="commune-gland"><td><strong>Municipalité Gland</strong></td><td><strong>7</strong></td><td><strong>5 ans</strong></td><td>Peuple</td></tr>
+<tr class="commune-gland"><td>Conseil communal Gland</td><td><strong>75</strong></td><td>—</td><td>Peuple</td></tr>
 </tbody></table></div>
 <h2>Autres chiffres</h2>
 <div class="commune-morges">
@@ -2676,6 +2672,9 @@ Président CF = <strong>1 an</strong> (fédéral) · Conseil d'État = <strong>5
 <div class="commune-morges md-highlight" style="margin-top:8px;">
 <strong>Morges :</strong> Exécutif (Municipalité) = <strong>7</strong> · Législatif (Conseil communal) = <strong>100</strong> · Séances = <strong>10</strong>/an
 </div>
+<div class="commune-gland md-highlight" style="margin-top:8px;">
+<strong>Gland :</strong> Exécutif (Municipalité) = <strong>7</strong> · Législatif (Conseil communal) = <strong>75</strong>
+</div>
 </div>`
 },
 
@@ -2713,7 +2712,7 @@ fai: {
 <tr><td><strong>Stan Wawrinka</strong></td><td>Tennisman vaudois — né à Lausanne en <strong>1985</strong></td></tr>
 <tr><td><strong>Henri Guisan</strong></td><td>Général suisse WW2 — <strong>vaudois</strong></td></tr>
 <tr><td><strong>Pierre Viret</strong></td><td>Réformateur vaudois (pas Calvin, pas Luther)</td></tr>
-<tr><td><strong>Ignace Paderewski</strong></td><td>Pianiste polonais lié à Morges</td></tr>
+<tr class="commune-morges"><td><strong>Ignace Paderewski</strong></td><td>Pianiste polonais lié à Morges</td></tr>
 </tbody></table></div>
 <h2>Sport &amp; culture</h2>
 <div class="md-table-wrap"><table>
@@ -2727,9 +2726,9 @@ fai: {
 <tr><td>Transport public VD</td><td><strong>mobilis</strong></td></tr>
 <tr><td>Château Saint-Maire rouvert</td><td><strong>14 avril 2018</strong></td></tr>
 <tr><td>École polytechnique Lausanne</td><td><strong>EPFL</strong> (pas UNIL)</td></tr>
-<tr><td>Collège secondaire Morges</td><td><strong>Collège de Beausobre</strong></td></tr>
-<tr><td>Club football Morges</td><td><strong>Forward-Morges</strong></td></tr>
-<tr><td>Festival pas à Morges</td><td><strong>Festival de la Cité</strong> (= Lausanne)</td></tr>
+<tr class="commune-morges"><td>Collège secondaire Morges</td><td><strong>Collège de Beausobre</strong></td></tr>
+<tr class="commune-morges"><td>Club football Morges</td><td><strong>Forward-Morges</strong></td></tr>
+<tr class="commune-morges"><td>Festival pas à Morges</td><td><strong>Festival de la Cité</strong> (= Lausanne)</td></tr>
 <tr><td>Garde Suisse protège depuis 1506</td><td><strong>Le Pape</strong></td></tr>
 <tr><td>Personnage féminin sur les pièces de monnaie</td><td><strong>Helvetia</strong></td></tr>
 </tbody></table></div>
@@ -2739,7 +2738,7 @@ fai: {
 <tbody>
 <tr><td>Palais fédéral se trouve à</td><td><strong>Berne</strong></td></tr>
 <tr><td>Plus haut sommet suisse</td><td><strong>Pointe Dufour</strong> (pas le Cervin !)</td></tr>
-<tr><td>Limite nord territoire Morges</td><td><strong>Le vignoble</strong></td></tr>
+<tr class="commune-morges"><td>Limite nord territoire Morges</td><td><strong>Le vignoble</strong></td></tr>
 <tr><td>Canton le plus au nord de la Suisse</td><td><strong>Schaffhouse</strong></td></tr>
 </tbody></table></div>
 <div class="commune-gland">
@@ -2966,7 +2965,7 @@ function updateFcSessionBar() {
    INIT
    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 initCommune();
-document.body.dataset.commune = getCommune();
+applyCommuneCSS();
 const _initLbl = document.getElementById('communeSwitcherLabel');
 if (_initLbl) _initLbl.textContent = communeName();
 updateCommunePill();
