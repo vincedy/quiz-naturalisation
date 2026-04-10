@@ -706,6 +706,8 @@ footer {
   .stat-exam-badge.fail { background: #2a0e0e; color: #f08080; }
 }
 .stat-empty { font-size: .88rem; color: var(--muted); text-align: center; padding: 20px 0; }
+.stat-card-clickable { cursor: pointer; text-align: left; width: 100%; border: none; transition: border-color .15s, box-shadow .15s; }
+.stat-card-clickable:hover { border-color: var(--primary); box-shadow: 0 0 0 2px var(--primary-lt); }
 
 .btn-export {
   display: block; width: 100%; min-height: 48px;
@@ -1653,6 +1655,8 @@ function goBack() {
     showLearn();
   } else if (_backTarget.id === 'screenExamResult') {
     showExamResult();
+  } else if (_backTarget.id === 'screenStats') {
+    showStats();
   } else {
     showHome();
   }
@@ -1851,7 +1855,8 @@ let quiz = {
   answered:  false,
   selected:  null,     // highlighted option before confirmation
   errors:    [],       // ids des questions ratées
-  results:   {}        // { id: boolean }
+  results:   {},       // { id: boolean }
+  _afterResult: null   // 'stats' → retour aux stats après résultats
 };
 
 /* Fisher-Yates */
@@ -1888,11 +1893,12 @@ function buildPool(errorIds) {
 }
 
 function startTraining(errorIds) {
-  quiz.questions = buildPool(errorIds);
-  quiz.current   = 0;
-  quiz.answered  = false;
-  quiz.errors    = [];
-  quiz.results   = {};
+  quiz.questions    = buildPool(errorIds);
+  quiz.current      = 0;
+  quiz.answered     = false;
+  quiz.errors       = [];
+  quiz.results      = {};
+  quiz._afterResult = null;
   if (quiz.questions.length === 0) return;
   const title = errorIds ? 'Révision des erreurs' : 'Entraînement';
   const back  = errorIds
@@ -1984,7 +1990,10 @@ function nextQuestion() {
    RÉSULTATS
    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 function showResult() {
-  _activateScreen('screenResult', 'Résultats', { id:'screenHome', title:'Quiz Naturalisation' });
+  const _resBack = quiz._afterResult === 'stats'
+    ? { id:'screenStats', title:'Statistiques' }
+    : { id:'screenHome',  title:'Quiz Naturalisation' };
+  _activateScreen('screenResult', 'Résultats', _resBack);
 
   const total   = quiz.questions.length;
   const correct = Object.values(quiz.results).filter(Boolean).length;
@@ -2025,7 +2034,7 @@ function showResult() {
       <button class="btn-danger" ${errCount === 0 ? 'disabled' : ''} onclick="reviewErrors()">
         ✗&ensp;Réviser les erreurs${errCount > 0 ? ` (${errCount})` : ''}
       </button>
-      <button class="btn-outline" onclick="showHome()">← Retour à l'accueil</button>
+      <button class="btn-outline" onclick="${quiz._afterResult === 'stats' ? 'showStats()' : 'showHome()'}">${quiz._afterResult === 'stats' ? '← Retour aux statistiques' : '← Retour à l\'accueil'}</button>
     </div>`;
 }
 
@@ -2034,6 +2043,20 @@ function reviewErrors() {
   quiz.errors  = [];
   quiz.results = {};
   startTraining(ids);
+}
+
+function trainSingleQuestion(qId) {
+  const q = QUESTIONS.find(x => x.id === qId);
+  if (!q) return;
+  quiz.questions    = [prepareQ(q)];
+  quiz.current      = 0;
+  quiz.answered     = false;
+  quiz.selected     = null;
+  quiz.errors       = [];
+  quiz.results      = {};
+  quiz._afterResult = 'stats';
+  _activateScreen('screenQuiz', 'Entraînement ciblé', { id:'screenStats', title:'Statistiques' });
+  renderQuestion();
 }
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -2126,7 +2149,7 @@ function updateExamNavBtn(i) {
   if (exam.finished) {
     const q = exam.questions[i];
     if (answered && exam.answers[i] === q.correctIdx) btn.classList.add('is-correct');
-    else if (answered) btn.classList.add('is-wrong');
+    else if (answered || exam.answers[i] === -2) btn.classList.add('is-wrong');
     // unanswered stays neutral
   } else {
     if (isCurrent) btn.classList.add('is-current');
@@ -2161,10 +2184,10 @@ function renderExamQuestion() {
 
   if (exam.reviewMode) {
     optsHtml = q.shuffledOpts.map((opt, i) => {
-      const isCorrect = i === q.correctIdx;
-      const isUserWrong = i === sel && sel !== q.correctIdx;
+      const isCorrect   = i === q.correctIdx;
+      const isUserWrong = sel >= 0 && i === sel && sel !== q.correctIdx;
       let cls = 'exam-opt';
-      if (isCorrect) cls += ' state-correct';
+      if (isCorrect)   cls += ' state-correct';
       else if (isUserWrong) cls += ' state-wrong';
       return `<button class="${cls}" disabled>
         <span class="opt-letter">${LETTERS[i]}</span>
@@ -2322,6 +2345,36 @@ function showExamReview() {
   renderExamQuestion();
 }
 
+function showHistoryExamReview(origIdx) {
+  const session = getExams()[origIdx];
+  if (!session) return;
+
+  // Reconstruct exam.questions from stored ids, re-shuffle options
+  exam.questions = session.details.map(d => {
+    const q = QUESTIONS.find(x => x.id === d.id);
+    return q ? prepareQ(q) : null;
+  }).filter(Boolean);
+
+  // Reconstruct answers: correctIdx if correct, -2 if answered wrong, null if unanswered
+  exam.answers = session.details.map((d, i) => {
+    if (!exam.questions[i]) return null;
+    if (d.correct)           return exam.questions[i].correctIdx;
+    if (d.answered)          return -2; // answered but wrong; specific option lost
+    return null;
+  });
+
+  exam.current    = 0;
+  exam.finished   = true;
+  exam.reviewMode = true;
+
+  _activateScreen('screenExam', 'Révision examen', { id:'screenStats', title:'Statistiques' });
+  const timerRow = document.getElementById('examTimerRow');
+  if (timerRow) timerRow.classList.add('hidden');
+  renderExamNav();
+  exam.questions.forEach((q, i) => updateExamNavBtn(i));
+  renderExamQuestion();
+}
+
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
    STATISTIQUES
    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
@@ -2398,14 +2451,14 @@ function renderStats() {
       const lvlLabel = LEVELS[q.lvl];
       const qText    = q.q.length > 72 ? q.q.slice(0, 69) + '…' : q.q;
       html += `
-      <div class="stat-fail-card">
+      <button class="stat-fail-card stat-card-clickable" onclick="trainSingleQuestion('${q.id}')">
         <span class="stat-fail-rank">#${rank + 1}</span>
         <div class="stat-fail-body">
           <div class="stat-fail-q">${qText}</div>
-          <div class="stat-fail-meta">${catLabel} · ${lvlLabel}</div>
+          <div class="stat-fail-meta">${catLabel} · ${lvlLabel} · Appuyer pour s'entraîner</div>
         </div>
         <span class="stat-fail-badge">${fails}✗</span>
-      </div>`;
+      </button>`;
     });
   }
   html += `</div>`;
@@ -2417,19 +2470,22 @@ function renderStats() {
   if (exams.length === 0) {
     html += `<div class="stat-empty">Aucun examen passé</div>`;
   } else {
-    [...exams].reverse().forEach(e => {
+    exams.slice().reverse().forEach((e, revIdx) => {
+      const origIdx = exams.length - 1 - revIdx;
       const d    = new Date(e.date);
       const date = d.toLocaleDateString('fr-CH', { day:'2-digit', month:'2-digit', year:'numeric' });
       const time = d.toLocaleTimeString('fr-CH', { hour:'2-digit', minute:'2-digit' });
       const pct  = Math.round(e.score / e.total * 100);
       const cls  = e.passed ? 'pass' : 'fail';
       const lbl  = e.passed ? 'Réussi' : 'Échoué';
+      const canReview = e.details && e.details.length > 0;
       html += `
-      <div class="stat-exam-row">
-        <div class="stat-exam-date">${date} ${time}</div>
+      <button class="stat-exam-row${canReview ? ' stat-card-clickable' : ''}"
+              ${canReview ? `onclick="showHistoryExamReview(${origIdx})"` : 'disabled'}>
+        <div class="stat-exam-date">${date} ${time}${canReview ? '<br><span style="font-size:.65rem;color:var(--primary)">Appuyer pour réviser</span>' : ''}</div>
         <span class="stat-exam-score">${e.score}/${e.total}&thinsp;(${pct}%)</span>
         <span class="stat-exam-badge ${cls}">${lbl}</span>
-      </div>`;
+      </button>`;
     });
   }
   html += `</div>`;
