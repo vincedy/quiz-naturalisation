@@ -14,6 +14,8 @@
 
 ## Altri numeri
 
+### Morges
+
 | Cosa | Numero |
 |---|---|
 | Séances Conseil communal Morges | **10** par année |
@@ -26,6 +28,17 @@
 | Surface Morges | **3,83 km²** |
 | Altitude plus basse Morges | **374 mètres** |
 | Parcs au bord du lac Morges | **2** (Vertou + Indépendance) |
+
+### Gland
+
+| Cosa | Numero |
+|---|---|
+| Habitants Gland | **13'000** |
+| Superficie Gland | **830 hectares** |
+| Altitude Gland | **431 mètres** |
+| Municipalité Gland | **7 membri** |
+| Conseil communal Gland | **75 membri** |
+| Clubs et sociétés sportives | **35** |
 
 ## Trucchi
 

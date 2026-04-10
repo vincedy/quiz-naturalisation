@@ -62,6 +62,32 @@ Vevey = cibo + feste + Chaplin. Tre cose: musée alimentation, Fête des Vignero
 | Limite nord territoire Morges | **Le vignoble** |
 | Canton le plus au nord de la Suisse | **Schaffhouse** |
 
+## Gland — scheda rapida
+
+| Cosa | Risposta |
+|---|---|
+| Communes voisines | **Begnins, Prangins, Vich, Luins, Dully** |
+| Deux cours d'eau | **Lavasson et l'Asse** |
+| District | **Nyon** |
+| Chef-lieu district | **Nyon** |
+| Quartiers (2) | **La Cité-Ouest et les Avouillons** |
+| Lieux de promenades | **Promenade du Golf + sentier des Toblerones** |
+| Marché hebdomadaire | **Place de la Gare** |
+| Théâtre | **Grand-Champ** |
+| Espace d'échange/rencontre | **La Pépinière** |
+| Boîtes à livres (réseau) | **Délivrez-moi** |
+| Festival cinéma (Nyon + Gland) | **Visions du réel** |
+| Fête multiculturelle | **La Fête Multiculturelle** |
+| Sobriquet habitants | **Les croqueraves** |
+| Musée Romain (nearby) | **Nyon** |
+| Site historique Helvètes | **La Lignière** |
+| Premiers hommes (Creux de la Dullive) | **~5'000 ans** |
+| Commune libre | **1798** (Indépendance vaudoise) |
+| Première Municipalité | **1799** |
+| Gare inaugurée | **1858** |
+| Tramway Gland–Begnins | **1906–1954** |
+| Cloche installée | **1739** |
+
 ## Morges — scheda rapida
 
 | Cosa | Risposta |

@@ -46,3 +46,15 @@
 - **Guillaume Tell** = personnage **légendaire** (non storico). Si è battuto contro seigneurs étrangers.
 - **Devise CH** = "**Un pour tous, tous pour un**" (NON "L'union fait la force" = Belgio!)
 - **14 avril** è una data simbolica per Vaud (entrée 1803, Parlement 2017, Château 2018). Tre eventi diversi, stessa data.
+
+## Timeline Gland
+
+| Data | Evento |
+|---|---|
+| **~5'000 anni fa** | Primi uomini al Creux de la Dullive |
+| **~450 av. J.-C.** | Helvètes abitano **La Lignière** (site historique) |
+| **1739** | Installazione della cloche (culte, alarmes, foudre) |
+| **1798** | Gland diventa commune libre (grazie all'Indépendance vaudoise) |
+| **1799** | Creazione della prima Municipalité |
+| **1858** | Prima inaugurazione della gare de Gland |
+| **1906–1954** | **Tramway** collega Gland a Begnins |

@@ -11,7 +11,7 @@
        ┌─────────────────┼─────────────────┐
        ▼                 ▼                 ▼
   FÉDÉRAL           CANTONAL          COMMUNAL
-                    (Vaud)            (Morges)
+                    (Vaud)            (Morges/Gland)
 
 LÉGISLATIF        LÉGISLATIF        LÉGISLATIF
 (fait les lois)   (fait les lois)   (fait les lois)
@@ -113,6 +113,24 @@ Ensemble, ils élisent :
 | Syndic Lausanne | **Grégoire Junod** |
 | Syndique Morges | **Mélanie Wyss-Pittet** |
 | Ancienne syndique Morges → CE | **Nuria Gorrite** |
+
+## COMMUNE — Confronto Morges vs Gland
+
+| | Morges | Gland |
+|---|---|---|
+| Municipalité (membri) | **7** | **7** |
+| Conseil communal (membri) | **100** | **75** |
+| Séances CC | **10**/anno | Salle communale, Maison de Commune |
+| Scrutin Municipalité | Majoritaire 2 tours | — |
+| Législature | **5 ans** | — |
+| District | Morges | **Nyon** |
+| Chef-lieu du district | — | **Nyon** |
+| Tribunal du district | — | **Nyon** |
+| CC en tant que législatif peut | — | **Adopter les comptes communaux** |
+| Qui élit CC + Municipalité | Popolo | **Citoyens de Gland, 18 ans révolus, droit de vote** |
+| Syndique | **Mélanie Wyss-Pittet** | — |
+| Ancien syndic → CE | **Nuria Gorrite** | — |
+| ASIME | ✅ | — |
 
 ## DURÉES
 
