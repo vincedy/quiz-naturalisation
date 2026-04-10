@@ -799,6 +799,10 @@ footer {
   .md-trap { background: #2a0e0e; border-color: #5a1a1a; }
 }
 
+/* Commune-conditional sections */
+[data-commune="morges"] .commune-gland { display: none; }
+[data-commune="gland"]  .commune-morges { display: none; }
+
 .commune-switcher {
   display: inline-block; margin-top: 6px;
   background: none; border: 1px solid var(--border);
@@ -1579,6 +1583,7 @@ function initCommune() {
 
 function selectCommune(key) {
   setCommune(key);
+  document.body.dataset.commune = key;
   showHome();
 }
 
@@ -2600,6 +2605,20 @@ his: {
 ⚠️ Devise CH = "<strong>Un pour tous, tous pour un</strong>" ("L'union fait la force" = Belgique !)<br>
 ⚠️ <strong>14 avril</strong> est une date symbolique pour Vaud (entrée 1803, Parlement 2017, Château 2018) — trois événements, même date
 </div>
+<div class="commune-gland">
+<h2>Timeline Gland</h2>
+<div class="md-table-wrap"><table>
+<thead><tr><th>Date</th><th>Événement</th></tr></thead>
+<tbody>
+<tr><td><strong>~5'000 ans</strong></td><td>Premiers hommes au Creux de la Dullive</td></tr>
+<tr><td><strong>~450 av. J.-C.</strong></td><td>Helvètes habitent <strong>La Lignière</strong> (site historique)</td></tr>
+<tr><td><strong>1739</strong></td><td>Installation de la cloche (culte, alarmes, foudre)</td></tr>
+<tr><td><strong>1798</strong></td><td>Gland devient commune libre (Indépendance vaudoise)</td></tr>
+<tr><td><strong>1799</strong></td><td>Création de la première Municipalité</td></tr>
+<tr><td><strong>1858</strong></td><td>Première inauguration de la gare de Gland</td></tr>
+<tr><td><strong>1906–1954</strong></td><td><strong>Tramway</strong> relie Gland à Begnins</td></tr>
+</tbody></table></div>
+</div>
 </div>`
 },
 
@@ -2619,6 +2638,7 @@ num: {
 <tr><td>Conseil communal Morges</td><td><strong>100</strong></td><td>—</td><td>Peuple</td></tr>
 </tbody></table></div>
 <h2>Autres chiffres</h2>
+<div class="commune-morges">
 <div class="md-table-wrap"><table>
 <thead><tr><th>Quoi</th><th>Chiffre</th></tr></thead>
 <tbody>
@@ -2633,12 +2653,27 @@ num: {
 <tr><td>Altitude la plus basse Morges</td><td><strong>374 mètres</strong></td></tr>
 <tr><td>Parcs au bord du lac Morges</td><td><strong>2</strong> (Vertou + Indépendance)</td></tr>
 </tbody></table></div>
+</div>
+<div class="commune-gland">
+<div class="md-table-wrap"><table>
+<thead><tr><th>Quoi</th><th>Chiffre</th></tr></thead>
+<tbody>
+<tr><td>Habitants Gland</td><td><strong>13'000</strong></td></tr>
+<tr><td>Superficie Gland</td><td><strong>830 hectares</strong></td></tr>
+<tr><td>Altitude Gland</td><td><strong>431 mètres</strong></td></tr>
+<tr><td>Municipalité Gland</td><td><strong>7</strong> membres</td></tr>
+<tr><td>Conseil communal Gland</td><td><strong>75</strong> membres</td></tr>
+<tr><td>Clubs et sociétés sportives</td><td><strong>35</strong></td></tr>
+</tbody></table></div>
+</div>
 <h2>Astuces mnémotechniques</h2>
 <div class="md-highlight">
 <strong>Tous les exécutifs = 7</strong><br>
-Conseil fédéral = 7 · Conseil d'État VD = 7 · Municipalité Morges = 7<br><br>
+Conseil fédéral = 7 · Conseil d'État VD = 7 · Municipalité = 7<br><br>
 <strong>Président CF vs Conseil d'État :</strong><br>
-Président CF = <strong>1 an</strong> (fédéral) · Conseil d'État = <strong>5 ans</strong> (cantonal)<br><br>
+Président CF = <strong>1 an</strong> (fédéral) · Conseil d'État = <strong>5 ans</strong> (cantonal)
+</div>
+<div class="commune-morges md-highlight" style="margin-top:8px;">
 <strong>Morges :</strong> Exécutif (Municipalité) = <strong>7</strong> · Législatif (Conseil communal) = <strong>100</strong> · Séances = <strong>10</strong>/an
 </div>
 </div>`
@@ -2707,6 +2742,35 @@ fai: {
 <tr><td>Limite nord territoire Morges</td><td><strong>Le vignoble</strong></td></tr>
 <tr><td>Canton le plus au nord de la Suisse</td><td><strong>Schaffhouse</strong></td></tr>
 </tbody></table></div>
+<div class="commune-gland">
+<h2>Gland — fiche rapide</h2>
+<div class="md-table-wrap"><table>
+<thead><tr><th>Quoi</th><th>Réponse</th></tr></thead>
+<tbody>
+<tr><td>Communes voisines</td><td>Begnins, Prangins, Vich, Luins, Dully</td></tr>
+<tr><td>Deux cours d'eau</td><td><strong>Lavasson</strong> et <strong>l'Asse</strong></td></tr>
+<tr><td>District</td><td><strong>Nyon</strong></td></tr>
+<tr><td>Chef-lieu district</td><td><strong>Nyon</strong></td></tr>
+<tr><td>Quartiers (2)</td><td><strong>La Cité-Ouest</strong> et <strong>les Avouillons</strong></td></tr>
+<tr><td>Lieux de promenades</td><td>Promenade du Golf + sentier des Toblerones</td></tr>
+<tr><td>Marché hebdomadaire</td><td><strong>Place de la Gare</strong></td></tr>
+<tr><td>Théâtre</td><td><strong>Grand-Champ</strong></td></tr>
+<tr><td>Espace d'échange/rencontre</td><td><strong>La Pépinière</strong></td></tr>
+<tr><td>Boîtes à livres (réseau)</td><td><strong>Délivrez-moi</strong></td></tr>
+<tr><td>Festival cinéma (Nyon + Gland)</td><td><strong>Visions du réel</strong></td></tr>
+<tr><td>Fête multiculturelle</td><td><strong>La Fête Multiculturelle</strong></td></tr>
+<tr><td>Sobriquet habitants</td><td><strong>Les croqueraves</strong></td></tr>
+<tr><td>Musée Romain (nearby)</td><td><strong>Nyon</strong></td></tr>
+<tr><td>Site historique Helvètes</td><td><strong>La Lignière</strong></td></tr>
+<tr><td>Premiers hommes (Creux de la Dullive)</td><td><strong>~5'000 ans</strong></td></tr>
+<tr><td>Commune libre</td><td><strong>1798</strong> (Indépendance vaudoise)</td></tr>
+<tr><td>Première Municipalité</td><td><strong>1799</strong></td></tr>
+<tr><td>Gare inaugurée</td><td><strong>1858</strong></td></tr>
+<tr><td>Tramway Gland–Begnins</td><td><strong>1906–1954</strong></td></tr>
+<tr><td>Cloche installée</td><td><strong>1739</strong></td></tr>
+</tbody></table></div>
+</div>
+<div class="commune-morges">
 <h2>Morges — fiche rapide</h2>
 <div class="md-table-wrap"><table>
 <thead><tr><th>Quoi</th><th>Réponse</th></tr></thead>
@@ -2726,6 +2790,7 @@ fai: {
 <tr><td>Hepburn + Dotti</td><td><strong>1969</strong></td></tr>
 <tr><td>Grand-Rue piétonne</td><td><strong>1993</strong></td></tr>
 </tbody></table></div>
+</div>
 </div>`
 }
 
@@ -2901,6 +2966,7 @@ function updateFcSessionBar() {
    INIT
    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 initCommune();
+document.body.dataset.commune = getCommune();
 const _initLbl = document.getElementById('communeSwitcherLabel');
 if (_initLbl) _initLbl.textContent = communeName();
 updateCommunePill();
