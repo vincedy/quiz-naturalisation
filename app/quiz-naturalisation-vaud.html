@@ -706,7 +706,7 @@ footer {
   .stat-exam-badge.fail { background: #2a0e0e; color: #f08080; }
 }
 .stat-empty { font-size: .88rem; color: var(--muted); text-align: center; padding: 20px 0; }
-.stat-card-clickable { cursor: pointer; text-align: left; width: 100%; border: none; transition: border-color .15s, box-shadow .15s; }
+.stat-card-clickable { cursor: pointer; text-align: left; width: 100%; border: none; color: var(--fg); font-family: inherit; transition: border-color .15s, box-shadow .15s; }
 .stat-card-clickable:hover { border-color: var(--primary); box-shadow: 0 0 0 2px var(--primary-lt); }
 
 .btn-export {
@@ -2451,7 +2451,7 @@ function renderStats() {
       const lvlLabel = LEVELS[q.lvl];
       const qText    = q.q.length > 72 ? q.q.slice(0, 69) + '…' : q.q;
       html += `
-      <button class="stat-fail-card stat-card-clickable" onclick="trainSingleQuestion('${q.id}')">
+      <button class="stat-fail-card stat-card-clickable" onclick="trainSingleQuestion(${q.id})">
         <span class="stat-fail-rank">#${rank + 1}</span>
         <div class="stat-fail-body">
           <div class="stat-fail-q">${qText}</div>
