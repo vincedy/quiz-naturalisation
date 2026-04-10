@@ -37,12 +37,6 @@
 | **Henri Guisan** | Général suisse WW2 — **vaudois** |
 | **Pierre Viret** | Réformateur vaudois (pas Calvin, pas Luther) |
 
-<!-- commune: morges -->
-
-| Qui | Quoi |
-|---|---|
-| **Ignace Paderewski** | Pianiste polonais lié à Morges |
-
 ## Sport & culture
 
 <!-- commune: all -->
@@ -57,19 +51,6 @@
 | Transport public VD | **mobilis** |
 | Château Saint-Maire rouvert | **14 avril 2018** |
 | École polytechnique Lausanne | **EPFL** (pas UNIL) |
-
-<!-- commune: morges -->
-
-| Question | Réponse |
-|---|---|
-| Collège secondaire Morges | **Collège de Beausobre** |
-| Club football Morges | **Forward-Morges** |
-| Festival pas à Morges | **Festival de la Cité** (= Lausanne) |
-
-<!-- commune: all -->
-
-| Question | Réponse |
-|---|---|
 | Garde Suisse protège depuis 1506 | **Le Pape** |
 | Personnage féminin sur les pièces de monnaie | **Helvetia** |
 
@@ -81,17 +62,6 @@
 |---|---|
 | Palais fédéral se trouve à | **Berne** |
 | Plus haut sommet suisse | **Pointe Dufour** (pas le Cervin !) |
-
-<!-- commune: morges -->
-
-| Question | Réponse |
-|---|---|
-| Limite nord territoire Morges | **Le vignoble** |
-
-<!-- commune: all -->
-
-| Question | Réponse |
-|---|---|
 | Canton le plus au nord de la Suisse | **Schaffhouse** |
 
 ## Gland — fiche rapide
@@ -129,6 +99,7 @@
 | Quoi | Réponse |
 |---|---|
 | Communes limitrophes | Préverenges, Lonay, Echichens, Chigny, Tolochenaz |
+| Limite nord territoire | **Le vignoble** |
 | Deux rivières | **La Morges** et **le Bief** |
 | Drapeau Morges | Les deux rivières (Morges + Bief) |
 | Parcs au bord du lac | **Vertou** + **Indépendance** |
@@ -137,6 +108,10 @@
 | Marché de Noël | Parc du Château |
 | Musée | **Alexis Forel** |
 | Théâtres | Beausobre + Trois P'tits Tours |
+| Collège secondaire | **Collège de Beausobre** |
+| Club football | **Forward-Morges** |
+| Festival pas à Morges | **Festival de la Cité** (= Lausanne) |
+| Personnalité liée | **Ignace Paderewski** (pianiste polonais) |
 | Fondation + Château | **1286** |
 | Dominée 1536–1798 par | Les Bernois (bailli au Château) |
 | Hôtel de Ville construit | **1515** |
