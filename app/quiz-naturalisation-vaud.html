@@ -2185,7 +2185,7 @@ function renderExamQuestion() {
   if (exam.reviewMode) {
     optsHtml = q.shuffledOpts.map((opt, i) => {
       const isCorrect   = i === q.correctIdx;
-      const isUserWrong = sel >= 0 && i === sel && sel !== q.correctIdx;
+      const isUserWrong = sel !== null && i === sel && sel !== q.correctIdx;
       let cls = 'exam-opt';
       if (isCorrect)   cls += ' state-correct';
       else if (isUserWrong) cls += ' state-wrong';
@@ -2265,7 +2265,8 @@ function saveExamSession() {
   const details = exam.questions.map((q, i) => ({
     id: q.id, cat: q.cat, lvl: q.lvl,
     answered: exam.answers[i] !== null,
-    correct:  exam.answers[i] === q.correctIdx
+    correct:  exam.answers[i] === q.correctIdx,
+    selectedText: exam.answers[i] !== null ? q.shuffledOpts[exam.answers[i]] : null
   }));
   const score   = details.filter(d => d.correct).length;
   const session = {
@@ -2355,12 +2356,17 @@ function showHistoryExamReview(origIdx) {
     return q ? prepareQ(q) : null;
   }).filter(Boolean);
 
-  // Reconstruct answers: correctIdx if correct, -2 if answered wrong, null if unanswered
+  // Reconstruct answers using selectedText so red option survives reshuffling
   exam.answers = session.details.map((d, i) => {
     if (!exam.questions[i]) return null;
-    if (d.correct)           return exam.questions[i].correctIdx;
-    if (d.answered)          return -2; // answered but wrong; specific option lost
-    return null;
+    if (!d.answered) return null;
+    if (d.correct) return exam.questions[i].correctIdx;
+    // Find the selected wrong option in the newly shuffled order
+    if (d.selectedText) {
+      const idx = exam.questions[i].shuffledOpts.indexOf(d.selectedText);
+      return idx >= 0 ? idx : -2;
+    }
+    return -2; // old sessions without selectedText: can't show which option
   });
 
   exam.current    = 0;
