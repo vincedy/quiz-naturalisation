@@ -362,6 +362,7 @@ footer {
 
 /* Pill groups */
 .pill-group { display: flex; flex-wrap: wrap; gap: 8px; }
+.pill-group-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
 .pill {
   min-height: 44px; padding: 8px 18px;
   border: 1.5px solid var(--border); border-radius: 22px;
@@ -948,21 +949,22 @@ body.commune-active-gland  .commune-morges { display: none; }
     <div class="cfg-section">
       <div class="cfg-section-title">Niveau</div>
       <div class="pill-group" id="cfgLvlGroup">
-        <button class="pill active" data-lvl="all"  onclick="setLvl('all')">Tous</button>
+        <button class="pill active" data-lvl="all"  onclick="setLvl('all')">🌍 Tous</button>
         <button class="pill"        data-lvl="ch"   onclick="setLvl('ch')">🇨🇭 Suisse</button>
-        <button class="pill"        data-lvl="vd"   onclick="setLvl('vd')">Vaud</button>
-        <button class="pill" id="communeLvlPill" data-lvl="mo" onclick="setLvl(communeLvl())">Morges</button>
+        <button class="pill"        data-lvl="vd"   onclick="setLvl('vd')">🏔️ Vaud</button>
+        <button class="pill" id="communeLvlPill" data-lvl="mo" onclick="setLvl(communeLvl())">🏘️ Morges</button>
       </div>
     </div>
 
     <div class="cfg-section">
       <div class="cfg-section-title">Questions à inclure</div>
-      <div class="pill-group" id="cfgStatusGroup">
-        <button class="pill active" data-st="all"     onclick="setStatus('all')">Toutes</button>
-        <button class="pill"        data-st="unseen"  onclick="setStatus('unseen')">Jamais vues</button>
-        <button class="pill"        data-st="failed"  onclick="setStatus('failed')">Échouées</button>
-        <button class="pill"        data-st="correct" onclick="setStatus('correct')">Correctes</button>
-        <button class="pill"        data-st="learned" onclick="setStatus('learned')">Apprises ★</button>
+      <div class="pill-group pill-group-grid" id="cfgStatusGroup">
+        <button class="pill active" data-st="all"         onclick="setStatus('all')">📋 Toutes</button>
+        <button class="pill"        data-st="notlearned"  onclick="setStatus('notlearned')">🔄 Pas apprises</button>
+        <button class="pill"        data-st="learned"     onclick="setStatus('learned')">⭐ Apprises</button>
+        <button class="pill"        data-st="unseen"      onclick="setStatus('unseen')">👁️ Jamais vues</button>
+        <button class="pill"        data-st="failed"      onclick="setStatus('failed')">❌ Échouées</button>
+        <button class="pill"        data-st="correct"     onclick="setStatus('correct')">✅ Correctes</button>
       </div>
     </div>
 
@@ -1661,7 +1663,7 @@ function updateCommunePill() {
   if (!pill) return;
   const lvl  = communeLvl();
   pill.dataset.lvl  = lvl;
-  pill.textContent  = communeName();
+  pill.textContent  = '🏘️ ' + communeName();
   // Re-sync active state if the current filter matches this level
   if (cfg.lvl === lvl) pill.classList.add('active');
   else pill.classList.remove('active');
@@ -1724,10 +1726,11 @@ const cfg = {
 
 /* Filtre une pool selon cfg.status */
 function applyStatusFilter(pool, stats) {
-  if (cfg.status === 'unseen')  return pool.filter(q => !stats[q.id] || stats[q.id].attempts === 0);
-  if (cfg.status === 'failed')  return pool.filter(q => { const s = stats[q.id]; return s && s.attempts > 0 && s.streak === 0; });
-  if (cfg.status === 'correct') return pool.filter(q => { const s = stats[q.id]; return s && s.streak >= 1 && s.streak < 3; });
-  if (cfg.status === 'learned') return pool.filter(q => { const s = stats[q.id]; return s && s.streak >= 3; });
+  if (cfg.status === 'unseen')     return pool.filter(q => !stats[q.id] || stats[q.id].attempts === 0);
+  if (cfg.status === 'notlearned') return pool.filter(q => { const s = stats[q.id]; return s && s.attempts > 0 && s.streak < 3; });
+  if (cfg.status === 'failed')     return pool.filter(q => { const s = stats[q.id]; return s && s.attempts > 0 && s.streak === 0; });
+  if (cfg.status === 'correct')    return pool.filter(q => { const s = stats[q.id]; return s && s.streak >= 1 && s.streak < 3; });
+  if (cfg.status === 'learned')    return pool.filter(q => { const s = stats[q.id]; return s && s.streak >= 3; });
   return pool; // 'all'
 }
 
