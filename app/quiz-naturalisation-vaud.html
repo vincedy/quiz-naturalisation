@@ -1047,7 +1047,7 @@ body.commune-active-gland  .commune-morges { display: none; }
         <span class="learn-card-icon">💡</span>
         <span class="learn-card-body">
           <div class="learn-card-title">Faits divers</div>
-          <div class="learn-card-sub">Lieux, personnes, sport, culture, Morges</div>
+          <div class="learn-card-sub">Lieux, personnes, sport, culture, <span class="commune-morges">Morges</span><span class="commune-gland">Gland</span></div>
         </span>
         <span class="learn-card-chevron">›</span>
       </button>
@@ -1065,7 +1065,7 @@ body.commune-active-gland  .commune-morges { display: none; }
 <div class="fc-session-bar hidden" id="fcSessionBar"></div>
 
 <footer>
-  Questionnaire corrigé &bull; 08.04.2026 &bull; 160 questions &bull; Ville de Morges
+  Questionnaire corrigé &bull; 08.04.2026 &bull; 160 questions &bull; Ville de <span id="footerCommuneName">Morges</span>
 </footer>
 
 <script>
@@ -1650,6 +1650,8 @@ function showHome() {
   _activateScreen('screenHome', 'Quiz Naturalisation', null);
   const lbl = document.getElementById('communeSwitcherLabel');
   if (lbl) lbl.textContent = communeName();
+  const footerLbl = document.getElementById('footerCommuneName');
+  if (footerLbl) footerLbl.textContent = communeName();
   updateCommunePill();
   renderProgressGrid();
 }
@@ -2561,13 +2563,13 @@ his: {
 <thead><tr><th>Date</th><th>Événement</th></tr></thead>
 <tbody>
 <tr><td><strong>1207–1536</strong></td><td>Pays de Vaud sous la <strong>Savoie</strong></td></tr>
-<tr><td><strong>1286</strong></td><td>Fondation de Morges + construction du Château</td></tr>
+<tr class="commune-morges"><td><strong>1286</strong></td><td>Fondation de Morges + construction du Château</td></tr>
 <tr><td><strong>1291</strong></td><td>Pacte fédéral — naissance de la Suisse<br>(Uri, Schwytz, Unterwald, serment au Grütli)</td></tr>
 <tr><td><strong>1er août</strong></td><td>Fête nationale suisse — célèbre chaque année le pacte fédéral de 1291</td></tr>
 <tr><td><strong>1506</strong></td><td>La Garde Suisse protège le <strong>Pape</strong> (jusqu'à aujourd'hui)</td></tr>
-<tr><td><strong>1515</strong></td><td>Construction de l'Hôtel de Ville de Morges</td></tr>
+<tr class="commune-morges"><td><strong>1515</strong></td><td>Construction de l'Hôtel de Ville de Morges</td></tr>
 <tr><td><strong>1536</strong></td><td>Berne conquiert le Pays de Vaud → Vaud devient <strong>protestant</strong><br>Réformateur : <strong>Pierre Viret</strong></td></tr>
-<tr><td><strong>1536–1798</strong></td><td>Morges dominée par les <strong>Bernois</strong> (un bailli au Château)</td></tr>
+<tr class="commune-morges"><td><strong>1536–1798</strong></td><td>Morges dominée par les <strong>Bernois</strong> (un bailli au Château)</td></tr>
 <tr><td><strong>1798</strong></td><td><strong>Indépendance vaudoise</strong> — fêtée le <strong>24 janvier</strong></td></tr>
 <tr><td><strong>14 avril 1803</strong></td><td>Vaud entre dans la Confédération<br>(≠ l'indépendance ! Deux événements distincts)</td></tr>
 <tr><td><strong>1848</strong></td><td>Première Constitution fédérale<br>Précédée par la guerre du <strong>Sonderbund</strong></td></tr>
@@ -2582,7 +2584,8 @@ his: {
 </tbody></table></div>
 <h2>Les 5 dates-clé de Vaud</h2>
 <div class="md-highlight">
-<strong>1286</strong> → Morges naît<br>
+<span class="commune-morges"><strong>1286</strong> → Morges naît<br></span>
+<span class="commune-gland"><strong>1798</strong> → Gland devient commune libre<br></span>
 <strong>1536</strong> → Berne arrive (+ protestantisme)<br>
 <strong>1798</strong> → Vaud libre (fêté le 24 janvier)<br>
 <strong>1803</strong> → Vaud dans la Confédération (5 ans après !)<br>
@@ -2968,6 +2971,8 @@ initCommune();
 applyCommuneCSS();
 const _initLbl = document.getElementById('communeSwitcherLabel');
 if (_initLbl) _initLbl.textContent = communeName();
+const _initFooter = document.getElementById('footerCommuneName');
+if (_initFooter) _initFooter.textContent = communeName();
 updateCommunePill();
 renderProgressGrid();
 </script>
