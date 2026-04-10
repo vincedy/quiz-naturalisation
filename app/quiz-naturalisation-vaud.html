@@ -2901,6 +2901,9 @@ function updateFcSessionBar() {
    INIT
    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 initCommune();
+const _initLbl = document.getElementById('communeSwitcherLabel');
+if (_initLbl) _initLbl.textContent = communeName();
+updateCommunePill();
 renderProgressGrid();
 </script>
 
