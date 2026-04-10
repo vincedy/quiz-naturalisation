@@ -1610,9 +1610,10 @@ function getProgress() {
 }
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   NAVIGATION — stack simple
+   NAVIGATION — stack simple + History API
    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 let _backTarget = null;   // { id, title }
+let _suppressHistory = false;
 
 function _activateScreen(id, title, backTo) {
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
@@ -1621,6 +1622,20 @@ function _activateScreen(id, title, backTo) {
   _backTarget = backTo || null;
   document.getElementById('btnBack').classList.toggle('visible', !!backTo);
   window.scrollTo(0, 0);
+  if (!_suppressHistory) {
+    if (id === 'screenHome') {
+      history.replaceState({ screen: id }, '');
+    } else {
+      history.pushState({ screen: id }, '');
+    }
+  }
+}
+
+function _stopActiveMedia() {
+  if (document.getElementById('screenFlashcard').classList.contains('active')) {
+    if (fc._autoTimer) { clearTimeout(fc._autoTimer); fc._autoTimer = null; }
+    document.getElementById('fcSessionBar').classList.add('hidden');
+  }
 }
 
 function goBack() {
@@ -1629,21 +1644,35 @@ function goBack() {
   if (document.getElementById('screenExam').classList.contains('active') && !exam.finished) {
     if (exam._interval) { clearInterval(exam._interval); exam._interval = null; }
   }
-  // Stop flashcard auto-advance and hide session bar
-  if (document.getElementById('screenFlashcard').classList.contains('active')) {
-    if (fc._autoTimer) { clearTimeout(fc._autoTimer); fc._autoTimer = null; }
-    document.getElementById('fcSessionBar').classList.add('hidden');
-  }
+  _stopActiveMedia();
   if (_backTarget.id === 'screenHome') {
     showHome();
   } else if (_backTarget.id === 'screenConfig') {
     showConfig();
   } else if (_backTarget.id === 'screenLearn') {
     showLearn();
+  } else if (_backTarget.id === 'screenExamResult') {
+    showExamResult();
   } else {
     showHome();
   }
 }
+
+window.addEventListener('popstate', e => {
+  const examActive = document.getElementById('screenExam').classList.contains('active');
+  if (examActive && !exam.finished && !exam.reviewMode) {
+    if (!confirm('Quitter l\'examen en cours ?')) {
+      history.pushState({ screen: 'screenExam' }, '');
+      return;
+    }
+    if (exam._interval) { clearInterval(exam._interval); exam._interval = null; }
+    exam.finished = true;
+  }
+  _stopActiveMedia();
+  _suppressHistory = true;
+  goBack();
+  _suppressHistory = false;
+});
 
 function showHome() {
   _activateScreen('screenHome', 'Quiz Naturalisation', null);
@@ -3002,6 +3031,10 @@ function updateFcSessionBar() {
    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 initCommune();
 applyCommuneCSS();
+// Seed initial history entry so the first back press doesn't exit the app
+if (document.getElementById('screenHome').classList.contains('active')) {
+  history.replaceState({ screen: 'screenHome' }, '');
+}
 const _initLbl = document.getElementById('communeSwitcherLabel');
 if (_initLbl) _initLbl.textContent = communeName();
 const _initFooter = document.getElementById('footerCommuneName');
