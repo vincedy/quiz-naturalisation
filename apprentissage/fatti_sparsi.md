@@ -1,77 +1,81 @@
-# Fatti sparsi — Nomi, luoghi, trappole
+# Faits divers — Noms, lieux, culture
 
-## Luoghi: "Dove si trova X?"
+## Lieux : "Où se trouve X ?"
 
-| Cosa | Dove | Trucco |
-|---|---|---|
-| Palais fédéral | **Berne** | Berna = capitale = tutto il federale |
-| Tribunal fédéral | **Lausanne** | Giustizia federale = Losanna |
-| Siège Conseil d'État VD | **Château Saint-Maire** | Il castello nella Cité di Losanna |
-| Statua Guillaume Tell | **Altdorf** | Tell = Uri = Altdorf (capoluogo di Uri) |
-| Musée de l'alimentation | **Vevey** | Vevey = cibo (Nestlé) |
-| Musée Chaplin | **Corsier-sur-Vevey** | Sempre zona Vevey |
-| Fête des Vignerons | **Vevey** | Sempre Vevey |
-| Musée Olympique + CIO | **Lausanne** | |
-| Fosse aux ours | **Berne** | L'orso = stemma di Berna |
-| Plus grand carnaval | **Bâle** | |
-| Paléo festival | **Nyon** | |
-| Festival Jazz (Claude Nobs) | **Montreux** | |
-| Athletissima | **Lausanne** | |
-| Métro vaudois | **Lausanne** | |
+<!-- commune: all -->
 
-### Trucco Vevey
-Vevey = cibo + feste + Chaplin. Tre cose: musée alimentation, Fête des Vignerons, Chaplin (Corsier-sur-Vevey).
-
-## Persone
-
-| Chi | Cosa | Dettaglio da ricordare |
-|---|---|---|
-| **Mme de Staël** | Château de Coppet | Femme politique valdo-genevoise |
-| **Major Davel** | Patriote vaudois | Morto **décapité**. Non sul campo di battaglia. |
-| **Guillaume Tell** | Héros légendaire | Arbalète + pomme. **Légendaire**, non storico. Statua ad **Altdorf**. |
-| **Henri Dunant** | Fondateur Croix-Rouge | |
-| **Ignace Paderewski** | Lié à Morges | Pianista polacco |
-| **Stan Wawrinka** | Tennisman vaudois | Né à **Lausanne** en **1985** |
-| **Henri Guisan** | Général suisse WW2 | **Vaudois** |
-| **Pierre Viret** | Réformateur vaudois | Non Calvin, non Luther |
-
-## Sport e cultura
-
-| Domanda | Risposta |
+| Quoi | Où |
 |---|---|
-| Sport national suisse | **La lutte** (lotta svizzera) |
-| Plat typique VD | **Le papet** (non raclette, non rösti) |
-| Rösti = ingrediente principale | **Pomme de terre** |
+| Palais fédéral | **Berne** |
+| Tribunal fédéral | **Lausanne** |
+| Siège Conseil d'État VD | **Château Saint-Maire** |
+| Statua Guillaume Tell | **Altdorf** (chef-lieu d'Uri) |
+| Musée de l'alimentation | **Vevey** |
+| Musée Chaplin | **Corsier-sur-Vevey** |
+| Fête des Vignerons | **Vevey** |
+| Musée Olympique + CIO | **Lausanne** |
+| Fosse aux ours | **Berne** |
+| Plus grand carnaval | **Bâle** |
+| Paléo festival | **Nyon** |
+| Festival Jazz (Claude Nobs) | **Montreux** |
+| Athletissima | **Lausanne** |
+| Métro vaudois | **Lausanne** |
+
+> 💡 **Vevey** = alimentation + fêtes + Chaplin (Corsier)
+
+## Personnes
+
+<!-- commune: all -->
+
+| Qui | Quoi |
+|---|---|
+| **Mme de Staël** | Château de Coppet — femme politique valdo-genevoise |
+| **Major Davel** | Patriote vaudois — mort **décapité** |
+| **Guillaume Tell** | Héros **légendaire** — arbalète + pomme — statua à Altdorf |
+| **Henri Dunant** | Fondateur de la Croix-Rouge |
+| **Stan Wawrinka** | Tennisman vaudois — né à Lausanne en **1985** |
+| **Henri Guisan** | Général suisse WW2 — **vaudois** |
+| **Pierre Viret** | Réformateur vaudois (pas Calvin, pas Luther) |
+
+## Sport & culture
+
+<!-- commune: all -->
+
+| Question | Réponse |
+|---|---|
+| Sport national suisse | **La lutte** |
+| Plat typique VD | **Le papet** (pas raclette, pas rösti) |
+| Rösti — ingrédient principal | **Pomme de terre** |
 | Ballet célèbre Lausanne | **Ballet Béjart** |
 | Bâtiment inauguré 14 avril 2017 | **Parlement vaudois** |
 | Transport public VD | **mobilis** |
 | Château Saint-Maire rouvert | **14 avril 2018** |
-| École polytechnique Lausanne | **EPFL** (non UNIL) |
-| Collège secondaire Morges | **Collège de Beausobre** |
-| Club football Morges | **Forward-Morges** |
-| Festival pas à Morges | **Festival de la Cité** (= Lausanne) |
+| École polytechnique Lausanne | **EPFL** (pas UNIL) |
 | Garde Suisse protège depuis 1506 | **Le Pape** |
 | Personnage féminin sur les pièces de monnaie | **Helvetia** |
 
-## Géographie — i 3 errori
+## Géographie — pièges
 
-| Domanda | Risposta |
+<!-- commune: all -->
+
+| Question | Réponse |
 |---|---|
 | Palais fédéral se trouve à | **Berne** |
-| Plus haut sommet suisse | **Pointe Dufour** (non Cervin!) |
-| Limite nord territoire Morges | **Le vignoble** |
+| Plus haut sommet suisse | **Pointe Dufour** (pas le Cervin !) |
 | Canton le plus au nord de la Suisse | **Schaffhouse** |
 
-## Gland — scheda rapida
+## Gland — fiche rapide
 
-| Cosa | Risposta |
+<!-- commune: gland -->
+
+| Quoi | Réponse |
 |---|---|
-| Communes voisines | **Begnins, Prangins, Vich, Luins, Dully** |
-| Deux cours d'eau | **Lavasson et l'Asse** |
+| Communes voisines | Begnins, Prangins, Vich, Luins, Dully |
+| Deux cours d'eau | **Lavasson** et **l'Asse** |
 | District | **Nyon** |
 | Chef-lieu district | **Nyon** |
-| Quartiers (2) | **La Cité-Ouest et les Avouillons** |
-| Lieux de promenades | **Promenade du Golf + sentier des Toblerones** |
+| Quartiers (2) | **La Cité-Ouest** et **les Avouillons** |
+| Lieux de promenades | Promenade du Golf + sentier des Toblerones |
 | Marché hebdomadaire | **Place de la Gare** |
 | Théâtre | **Grand-Champ** |
 | Espace d'échange/rencontre | **La Pépinière** |
@@ -88,23 +92,28 @@ Vevey = cibo + feste + Chaplin. Tre cose: musée alimentation, Fête des Vignero
 | Tramway Gland–Begnins | **1906–1954** |
 | Cloche installée | **1739** |
 
-## Morges — scheda rapida
+## Morges — fiche rapide
 
-| Cosa | Risposta |
+<!-- commune: morges -->
+
+| Quoi | Réponse |
 |---|---|
-| Communes limitrophes | **Préverenges, Lonay, Echichens, Chigny, Tolochenaz** |
-| Deux rivières | **La Morges et le Bief** |
+| Communes limitrophes | Préverenges, Lonay, Echichens, Chigny, Tolochenaz |
+| Limite nord territoire | **Le vignoble** |
+| Deux rivières | **La Morges** et **le Bief** |
 | Drapeau Morges | Les deux rivières (Morges + Bief) |
-| Parcs au bord du lac | **Vertou** + **Indépendance** (2 parcs) |
+| Parcs au bord du lac | **Vertou** + **Indépendance** |
 | Jumelée avec | **Vertou** (ville française) |
-| Jours de marché | **Mercredis et samedis matin** |
-| Marché de Noël | **Parc du Château** |
+| Jours de marché | Mercredis et samedis matin |
+| Marché de Noël | Parc du Château |
 | Musée | **Alexis Forel** |
-| Théâtres | **Beausobre** + **Trois P'tits Tours** |
-| « Beausobre » = | **Une famille morgienne** |
+| Théâtres | Beausobre + Trois P'tits Tours |
+| Collège secondaire | **Collège de Beausobre** |
+| Club football | **Forward-Morges** |
+| Festival pas à Morges | **Festival de la Cité** (= Lausanne) |
+| Personnalité liée | **Ignace Paderewski** (pianiste polonais) |
 | Fondation + Château | **1286** |
-| Personnalité | **Ignace Paderewski** |
-| Dominée 1536–1798 par | **Les Bernois** (bailli au Château) |
+| Dominée 1536–1798 par | Les Bernois (bailli au Château) |
 | Hôtel de Ville construit | **1515** |
 | Hepburn + Dotti | **1969** |
 | Grand-Rue piétonne | **1993** |

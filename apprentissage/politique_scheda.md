@@ -1,67 +1,31 @@
-# Politique — Fiche complète (40 questions)
+# Politique — Fiche complète
 
 ## QUI ÉLIT QUI — Les 3 niveaux
 
-```
-═══════════════════════════════════════════════════════════
-                       PEUPLE
-             (vote directement pour ↓)
-═══════════════════════════════════════════════════════════
-                         │
-       ┌─────────────────┼─────────────────┐
-       ▼                 ▼                 ▼
-  FÉDÉRAL           CANTONAL          COMMUNAL
-                    (Vaud)            (Morges/Gland)
+<!-- commune: all -->
 
-LÉGISLATIF        LÉGISLATIF        LÉGISLATIF
-(fait les lois)   (fait les lois)   (fait les lois)
-┌──────────────┐  ┌──────────────┐  ┌──────────────┐
-│ Parlement    │  │ Grand        │  │ Conseil      │
-│ fédéral      │  │ Conseil      │  │ communal     │
-│ = Assemblée  │  │              │  │              │
-│   fédérale   │  │ 150 membres  │  │ 100 membres  │
-│              │  │              │  │ 10 séances   │
-│ CN  (200)    │  │              │  │              │
-│ +CE  (46)    │  │              │  │              │
-└──────┬───────┘  └──────────────┘  └──────────────┘
-       │
-       │ EXCEPTION :
-       │ élit ↓
-       │
-EXÉCUTIF          EXÉCUTIF          EXÉCUTIF
-(gouverne)        (gouverne)        (gouverne)
-┌──────────────┐  ┌──────────────┐  ┌──────────────┐
-│ Conseil      │  │ Conseil      │  │ Municipalité │
-│ fédéral      │  │ d'État       │  │              │
-│              │  │              │  │              │
-│ 7 membres    │  │ 7 membres    │  │ 7 membres    │
-│ prés. 1 an   │  │ 5 ans        │  │ 5 ans        │
-│              │  │ Château      │  │ scrutin maj. │
-│ ÉLU PAR LE   │  │ Saint-Maire  │  │ 2 tours      │
-│ PARLEMENT !  │  │              │  │              │
-│ PAS par le   │  │ ÉLU PAR LE   │  │ ÉLU PAR LE   │
-│ peuple !     │  │ PEUPLE       │  │ PEUPLE       │
-└──────────────┘  └──────────────┘  └──────────────┘
+**PEUPLE — vote directement pour ↓**
 
-JUDICIAIRE        JUDICIAIRE
-(juge)            (juge)
-┌──────────────┐  ┌──────────────┐
-│ Tribunal     │  │ Tribunal     │  (pas de niveau
-│ fédéral      │  │ cantonal     │   judiciaire
-│ Lausanne     │  │              │   communal)
-│              │  │              │
-│ ÉLU PAR LE   │  │              │
-│ PARLEMENT !  │  │              │
-└──────────────┘  └──────────────┘
-```
+| | FÉDÉRAL | CANTONAL (Vaud) | COMMUNAL |
+|---|---|---|---|
+| **LÉGISLATIF** — élabore les lois | Parlement fédéral = Assemblée fédérale · CN (200) · CE (46) | Grand Conseil · 150 membres | Conseil communal · [voir commune] |
+| | | | <!-- commune: morges --> 100 membres · 10 séances/an |
+| | | | <!-- commune: gland --> 75 membres · — |
+| ⚠️ EXCEPTION | *Le Parlement fédéral élit ↓ le Conseil fédéral et le Tribunal fédéral — pas le peuple* | | |
+| **EXÉCUTIF** — applique les lois et gouverne | **Conseil fédéral** · 7 membres · Président 1 an · **ÉLU PAR LE PARLEMENT !** | Conseil d'État · 7 membres · 5 ans · Château Saint-Maire · ÉLU PAR LE PEUPLE | Municipalité · 7 membres · 5 ans · scrutin maj. 2 tours · ÉLU PAR LE PEUPLE |
+| **JUDICIAIRE** — s'assure que les lois soient bien appliquées | Tribunal fédéral · Lausanne · **ÉLU PAR LE PARLEMENT !** | Tribunal cantonal | *(pas de niveau judiciaire communal)* |
 
-## RÈGLE D'OR
+## Règle d'or
+
+<!-- commune: all -->
 
 - Le **peuple** élit TOUS les législatifs (3 niveaux) + les exécutifs cantonal et communal
 - **EXCEPTION :** le Conseil fédéral et le Tribunal fédéral sont élus par l'**Assemblée fédérale**, PAS par le peuple
 - **Tous les exécutifs = 7 membres. Toujours.**
 
-## PARLEMENT FÉDÉRAL = ASSEMBLÉE FÉDÉRALE
+## Parlement fédéral = Assemblée fédérale
+
+<!-- commune: all -->
 
 Deux noms, même chose. Composé de deux chambres :
 
@@ -73,7 +37,9 @@ Ensemble, ils élisent :
 - le **Conseil fédéral** (gouvernement, 7 membres)
 - le **Tribunal fédéral** (justice, Lausanne)
 
-## NOMS : CHAQUE NOM N'EXISTE QU'À UN SEUL NIVEAU
+## Noms : chaque nom n'existe qu'à un seul niveau
+
+<!-- commune: all -->
 
 | Nom | Niveau | Rôle |
 |---|---|---|
@@ -88,7 +54,9 @@ Ensemble, ils élisent :
 | Conseil communal | Communal | Législatif |
 | Municipalité | Communal | Exécutif |
 
-## RÔLES
+## Rôles
+
+<!-- commune: all -->
 
 - Législatif = **élabore** les lois
 - Exécutif = **applique** les lois et gouverne
@@ -102,42 +70,54 @@ Ensemble, ils élisent :
 - Vote dès **18 ans** / étrangers votent au niveau **communal uniquement**
 - PS (Parti socialiste) = **gauche**
 - DSAS = Département de la **santé** et de l'**action sociale**
+
+<!-- commune: morges -->
 - ASIME = association scolaire intercommunale Morges
 
-## NOMS 2026
+<!-- commune: gland -->
+
+| Gland — commune | Réponse |
+|---|---|
+| Séances du Conseil communal | Salle communale dans la **Maison de Commune** |
+| Le CC (pouvoir législatif) peut | **Adopter les comptes communaux** |
+
+## Noms 2026
+
+<!-- commune: all -->
 
 | Rôle | Nom |
 |---|---|
 | Président CF 2026 | **Guy Parmelin** (vaudois, UDC) |
 | Présidente Conseil d'État VD | **Christelle Luisier Brodard** |
 | Syndic Lausanne | **Grégoire Junod** |
+
+<!-- commune: morges -->
+
+| Rôle | Nom |
+|---|---|
 | Syndique Morges | **Mélanie Wyss-Pittet** |
 | Ancienne syndique Morges → CE | **Nuria Gorrite** |
 
-## COMMUNE — Confronto Morges vs Gland
+## Durées
 
-| | Morges | Gland |
-|---|---|---|
-| Municipalité (membri) | **7** | **7** |
-| Conseil communal (membri) | **100** | **75** |
-| Séances CC | **10**/anno | Salle communale, Maison de Commune |
-| Scrutin Municipalité | Majoritaire 2 tours | — |
-| Législature | **5 ans** | — |
-| District | Morges | **Nyon** |
-| Chef-lieu du district | — | **Nyon** |
-| Tribunal du district | — | **Nyon** |
-| CC en tant que législatif peut | — | **Adopter les comptes communaux** |
-| Qui élit CC + Municipalité | Popolo | **Citoyens de Gland, 18 ans révolus, droit de vote** |
-| Syndique | **Mélanie Wyss-Pittet** | — |
-| Ancien syndic → CE | **Nuria Gorrite** | — |
-| ASIME | ✅ | — |
-
-## DURÉES
+<!-- commune: all -->
 
 | Quoi | Durée |
 |---|---|
 | Président de la Confédération | **1 an** (rotation annuelle) |
 | Conseil d'État VD | **5 ans** |
+
+<!-- commune: morges -->
+
+| Quoi | Durée |
+|---|---|
 | Législature communale Morges | **5 ans** |
 
-Astuce : **1** = fédéral, **5** = cantonal et communal.
+<!-- commune: gland -->
+
+| Quoi | Durée |
+|---|---|
+| Législature communale Gland | **5 ans** |
+
+<!-- commune: all -->
+> Astuce : **1** = fédéral, **5** = cantonal et communal.
