@@ -217,12 +217,6 @@ main {
 }
 
 /* ── Main action buttons ─────────────────────── */
-.btn-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-}
-
 .btn-main {
   display: flex;
   flex-direction: column;
@@ -247,6 +241,7 @@ main {
 
 .btn-main:hover  { background: var(--primary-hover); }
 .btn-main:active { transform: scale(.96); }
+a.btn-main { text-decoration: none; }
 
 @media (prefers-color-scheme: dark) {
   .btn-main { color: #0d1b0f; }
@@ -529,6 +524,7 @@ footer {
   box-shadow: 0 2px 8px rgba(0,0,0,.08);
   margin: -20px -16px 0; padding: 10px 16px 8px;
 }
+.exam-timer-row.hidden { display: none; }
 .exam-timer-row {
   display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;
 }
@@ -725,9 +721,8 @@ footer {
 /* ── 3-column button row ─────────────────────── */
 .btn-grid-3 {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 10px;
-  margin-top: 10px;
 }
 .btn-grid-3 .btn-main {
   min-height: 72px;
@@ -900,29 +895,31 @@ body.commune-active-gland  .commune-morges { display: none; }
       <!-- rendu par JS -->
     </div>
 
-    <div class="btn-grid">
+    <div class="btn-grid-3">
       <button class="btn-main" onclick="showConfig()">
         <span class="btn-main-icon">📚</span>
         Entraînement
-      </button>
-      <button class="btn-main" onclick="showFcConfig()">
-        <span class="btn-main-icon">🃏</span>
-        Flashcards
-      </button>
-    </div>
-    <div class="btn-grid-3">
-      <button class="btn-main" onclick="startExam()">
-        <span class="btn-main-icon">📝</span>
-        Examen blanc
       </button>
       <button class="btn-main" onclick="showStats()">
         <span class="btn-main-icon">📊</span>
         Statistiques
       </button>
+      <button class="btn-main" onclick="startExam()">
+        <span class="btn-main-icon">📝</span>
+        Examen blanc
+      </button>
+      <button class="btn-main" onclick="showFcConfig()">
+        <span class="btn-main-icon">🃏</span>
+        Flashcards
+      </button>
       <button class="btn-main" onclick="showLearn()">
         <span class="btn-main-icon">🎓</span>
         Apprendre
       </button>
+      <a class="btn-main" href="https://prestations.vd.ch/pub/101112/#/blankExam" target="_blank" rel="noopener">
+        <span class="btn-main-icon">🏛️</span>
+        Examen officiel&thinsp;↗
+      </a>
     </div>
 
   </section>
@@ -985,7 +982,7 @@ body.commune-active-gland  .commune-morges { display: none; }
   <!-- ── EXAM ──────────────────────────────────────── -->
   <section class="screen" id="screenExam">
     <div class="exam-sticky" id="examSticky">
-      <div class="exam-timer-row">
+      <div class="exam-timer-row" id="examTimerRow">
         <span class="exam-timer" id="examTimer">⏱ 60:00</span>
         <button class="btn-terminate" onclick="terminateExam()">Terminer ✓</button>
       </div>
@@ -2050,9 +2047,12 @@ function startExam() {
   exam.current    = 0;
   exam.timerSec   = EXAM_DURATION;
   exam.finished   = false;
+  exam.reviewMode = false;
   if (exam._interval) clearInterval(exam._interval);
 
   _activateScreen('screenExam', 'Examen blanc', { id:'screenHome', title:'Quiz Naturalisation' });
+  const timerRow = document.getElementById('examTimerRow');
+  if (timerRow) timerRow.classList.remove('hidden');
   renderExamNav();
   renderExamQuestion();
   startExamTimer();
@@ -2106,7 +2106,7 @@ function updateExamNavBtn(i) {
 }
 
 function examGoTo(i) {
-  if (exam.finished) return;
+  if (exam.finished && !exam.reviewMode) return;
   const prev = exam.current;
   exam.current = i;
   updateExamNavBtn(prev);
@@ -2124,18 +2124,46 @@ function renderExamQuestion() {
   const sel = exam.answers[idx]; // null or index
   const cat = CATS[q.cat].icon + ' ' + CATS[q.cat].label + ' · ' + LEVELS[q.lvl];
 
-  const optsHtml = q.shuffledOpts.map((opt, i) => {
-    let cls = 'exam-opt';
-    if (sel === i) cls += ' is-selected';
-    return `<button class="${cls}" id="eopt-${i}" onclick="selectExamOpt(${i})"
-              ${exam.finished ? 'disabled' : ''}>
-      <span class="opt-letter">${LETTERS[i]}</span>
-      <span class="opt-text">${opt}</span>
-    </button>`;
-  }).join('');
-
   const prevDis = idx === 0 ? 'disabled' : '';
   const nextDis = idx === exam.questions.length - 1 ? 'disabled' : '';
+
+  let optsHtml;
+  let bottomHtml;
+
+  if (exam.reviewMode) {
+    optsHtml = q.shuffledOpts.map((opt, i) => {
+      const isCorrect = i === q.correctIdx;
+      const isUserWrong = i === sel && sel !== q.correctIdx;
+      let cls = 'exam-opt';
+      if (isCorrect) cls += ' state-correct';
+      else if (isUserWrong) cls += ' state-wrong';
+      return `<button class="${cls}" disabled>
+        <span class="opt-letter">${LETTERS[i]}</span>
+        <span class="opt-text">${opt}</span>
+      </button>`;
+    }).join('');
+    bottomHtml = `
+      <div class="exam-nav-buttons">
+        <button class="btn-exam-nav" ${prevDis} onclick="examPrev()">← Précédente</button>
+        <button class="btn-exam-nav" ${nextDis} onclick="examNext()">Suivante →</button>
+      </div>
+      <button class="btn-outline" style="width:100%;margin-top:10px;" onclick="showExamResult()">↩ Retour aux résultats</button>`;
+  } else {
+    optsHtml = q.shuffledOpts.map((opt, i) => {
+      let cls = 'exam-opt';
+      if (sel === i) cls += ' is-selected';
+      return `<button class="${cls}" id="eopt-${i}" onclick="selectExamOpt(${i})"
+                ${exam.finished ? 'disabled' : ''}>
+        <span class="opt-letter">${LETTERS[i]}</span>
+        <span class="opt-text">${opt}</span>
+      </button>`;
+    }).join('');
+    bottomHtml = `
+      <div class="exam-nav-buttons">
+        <button class="btn-exam-nav" ${prevDis} onclick="examPrev()">← Précédente</button>
+        <button class="btn-exam-nav" ${nextDis} onclick="examNext()">Suivante →</button>
+      </div>`;
+  }
 
   document.getElementById('examContent').innerHTML = `
     <div class="exam-q-meta">
@@ -2144,10 +2172,7 @@ function renderExamQuestion() {
     </div>
     <div class="exam-q-text">${q.q}</div>
     <div class="exam-options">${optsHtml}</div>
-    <div class="exam-nav-buttons">
-      <button class="btn-exam-nav" ${prevDis} onclick="examPrev()">← Précédente</button>
-      <button class="btn-exam-nav" ${nextDis} onclick="examNext()">Suivante →</button>
-    </div>`;
+    ${bottomHtml}`;
 }
 
 function selectExamOpt(i) {
@@ -2252,8 +2277,20 @@ function showExamResult() {
     <div class="result-cats">${catsHtml}</div>
     <div class="result-actions">
       <button class="btn-main" style="width:100%;min-height:52px;" onclick="startExam()">🔄&ensp;Nouvel examen</button>
+      <button class="btn-outline" style="width:100%;" onclick="showExamReview()">🔍&ensp;Réviser les réponses</button>
       <button class="btn-outline" onclick="showHome()">← Retour à l'accueil</button>
     </div>`;
+}
+
+function showExamReview() {
+  exam.reviewMode = true;
+  exam.current = 0;
+  _activateScreen('screenExam', 'Révision examen', { id:'screenExamResult', title:'Résultat examen' });
+  const timerRow = document.getElementById('examTimerRow');
+  if (timerRow) timerRow.classList.add('hidden');
+  renderExamNav();
+  exam.questions.forEach((q, i) => updateExamNavBtn(i));
+  renderExamQuestion();
 }
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
