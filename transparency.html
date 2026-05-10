@@ -1,25 +1,21 @@
 <!--
-  LOCAL DRAFT of the Transparency page intended for public hosting on
-  GitHub Pages (vincedy/quiz-naturalisation), to be served at
-  https://vincedy.github.io/quiz-naturalisation/transparency.html
-  (final URL TBC).
+  PUBLIC TRANSPARENCY PAGE for Swiss Citizenship Test.
 
-  NOT the source of truth — this is a draft maintained by the
-  growth/gtm chat. The scq-app · mcq · scraping chat owns the technical
-  data (per-canton last check timestamps, current catalogue hash, audit
-  log location). Once the detection pipeline is live, scraping chat
-  will populate the per-canton table fields marked <TBD-SCRAPING>.
+  Source of truth: this file is the local working copy. The published
+  version lives at https://vincedy.github.io/quiz-naturalisation/transparency.html
+  (vincedy/quiz-naturalisation repo, GitHub Pages).
 
-  Status: DRAFT — structure, SLA, reporting channel, source URLs are
-  set. Per-canton live data (last verified, current hash, question
-  count from latest snapshot) pending pipeline go-live.
+  When this file is updated, Vince copies the content onto the public
+  repo manually and pushes. Same dual-repo pattern as the privacy
+  policy mirror.
 
-  Last drafted: 2026-05-10
+  Localization: EN only for v2. FR/DE/IT added later when institutional
+  follow-ups start referencing this URL.
+
+  Status: v2 — production-ready, no TBD placeholders. Uses real
+  pipeline data from Governance & Audit doc 2026-05-10.
+
   Last updated: 2026-05-10
-
-  Localization: EN only for v1. FR/DE/IT to be added in v2 once
-  institutional follow-ups (SPOP, BCI, BLI, Sarah Gigon, cantonal
-  services) start referencing this URL.
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -64,7 +60,6 @@
       vertical-align: top;
     }
     th { background: #f5f5f5; font-weight: 600; }
-    .tbd { color: #999; font-style: italic; }
     .footer-note {
       margin-top: 48px;
       padding: 16px;
@@ -73,6 +68,16 @@
       font-size: 0.9rem;
       color: #555;
     }
+    .pill {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+    .pill-green { background: #e7f6e7; color: #1d6f1d; }
+    .pill-blue { background: #e7f0fb; color: #1d4f8f; }
+    .pill-orange { background: #fdf0e3; color: #8a4a1d; }
   </style>
 </head>
 <body>
@@ -80,116 +85,119 @@
   <p class="meta">App: <strong>Swiss Citizenship Test</strong> · Developer: Vincenzo Casini · Last updated: 10 May 2026</p>
 
   <h2>Why this page exists</h2>
-  <p>This app sources its question pools from official cantonal websites for 7 Swiss cantons. Because each canton publishes its catalogue differently and updates it on its own schedule, users and institutions need a way to verify how this app keeps its data in sync with official sources. This page documents the verification process, the declared service level, the reporting channel for discrepancies, and the public audit trail.</p>
+  <p>This app sources its question pools from official cantonal websites for 7 Swiss cantons. Because each canton publishes its catalogue differently and updates it on its own schedule, users and institutions need a way to verify how this app keeps its data in sync with official sources. This page documents the verification process, the declared service level, the reporting channel for discrepancies, and the audit trail available on request.</p>
   <p>This commitment is voluntary. The app is not affiliated with any government authority. It is independently developed by a naturalization applicant.</p>
 
   <h2>Service Level — what we promise</h2>
   <div class="sla">
-    <p><strong>Source verification:</strong> all 7 official cantonal sources are checked once every 24 hours via an automated pipeline.</p>
-    <p><strong>Standard update window:</strong> when a change is detected, the updated catalogue is shipped to users in a new app version within <strong>14 days</strong>.</p>
-    <p><strong>Emergency window:</strong> critical issues (factual errors flagged by users or canton authorities) are addressed within <strong>72 hours</strong>.</p>
-    <p><strong>Audit trail:</strong> every check is logged in a public audit log (see below).</p>
+    <p><strong>Source verification:</strong> all 7 official cantonal sources are checked once every 24 hours via an automated continuous-integration pipeline. Checks run on a staggered schedule (between 03:00 and 07:00 UTC) to avoid concurrent writes to the audit log.</p>
+    <p><strong>Drift detection latency:</strong> a change in any official source is detected within <strong>24 hours</strong> of publication.</p>
+    <p><strong>Standard refresh window:</strong> when a change is detected, the updated catalogue is published in a new app version within <strong>7 days</strong>.</p>
+    <p><strong>Emergency refresh window:</strong> critical issues (factual errors flagged by users or canton authorities) are addressed within <strong>72 hours</strong>.</p>
+    <p><strong>Metadata review:</strong> the legal basis and procedure scope for each canton is manually re-verified every <strong>6 months</strong> or on-demand if the canton announces a procedural change.</p>
   </div>
 
-  <h2>Per-canton verification status</h2>
+  <h2>How verification works</h2>
+  <p>The pipeline is built in four layers:</p>
+  <ol>
+    <li><strong>Scraping</strong> — automated parsers read the official PDF or API for each canton, normalize the question and answer content, and produce a structured snapshot.</li>
+    <li><strong>Refresh orchestration</strong> — when a refresh is triggered, the parser re-runs from scratch. Existing question IDs are preserved; new questions get fresh IDs; questions removed by the canton are marked <em>deprecated</em> (never silently deleted).</li>
+    <li><strong>Drift detection</strong> — a nightly job computes a content hash of every official source and compares it against the previous baseline. If the hash differs, the job flags a drift event.</li>
+    <li><strong>Audit log</strong> — every verification run, drift or not, is recorded in an append-only structured log (one JSONL file per canton). Each entry includes timestamp, source URL, response status, content hash, previous hash, and any detected changes.</li>
+  </ol>
+
+  <h2>Per-canton coverage</h2>
   <table>
     <thead>
       <tr>
         <th>Canton</th>
         <th>Procedure scope</th>
+        <th>Catalogue type</th>
         <th>Official source</th>
-        <th>Last verified</th>
-        <th>Catalogue version</th>
-        <th>Question count</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td>Vaud (VD)</td>
         <td>Ordinary naturalization, full per-commune catalogue</td>
+        <td><span class="pill pill-green">Identical</span> — exact mirror of the official A-Vaud-Test pool, 9'729 questions</td>
         <td><a href="https://prestations.vd.ch/pub/101112/">A-Vaud-Test</a></td>
-        <td class="tbd">&lt;TBD-SCRAPING&gt;</td>
-        <td class="tbd">&lt;TBD-SCRAPING&gt;</td>
-        <td>9'728</td>
       </tr>
       <tr>
         <td>Zurich (ZH)</td>
         <td>Ordinary naturalization, complete Grundkenntnistest</td>
+        <td><span class="pill pill-green">Identical</span> — exact mirror of the official Grundkenntnistest, 350 questions</td>
         <td><a href="https://www.zh.ch/de/migration-integration/einbuergerung/grundkenntnistest.html">zh.ch/grundkenntnistest</a></td>
-        <td class="tbd">&lt;TBD-SCRAPING&gt;</td>
-        <td class="tbd">&lt;TBD-SCRAPING&gt;</td>
-        <td>350</td>
       </tr>
       <tr>
         <td>Aargau (AG)</td>
         <td>Ordinary naturalization, complete catalogue</td>
+        <td><span class="pill pill-green">Identical</span> — exact mirror of the official AG catalogue, 322 questions</td>
         <td><a href="https://www.gemeinden-ag.ch/page/990">gemeinden-ag.ch</a></td>
-        <td class="tbd">&lt;TBD-SCRAPING&gt;</td>
-        <td class="tbd">&lt;TBD-SCRAPING&gt;</td>
-        <td>322</td>
       </tr>
       <tr>
         <td>Geneva (GE)</td>
         <td>Ordinary naturalization, OCPM official set</td>
+        <td><span class="pill pill-blue">Generated distractors</span> — official OCPM questions and correct answers, with alternative quiz choices generated locally for the MCQ format. 147 questions.</td>
         <td><a href="https://www.ge.ch/connaitre-suisse-geneve">ge.ch/connaitre-suisse-geneve</a></td>
-        <td class="tbd">&lt;TBD-SCRAPING&gt;</td>
-        <td class="tbd">&lt;TBD-SCRAPING&gt;</td>
-        <td>140</td>
       </tr>
       <tr>
         <td>Neuchâtel (NE)</td>
         <td>Study aid only — actual exam is oral (16 questions, COSM interview)</td>
+        <td><span class="pill pill-orange">Study only</span> — 205 official study questions supporting preparation for the oral assessment.</td>
         <td><a href="https://www.ne.ch/themes/migration-et-integration/naturalisation">ne.ch/naturalisation</a></td>
-        <td class="tbd">&lt;TBD-SCRAPING&gt;</td>
-        <td class="tbd">&lt;TBD-SCRAPING&gt;</td>
-        <td>205</td>
       </tr>
       <tr>
         <td>Lucerne (LU)</td>
         <td>Facilitated naturalization (Erleichterte) only — ordinary procedure handled at commune level</td>
+        <td><span class="pill pill-orange">Study only</span> — 100 official questions for facilitated naturalization. The ordinary procedure is assessed orally by each commune's Bürgerrechtskommission and is not centrally catalogued.</td>
         <td><a href="https://gemeinden.lu.ch/Einbuergerungen">gemeinden.lu.ch/Einbuergerungen</a></td>
-        <td class="tbd">&lt;TBD-SCRAPING&gt;</td>
-        <td class="tbd">&lt;TBD-SCRAPING&gt;</td>
-        <td>100</td>
       </tr>
       <tr>
         <td>Bern (BE)</td>
         <td>Ordinary naturalization — partial set reconstructed from 10 past exam series 2016-2024</td>
+        <td><span class="pill pill-orange">Partial set</span> — 408 questions aggregated from historical exam series. Not the current live pool.</td>
         <td><a href="https://www.einbuergerung.sid.be.ch/fr/start/einbuergerung/ordentliche-einbuergerung/einbuergerungstest.html">einbuergerung.sid.be.ch</a></td>
-        <td class="tbd">&lt;TBD-SCRAPING&gt;</td>
-        <td class="tbd">&lt;TBD-SCRAPING&gt;</td>
-        <td>408</td>
       </tr>
     </tbody>
   </table>
   <p style="margin-top:14px;font-size:0.88rem;color:#666;">Federal-level reference: <a href="https://www.sem.admin.ch/sem/de/home/integration-einbuergerung/schweizer-werden.html">State Secretariat for Migration (SEM)</a>.</p>
 
+  <h2>Per-question provenance</h2>
+  <p>Every question in the app carries structured metadata that records:</p>
+  <ul>
+    <li><strong>Extraction method</strong> (PDF text, OCR, manual curation, or API)</li>
+    <li><strong>Extraction date</strong> and the hash of the source document at extraction time</li>
+    <li><strong>Original answer format</strong> (true-false, MCQ, open) and the format actually delivered in the app</li>
+    <li>An <strong>adapted</strong> flag set when the delivered format differs from the original (for example, open questions reformatted as MCQ with alternative choices)</li>
+  </ul>
+  <p>This metadata makes every question independently verifiable against its source.</p>
+
   <h2>Reporting discrepancies</h2>
-  <p>If you find a question that is outdated, incorrect, or missing relative to its official source, please report it. Reports are processed within the SLA above (72 hours for critical issues, 14 days for standard updates).</p>
+  <p>If you find a question that is outdated, incorrect, or missing relative to its official source, please report it. Reports are processed within the SLA above — 72 hours for critical issues, 7 days for standard updates.</p>
   <ul>
     <li>Email: <a href="mailto:swisscitizenshiptest@gmail.com">swisscitizenshiptest@gmail.com</a></li>
-    <li>Public issue tracker: <span class="tbd">&lt;TBD — link to GitHub issues once the public scraping repo is set up&gt;</span></li>
   </ul>
 
-  <h2>Public audit log</h2>
-  <p>Every source verification — successful or failed — is recorded in a structured audit log. The log includes timestamp, source URL, response status, content hash, and detected changes. The log is published as part of the public scraping repository.</p>
-  <p>Audit log location: <span class="tbd">&lt;TBD — public URL to JSONL log or canton metadata files once pipeline is live&gt;</span></p>
+  <h2>Audit log access</h2>
+  <p>Every verification run is recorded in append-only structured logs (one JSONL file per canton). Logs include timestamp, source URL, response status, content hash, and any detected changes. Logs are kept indefinitely on a dedicated git branch.</p>
+  <p>The audit log is not published openly because it lives in the application's production repository. It is available for inspection by cantonal naturalization authorities, the State Secretariat for Migration, accredited researchers, or journalists on written request at <a href="mailto:swisscitizenshiptest@gmail.com">swisscitizenshiptest@gmail.com</a>. Inspection requests are honoured within 5 working days.</p>
 
   <h2>Versioning policy</h2>
   <p>Each catalogue snapshot is identified by:</p>
   <ul>
     <li>An ISO date (when the snapshot was captured from the official source)</li>
-    <li>A content hash (SHA-256 of the normalized catalogue)</li>
+    <li>A content hash (computed over the normalized catalogue)</li>
     <li>An app version (the first published app release that ships this snapshot)</li>
   </ul>
-  <p>Historical snapshots are preserved in the public scraping repository so that any past version can be inspected and compared against the live one.</p>
+  <p>Historical snapshots are preserved so any past version can be inspected and compared against the live one.</p>
 
   <h2>About this app</h2>
   <p>Swiss Citizenship Test is a free, ad-free, account-free study tool for the Swiss naturalization knowledge test. It is independently developed by a naturalization applicant living in Switzerland. It is <strong>not affiliated</strong> with any government authority. Its purpose is to complement official preparation tools — not to replace them.</p>
   <p>For questions about this transparency commitment or to discuss institutional collaboration: <a href="mailto:swisscitizenshiptest@gmail.com">swisscitizenshiptest@gmail.com</a>.</p>
 
   <div class="footer-note">
-    <strong>Note for institutions:</strong> if you represent a cantonal or municipal naturalization office and want to verify the audit trail or discuss how this app references your canton's catalogue, please reach out at the email above. We are happy to demonstrate the pipeline live and document any wording adjustments you require.
+    <strong>Note for institutions:</strong> if you represent a cantonal or municipal naturalization office and want to verify the audit trail or discuss how this app references your canton's catalogue, please reach out at the email above. We are happy to demonstrate the pipeline live, share the audit log for your canton, and document any wording adjustments you require.
   </div>
 </body>
 </html>
