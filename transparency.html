@@ -5,7 +5,7 @@
   version lives at https://vincedy.github.io/quiz-naturalisation/transparency.html
   (vincedy/quiz-naturalisation repo, GitHub Pages).
 
-  Status: v3.1 — added Valais (VS) as 8th canton (140 questions, study-only).
+  Status: v3.2 — added no-auto-acknowledgement clause to "How verification works" section (4 locales).
   Same locale-switching pattern as the privacy policy mirror.
 
   Last updated: 2026-05-10
@@ -111,6 +111,7 @@
       <li><strong>Refresh orchestration</strong> — when a refresh is triggered, the parser re-runs from scratch. Existing question IDs are preserved; new questions get fresh IDs; questions removed by the canton are marked <em>deprecated</em> (never silently deleted).</li>
       <li><strong>Drift detection</strong> — a nightly job computes a content hash of every official source and compares it against the previous baseline. If the hash differs, the job flags a drift event.</li>
       <li><strong>Audit log</strong> — every verification run, drift or not, is recorded in an append-only structured log (one JSONL file per canton). Each entry includes timestamp, source URL, response status, content hash, previous hash, and any detected changes.</li>
+      <li><strong>No auto-acknowledgement</strong> — a drift event stays flagged as unresolved until a human reviews the change, updates the question set if needed, and commits a new baseline hash. The pipeline never silently resets the drift flag on its own.</li>
     </ol>
 
     <h2>Per-canton coverage</h2>
@@ -189,6 +190,7 @@
       <li><strong>Orchestration des rafraîchissements</strong> — lorsqu'un rafraîchissement est déclenché, le parseur est ré-exécuté depuis zéro. Les identifiants des questions existantes sont préservés ; les nouvelles questions reçoivent des identifiants frais ; les questions retirées par le canton sont marquées comme <em>dépréciées</em> (jamais supprimées silencieusement).</li>
       <li><strong>Détection des écarts</strong> — un job nocturne calcule une empreinte (hash) du contenu de chaque source officielle et la compare à la référence précédente. Si l'empreinte diffère, le job signale un événement de dérive.</li>
       <li><strong>Journal d'audit</strong> — chaque exécution de vérification, qu'il y ait dérive ou non, est enregistrée dans un journal structuré en mode ajout seul (un fichier JSONL par canton). Chaque entrée contient un horodatage, l'URL source, le code de réponse, l'empreinte du contenu, l'empreinte précédente et tout changement détecté.</li>
+      <li><strong>Pas d'acquittement automatique</strong> — un événement de dérive reste signalé comme non résolu jusqu'à ce qu'un humain examine le changement, mette à jour le jeu de questions si nécessaire, et valide un nouvel hash de référence. Le pipeline ne réinitialise jamais silencieusement l'indicateur de dérive de lui-même.</li>
     </ol>
 
     <h2>Couverture par canton</h2>
@@ -267,6 +269,7 @@
       <li><strong>Aktualisierungsorchestrierung</strong> — wird eine Aktualisierung ausgelöst, läuft der Parser von Grund auf neu. Bestehende Fragen-IDs werden beibehalten; neue Fragen erhalten frische IDs; vom Kanton entfernte Fragen werden als <em>veraltet</em> markiert (niemals stillschweigend gelöscht).</li>
       <li><strong>Änderungserkennung</strong> — ein nächtlicher Job berechnet einen Inhalts-Hash jeder offiziellen Quelle und vergleicht ihn mit der vorherigen Referenz. Weicht der Hash ab, meldet der Job ein Drift-Ereignis.</li>
       <li><strong>Audit-Log</strong> — jede Verifizierungsausführung, ob mit oder ohne Drift, wird in einem strukturierten, nur ergänzenden Log (eine JSONL-Datei pro Kanton) festgehalten. Jeder Eintrag enthält Zeitstempel, Quell-URL, Antwortcode, Inhalts-Hash, vorheriger Hash und allfällige erkannte Änderungen.</li>
+      <li><strong>Keine automatische Quittierung</strong> — ein Drift-Ereignis bleibt als ungelöst markiert, bis ein Mensch die Änderung überprüft, den Fragensatz bei Bedarf aktualisiert und einen neuen Referenz-Hash eincheckt. Die Pipeline setzt die Drift-Markierung niemals stillschweigend von selbst zurück.</li>
     </ol>
 
     <h2>Abdeckung pro Kanton</h2>
@@ -345,6 +348,7 @@
       <li><strong>Orchestrazione degli aggiornamenti</strong> — quando viene attivato un aggiornamento, il parser viene rieseguito da zero. Gli ID delle domande esistenti vengono preservati; le nuove domande ricevono ID nuovi; le domande rimosse dal cantone vengono marcate come <em>deprecate</em> (mai cancellate silenziosamente).</li>
       <li><strong>Rilevamento delle modifiche</strong> — un job notturno calcola un hash del contenuto di ogni fonte ufficiale e lo confronta con la baseline precedente. Se l'hash differisce, il job segnala un evento di drift.</li>
       <li><strong>Log di audit</strong> — ogni esecuzione di verifica, con o senza drift, viene registrata in un log strutturato in sola aggiunta (un file JSONL per cantone). Ogni voce contiene timestamp, URL fonte, codice di risposta, hash del contenuto, hash precedente ed eventuali modifiche rilevate.</li>
+      <li><strong>Nessuna conferma automatica</strong> — un evento di drift rimane segnalato come non risolto finché un essere umano non esamina la modifica, aggiorna il set di domande se necessario e fa il commit di un nuovo hash di riferimento. La pipeline non azzera mai silenziosamente l'indicatore di drift da sola.</li>
     </ol>
 
     <h2>Copertura per cantone</h2>
