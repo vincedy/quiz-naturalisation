@@ -10,9 +10,8 @@
   growth chat will produce a new HTML diff to paste into the public
   repo manually (the public repo is not cloned locally).
 
-  Last synced: 2026-05-10 (Technical Data Collection + Transparency link)
-  Status: POST-update — contains Technical Data Collection + Transparency link,
-  ready to be pasted onto vincedy/quiz-naturalisation public repo.
+  Last synced: 2026-05-13 (iOS submission readiness)
+  Status: iOS-ready — contains Technical Data Collection + Transparency link + iOS clarifications (IDFV, no IDFA, AWS Ireland data residency). Ready to be pasted onto vincedy/quiz-naturalisation public repo.
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -53,7 +52,7 @@
 
   <section id="en">
     <h1>Privacy Policy</h1>
-    <p class="meta">App: <strong>Swiss Citizenship Test</strong> · Developer: Vincenzo Casini · Last updated: 10 May 2026</p>
+    <p class="meta">App: <strong>Swiss Citizenship Test</strong> · Developer: Vincenzo Casini · Last updated: 13 May 2026</p>
 
     <h2>Summary</h2>
     <p>This app stores quiz progress on your device and synchronizes pseudonymous data (no personal information) with our cloud service to enable the leaderboard and cross-device features. We do not collect names, emails, contacts, location, or any personally identifying information.</p>
@@ -62,14 +61,14 @@
     <p>The app creates an anonymous account on our servers (Supabase) automatically when first launched. The following pseudonymous data is stored:</p>
     <ul>
       <li>An anonymous user ID (random UUID, not linked to your identity)</li>
-      <li>A device identifier (random UUID generated on this device)</li>
+      <li>A device identifier (random UUID generated on this device). On iOS, this corresponds to Apple's Identifier for Vendor (IDFV), a vendor-scoped, non-advertising identifier.</li>
       <li>Your selected canton and commune (e.g., "Vaud / Morges")</li>
       <li>Your selected app language</li>
       <li>An auto-generated display name (e.g., "Donnola Leale") used for the leaderboard</li>
       <li>Your quiz progress: exam results, game scores, answered questions, mastery progress</li>
       <li>The app version you are using</li>
     </ul>
-    <p>We do not collect: your name, email, phone number, address, contacts, photos, location (GPS), or any device identifier that could be used to track you across apps.</p>
+    <p>We do not collect: your name, email, phone number, address, contacts, photos, location (GPS), no IDFA (Apple advertising identifier), nor any device identifier that could be used to track you across apps.</p>
 
     <h2>Why We Collect It</h2>
     <p>This data is used solely to: enable the leaderboard, allow you to compare your progress with other users, and synchronize your progress across devices. We do not sell, share, or use this data for advertising or any other purpose.</p>
@@ -78,7 +77,7 @@
     <p>A copy of your progress is also kept locally on your device for offline use.</p>
 
     <h2>Third-Party Services</h2>
-    <p>The app uses Supabase (supabase.com) as a backend service to store the data described above. Supabase processes data within its infrastructure under its own privacy terms (<a href="https://supabase.com/privacy">supabase.com/privacy</a>). The app uses no advertising networks, analytics tools, or tracking technologies.</p>
+    <p>The app uses Supabase (supabase.com) as a backend service to store the data described above. Supabase processes data within the European Union (AWS Ireland region, eu-west-1), under its own privacy terms (<a href="https://supabase.com/privacy">supabase.com/privacy</a>). The app uses no advertising networks, analytics tools, or tracking technologies.</p>
     <p>For our update commitment and source verification process, see our <a href="https://vincedy.github.io/quiz-naturalisation/transparency.html">Transparency page</a>.</p>
 
     <h2>Technical Data Collection</h2>
@@ -102,7 +101,7 @@
 
   <section id="fr">
     <h1>Politique de confidentialité</h1>
-    <p class="meta">App : <strong>Swiss Citizenship Test</strong> · Développeur : Vincenzo Casini · Dernière mise à jour : 10 mai 2026</p>
+    <p class="meta">App : <strong>Swiss Citizenship Test</strong> · Développeur : Vincenzo Casini · Dernière mise à jour : 13 mai 2026</p>
 
     <h2>Résumé</h2>
     <p>Cette application enregistre la progression du quiz sur votre appareil et synchronise des données pseudonymes (sans informations personnelles) avec notre service cloud pour permettre le classement et les fonctionnalités multi-appareils. Nous ne collectons pas de noms, e-mails, contacts, localisation, ni aucune information permettant de vous identifier personnellement.</p>
@@ -111,14 +110,14 @@
     <p>L'application crée automatiquement un compte anonyme sur nos serveurs (Supabase) au premier lancement. Les données pseudonymes suivantes sont stockées :</p>
     <ul>
       <li>Un identifiant utilisateur anonyme (UUID aléatoire, non lié à votre identité)</li>
-      <li>Un identifiant d'appareil (UUID aléatoire généré sur cet appareil)</li>
+      <li>Un identifiant d'appareil (UUID aléatoire généré sur cet appareil). Sur iOS, il correspond à l'Identifier for Vendor (IDFV) d'Apple, un identifiant lié au fournisseur, non publicitaire.</li>
       <li>Votre canton et commune sélectionnés (ex. « Vaud / Morges »)</li>
       <li>Votre langue sélectionnée</li>
       <li>Un nom d'affichage généré automatiquement (ex. « Donnola Leale ») utilisé pour le classement</li>
       <li>Votre progression : résultats d'examens, scores de jeux, questions répondues, progression de maîtrise</li>
       <li>La version de l'application utilisée</li>
     </ul>
-    <p>Nous ne collectons pas : votre nom, e-mail, téléphone, adresse, contacts, photos, localisation (GPS) ni aucun identifiant d'appareil permettant un suivi entre applications.</p>
+    <p>Nous ne collectons pas : votre nom, e-mail, téléphone, adresse, contacts, photos, localisation (GPS), aucun IDFA (identifiant publicitaire Apple) ni aucun identifiant d'appareil permettant un suivi entre applications.</p>
 
     <h2>Pourquoi nous le collectons</h2>
     <p>Ces données servent uniquement à : permettre le classement, comparer votre progression avec celle d'autres utilisateurs, synchroniser votre progression entre appareils. Nous ne vendons, partageons ni utilisons ces données à des fins publicitaires ou autres.</p>
@@ -127,7 +126,7 @@
     <p>Une copie de votre progression est également conservée localement sur votre appareil pour une utilisation hors ligne.</p>
 
     <h2>Services tiers</h2>
-    <p>L'application utilise Supabase (supabase.com) comme service backend pour stocker les données décrites ci-dessus. Supabase traite les données au sein de son infrastructure selon ses propres conditions de confidentialité (<a href="https://supabase.com/privacy">supabase.com/privacy</a>). L'application n'utilise aucun réseau publicitaire, outil d'analyse ni technologie de suivi.</p>
+    <p>L'application utilise Supabase (supabase.com) comme service backend pour stocker les données décrites ci-dessus. Supabase traite les données au sein de l'Union européenne (région AWS Irlande, eu-west-1), selon ses propres conditions de confidentialité (<a href="https://supabase.com/privacy">supabase.com/privacy</a>). L'application n'utilise aucun réseau publicitaire, outil d'analyse ni technologie de suivi.</p>
     <p>Pour notre engagement de mise à jour et notre processus de vérification des sources, consultez notre <a href="https://vincedy.github.io/quiz-naturalisation/transparency.html">page de Transparence</a>.</p>
 
     <h2>Collecte de données techniques</h2>
@@ -151,7 +150,7 @@
 
   <section id="de">
     <h1>Datenschutzerklärung</h1>
-    <p class="meta">App: <strong>Swiss Citizenship Test</strong> · Entwickler: Vincenzo Casini · Zuletzt aktualisiert: 10. Mai 2026</p>
+    <p class="meta">App: <strong>Swiss Citizenship Test</strong> · Entwickler: Vincenzo Casini · Zuletzt aktualisiert: 13. Mai 2026</p>
 
     <h2>Zusammenfassung</h2>
     <p>Diese App speichert den Quiz-Fortschritt auf Ihrem Gerät und synchronisiert pseudonyme Daten (keine persönlichen Informationen) mit unserem Cloud-Dienst, um die Bestenliste und gerätübergreifende Funktionen zu ermöglichen. Wir erfassen keine Namen, E-Mails, Kontakte, Standortdaten oder persönlich identifizierbare Informationen.</p>
@@ -160,14 +159,14 @@
     <p>Die App erstellt beim ersten Start automatisch ein anonymes Konto auf unseren Servern (Supabase). Die folgenden pseudonymen Daten werden gespeichert:</p>
     <ul>
       <li>Eine anonyme Benutzer-ID (zufällige UUID, nicht mit Ihrer Identität verknüpft)</li>
-      <li>Eine Geräte-Kennung (auf diesem Gerät erzeugte zufällige UUID)</li>
+      <li>Eine Geräte-Kennung (auf diesem Gerät erzeugte zufällige UUID). Unter iOS entspricht dies Apples Identifier for Vendor (IDFV), einer anbietergebundenen, nicht werbebezogenen Kennung.</li>
       <li>Ihr ausgewählter Kanton und Ihre Gemeinde (z. B. „Vaud / Morges")</li>
       <li>Ihre ausgewählte Sprache</li>
       <li>Ein automatisch generierter Anzeigename (z. B. „Donnola Leale") für die Bestenliste</li>
       <li>Ihr Fortschritt: Prüfungsergebnisse, Spielergebnisse, beantwortete Fragen, Lernfortschritt</li>
       <li>Die verwendete App-Version</li>
     </ul>
-    <p>Wir erfassen nicht: Ihren Namen, Ihre E-Mail-Adresse, Telefonnummer, Anschrift, Kontakte, Fotos, Standort (GPS) oder Geräte-Kennungen, die ein App-übergreifendes Tracking ermöglichen.</p>
+    <p>Wir erfassen nicht: Ihren Namen, Ihre E-Mail-Adresse, Telefonnummer, Anschrift, Kontakte, Fotos, Standort (GPS), keine IDFA (Apple-Werbekennung) und keine Geräte-Kennungen, die ein App-übergreifendes Tracking ermöglichen.</p>
 
     <h2>Warum wir es erfassen</h2>
     <p>Diese Daten werden ausschliesslich verwendet, um: die Bestenliste zu ermöglichen, Ihren Fortschritt mit dem anderer Nutzer zu vergleichen und Ihren Fortschritt geräteübergreifend zu synchronisieren. Wir verkaufen, teilen oder verwenden diese Daten nicht für Werbung oder andere Zwecke.</p>
@@ -176,7 +175,7 @@
     <p>Eine Kopie Ihres Fortschritts wird auch lokal auf Ihrem Gerät für die Offline-Nutzung aufbewahrt.</p>
 
     <h2>Drittanbieterdienste</h2>
-    <p>Die App nutzt Supabase (supabase.com) als Backend-Dienst zur Speicherung der oben beschriebenen Daten. Supabase verarbeitet Daten in seiner Infrastruktur gemäss seinen eigenen Datenschutzbestimmungen (<a href="https://supabase.com/privacy">supabase.com/privacy</a>). Die App verwendet keine Werbenetzwerke, Analysetools oder Tracking-Technologien.</p>
+    <p>Die App nutzt Supabase (supabase.com) als Backend-Dienst zur Speicherung der oben beschriebenen Daten. Supabase verarbeitet Daten innerhalb der Europäischen Union (AWS-Region Irland, eu-west-1), gemäss seinen eigenen Datenschutzbestimmungen (<a href="https://supabase.com/privacy">supabase.com/privacy</a>). Die App verwendet keine Werbenetzwerke, Analysetools oder Tracking-Technologien.</p>
     <p>Für unser Update-Versprechen und unseren Quellen-Verifizierungsprozess siehe unsere <a href="https://vincedy.github.io/quiz-naturalisation/transparency.html">Transparenz-Seite</a>.</p>
 
     <h2>Erfassung technischer Daten</h2>
@@ -200,7 +199,7 @@
 
   <section id="it">
     <h1>Informativa sulla privacy</h1>
-    <p class="meta">App: <strong>Swiss Citizenship Test</strong> · Sviluppatore: Vincenzo Casini · Ultimo aggiornamento: 10 maggio 2026</p>
+    <p class="meta">App: <strong>Swiss Citizenship Test</strong> · Sviluppatore: Vincenzo Casini · Ultimo aggiornamento: 13 maggio 2026</p>
 
     <h2>Riepilogo</h2>
     <p>Questa app memorizza i progressi del quiz sul tuo dispositivo e sincronizza dati pseudonimi (senza informazioni personali) con il nostro servizio cloud per abilitare la classifica e le funzionalità multi-dispositivo. Non raccogliamo nomi, e-mail, contatti, posizione né alcuna informazione che ti identifichi personalmente.</p>
@@ -209,14 +208,14 @@
     <p>L'app crea automaticamente un account anonimo sui nostri server (Supabase) al primo avvio. I seguenti dati pseudonimi vengono memorizzati:</p>
     <ul>
       <li>Un ID utente anonimo (UUID casuale, non legato alla tua identità)</li>
-      <li>Un identificativo del dispositivo (UUID casuale generato su questo dispositivo)</li>
+      <li>Un identificativo del dispositivo (UUID casuale generato su questo dispositivo). Su iOS corrisponde all'Identifier for Vendor (IDFV) di Apple, un identificatore associato al fornitore, non pubblicitario.</li>
       <li>Il tuo cantone e comune selezionati (es. "Vaud / Morges")</li>
       <li>La tua lingua selezionata</li>
       <li>Un nome visualizzato generato automaticamente (es. "Donnola Leale") usato per la classifica</li>
       <li>I tuoi progressi: risultati degli esami, punteggi delle partite, domande risposte, progresso di padronanza</li>
       <li>La versione dell'app in uso</li>
     </ul>
-    <p>Non raccogliamo: il tuo nome, e-mail, telefono, indirizzo, contatti, foto, posizione (GPS) né identificativi del dispositivo che permettano il tracciamento tra app.</p>
+    <p>Non raccogliamo: il tuo nome, e-mail, telefono, indirizzo, contatti, foto, posizione (GPS), nessun IDFA (identificatore pubblicitario Apple) né identificativi del dispositivo che permettano il tracciamento tra app.</p>
 
     <h2>Perché lo raccogliamo</h2>
     <p>Questi dati servono esclusivamente per: abilitare la classifica, permetterti di confrontare i tuoi progressi con altri utenti, sincronizzare i tuoi progressi tra dispositivi. Non vendiamo, condividiamo né usiamo questi dati per pubblicità o altri scopi.</p>
@@ -225,7 +224,7 @@
     <p>Una copia dei tuoi progressi viene mantenuta anche localmente sul tuo dispositivo per l'uso offline.</p>
 
     <h2>Servizi di terze parti</h2>
-    <p>L'app usa Supabase (supabase.com) come servizio backend per memorizzare i dati descritti sopra. Supabase tratta i dati all'interno della sua infrastruttura secondo le proprie condizioni sulla privacy (<a href="https://supabase.com/privacy">supabase.com/privacy</a>). L'app non usa reti pubblicitarie, strumenti di analisi né tecnologie di tracciamento.</p>
+    <p>L'app usa Supabase (supabase.com) come servizio backend per memorizzare i dati descritti sopra. Supabase tratta i dati all'interno dell'Unione Europea (regione AWS Irlanda, eu-west-1), secondo le proprie condizioni sulla privacy (<a href="https://supabase.com/privacy">supabase.com/privacy</a>). L'app non usa reti pubblicitarie, strumenti di analisi né tecnologie di tracciamento.</p>
     <p>Per il nostro impegno di aggiornamento e il processo di verifica delle fonti, consulta la nostra <a href="https://vincedy.github.io/quiz-naturalisation/transparency.html">pagina di Trasparenza</a>.</p>
 
     <h2>Raccolta di dati tecnici</h2>
