@@ -5,10 +5,10 @@
   version lives at https://vincedy.github.io/quiz-naturalisation/transparency.html
   (vincedy/quiz-naturalisation repo, GitHub Pages).
 
-  Status: v3.3 — added opening disambiguation paragraph (study companion, not official) per SPOP Vaud feedback (4 locales).
+  Status: v3.4 — expanded to 11 cantons (added Ticino, Fribourg, St. Gallen); Neuchâtel refreshed to 219 questions (4 locales).
   Same locale-switching pattern as the privacy policy mirror.
 
-  Last updated: 2026-05-10
+  Last updated: 2026-06-09
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -89,17 +89,17 @@
 
   <section id="en">
     <h1>Transparency — Catalogue update commitment</h1>
-    <p class="meta">App: <strong>Swiss Naturalization Test</strong> · Developer: Vincenzo Casini · Last updated: 11 May 2026</p>
+    <p class="meta">App: <strong>Swiss Naturalization Test</strong> · Developer: Vincenzo Casini · Last updated: 9 June 2026</p>
 
     <p><strong>This application is a study companion, not an official preparation tool.</strong> For the actual naturalization test, candidates must always refer to the official platform of their canton, linked in the table below.</p>
 
     <h2>Why this page exists</h2>
-    <p>This app sources its question pools from official cantonal websites for 8 Swiss cantons. Because each canton publishes its catalogue differently and updates it on its own schedule, users and institutions need a way to verify how this app keeps its data in sync with official sources. This page documents the verification process, the declared service level, the reporting channel for discrepancies, and the audit trail available on request.</p>
+    <p>This app sources its question pools from official cantonal websites for 11 Swiss cantons. Because each canton publishes its catalogue differently and updates it on its own schedule, users and institutions need a way to verify how this app keeps its data in sync with official sources. This page documents the verification process, the declared service level, the reporting channel for discrepancies, and the audit trail available on request.</p>
     <p>This commitment is voluntary. The app is not affiliated with any government authority. It is independently developed by a naturalization applicant.</p>
 
     <h2>Service Level — what we promise</h2>
     <div class="sla">
-      <p><strong>Source verification:</strong> all 8 official cantonal sources are checked once every 24 hours via an automated continuous-integration pipeline. Checks run on a staggered schedule (between 03:00 and 07:00 UTC) to avoid concurrent writes to the audit log.</p>
+      <p><strong>Source verification:</strong> all 11 official cantonal sources are checked once every 24 hours via an automated continuous-integration pipeline. Checks run on a staggered schedule (between 03:00 and 07:00 UTC) to avoid concurrent writes to the audit log.</p>
       <p><strong>Drift detection latency:</strong> a change in any official source is detected within <strong>24 hours</strong> of publication.</p>
       <p><strong>Standard refresh window:</strong> when a change is detected, the updated catalogue is published in a new app version within <strong>7 days</strong>.</p>
       <p><strong>Emergency refresh window:</strong> critical issues (factual errors flagged by users or canton authorities) are addressed within <strong>72 hours</strong>.</p>
@@ -126,10 +126,13 @@
         <tr><td>Zurich (ZH)</td><td>Ordinary naturalization, complete Grundkenntnistest</td><td><span class="pill pill-green">Identical</span> — exact mirror of the official Grundkenntnistest, 350 questions</td><td><a href="https://www.zh.ch/de/migration-integration/einbuergerung/grundkenntnistest.html">zh.ch/grundkenntnistest</a></td></tr>
         <tr><td>Aargau (AG)</td><td>Ordinary naturalization, complete catalogue</td><td><span class="pill pill-green">Identical</span> — exact mirror of the official AG catalogue, 322 questions</td><td><a href="https://www.gemeinden-ag.ch/page/990">gemeinden-ag.ch</a></td></tr>
         <tr><td>Geneva (GE)</td><td>Ordinary naturalization, OCPM official set</td><td><span class="pill pill-blue">Generated distractors</span> — official OCPM questions and correct answers, with alternative quiz choices generated locally for the MCQ format. 147 questions.</td><td><a href="https://www.ge.ch/connaitre-suisse-geneve">ge.ch/connaitre-suisse-geneve</a></td></tr>
-        <tr><td>Neuchâtel (NE)</td><td>Study aid only — actual exam is oral (16 questions, COSM interview)</td><td><span class="pill pill-orange">Study only</span> — 205 official study questions supporting preparation for the oral assessment.</td><td><a href="https://www.ne.ch/themes/migration-et-integration/naturalisation">ne.ch/naturalisation</a></td></tr>
+        <tr><td>Neuchâtel (NE)</td><td>Study aid only — actual exam is oral (16 questions, COSM interview)</td><td><span class="pill pill-orange">Study only</span> — 219 official study questions supporting preparation for the oral assessment.</td><td><a href="https://www.ne.ch/themes/migration-et-integration/naturalisation">ne.ch/naturalisation</a></td></tr>
         <tr><td>Lucerne (LU)</td><td>Facilitated naturalization (Erleichterte) only — ordinary procedure handled at commune level</td><td><span class="pill pill-orange">Study only</span> — 100 official questions for facilitated naturalization. The ordinary procedure is assessed orally by each commune's Bürgerrechtskommission and is not centrally catalogued.</td><td><a href="https://gemeinden.lu.ch/Einbuergerungen">gemeinden.lu.ch/Einbuergerungen</a></td></tr>
         <tr><td>Bern (BE)</td><td>Ordinary naturalization — partial set reconstructed from 10 past exam series 2016-2024</td><td><span class="pill pill-orange">Partial set</span> — 408 questions aggregated from historical exam series. Not the current live pool.</td><td><a href="https://www.einbuergerung.sid.be.ch/fr/start/einbuergerung/ordentliche-einbuergerung/einbuergerungstest.html">einbuergerung.sid.be.ch</a></td></tr>
         <tr><td>Valais (VS)</td><td>Ordinary naturalization — actual exam is oral (3 successive hearings)</td><td><span class="pill pill-orange">Study only</span> — 140 official study questions from the 2021 cantonal questionnaire. Source available in French only.</td><td><a href="https://www.vs.ch/web/spm/naturalisation">vs.ch/spm/naturalisation</a></td></tr>
+        <tr><td>Ticino (TI)</td><td>Ordinary naturalization — written civic-knowledge test; first Italian-speaking canton covered</td><td><span class="pill pill-green">Native set</span> — 240 questions authored natively in Italian (156 cantonal + 84 federal).</td><td><a href="https://www4.ti.ch/di/spop/naturalizzazioni/informazioni-sulla-formazione-per-la-naturalizzazione/">www4.ti.ch</a></td></tr>
+        <tr><td>Fribourg (FR)</td><td>Bilingual canton (FR/DE) — actual exam is an oral interview</td><td><span class="pill pill-orange">Study only</span> — 256 questions (128 per language) authored from the official civics syllabus.</td><td><a href="https://www.fr.ch/vie-quotidienne/permis-de-sejour-et-naturalisation/documentation-pour-preparer-sa-naturalisation">fr.ch</a></td></tr>
+        <tr><td>St. Gallen (SG)</td><td>Written state-knowledge test (ARGE) — official catalogue not published</td><td><span class="pill pill-blue">Authored + federal pool</span> — ~300 questions at runtime: authored from official ARGE study material plus the shared federal civics level drawn from the Zurich pool.</td><td><a href="https://www.arge.ch/bilang/angebot/einbuergerung-und-staatskunde/staatskundetest">arge.ch</a></td></tr>
       </tbody>
     </table>
     <p style="margin-top:14px;font-size:0.88rem;color:#666;">Federal-level reference: <a href="https://www.sem.admin.ch/sem/de/home/integration-einbuergerung/schweizer-werden.html">State Secretariat for Migration (SEM)</a>.</p>
@@ -170,17 +173,17 @@
 
   <section id="fr">
     <h1>Transparence — Engagement de mise à jour du catalogue</h1>
-    <p class="meta">App : <strong>Swiss Naturalization Test</strong> · Développeur : Vincenzo Casini · Dernière mise à jour : 11 mai 2026</p>
+    <p class="meta">App : <strong>Swiss Naturalization Test</strong> · Développeur : Vincenzo Casini · Dernière mise à jour : 9 juin 2026</p>
 
     <p><strong>Cette application est un compagnon d'étude, pas un outil officiel de préparation.</strong> Pour passer le test officiel de naturalisation, les candidats doivent toujours se référer à la plateforme officielle de leur canton, indiquée dans le tableau ci-dessous.</p>
 
     <h2>Pourquoi cette page existe</h2>
-    <p>Cette application puise ses pools de questions sur les sites cantonaux officiels de 8 cantons suisses. Comme chaque canton publie son catalogue différemment et le met à jour selon son propre calendrier, les utilisateurs et les institutions ont besoin d'un moyen de vérifier comment cette application maintient ses données en phase avec les sources officielles. Cette page documente le processus de vérification, le niveau de service déclaré, le canal de signalement des écarts, et le journal d'audit disponible sur demande.</p>
+    <p>Cette application puise ses pools de questions sur les sites cantonaux officiels de 11 cantons suisses. Comme chaque canton publie son catalogue différemment et le met à jour selon son propre calendrier, les utilisateurs et les institutions ont besoin d'un moyen de vérifier comment cette application maintient ses données en phase avec les sources officielles. Cette page documente le processus de vérification, le niveau de service déclaré, le canal de signalement des écarts, et le journal d'audit disponible sur demande.</p>
     <p>Cet engagement est volontaire. L'application n'est affiliée à aucune autorité gouvernementale. Elle est développée de manière indépendante par un candidat à la naturalisation.</p>
 
     <h2>Niveau de service — nos engagements</h2>
     <div class="sla">
-      <p><strong>Vérification des sources :</strong> les 8 sources cantonales officielles sont vérifiées toutes les 24 heures via un pipeline automatisé d'intégration continue. Les vérifications sont étalées (entre 03h00 et 07h00 UTC) pour éviter les écritures concurrentes au journal d'audit.</p>
+      <p><strong>Vérification des sources :</strong> les 11 sources cantonales officielles sont vérifiées toutes les 24 heures via un pipeline automatisé d'intégration continue. Les vérifications sont étalées (entre 03h00 et 07h00 UTC) pour éviter les écritures concurrentes au journal d'audit.</p>
       <p><strong>Latence de détection des changements :</strong> une modification de toute source officielle est détectée dans les <strong>24 heures</strong> suivant sa publication.</p>
       <p><strong>Délai standard de mise à jour :</strong> lorsqu'un changement est détecté, le catalogue mis à jour est publié dans une nouvelle version de l'application dans un délai de <strong>7 jours</strong>.</p>
       <p><strong>Délai d'urgence :</strong> les problèmes critiques (erreurs factuelles signalées par les utilisateurs ou les autorités cantonales) sont traités dans les <strong>72 heures</strong>.</p>
@@ -207,10 +210,13 @@
         <tr><td>Zurich (ZH)</td><td>Naturalisation ordinaire, Grundkenntnistest complet</td><td><span class="pill pill-green">Identique</span> — miroir exact du Grundkenntnistest officiel, 350 questions</td><td><a href="https://www.zh.ch/de/migration-integration/einbuergerung/grundkenntnistest.html">zh.ch/grundkenntnistest</a></td></tr>
         <tr><td>Argovie (AG)</td><td>Naturalisation ordinaire, catalogue complet</td><td><span class="pill pill-green">Identique</span> — miroir exact du catalogue AG officiel, 322 questions</td><td><a href="https://www.gemeinden-ag.ch/page/990">gemeinden-ag.ch</a></td></tr>
         <tr><td>Genève (GE)</td><td>Naturalisation ordinaire, set officiel OCPM</td><td><span class="pill pill-blue">Distracteurs générés</span> — questions et bonnes réponses officielles OCPM, avec choix alternatifs générés localement pour le format quiz. 147 questions.</td><td><a href="https://www.ge.ch/connaitre-suisse-geneve">ge.ch/connaitre-suisse-geneve</a></td></tr>
-        <tr><td>Neuchâtel (NE)</td><td>Aide à l'étude uniquement — l'examen réel est oral (16 questions, entretien COSM)</td><td><span class="pill pill-orange">Étude uniquement</span> — 205 questions officielles d'étude pour la préparation à l'évaluation orale.</td><td><a href="https://www.ne.ch/themes/migration-et-integration/naturalisation">ne.ch/naturalisation</a></td></tr>
+        <tr><td>Neuchâtel (NE)</td><td>Aide à l'étude uniquement — l'examen réel est oral (16 questions, entretien COSM)</td><td><span class="pill pill-orange">Étude uniquement</span> — 219 questions officielles d'étude pour la préparation à l'évaluation orale.</td><td><a href="https://www.ne.ch/themes/migration-et-integration/naturalisation">ne.ch/naturalisation</a></td></tr>
         <tr><td>Lucerne (LU)</td><td>Naturalisation facilitée (Erleichterte) uniquement — la procédure ordinaire est gérée au niveau communal</td><td><span class="pill pill-orange">Étude uniquement</span> — 100 questions officielles pour la naturalisation facilitée. La procédure ordinaire est évaluée oralement par la Bürgerrechtskommission de chaque commune et n'est pas centralisée.</td><td><a href="https://gemeinden.lu.ch/Einbuergerungen">gemeinden.lu.ch/Einbuergerungen</a></td></tr>
         <tr><td>Berne (BE)</td><td>Naturalisation ordinaire — set partiel reconstruit à partir de 10 séries d'examens passés 2016-2024</td><td><span class="pill pill-orange">Set partiel</span> — 408 questions agrégées à partir de séries d'examens historiques. N'est pas le pool actuel en vigueur.</td><td><a href="https://www.einbuergerung.sid.be.ch/fr/start/einbuergerung/ordentliche-einbuergerung/einbuergerungstest.html">einbuergerung.sid.be.ch</a></td></tr>
         <tr><td>Valais (VS)</td><td>Naturalisation ordinaire — l'examen réel est oral (3 auditions successives)</td><td><span class="pill pill-orange">Étude uniquement</span> — 140 questions officielles d'étude du questionnaire cantonal 2021. Source disponible en français uniquement.</td><td><a href="https://www.vs.ch/web/spm/naturalisation">vs.ch/spm/naturalisation</a></td></tr>
+        <tr><td>Tessin (TI)</td><td>Naturalisation ordinaire — test écrit de connaissances civiques ; premier canton italophone couvert</td><td><span class="pill pill-green">Set natif</span> — 240 questions rédigées nativement en italien (156 cantonales + 84 fédérales).</td><td><a href="https://www4.ti.ch/di/spop/naturalizzazioni/informazioni-sulla-formazione-per-la-naturalizzazione/">www4.ti.ch</a></td></tr>
+        <tr><td>Fribourg (FR)</td><td>Canton bilingue (FR/DE) — l'examen réel est un entretien oral</td><td><span class="pill pill-orange">Étude uniquement</span> — 256 questions (128 par langue) rédigées à partir du programme officiel d'éducation civique.</td><td><a href="https://www.fr.ch/vie-quotidienne/permis-de-sejour-et-naturalisation/documentation-pour-preparer-sa-naturalisation">fr.ch</a></td></tr>
+        <tr><td>Saint-Gall (SG)</td><td>Test écrit de connaissances de l'État (ARGE) — catalogue officiel non publié</td><td><span class="pill pill-blue">Rédigé + pool fédéral</span> — ~300 questions à l'exécution : rédigées à partir du matériel officiel ARGE plus le niveau fédéral commun issu du pool de Zurich.</td><td><a href="https://www.arge.ch/bilang/angebot/einbuergerung-und-staatskunde/staatskundetest">arge.ch</a></td></tr>
       </tbody>
     </table>
     <p style="margin-top:14px;font-size:0.88rem;color:#666;">Référence fédérale : <a href="https://www.sem.admin.ch/sem/de/home/integration-einbuergerung/schweizer-werden.html">Secrétariat d'État aux migrations (SEM)</a>.</p>
@@ -251,17 +257,17 @@
 
   <section id="de">
     <h1>Transparenz — Verpflichtung zur Katalogaktualisierung</h1>
-    <p class="meta">App: <strong>Swiss Naturalization Test</strong> · Entwickler: Vincenzo Casini · Zuletzt aktualisiert: 11. Mai 2026</p>
+    <p class="meta">App: <strong>Swiss Naturalization Test</strong> · Entwickler: Vincenzo Casini · Zuletzt aktualisiert: 9. Juni 2026</p>
 
     <p><strong>Diese App ist ein Lernbegleiter, kein offizielles Vorbereitungstool.</strong> Für die echte Einbürgerungsprüfung müssen sich Kandidaten stets auf die offizielle Plattform ihres Kantons beziehen, die in der untenstehenden Tabelle aufgeführt ist.</p>
 
     <h2>Warum diese Seite existiert</h2>
-    <p>Diese App bezieht ihre Fragenpools von den offiziellen kantonalen Websites von 8 Schweizer Kantonen. Da jeder Kanton seinen Katalog unterschiedlich veröffentlicht und nach eigenem Zeitplan aktualisiert, benötigen Nutzer und Institutionen eine Möglichkeit zu überprüfen, wie diese App ihre Daten mit den offiziellen Quellen synchron hält. Diese Seite dokumentiert den Verifizierungsprozess, das deklarierte Service-Level, den Meldekanal für Abweichungen sowie das auf Anfrage verfügbare Audit-Log.</p>
+    <p>Diese App bezieht ihre Fragenpools von den offiziellen kantonalen Websites von 11 Schweizer Kantonen. Da jeder Kanton seinen Katalog unterschiedlich veröffentlicht und nach eigenem Zeitplan aktualisiert, benötigen Nutzer und Institutionen eine Möglichkeit zu überprüfen, wie diese App ihre Daten mit den offiziellen Quellen synchron hält. Diese Seite dokumentiert den Verifizierungsprozess, das deklarierte Service-Level, den Meldekanal für Abweichungen sowie das auf Anfrage verfügbare Audit-Log.</p>
     <p>Diese Verpflichtung ist freiwillig. Die App ist mit keiner Regierungsbehörde verbunden. Sie wird unabhängig von einem Einbürgerungskandidaten entwickelt.</p>
 
     <h2>Service-Level — was wir zusichern</h2>
     <div class="sla">
-      <p><strong>Quellenverifizierung:</strong> alle 8 offiziellen kantonalen Quellen werden alle 24 Stunden über eine automatisierte Continuous-Integration-Pipeline geprüft. Die Prüfungen erfolgen gestaffelt (zwischen 03:00 und 07:00 UTC), um gleichzeitige Schreibvorgänge im Audit-Log zu vermeiden.</p>
+      <p><strong>Quellenverifizierung:</strong> alle 11 offiziellen kantonalen Quellen werden alle 24 Stunden über eine automatisierte Continuous-Integration-Pipeline geprüft. Die Prüfungen erfolgen gestaffelt (zwischen 03:00 und 07:00 UTC), um gleichzeitige Schreibvorgänge im Audit-Log zu vermeiden.</p>
       <p><strong>Latenz der Änderungserkennung:</strong> eine Änderung einer offiziellen Quelle wird innerhalb von <strong>24 Stunden</strong> nach der Veröffentlichung erkannt.</p>
       <p><strong>Standardaktualisierungszeitraum:</strong> bei Erkennung einer Änderung wird der aktualisierte Katalog innerhalb von <strong>7 Tagen</strong> in einer neuen App-Version veröffentlicht.</p>
       <p><strong>Notfallaktualisierungszeitraum:</strong> kritische Probleme (von Nutzern oder kantonalen Behörden gemeldete Sachfehler) werden innerhalb von <strong>72 Stunden</strong> behoben.</p>
@@ -288,10 +294,13 @@
         <tr><td>Zürich (ZH)</td><td>Ordentliche Einbürgerung, vollständiger Grundkenntnistest</td><td><span class="pill pill-green">Identisch</span> — exakte Abbildung des offiziellen Grundkenntnistests, 350 Fragen</td><td><a href="https://www.zh.ch/de/migration-integration/einbuergerung/grundkenntnistest.html">zh.ch/grundkenntnistest</a></td></tr>
         <tr><td>Aargau (AG)</td><td>Ordentliche Einbürgerung, vollständiger Katalog</td><td><span class="pill pill-green">Identisch</span> — exakte Abbildung des offiziellen AG-Katalogs, 322 Fragen</td><td><a href="https://www.gemeinden-ag.ch/page/990">gemeinden-ag.ch</a></td></tr>
         <tr><td>Genf (GE)</td><td>Ordentliche Einbürgerung, offizieller OCPM-Satz</td><td><span class="pill pill-blue">Distraktoren generiert</span> — offizielle OCPM-Fragen und korrekte Antworten, mit lokal generierten Alternativantworten für das MCQ-Format. 147 Fragen.</td><td><a href="https://www.ge.ch/connaitre-suisse-geneve">ge.ch/connaitre-suisse-geneve</a></td></tr>
-        <tr><td>Neuenburg (NE)</td><td>Nur Lernhilfe — die echte Prüfung ist mündlich (16 Fragen, COSM-Gespräch)</td><td><span class="pill pill-orange">Nur Lernen</span> — 205 offizielle Lernfragen zur Vorbereitung auf die mündliche Bewertung.</td><td><a href="https://www.ne.ch/themes/migration-et-integration/naturalisation">ne.ch/naturalisation</a></td></tr>
+        <tr><td>Neuenburg (NE)</td><td>Nur Lernhilfe — die echte Prüfung ist mündlich (16 Fragen, COSM-Gespräch)</td><td><span class="pill pill-orange">Nur Lernen</span> — 219 offizielle Lernfragen zur Vorbereitung auf die mündliche Bewertung.</td><td><a href="https://www.ne.ch/themes/migration-et-integration/naturalisation">ne.ch/naturalisation</a></td></tr>
         <tr><td>Luzern (LU)</td><td>Nur erleichterte Einbürgerung — die ordentliche Einbürgerung wird auf Gemeindeebene durchgeführt</td><td><span class="pill pill-orange">Nur Lernen</span> — 100 offizielle Fragen zur erleichterten Einbürgerung. Die ordentliche Einbürgerung wird mündlich von der Bürgerrechtskommission jeder Gemeinde bewertet und ist nicht zentral katalogisiert.</td><td><a href="https://gemeinden.lu.ch/Einbuergerungen">gemeinden.lu.ch/Einbuergerungen</a></td></tr>
         <tr><td>Bern (BE)</td><td>Ordentliche Einbürgerung — Teilset rekonstruiert aus 10 vergangenen Prüfungsserien 2016-2024</td><td><span class="pill pill-orange">Teilset</span> — 408 Fragen aggregiert aus historischen Prüfungsserien. Nicht der aktuell gültige Pool.</td><td><a href="https://www.einbuergerung.sid.be.ch/fr/start/einbuergerung/ordentliche-einbuergerung/einbuergerungstest.html">einbuergerung.sid.be.ch</a></td></tr>
         <tr><td>Wallis (VS)</td><td>Ordentliche Einbürgerung — die echte Prüfung ist mündlich (3 aufeinanderfolgende Anhörungen)</td><td><span class="pill pill-orange">Nur Lernen</span> — 140 offizielle Lernfragen aus dem kantonalen Fragebogen 2021. Quelle nur auf Französisch verfügbar.</td><td><a href="https://www.vs.ch/web/spm/naturalisation">vs.ch/spm/naturalisation</a></td></tr>
+        <tr><td>Tessin (TI)</td><td>Ordentliche Einbürgerung — schriftlicher Staatskundetest; erster abgedeckter italienischsprachiger Kanton</td><td><span class="pill pill-green">Nativer Satz</span> — 240 Fragen originär auf Italienisch verfasst (156 kantonale + 84 eidgenössische).</td><td><a href="https://www4.ti.ch/di/spop/naturalizzazioni/informazioni-sulla-formazione-per-la-naturalizzazione/">www4.ti.ch</a></td></tr>
+        <tr><td>Freiburg (FR)</td><td>Zweisprachiger Kanton (FR/DE) — die echte Prüfung ist ein mündliches Gespräch</td><td><span class="pill pill-orange">Nur Lernen</span> — 256 Fragen (128 pro Sprache) aus dem offiziellen Staatskunde-Lehrplan verfasst.</td><td><a href="https://www.fr.ch/vie-quotidienne/permis-de-sejour-et-naturalisation/documentation-pour-preparer-sa-naturalisation">fr.ch</a></td></tr>
+        <tr><td>St. Gallen (SG)</td><td>Schriftlicher Staatskundetest (ARGE) — offizieller Katalog nicht veröffentlicht</td><td><span class="pill pill-blue">Verfasst + Bundespool</span> — ~300 Fragen zur Laufzeit: aus offiziellem ARGE-Material verfasst plus die gemeinsame eidgenössische Ebene aus dem Zürcher Pool.</td><td><a href="https://www.arge.ch/bilang/angebot/einbuergerung-und-staatskunde/staatskundetest">arge.ch</a></td></tr>
       </tbody>
     </table>
     <p style="margin-top:14px;font-size:0.88rem;color:#666;">Bundesreferenz: <a href="https://www.sem.admin.ch/sem/de/home/integration-einbuergerung/schweizer-werden.html">Staatssekretariat für Migration (SEM)</a>.</p>
@@ -332,17 +341,17 @@
 
   <section id="it">
     <h1>Trasparenza — Impegno di aggiornamento del catalogo</h1>
-    <p class="meta">App: <strong>Swiss Naturalization Test</strong> · Sviluppatore: Vincenzo Casini · Ultimo aggiornamento: 11 maggio 2026</p>
+    <p class="meta">App: <strong>Swiss Naturalization Test</strong> · Sviluppatore: Vincenzo Casini · Ultimo aggiornamento: 9 giugno 2026</p>
 
     <p><strong>Questa app è un compagno di studio, non uno strumento ufficiale di preparazione.</strong> Per il test ufficiale di naturalizzazione, i candidati devono sempre fare riferimento alla piattaforma ufficiale del loro cantone, indicata nella tabella sottostante.</p>
 
     <h2>Perché esiste questa pagina</h2>
-    <p>Questa app attinge i suoi pool di domande dai siti cantonali ufficiali di 8 cantoni svizzeri. Poiché ogni cantone pubblica il proprio catalogo in modo diverso e lo aggiorna secondo il proprio calendario, gli utenti e le istituzioni hanno bisogno di un modo per verificare come questa app mantenga i suoi dati allineati alle fonti ufficiali. Questa pagina documenta il processo di verifica, il livello di servizio dichiarato, il canale di segnalazione delle discrepanze e il log di audit disponibile su richiesta.</p>
+    <p>Questa app attinge i suoi pool di domande dai siti cantonali ufficiali di 11 cantoni svizzeri. Poiché ogni cantone pubblica il proprio catalogo in modo diverso e lo aggiorna secondo il proprio calendario, gli utenti e le istituzioni hanno bisogno di un modo per verificare come questa app mantenga i suoi dati allineati alle fonti ufficiali. Questa pagina documenta il processo di verifica, il livello di servizio dichiarato, il canale di segnalazione delle discrepanze e il log di audit disponibile su richiesta.</p>
     <p>Questo impegno è volontario. L'app non è affiliata ad alcuna autorità governativa. È sviluppata in modo indipendente da un candidato alla naturalizzazione.</p>
 
     <h2>Livello di servizio — i nostri impegni</h2>
     <div class="sla">
-      <p><strong>Verifica delle fonti:</strong> tutte le 8 fonti cantonali ufficiali vengono controllate ogni 24 ore tramite una pipeline automatizzata di integrazione continua. I controlli avvengono in modo scaglionato (tra le 03:00 e le 07:00 UTC) per evitare scritture concorrenti sul log di audit.</p>
+      <p><strong>Verifica delle fonti:</strong> tutte le 11 fonti cantonali ufficiali vengono controllate ogni 24 ore tramite una pipeline automatizzata di integrazione continua. I controlli avvengono in modo scaglionato (tra le 03:00 e le 07:00 UTC) per evitare scritture concorrenti sul log di audit.</p>
       <p><strong>Latenza di rilevamento delle modifiche:</strong> una modifica di una fonte ufficiale viene rilevata entro <strong>24 ore</strong> dalla pubblicazione.</p>
       <p><strong>Finestra standard di aggiornamento:</strong> quando viene rilevata una modifica, il catalogo aggiornato viene pubblicato in una nuova versione dell'app entro <strong>7 giorni</strong>.</p>
       <p><strong>Finestra di emergenza:</strong> i problemi critici (errori fattuali segnalati da utenti o autorità cantonali) vengono affrontati entro <strong>72 ore</strong>.</p>
@@ -369,10 +378,13 @@
         <tr><td>Zurigo (ZH)</td><td>Naturalizzazione ordinaria, Grundkenntnistest completo</td><td><span class="pill pill-green">Identico</span> — mirror esatto del Grundkenntnistest ufficiale, 350 domande</td><td><a href="https://www.zh.ch/de/migration-integration/einbuergerung/grundkenntnistest.html">zh.ch/grundkenntnistest</a></td></tr>
         <tr><td>Argovia (AG)</td><td>Naturalizzazione ordinaria, catalogo completo</td><td><span class="pill pill-green">Identico</span> — mirror esatto del catalogo AG ufficiale, 322 domande</td><td><a href="https://www.gemeinden-ag.ch/page/990">gemeinden-ag.ch</a></td></tr>
         <tr><td>Ginevra (GE)</td><td>Naturalizzazione ordinaria, set ufficiale OCPM</td><td><span class="pill pill-blue">Distrattori generati</span> — domande e risposte corrette ufficiali OCPM, con scelte alternative generate localmente per il formato quiz. 147 domande.</td><td><a href="https://www.ge.ch/connaitre-suisse-geneve">ge.ch/connaitre-suisse-geneve</a></td></tr>
-        <tr><td>Neuchâtel (NE)</td><td>Solo aiuto allo studio — l'esame reale è orale (16 domande, colloquio COSM)</td><td><span class="pill pill-orange">Solo studio</span> — 205 domande ufficiali di studio a supporto della preparazione alla valutazione orale.</td><td><a href="https://www.ne.ch/themes/migration-et-integration/naturalisation">ne.ch/naturalisation</a></td></tr>
+        <tr><td>Neuchâtel (NE)</td><td>Solo aiuto allo studio — l'esame reale è orale (16 domande, colloquio COSM)</td><td><span class="pill pill-orange">Solo studio</span> — 219 domande ufficiali di studio a supporto della preparazione alla valutazione orale.</td><td><a href="https://www.ne.ch/themes/migration-et-integration/naturalisation">ne.ch/naturalisation</a></td></tr>
         <tr><td>Lucerna (LU)</td><td>Solo naturalizzazione facilitata (Erleichterte) — la procedura ordinaria è gestita a livello comunale</td><td><span class="pill pill-orange">Solo studio</span> — 100 domande ufficiali per la naturalizzazione facilitata. La procedura ordinaria è valutata oralmente dalla Bürgerrechtskommission di ogni comune e non è centralizzata.</td><td><a href="https://gemeinden.lu.ch/Einbuergerungen">gemeinden.lu.ch/Einbuergerungen</a></td></tr>
         <tr><td>Berna (BE)</td><td>Naturalizzazione ordinaria — set parziale ricostruito da 10 serie d'esami passati 2016-2024</td><td><span class="pill pill-orange">Set parziale</span> — 408 domande aggregate da serie d'esami storici. Non è il pool attualmente in vigore.</td><td><a href="https://www.einbuergerung.sid.be.ch/fr/start/einbuergerung/ordentliche-einbuergerung/einbuergerungstest.html">einbuergerung.sid.be.ch</a></td></tr>
         <tr><td>Vallese (VS)</td><td>Naturalizzazione ordinaria — l'esame reale è orale (3 audizioni successive)</td><td><span class="pill pill-orange">Solo studio</span> — 140 domande ufficiali di studio dal questionario cantonale 2021. Fonte disponibile solo in francese.</td><td><a href="https://www.vs.ch/web/spm/naturalisation">vs.ch/spm/naturalisation</a></td></tr>
+        <tr><td>Ticino (TI)</td><td>Naturalizzazione ordinaria — test scritto di conoscenze civiche; primo cantone italofono coperto</td><td><span class="pill pill-green">Set nativo</span> — 240 domande redatte nativamente in italiano (156 cantonali + 84 federali).</td><td><a href="https://www4.ti.ch/di/spop/naturalizzazioni/informazioni-sulla-formazione-per-la-naturalizzazione/">www4.ti.ch</a></td></tr>
+        <tr><td>Friburgo (FR)</td><td>Cantone bilingue (FR/DE) — l'esame reale è un colloquio orale</td><td><span class="pill pill-orange">Solo studio</span> — 256 domande (128 per lingua) redatte dal programma ufficiale di educazione civica.</td><td><a href="https://www.fr.ch/vie-quotidienne/permis-de-sejour-et-naturalisation/documentation-pour-preparer-sa-naturalisation">fr.ch</a></td></tr>
+        <tr><td>San Gallo (SG)</td><td>Test scritto di conoscenze dello Stato (ARGE) — catalogo ufficiale non pubblicato</td><td><span class="pill pill-blue">Redatto + pool federale</span> — ~300 domande a runtime: redatte dal materiale ufficiale ARGE più il livello federale comune dal pool di Zurigo.</td><td><a href="https://www.arge.ch/bilang/angebot/einbuergerung-und-staatskunde/staatskundetest">arge.ch</a></td></tr>
       </tbody>
     </table>
     <p style="margin-top:14px;font-size:0.88rem;color:#666;">Riferimento federale: <a href="https://www.sem.admin.ch/sem/de/home/integration-einbuergerung/schweizer-werden.html">Segreteria di Stato della migrazione (SEM)</a>.</p>
