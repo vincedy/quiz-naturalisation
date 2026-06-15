@@ -1,0 +1,178 @@
+<!--
+  PUBLIC LANDING PAGE for Swiss Naturalization Test — static, GitHub Pages ready.
+  Sibling of privacy-policy.html / transparency.html. Rename to index.html to make
+  it the site homepage, or keep as landing.html. No build step, no framework.
+  Styling kept consistent with the privacy/transparency pages (system font, light
+  theme, #0066cc accent).
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swiss Naturalization Test — Prepare for your Swiss citizenship exam</title>
+  <meta name="description" content="The free, comprehensive way to prepare for Swiss naturalization. 11 cantons, 12'000+ official questions, no ads, no account, no data collection.">
+  <meta property="og:title" content="Swiss Naturalization Test">
+  <meta property="og:description" content="The free, comprehensive way to prepare for Swiss naturalization.">
+  <meta property="og:image" content="https://nwecndslwnkdeeryswwl.supabase.co/storage/v1/object/public/feed-assets/conquer_vaud.png">
+  <style>
+    :root{
+      --ink:#222; --muted:#555; --accent:#0066cc; --bg:#ffffff; --soft:#f5f7fa; --border:#e3e8ef;
+    }
+    *{box-sizing:border-box}
+    body{
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+      color:var(--ink); margin:0; line-height:1.6; background:var(--bg);
+    }
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:960px; margin:0 auto; padding:0 24px}
+
+    /* HERO */
+    .hero{
+      background:linear-gradient(180deg,#0d1426 0%,#16203c 100%);
+      color:#fff; text-align:center; padding:64px 24px 56px;
+    }
+    .hero h1{font-size:2.3rem; margin:0 0 10px; letter-spacing:-0.02em; font-weight:800}
+    .hero p.tag{font-size:1.18rem; color:#c7d2e8; margin:0 auto 28px; max-width:620px}
+    .hero img.banner{
+      width:100%; max-width:720px; border-radius:16px; margin:8px auto 28px; display:block;
+      box-shadow:0 18px 50px rgba(0,0,0,.45); border:1px solid rgba(255,255,255,.08);
+    }
+    .stores{display:flex; gap:16px; justify-content:center; align-items:center; flex-wrap:wrap}
+    .stores a{display:inline-flex}
+    .stores img.apple{height:54px}
+    .stores img.google{height:80px; margin:-13px 0} /* google badge has built-in padding */
+
+    /* SECTIONS */
+    section{padding:52px 0}
+    h2{font-size:1.5rem; text-align:center; margin:0 0 32px; letter-spacing:-0.01em}
+    .grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
+    .card{
+      background:var(--soft); border:1px solid var(--border); border-radius:12px;
+      padding:22px 20px; text-align:center;
+    }
+    .card .emoji{font-size:2rem; line-height:1; display:block; margin-bottom:10px}
+    .card .t{font-weight:700; font-size:1.02rem; margin-bottom:4px}
+    .card .d{font-size:.92rem; color:var(--muted)}
+
+    .featured{background:var(--soft); border-top:1px solid var(--border); border-bottom:1px solid var(--border)}
+    .featured .links{display:flex; gap:14px; justify-content:center; flex-wrap:wrap}
+    .featured a.chip{
+      background:#fff; border:1px solid var(--border); border-radius:999px;
+      padding:12px 22px; font-weight:600; color:var(--ink); transition:.15s;
+    }
+    .featured a.chip:hover{border-color:var(--accent); color:var(--accent); text-decoration:none}
+    .featured .quote{text-align:center; color:var(--muted); max-width:640px; margin:0 auto 24px; font-style:italic}
+
+    .cta-strip{text-align:center}
+    .cta-strip .stores{margin-top:6px}
+
+    .spotlight{background:var(--soft); border-top:1px solid var(--border); border-bottom:1px solid var(--border)}
+    .sp-inner{display:flex; gap:32px; align-items:center}
+    .sp-inner img{width:50%; border-radius:14px; box-shadow:0 10px 30px rgba(0,0,0,.18); border:1px solid var(--border)}
+    .sp-inner h2{text-align:left; margin:0 0 12px}
+    .sp-inner p{color:var(--muted); margin:0; font-size:1.02rem}
+    .sp-inner .new{display:inline-block; background:#0066cc; color:#fff; font-size:.74rem; font-weight:700; letter-spacing:.04em; padding:3px 10px; border-radius:999px; margin-bottom:10px}
+    @media(max-width:720px){ .sp-inner{flex-direction:column} .sp-inner img{width:100%} .sp-inner h2{text-align:center} }
+
+    footer{background:#0d1426; color:#9fb0cc; padding:40px 24px; text-align:center; font-size:.92rem}
+    footer a{color:#cdd9ee}
+    footer .flinks{margin-bottom:14px}
+    footer .flinks a{margin:0 10px}
+    footer .disc{max-width:680px; margin:0 auto; font-size:.82rem; color:#7f90ad; line-height:1.5}
+
+    @media(max-width:720px){
+      .hero h1{font-size:1.8rem}
+      .hero p.tag{font-size:1.05rem}
+      .grid{grid-template-columns:1fr 1fr; gap:12px}
+      h2{font-size:1.3rem}
+    }
+    @media(max-width:440px){
+      .grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="wrap">
+      <h1>Swiss Naturalization Test</h1>
+      <p class="tag">The free, comprehensive way to prepare for Swiss naturalization.</p>
+      <img class="banner" src="feature-graphic.png" alt="Swiss Naturalization Test — 11 cantons, 12'000 questions">
+      <div class="stores">
+        <a href="https://apps.apple.com/app/id6769993041" aria-label="Download on the App Store">
+          <img class="apple" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=ch.vincedev.swisscitizenship" aria-label="Get it on Google Play">
+          <img class="google" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play">
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <div class="wrap">
+      <h2>Why this app</h2>
+      <div class="grid">
+        <div class="card"><span class="emoji">🆓</span><div class="t">100% Free · No Ads</div><div class="d">No paywalls, no banners, ever.</div></div>
+        <div class="card"><span class="emoji">🙅</span><div class="t">No Account Required</div><div class="d">Just open it and start. No sign-up.</div></div>
+        <div class="card"><span class="emoji">🔒</span><div class="t">No Personal Data Collected</div><div class="d">Anonymous and privacy-first.</div></div>
+        <div class="card"><span class="emoji">🇨🇭</span><div class="t">11 Cantons Covered</div><div class="d">~83% of Switzerland's annual naturalizations.</div></div>
+        <div class="card"><span class="emoji">📚</span><div class="t">12'000+ Official Questions</div><div class="d">Sourced from official cantonal material.</div></div>
+        <div class="card"><span class="emoji">🌍</span><div class="t">4 Languages</div><div class="d">FR · DE · IT · EN.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="spotlight">
+    <div class="wrap sp-inner">
+      <img src="https://nwecndslwnkdeeryswwl.supabase.co/storage/v1/object/public/feed-assets/conquer_vaud.png" alt="Conquer Vaud — claim the canton commune by commune">
+      <div>
+        <span class="new">NEW</span>
+        <h2>🏰 Conquer Vaud</h2>
+        <p>Claim the canton of Vaud commune by commune: break through the district gates, win the timed assaults, and become Mayor. A playful new way to master local knowledge — district by district.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="featured">
+    <div class="wrap">
+      <h2>Featured in</h2>
+      <p class="quote">An independent app built by a naturalization candidate — covered by the Swiss press.</p>
+      <div class="links">
+        <a class="chip" href="https://journaldemorges.ch/actualite/il-veut-une-naturalisation-ludique/" target="_blank" rel="noopener">📰 Journal de Morges</a>
+        <a class="chip" href="https://www.24heures.ch/naturalisation-une-application-vaudoise-pour-reussir-lexamen-817466487746" target="_blank" rel="noopener">📰 24 heures</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-strip">
+    <div class="wrap">
+      <h2>Start preparing today</h2>
+      <div class="stores">
+        <a href="https://apps.apple.com/app/id6769993041" aria-label="Download on the App Store">
+          <img class="apple" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=ch.vincedev.swisscitizenship" aria-label="Get it on Google Play">
+          <img class="google" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play">
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="flinks">
+      <a href="https://vincedy.github.io/quiz-naturalisation/privacy-policy.html" target="_blank" rel="noopener">Privacy Policy</a> ·
+      <a href="https://vincedy.github.io/quiz-naturalisation/transparency.html" target="_blank" rel="noopener">Transparency</a> ·
+      <a href="mailto:swisscitizenshiptest@gmail.com">Contact</a>
+    </div>
+    <p class="disc">
+      Swiss Naturalization Test is an independent study companion developed by Vincenzo Casini.
+      It is not affiliated with any government authority. For the official test, always refer to
+      your canton's official platform.
+    </p>
+  </footer>
+
+</body>
+</html>
