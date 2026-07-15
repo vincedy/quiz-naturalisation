@@ -52,7 +52,7 @@
 
   <section id="en">
     <h1>Privacy Policy</h1>
-    <p class="meta">App: <strong>Swiss Naturalization Test</strong> · Developer: Vincenzo Casini · Last updated: 24 June 2026</p>
+    <p class="meta">App: <strong>Swiss Naturalization Test</strong> · Developer: Vincenzo Casini · Last updated: 15 July 2026</p>
 
     <h2>Summary</h2>
     <p>This app stores quiz progress on your device and synchronizes pseudonymous data (no personal information) with our cloud service to enable the leaderboard and cross-device features. Unless you choose to sign in (Google or Apple), we do not collect names, emails, contacts, location, or any personally identifying information. If you sign in, we collect your email address to manage your account — see “Optional Sign-In” below.</p>
@@ -75,37 +75,65 @@
 
     <h2>Why We Collect It</h2>
     <p>This data is used solely to: enable the leaderboard, allow you to compare your progress with other users, and synchronize your progress across devices. We do not sell, share, or use this data for advertising or any other purpose.</p>
+    <p>When you play in competitive mode, your display name, your selected commune and your score are visible to other users on public leaderboards.</p>
+
+    <h2>Legal Basis</h2>
+    <p>We process your data on the following legal bases (Art. 6(1) GDPR; the Swiss Federal Act on Data Protection, nFADP, provides equivalent bases):</p>
+    <ul>
+      <li><strong>Anonymous account and progress sync</strong> — Art. 6(1)(b), performance of a contract.</li>
+      <li><strong>Selected canton and commune</strong> — Art. 6(1)(b), performance of a contract.</li>
+      <li><strong>Public leaderboard</strong> (display name, canton, commune, score) — Art. 6(1)(a), your consent.</li>
+      <li><strong>Email from optional Google/Apple sign-in</strong> — Art. 6(1)(b), performance of a contract.</li>
+      <li><strong>Technical and crash data</strong> — Art. 6(1)(f), our legitimate interest in keeping the app working.</li>
+    </ul>
 
     <h2>Local Storage</h2>
     <p>A copy of your progress is also kept locally on your device for offline use.</p>
 
     <h2>Third-Party Services</h2>
-    <p>The app uses Supabase (supabase.com) as a backend service to store the data described above. Supabase processes data within the European Union (AWS Ireland region, eu-west-1), under its own privacy terms (<a href="https://supabase.com/privacy">supabase.com/privacy</a>). The app uses no advertising networks, analytics tools, or tracking technologies.</p>
+    <p>The app uses Supabase (supabase.com) as a backend service to store the data described above. Supabase Inc. is based in the United States; your data is stored within the European Union (AWS Ireland region, eu-west-1). Supabase support staff in the United States may access the data, which constitutes a transfer to a third country. This transfer is covered by Standard Contractual Clauses (SCC) together with the Swiss addendum recognised by the FDPIC, under Supabase's own privacy terms (<a href="https://supabase.com/privacy">supabase.com/privacy</a>). The app uses no advertising networks, analytics tools, or tracking technologies.</p>
     <p>The app may show an optional donation link that opens PayPal in your browser. We receive no payment data; any transaction is handled entirely by PayPal under its own privacy terms. On iOS, optional donations use (or will soon use) Apple In-App Purchase instead of an external link.</p>
     <p>For our update commitment and source verification process, see our <a href="https://vincedy.github.io/quiz-naturalisation/transparency.html">Transparency page</a>.</p>
 
     <h2>Technical Data Collection</h2>
-    <p>We collect technical device information (device model, operating system version, app version, platform identifier) for crash diagnosis, performance monitoring, and feature compatibility. This data is not personally identifiable, is not shared with third parties, and is processed exclusively to improve the app.</p>
+    <p>We collect technical device information (device model, operating system version, app version, platform identifier) for crash diagnosis and performance monitoring, via our own backend (Supabase, self-managed). This data is not personally identifiable and is processed exclusively to keep the app working. We use no third-party analytics, crash-reporting or telemetry SDKs (no Sentry, no Firebase, no Crashlytics, no Google Analytics).</p>
 
     <h2>Data Retention</h2>
-    <p>Your data is kept on our servers as long as you use the app. If your account is inactive for an extended period, we may delete it.</p>
+    <p>We keep your data only as long as needed:</p>
+    <ul>
+      <li>Account and progress: deleted automatically after 24 months of inactivity.</li>
+      <li>Leaderboard entry: kept until you delete your account.</li>
+      <li>Crash and technical logs: 90 days maximum.</li>
+      <li>Deletion requests sent by email: kept for 12 months as proof the request was handled.</li>
+    </ul>
 
     <h2>Data Deletion</h2>
-    <p>To request deletion of your cloud data (including leaderboard entry, display name, and synchronized progress), email <a href="mailto:swisscitizenshiptest@gmail.com">swisscitizenshiptest@gmail.com</a>. We will process the deletion within 30 days. Local data on your device can be deleted by uninstalling the app. For full details on what is deleted and how, see our <a href="https://vincedy.github.io/quiz-naturalisation/account-deletion.html">Account &amp; Data Deletion page</a>.</p>
+    <p>You can delete your account and data at any time, in two ways:</p>
+    <ul>
+      <li><strong>Directly in the app (immediate):</strong> Settings → Account → "Delete account and data".</li>
+      <li><strong>By email:</strong> write to <a href="mailto:swisscitizenshiptest@gmail.com">swisscitizenshiptest@gmail.com</a> and we will process the deletion within 30 days.</li>
+    </ul>
+    <p>Deletion removes your display name, avatar, email and linked social identities, and soft-deletes your account identifier. Anonymous game data is retained for the integrity of historical leaderboards. Local data on your device can be deleted by uninstalling the app. For full details on what is deleted and how, see our <a href="https://vincedy.github.io/quiz-naturalisation/account-deletion.html">Account &amp; Data Deletion page</a>.</p>
+
+    <h2>Your Rights</h2>
+    <p>Under the GDPR (and the Swiss nFADP) you have the right to access your data (Art. 15), rectify it (Art. 16), erase it (Art. 17), restrict its processing (Art. 18), receive it in a portable format (Art. 20), object to processing (Art. 21), and withdraw your consent at any time (Art. 7(3)). To exercise any of these, email <a href="mailto:swisscitizenshiptest@gmail.com">swisscitizenshiptest@gmail.com</a>; we reply within 30 days. You also have the right to lodge a complaint with a supervisory authority (see the EDPB list of national authorities): in Italy, the Garante per la protezione dei dati personali; in Switzerland, the Federal Data Protection and Information Commissioner (<a href="https://www.edoeb.admin.ch">edoeb.admin.ch</a>).</p>
+
+    <h2>Data Breach Notifications</h2>
+    <p>If a data breach is likely to result in a risk to your rights and freedoms, we will notify the competent supervisory authority within 72 hours (Art. 33 GDPR). If the breach is likely to result in a high risk, we will also inform affected users directly (Art. 34 GDPR).</p>
 
     <h2>Children's Privacy</h2>
-    <p>This app does not knowingly collect data from children under 13. If you believe a child has used the app, contact us to request deletion.</p>
+    <p>This app is intended for users aged 16 and over. We do not knowingly collect data from children under 16. Some EU member states set a lower digital-consent age (between 13 and 16; for example 14 in Italy); in those countries the national age applies, but never below 13. Below that age, the app may be used only with the consent of a parent or guardian. If you believe a child has used the app without such consent, contact us to request deletion.</p>
 
     <h2>Changes to This Policy</h2>
     <p>If this policy is updated, the revised version will be published at this URL with a new "Last updated" date.</p>
 
     <h2>Contact</h2>
-    <p>For privacy questions or deletion requests: <a href="mailto:swisscitizenshiptest@gmail.com">swisscitizenshiptest@gmail.com</a>.</p>
+    <p>Data controller: Vincenzo Casini, Avenue de Saint-Jean 7, 1110 Morges, Switzerland. For privacy questions or to exercise your rights: <a href="mailto:swisscitizenshiptest@gmail.com">swisscitizenshiptest@gmail.com</a>.</p>
   </section>
 
   <section id="fr">
     <h1>Politique de confidentialité</h1>
-    <p class="meta">App : <strong>Swiss Naturalization Test</strong> · Développeur : Vincenzo Casini · Dernière mise à jour : 24 juin 2026</p>
+    <p class="meta">App : <strong>Swiss Naturalization Test</strong> · Développeur : Vincenzo Casini · Dernière mise à jour : 15 juillet 2026</p>
 
     <h2>Résumé</h2>
     <p>Cette application enregistre la progression du quiz sur votre appareil et synchronise des données pseudonymes (sans informations personnelles) avec notre service cloud pour permettre le classement et les fonctionnalités multi-appareils. Sauf si vous choisissez de vous connecter (Google ou Apple), nous ne collectons pas de noms, e-mails, contacts, localisation, ni aucune information permettant de vous identifier personnellement. Si vous vous connectez, nous collectons votre adresse e-mail pour gérer votre compte — voir « Connexion facultative » ci-dessous.</p>
@@ -128,37 +156,65 @@
 
     <h2>Pourquoi nous le collectons</h2>
     <p>Ces données servent uniquement à : permettre le classement, comparer votre progression avec celle d'autres utilisateurs, synchroniser votre progression entre appareils. Nous ne vendons, partageons ni utilisons ces données à des fins publicitaires ou autres.</p>
+    <p>Lorsque vous jouez en mode compétitif, votre nom d'affichage, votre commune sélectionnée et votre score sont visibles par les autres utilisateurs dans les classements publics.</p>
+
+    <h2>Base juridique</h2>
+    <p>Nous traitons vos données sur les bases juridiques suivantes (art. 6(1) RGPD ; la loi fédérale suisse sur la protection des données, nLPD, prévoit des bases équivalentes) :</p>
+    <ul>
+      <li><strong>Compte anonyme et synchronisation de la progression</strong> — art. 6(1)(b), exécution d'un contrat.</li>
+      <li><strong>Canton et commune sélectionnés</strong> — art. 6(1)(b), exécution d'un contrat.</li>
+      <li><strong>Classement public</strong> (nom d'affichage, canton, commune, score) — art. 6(1)(a), votre consentement.</li>
+      <li><strong>E-mail issu de la connexion facultative Google/Apple</strong> — art. 6(1)(b), exécution d'un contrat.</li>
+      <li><strong>Données techniques et de plantage</strong> — art. 6(1)(f), notre intérêt légitime à faire fonctionner l'application.</li>
+    </ul>
 
     <h2>Stockage local</h2>
     <p>Une copie de votre progression est également conservée localement sur votre appareil pour une utilisation hors ligne.</p>
 
     <h2>Services tiers</h2>
-    <p>L'application utilise Supabase (supabase.com) comme service backend pour stocker les données décrites ci-dessus. Supabase traite les données au sein de l'Union européenne (région AWS Irlande, eu-west-1), selon ses propres conditions de confidentialité (<a href="https://supabase.com/privacy">supabase.com/privacy</a>). L'application n'utilise aucun réseau publicitaire, outil d'analyse ni technologie de suivi.</p>
+    <p>L'application utilise Supabase (supabase.com) comme service backend pour stocker les données décrites ci-dessus. Supabase Inc. est établie aux États-Unis ; vos données sont stockées au sein de l'Union européenne (région AWS Irlande, eu-west-1). Le personnel de support de Supabase aux États-Unis peut accéder aux données, ce qui constitue un transfert vers un pays tiers. Ce transfert est encadré par des Clauses Contractuelles Types (CCT) ainsi que par l'addendum suisse reconnu par le PFPDT, selon les propres conditions de confidentialité de Supabase (<a href="https://supabase.com/privacy">supabase.com/privacy</a>). L'application n'utilise aucun réseau publicitaire, outil d'analyse ni technologie de suivi.</p>
     <p>L'application peut afficher un lien de don facultatif qui ouvre PayPal dans votre navigateur. Nous ne recevons aucune donnée de paiement ; toute transaction est gérée entièrement par PayPal selon ses propres conditions de confidentialité. Sur iOS, les dons facultatifs utilisent (ou utiliseront bientôt) l'achat intégré Apple (In-App Purchase) plutôt qu'un lien externe.</p>
     <p>Pour notre engagement de mise à jour et notre processus de vérification des sources, consultez notre <a href="https://vincedy.github.io/quiz-naturalisation/transparency.html">page de Transparence</a>.</p>
 
     <h2>Collecte de données techniques</h2>
-    <p>Nous collectons des informations techniques sur l'appareil (modèle, version du système d'exploitation, version de l'application, identifiant de plateforme) à des fins de diagnostic des plantages, de suivi des performances et de compatibilité des fonctionnalités. Ces données ne sont pas personnellement identifiables, ne sont pas partagées avec des tiers et sont traitées uniquement pour améliorer l'application.</p>
+    <p>Nous collectons des informations techniques sur l'appareil (modèle, version du système d'exploitation, version de l'application, identifiant de plateforme) pour le diagnostic des plantages et le suivi des performances, via notre propre backend (Supabase, auto-géré). Ces données ne sont pas personnellement identifiables et sont traitées exclusivement pour faire fonctionner l'application. Nous n'utilisons aucun SDK tiers d'analyse, de rapport de plantage ou de télémétrie (pas de Sentry, pas de Firebase, pas de Crashlytics, pas de Google Analytics).</p>
 
     <h2>Durée de conservation</h2>
-    <p>Vos données sont conservées sur nos serveurs tant que vous utilisez l'application. En cas d'inactivité prolongée, votre compte peut être supprimé.</p>
+    <p>Nous ne conservons vos données que le temps nécessaire :</p>
+    <ul>
+      <li>Compte et progression : supprimés automatiquement après 24 mois d'inactivité.</li>
+      <li>Entrée au classement : conservée jusqu'à la suppression de votre compte.</li>
+      <li>Journaux de plantage et journaux techniques : 90 jours maximum.</li>
+      <li>Demandes de suppression envoyées par e-mail : conservées 12 mois comme preuve du traitement de la demande.</li>
+    </ul>
 
     <h2>Suppression des données</h2>
-    <p>Pour demander la suppression de vos données cloud (entrée du classement, nom d'affichage, progression synchronisée), envoyez un e-mail à <a href="mailto:swisscitizenshiptest@gmail.com">swisscitizenshiptest@gmail.com</a>. Nous traiterons la demande dans les 30 jours. Les données locales sur votre appareil peuvent être supprimées en désinstallant l'application. Pour tous les détails sur ce qui est supprimé et comment, consultez notre <a href="https://vincedy.github.io/quiz-naturalisation/account-deletion.html">page Suppression du compte et des données</a>.</p>
+    <p>Vous pouvez supprimer votre compte et vos données à tout moment, de deux manières :</p>
+    <ul>
+      <li><strong>Directement dans l'application (immédiat) :</strong> Réglages → Compte → « Supprimer le compte et les données ».</li>
+      <li><strong>Par e-mail :</strong> écrivez à <a href="mailto:swisscitizenshiptest@gmail.com">swisscitizenshiptest@gmail.com</a> et nous traiterons la suppression dans les 30 jours.</li>
+    </ul>
+    <p>La suppression retire votre nom d'affichage, votre avatar, votre e-mail et les identités sociales liées, et efface (soft-delete) l'identifiant de votre compte. Les données de jeu anonymes sont conservées pour l'intégrité des classements historiques. Les données locales sur votre appareil peuvent être supprimées en désinstallant l'application. Pour tous les détails sur ce qui est supprimé et comment, consultez notre <a href="https://vincedy.github.io/quiz-naturalisation/account-deletion.html">page Suppression du compte et des données</a>.</p>
+
+    <h2>Vos droits</h2>
+    <p>En vertu du RGPD (et de la nLPD suisse), vous avez le droit d'accéder à vos données (art. 15), de les rectifier (art. 16), de les effacer (art. 17), d'en limiter le traitement (art. 18), de les recevoir dans un format portable (art. 20), de vous opposer au traitement (art. 21) et de retirer votre consentement à tout moment (art. 7(3)). Pour exercer l'un de ces droits, écrivez à <a href="mailto:swisscitizenshiptest@gmail.com">swisscitizenshiptest@gmail.com</a> ; nous répondons sous 30 jours. Vous avez aussi le droit d'introduire une réclamation auprès d'une autorité de contrôle (voir la liste des autorités nationales de l'EDPB) : en Italie, le Garante per la protezione dei dati personali ; en Suisse, le Préposé fédéral à la protection des données et à la transparence (<a href="https://www.edoeb.admin.ch">edoeb.admin.ch</a>).</p>
+
+    <h2>Notification des violations de données</h2>
+    <p>Si une violation de données est susceptible d'engendrer un risque pour vos droits et libertés, nous en informerons l'autorité de contrôle compétente dans les 72 heures (art. 33 RGPD). Si la violation est susceptible d'engendrer un risque élevé, nous en informerons aussi directement les utilisateurs concernés (art. 34 RGPD).</p>
 
     <h2>Confidentialité des enfants</h2>
-    <p>Cette application ne collecte pas sciemment de données auprès d'enfants de moins de 13 ans. Si vous pensez qu'un enfant a utilisé l'application, contactez-nous pour demander la suppression.</p>
+    <p>Cette application est destinée aux personnes âgées de 16 ans et plus. Nous ne collectons pas sciemment de données auprès d'enfants de moins de 16 ans. Certains États membres de l'UE fixent un âge de consentement numérique plus bas (entre 13 et 16 ans ; par exemple 14 ans en Italie) ; dans ces pays, l'âge national s'applique, mais jamais en dessous de 13 ans. En deçà de cet âge, l'application ne peut être utilisée qu'avec le consentement d'un parent ou tuteur. Si vous pensez qu'un enfant a utilisé l'application sans un tel consentement, contactez-nous pour demander la suppression.</p>
 
     <h2>Modifications de cette politique</h2>
     <p>Si cette politique est mise à jour, la version révisée sera publiée à cette URL avec une nouvelle date de « Dernière mise à jour ».</p>
 
     <h2>Contact</h2>
-    <p>Pour toute question ou demande de suppression : <a href="mailto:swisscitizenshiptest@gmail.com">swisscitizenshiptest@gmail.com</a>.</p>
+    <p>Responsable du traitement : Vincenzo Casini, Avenue de Saint-Jean 7, 1110 Morges, Suisse. Pour toute question de confidentialité ou pour exercer vos droits : <a href="mailto:swisscitizenshiptest@gmail.com">swisscitizenshiptest@gmail.com</a>.</p>
   </section>
 
   <section id="de">
     <h1>Datenschutzerklärung</h1>
-    <p class="meta">App: <strong>Swiss Naturalization Test</strong> · Entwickler: Vincenzo Casini · Zuletzt aktualisiert: 24. Juni 2026</p>
+    <p class="meta">App: <strong>Swiss Naturalization Test</strong> · Entwickler: Vincenzo Casini · Zuletzt aktualisiert: 15. Juli 2026</p>
 
     <h2>Zusammenfassung</h2>
     <p>Diese App speichert den Quiz-Fortschritt auf Ihrem Gerät und synchronisiert pseudonyme Daten (keine persönlichen Informationen) mit unserem Cloud-Dienst, um die Bestenliste und gerätübergreifende Funktionen zu ermöglichen. Sofern Sie sich nicht anmelden (Google oder Apple), erfassen wir keine Namen, E-Mails, Kontakte, Standortdaten oder persönlich identifizierbare Informationen. Wenn Sie sich anmelden, erfassen wir Ihre E-Mail-Adresse, um Ihr Konto zu verwalten — siehe „Optionale Anmeldung" unten.</p>
@@ -181,37 +237,65 @@
 
     <h2>Warum wir es erfassen</h2>
     <p>Diese Daten werden ausschliesslich verwendet, um: die Bestenliste zu ermöglichen, Ihren Fortschritt mit dem anderer Nutzer zu vergleichen und Ihren Fortschritt geräteübergreifend zu synchronisieren. Wir verkaufen, teilen oder verwenden diese Daten nicht für Werbung oder andere Zwecke.</p>
+    <p>Wenn Sie im Wettbewerbsmodus spielen, sind Ihr Anzeigename, Ihre ausgewählte Gemeinde und Ihre Punktzahl für andere Nutzer in öffentlichen Bestenlisten sichtbar.</p>
+
+    <h2>Rechtsgrundlage</h2>
+    <p>Wir verarbeiten Ihre Daten auf folgenden Rechtsgrundlagen (Art. 6(1) DSGVO; das Schweizer Datenschutzgesetz, revDSG, sieht gleichwertige Grundlagen vor):</p>
+    <ul>
+      <li><strong>Anonymes Konto und Fortschritts-Synchronisierung</strong> — Art. 6(1)(b), Vertragserfüllung.</li>
+      <li><strong>Ausgewählter Kanton und Gemeinde</strong> — Art. 6(1)(b), Vertragserfüllung.</li>
+      <li><strong>Öffentliche Bestenliste</strong> (Anzeigename, Kanton, Gemeinde, Punktzahl) — Art. 6(1)(a), Ihre Einwilligung.</li>
+      <li><strong>E-Mail aus optionaler Google-/Apple-Anmeldung</strong> — Art. 6(1)(b), Vertragserfüllung.</li>
+      <li><strong>Technische und Absturzdaten</strong> — Art. 6(1)(f), unser berechtigtes Interesse am Betrieb der App.</li>
+    </ul>
 
     <h2>Lokale Speicherung</h2>
     <p>Eine Kopie Ihres Fortschritts wird auch lokal auf Ihrem Gerät für die Offline-Nutzung aufbewahrt.</p>
 
     <h2>Drittanbieterdienste</h2>
-    <p>Die App nutzt Supabase (supabase.com) als Backend-Dienst zur Speicherung der oben beschriebenen Daten. Supabase verarbeitet Daten innerhalb der Europäischen Union (AWS-Region Irland, eu-west-1), gemäss seinen eigenen Datenschutzbestimmungen (<a href="https://supabase.com/privacy">supabase.com/privacy</a>). Die App verwendet keine Werbenetzwerke, Analysetools oder Tracking-Technologien.</p>
+    <p>Die App nutzt Supabase (supabase.com) als Backend-Dienst zur Speicherung der oben beschriebenen Daten. Supabase Inc. hat ihren Sitz in den USA; Ihre Daten werden innerhalb der Europäischen Union gespeichert (AWS-Region Irland, eu-west-1). Support-Personal von Supabase in den USA kann auf die Daten zugreifen, was eine Übermittlung in ein Drittland darstellt. Diese Übermittlung ist durch Standardvertragsklauseln (SCC) sowie durch das vom EDÖB anerkannte Schweizer Addendum abgedeckt, gemäss den eigenen Datenschutzbestimmungen von Supabase (<a href="https://supabase.com/privacy">supabase.com/privacy</a>). Die App verwendet keine Werbenetzwerke, Analysetools oder Tracking-Technologien.</p>
     <p>Die App kann einen optionalen Spendenlink anzeigen, der PayPal in Ihrem Browser öffnet. Wir erhalten keine Zahlungsdaten; jede Transaktion wird vollständig von PayPal gemäss dessen eigenen Datenschutzbestimmungen abgewickelt. Unter iOS verwenden optionale Spenden (oder werden in Kürze verwenden) den Apple In-App-Kauf anstelle eines externen Links.</p>
     <p>Für unser Update-Versprechen und unseren Quellen-Verifizierungsprozess siehe unsere <a href="https://vincedy.github.io/quiz-naturalisation/transparency.html">Transparenz-Seite</a>.</p>
 
     <h2>Erfassung technischer Daten</h2>
-    <p>Wir erfassen technische Geräteinformationen (Gerätemodell, Betriebssystemversion, App-Version, Plattformkennung) zur Absturzdiagnose, Leistungsüberwachung und Funktionskompatibilität. Diese Daten sind nicht personenbezogen, werden nicht an Dritte weitergegeben und werden ausschliesslich zur Verbesserung der App verarbeitet.</p>
+    <p>Wir erfassen technische Geräteinformationen (Gerätemodell, Betriebssystemversion, App-Version, Plattformkennung) zur Absturzdiagnose und Leistungsüberwachung über unser eigenes Backend (Supabase, selbst verwaltet). Diese Daten sind nicht personenbezogen und werden ausschliesslich verarbeitet, um die App am Laufen zu halten. Wir verwenden keine Analyse-, Absturzberichts- oder Telemetrie-SDKs von Drittanbietern (kein Sentry, kein Firebase, kein Crashlytics, kein Google Analytics).</p>
 
     <h2>Aufbewahrung der Daten</h2>
-    <p>Ihre Daten bleiben so lange auf unseren Servern, wie Sie die App nutzen. Bei längerer Inaktivität kann Ihr Konto gelöscht werden.</p>
+    <p>Wir speichern Ihre Daten nur so lange wie nötig:</p>
+    <ul>
+      <li>Konto und Fortschritt: automatische Löschung nach 24 Monaten Inaktivität.</li>
+      <li>Eintrag in der Bestenliste: bis zur Löschung Ihres Kontos.</li>
+      <li>Absturz- und technische Protokolle: maximal 90 Tage.</li>
+      <li>Per E-Mail gesendete Löschanfragen: 12 Monate als Nachweis der Bearbeitung.</li>
+    </ul>
 
     <h2>Datenlöschung</h2>
-    <p>Um die Löschung Ihrer Cloud-Daten zu beantragen (Eintrag in der Bestenliste, Anzeigename, synchronisierter Fortschritt), senden Sie eine E-Mail an <a href="mailto:swisscitizenshiptest@gmail.com">swisscitizenshiptest@gmail.com</a>. Wir bearbeiten die Anfrage innerhalb von 30 Tagen. Lokale Daten auf Ihrem Gerät können durch Deinstallation der App gelöscht werden. Alle Details dazu, was und wie gelöscht wird, finden Sie auf unserer <a href="https://vincedy.github.io/quiz-naturalisation/account-deletion.html">Seite zur Konto- und Datenlöschung</a>.</p>
+    <p>Sie können Ihr Konto und Ihre Daten jederzeit auf zwei Wegen löschen:</p>
+    <ul>
+      <li><strong>Direkt in der App (sofort):</strong> Einstellungen → Konto → „Konto und Daten löschen".</li>
+      <li><strong>Per E-Mail:</strong> schreiben Sie an <a href="mailto:swisscitizenshiptest@gmail.com">swisscitizenshiptest@gmail.com</a>, und wir bearbeiten die Löschung innerhalb von 30 Tagen.</li>
+    </ul>
+    <p>Die Löschung entfernt Ihren Anzeigenamen, Ihren Avatar, Ihre E-Mail und die verknüpften sozialen Identitäten und markiert Ihre Konto-Kennung als gelöscht (Soft-Delete). Anonyme Spieldaten bleiben zur Integrität historischer Bestenlisten erhalten. Lokale Daten auf Ihrem Gerät können durch Deinstallation der App gelöscht werden. Alle Details dazu, was und wie gelöscht wird, finden Sie auf unserer <a href="https://vincedy.github.io/quiz-naturalisation/account-deletion.html">Seite zur Konto- und Datenlöschung</a>.</p>
+
+    <h2>Ihre Rechte</h2>
+    <p>Nach der DSGVO (und dem Schweizer revDSG) haben Sie das Recht auf Auskunft über Ihre Daten (Art. 15), Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung der Verarbeitung (Art. 18), Übertragbarkeit in einem portablen Format (Art. 20), Widerspruch gegen die Verarbeitung (Art. 21) und jederzeitigen Widerruf Ihrer Einwilligung (Art. 7(3)). Zur Ausübung schreiben Sie an <a href="mailto:swisscitizenshiptest@gmail.com">swisscitizenshiptest@gmail.com</a>; wir antworten innerhalb von 30 Tagen. Sie haben zudem das Recht, bei einer Aufsichtsbehörde Beschwerde einzulegen (siehe die EDPB-Liste der nationalen Behörden): in Italien der Garante per la protezione dei dati personali; in der Schweiz der Eidgenössische Datenschutz- und Öffentlichkeitsbeauftragte (<a href="https://www.edoeb.admin.ch">edoeb.admin.ch</a>).</p>
+
+    <h2>Meldung von Datenschutzverletzungen</h2>
+    <p>Wenn eine Datenschutzverletzung voraussichtlich ein Risiko für Ihre Rechte und Freiheiten mit sich bringt, benachrichtigen wir die zuständige Aufsichtsbehörde innerhalb von 72 Stunden (Art. 33 DSGVO). Bei voraussichtlich hohem Risiko informieren wir auch die betroffenen Nutzer direkt (Art. 34 DSGVO).</p>
 
     <h2>Datenschutz für Kinder</h2>
-    <p>Diese App erfasst nicht wissentlich Daten von Kindern unter 13 Jahren. Wenn Sie glauben, dass ein Kind die App benutzt hat, kontaktieren Sie uns für eine Löschanfrage.</p>
+    <p>Diese App ist für Personen ab 16 Jahren bestimmt. Wir erfassen nicht wissentlich Daten von Kindern unter 16 Jahren. Einige EU-Mitgliedstaaten legen ein niedrigeres Alter für die digitale Einwilligung fest (zwischen 13 und 16 Jahren; z. B. 14 in Italien); in diesen Ländern gilt das nationale Alter, jedoch nie unter 13. Unterhalb dieses Alters darf die App nur mit Zustimmung eines Elternteils oder Erziehungsberechtigten genutzt werden. Wenn Sie glauben, dass ein Kind die App ohne solche Zustimmung benutzt hat, kontaktieren Sie uns für eine Löschanfrage.</p>
 
     <h2>Änderungen dieser Erklärung</h2>
     <p>Wenn diese Erklärung aktualisiert wird, wird die überarbeitete Version unter dieser URL mit einem neuen Datum „Zuletzt aktualisiert" veröffentlicht.</p>
 
     <h2>Kontakt</h2>
-    <p>Für Datenschutzfragen oder Löschanfragen: <a href="mailto:swisscitizenshiptest@gmail.com">swisscitizenshiptest@gmail.com</a>.</p>
+    <p>Verantwortlicher: Vincenzo Casini, Avenue de Saint-Jean 7, 1110 Morges, Schweiz. Für Datenschutzfragen oder zur Ausübung Ihrer Rechte: <a href="mailto:swisscitizenshiptest@gmail.com">swisscitizenshiptest@gmail.com</a>.</p>
   </section>
 
   <section id="it">
     <h1>Informativa sulla privacy</h1>
-    <p class="meta">App: <strong>Swiss Naturalization Test</strong> · Sviluppatore: Vincenzo Casini · Ultimo aggiornamento: 24 giugno 2026</p>
+    <p class="meta">App: <strong>Swiss Naturalization Test</strong> · Sviluppatore: Vincenzo Casini · Ultimo aggiornamento: 15 luglio 2026</p>
 
     <h2>Riepilogo</h2>
     <p>Questa app memorizza i progressi del quiz sul tuo dispositivo e sincronizza dati pseudonimi (senza informazioni personali) con il nostro servizio cloud per abilitare la classifica e le funzionalità multi-dispositivo. A meno che tu non scelga di accedere (Google o Apple), non raccogliamo nomi, e-mail, contatti, posizione né alcuna informazione che ti identifichi personalmente. Se accedi, raccogliamo il tuo indirizzo e-mail per gestire il tuo account — vedi « Accesso facoltativo » qui sotto.</p>
@@ -234,32 +318,60 @@
 
     <h2>Perché lo raccogliamo</h2>
     <p>Questi dati servono esclusivamente per: abilitare la classifica, permetterti di confrontare i tuoi progressi con altri utenti, sincronizzare i tuoi progressi tra dispositivi. Non vendiamo, condividiamo né usiamo questi dati per pubblicità o altri scopi.</p>
+    <p>Quando giochi in modalità competitiva, il tuo nome visualizzato, il tuo comune selezionato e il tuo punteggio sono visibili agli altri utenti nelle classifiche pubbliche.</p>
+
+    <h2>Base giuridica</h2>
+    <p>Trattiamo i tuoi dati sulle seguenti basi giuridiche (art. 6(1) GDPR; la legge federale svizzera sulla protezione dei dati, nLPD, prevede basi equivalenti):</p>
+    <ul>
+      <li><strong>Account anonimo e sincronizzazione dei progressi</strong> — art. 6(1)(b), esecuzione di un contratto.</li>
+      <li><strong>Cantone e comune selezionati</strong> — art. 6(1)(b), esecuzione di un contratto.</li>
+      <li><strong>Classifica pubblica</strong> (nome visualizzato, cantone, comune, punteggio) — art. 6(1)(a), il tuo consenso.</li>
+      <li><strong>E-mail dall'accesso facoltativo Google/Apple</strong> — art. 6(1)(b), esecuzione di un contratto.</li>
+      <li><strong>Dati tecnici e di crash</strong> — art. 6(1)(f), il nostro legittimo interesse a far funzionare l'app.</li>
+    </ul>
 
     <h2>Memorizzazione locale</h2>
     <p>Una copia dei tuoi progressi viene mantenuta anche localmente sul tuo dispositivo per l'uso offline.</p>
 
     <h2>Servizi di terze parti</h2>
-    <p>L'app usa Supabase (supabase.com) come servizio backend per memorizzare i dati descritti sopra. Supabase tratta i dati all'interno dell'Unione Europea (regione AWS Irlanda, eu-west-1), secondo le proprie condizioni sulla privacy (<a href="https://supabase.com/privacy">supabase.com/privacy</a>). L'app non usa reti pubblicitarie, strumenti di analisi né tecnologie di tracciamento.</p>
+    <p>L'app usa Supabase (supabase.com) come servizio backend per memorizzare i dati descritti sopra. Supabase Inc. ha sede negli Stati Uniti; i tuoi dati sono archiviati all'interno dell'Unione Europea (regione AWS Irlanda, eu-west-1). Il personale di supporto di Supabase negli Stati Uniti può accedere ai dati, il che costituisce un trasferimento verso un paese terzo. Questo trasferimento è coperto da Clausole Contrattuali Standard (SCC) e dall'addendum svizzero riconosciuto dall'IFPDT, secondo le condizioni sulla privacy di Supabase (<a href="https://supabase.com/privacy">supabase.com/privacy</a>). L'app non usa reti pubblicitarie, strumenti di analisi né tecnologie di tracciamento.</p>
     <p>L'app può mostrare un link di donazione facoltativo che apre PayPal nel browser. Non riceviamo alcun dato di pagamento; ogni transazione è gestita interamente da PayPal secondo le proprie condizioni sulla privacy. Su iOS, le donazioni facoltative usano (o useranno a breve) l'acquisto in-app di Apple (In-App Purchase) invece di un link esterno.</p>
     <p>Per il nostro impegno di aggiornamento e il processo di verifica delle fonti, consulta la nostra <a href="https://vincedy.github.io/quiz-naturalisation/transparency.html">pagina di Trasparenza</a>.</p>
 
     <h2>Raccolta di dati tecnici</h2>
-    <p>Raccogliamo informazioni tecniche sul dispositivo (modello, versione del sistema operativo, versione dell'app, identificatore della piattaforma) per la diagnosi dei crash, il monitoraggio delle prestazioni e la compatibilità delle funzionalità. Questi dati non sono identificabili personalmente, non sono condivisi con terze parti e sono trattati esclusivamente per migliorare l'app.</p>
+    <p>Raccogliamo informazioni tecniche sul dispositivo (modello, versione del sistema operativo, versione dell'app, identificatore della piattaforma) per la diagnosi dei crash e il monitoraggio delle prestazioni tramite il nostro backend (Supabase, self-managed). Questi dati non sono identificabili personalmente e sono trattati esclusivamente per far funzionare l'app. Non usiamo SDK di terze parti per analisi, crash reporting o telemetria (niente Sentry, niente Firebase, niente Crashlytics, niente Google Analytics).</p>
 
     <h2>Conservazione dei dati</h2>
-    <p>I tuoi dati restano sui nostri server finché usi l'app. In caso di inattività prolungata, l'account può essere eliminato.</p>
+    <p>Conserviamo i tuoi dati solo per il tempo necessario:</p>
+    <ul>
+      <li>Account e progressi: cancellati automaticamente dopo 24 mesi di inattività.</li>
+      <li>Voce in classifica: conservata fino alla cancellazione del tuo account.</li>
+      <li>Log dei crash e log tecnici: massimo 90 giorni.</li>
+      <li>Richieste di cancellazione inviate via e-mail: conservate 12 mesi come prova della gestione della richiesta.</li>
+    </ul>
 
     <h2>Eliminazione dei dati</h2>
-    <p>Per richiedere l'eliminazione dei tuoi dati cloud (voce in classifica, nome visualizzato, progressi sincronizzati), invia un'e-mail a <a href="mailto:swisscitizenshiptest@gmail.com">swisscitizenshiptest@gmail.com</a>. Tratteremo la richiesta entro 30 giorni. I dati locali sul tuo dispositivo possono essere eliminati disinstallando l'app. Per tutti i dettagli su cosa viene eliminato e come, consulta la nostra <a href="https://vincedy.github.io/quiz-naturalisation/account-deletion.html">pagina Cancellazione account e dati</a>.</p>
+    <p>Puoi eliminare il tuo account e i tuoi dati in qualsiasi momento, in due modi:</p>
+    <ul>
+      <li><strong>Direttamente nell'app (immediato):</strong> Impostazioni → Account → « Elimina account e dati ».</li>
+      <li><strong>Via e-mail:</strong> scrivi a <a href="mailto:swisscitizenshiptest@gmail.com">swisscitizenshiptest@gmail.com</a> e tratteremo l'eliminazione entro 30 giorni.</li>
+    </ul>
+    <p>L'eliminazione rimuove il tuo nome visualizzato, l'avatar, l'e-mail e le identità social collegate, e disattiva (soft-delete) l'identificativo del tuo account. I dati di gioco anonimi vengono conservati per l'integrità delle classifiche storiche. I dati locali sul tuo dispositivo possono essere eliminati disinstallando l'app. Per tutti i dettagli su cosa viene eliminato e come, consulta la nostra <a href="https://vincedy.github.io/quiz-naturalisation/account-deletion.html">pagina Cancellazione account e dati</a>.</p>
+
+    <h2>I tuoi diritti</h2>
+    <p>Ai sensi del GDPR (e della nLPD svizzera) hai il diritto di accedere ai tuoi dati (art. 15), rettificarli (art. 16), cancellarli (art. 17), limitarne il trattamento (art. 18), riceverli in un formato portabile (art. 20), opporti al trattamento (art. 21) e revocare il consenso in qualsiasi momento (art. 7(3)). Per esercitare uno di questi diritti, scrivi a <a href="mailto:swisscitizenshiptest@gmail.com">swisscitizenshiptest@gmail.com</a>; rispondiamo entro 30 giorni. Hai inoltre il diritto di proporre reclamo a un'autorità di controllo (vedi l'elenco delle autorità nazionali dell'EDPB): in Italia il Garante per la protezione dei dati personali; in Svizzera l'Incaricato federale della protezione dei dati e della trasparenza (<a href="https://www.edoeb.admin.ch">edoeb.admin.ch</a>).</p>
+
+    <h2>Notifica delle violazioni dei dati</h2>
+    <p>Se una violazione dei dati può comportare un rischio per i tuoi diritti e libertà, la notificheremo all'autorità di controllo competente entro 72 ore (art. 33 GDPR). Se la violazione può comportare un rischio elevato, informeremo direttamente anche gli utenti interessati (art. 34 GDPR).</p>
 
     <h2>Privacy dei minori</h2>
-    <p>Questa app non raccoglie consapevolmente dati da minori di 13 anni. Se ritieni che un minore abbia usato l'app, contattaci per richiedere l'eliminazione.</p>
+    <p>Questa app è destinata alle persone di età pari o superiore a 16 anni. Non raccogliamo consapevolmente dati da minori di 16 anni. Alcuni Stati membri dell'UE fissano un'età di consenso digitale più bassa (tra 13 e 16 anni; ad esempio 14 in Italia); in quei paesi si applica l'età nazionale, ma mai sotto i 13 anni. Al di sotto di tale età, l'app può essere usata solo con il consenso di un genitore o tutore. Se ritieni che un minore abbia usato l'app senza tale consenso, contattaci per richiedere l'eliminazione.</p>
 
     <h2>Modifiche a questa informativa</h2>
     <p>Se questa informativa viene aggiornata, la versione rivista sarà pubblicata a questo URL con una nuova data "Ultimo aggiornamento".</p>
 
     <h2>Contatti</h2>
-    <p>Per domande sulla privacy o richieste di eliminazione: <a href="mailto:swisscitizenshiptest@gmail.com">swisscitizenshiptest@gmail.com</a>.</p>
+    <p>Titolare del trattamento: Vincenzo Casini, Avenue de Saint-Jean 7, 1110 Morges, Svizzera. Per domande sulla privacy o per esercitare i tuoi diritti: <a href="mailto:swisscitizenshiptest@gmail.com">swisscitizenshiptest@gmail.com</a>.</p>
   </section>
 </body>
 </html>
