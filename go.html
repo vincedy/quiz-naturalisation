@@ -1,0 +1,61 @@
+<!--
+  GET-THE-APP REDIRECT — complementary to landing.html (NOT a copy).
+  Mobile → bounces straight to the right store. Desktop → a lean chooser
+  (buttons + QR to open on a phone) with a link to the full landing.
+  Use THIS url in stories / stickers / "download" CTAs. Use landing.html to be read.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get the Swiss Naturalization Test app</title>
+  <meta name="robots" content="noindex"><!-- redirect page: keep it out of search; landing.html is the indexed one -->
+  <meta name="apple-itunes-app" content="app-id=6769993041">
+  <script>
+    (function () {
+      var PLAY = "https://play.google.com/store/apps/details?id=ch.vincedev.swisscitizenship";
+      var IOS  = "https://apps.apple.com/app/id6769993041";
+      var ua = navigator.userAgent || navigator.vendor || "";
+      var isIOS = /iPad|iPhone|iPod/.test(ua) || (/Macintosh/.test(ua) && "ontouchend" in document); // iPadOS reports as Mac
+      if (/android/i.test(ua)) { location.replace(PLAY); }
+      else if (isIOS)          { location.replace(IOS); }
+      // desktop / unknown → no redirect; the chooser below stays visible.
+    })();
+  </script>
+  <style>
+    html,body{height:100%;margin:0}
+    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+      background:linear-gradient(180deg,#0d1426 0%,#16203c 100%);color:#fff;
+      display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;padding:32px;text-align:center}
+    h1{font-size:1.5rem;font-weight:800;margin:0}
+    p.tag{color:#c7d2e8;margin:0;max-width:460px}
+    .stores{display:flex;gap:14px;align-items:center;flex-wrap:wrap;justify-content:center}
+    .stores img.apple{height:50px}
+    .stores img.google{height:74px;margin:-12px 0}
+    .qr{margin-top:6px;background:#fff;padding:12px;border-radius:14px}
+    .qr img{display:block;width:150px;height:150px}
+    .qr small{display:block;color:#123;margin-top:6px;font-size:.8rem;font-weight:600}
+    a.more{color:#9fb0e8;font-size:.95rem;margin-top:4px}
+  </style>
+</head>
+<body>
+  <h1>Swiss Naturalization Test</h1>
+  <p class="tag">Opening your store… if nothing happens, pick yours below.</p>
+
+  <div class="stores">
+    <a href="https://apps.apple.com/app/id6769993041" aria-label="Download on the App Store">
+      <img class="apple" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store"></a>
+    <a href="https://play.google.com/store/apps/details?id=ch.vincedev.swisscitizenship" aria-label="Get it on Google Play">
+      <img class="google" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play"></a>
+  </div>
+
+  <!-- Desktop helper: scan to open on a phone (which then bounces to the right store) -->
+  <div class="qr">
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https%3A%2F%2Fvincedy.github.io%2Fquiz-naturalisation%2Fgo.html" alt="Scan to get the app">
+    <small>Scan to open on your phone</small>
+  </div>
+
+  <a class="more" href="https://vincedy.github.io/quiz-naturalisation/landing.html">Learn more about the app →</a>
+</body>
+</html>
