@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Badener Tagblatt (Aargau) — Swiss Naturalization Test</title>
+<meta name="description" content="The Badener Tagblatt covers Swiss Naturalization Test — practise the official Aargau naturalization questions in a free app.">
+<meta property="og:title" content="Badener Tagblatt (Aargau)">
+<meta property="og:description" content="The Badener Tagblatt covers Swiss Naturalization Test — practise the official Aargau naturalization questions in a free app.">
+<link rel="icon" href="../app/icon.png">
+<style>
+  :root{--ink:#141821;--muted:#5a6472;--bg:#fff;--soft:#f6f8fb;--border:#e6ebf2;--red:#DA291C;--red-d:#b31f14;--navy:#0d1426;--shadow:0 10px 30px rgba(16,24,40,.10);--radius:16px;--font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font);color:var(--ink);margin:0;line-height:1.65;background:var(--bg);-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+  h1,h2,h3{letter-spacing:-.02em;line-height:1.2}
+  header.site{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid var(--border)}
+  .navbar{display:flex;align-items:center;gap:18px;height:64px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.02rem;letter-spacing:-.02em}
+  .brand img{width:30px;height:30px;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,.15)}
+  nav.main{margin-left:auto;display:flex;align-items:center;gap:4px}
+  nav.main a.link{padding:8px 12px;border-radius:9px;font-weight:600;font-size:.93rem;color:var(--muted);cursor:pointer}
+  nav.main a.link:hover{background:var(--soft);color:var(--ink)}
+  .langs{display:flex;gap:2px;margin-left:6px;padding-left:12px;border-left:1px solid var(--border)}
+  .langs a{font-size:.8rem;font-weight:700;color:var(--muted);padding:5px 9px;border-radius:999px;cursor:pointer}
+  .langs a.on,.langs a:hover{background:var(--ink);color:#fff}
+  #mnav{display:none}
+  .burger{margin-left:auto;display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
+  .burger span{width:24px;height:2px;background:var(--ink);border-radius:2px}
+  @media(max-width:860px){nav.main{position:fixed;inset:64px 0 auto 0;flex-direction:column;align-items:stretch;background:#fff;border-bottom:1px solid var(--border);padding:12px 24px 20px;gap:6px;transform:translateY(-140%);transition:transform .25s ease;box-shadow:var(--shadow)}#mnav:checked ~ .navbar nav.main{transform:translateY(0)}.burger{display:flex}nav.main a.link{padding:12px 10px;font-size:1rem}.langs{margin:6px 0 0;padding:12px 0 0;border-left:0;border-top:1px solid var(--border);justify-content:center}}
+  /* article */
+  .article{max-width:720px;margin:0 auto;padding:34px 24px 8px}
+  .back{display:inline-block;color:var(--muted);font-weight:600;font-size:.9rem;margin-bottom:18px;cursor:pointer}
+  .back:hover{color:var(--red)}
+  .eyebrow{color:var(--red);font-weight:800;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;margin:0 0 14px}
+  .ahero{width:100%;border-radius:18px;border:1px solid var(--border);box-shadow:var(--shadow);margin:0 0 26px;display:block;aspect-ratio:16/10;object-fit:cover;background:var(--navy)}
+  .abody{font-size:1.06rem;color:#2a3140}
+  .abody p{margin:0 0 18px}
+  .abody h2{font-size:1.45rem;margin:34px 0 12px}
+  .abody h3{font-size:1.12rem;margin:26px 0 8px}
+  .abody em{color:var(--muted)}
+  .abody strong{color:var(--ink)}
+  .abody ul{margin:0 0 18px;padding-left:20px}
+  .abody li{margin:6px 0}
+  .abody a{color:var(--red);font-weight:600;text-decoration:underline}
+  .abody hr{border:0;border-top:1px solid var(--border);margin:26px 0}
+  .abody blockquote{margin:22px 0;padding:14px 20px;border-left:3px solid var(--red);background:var(--soft);border-radius:0 12px 12px 0;color:#2a3140}
+  .abody blockquote em{color:#2a3140}
+  .orig{max-width:720px;margin:8px auto 0;padding:22px 24px 4px;text-align:center}
+  .btn{display:inline-block;background:var(--red);color:#fff;font-weight:700;padding:12px 22px;border-radius:999px;box-shadow:0 8px 18px rgba(218,41,28,.28)}
+  .btn:hover{background:var(--red-d)}
+  .orignote{display:block;margin-top:10px;font-size:.84rem;color:var(--muted)}
+  section.block{padding:50px 0}
+  .final{text-align:center}
+  h2.sec{font-size:1.5rem;text-align:center;margin:0 0 26px;font-weight:800}
+  .stores{display:flex;gap:14px;justify-content:center;align-items:center;flex-wrap:wrap}
+  .stores img.apple{height:50px}.stores img.google{height:74px;margin:-12px 0}
+  footer.site{background:var(--navy);color:#9fb0cc;padding:44px 24px;text-align:center;font-size:.92rem;position:static;border:0}
+  footer.site a{color:#cdd9ee}
+  footer.site .fl{margin-bottom:14px}
+  footer.site .fl a{margin:0 8px;font-weight:600;cursor:pointer}
+  footer.site .disc{max-width:680px;margin:0 auto;font-size:.82rem;color:#7f90ad}
+</style>
+</head>
+<body>
+<header class="site"><input type="checkbox" id="mnav"><div class="wrap navbar"><a class="brand" href="../landing.html"><img src="../app/icon.png" alt="">Swiss Naturalization Test</a><label class="burger" for="mnav" aria-label="Menu"><span></span><span></span><span></span></label><nav class="main"><a class="link" data-nav="home" href="../landing.html">Home</a><a class="link" data-nav="press" href="../landing.html#press">Press</a><a class="link" data-nav="transp" href="../transparency.html">Transparency</a><a class="link" data-nav="privacy" href="../privacy-policy.html">Privacy</a><span class="langs"><a data-lang="en" href="#" onclick="return __setLang('en')">EN</a><a data-lang="fr" href="#" onclick="return __setLang('fr')">FR</a><a data-lang="de" href="#" onclick="return __setLang('de')">DE</a><a data-lang="it" href="#" onclick="return __setLang('it')">IT</a></span></nav></div></header>
+<div class="langblock" id="lb-en"><article class="article"><a class="back" href="../landing.html#press">← All coverage</a><p class="eyebrow">In the press &middot; Badener Tagblatt &middot; Aargau</p><img class="ahero" src="https://chm-images-prd.forward-publishing.io/2021/9/10/63633807-e620-4d5a-b5c2-ed8a788f784a.jpeg?s=a7539439ac2604b0555e6d2e93c24686&w=1200&auto=compress%2Cformat" alt=""><div class="abody">
+<h2>To the Swiss passport with your smartphone: this app tests your naturalization knowledge</h2>
+<p><em>By Matthias Niederberger · 24 July 2026, 05:00</em></p>
+<p><em>An app developed in French-speaking Switzerland prepares the naturalization questions so you can practise them in everyday life. It works in eleven cantons – including Aargau.</em></p>
+<p><strong>Here's the point</strong></p>
+<ul><li>An app called "Swiss Naturalization Test" prepares the naturalization questions for practice.</li><li>In Aargau it is based on the official question catalogue of nearly 330 questions on democracy, the welfare state and history.</li><li>The app is free, works offline and can be used in eleven cantons.</li></ul>
+<p>Anyone who wants to be naturalized has to answer questions. Not only about their personal situation, but also about Switzerland, the canton and the commune. This is known as the civic test. In Aargau, an online version with a selection of practice questions already exists.</p>
+<p>Until now, that had been a rather dry affair. An app from French-speaking Switzerland wants to change that.</p>
+<p>It was developed by Vincenzo Casini, 43 years old, Italian, in Switzerland since 2014 and an "AI Architect" at UEFA. He programmed the app during his own naturalization process. Several thousand people in Switzerland already use it today.</p>
+<h2>Gamifying naturalization</h2>
+<p>The "Swiss Naturalization Test" app works for eleven Swiss cantons. One of them is Aargau. It is based on the canton's official question catalogue. This comprises nearly 330 questions on topics such as democracy, the welfare state or history.</p>
+<p>You won't find alternative questions or practice material in the app. What's new is the user-friendly presentation of Aargau's official question catalogue.</p>
+<p>The application offers smart coaching, an online leaderboard and a Play, Challenge and Conquest mode. In other words: part of the naturalization process is gamified.</p>
+<p>A personal try-out shows: it really is more fun than ploughing through 330 questions in a row. In RapidFire you can answer true/false questions about every Swiss canton. How many correct answers can you manage in 60 seconds? With "The canton of Aargau joined the Confederation in 1332", many non-Aargau residents will probably just take a guess.</p>
+<h2>Swiss citizens should use the app too</h2>
+<p>Everything is free and can also be used offline. On top of that, you can become part of the community and exchange ideas on social media, because "together you learn better."</p>
+<p>The canton of Aargau seems to see a lot of good in the app. According to developer Vincenzo Casini, the Integration Office recently had its own official material integrated into the app. "To my knowledge, Aargau is thus one of the first cantons whose integration office actively contributes to such a free preparation tool," he says.</p>
+<p>The app is not only meant for those currently going through the naturalization process, he says. He also wants to reach Swiss citizens. "Preparing for naturalization doesn't end on the day of the exam: you can keep getting to know Switzerland and enjoy it."</p>
+<h2>Would you pass the test?</h2>
+<p>Anyone who wants to test for themselves whether they would pass can download the app on iOS or Google Play. Alternatively, you can try this newspaper's own naturalization test, which is also based on the official question catalogue.</p>
+</div></article><div class="orig"><a class="btn" href="https://www.badenertagblatt.ch/aargau/kanton-aargau/einbuergerungsfragen-per-app-ueben-fuer-den-schweizer-pass-ld.4204055" target="_blank" rel="noopener">Read on Badener Tagblatt →</a></div><section class="block final"><div class="wrap"><h2 class="sec">Start preparing today</h2><div class="stores"><a href="https://apps.apple.com/app/id6769993041" aria-label="App Store"><img class="apple" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store"></a><a href="https://play.google.com/store/apps/details?id=ch.vincedev.swisscitizenship" aria-label="Google Play"><img class="google" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Google Play"></a></div></div></section><footer class="site"><div class="wrap"><div class="fl"><a href="../landing.html">Home</a> &middot; <a href="../landing.html#press">Press</a> &middot; <a href="../transparency.html">Transparency</a> &middot; <a href="../privacy-policy.html">Privacy</a> &middot; <a href="../terms.html">Terms</a> &middot; <a href="../account-deletion.html">Data deletion</a> &middot; <a href="mailto:swisscitizenshiptest@gmail.com" onclick="return __contact(event)">Contact</a></div><p class="disc">Swiss Naturalization Test is an independent study companion developed by Vincenzo Casini. It is not affiliated with any government authority. For the official test, always refer to your canton's official platform.</p></div></footer></div><div class="langblock" id="lb-fr" hidden><article class="article"><a class="back" href="../landing.html#press">← Toute la revue de presse</a><p class="eyebrow">On en parle &middot; Badener Tagblatt &middot; Aargau</p><img class="ahero" src="https://chm-images-prd.forward-publishing.io/2021/9/10/63633807-e620-4d5a-b5c2-ed8a788f784a.jpeg?s=a7539439ac2604b0555e6d2e93c24686&w=1200&auto=compress%2Cformat" alt=""><div class="abody">
+<h2>Le passeport suisse depuis son smartphone : cette app teste vos connaissances en naturalisation</h2>
+<p><em>Par Matthias Niederberger · 24.07.2026, 05h00</em></p>
+<p><em>Une application développée en Suisse romande met en forme les questions de naturalisation pour qu'on puisse s'y entraîner au quotidien. Elle fonctionne dans onze cantons – dont l'Argovie.</em></p>
+<p><strong>L'essentiel</strong></p>
+<ul><li>Une app nommée « Swiss Naturalization Test » met en forme les questions de naturalisation pour s'entraîner.</li><li>En Argovie, elle se base sur le catalogue officiel de près de 330 questions sur la démocratie, l'État social et l'histoire.</li><li>L'application est gratuite, utilisable hors ligne et peut être utilisée dans onze cantons.</li></ul>
+<p>Qui veut être naturalisé doit répondre à des questions. Pas seulement sur sa situation personnelle, mais aussi sur la Suisse, le canton, la commune. C'est ce qu'on appelle le test civique. En Argovie, il en existe déjà une version en ligne avec une sélection de questions d'entraînement.</p>
+<p>Jusqu'ici, c'était plutôt une affaire aride. Une app venue de Suisse romande veut changer cela.</p>
+<p>Elle a été développée par Vincenzo Casini, 43 ans, Italien, en Suisse depuis 2014 et « AI Architect » à l'UEFA. Il a programmé l'app pendant sa propre procédure de naturalisation. Plusieurs milliers de personnes l'utilisent déjà aujourd'hui en Suisse.</p>
+<h2>Une gamification de la naturalisation</h2>
+<p>L'app « Swiss Naturalization Test » fonctionne pour onze cantons suisses. L'un d'eux est l'Argovie. Elle s'appuie sur le catalogue officiel de questions du canton. Celui-ci comprend près de 330 questions sur des thèmes comme la démocratie, l'État social ou l'histoire.</p>
+<p>On ne trouve pas de questions alternatives ni de matériel d'entraînement dans l'app. La nouveauté, c'est la mise en forme conviviale du catalogue officiel argovien.</p>
+<p>L'application propose un smart coaching, un classement en ligne ainsi qu'un mode Play, Challenge et Conquête. Autrement dit : une partie du processus de naturalisation est gamifiée.</p>
+<p>Un essai personnel le montre : c'est effectivement plus amusant que d'enchaîner 330 questions d'affilée. En RapidFire, on peut répondre à des questions vrai/faux sur tous les cantons suisses. Combien de bonnes réponses en 60 secondes ? Avec « Le canton d'Argovie a rejoint la Confédération en 1332 », beaucoup de non-Argoviens tenteront sans doute leur chance au hasard.</p>
+<h2>Les Suisses aussi devraient utiliser l'app</h2>
+<p>Tout est gratuit et utilisable aussi hors ligne. On peut en plus rejoindre la communauté et échanger sur les réseaux sociaux, car « ensemble, on apprend mieux ».</p>
+<p>Le canton d'Argovie semble trouver beaucoup de positif à l'app. Selon le développeur Vincenzo Casini, le Service de l'intégration a récemment fait intégrer son propre matériel officiel dans l'app. « À ma connaissance, l'Argovie est ainsi l'un des premiers cantons dont le service d'intégration contribue activement à un tel outil de préparation gratuit », dit-il.</p>
+<p>L'app n'est pas seulement pensée pour celles et ceux qui traversent actuellement le processus de naturalisation, dit-il. Il veut aussi s'adresser aux citoyens suisses. « La préparation à la naturalisation ne s'arrête pas le jour de l'examen : on peut continuer à découvrir la Suisse et à y prendre plaisir. »</p>
+<h2>Réussiriez-vous le test ?</h2>
+<p>Qui veut tester lui-même s'il réussirait peut télécharger l'app sur iOS ou Google Play. Vous pouvez aussi vous essayer au test de naturalisation de ce journal, lui aussi basé sur le catalogue officiel de questions.</p>
+</div></article><div class="orig"><a class="btn" href="https://www.badenertagblatt.ch/aargau/kanton-aargau/einbuergerungsfragen-per-app-ueben-fuer-den-schweizer-pass-ld.4204055" target="_blank" rel="noopener">Lire sur Badener Tagblatt →</a></div><section class="block final"><div class="wrap"><h2 class="sec">Commencez dès aujourd'hui</h2><div class="stores"><a href="https://apps.apple.com/app/id6769993041" aria-label="App Store"><img class="apple" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store"></a><a href="https://play.google.com/store/apps/details?id=ch.vincedev.swisscitizenship" aria-label="Google Play"><img class="google" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Google Play"></a></div></div></section><footer class="site"><div class="wrap"><div class="fl"><a href="../landing.html">Accueil</a> &middot; <a href="../landing.html#press">Presse</a> &middot; <a href="../transparency.html">Transparence</a> &middot; <a href="../privacy-policy.html">Confidentialité</a> &middot; <a href="../terms.html">Conditions</a> &middot; <a href="../account-deletion.html">Suppression des données</a> &middot; <a href="mailto:swisscitizenshiptest@gmail.com" onclick="return __contact(event)">Contact</a></div><p class="disc">Swiss Naturalization Test est un compagnon d'étude indépendant développé par Vincenzo Casini. Il n'est affilié à aucune autorité gouvernementale. Pour le test officiel, référez-vous toujours à la plateforme officielle de votre canton.</p></div></footer></div><div class="langblock" id="lb-de" hidden><article class="article"><a class="back" href="../landing.html#press">← Zur Presse-Übersicht</a><p class="eyebrow">In der Presse &middot; Badener Tagblatt &middot; Aargau</p><img class="ahero" src="https://chm-images-prd.forward-publishing.io/2021/9/10/63633807-e620-4d5a-b5c2-ed8a788f784a.jpeg?s=a7539439ac2604b0555e6d2e93c24686&w=1200&auto=compress%2Cformat" alt=""><div class="abody">
+<h2>Mit dem Smartphone zum Schweizer Pass: Diese App testet Ihr Einbürgerungs-Wissen</h2>
+<p><em>Von Matthias Niederberger · 24.07.2026, 05.00 Uhr</em></p>
+<p><em>Eine in der Romandie entwickelte App bereitet Einbürgerungsfragen so auf, dass man sie im Alltag üben kann. Sie funktioniert in elf Kantonen – auch im Aargau.</em></p>
+<p><strong>Darum geht es</strong></p>
+<ul><li>Eine App namens «Swiss Naturalization Test» bereitet Einbürgerungsfragen zum Üben auf.</li><li>Sie basiert im Aargau auf dem offiziellen Fragenkatalog mit knapp 330 Fragen zu Demokratie, Sozialstaat und Geschichte.</li><li>Die App ist gratis, offline nutzbar und kann in elf Kantonen verwendet werden.</li></ul>
+<p>Wer eingebürgert werden möchte, muss dafür Fragen beantworten. Nicht nur zur persönlichen Situation, sondern auch zur Schweiz, zum Kanton, zur Gemeinde. Die Rede ist vom staatsbürgerlichen Test. Im Aargau gibt es dafür bereits eine Online-Version mit einer Auswahl von Fragen zum Üben.</p>
+<p>Bisher war das eine eher trockene Angelegenheit. Eine App aus der Romandie will das ändern.</p>
+<p>Entwickelt hat sie Vincenzo Casini, 43 Jahre alt, Italiener, seit 2014 in der Schweiz und «AI Architect» bei der UEFA. Er hat die App während seines eigenen Einbürgerungsverfahrens programmiert. Bereits heute nutzen sie mehrere tausend Personen in der Schweiz.</p>
+<h2>Eine Gamifizierung der Einbürgerung</h2>
+<p>Die App «Swiss Naturalization Test» funktioniert für elf Schweizer Kantone. Einer davon ist der Aargau. Als Grundlage dient der offizielle Fragenkatalog des Kantons. Dieser umfasst knapp 330 Fragen zu Themen wie Demokratie, Sozialstaat oder Geschichte.</p>
+<p>Alternative Fragen oder Übungsmaterial findet man in der App nicht. Neu ist die nutzerfreundliche Aufbereitung des offiziellen Aargauer Fragenkatalogs.</p>
+<p>Die Anwendung bietet Smart Coaching, eine Online-Rangliste sowie einen Play-, Challenge- und Eroberungs-Modus. Mit anderen Worten: Ein Teil des Einbürgerungsprozesses wird gamifiziert.</p>
+<p>Ein Selbstversuch zeigt: Das macht tatsächlich mehr Spass, als 330 Fragen am Stück durchzuackern. Im RapidFire kann man Wahr-Falsch-Fragen zu allen Schweizer Kantonen beantworten. Wie viele korrekte Antworten schafft man in 60 Sekunden? Bei «Der Kanton Aargau trat 1332 der Eidgenossenschaft bei» dürften es viele Nicht-Aargauer auf gut Glück versuchen.</p>
+<h2>Auch Schweizer sollen die App nutzen</h2>
+<p>Alles ist gratis und auch offline nutzbar. Zusätzlich kann man Teil der Community werden und sich auf Social Media austauschen, denn «Gemeinsam lernt es sich besser.»</p>
+<p>Der Kanton Aargau scheint der App viel Positives abgewinnen zu können. Laut Entwickler Vincenzo Casini hat die Fachstelle Integration kürzlich ihr eigenes offizielles Material in die App integrieren lassen. «Meines Wissens ist der Aargau damit einer der ersten Kantone, dessen Integrationsstelle aktiv zu einem solchen kostenlosen Vorbereitungstool beiträgt», sagt er.</p>
+<p>Die App sei nicht nur für diejenigen gedacht, die gerade den Einbürgerungsprozess durchlaufen. Auch Schweizer Bürger wolle er ansprechen, sagt Casini. «Die Vorbereitung auf die Einbürgerung endet nicht am Tag der Prüfung: Man kann die Schweiz weiterhin kennenlernen und Spass daran haben.»</p>
+<h2>Bestehen Sie den Test?</h2>
+<p>Wer selbst testen möchte, ob er oder sie den Test bestehen würde, kann die App im iOS oder auf Google Play herunterladen. Alternativ können Sie sich am Einbürgerungstest dieser Zeitung versuchen, der ebenfalls auf dem offiziellen Fragenkatalog beruht.</p>
+</div></article><div class="orig"><a class="btn" href="https://www.badenertagblatt.ch/aargau/kanton-aargau/einbuergerungsfragen-per-app-ueben-fuer-den-schweizer-pass-ld.4204055" target="_blank" rel="noopener">Auf Badener Tagblatt lesen →</a></div><section class="block final"><div class="wrap"><h2 class="sec">Jetzt loslegen</h2><div class="stores"><a href="https://apps.apple.com/app/id6769993041" aria-label="App Store"><img class="apple" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store"></a><a href="https://play.google.com/store/apps/details?id=ch.vincedev.swisscitizenship" aria-label="Google Play"><img class="google" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Google Play"></a></div></div></section><footer class="site"><div class="wrap"><div class="fl"><a href="../landing.html">Start</a> &middot; <a href="../landing.html#press">Presse</a> &middot; <a href="../transparency.html">Transparenz</a> &middot; <a href="../privacy-policy.html">Datenschutz</a> &middot; <a href="../terms.html">Nutzungsbedingungen</a> &middot; <a href="../account-deletion.html">Datenlöschung</a> &middot; <a href="mailto:swisscitizenshiptest@gmail.com" onclick="return __contact(event)">Kontakt</a></div><p class="disc">Swiss Naturalization Test ist ein unabhängiger Lernbegleiter, entwickelt von Vincenzo Casini. Er ist mit keiner Regierungsbehörde verbunden. Für die offizielle Prüfung beziehen Sie sich stets auf die offizielle Plattform Ihres Kantons.</p></div></footer></div><div class="langblock" id="lb-it" hidden><article class="article"><a class="back" href="../landing.html#press">← Tutta la rassegna</a><p class="eyebrow">Se ne parla &middot; Badener Tagblatt &middot; Aargau</p><img class="ahero" src="https://chm-images-prd.forward-publishing.io/2021/9/10/63633807-e620-4d5a-b5c2-ed8a788f784a.jpeg?s=a7539439ac2604b0555e6d2e93c24686&w=1200&auto=compress%2Cformat" alt=""><div class="abody">
+<h2>Al passaporto svizzero con lo smartphone: questa app mette alla prova le tue conoscenze sulla naturalizzazione</h2>
+<p><em>Di Matthias Niederberger · 24.07.2026, ore 05.00</em></p>
+<p><em>Un'app sviluppata nella Svizzera romanda prepara le domande di naturalizzazione in modo da potersi esercitare nella vita di tutti i giorni. Funziona in undici cantoni – anche in Argovia.</em></p>
+<p><strong>Il punto</strong></p>
+<ul><li>Un'app chiamata «Swiss Naturalization Test» prepara le domande di naturalizzazione per esercitarsi.</li><li>In Argovia si basa sul catalogo ufficiale di quasi 330 domande su democrazia, stato sociale e storia.</li><li>L'app è gratuita, utilizzabile offline e può essere usata in undici cantoni.</li></ul>
+<p>Chi vuole essere naturalizzato deve rispondere a delle domande. Non solo sulla propria situazione personale, ma anche sulla Svizzera, sul cantone, sul comune. Si parla del test di educazione civica. In Argovia ne esiste già una versione online con una selezione di domande per esercitarsi.</p>
+<p>Finora era una faccenda piuttosto arida. Un'app proveniente dalla Svizzera romanda vuole cambiare le cose.</p>
+<p>L'ha sviluppata Vincenzo Casini, 43 anni, italiano, in Svizzera dal 2014 e «AI Architect» alla UEFA. Ha programmato l'app durante la sua stessa procedura di naturalizzazione. Già oggi la utilizzano diverse migliaia di persone in Svizzera.</p>
+<h2>Una gamificazione della naturalizzazione</h2>
+<p>L'app «Swiss Naturalization Test» funziona per undici cantoni svizzeri. Uno di questi è l'Argovia. Come base serve il catalogo ufficiale di domande del cantone. Comprende quasi 330 domande su temi come democrazia, stato sociale o storia.</p>
+<p>Nell'app non si trovano domande alternative o materiale di esercitazione. La novità è la presentazione intuitiva del catalogo ufficiale argoviese.</p>
+<p>L'applicazione offre uno smart coaching, una classifica online e una modalità Play, Challenge e Conquista. In altre parole: una parte del processo di naturalizzazione viene gamificata.</p>
+<p>Una prova personale lo dimostra: è davvero più divertente che sciropparsi 330 domande di fila. In RapidFire si può rispondere a domande vero/falso su tutti i cantoni svizzeri. Quante risposte corrette si riescono a dare in 60 secondi? Con «Il Canton Argovia entrò a far parte della Confederazione nel 1332» molti non argoviesi tenteranno probabilmente a caso.</p>
+<h2>Anche gli svizzeri dovrebbero usare l'app</h2>
+<p>Tutto è gratuito e utilizzabile anche offline. Inoltre ci si può unire alla community e scambiarsi opinioni sui social media, perché «insieme si impara meglio».</p>
+<p>Il Canton Argovia sembra trovare molti aspetti positivi nell'app. Secondo lo sviluppatore Vincenzo Casini, il Servizio per l'integrazione ha recentemente fatto integrare il proprio materiale ufficiale nell'app. «A mia conoscenza, l'Argovia è quindi uno dei primi cantoni il cui servizio per l'integrazione contribuisce attivamente a un simile strumento di preparazione gratuito», afferma.</p>
+<p>L'app non è pensata solo per chi sta affrontando la procedura di naturalizzazione, dice. Vuole rivolgersi anche ai cittadini svizzeri. «La preparazione alla naturalizzazione non finisce il giorno dell'esame: si può continuare a conoscere la Svizzera e a divertirsi.»</p>
+<h2>Supereresti il test?</h2>
+<p>Chi vuole verificare di persona se supererebbe il test può scaricare l'app su iOS o Google Play. In alternativa ci si può cimentare con il test di naturalizzazione di questo giornale, anch'esso basato sul catalogo ufficiale di domande.</p>
+</div></article><div class="orig"><a class="btn" href="https://www.badenertagblatt.ch/aargau/kanton-aargau/einbuergerungsfragen-per-app-ueben-fuer-den-schweizer-pass-ld.4204055" target="_blank" rel="noopener">Leggi su Badener Tagblatt →</a></div><section class="block final"><div class="wrap"><h2 class="sec">Inizia oggi</h2><div class="stores"><a href="https://apps.apple.com/app/id6769993041" aria-label="App Store"><img class="apple" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store"></a><a href="https://play.google.com/store/apps/details?id=ch.vincedev.swisscitizenship" aria-label="Google Play"><img class="google" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Google Play"></a></div></div></section><footer class="site"><div class="wrap"><div class="fl"><a href="../landing.html">Home</a> &middot; <a href="../landing.html#press">Stampa</a> &middot; <a href="../transparency.html">Trasparenza</a> &middot; <a href="../privacy-policy.html">Privacy</a> &middot; <a href="../terms.html">Condizioni</a> &middot; <a href="../account-deletion.html">Cancellazione dati</a> &middot; <a href="mailto:swisscitizenshiptest@gmail.com" onclick="return __contact(event)">Contatto</a></div><p class="disc">Swiss Naturalization Test è un compagno di studio indipendente sviluppato da Vincenzo Casini. Non è affiliato ad alcuna autorità governativa. Per il test ufficiale, fai sempre riferimento alla piattaforma ufficiale del tuo cantone.</p></div></footer></div>
+<script>
+(function(){
+  var LANGS=["en","fr","de","it"];
+  var NAV={en:{home:"Home",press:"Press",transp:"Transparency",privacy:"Privacy"},
+    fr:{home:"Accueil",press:"Presse",transp:"Transparence",privacy:"Confidentialité"},
+    de:{home:"Start",press:"Presse",transp:"Transparenz",privacy:"Datenschutz"},
+    it:{home:"Home",press:"Stampa",transp:"Trasparenza",privacy:"Privacy"}};
+  function apply(l){
+    if(LANGS.indexOf(l)<0)l="en";
+    document.documentElement.lang=l;
+    LANGS.forEach(function(x){var b=document.getElementById("lb-"+x);if(b)b.hidden=(x!==l);});
+    var n=NAV[l];
+    document.querySelectorAll("[data-nav]").forEach(function(a){a.textContent=n[a.getAttribute("data-nav")];});
+    document.querySelectorAll(".langs a").forEach(function(a){a.classList.toggle("on",a.getAttribute("data-lang")===l);});
+    var mn=document.getElementById("mnav");if(mn)mn.checked=false;
+    try{localStorage.setItem("snt_lang",l);}catch(e){}
+  }
+  window.__setLang=function(l){apply(l);window.scrollTo(0,0);return false;};
+  window.__contact=function(e){if(e&&e.preventDefault)e.preventDefault();
+    var m="swisscitizenshiptest@gmail.com",l=(document.documentElement.lang||"en").slice(0,2);
+    var M={en:"Contact: "+m+"\\n\\nOpen your email app to write to us?",
+      fr:"Contact : "+m+"\\n\\nOuvrir votre messagerie pour nous \\u00e9crire ?",
+      de:"Kontakt: "+m+"\\n\\nE-Mail-App \\u00f6ffnen, um uns zu schreiben?",
+      it:"Contatto: "+m+"\\n\\nAprire l'app di posta per scriverci?"};
+    try{if(navigator.clipboard)navigator.clipboard.writeText(m);}catch(_){}
+    if(window.confirm(M[l]||M.en))location.href="mailto:"+m;return false;};
+  var saved=null;try{saved=localStorage.getItem("snt_lang");}catch(e){}
+  var nl=(navigator.language||"en").slice(0,2).toLowerCase();
+  apply(saved||(LANGS.indexOf(nl)>=0?nl:"en"));
+})();
+</script>
+</body>
+</html>

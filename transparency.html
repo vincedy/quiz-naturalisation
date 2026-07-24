@@ -83,6 +83,43 @@
   </style>
 </head>
 <body>
+<style>
+/* injected shared header/footer (does not touch legal copy) */
+header.site{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid #e6ebf2;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+header.site .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+header.site .navbar{display:flex;align-items:center;gap:18px;height:64px}
+header.site .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.02rem;color:#141821;text-decoration:none;letter-spacing:-.02em}
+header.site .brand img{width:30px;height:30px;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,.15)}
+header.site nav.main{margin-left:auto;display:flex;align-items:center;gap:4px}
+header.site nav.main a.link{padding:8px 12px;border-radius:9px;font-weight:600;font-size:.93rem;color:#5a6472;text-decoration:none;cursor:pointer}
+header.site nav.main a.link:hover{background:#f6f8fb;color:#141821}
+header.site .langs{display:flex;gap:2px;margin-left:6px;padding-left:12px;border-left:1px solid #e6ebf2}
+header.site .langs a{font-size:.8rem;font-weight:700;color:#5a6472;padding:5px 9px;border-radius:999px;text-decoration:none;cursor:pointer}
+header.site .langs a.on,header.site .langs a:hover{background:#141821;color:#fff}
+#mnav{display:none}
+header.site .burger{margin-left:auto;display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
+header.site .burger span{width:24px;height:2px;background:#141821;border-radius:2px}
+@media(max-width:860px){header.site nav.main{position:fixed;inset:64px 0 auto 0;flex-direction:column;align-items:stretch;background:#fff;border-bottom:1px solid #e6ebf2;padding:12px 24px 20px;gap:6px;transform:translateY(-140%);transition:transform .25s;box-shadow:0 10px 30px rgba(16,24,40,.1)}#mnav:checked ~ .navbar nav.main{transform:translateY(0)}header.site .burger{display:flex}header.site .langs{margin:6px 0 0;padding:12px 0 0;border-left:0;border-top:1px solid #e6ebf2;justify-content:center}}
+footer.site{background:#0d1426;color:#9fb0cc;padding:34px 24px;text-align:center;font-size:.9rem;margin-top:44px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+footer.site a{color:#cdd9ee;text-decoration:none;margin:0 8px;font-weight:600}
+footer.site a:hover{text-decoration:underline}
+body>.lang-nav{display:none!important}
+/* free the injected header/footer from the legal page's centered column, then re-center just the content */
+body{max-width:none!important;margin:0!important;padding:0!important}
+body>section{max-width:840px;margin-left:auto!important;margin-right:auto!important;padding-left:24px;padding-right:24px}
+section[id]{scroll-margin-top:78px}
+</style>
+<header class="site"><input type="checkbox" id="mnav"><div class="wrap navbar">
+<a class="brand" href="landing.html"><img src="app/icon.png" alt="">Swiss Naturalization Test</a>
+<label class="burger" for="mnav" aria-label="Menu"><span></span><span></span><span></span></label>
+<nav class="main">
+<a class="link" data-nav="home" href="landing.html">Home</a>
+<a class="link" data-nav="press" href="landing.html#press">Press</a>
+<a class="link" data-nav="transp" href="transparency.html">Transparency</a>
+<a class="link" data-nav="privacy" href="privacy-policy.html">Privacy</a>
+<a class="link" data-nav="terms" href="terms.html">Terms</a>
+<span class="langs"><a data-lang="en" href="#en">EN</a><a data-lang="fr" href="#fr">FR</a><a data-lang="de" href="#de">DE</a><a data-lang="it" href="#it">IT</a></span>
+</nav></div></header>
   <div class="lang-nav">
     <a href="#en">English</a>
     <a href="#fr">Français</a>
@@ -485,5 +522,39 @@
 
     <div class="footer-note"><strong>Nota per le istituzioni:</strong> se rappresenti un ufficio cantonale o comunale di naturalizzazione e vuoi verificare il log di audit o discutere di come questa app fa riferimento al catalogo del tuo cantone, contattaci all'indirizzo sopra. Siamo lieti di dimostrare la pipeline in diretta, condividere il log di audit per il tuo cantone e documentare qualsiasi adattamento di formulazione tu richieda.</div>
   </section>
+<footer class="site">
+<a data-nav="home" href="landing.html">Home</a>&middot;<a data-nav="press" href="landing.html#press">Press</a>&middot;<a data-nav="transp" href="transparency.html">Transparency</a>&middot;<a data-nav="privacy" href="privacy-policy.html">Privacy</a>&middot;<a data-nav="terms" href="terms.html">Terms</a>&middot;<a data-nav="del" href="account-deletion.html">Data deletion</a>&middot;<a data-nav="contact" href="mailto:swisscitizenshiptest@gmail.com" onclick="return __contact(event)">Contact</a>
+</footer>
+<script>
+(function(){
+  var L=["en","fr","de","it"];
+  var T={
+    en:{home:"Home",press:"Press",transp:"Transparency",privacy:"Privacy",terms:"Terms",del:"Data deletion",contact:"Contact"},
+    fr:{home:"Accueil",press:"Presse",transp:"Transparence",privacy:"Confidentialit\u00e9",terms:"Conditions",del:"Suppression des donn\u00e9es",contact:"Contact"},
+    de:{home:"Start",press:"Presse",transp:"Transparenz",privacy:"Datenschutz",terms:"Nutzungsbedingungen",del:"Datenl\u00f6schung",contact:"Kontakt"},
+    it:{home:"Home",press:"Stampa",transp:"Trasparenza",privacy:"Privacy",terms:"Condizioni",del:"Cancellazione dati",contact:"Contatto"}
+  };
+  function cur(){var h=location.hash.replace("#","");if(L.indexOf(h)>=0)return h;var s=null;try{s=localStorage.getItem("snt_lang");}catch(e){}return L.indexOf(s)>=0?s:"en";}
+  function paint(){var l=cur(),n=T[l];
+    document.documentElement.lang=l;
+    document.querySelectorAll("[data-nav]").forEach(function(a){var k=a.getAttribute("data-nav");if(n[k])a.textContent=n[k];});
+    document.querySelectorAll(".langs a").forEach(function(a){a.classList.toggle("on",a.getAttribute("data-lang")===l);});
+    var mn=document.getElementById("mnav");if(mn)mn.checked=false;
+    try{localStorage.setItem("snt_lang",l);}catch(e){}
+  }
+  window.__contact=function(e){if(e&&e.preventDefault)e.preventDefault();
+    var m="swisscitizenshiptest@gmail.com",l=(document.documentElement.lang||"en").slice(0,2);
+    var M={en:"Contact: "+m+"\n\nOpen your email app to write to us?",
+      fr:"Contact : "+m+"\n\nOuvrir votre messagerie pour nous \u00e9crire ?",
+      de:"Kontakt: "+m+"\n\nE-Mail-App \u00f6ffnen, um uns zu schreiben?",
+      it:"Contatto: "+m+"\n\nAprire l'app di posta per scriverci?"};
+    try{if(navigator.clipboard)navigator.clipboard.writeText(m);}catch(_){}
+    if(window.confirm(M[l]||M.en))location.href="mailto:"+m;return false;};
+  var h=location.hash.replace("#","");
+  if(L.indexOf(h)<0){var s=null;try{s=localStorage.getItem("snt_lang");}catch(e){}if(L.indexOf(s)>=0)location.hash=s;}
+  paint();
+  window.addEventListener("hashchange",paint);
+})();
+</script>
 </body>
 </html>
