@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>watson — Swiss Naturalization Test</title>
+<meta name="description" content="watson covers Swiss Naturalization Test — practise the official Swiss naturalization questions in a free app.">
+<meta property="og:title" content="watson">
+<meta property="og:description" content="watson covers Swiss Naturalization Test — practise the official Swiss naturalization questions in a free app.">
+<link rel="icon" href="../app/icon.png">
+<style>
+  :root{--ink:#141821;--muted:#5a6472;--bg:#fff;--soft:#f6f8fb;--border:#e6ebf2;--red:#DA291C;--red-d:#b31f14;--navy:#0d1426;--shadow:0 10px 30px rgba(16,24,40,.10);--radius:16px;--font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font);color:var(--ink);margin:0;line-height:1.65;background:var(--bg);-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+  h1,h2,h3{letter-spacing:-.02em;line-height:1.2}
+  header.site{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid var(--border)}
+  .navbar{display:flex;align-items:center;gap:18px;height:64px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.02rem;letter-spacing:-.02em}
+  .brand img{width:30px;height:30px;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,.15)}
+  nav.main{margin-left:auto;display:flex;align-items:center;gap:4px}
+  nav.main a.link{padding:8px 12px;border-radius:9px;font-weight:600;font-size:.93rem;color:var(--muted);cursor:pointer}
+  nav.main a.link:hover{background:var(--soft);color:var(--ink)}
+  .langs{display:flex;gap:2px;margin-left:6px;padding-left:12px;border-left:1px solid var(--border)}
+  .langs a{font-size:.8rem;font-weight:700;color:var(--muted);padding:5px 9px;border-radius:999px;cursor:pointer}
+  .langs a.on,.langs a:hover{background:var(--ink);color:#fff}
+  #mnav{display:none}
+  .burger{margin-left:auto;display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
+  .burger span{width:24px;height:2px;background:var(--ink);border-radius:2px}
+  @media(max-width:860px){nav.main{position:fixed;inset:64px 0 auto 0;flex-direction:column;align-items:stretch;background:#fff;border-bottom:1px solid var(--border);padding:12px 24px 20px;gap:6px;transform:translateY(-140%);transition:transform .25s ease;box-shadow:var(--shadow)}#mnav:checked ~ .navbar nav.main{transform:translateY(0)}.burger{display:flex}nav.main a.link{padding:12px 10px;font-size:1rem}.langs{margin:6px 0 0;padding:12px 0 0;border-left:0;border-top:1px solid var(--border);justify-content:center}}
+  /* article */
+  .article{max-width:720px;margin:0 auto;padding:34px 24px 8px}
+  .back{display:inline-block;color:var(--muted);font-weight:600;font-size:.9rem;margin-bottom:18px;cursor:pointer}
+  .back:hover{color:var(--red)}
+  .eyebrow{color:var(--red);font-weight:800;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;margin:0 0 14px}
+  .ahero{width:100%;border-radius:18px;border:1px solid var(--border);box-shadow:var(--shadow);margin:0 0 26px;display:block;aspect-ratio:16/10;object-fit:cover;background:var(--navy)}
+  .abody{font-size:1.06rem;color:#2a3140}
+  .abody p{margin:0 0 18px}
+  .abody h2{font-size:1.45rem;margin:34px 0 12px}
+  .abody h3{font-size:1.12rem;margin:26px 0 8px}
+  .abody em{color:var(--muted)}
+  .abody strong{color:var(--ink)}
+  .abody ul{margin:0 0 18px;padding-left:20px}
+  .abody li{margin:6px 0}
+  .abody a{color:var(--red);font-weight:600;text-decoration:underline}
+  .abody hr{border:0;border-top:1px solid var(--border);margin:26px 0}
+  .abody blockquote{margin:22px 0;padding:14px 20px;border-left:3px solid var(--red);background:var(--soft);border-radius:0 12px 12px 0;color:#2a3140}
+  .abody blockquote em{color:#2a3140}
+  .orig{max-width:720px;margin:8px auto 0;padding:22px 24px 4px;text-align:center}
+  .btn{display:inline-block;background:var(--red);color:#fff;font-weight:700;padding:12px 22px;border-radius:999px;box-shadow:0 8px 18px rgba(218,41,28,.28)}
+  .btn:hover{background:var(--red-d)}
+  .orignote{display:block;margin-top:10px;font-size:.84rem;color:var(--muted)}
+  section.block{padding:50px 0}
+  .final{text-align:center}
+  h2.sec{font-size:1.5rem;text-align:center;margin:0 0 26px;font-weight:800}
+  .stores{display:flex;gap:14px;justify-content:center;align-items:center;flex-wrap:wrap}
+  .stores img.apple{height:50px}.stores img.google{height:74px;margin:-12px 0}
+  footer.site{background:var(--navy);color:#9fb0cc;padding:44px 24px;text-align:center;font-size:.92rem;position:static;border:0}
+  footer.site a{color:#cdd9ee}
+  footer.site .fl{margin-bottom:14px}
+  footer.site .fl a{margin:0 8px;font-weight:600;cursor:pointer}
+  footer.site .disc{max-width:680px;margin:0 auto;font-size:.82rem;color:#7f90ad}
+</style>
+</head>
+<body>
+<header class="site"><input type="checkbox" id="mnav"><div class="wrap navbar"><a class="brand" href="../landing.html"><img src="../app/icon.png" alt="">Swiss Naturalization Test</a><label class="burger" for="mnav" aria-label="Menu"><span></span><span></span><span></span></label><nav class="main"><a class="link" data-nav="home" href="../landing.html">Home</a><a class="link" data-nav="press" href="../landing.html#press">Press</a><a class="link" data-nav="transp" href="../transparency.html">Transparency</a><a class="link" data-nav="privacy" href="../privacy-policy.html">Privacy</a><span class="langs"><a data-lang="en" href="#" onclick="return __setLang('en')">EN</a><a data-lang="fr" href="#" onclick="return __setLang('fr')">FR</a><a data-lang="de" href="#" onclick="return __setLang('de')">DE</a><a data-lang="it" href="#" onclick="return __setLang('it')">IT</a></span></nav></div></header>
+<div class="langblock" id="lb-en"><article class="article"><a class="back" href="../landing.html#press">← All coverage</a><p class="eyebrow">In the press &middot; watson</p><img class="ahero" src="https://www.watson.ch/fr/imgdb/be83/Qx,A,0,24,2000,1125,1043,664,213,189/8248851515718932" alt=""><div class="abody">
+<h2>Do you deserve the Swiss passport? This app reveals it</h2>
+<p><em>By Matthias Niederberger · 24 July 2026</em></p>
+<p><em>An app developed in French-speaking Switzerland presents the naturalization questions in a form you can practise every day.</em></p>
+<p>Anyone wishing to obtain Swiss nationality has to answer a series of questions. They cover not only their personal situation, but also Switzerland, their canton and their commune. This is the civic knowledge test. Until now, the exercise had a rather austere character. An app developed in French-speaking Switzerland intends to change that.</p>
+<p>Its creator, Vincenzo Casini, 43, is Italian. Living in Switzerland since 2014, he works as an "AI Architect" at UEFA. He designed this app during his own naturalization procedure. Already today, several thousand people use it in Switzerland.</p>
+<p>The Swiss Naturalization Test app is based on the canton's official question catalogue, which comprises nearly 330 questions devoted in particular to democracy, the welfare state or history.</p>
+<p>The app offers neither alternative questions nor additional practice material. Its novelty lies in its more user-friendly presentation. It offers in particular a Smart Coaching system, an online leaderboard as well as various game modes: Play, Rapid Fire, Challenge and Conquest, or Tandem. In other words, part of the naturalization process is turned into a playful experience.</p>
+<p>A test carried out by our editorial team shows that this approach is indeed more pleasant than going through the 330 questions in one go. In RapidFire mode, you have to answer true-or-false questions covering all the Swiss cantons. How many correct answers can you give in 60 seconds?</p>
+<p>The app is entirely free and can also be used offline. Users can also join a community and exchange on social media, because "we learn better together".</p>
+<p>The app is not aimed solely at people going through a naturalization procedure. Vincenzo Casini also wants to reach Swiss citizens:</p>
+<blockquote><em>"Preparing for naturalization doesn't stop on exam day: you can keep discovering Switzerland and enjoying it."</em></blockquote>
+<p>Those who want to check whether they would pass the exam can download the app on iOS or Google Play.</p>
+</div></article><div class="orig"><a class="btn" href="https://www.watson.ch/fr/suisse/application/196161199-cette-appli-permet-de-s-entrainer-pour-la-naturalisation-suisse" target="_blank" rel="noopener">Read on watson →</a></div><section class="block final"><div class="wrap"><h2 class="sec">Start preparing today</h2><div class="stores"><a href="https://apps.apple.com/app/id6769993041" aria-label="App Store"><img class="apple" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store"></a><a href="https://play.google.com/store/apps/details?id=ch.vincedev.swisscitizenship" aria-label="Google Play"><img class="google" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Google Play"></a></div></div></section><footer class="site"><div class="wrap"><div class="fl"><a href="../landing.html">Home</a> &middot; <a href="../landing.html#press">Press</a> &middot; <a href="../transparency.html">Transparency</a> &middot; <a href="../privacy-policy.html">Privacy</a> &middot; <a href="../terms.html">Terms</a> &middot; <a href="../account-deletion.html">Data deletion</a> &middot; <a href="mailto:swisscitizenshiptest@gmail.com" onclick="return __contact(event)">Contact</a></div><p class="disc">Swiss Naturalization Test is an independent study companion developed by Vincenzo Casini. It is not affiliated with any government authority. For the official test, always refer to your canton's official platform.</p></div></footer></div><div class="langblock" id="lb-fr" hidden><article class="article"><a class="back" href="../landing.html#press">← Toute la revue de presse</a><p class="eyebrow">On en parle &middot; watson</p><img class="ahero" src="https://www.watson.ch/fr/imgdb/be83/Qx,A,0,24,2000,1125,1043,664,213,189/8248851515718932" alt=""><div class="abody">
+<h2>Méritez-vous le passeport suisse ? Cette appli le révèle</h2>
+<p><em>Par Matthias Niederberger · 24.07.2026</em></p>
+<p><em>Une application développée en Suisse romande présente les questions de naturalisation sous une forme qui permet de s'entraîner au quotidien.</em></p>
+<p>Toute personne souhaitant obtenir la nationalité suisse doit répondre à une série de questions. Elles portent non seulement sur sa situation personnelle, mais aussi sur la Suisse, son canton et sa commune. C'est le test de connaissances civiques. Jusqu'ici, l'exercice avait plutôt un caractère austère. Une application développée en Suisse romande entend changer la donne.</p>
+<p>Son créateur, Vincenzo Casini, 43 ans, est Italien. Installé en Suisse depuis 2014, il travaille comme « AI Architect » à l'UEFA. Il a conçu cette application durant sa propre procédure de naturalisation. Aujourd'hui déjà, plusieurs milliers de personnes l'utilisent en Suisse.</p>
+<p>L'application Swiss Naturalization Test repose sur le catalogue officiel de questions du canton, qui comprend près de 330 questions consacrées notamment à la démocratie, à l'Etat social ou encore à l'histoire.</p>
+<p>L'application ne propose ni questions alternatives ni matériel d'entraînement supplémentaire. Sa nouveauté réside dans sa présentation plus conviviale. Elle offre notamment un système de Smart Coaching, un classement en ligne ainsi que différents modes de jeu : Jouer, Rapid Fire, Challenge et Conquête ou encore Tandem. Autrement dit, une partie du processus de naturalisation est transformée en expérience ludique.</p>
+<p>Un essai réalisé par notre rédaction montre que cette approche est effectivement plus agréable que d'enchaîner les 330 questions d'une traite. En mode RapidFire, il faut répondre à des questions vrai ou faux portant sur tous les cantons suisses. Combien de bonnes réponses pouvez-vous donner en 60 secondes ?</p>
+<p>L'application est entièrement gratuite et peut également être utilisée hors ligne. Les utilisateurs peuvent en outre rejoindre une communauté et échanger sur les réseaux sociaux, car « on apprend mieux ensemble ».</p>
+<p>L'application ne s'adresse pas uniquement aux personnes engagées dans une procédure de naturalisation. Vincenzo Casini souhaite aussi toucher les citoyens suisses :</p>
+<blockquote><em>« La préparation à la naturalisation ne s'arrête pas le jour de l'examen : on peut continuer à découvrir la Suisse et à y prendre plaisir. »</em></blockquote>
+<p>Celles et ceux qui souhaitent vérifier s'ils réussiraient l'examen peuvent télécharger l'application sur iOS ou Google Play.</p>
+</div></article><div class="orig"><a class="btn" href="https://www.watson.ch/fr/suisse/application/196161199-cette-appli-permet-de-s-entrainer-pour-la-naturalisation-suisse" target="_blank" rel="noopener">Lire sur watson →</a></div><section class="block final"><div class="wrap"><h2 class="sec">Commencez dès aujourd'hui</h2><div class="stores"><a href="https://apps.apple.com/app/id6769993041" aria-label="App Store"><img class="apple" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store"></a><a href="https://play.google.com/store/apps/details?id=ch.vincedev.swisscitizenship" aria-label="Google Play"><img class="google" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Google Play"></a></div></div></section><footer class="site"><div class="wrap"><div class="fl"><a href="../landing.html">Accueil</a> &middot; <a href="../landing.html#press">Presse</a> &middot; <a href="../transparency.html">Transparence</a> &middot; <a href="../privacy-policy.html">Confidentialité</a> &middot; <a href="../terms.html">Conditions</a> &middot; <a href="../account-deletion.html">Suppression des données</a> &middot; <a href="mailto:swisscitizenshiptest@gmail.com" onclick="return __contact(event)">Contact</a></div><p class="disc">Swiss Naturalization Test est un compagnon d'étude indépendant développé par Vincenzo Casini. Il n'est affilié à aucune autorité gouvernementale. Pour le test officiel, référez-vous toujours à la plateforme officielle de votre canton.</p></div></footer></div><div class="langblock" id="lb-de" hidden><article class="article"><a class="back" href="../landing.html#press">← Zur Presse-Übersicht</a><p class="eyebrow">In der Presse &middot; watson</p><img class="ahero" src="https://www.watson.ch/fr/imgdb/be83/Qx,A,0,24,2000,1125,1043,664,213,189/8248851515718932" alt=""><div class="abody">
+<h2>Verdienen Sie den Schweizer Pass? Diese App verrät es</h2>
+<p><em>Von Matthias Niederberger · 24.07.2026</em></p>
+<p><em>Eine in der Westschweiz entwickelte App bereitet die Einbürgerungsfragen so auf, dass man sie im Alltag üben kann.</em></p>
+<p>Wer die Schweizer Staatsbürgerschaft erlangen möchte, muss eine Reihe von Fragen beantworten. Sie betreffen nicht nur die persönliche Situation, sondern auch die Schweiz, den Kanton und die Gemeinde. Das ist der staatsbürgerliche Test. Bisher war die Übung eine eher trockene Angelegenheit. Eine in der Westschweiz entwickelte App will das ändern.</p>
+<p>Ihr Schöpfer, Vincenzo Casini, 43, ist Italiener. Seit 2014 in der Schweiz, arbeitet er als «AI Architect» bei der UEFA. Er hat diese App während seines eigenen Einbürgerungsverfahrens entwickelt. Schon heute nutzen sie mehrere tausend Personen in der Schweiz.</p>
+<p>Die App Swiss Naturalization Test beruht auf dem offiziellen Fragenkatalog des Kantons, der knapp 330 Fragen umfasst, die sich unter anderem der Demokratie, dem Sozialstaat oder der Geschichte widmen.</p>
+<p>Die App bietet weder alternative Fragen noch zusätzliches Übungsmaterial. Ihre Neuheit liegt in ihrer benutzerfreundlicheren Aufbereitung. Sie bietet insbesondere ein Smart-Coaching-System, eine Online-Rangliste sowie verschiedene Spielmodi: Play, Rapid Fire, Challenge und Eroberung oder auch Tandem. Mit anderen Worten: Ein Teil des Einbürgerungsprozesses wird in ein spielerisches Erlebnis verwandelt.</p>
+<p>Ein Versuch unserer Redaktion zeigt, dass dieser Ansatz tatsächlich angenehmer ist, als die 330 Fragen am Stück durchzugehen. Im RapidFire-Modus muss man Wahr-oder-Falsch-Fragen zu allen Schweizer Kantonen beantworten. Wie viele richtige Antworten schaffen Sie in 60 Sekunden?</p>
+<p>Die App ist vollständig gratis und kann auch offline genutzt werden. Die Nutzer können ausserdem einer Community beitreten und sich in den sozialen Medien austauschen, denn «gemeinsam lernt es sich besser».</p>
+<p>Die App richtet sich nicht nur an Personen, die sich in einem Einbürgerungsverfahren befinden. Vincenzo Casini möchte auch die Schweizer Bürgerinnen und Bürger ansprechen:</p>
+<blockquote><em>«Die Vorbereitung auf die Einbürgerung endet nicht am Prüfungstag: Man kann die Schweiz weiter entdecken und Freude daran haben.»</em></blockquote>
+<p>Wer überprüfen möchte, ob er oder sie die Prüfung bestehen würde, kann die App im iOS oder auf Google Play herunterladen.</p>
+</div></article><div class="orig"><a class="btn" href="https://www.watson.ch/fr/suisse/application/196161199-cette-appli-permet-de-s-entrainer-pour-la-naturalisation-suisse" target="_blank" rel="noopener">Auf watson lesen →</a></div><section class="block final"><div class="wrap"><h2 class="sec">Jetzt loslegen</h2><div class="stores"><a href="https://apps.apple.com/app/id6769993041" aria-label="App Store"><img class="apple" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store"></a><a href="https://play.google.com/store/apps/details?id=ch.vincedev.swisscitizenship" aria-label="Google Play"><img class="google" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Google Play"></a></div></div></section><footer class="site"><div class="wrap"><div class="fl"><a href="../landing.html">Start</a> &middot; <a href="../landing.html#press">Presse</a> &middot; <a href="../transparency.html">Transparenz</a> &middot; <a href="../privacy-policy.html">Datenschutz</a> &middot; <a href="../terms.html">Nutzungsbedingungen</a> &middot; <a href="../account-deletion.html">Datenlöschung</a> &middot; <a href="mailto:swisscitizenshiptest@gmail.com" onclick="return __contact(event)">Kontakt</a></div><p class="disc">Swiss Naturalization Test ist ein unabhängiger Lernbegleiter, entwickelt von Vincenzo Casini. Er ist mit keiner Regierungsbehörde verbunden. Für die offizielle Prüfung beziehen Sie sich stets auf die offizielle Plattform Ihres Kantons.</p></div></footer></div><div class="langblock" id="lb-it" hidden><article class="article"><a class="back" href="../landing.html#press">← Tutta la rassegna</a><p class="eyebrow">Se ne parla &middot; watson</p><img class="ahero" src="https://www.watson.ch/fr/imgdb/be83/Qx,A,0,24,2000,1125,1043,664,213,189/8248851515718932" alt=""><div class="abody">
+<h2>Meriti il passaporto svizzero? Questa app te lo rivela</h2>
+<p><em>Di Matthias Niederberger · 24.07.2026</em></p>
+<p><em>Un'app sviluppata nella Svizzera romanda presenta le domande di naturalizzazione in una forma con cui ci si può esercitare ogni giorno.</em></p>
+<p>Chiunque desideri ottenere la nazionalità svizzera deve rispondere a una serie di domande. Riguardano non solo la propria situazione personale, ma anche la Svizzera, il proprio cantone e il proprio comune. È il test di conoscenze civiche. Finora l'esercizio aveva un carattere piuttosto austero. Un'app sviluppata nella Svizzera romanda intende cambiare le carte in tavola.</p>
+<p>Il suo creatore, Vincenzo Casini, 43 anni, è italiano. In Svizzera dal 2014, lavora come «AI Architect» alla UEFA. Ha ideato questa app durante la sua stessa procedura di naturalizzazione. Già oggi diverse migliaia di persone la utilizzano in Svizzera.</p>
+<p>L'app Swiss Naturalization Test si basa sul catalogo ufficiale di domande del cantone, che comprende quasi 330 domande dedicate in particolare alla democrazia, allo stato sociale o alla storia.</p>
+<p>L'app non propone né domande alternative né materiale di esercitazione aggiuntivo. La sua novità sta nella presentazione più intuitiva. Offre in particolare un sistema di Smart Coaching, una classifica online e diverse modalità di gioco: Play, Rapid Fire, Challenge e Conquista o anche Tandem. In altre parole, una parte del processo di naturalizzazione viene trasformata in un'esperienza ludica.</p>
+<p>Una prova realizzata dalla nostra redazione mostra che questo approccio è effettivamente più piacevole che affrontare le 330 domande tutte d'un fiato. In modalità RapidFire bisogna rispondere a domande vero o falso su tutti i cantoni svizzeri. Quante risposte corrette riuscite a dare in 60 secondi?</p>
+<p>L'app è del tutto gratuita e può essere utilizzata anche offline. Gli utenti possono inoltre unirsi a una community e scambiarsi opinioni sui social media, perché «insieme si impara meglio».</p>
+<p>L'app non si rivolge solo a chi è impegnato in una procedura di naturalizzazione. Vincenzo Casini vuole rivolgersi anche ai cittadini svizzeri:</p>
+<blockquote><em>«La preparazione alla naturalizzazione non si ferma il giorno dell'esame: si può continuare a scoprire la Svizzera e a divertirsi.»</em></blockquote>
+<p>Chi vuole verificare se supererebbe l'esame può scaricare l'app su iOS o Google Play.</p>
+</div></article><div class="orig"><a class="btn" href="https://www.watson.ch/fr/suisse/application/196161199-cette-appli-permet-de-s-entrainer-pour-la-naturalisation-suisse" target="_blank" rel="noopener">Leggi su watson →</a></div><section class="block final"><div class="wrap"><h2 class="sec">Inizia oggi</h2><div class="stores"><a href="https://apps.apple.com/app/id6769993041" aria-label="App Store"><img class="apple" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store"></a><a href="https://play.google.com/store/apps/details?id=ch.vincedev.swisscitizenship" aria-label="Google Play"><img class="google" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Google Play"></a></div></div></section><footer class="site"><div class="wrap"><div class="fl"><a href="../landing.html">Home</a> &middot; <a href="../landing.html#press">Stampa</a> &middot; <a href="../transparency.html">Trasparenza</a> &middot; <a href="../privacy-policy.html">Privacy</a> &middot; <a href="../terms.html">Condizioni</a> &middot; <a href="../account-deletion.html">Cancellazione dati</a> &middot; <a href="mailto:swisscitizenshiptest@gmail.com" onclick="return __contact(event)">Contatto</a></div><p class="disc">Swiss Naturalization Test è un compagno di studio indipendente sviluppato da Vincenzo Casini. Non è affiliato ad alcuna autorità governativa. Per il test ufficiale, fai sempre riferimento alla piattaforma ufficiale del tuo cantone.</p></div></footer></div>
+<script>
+(function(){
+  var LANGS=["en","fr","de","it"];
+  var NAV={en:{home:"Home",press:"Press",transp:"Transparency",privacy:"Privacy"},
+    fr:{home:"Accueil",press:"Presse",transp:"Transparence",privacy:"Confidentialité"},
+    de:{home:"Start",press:"Presse",transp:"Transparenz",privacy:"Datenschutz"},
+    it:{home:"Home",press:"Stampa",transp:"Trasparenza",privacy:"Privacy"}};
+  function apply(l){
+    if(LANGS.indexOf(l)<0)l="en";
+    document.documentElement.lang=l;
+    LANGS.forEach(function(x){var b=document.getElementById("lb-"+x);if(b)b.hidden=(x!==l);});
+    var n=NAV[l];
+    document.querySelectorAll("[data-nav]").forEach(function(a){a.textContent=n[a.getAttribute("data-nav")];});
+    document.querySelectorAll(".langs a").forEach(function(a){a.classList.toggle("on",a.getAttribute("data-lang")===l);});
+    var mn=document.getElementById("mnav");if(mn)mn.checked=false;
+    try{localStorage.setItem("snt_lang",l);}catch(e){}
+  }
+  window.__setLang=function(l){apply(l);window.scrollTo(0,0);return false;};
+  window.__contact=function(e){if(e&&e.preventDefault)e.preventDefault();
+    var m="swisscitizenshiptest@gmail.com",l=(document.documentElement.lang||"en").slice(0,2);
+    var M={en:"Contact: "+m+"\\n\\nOpen your email app to write to us?",
+      fr:"Contact : "+m+"\\n\\nOuvrir votre messagerie pour nous \\u00e9crire ?",
+      de:"Kontakt: "+m+"\\n\\nE-Mail-App \\u00f6ffnen, um uns zu schreiben?",
+      it:"Contatto: "+m+"\\n\\nAprire l'app di posta per scriverci?"};
+    try{if(navigator.clipboard)navigator.clipboard.writeText(m);}catch(_){}
+    if(window.confirm(M[l]||M.en))location.href="mailto:"+m;return false;};
+  var saved=null;try{saved=localStorage.getItem("snt_lang");}catch(e){}
+  var nl=(navigator.language||"en").slice(0,2).toLowerCase();
+  apply(saved||(LANGS.indexOf(nl)>=0?nl:"en"));
+})();
+</script>
+</body>
+</html>
