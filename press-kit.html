@@ -61,7 +61,7 @@
     <label class="burger" for="mnav" aria-label="Menu"><span></span><span></span><span></span></label>
     <nav class="main">
       <a class="link" data-nav="home" href="landing.html">Home</a>
-      <a class="link" data-nav="press" href="landing.html#press">Press</a>
+      <a class="link" data-nav="press" href="landing.html#press">Press</a><a class="link" data-nav="presskit" href="press-kit.html">Press kit</a>
       <a class="link" data-nav="transp" href="transparency.html">Transparency</a>
       <a class="link" data-nav="privacy" href="privacy-policy.html">Privacy</a>
       <span class="langs"><a data-lang="en" href="#" onclick="return __setLang('en')">EN</a><a data-lang="fr" href="#" onclick="return __setLang('fr')">FR</a><a data-lang="de" href="#" onclick="return __setLang('de')">DE</a><a data-lang="it" href="#" onclick="return __setLang('it')">IT</a></span>
@@ -276,10 +276,10 @@
 <script>
 (function(){
   var LANGS=["en","fr","de","it"];
-  var NAV={en:{home:"Home",press:"Press",transp:"Transparency",privacy:"Privacy"},
-    fr:{home:"Accueil",press:"Presse",transp:"Transparence",privacy:"Confidentialit\u00e9"},
-    de:{home:"Start",press:"Presse",transp:"Transparenz",privacy:"Datenschutz"},
-    it:{home:"Home",press:"Stampa",transp:"Trasparenza",privacy:"Privacy"}};
+  var NAV={en:{home:"Home",press:"Press",presskit:"Press kit",transp:"Transparency",privacy:"Privacy"},
+    fr:{home:"Accueil",press:"Presse",presskit:"Dossier de presse",transp:"Transparence",privacy:"Confidentialit\u00e9"},
+    de:{home:"Start",press:"Presse",presskit:"Pressemappe",transp:"Transparenz",privacy:"Datenschutz"},
+    it:{home:"Home",press:"Stampa",presskit:"Press kit",transp:"Trasparenza",privacy:"Privacy"}};
   function apply(l){if(LANGS.indexOf(l)<0)l="en";document.documentElement.lang=l;
     LANGS.forEach(function(x){var b=document.getElementById("lb-"+x);if(b)b.hidden=(x!==l);});
     var n=NAV[l];document.querySelectorAll("[data-nav]").forEach(function(a){a.textContent=n[a.getAttribute("data-nav")];});
