@@ -63,12 +63,14 @@
   .eyebrow{text-align:center;color:var(--red);font-weight:800;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;margin:0 0 8px}
   h2.sec{font-size:1.7rem;text-align:center;margin:0 0 34px;font-weight:800}
 
-  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-  .card{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:24px 22px;transition:.18s}
-  .card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:#d7dfea}
-  .card .chip{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;background:linear-gradient(135deg,#fff0ef,#ffe2df);margin-bottom:14px}
-  .card .t{font-weight:750;font-size:1.05rem;margin-bottom:5px}
-  .card .d{font-size:.93rem;color:var(--muted)}
+  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:20px;overflow:hidden}
+  .card{background:var(--bg);padding:26px 22px;transition:background .18s}
+  .card:hover{background:var(--soft)}
+  .card .chip{width:34px;height:34px;color:var(--red);margin-bottom:14px}
+  .card .chip svg{width:34px;height:34px;stroke:currentColor;stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+  .card .t{font-weight:750;font-size:1.02rem;letter-spacing:-.01em;margin-bottom:4px}
+  .card .d{font-size:.9rem;color:var(--muted);line-height:1.5}
+  .subwhy{text-align:center;color:var(--muted);margin:-26px auto 34px;max-width:560px}
 
   .gallery{background:var(--soft);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
   .shots{display:flex;gap:14px;overflow-x:auto;padding:8px 2px 14px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
@@ -103,6 +105,35 @@
 
   @media(max-width:760px){.hero h1{font-size:2rem}.grid{grid-template-columns:1fr 1fr}h2.sec{font-size:1.4rem}}
   @media(max-width:460px){.grid{grid-template-columns:1fr}}
+  .modegrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:20px;overflow:hidden}
+  .mode{background:var(--bg);padding:28px 24px;transition:background .18s}
+  .mode:hover{background:var(--soft)}
+  .mode .ic{width:32px;height:32px;color:var(--red);margin-bottom:14px}
+  .mode .ic svg{width:32px;height:32px;stroke:currentColor;stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+  .mode .t{font-weight:750;font-size:1.08rem;letter-spacing:-.01em;margin-bottom:5px}
+  .mode .d{font-size:.92rem;color:var(--muted);line-height:1.5}
+  @media(max-width:760px){.modegrid{grid-template-columns:1fr 1fr}}
+  @media(max-width:460px){.modegrid{grid-template-columns:1fr}}
+  .statband{background:var(--soft);border-bottom:1px solid var(--border)}
+  .statband .row{display:flex;flex-wrap:wrap;justify-content:center;padding:22px 0}
+  .stat{flex:1 1 0;min-width:120px;text-align:center;padding:8px 14px;border-right:1px solid var(--border)}
+  .stat:last-child{border-right:0}
+  .stat .n{font-size:1.7rem;font-weight:850;letter-spacing:-.02em;color:var(--ink);font-variant-numeric:tabular-nums}
+  .stat .l{font-size:.78rem;color:var(--muted);margin-top:3px}
+  @media(max-width:640px){.stat{flex:1 1 40%;border-right:0;padding:10px}}
+  .founder{border-bottom:1px solid var(--border)}
+  .founder .in{display:flex;gap:40px;align-items:center}
+  .founder img{width:46%;border-radius:16px;box-shadow:var(--shadow);object-fit:cover;aspect-ratio:16/10}
+  .founder h2{font-size:1.7rem;margin:0 0 14px;letter-spacing:-.02em}
+  .founder p{color:var(--muted);margin:0;font-size:1.05rem;line-height:1.6}
+  @media(max-width:760px){.founder .in{flex-direction:column}.founder img{width:100%}}
+  .quotes{background:var(--soft);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+  .qgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .quote{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:24px}
+  .quote .stars{color:#e8a33d;letter-spacing:2px;margin-bottom:10px}
+  .quote .txt{font-size:1rem;line-height:1.5;margin:0 0 14px;color:var(--ink)}
+  .quote .by{font-size:.85rem;color:var(--muted);font-weight:700}
+  @media(max-width:760px){.qgrid{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
@@ -130,16 +161,13 @@
       <img class="banner" src="feature-graphic-en.png" alt="Swiss Naturalization Test">
       <div class="stores"><a href="https://apps.apple.com/app/id6769993041" aria-label="App Store"><img class="apple" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store"></a><a href="https://play.google.com/store/apps/details?id=ch.vincedev.swisscitizenship" aria-label="Google Play"><img class="google" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Google Play"></a></div>
     </div></header>
+    <section class="statband"><div class="wrap"><div class="row"><div class="stat"><div class="n">9'200</div><div class="l">installs</div></div><div class="stat"><div class="n">6'600</div><div class="l">active users</div></div><div class="stat"><div class="n">26</div><div class="l">cantons</div></div><div class="stat"><div class="n">12'000+</div><div class="l">questions</div></div><div class="stat"><div class="n">4.8<span style="color:var(--red)">&#9733;</span></div><div class="l">App Store &amp; Play</div></div></div></div></section>
 
     <section class="block"><div class="wrap">
       <p class="eyebrow">Why this app</p><h2 class="sec">Built by a candidate, not a company</h2>
+      <p class="subwhy">No company behind it, no agenda: one candidate who needed it, made it, and gave it away.</p>
       <div class="grid">
-      <div class="card"><div class="chip">&#127379;</div><div class="t">100% free &middot; no ads</div><div class="d">No paywalls, no banners, ever.</div></div>
-      <div class="card"><div class="chip">&#128581;</div><div class="t">No account required</div><div class="d">Just open it and start. No sign-up.</div></div>
-      <div class="card"><div class="chip">&#128274;</div><div class="t">No personal data</div><div class="d">Anonymous and privacy-first.</div></div>
-      <div class="card"><div class="chip">&#127464;&#127469;</div><div class="t">26 cantons &middot; your commune</div><div class="d">Dedicated exam prep in 11 cantons (~83% of naturalizations).</div></div>
-      <div class="card"><div class="chip">&#128218;</div><div class="t">Honest, per-canton</div><div class="d">Real official questions where they exist; federal basics elsewhere.</div></div>
-      <div class="card"><div class="chip">&#127757;</div><div class="t">4 languages</div><div class="d">FR &middot; DE &middot; IT &middot; EN.</div></div>
+      <div class="card"><div class="chip"><svg viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5C11 3 12 8 12 8s1-5 4.5-5a2.5 2.5 0 0 1 0 5"/></svg></div><div class="t">100% free, no ads</div><div class="d">No paywalls, no banners, ever.</div></div><div class="card"><div class="chip"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><div class="t">No account needed</div><div class="d">Open it and start. No sign-up.</div></div><div class="card"><div class="chip"><svg viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></div><div class="t">No personal data</div><div class="d">Anonymous, privacy-first.</div></div><div class="card"><div class="chip"><svg viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></div><div class="t">26 cantons, your commune</div><div class="d">Dedicated prep in 11 cantons (~83% of naturalizations).</div></div><div class="card"><div class="chip"><svg viewBox="0 0 24 24"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg></div><div class="t">Honest, per-canton</div><div class="d">Real official questions where they exist; federal basics elsewhere.</div></div><div class="card"><div class="chip"><svg viewBox="0 0 24 24"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg></div><div class="t">12'000+ questions</div><div class="d">Real catalogues, canton by canton.</div></div><div class="card"><div class="chip"><svg viewBox="0 0 24 24"><path d="M12 20h.01"/><path d="M8.5 16.4a5 5 0 0 1 7 0"/><path d="M5 12.9a10 10 0 0 1 14 0"/><path d="M2 8.8a15 15 0 0 1 20 0"/><path d="m2 2 20 20"/></svg></div><div class="t">100% offline</div><div class="d">Works with no connection, anywhere.</div></div><div class="card"><div class="chip"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20M2 12h20"/></svg></div><div class="t">4 languages</div><div class="d">FR &middot; DE &middot; IT &middot; EN.</div></div>
       </div>
     </div></section>
 
@@ -159,6 +187,16 @@
       </div>
     </div></section>
 
+    <section class="block"><div class="wrap">
+      <p class="eyebrow">Modes</p><h2 class="sec">Everything you can do</h2>
+      <div class="modegrid">
+      <div class="mode"><div class="ic"><svg viewBox="0 0 24 24"><path d="M21.42 10.92a1 1 0 0 0-.02-1.84L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.83l8.57 3.91a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg></div><div class="t">Study &amp; exam</div><div class="d">Mock exam, training, flashcards, and oral practice.</div></div><div class="mode"><div class="ic"><svg viewBox="0 0 24 24"><line x1="6" y1="11" x2="10" y2="11"/><line x1="8" y1="9" x2="8" y2="13"/><line x1="15" y1="12" x2="15.01" y2="12"/><line x1="18" y1="10" x2="18.01" y2="10"/><path d="M17.32 5H6.68a4 4 0 0 0-3.98 3.59c-.09.61-.7 5.5-.7 7.41a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.41-1.41A2 2 0 0 1 9.83 16h4.34a2 2 0 0 1 1.41.59L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.91-.61-6.8-.7-7.41A4 4 0 0 0 17.32 5z"/></svg></div><div class="t">Play</div><div class="d">Marathon, RapidFire, matching and more, on cantons or culture.</div></div><div class="mode"><div class="ic"><svg viewBox="0 0 24 24"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/></svg></div><div class="t">Daily</div><div class="d">A new challenge every day, the same set for everyone.</div></div><div class="mode"><div class="ic"><svg viewBox="0 0 24 24"><polyline points="14.5 17.5 3 6 3 3 6 3 17.5 14.5"/><line x1="13" y1="19" x2="19" y2="13"/><line x1="16" y1="16" x2="20" y2="20"/><line x1="19" y1="21" x2="21" y2="19"/><polyline points="14.5 6.5 18 3 21 3 21 6 17.5 9.5"/><line x1="5" y1="14" x2="9" y2="18"/><line x1="7" y1="17" x2="4" y2="20"/><line x1="3" y1="19" x2="5" y2="21"/></svg></div><div class="t">Versus</div><div class="d">Tris Duello: challenge another candidate, 1 on 1.</div></div><div class="mode"><div class="ic"><svg viewBox="0 0 24 24"><path d="M14.1 5.55a2 2 0 0 0 1.8 0l3.65-1.83A1 1 0 0 1 21 4.62v12.76a1 1 0 0 1-.55.9l-4.55 2.27a2 2 0 0 1-1.8 0l-4.2-2.1a2 2 0 0 0-1.8 0l-3.65 1.83A1 1 0 0 1 3 19.38V6.62a1 1 0 0 1 .55-.9l4.55-2.27a2 2 0 0 1 1.8 0z"/><path d="M15 5.76v15"/><path d="M9 3.24v15"/></svg></div><div class="t">Conquest</div><div class="d">Vaud and its neighbouring cantons, commune by commune.</div></div><div class="mode"><div class="ic"><svg viewBox="0 0 24 24"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg></div><div class="t">Leaderboards &amp; badges</div><div class="d">Hall of Fame, streaks, and champion auras.</div></div>
+      </div>
+    </div></section>
+
+    
+    <section class="block founder"><div class="wrap in"><img src="assets/founder.jpg" alt="Vincenzo Casini"><div><h2>Who's behind it</h2><p>My name is Vincenzo Casini. I'm Italian, and I've lived in Morges since 2014. By trade I'm an engineer and developer: tech lead, software architect, with AI at the core of my work. This app was born to prepare for my own naturalization exam, and I made it free for every candidate, all across Switzerland.</p></div></div></section>
+
     <section class="block press-section"><div class="wrap">
       <p class="eyebrow">Featured in</p><h2 class="sec">The Swiss press tried it</h2>
       <div class="press">
@@ -169,10 +207,8 @@
       </div>
     </div></section>
 
-    <section class="block spot"><div class="wrap in">
-      <img src="https://nwecndslwnkdeeryswwl.supabase.co/storage/v1/object/public/feed-assets/conquer_vaud.png" alt="">
-      <div><span class="new">NEW</span><h2>&#127984; Conquer your canton</h2><p>Claim it commune by commune: break through the district gates, win the timed assaults, become Mayor. A playful way to master local knowledge. Live in Vaud and its neighbouring cantons &mdash; more coming.</p></div>
-    </div></section>
+    
+    <section class="block quotes"><div class="wrap"><p class="eyebrow">Reviews</p><h2 class="sec">What users say</h2><div class="qgrid"><div class="quote"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="txt">&laquo;&nbsp;Cette application est devenue un rituel quotidien, en couple. Incontournable.&nbsp;&raquo;</p><div class="by">pyrame &middot; App Store</div></div><div class="quote"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="txt">&laquo;&nbsp;Wish this app existed when I was studying for my exam.&nbsp;&raquo;</p><div class="by">Swissstarr &middot; App Store</div></div><div class="quote"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="txt">&laquo;&nbsp;Si vede che &egrave; fatta da chi sta davvero preparando il test, non da una software house.&nbsp;&raquo;</p><div class="by">Google Play</div></div></div></div></section>
 
     <section class="block final"><div class="wrap">
       <h2 class="sec">Start preparing today</h2>
@@ -193,16 +229,13 @@
       <img class="banner" src="feature-graphic-fr.png" alt="Swiss Naturalization Test">
       <div class="stores"><a href="https://apps.apple.com/app/id6769993041" aria-label="App Store"><img class="apple" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store"></a><a href="https://play.google.com/store/apps/details?id=ch.vincedev.swisscitizenship" aria-label="Google Play"><img class="google" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Google Play"></a></div>
     </div></header>
+    <section class="statband"><div class="wrap"><div class="row"><div class="stat"><div class="n">9'200</div><div class="l">installations</div></div><div class="stat"><div class="n">6'600</div><div class="l">utilisateurs actifs</div></div><div class="stat"><div class="n">26</div><div class="l">cantons</div></div><div class="stat"><div class="n">12'000+</div><div class="l">questions</div></div><div class="stat"><div class="n">4.8<span style="color:var(--red)">&#9733;</span></div><div class="l">App Store &amp; Play</div></div></div></div></section>
 
     <section class="block"><div class="wrap">
       <p class="eyebrow">Pourquoi cette app</p><h2 class="sec">Cr&eacute;&eacute;e par un candidat, pas une entreprise</h2>
+      <p class="subwhy">Aucune entreprise derri&egrave;re, aucun agenda : un candidat qui en avait besoin, l'a faite, et l'a offerte.</p>
       <div class="grid">
-      <div class="card"><div class="chip">&#127379;</div><div class="t">100% gratuit &middot; sans pub</div><div class="d">Aucun paywall, aucune banni&egrave;re, jamais.</div></div>
-      <div class="card"><div class="chip">&#128581;</div><div class="t">Sans compte</div><div class="d">Ouvrez et commencez. Aucune inscription.</div></div>
-      <div class="card"><div class="chip">&#128274;</div><div class="t">Aucune donn&eacute;e personnelle</div><div class="d">Anonyme et respectueux de la vie priv&eacute;e.</div></div>
-      <div class="card"><div class="chip">&#127464;&#127469;</div><div class="t">26 cantons &middot; ta commune</div><div class="d">Pr&eacute;paration d&eacute;di&eacute;e dans 11 cantons (~83% des naturalisations).</div></div>
-      <div class="card"><div class="chip">&#128218;</div><div class="t">Honn&ecirc;te, canton par canton</div><div class="d">Vraies questions officielles l&agrave; o&ugrave; elles existent ; base f&eacute;d&eacute;rale ailleurs.</div></div>
-      <div class="card"><div class="chip">&#127757;</div><div class="t">4 langues</div><div class="d">FR &middot; DE &middot; IT &middot; EN.</div></div>
+      <div class="card"><div class="chip"><svg viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5C11 3 12 8 12 8s1-5 4.5-5a2.5 2.5 0 0 1 0 5"/></svg></div><div class="t">100% gratuit, sans pub</div><div class="d">Aucun paywall, aucune banni&egrave;re, jamais.</div></div><div class="card"><div class="chip"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><div class="t">Sans compte</div><div class="d">Ouvre et commence. Aucune inscription.</div></div><div class="card"><div class="chip"><svg viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></div><div class="t">Aucune donn&eacute;e personnelle</div><div class="d">Anonyme, respect de la vie priv&eacute;e.</div></div><div class="card"><div class="chip"><svg viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></div><div class="t">26 cantons, ta commune</div><div class="d">Pr&eacute;paration d&eacute;di&eacute;e dans 11 cantons (~83% des naturalisations).</div></div><div class="card"><div class="chip"><svg viewBox="0 0 24 24"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg></div><div class="t">Honn&ecirc;te, canton par canton</div><div class="d">Vraies questions officielles l&agrave; o&ugrave; elles existent ; base f&eacute;d&eacute;rale ailleurs.</div></div><div class="card"><div class="chip"><svg viewBox="0 0 24 24"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg></div><div class="t">12'000+ questions</div><div class="d">De vrais catalogues, canton par canton.</div></div><div class="card"><div class="chip"><svg viewBox="0 0 24 24"><path d="M12 20h.01"/><path d="M8.5 16.4a5 5 0 0 1 7 0"/><path d="M5 12.9a10 10 0 0 1 14 0"/><path d="M2 8.8a15 15 0 0 1 20 0"/><path d="m2 2 20 20"/></svg></div><div class="t">100% hors ligne</div><div class="d">Fonctionne sans connexion, partout.</div></div><div class="card"><div class="chip"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20M2 12h20"/></svg></div><div class="t">4 langues</div><div class="d">FR &middot; DE &middot; IT &middot; EN.</div></div>
       </div>
     </div></section>
 
@@ -222,6 +255,16 @@
       </div>
     </div></section>
 
+    <section class="block"><div class="wrap">
+      <p class="eyebrow">Modes</p><h2 class="sec">Tout ce que tu peux faire</h2>
+      <div class="modegrid">
+      <div class="mode"><div class="ic"><svg viewBox="0 0 24 24"><path d="M21.42 10.92a1 1 0 0 0-.02-1.84L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.83l8.57 3.91a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg></div><div class="t">&Eacute;tude &amp; examen</div><div class="d">Examen blanc, entra&icirc;nement, flashcards, et pratique orale.</div></div><div class="mode"><div class="ic"><svg viewBox="0 0 24 24"><line x1="6" y1="11" x2="10" y2="11"/><line x1="8" y1="9" x2="8" y2="13"/><line x1="15" y1="12" x2="15.01" y2="12"/><line x1="18" y1="10" x2="18.01" y2="10"/><path d="M17.32 5H6.68a4 4 0 0 0-3.98 3.59c-.09.61-.7 5.5-.7 7.41a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.41-1.41A2 2 0 0 1 9.83 16h4.34a2 2 0 0 1 1.41.59L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.91-.61-6.8-.7-7.41A4 4 0 0 0 17.32 5z"/></svg></div><div class="t">Play</div><div class="d">Marathon, RapidFire, associations et plus, sur les cantons ou la culture.</div></div><div class="mode"><div class="ic"><svg viewBox="0 0 24 24"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/></svg></div><div class="t">Daily</div><div class="d">Un nouveau d&eacute;fi chaque jour, le m&ecirc;me set pour tous.</div></div><div class="mode"><div class="ic"><svg viewBox="0 0 24 24"><polyline points="14.5 17.5 3 6 3 3 6 3 17.5 14.5"/><line x1="13" y1="19" x2="19" y2="13"/><line x1="16" y1="16" x2="20" y2="20"/><line x1="19" y1="21" x2="21" y2="19"/><polyline points="14.5 6.5 18 3 21 3 21 6 17.5 9.5"/><line x1="5" y1="14" x2="9" y2="18"/><line x1="7" y1="17" x2="4" y2="20"/><line x1="3" y1="19" x2="5" y2="21"/></svg></div><div class="t">Versus</div><div class="d">Tris Duello : d&eacute;fie un autre candidat, en 1 contre 1.</div></div><div class="mode"><div class="ic"><svg viewBox="0 0 24 24"><path d="M14.1 5.55a2 2 0 0 0 1.8 0l3.65-1.83A1 1 0 0 1 21 4.62v12.76a1 1 0 0 1-.55.9l-4.55 2.27a2 2 0 0 1-1.8 0l-4.2-2.1a2 2 0 0 0-1.8 0l-3.65 1.83A1 1 0 0 1 3 19.38V6.62a1 1 0 0 1 .55-.9l4.55-2.27a2 2 0 0 1 1.8 0z"/><path d="M15 5.76v15"/><path d="M9 3.24v15"/></svg></div><div class="t">Conqu&ecirc;te</div><div class="d">Le canton de Vaud et ses voisins, commune par commune.</div></div><div class="mode"><div class="ic"><svg viewBox="0 0 24 24"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg></div><div class="t">Classements &amp; badges</div><div class="d">Hall of Fame, s&eacute;ries, et auras de champion.</div></div>
+      </div>
+    </div></section>
+
+    
+    <section class="block founder"><div class="wrap in"><img src="assets/founder.jpg" alt="Vincenzo Casini"><div><h2>Qui est derri&egrave;re</h2><p>Je m'appelle Vincenzo Casini. Je suis italien et je vis &agrave; Morges depuis 2014. Je suis ing&eacute;nieur et d&eacute;veloppeur : tech lead, architecte logiciel, avec l'intelligence artificielle au c&oelig;ur de mon m&eacute;tier. Cette app est n&eacute;e pour pr&eacute;parer mon propre examen de naturalisation, et je l'ai rendue gratuite pour toutes les candidates et tous les candidats, dans toute la Suisse.</p></div></div></section>
+
     <section class="block press-section"><div class="wrap">
       <p class="eyebrow">Ils en parlent</p><h2 class="sec">La presse suisse l'a test&eacute;e</h2>
       <div class="press">
@@ -232,10 +275,8 @@
       </div>
     </div></section>
 
-    <section class="block spot"><div class="wrap in">
-      <img src="https://nwecndslwnkdeeryswwl.supabase.co/storage/v1/object/public/feed-assets/conquer_vaud.png" alt="">
-      <div><span class="new">NOUVEAU</span><h2>&#127984; Conquiers ton canton</h2><p>Conquiers-le commune par commune : franchis les portes des districts, gagne les assauts chronom&eacute;tr&eacute;s, deviens Maire. Une fa&ccedil;on ludique de ma&icirc;triser les connaissances locales. D&eacute;j&agrave; dans le canton de Vaud et ses voisins &mdash; d'autres arrivent.</p></div>
-    </div></section>
+    
+    <section class="block quotes"><div class="wrap"><p class="eyebrow">Avis</p><h2 class="sec">Ce qu'en disent les utilisateurs</h2><div class="qgrid"><div class="quote"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="txt">&laquo;&nbsp;Cette application est devenue un rituel quotidien, en couple. Incontournable.&nbsp;&raquo;</p><div class="by">pyrame &middot; App Store</div></div><div class="quote"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="txt">&laquo;&nbsp;Wish this app existed when I was studying for my exam.&nbsp;&raquo;</p><div class="by">Swissstarr &middot; App Store</div></div><div class="quote"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="txt">&laquo;&nbsp;Si vede che &egrave; fatta da chi sta davvero preparando il test, non da una software house.&nbsp;&raquo;</p><div class="by">Google Play</div></div></div></div></section>
 
     <section class="block final"><div class="wrap">
       <h2 class="sec">Commencez d&egrave;s aujourd'hui</h2>
@@ -256,16 +297,13 @@
       <img class="banner" src="feature-graphic-de.png" alt="Swiss Naturalization Test">
       <div class="stores"><a href="https://apps.apple.com/app/id6769993041" aria-label="App Store"><img class="apple" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store"></a><a href="https://play.google.com/store/apps/details?id=ch.vincedev.swisscitizenship" aria-label="Google Play"><img class="google" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Google Play"></a></div>
     </div></header>
+    <section class="statband"><div class="wrap"><div class="row"><div class="stat"><div class="n">9'200</div><div class="l">Installationen</div></div><div class="stat"><div class="n">6'600</div><div class="l">aktive Nutzer:innen</div></div><div class="stat"><div class="n">26</div><div class="l">Kantone</div></div><div class="stat"><div class="n">12'000+</div><div class="l">Fragen</div></div><div class="stat"><div class="n">4.8<span style="color:var(--red)">&#9733;</span></div><div class="l">App Store &amp; Play</div></div></div></div></section>
 
     <section class="block"><div class="wrap">
       <p class="eyebrow">Warum diese App</p><h2 class="sec">Von einem Kandidaten gebaut, nicht von einer Firma</h2>
+      <p class="subwhy">Keine Firma dahinter, keine Agenda: ein Kandidat, der sie brauchte, sie baute und sie verschenkte.</p>
       <div class="grid">
-      <div class="card"><div class="chip">&#127379;</div><div class="t">100% gratis &middot; werbefrei</div><div class="d">Keine Paywalls, keine Banner, nie.</div></div>
-      <div class="card"><div class="chip">&#128581;</div><div class="t">Kein Konto n&ouml;tig</div><div class="d">Einfach &ouml;ffnen und loslegen. Keine Anmeldung.</div></div>
-      <div class="card"><div class="chip">&#128274;</div><div class="t">Keine personenbezogenen Daten</div><div class="d">Anonym und datenschutzfreundlich.</div></div>
-      <div class="card"><div class="chip">&#127464;&#127469;</div><div class="t">26 Kantone &middot; deine Gemeinde</div><div class="d">Dedizierte Vorbereitung in 11 Kantonen (~83% der Einb&uuml;rgerungen).</div></div>
-      <div class="card"><div class="chip">&#128218;</div><div class="t">Ehrlich, Kanton f&uuml;r Kanton</div><div class="d">Echte offizielle Fragen, wo es sie gibt; sonst eidgen&ouml;ssische Grundlagen.</div></div>
-      <div class="card"><div class="chip">&#127757;</div><div class="t">4 Sprachen</div><div class="d">FR &middot; DE &middot; IT &middot; EN.</div></div>
+      <div class="card"><div class="chip"><svg viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5C11 3 12 8 12 8s1-5 4.5-5a2.5 2.5 0 0 1 0 5"/></svg></div><div class="t">100% gratis, werbefrei</div><div class="d">Keine Paywalls, keine Banner, nie.</div></div><div class="card"><div class="chip"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><div class="t">Kein Konto n&ouml;tig</div><div class="d">&Ouml;ffnen und loslegen. Keine Anmeldung.</div></div><div class="card"><div class="chip"><svg viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></div><div class="t">Keine personenbezogenen Daten</div><div class="d">Anonym, datenschutzfreundlich.</div></div><div class="card"><div class="chip"><svg viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></div><div class="t">26 Kantone, deine Gemeinde</div><div class="d">Dedizierte Vorbereitung in 11 Kantonen (~83% der Einb&uuml;rgerungen).</div></div><div class="card"><div class="chip"><svg viewBox="0 0 24 24"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg></div><div class="t">Ehrlich, Kanton f&uuml;r Kanton</div><div class="d">Echte offizielle Fragen, wo es sie gibt; sonst eidgen&ouml;ssische Grundlagen.</div></div><div class="card"><div class="chip"><svg viewBox="0 0 24 24"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg></div><div class="t">12'000+ Fragen</div><div class="d">Echte Kataloge, Kanton f&uuml;r Kanton.</div></div><div class="card"><div class="chip"><svg viewBox="0 0 24 24"><path d="M12 20h.01"/><path d="M8.5 16.4a5 5 0 0 1 7 0"/><path d="M5 12.9a10 10 0 0 1 14 0"/><path d="M2 8.8a15 15 0 0 1 20 0"/><path d="m2 2 20 20"/></svg></div><div class="t">100% offline</div><div class="d">Funktioniert ohne Verbindung, &uuml;berall.</div></div><div class="card"><div class="chip"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20M2 12h20"/></svg></div><div class="t">4 Sprachen</div><div class="d">FR &middot; DE &middot; IT &middot; EN.</div></div>
       </div>
     </div></section>
 
@@ -285,6 +323,16 @@
       </div>
     </div></section>
 
+    <section class="block"><div class="wrap">
+      <p class="eyebrow">Modi</p><h2 class="sec">Alles, was du tun kannst</h2>
+      <div class="modegrid">
+      <div class="mode"><div class="ic"><svg viewBox="0 0 24 24"><path d="M21.42 10.92a1 1 0 0 0-.02-1.84L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.83l8.57 3.91a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg></div><div class="t">Lernen &amp; Pr&uuml;fung</div><div class="d">Probepr&uuml;fung, Training, Karteikarten und m&uuml;ndliche &Uuml;bung.</div></div><div class="mode"><div class="ic"><svg viewBox="0 0 24 24"><line x1="6" y1="11" x2="10" y2="11"/><line x1="8" y1="9" x2="8" y2="13"/><line x1="15" y1="12" x2="15.01" y2="12"/><line x1="18" y1="10" x2="18.01" y2="10"/><path d="M17.32 5H6.68a4 4 0 0 0-3.98 3.59c-.09.61-.7 5.5-.7 7.41a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.41-1.41A2 2 0 0 1 9.83 16h4.34a2 2 0 0 1 1.41.59L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.91-.61-6.8-.7-7.41A4 4 0 0 0 17.32 5z"/></svg></div><div class="t">Play</div><div class="d">Marathon, RapidFire, Zuordnen und mehr, zu Kantonen oder Kultur.</div></div><div class="mode"><div class="ic"><svg viewBox="0 0 24 24"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/></svg></div><div class="t">Daily</div><div class="d">Jeden Tag eine neue Challenge, gleiches Set f&uuml;r alle.</div></div><div class="mode"><div class="ic"><svg viewBox="0 0 24 24"><polyline points="14.5 17.5 3 6 3 3 6 3 17.5 14.5"/><line x1="13" y1="19" x2="19" y2="13"/><line x1="16" y1="16" x2="20" y2="20"/><line x1="19" y1="21" x2="21" y2="19"/><polyline points="14.5 6.5 18 3 21 3 21 6 17.5 9.5"/><line x1="5" y1="14" x2="9" y2="18"/><line x1="7" y1="17" x2="4" y2="20"/><line x1="3" y1="19" x2="5" y2="21"/></svg></div><div class="t">Versus</div><div class="d">Tris Duello: fordere einen anderen Kandidaten heraus, 1 gegen 1.</div></div><div class="mode"><div class="ic"><svg viewBox="0 0 24 24"><path d="M14.1 5.55a2 2 0 0 0 1.8 0l3.65-1.83A1 1 0 0 1 21 4.62v12.76a1 1 0 0 1-.55.9l-4.55 2.27a2 2 0 0 1-1.8 0l-4.2-2.1a2 2 0 0 0-1.8 0l-3.65 1.83A1 1 0 0 1 3 19.38V6.62a1 1 0 0 1 .55-.9l4.55-2.27a2 2 0 0 1 1.8 0z"/><path d="M15 5.76v15"/><path d="M9 3.24v15"/></svg></div><div class="t">Eroberung</div><div class="d">Die Waadt und ihre Nachbarkantone, Gemeinde f&uuml;r Gemeinde.</div></div><div class="mode"><div class="ic"><svg viewBox="0 0 24 24"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg></div><div class="t">Ranglisten &amp; Badges</div><div class="d">Hall of Fame, Streaks und Champion-Auren.</div></div>
+      </div>
+    </div></section>
+
+    
+    <section class="block founder"><div class="wrap in"><img src="assets/founder.jpg" alt="Vincenzo Casini"><div><h2>Wer dahintersteckt</h2><p>Ich heisse Vincenzo Casini. Ich bin Italiener und lebe seit 2014 in Morges. Von Beruf bin ich Ingenieur und Entwickler: Tech Lead, Software-Architekt, mit k&uuml;nstlicher Intelligenz im Zentrum meiner Arbeit. Diese App entstand, um meine eigene Einb&uuml;rgerungspr&uuml;fung vorzubereiten, und ich habe sie f&uuml;r alle Kandidatinnen und Kandidaten in der ganzen Schweiz gratis gemacht.</p></div></div></section>
+
     <section class="block press-section"><div class="wrap">
       <p class="eyebrow">Bekannt aus</p><h2 class="sec">Die Schweizer Presse hat sie getestet</h2>
       <div class="press">
@@ -295,10 +343,8 @@
       </div>
     </div></section>
 
-    <section class="block spot"><div class="wrap in">
-      <img src="https://nwecndslwnkdeeryswwl.supabase.co/storage/v1/object/public/feed-assets/conquer_vaud.png" alt="">
-      <div><span class="new">NEU</span><h2>&#127984; Erobere deinen Kanton</h2><p>Erobere ihn Gemeinde f&uuml;r Gemeinde: durchbrich die Bezirks-Tore, gewinne die Zeitangriffe, werde Stadtpr&auml;sident:in. Eine spielerische Art, lokales Wissen zu meistern. Schon in der Waadt und ihren Nachbarkantonen &mdash; weitere folgen.</p></div>
-    </div></section>
+    
+    <section class="block quotes"><div class="wrap"><p class="eyebrow">Bewertungen</p><h2 class="sec">Stimmen der Nutzer</h2><div class="qgrid"><div class="quote"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="txt">&laquo;&nbsp;Cette application est devenue un rituel quotidien, en couple. Incontournable.&nbsp;&raquo;</p><div class="by">pyrame &middot; App Store</div></div><div class="quote"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="txt">&laquo;&nbsp;Wish this app existed when I was studying for my exam.&nbsp;&raquo;</p><div class="by">Swissstarr &middot; App Store</div></div><div class="quote"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="txt">&laquo;&nbsp;Si vede che &egrave; fatta da chi sta davvero preparando il test, non da una software house.&nbsp;&raquo;</p><div class="by">Google Play</div></div></div></div></section>
 
     <section class="block final"><div class="wrap">
       <h2 class="sec">Jetzt loslegen</h2>
@@ -319,16 +365,13 @@
       <img class="banner" src="feature-graphic-it.png" alt="Swiss Naturalization Test">
       <div class="stores"><a href="https://apps.apple.com/app/id6769993041" aria-label="App Store"><img class="apple" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store"></a><a href="https://play.google.com/store/apps/details?id=ch.vincedev.swisscitizenship" aria-label="Google Play"><img class="google" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Google Play"></a></div>
     </div></header>
+    <section class="statband"><div class="wrap"><div class="row"><div class="stat"><div class="n">9'200</div><div class="l">installazioni</div></div><div class="stat"><div class="n">6'600</div><div class="l">utenti attivi</div></div><div class="stat"><div class="n">26</div><div class="l">cantoni</div></div><div class="stat"><div class="n">12'000+</div><div class="l">domande</div></div><div class="stat"><div class="n">4.8<span style="color:var(--red)">&#9733;</span></div><div class="l">App Store &amp; Play</div></div></div></div></section>
 
     <section class="block"><div class="wrap">
       <p class="eyebrow">Perch&eacute; questa app</p><h2 class="sec">Creata da un candidato, non da un'azienda</h2>
+      <p class="subwhy">Nessuna azienda dietro, nessuna agenda: un candidato che ne aveva bisogno, l'ha fatta, e l'ha regalata.</p>
       <div class="grid">
-      <div class="card"><div class="chip">&#127379;</div><div class="t">100% gratis &middot; senza ads</div><div class="d">Nessun paywall, nessun banner, mai.</div></div>
-      <div class="card"><div class="chip">&#128581;</div><div class="t">Senza account</div><div class="d">Apri e inizia. Nessuna registrazione.</div></div>
-      <div class="card"><div class="chip">&#128274;</div><div class="t">Nessun dato personale</div><div class="d">Anonima e rispettosa della privacy.</div></div>
-      <div class="card"><div class="chip">&#127464;&#127469;</div><div class="t">26 cantoni &middot; il tuo comune</div><div class="d">Preparazione dedicata in 11 cantoni (~83% delle naturalizzazioni).</div></div>
-      <div class="card"><div class="chip">&#128218;</div><div class="t">Onesta, cantone per cantone</div><div class="d">Vere domande ufficiali dove esistono; altrove base federale.</div></div>
-      <div class="card"><div class="chip">&#127757;</div><div class="t">4 lingue</div><div class="d">FR &middot; DE &middot; IT &middot; EN.</div></div>
+      <div class="card"><div class="chip"><svg viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5C11 3 12 8 12 8s1-5 4.5-5a2.5 2.5 0 0 1 0 5"/></svg></div><div class="t">100% gratis, senza ads</div><div class="d">Nessun paywall, nessun banner, mai.</div></div><div class="card"><div class="chip"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><div class="t">Senza account</div><div class="d">Apri e inizia. Nessuna registrazione.</div></div><div class="card"><div class="chip"><svg viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></div><div class="t">Nessun dato personale</div><div class="d">Anonima, rispetta la privacy.</div></div><div class="card"><div class="chip"><svg viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></div><div class="t">26 cantoni, il tuo comune</div><div class="d">Preparazione dedicata in 11 cantoni (~83% delle naturalizzazioni).</div></div><div class="card"><div class="chip"><svg viewBox="0 0 24 24"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg></div><div class="t">Onesta, cantone per cantone</div><div class="d">Vere domande ufficiali dove esistono; altrove base federale.</div></div><div class="card"><div class="chip"><svg viewBox="0 0 24 24"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg></div><div class="t">12'000+ domande</div><div class="d">Cataloghi veri, cantone per cantone.</div></div><div class="card"><div class="chip"><svg viewBox="0 0 24 24"><path d="M12 20h.01"/><path d="M8.5 16.4a5 5 0 0 1 7 0"/><path d="M5 12.9a10 10 0 0 1 14 0"/><path d="M2 8.8a15 15 0 0 1 20 0"/><path d="m2 2 20 20"/></svg></div><div class="t">100% offline</div><div class="d">Funziona senza connessione, ovunque.</div></div><div class="card"><div class="chip"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20M2 12h20"/></svg></div><div class="t">4 lingue</div><div class="d">FR &middot; DE &middot; IT &middot; EN.</div></div>
       </div>
     </div></section>
 
@@ -348,6 +391,16 @@
       </div>
     </div></section>
 
+    <section class="block"><div class="wrap">
+      <p class="eyebrow">Modalit&agrave;</p><h2 class="sec">Tutto quello che puoi fare</h2>
+      <div class="modegrid">
+      <div class="mode"><div class="ic"><svg viewBox="0 0 24 24"><path d="M21.42 10.92a1 1 0 0 0-.02-1.84L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.83l8.57 3.91a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg></div><div class="t">Studio &amp; esame</div><div class="d">Esame simulato, allenamento, flashcard e pratica orale.</div></div><div class="mode"><div class="ic"><svg viewBox="0 0 24 24"><line x1="6" y1="11" x2="10" y2="11"/><line x1="8" y1="9" x2="8" y2="13"/><line x1="15" y1="12" x2="15.01" y2="12"/><line x1="18" y1="10" x2="18.01" y2="10"/><path d="M17.32 5H6.68a4 4 0 0 0-3.98 3.59c-.09.61-.7 5.5-.7 7.41a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.41-1.41A2 2 0 0 1 9.83 16h4.34a2 2 0 0 1 1.41.59L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.91-.61-6.8-.7-7.41A4 4 0 0 0 17.32 5z"/></svg></div><div class="t">Play</div><div class="d">Maratona, RapidFire, abbinamento e altro, su cantoni o cultura.</div></div><div class="mode"><div class="ic"><svg viewBox="0 0 24 24"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/></svg></div><div class="t">Daily</div><div class="d">Una nuova sfida ogni giorno, stesso set per tutti.</div></div><div class="mode"><div class="ic"><svg viewBox="0 0 24 24"><polyline points="14.5 17.5 3 6 3 3 6 3 17.5 14.5"/><line x1="13" y1="19" x2="19" y2="13"/><line x1="16" y1="16" x2="20" y2="20"/><line x1="19" y1="21" x2="21" y2="19"/><polyline points="14.5 6.5 18 3 21 3 21 6 17.5 9.5"/><line x1="5" y1="14" x2="9" y2="18"/><line x1="7" y1="17" x2="4" y2="20"/><line x1="3" y1="19" x2="5" y2="21"/></svg></div><div class="t">Versus</div><div class="d">Tris Duello: sfida un altro candidato, 1 contro 1.</div></div><div class="mode"><div class="ic"><svg viewBox="0 0 24 24"><path d="M14.1 5.55a2 2 0 0 0 1.8 0l3.65-1.83A1 1 0 0 1 21 4.62v12.76a1 1 0 0 1-.55.9l-4.55 2.27a2 2 0 0 1-1.8 0l-4.2-2.1a2 2 0 0 0-1.8 0l-3.65 1.83A1 1 0 0 1 3 19.38V6.62a1 1 0 0 1 .55-.9l4.55-2.27a2 2 0 0 1 1.8 0z"/><path d="M15 5.76v15"/><path d="M9 3.24v15"/></svg></div><div class="t">Conquista</div><div class="d">Il Canton Vaud e i suoi vicini, comune per comune.</div></div><div class="mode"><div class="ic"><svg viewBox="0 0 24 24"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg></div><div class="t">Classifiche &amp; badge</div><div class="d">Albo d'Oro, streak e aure da campione.</div></div>
+      </div>
+    </div></section>
+
+    
+    <section class="block founder"><div class="wrap in"><img src="assets/founder.jpg" alt="Vincenzo Casini"><div><h2>Chi c'&egrave; dietro</h2><p>Mi chiamo Vincenzo Casini. Sono italiano, vivo a Morges dal 2014. Di mestiere sono ingegnere e sviluppatore: tech lead, architetto software, con l'intelligenza artificiale al centro del lavoro. Quest'app &egrave; nata per preparare il mio esame di naturalizzazione, e l'ho resa gratuita per tutti i candidati, in tutta la Svizzera.</p></div></div></section>
+
     <section class="block press-section"><div class="wrap">
       <p class="eyebrow">Ne hanno parlato</p><h2 class="sec">La stampa svizzera l'ha provata</h2>
       <div class="press">
@@ -358,10 +411,8 @@
       </div>
     </div></section>
 
-    <section class="block spot"><div class="wrap in">
-      <img src="https://nwecndslwnkdeeryswwl.supabase.co/storage/v1/object/public/feed-assets/conquer_vaud.png" alt="">
-      <div><span class="new">NOVIT&Agrave;</span><h2>&#127984; Conquista il tuo cantone</h2><p>Conquistalo comune per comune: sfonda i gate dei distretti, vinci gli assalti a tempo, diventa Sindaco. Un modo giocoso di padroneggiare le conoscenze locali. Gi&agrave; nel Canton Vaud e nei suoi vicini &mdash; altri in arrivo.</p></div>
-    </div></section>
+    
+    <section class="block quotes"><div class="wrap"><p class="eyebrow">Recensioni</p><h2 class="sec">Dicono di lei</h2><div class="qgrid"><div class="quote"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="txt">&laquo;&nbsp;Cette application est devenue un rituel quotidien, en couple. Incontournable.&nbsp;&raquo;</p><div class="by">pyrame &middot; App Store</div></div><div class="quote"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="txt">&laquo;&nbsp;Wish this app existed when I was studying for my exam.&nbsp;&raquo;</p><div class="by">Swissstarr &middot; App Store</div></div><div class="quote"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="txt">&laquo;&nbsp;Si vede che &egrave; fatta da chi sta davvero preparando il test, non da una software house.&nbsp;&raquo;</p><div class="by">Google Play</div></div></div></div></section>
 
     <section class="block final"><div class="wrap">
       <h2 class="sec">Inizia oggi</h2>
