@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Léman Bleu — Swiss Naturalization Test</title>
+<meta name="description" content="Léman Bleu covers Swiss Naturalization Test — practise the official Swiss naturalization questions in a free app.">
+<meta property="og:title" content="Léman Bleu">
+<meta property="og:description" content="Léman Bleu covers Swiss Naturalization Test — practise the official Swiss naturalization questions in a free app.">
+<link rel="icon" href="../app/icon.png">
+<style>
+  :root{--ink:#141821;--muted:#5a6472;--bg:#fff;--soft:#f6f8fb;--border:#e6ebf2;--red:#DA291C;--red-d:#b31f14;--navy:#0d1426;--shadow:0 10px 30px rgba(16,24,40,.10);--radius:16px;--font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font);color:var(--ink);margin:0;line-height:1.65;background:var(--bg);-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+  h1,h2,h3{letter-spacing:-.02em;line-height:1.2}
+  header.site{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid var(--border)}
+  .navbar{display:flex;align-items:center;gap:18px;height:64px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.02rem;letter-spacing:-.02em}
+  .brand img{width:30px;height:30px;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,.15)}
+  nav.main{margin-left:auto;display:flex;align-items:center;gap:4px}
+  nav.main a.link{padding:8px 12px;border-radius:9px;font-weight:600;font-size:.93rem;color:var(--muted);cursor:pointer}
+  nav.main a.link:hover{background:var(--soft);color:var(--ink)}
+  .langs{display:flex;gap:2px;margin-left:6px;padding-left:12px;border-left:1px solid var(--border)}
+  .langs a{font-size:.8rem;font-weight:700;color:var(--muted);padding:5px 9px;border-radius:999px;cursor:pointer}
+  .langs a.on,.langs a:hover{background:var(--ink);color:#fff}
+  #mnav{display:none}
+  .burger{margin-left:auto;display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
+  .burger span{width:24px;height:2px;background:var(--ink);border-radius:2px}
+  @media(max-width:860px){nav.main{position:fixed;inset:64px 0 auto 0;flex-direction:column;align-items:stretch;background:#fff;border-bottom:1px solid var(--border);padding:12px 24px 20px;gap:6px;transform:translateY(-140%);transition:transform .25s ease;box-shadow:var(--shadow)}#mnav:checked ~ .navbar nav.main{transform:translateY(0)}.burger{display:flex}nav.main a.link{padding:12px 10px;font-size:1rem}.langs{margin:6px 0 0;padding:12px 0 0;border-left:0;border-top:1px solid var(--border);justify-content:center}}
+  /* article */
+  .article{max-width:720px;margin:0 auto;padding:34px 24px 8px}
+  .back{display:inline-block;color:var(--muted);font-weight:600;font-size:.9rem;margin-bottom:18px;cursor:pointer}
+  .back:hover{color:var(--red)}
+  .eyebrow{color:var(--red);font-weight:800;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;margin:0 0 14px}
+  .ahero{width:100%;border-radius:18px;border:1px solid var(--border);box-shadow:var(--shadow);margin:0 0 26px;display:block;aspect-ratio:16/10;object-fit:cover;background:var(--navy)}
+  .aherov{position:relative;display:block;margin:0 0 26px}
+  .aherov .ahero{margin:0}
+  .playbadge{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:76px;height:76px;border-radius:50%;background:rgba(218,41,28,.94);box-shadow:0 10px 26px rgba(0,0,0,.4);display:flex;align-items:center;justify-content:center;transition:transform .15s ease,background .15s ease}
+  .aherov:hover .playbadge{transform:translate(-50%,-50%) scale(1.07);background:var(--red)}
+  .playbadge::after{content:"";display:block;width:0;height:0;border-style:solid;border-width:15px 0 15px 24px;border-color:transparent transparent transparent #fff;margin-left:6px}
+  .abody{font-size:1.06rem;color:#2a3140}
+  .abody p{margin:0 0 18px}
+  .abody h2{font-size:1.45rem;margin:34px 0 12px}
+  .abody h3{font-size:1.12rem;margin:26px 0 8px}
+  .abody em{color:var(--muted)}
+  .abody strong{color:var(--ink)}
+  .abody ul{margin:0 0 18px;padding-left:20px}
+  .abody li{margin:6px 0}
+  .abody a{color:var(--red);font-weight:600;text-decoration:underline}
+  .abody hr{border:0;border-top:1px solid var(--border);margin:26px 0}
+  .abody blockquote{margin:22px 0;padding:14px 20px;border-left:3px solid var(--red);background:var(--soft);border-radius:0 12px 12px 0;color:#2a3140}
+  .abody blockquote em{color:#2a3140}
+  .orig{max-width:720px;margin:8px auto 0;padding:22px 24px 4px;text-align:center}
+  .btn{display:inline-block;background:var(--red);color:#fff;font-weight:700;padding:12px 22px;border-radius:999px;box-shadow:0 8px 18px rgba(218,41,28,.28)}
+  .btn:hover{background:var(--red-d)}
+  .orignote{display:block;margin-top:10px;font-size:.84rem;color:var(--muted)}
+  section.block{padding:50px 0}
+  .final{text-align:center}
+  h2.sec{font-size:1.5rem;text-align:center;margin:0 0 26px;font-weight:800}
+  .stores{display:flex;gap:14px;justify-content:center;align-items:center;flex-wrap:wrap}
+  .stores img.apple{height:50px}.stores img.google{height:74px;margin:-12px 0}
+  footer.site{background:var(--navy);color:#9fb0cc;padding:44px 24px;text-align:center;font-size:.92rem;position:static;border:0}
+  footer.site a{color:#cdd9ee}
+  footer.site .fl{margin-bottom:14px}
+  footer.site .fl a{margin:0 8px;font-weight:600;cursor:pointer}
+  footer.site .disc{max-width:680px;margin:0 auto;font-size:.82rem;color:#7f90ad}
+</style>
+</head>
+<body>
+<header class="site"><input type="checkbox" id="mnav"><div class="wrap navbar"><a class="brand" href="../landing.html"><img src="../app/icon.png" alt="">Swiss Naturalization Test</a><label class="burger" for="mnav" aria-label="Menu"><span></span><span></span><span></span></label><nav class="main"><a class="link" data-nav="home" href="../landing.html">Home</a><a class="link" data-nav="press" href="../landing.html#press">Press</a><a class="link" data-nav="transp" href="../transparency.html">Transparency</a><a class="link" data-nav="privacy" href="../privacy-policy.html">Privacy</a><span class="langs"><a data-lang="en" href="#" onclick="return __setLang('en')">EN</a><a data-lang="fr" href="#" onclick="return __setLang('fr')">FR</a><a data-lang="de" href="#" onclick="return __setLang('de')">DE</a><a data-lang="it" href="#" onclick="return __setLang('it')">IT</a></span></nav></div></header>
+<div class="langblock" id="lb-en"><article class="article"><a class="back" href="../landing.html#press">← All coverage</a><p class="eyebrow">In the press &middot; Léman Bleu</p><a class="aherov" href="https://www.lemanbleu.ch/fr/Actualite/Suisse/Devenir-Suisse-ca-se-revise-aussi-sur-son-telephone.html" target="_blank" rel="noopener"><img class="ahero" src="https://www.lemanbleu.ch/Htdocs/Files/Videos/Pictures/25271.jpg?CacheBusterGUID=c6cb0415-04f9-42dc-a0fb-d364dfcd23c5" alt=""><span class="playbadge" aria-hidden="true"></span></a><div class="abody">
+<h2>Becoming Swiss? You can revise for it on your phone too</h2>
+<p><em>By Lucie Hainaut · 19.08.2026 · Léman Bleu</em></p>
+<p><em>An Italian developer living in the canton of Vaud has built an app to prepare for his own Swiss naturalization test. The tool is catching on in Geneva too, where it already has more than 700 users.</em></p>
+<p>Getting the passport with the white cross is a journey that takes preparation. Among the steps: the knowledge test about Switzerland and how it works.</p>
+<p>When Vincenzo Casini and his wife started revising for their own naturalization, they looked for a suitable app. Without success.</p>
+<p>"They are either paid, or haven't been updated in a long time, or the interface isn't great," says the developer. So he decided to build a tool himself, based on the questions provided by his commune. "The idea really came from a concrete need of ours. And then we thought there were surely other people with the same need," Vincenzo adds.</p>
+<p>That is how Swiss Naturalization Test was born, an app now available on iOS and Android. It lets candidates practise the questions they might face in their exam.</p>
+<p>In Geneva, more than 700 people already use it. Some questions prove trickier than others, particularly those about Swiss politics.</p>
+<p>"For example, when asked how often federal elections take place, 60% answer correctly and 40% don't know," Vincenzo notes.</p>
+<p>For Geneva candidates the stakes are high: the questionnaire has 45 questions and only five mistakes are allowed.</p>
+<p>Vincenzo doesn't just help others revise. With his wife, he has to sit the exam himself in a few days.</p>
+<p>"On Monday we take our written test... but it should be fine," he smiles.</p>
+<p>One question that certainly isn't in the official questionnaire: how do you make a good Swiss raclette? On that point, Vincenzo already seems ready.</p>
+<blockquote><em>"Good Swiss cheese, local. Good potatoes. And above all good company, friends ready to eat and to drink some good wine."</em></blockquote>
+<p>The raclette is sorted. The rest will play out in a few days.</p>
+</div></article><div class="orig"><a class="btn" href="https://www.lemanbleu.ch/fr/Actualite/Suisse/Devenir-Suisse-ca-se-revise-aussi-sur-son-telephone.html" target="_blank" rel="noopener">Watch on Léman Bleu →</a></div><section class="block final"><div class="wrap"><h2 class="sec">Start preparing today</h2><div class="stores"><a href="https://apps.apple.com/app/id6769993041" aria-label="App Store"><img class="apple" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store"></a><a href="https://play.google.com/store/apps/details?id=ch.vincedev.swisscitizenship" aria-label="Google Play"><img class="google" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Google Play"></a></div></div></section><footer class="site"><div class="wrap"><div class="fl"><a href="../landing.html">Home</a> &middot; <a href="../landing.html#press">Press</a> &middot; <a href="../transparency.html">Transparency</a> &middot; <a href="../privacy-policy.html">Privacy</a> &middot; <a href="../terms.html">Terms</a> &middot; <a href="../account-deletion.html">Data deletion</a> &middot; <a href="mailto:swisscitizenshiptest@gmail.com" onclick="return __contact(event)">Contact</a></div><p class="disc">Swiss Naturalization Test is an independent study companion developed by Vincenzo Casini. It is not affiliated with any government authority. For the official test, always refer to your canton's official platform.</p></div></footer></div><div class="langblock" id="lb-fr" hidden><article class="article"><a class="back" href="../landing.html#press">← Toute la revue de presse</a><p class="eyebrow">On en parle &middot; Léman Bleu</p><a class="aherov" href="https://www.lemanbleu.ch/fr/Actualite/Suisse/Devenir-Suisse-ca-se-revise-aussi-sur-son-telephone.html" target="_blank" rel="noopener"><img class="ahero" src="https://www.lemanbleu.ch/Htdocs/Files/Videos/Pictures/25271.jpg?CacheBusterGUID=c6cb0415-04f9-42dc-a0fb-d364dfcd23c5" alt=""><span class="playbadge" aria-hidden="true"></span></a><div class="abody">
+<h2>Devenir Suisse, ça se révise aussi sur son téléphone</h2>
+<p><em>Par Lucie Hainaut · 19.08.2026 · Léman Bleu</em></p>
+<p><em>Un développeur italien installé dans le canton de Vaud a créé une application pour préparer son propre test de naturalisation suisse. L'outil séduit aussi à Genève, où il compte plus de 700 utilisateurs.</em></p>
+<p>Obtenir le passeport à croix blanche représente un parcours qui demande de la préparation. Parmi les étapes : le test de connaissances sur la Suisse et son fonctionnement.</p>
+<p>Lorsque Vincenzo Casini et sa femme commencent à réviser en vue de leur propre naturalisation, ils cherchent une application adaptée. Sans succès.</p>
+<p>« Elles sont soit payantes, soit pas mises à jour depuis longtemps, soit l'interface n'est pas terrible », raconte le développeur. Il décide alors de créer lui-même un outil à partir des questions mises à disposition par sa commune. « L'idée est vraiment venue d'un besoin concret pour nous. Et puis on s'est dit qu'il y avait sûrement d'autres personnes qui avaient le même besoin », ajoute Vincenzo.</p>
+<p>C'est ainsi qu'est née Swiss Naturalization Test, une application désormais disponible sur iOS et Android. Elle permet aux candidats de s'entraîner aux questions auxquelles ils pourraient être confrontés lors de leur examen.</p>
+<p>À Genève, plus de 700 personnes l'utilisent déjà. Certaines questions posent davantage de difficultés que d'autres, notamment celles qui concernent la politique suisse.</p>
+<p>« Par exemple, à la question de savoir à quelle fréquence ont lieu les élections fédérales, 60 % répondent juste et 40 % ne le savent pas », relève Vincenzo.</p>
+<p>Pour les candidats genevois, l'enjeu est de taille : le questionnaire comprend 45 questions et seules cinq erreurs sont admises.</p>
+<p>Vincenzo ne se contente pas de faire réviser les autres. Avec sa femme, il doit lui-même passer l'examen dans quelques jours.</p>
+<p>« Lundi on passe notre test écrit... mais normalement, ça devrait aller », sourit-il.</p>
+<p>Reste une question qui ne figure certes pas dans le questionnaire officiel : comment préparer une bonne raclette suisse ? Sur ce point, Vincenzo semble déjà prêt.</p>
+<blockquote><em>« Du bon fromage suisse, local. De bonnes pommes de terre. Et surtout une bonne compagnie, des amis prêts à manger et à boire du bon vin. »</em></blockquote>
+<p>La raclette, c'est validé. Le reste se jouera dans quelques jours.</p>
+</div></article><div class="orig"><a class="btn" href="https://www.lemanbleu.ch/fr/Actualite/Suisse/Devenir-Suisse-ca-se-revise-aussi-sur-son-telephone.html" target="_blank" rel="noopener">Regarder sur Léman Bleu →</a></div><section class="block final"><div class="wrap"><h2 class="sec">Commencez dès aujourd'hui</h2><div class="stores"><a href="https://apps.apple.com/app/id6769993041" aria-label="App Store"><img class="apple" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store"></a><a href="https://play.google.com/store/apps/details?id=ch.vincedev.swisscitizenship" aria-label="Google Play"><img class="google" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Google Play"></a></div></div></section><footer class="site"><div class="wrap"><div class="fl"><a href="../landing.html">Accueil</a> &middot; <a href="../landing.html#press">Presse</a> &middot; <a href="../transparency.html">Transparence</a> &middot; <a href="../privacy-policy.html">Confidentialité</a> &middot; <a href="../terms.html">Conditions</a> &middot; <a href="../account-deletion.html">Suppression des données</a> &middot; <a href="mailto:swisscitizenshiptest@gmail.com" onclick="return __contact(event)">Contact</a></div><p class="disc">Swiss Naturalization Test est un compagnon d'étude indépendant développé par Vincenzo Casini. Il n'est affilié à aucune autorité gouvernementale. Pour le test officiel, référez-vous toujours à la plateforme officielle de votre canton.</p></div></footer></div><div class="langblock" id="lb-de" hidden><article class="article"><a class="back" href="../landing.html#press">← Zur Presse-Übersicht</a><p class="eyebrow">In der Presse &middot; Léman Bleu</p><a class="aherov" href="https://www.lemanbleu.ch/fr/Actualite/Suisse/Devenir-Suisse-ca-se-revise-aussi-sur-son-telephone.html" target="_blank" rel="noopener"><img class="ahero" src="https://www.lemanbleu.ch/Htdocs/Files/Videos/Pictures/25271.jpg?CacheBusterGUID=c6cb0415-04f9-42dc-a0fb-d364dfcd23c5" alt=""><span class="playbadge" aria-hidden="true"></span></a><div class="abody">
+<h2>Schweizer werden? Das lässt sich auch auf dem Handy üben</h2>
+<p><em>Von Lucie Hainaut · 19.08.2026 · Léman Bleu</em></p>
+<p><em>Ein im Kanton Waadt lebender italienischer Entwickler hat eine App entwickelt, um sich auf seinen eigenen Schweizer Einbürgerungstest vorzubereiten. Das Tool kommt auch in Genf an, wo es bereits mehr als 700 Nutzer zählt.</em></p>
+<p>Den Pass mit dem weissen Kreuz zu erhalten, ist ein Weg, der Vorbereitung verlangt. Eine der Etappen: der Wissenstest über die Schweiz und ihre Funktionsweise.</p>
+<p>Als Vincenzo Casini und seine Frau für ihre eigene Einbürgerung zu lernen beginnen, suchen sie eine passende App. Ohne Erfolg.</p>
+<p>«Entweder sind sie kostenpflichtig, oder seit Langem nicht mehr aktualisiert, oder die Oberfläche taugt nichts», erzählt der Entwickler. Also beschliesst er, selbst ein Tool zu bauen, ausgehend von den Fragen, die seine Gemeinde bereitstellt. «Die Idee entstand wirklich aus einem konkreten Bedürfnis von uns. Und dann sagten wir uns, dass es sicher andere Menschen mit demselben Bedürfnis gibt», fügt Vincenzo hinzu.</p>
+<p>So entstand Swiss Naturalization Test, eine App, die inzwischen für iOS und Android verfügbar ist. Sie lässt Kandidatinnen und Kandidaten die Fragen üben, mit denen sie in ihrer Prüfung konfrontiert werden könnten.</p>
+<p>In Genf nutzen sie bereits mehr als 700 Personen. Einige Fragen bereiten mehr Schwierigkeiten als andere, namentlich jene zur Schweizer Politik.</p>
+<p>«Zum Beispiel bei der Frage, wie oft die eidgenössischen Wahlen stattfinden, antworten 60% richtig und 40% wissen es nicht», stellt Vincenzo fest.</p>
+<p>Für die Genfer Kandidaten steht viel auf dem Spiel: Der Fragebogen umfasst 45 Fragen, und nur fünf Fehler sind erlaubt.</p>
+<p>Vincenzo lässt nicht nur andere lernen. Mit seiner Frau muss er die Prüfung in wenigen Tagen selbst ablegen.</p>
+<p>«Am Montag machen wir unseren schriftlichen Test... aber normalerweise sollte es klappen», lächelt er.</p>
+<p>Bleibt eine Frage, die im offiziellen Fragebogen gewiss nicht vorkommt: Wie bereitet man ein gutes Schweizer Raclette zu? In diesem Punkt scheint Vincenzo schon bereit.</p>
+<blockquote><em>«Guter Schweizer Käse, lokal. Gute Kartoffeln. Und vor allem gute Gesellschaft, Freunde, die bereit sind zu essen und guten Wein zu trinken.»</em></blockquote>
+<p>Das Raclette ist gesichert. Der Rest entscheidet sich in wenigen Tagen.</p>
+</div></article><div class="orig"><a class="btn" href="https://www.lemanbleu.ch/fr/Actualite/Suisse/Devenir-Suisse-ca-se-revise-aussi-sur-son-telephone.html" target="_blank" rel="noopener">Auf Léman Bleu ansehen →</a></div><section class="block final"><div class="wrap"><h2 class="sec">Jetzt loslegen</h2><div class="stores"><a href="https://apps.apple.com/app/id6769993041" aria-label="App Store"><img class="apple" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store"></a><a href="https://play.google.com/store/apps/details?id=ch.vincedev.swisscitizenship" aria-label="Google Play"><img class="google" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Google Play"></a></div></div></section><footer class="site"><div class="wrap"><div class="fl"><a href="../landing.html">Start</a> &middot; <a href="../landing.html#press">Presse</a> &middot; <a href="../transparency.html">Transparenz</a> &middot; <a href="../privacy-policy.html">Datenschutz</a> &middot; <a href="../terms.html">Nutzungsbedingungen</a> &middot; <a href="../account-deletion.html">Datenlöschung</a> &middot; <a href="mailto:swisscitizenshiptest@gmail.com" onclick="return __contact(event)">Kontakt</a></div><p class="disc">Swiss Naturalization Test ist ein unabhängiger Lernbegleiter, entwickelt von Vincenzo Casini. Er ist mit keiner Regierungsbehörde verbunden. Für die offizielle Prüfung beziehen Sie sich stets auf die offizielle Plattform Ihres Kantons.</p></div></footer></div><div class="langblock" id="lb-it" hidden><article class="article"><a class="back" href="../landing.html#press">← Tutta la rassegna</a><p class="eyebrow">Se ne parla &middot; Léman Bleu</p><a class="aherov" href="https://www.lemanbleu.ch/fr/Actualite/Suisse/Devenir-Suisse-ca-se-revise-aussi-sur-son-telephone.html" target="_blank" rel="noopener"><img class="ahero" src="https://www.lemanbleu.ch/Htdocs/Files/Videos/Pictures/25271.jpg?CacheBusterGUID=c6cb0415-04f9-42dc-a0fb-d364dfcd23c5" alt=""><span class="playbadge" aria-hidden="true"></span></a><div class="abody">
+<h2>Diventare svizzeri? Si ripassa anche sul telefono</h2>
+<p><em>Di Lucie Hainaut · 19.08.2026 · Léman Bleu</em></p>
+<p><em>Uno sviluppatore italiano che vive nel canton Vaud ha creato un'app per prepararsi al proprio test di naturalizzazione svizzera. Lo strumento piace anche a Ginevra, dove conta già più di 700 utenti.</em></p>
+<p>Ottenere il passaporto con la croce bianca è un percorso che richiede preparazione. Tra le tappe: il test di conoscenze sulla Svizzera e sul suo funzionamento.</p>
+<p>Quando Vincenzo Casini e sua moglie iniziano a ripassare in vista della loro naturalizzazione, cercano un'app adatta. Senza successo.</p>
+<p>«O sono a pagamento, o non vengono aggiornate da tempo, oppure l'interfaccia non è granché», racconta lo sviluppatore. Decide allora di creare lui stesso uno strumento a partire dalle domande messe a disposizione dal suo comune. «L'idea è nata davvero da un bisogno concreto per noi. E poi ci siamo detti che di sicuro c'erano altre persone con la stessa esigenza», aggiunge Vincenzo.</p>
+<p>È così che è nata Swiss Naturalization Test, un'app ora disponibile su iOS e Android. Permette ai candidati di esercitarsi sulle domande che potrebbero incontrare all'esame.</p>
+<p>A Ginevra la usano già più di 700 persone. Alcune domande risultano più difficili di altre, in particolare quelle sulla politica svizzera.</p>
+<p>«Per esempio, alla domanda su ogni quanto si tengono le elezioni federali, il 60% risponde giusto e il 40% non lo sa», rileva Vincenzo.</p>
+<p>Per i candidati ginevrini la posta è alta: il questionario comprende 45 domande e sono ammessi solo cinque errori.</p>
+<p>Vincenzo non si limita a far ripassare gli altri. Con sua moglie, deve sostenere lui stesso l'esame tra pochi giorni.</p>
+<p>«Lunedì facciamo il nostro test scritto... ma normalmente dovrebbe andare», sorride.</p>
+<p>Resta una domanda che di certo non figura nel questionario ufficiale: come si prepara una buona raclette svizzera? Su questo punto Vincenzo sembra già pronto.</p>
+<blockquote><em>«Del buon formaggio svizzero, locale. Delle buone patate. E soprattutto della buona compagnia, amici pronti a mangiare e a bere del buon vino.»</em></blockquote>
+<p>La raclette è promossa. Il resto si deciderà tra pochi giorni.</p>
+</div></article><div class="orig"><a class="btn" href="https://www.lemanbleu.ch/fr/Actualite/Suisse/Devenir-Suisse-ca-se-revise-aussi-sur-son-telephone.html" target="_blank" rel="noopener">Guarda su Léman Bleu →</a></div><section class="block final"><div class="wrap"><h2 class="sec">Inizia oggi</h2><div class="stores"><a href="https://apps.apple.com/app/id6769993041" aria-label="App Store"><img class="apple" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store"></a><a href="https://play.google.com/store/apps/details?id=ch.vincedev.swisscitizenship" aria-label="Google Play"><img class="google" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Google Play"></a></div></div></section><footer class="site"><div class="wrap"><div class="fl"><a href="../landing.html">Home</a> &middot; <a href="../landing.html#press">Stampa</a> &middot; <a href="../transparency.html">Trasparenza</a> &middot; <a href="../privacy-policy.html">Privacy</a> &middot; <a href="../terms.html">Condizioni</a> &middot; <a href="../account-deletion.html">Cancellazione dati</a> &middot; <a href="mailto:swisscitizenshiptest@gmail.com" onclick="return __contact(event)">Contatto</a></div><p class="disc">Swiss Naturalization Test è un compagno di studio indipendente sviluppato da Vincenzo Casini. Non è affiliato ad alcuna autorità governativa. Per il test ufficiale, fai sempre riferimento alla piattaforma ufficiale del tuo cantone.</p></div></footer></div>
+<script>
+(function(){
+  var LANGS=["en","fr","de","it"];
+  var NAV={en:{home:"Home",press:"Press",transp:"Transparency",privacy:"Privacy"},
+    fr:{home:"Accueil",press:"Presse",transp:"Transparence",privacy:"Confidentialité"},
+    de:{home:"Start",press:"Presse",transp:"Transparenz",privacy:"Datenschutz"},
+    it:{home:"Home",press:"Stampa",transp:"Trasparenza",privacy:"Privacy"}};
+  function apply(l){
+    if(LANGS.indexOf(l)<0)l="en";
+    document.documentElement.lang=l;
+    LANGS.forEach(function(x){var b=document.getElementById("lb-"+x);if(b)b.hidden=(x!==l);});
+    var n=NAV[l];
+    document.querySelectorAll("[data-nav]").forEach(function(a){a.textContent=n[a.getAttribute("data-nav")];});
+    document.querySelectorAll(".langs a").forEach(function(a){a.classList.toggle("on",a.getAttribute("data-lang")===l);});
+    var mn=document.getElementById("mnav");if(mn)mn.checked=false;
+    try{localStorage.setItem("snt_lang",l);}catch(e){}
+  }
+  window.__setLang=function(l){apply(l);window.scrollTo(0,0);return false;};
+  window.__contact=function(e){if(e&&e.preventDefault)e.preventDefault();
+    var m="swisscitizenshiptest@gmail.com",l=(document.documentElement.lang||"en").slice(0,2);
+    var M={en:"Contact: "+m+"\\n\\nOpen your email app to write to us?",
+      fr:"Contact : "+m+"\\n\\nOuvrir votre messagerie pour nous \\u00e9crire ?",
+      de:"Kontakt: "+m+"\\n\\nE-Mail-App \\u00f6ffnen, um uns zu schreiben?",
+      it:"Contatto: "+m+"\\n\\nAprire l'app di posta per scriverci?"};
+    try{if(navigator.clipboard)navigator.clipboard.writeText(m);}catch(_){}
+    if(window.confirm(M[l]||M.en))location.href="mailto:"+m;return false;};
+  var saved=null;try{saved=localStorage.getItem("snt_lang");}catch(e){}
+  var nl=(navigator.language||"en").slice(0,2).toLowerCase();
+  apply(saved||(LANGS.indexOf(nl)>=0?nl:"en"));
+})();
+</script>
+</body>
+</html>
