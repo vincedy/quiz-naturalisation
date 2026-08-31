@@ -1,0 +1,66 @@
+<!--
+  PRINTABLE MATERIALS INDEX — the "menu" that collects posters/flyers (locandine).
+  Each entry links to a self-contained print page; open it and print (Cmd/Ctrl+P)
+  at the indicated size. New materials get one more card here.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Printable materials — Swiss Naturalization Test</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="../app/icon.png">
+  <style>
+    :root{
+      --ink:#141821; --muted:#5a6472; --bg:#ffffff; --soft:#f6f8fb; --border:#e6ebf2;
+      --red:#DA291C; --navy:#0d1426; --radius:16px;
+      --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    }
+    *{box-sizing:border-box}
+    body{font-family:var(--font);color:var(--ink);margin:0;background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:900px;margin:0 auto;padding:0 24px}
+    header.h{background:radial-gradient(900px 360px at 50% -140px,#20304f 0%,var(--navy) 62%);color:#fff;padding:34px 24px 40px;text-align:center}
+    header.h .brand{display:inline-flex;align-items:center;gap:10px;font-weight:800;font-size:1rem;margin-bottom:20px}
+    header.h .brand img{width:30px;height:30px;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,.3)}
+    header.h h1{font-size:1.7rem;font-weight:850;letter-spacing:-.02em;margin:0 0 8px}
+    header.h p{color:#c7d2e8;margin:0;font-size:1.02rem}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;padding:38px 0}
+    @media(max-width:640px){.grid{grid-template-columns:1fr}}
+    .card{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:.16s}
+    .card:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(16,24,40,.10)}
+    .card .top{padding:22px 22px 8px;display:flex;align-items:baseline;gap:10px}
+    .card .fmt{font-weight:850;font-size:1.15rem;letter-spacing:-.01em}
+    .card .tag{font-size:.72rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--red);background:rgba(218,41,28,.08);border:1px solid rgba(218,41,28,.2);padding:3px 9px;border-radius:999px}
+    .card .d{padding:0 22px 18px;color:var(--muted);font-size:.95rem}
+    .card .go{margin-top:auto;padding:14px 22px;border-top:1px solid var(--border);font-weight:700;color:var(--red);font-size:.95rem}
+    .note{color:var(--muted);font-size:.9rem;text-align:center;padding:0 0 40px}
+    .back{display:inline-block;margin-top:14px;color:#9fb0e8;font-weight:600}
+  </style>
+</head>
+<body>
+  <header class="h">
+    <div class="brand"><img src="../app/icon.png" alt=""> Swiss Naturalization Test</div>
+    <h1>Printable materials</h1>
+    <p>Posters and flyers to print and display.</p>
+    <a class="back" href="../landing.html">&larr; Back to the site</a>
+  </header>
+
+  <div class="wrap">
+    <div class="grid">
+      <a class="card" href="mock-lu-de-a3.html">
+        <div class="top"><span class="fmt">Poster A3</span><span class="tag">Lucerne · DE</span></div>
+        <div class="d">Wall poster with a real exam question, for boards and windows.</div>
+        <div class="go">Open &amp; print &rarr;</div>
+      </a>
+      <a class="card" href="mock-lu-de-a5.html">
+        <div class="top"><span class="fmt">Flyer A5</span><span class="tag">Lucerne · DE</span></div>
+        <div class="d">Handout flyer, same design at counter size.</div>
+        <div class="go">Open &amp; print &rarr;</div>
+      </a>
+    </div>
+    <p class="note">Open a material, then print with Cmd/Ctrl + P at the size shown (A3 or A5).</p>
+  </div>
+</body>
+</html>
