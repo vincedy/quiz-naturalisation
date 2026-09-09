@@ -41,7 +41,12 @@
   #mnav{display:none}
   .burger{margin-left:auto;display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
   .burger span{width:24px;height:2px;background:var(--ink);border-radius:2px}
-  @media(max-width:860px){
+  /* nav a 7 voci in 4 lingue: mai andare a capo, e passare al menu a panino
+     PRIMA che la barra si stringa (in tedesco le voci sono lunghissime) */
+  .brand,nav.main a.link{white-space:nowrap}
+  .navbar{gap:12px}
+  nav.main a.link{padding:7px 9px;font-size:.89rem}
+  @media(max-width:1280px){
     nav.main{position:fixed;inset:64px 0 auto 0;flex-direction:column;align-items:stretch;background:#fff;border-bottom:1px solid var(--border);padding:12px 24px 20px;gap:6px;transform:translateY(-140%);transition:transform .25s ease;box-shadow:var(--shadow)}
     #mnav:checked ~ .navbar nav.main{transform:translateY(0)}
     .burger{display:flex}
@@ -165,7 +170,8 @@
       <a class="link" data-nav="home" href="#" onclick="return __toTop()">Home</a>
       <a class="link" data-nav="press" href="#" onclick="return __toPress()">Press</a><a class="link" data-nav="presskit" href="press-kit.html">Press kit</a>
       <a class="link" data-nav="transp" href="transparency.html">Transparency</a>
-      <a class="link" data-nav="privacy" href="privacy-policy.html">Privacy</a>
+      <a class="link" data-nav="eng" href="engineering.html">Engineering</a>
+      <a class="link" data-nav="privacy" href="privacy-policy.html">Privacy</a><a class="link" data-nav="terms" href="terms.html">Terms</a>
       <span class="langs"><a data-lang="en" href="#" onclick="return __setLang('en')">EN</a><a data-lang="fr" href="#" onclick="return __setLang('fr')">FR</a><a data-lang="de" href="#" onclick="return __setLang('de')">DE</a><a data-lang="it" href="#" onclick="return __setLang('it')">IT</a></span>
     </nav>
   </div>
@@ -237,7 +243,7 @@
     </div></section>
 
     <footer class="site"><div class="wrap">
-      <div class="fl"><a href="#" onclick="return __toTop()">Home</a> &middot; <a href="#" onclick="return __toPress()">Press</a> &middot; <a href="transparency.html">Transparency</a> &middot; <a href="privacy-policy.html">Privacy</a> &middot; <a href="terms.html">Terms</a> &middot; <a href="account-deletion.html">Data deletion</a> &middot; <a href="print/index.html">Print materials</a> &middot; <a href="mailto:swisscitizenshiptest@gmail.com" onclick="return __contact(event)">Contact</a></div>
+      <div class="fl"><a href="#" onclick="return __toTop()">Home</a> &middot; <a href="#" onclick="return __toPress()">Press</a> &middot; <a href="transparency.html">Transparency</a> &middot; <a href="engineering.html">Engineering</a> &middot; <a href="privacy-policy.html">Privacy</a> &middot; <a href="terms.html">Terms</a> &middot; <a href="account-deletion.html">Data deletion</a> &middot; <a href="print/index.html">Print materials</a> &middot; <a href="mailto:swisscitizenshiptest@gmail.com" onclick="return __contact(event)">Contact</a></div>
       <p class="disc">Swiss Naturalization Test is an independent study companion developed by Vincenzo Casini. It is not affiliated with any government authority. For the official test, always refer to your canton's official platform.</p>
     </div></footer>
     </div>
@@ -308,7 +314,7 @@
     </div></section>
 
     <footer class="site"><div class="wrap">
-      <div class="fl"><a href="#" onclick="return __toTop()">Accueil</a> &middot; <a href="#" onclick="return __toPress()">Presse</a> &middot; <a href="transparency.html">Transparence</a> &middot; <a href="privacy-policy.html">Confidentialit&eacute;</a> &middot; <a href="terms.html">Conditions</a> &middot; <a href="account-deletion.html">Suppression des données</a> &middot; <a href="mailto:swisscitizenshiptest@gmail.com" onclick="return __contact(event)">Contact</a></div>
+      <div class="fl"><a href="#" onclick="return __toTop()">Accueil</a> &middot; <a href="#" onclick="return __toPress()">Presse</a> &middot; <a href="transparency.html">Transparence</a> &middot; <a href="engineering.html">Ing&eacute;nierie</a> &middot; <a href="privacy-policy.html">Confidentialit&eacute;</a> &middot; <a href="terms.html">Conditions</a> &middot; <a href="account-deletion.html">Suppression des données</a> &middot; <a href="mailto:swisscitizenshiptest@gmail.com" onclick="return __contact(event)">Contact</a></div>
       <p class="disc">Swiss Naturalization Test est un compagnon d'&eacute;tude ind&eacute;pendant d&eacute;velopp&eacute; par Vincenzo Casini. Il n'est affili&eacute; &agrave; aucune autorit&eacute; gouvernementale. Pour le test officiel, r&eacute;f&eacute;rez-vous toujours &agrave; la plateforme officielle de votre canton.</p>
     </div></footer>
     </div>
@@ -379,7 +385,7 @@
     </div></section>
 
     <footer class="site"><div class="wrap">
-      <div class="fl"><a href="#" onclick="return __toTop()">Start</a> &middot; <a href="#" onclick="return __toPress()">Presse</a> &middot; <a href="transparency.html">Transparenz</a> &middot; <a href="privacy-policy.html">Datenschutz</a> &middot; <a href="terms.html">Nutzungsbedingungen</a> &middot; <a href="account-deletion.html">Datenlöschung</a> &middot; <a href="mailto:swisscitizenshiptest@gmail.com" onclick="return __contact(event)">Kontakt</a></div>
+      <div class="fl"><a href="#" onclick="return __toTop()">Start</a> &middot; <a href="#" onclick="return __toPress()">Presse</a> &middot; <a href="transparency.html">Transparenz</a> &middot; <a href="engineering.html">Technik</a> &middot; <a href="privacy-policy.html">Datenschutz</a> &middot; <a href="terms.html">Nutzungsbedingungen</a> &middot; <a href="account-deletion.html">Datenlöschung</a> &middot; <a href="mailto:swisscitizenshiptest@gmail.com" onclick="return __contact(event)">Kontakt</a></div>
       <p class="disc">Swiss Naturalization Test ist ein unabh&auml;ngiger Lernbegleiter, entwickelt von Vincenzo Casini. Er ist mit keiner Regierungsbeh&ouml;rde verbunden. F&uuml;r die offizielle Pr&uuml;fung beziehen Sie sich stets auf die offizielle Plattform Ihres Kantons.</p>
     </div></footer>
     </div>
@@ -450,7 +456,7 @@
     </div></section>
 
     <footer class="site"><div class="wrap">
-      <div class="fl"><a href="#" onclick="return __toTop()">Home</a> &middot; <a href="#" onclick="return __toPress()">Stampa</a> &middot; <a href="transparency.html">Trasparenza</a> &middot; <a href="privacy-policy.html">Privacy</a> &middot; <a href="terms.html">Condizioni</a> &middot; <a href="account-deletion.html">Cancellazione dati</a> &middot; <a href="mailto:swisscitizenshiptest@gmail.com" onclick="return __contact(event)">Contatto</a></div>
+      <div class="fl"><a href="#" onclick="return __toTop()">Home</a> &middot; <a href="#" onclick="return __toPress()">Stampa</a> &middot; <a href="transparency.html">Trasparenza</a> &middot; <a href="engineering.html">Ingegneria</a> &middot; <a href="privacy-policy.html">Privacy</a> &middot; <a href="terms.html">Condizioni</a> &middot; <a href="account-deletion.html">Cancellazione dati</a> &middot; <a href="mailto:swisscitizenshiptest@gmail.com" onclick="return __contact(event)">Contatto</a></div>
       <p class="disc">Swiss Naturalization Test &egrave; un compagno di studio indipendente sviluppato da Vincenzo Casini. Non &egrave; affiliato ad alcuna autorit&agrave; governativa. Per il test ufficiale, fai sempre riferimento alla piattaforma ufficiale del tuo cantone.</p>
     </div></footer>
     </div>
@@ -459,10 +465,10 @@
 (function(){
   var LANGS=["en","fr","de","it"];
   var NAV={
-    en:{home:"Home",press:"Press",presskit:"Press kit",transp:"Transparency",privacy:"Privacy"},
-    fr:{home:"Accueil",press:"Presse",presskit:"Dossier de presse",transp:"Transparence",privacy:"Confidentialit\u00e9"},
-    de:{home:"Start",press:"Presse",presskit:"Pressemappe",transp:"Transparenz",privacy:"Datenschutz"},
-    it:{home:"Home",press:"Stampa",presskit:"Press kit",transp:"Trasparenza",privacy:"Privacy"}
+    en:{home:"Home",press:"Press",presskit:"Press kit",eng:"Engineering",terms:"Terms",transp:"Transparency",privacy:"Privacy"},
+    fr:{home:"Accueil",press:"Presse",presskit:"Dossier de presse",eng:"Ing\u00e9nierie",terms:"Conditions",transp:"Transparence",privacy:"Confidentialit\u00e9"},
+    de:{home:"Start",press:"Presse",presskit:"Pressemappe",eng:"Technik",terms:"Nutzungsbedingungen",transp:"Transparenz",privacy:"Datenschutz"},
+    it:{home:"Home",press:"Stampa",presskit:"Press kit",eng:"Ingegneria",terms:"Condizioni",transp:"Trasparenza",privacy:"Privacy"}
   };
   function apply(l){
     if(LANGS.indexOf(l)<0)l="en";

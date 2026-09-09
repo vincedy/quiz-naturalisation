@@ -59,7 +59,12 @@ header.site .langs a.on,header.site .langs a:hover{background:#141821;color:#fff
 #mnav{display:none}
 header.site .burger{margin-left:auto;display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
 header.site .burger span{width:24px;height:2px;background:#141821;border-radius:2px}
-@media(max-width:860px){header.site nav.main{position:fixed;inset:64px 0 auto 0;flex-direction:column;align-items:stretch;background:#fff;border-bottom:1px solid #e6ebf2;padding:12px 24px 20px;gap:6px;transform:translateY(-140%);transition:transform .25s;box-shadow:0 10px 30px rgba(16,24,40,.1)}#mnav:checked ~ .navbar nav.main{transform:translateY(0)}header.site .burger{display:flex}header.site .langs{margin:6px 0 0;padding:12px 0 0;border-left:0;border-top:1px solid #e6ebf2;justify-content:center}}
+/* nav a 7 voci in 4 lingue: mai andare a capo, e passare al menu a panino
+     PRIMA che la barra si stringa (in tedesco le voci sono lunghissime) */
+  .brand,nav.main a.link{white-space:nowrap}
+  .navbar{gap:12px}
+  nav.main a.link{padding:7px 9px;font-size:.89rem}
+  @media(max-width:1280px){header.site nav.main{position:fixed;inset:64px 0 auto 0;flex-direction:column;align-items:stretch;background:#fff;border-bottom:1px solid #e6ebf2;padding:12px 24px 20px;gap:6px;transform:translateY(-140%);transition:transform .25s;box-shadow:0 10px 30px rgba(16,24,40,.1)}#mnav:checked ~ .navbar nav.main{transform:translateY(0)}header.site .burger{display:flex}header.site .langs{margin:6px 0 0;padding:12px 0 0;border-left:0;border-top:1px solid #e6ebf2;justify-content:center}}
 footer.site{background:#0d1426;color:#9fb0cc;padding:34px 24px;text-align:center;font-size:.9rem;margin-top:44px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
 footer.site a{color:#cdd9ee;text-decoration:none;margin:0 8px;font-weight:600}
 footer.site a:hover{text-decoration:underline}
@@ -74,8 +79,8 @@ section[id]{scroll-margin-top:78px}
 <label class="burger" for="mnav" aria-label="Menu"><span></span><span></span><span></span></label>
 <nav class="main">
 <a class="link" data-nav="home" href="landing.html">Home</a>
-<a class="link" data-nav="press" href="landing.html#press">Press</a>
-<a class="link" data-nav="transp" href="transparency.html">Transparency</a>
+<a class="link" data-nav="press" href="landing.html#press">Press</a><a class="link" data-nav="presskit" href="press-kit.html">Press kit</a>
+<a class="link" data-nav="transp" href="transparency.html">Transparency</a><a class="link" data-nav="eng" href="engineering.html">Engineering</a>
 <a class="link" data-nav="privacy" href="privacy-policy.html">Privacy</a>
 <a class="link" data-nav="terms" href="terms.html">Terms</a>
 <span class="langs"><a data-lang="en" href="#en">EN</a><a data-lang="fr" href="#fr">FR</a><a data-lang="de" href="#de">DE</a><a data-lang="it" href="#it">IT</a></span>
@@ -411,16 +416,16 @@ section[id]{scroll-margin-top:78px}
     <p>Titolare del trattamento: Vincenzo Casini, Avenue de Saint-Jean 7, 1110 Morges, Svizzera. Per domande sulla privacy o per esercitare i tuoi diritti: <a href="mailto:swisscitizenshiptest@gmail.com">swisscitizenshiptest@gmail.com</a>.</p>
   </section>
 <footer class="site">
-<a data-nav="home" href="landing.html">Home</a>&middot;<a data-nav="press" href="landing.html#press">Press</a>&middot;<a data-nav="transp" href="transparency.html">Transparency</a>&middot;<a data-nav="privacy" href="privacy-policy.html">Privacy</a>&middot;<a data-nav="terms" href="terms.html">Terms</a>&middot;<a data-nav="del" href="account-deletion.html">Data deletion</a>&middot;<a data-nav="contact" href="mailto:swisscitizenshiptest@gmail.com" onclick="return __contact(event)">Contact</a>
+<a data-nav="home" href="landing.html">Home</a>&middot;<a data-nav="press" href="landing.html#press">Press</a>&middot;<a data-nav="transp" href="transparency.html">Transparency</a>&middot;<a data-nav="eng" href="engineering.html">Engineering</a>&middot;<a data-nav="privacy" href="privacy-policy.html">Privacy</a>&middot;<a data-nav="terms" href="terms.html">Terms</a>&middot;<a data-nav="del" href="account-deletion.html">Data deletion</a>&middot;<a data-nav="contact" href="mailto:swisscitizenshiptest@gmail.com" onclick="return __contact(event)">Contact</a>
 </footer>
 <script>
 (function(){
   var L=["en","fr","de","it"];
   var T={
-    en:{home:"Home",press:"Press",transp:"Transparency",privacy:"Privacy",terms:"Terms",del:"Data deletion",contact:"Contact"},
-    fr:{home:"Accueil",press:"Presse",transp:"Transparence",privacy:"Confidentialit\u00e9",terms:"Conditions",del:"Suppression des donn\u00e9es",contact:"Contact"},
-    de:{home:"Start",press:"Presse",transp:"Transparenz",privacy:"Datenschutz",terms:"Nutzungsbedingungen",del:"Datenl\u00f6schung",contact:"Kontakt"},
-    it:{home:"Home",press:"Stampa",transp:"Trasparenza",privacy:"Privacy",terms:"Condizioni",del:"Cancellazione dati",contact:"Contatto"}
+    en:{home:"Home",press:"Press",eng:"Engineering",presskit:"Press kit",transp:"Transparency",privacy:"Privacy",terms:"Terms",del:"Data deletion",contact:"Contact"},
+    fr:{home:"Accueil",press:"Presse",eng:"Ing\u00e9nierie",presskit:"Dossier de presse",transp:"Transparence",privacy:"Confidentialit\u00e9",terms:"Conditions",del:"Suppression des donn\u00e9es",contact:"Contact"},
+    de:{home:"Start",press:"Presse",eng:"Technik",presskit:"Pressemappe",transp:"Transparenz",privacy:"Datenschutz",terms:"Nutzungsbedingungen",del:"Datenl\u00f6schung",contact:"Kontakt"},
+    it:{home:"Home",press:"Stampa",eng:"Ingegneria",presskit:"Press kit",transp:"Trasparenza",privacy:"Privacy",terms:"Condizioni",del:"Cancellazione dati",contact:"Contatto"}
   };
   function cur(){var h=location.hash.replace("#","");if(L.indexOf(h)>=0)return h;var s=null;try{s=localStorage.getItem("snt_lang");}catch(e){}return L.indexOf(s)>=0?s:"en";}
   function paint(){var l=cur(),n=T[l];
