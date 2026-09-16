@@ -12,8 +12,16 @@ information (DNS is public by design). No account numbers, invoices or payment d
 | `swissnaturalisationtest.ch` | Defensive (British spelling). Redirects to the main domain. |
 
 Registrar: Infomaniak, name servers `ns11/ns12.infomaniak.ch`, DNSSEC on. All three first
-registered 16.09.2026 for one year, with auto-renewal. Expiry dates live in the Infomaniak
-Manager (the `.ch` registry does not publish them; the `.com` registry says 16.09.2027).
+registered 16.09.2026, with auto-renewal. Expiry per the Infomaniak Manager: both `.ch`
+14.09.2027, `.com` 16.09.2027.
+
+The two defensive domains (and their `www`) use an Infomaniak **Web Redirection**
+(Manager → Domains → domain → Web Redirections), permanent 301 to
+`https://swissnaturalizationtest.ch`. Infomaniak points their A/AAAA records to its own
+redirect servers (`84.16.66.164`, `2001:1600:0:aaaa::2:14`). The redirect works over
+`http://`; over `https://` Infomaniak serves no valid certificate, so a browser that tries
+HTTPS first shows a warning. Accepted: nobody is sent to these domains, they exist so nobody
+else can own them. Web redirections have no public API.
 
 The `.ch` registry publishes no holder data in public WHOIS (`whois -h whois.nic.ch`).
 
