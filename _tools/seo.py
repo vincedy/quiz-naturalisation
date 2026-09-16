@@ -87,7 +87,12 @@ for page in PAGES:
     print("patched", page)
 
 # robots.txt
-pathlib.Path("robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {ROOT}sitemap.xml\n")
+BOTS = ["Googlebot", "Bingbot", "GPTBot", "OAI-SearchBot", "ChatGPT-User", "PerplexityBot", "Perplexity-User",
+        "ClaudeBot", "Claude-SearchBot", "Claude-User", "Google-Extended", "Applebot", "CCBot"]
+pathlib.Path("robots.txt").write_text(
+    "User-agent: *\nAllow: /\n\n# Search and AI answer engines are welcome, named explicitly.\n"
+    + "".join(f"User-agent: {b}\nAllow: /\n\n" for b in BOTS)
+    + f"Sitemap: {ROOT}sitemap.xml\n")
 
 # sitemap.xml with hreflang alternates; lastmod = last commit touching the page
 rows = ['<?xml version="1.0" encoding="UTF-8"?>',
