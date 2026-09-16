@@ -56,10 +56,22 @@ takeover risk that order protects against, so the safe sequence is:
 5. When the certificate is issued, enforce HTTPS:
    `gh api -X PUT repos/vincedy/quiz-naturalisation/pages -F https_enforced=true`
 
+## Status
+
+Live since 16.09.2026: DNS records created, domain set on the repo (GitHub committed `CNAME`),
+certificate approved, HTTPS enforced. Every `vincedy.github.io/quiz-naturalisation/<path>`
+answers `301` to `https://swissnaturalizationtest.ch/<path>`.
+
+Corporate networks that filter newly registered domains may block the domain for its first days.
+Test from a mobile connection before concluding the site is down.
+
 ## What depends on this domain
 
-- **Printed QR codes** in `print/` point to `vincedy.github.io/quiz-naturalisation/landing.html`.
+- **Printed QR codes** point to `vincedy.github.io/quiz-naturalisation/landing.html`
+  (the mocks in `print/` keep that URL on purpose: it is what was printed).
   They keep working only through GitHub's redirect to the custom domain.
+- **Feed images** in the app database: `image_base_feed` and `image_base_canton` config rows
+  (migration `0216`) still point to `github.io` and work through the redirect.
 - **App binary**: `storeLinks.ts` (`go.html`) and `legalLinks.ts` (terms, privacy) in the app repo.
 - **Store listings**: website, privacy policy and account-deletion URLs (Play Console);
   support, marketing and privacy URLs (App Store Connect, changeable only with a new version).
