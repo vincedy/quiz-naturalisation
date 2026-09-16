@@ -56,6 +56,18 @@
   footer{background:var(--navy);color:#9fb0cc;padding:34px 24px;text-align:center;font-size:.9rem}
   footer a{color:#cdd9ee}
 </style>
+<!-- seo:start -->
+<link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/press-kit.html">
+<link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/press-kit.html?lang=fr">
+<link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/press-kit.html?lang=de">
+<link rel="alternate" hreflang="it" href="https://swissnaturalizationtest.ch/press-kit.html?lang=it">
+<link rel="alternate" hreflang="x-default" href="https://swissnaturalizationtest.ch/press-kit.html">
+<script>(function(){var q=null;try{q=new URLSearchParams(location.search).get("lang");}catch(e){}var c=document.createElement("link");c.rel="canonical";c.href="https://swissnaturalizationtest.ch/press-kit.html"+(q==="fr"||q==="de"||q==="it"?"?lang="+q:"");document.head.appendChild(c);})();</script>
+<meta property="og:url" content="https://swissnaturalizationtest.ch/press-kit.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Swiss Naturalization Test">
+<meta name="twitter:card" content="summary">
+<!-- seo:end -->
 </head>
 <body>
 
@@ -294,7 +306,8 @@
   window.__setLang=function(l){apply(l);window.scrollTo(0,0);return false;};
   var saved=null;try{saved=localStorage.getItem("snt_lang");}catch(e){}
   var nl=(navigator.language||"en").slice(0,2).toLowerCase();
-  apply(saved||(LANGS.indexOf(nl)>=0?nl:"en"));
+  var q=null;try{q=new URLSearchParams(location.search).get("lang");}catch(e){}
+  apply((LANGS.indexOf(q)>=0?q:null)||saved||(LANGS.indexOf(nl)>=0?nl:"en"));
 })();
 </script>
 </body>

@@ -68,6 +68,18 @@
   footer.site .fl a{margin:0 8px;font-weight:600;cursor:pointer}
   footer.site .disc{max-width:680px;margin:0 auto;font-size:.82rem;color:#7f90ad}
 </style>
+<!-- seo:start -->
+<link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/press/watson.html">
+<link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/press/watson.html?lang=fr">
+<link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/press/watson.html?lang=de">
+<link rel="alternate" hreflang="it" href="https://swissnaturalizationtest.ch/press/watson.html?lang=it">
+<link rel="alternate" hreflang="x-default" href="https://swissnaturalizationtest.ch/press/watson.html">
+<script>(function(){var q=null;try{q=new URLSearchParams(location.search).get("lang");}catch(e){}var c=document.createElement("link");c.rel="canonical";c.href="https://swissnaturalizationtest.ch/press/watson.html"+(q==="fr"||q==="de"||q==="it"?"?lang="+q:"");document.head.appendChild(c);})();</script>
+<meta property="og:url" content="https://swissnaturalizationtest.ch/press/watson.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Swiss Naturalization Test">
+<meta name="twitter:card" content="summary">
+<!-- seo:end -->
 </head>
 <body>
 <header class="site"><input type="checkbox" id="mnav"><div class="wrap navbar"><a class="brand" href="../landing.html"><img src="../app/icon.png" alt="">Swiss Naturalization Test</a><label class="burger" for="mnav" aria-label="Menu"><span></span><span></span><span></span></label><nav class="main"><a class="link" data-nav="home" href="../landing.html">Home</a><a class="link" data-nav="press" href="../landing.html#press">Press</a><a class="link" data-nav="presskit" href="../press-kit.html">Press kit</a><a class="link" data-nav="transp" href="../transparency.html">Transparency</a><a class="link" data-nav="eng" href="../engineering.html">Engineering</a><a class="link" data-nav="privacy" href="../privacy-policy.html">Privacy</a><a class="link" data-nav="terms" href="../terms.html">Terms</a><span class="langs"><a data-lang="en" href="#" onclick="return __setLang('en')">EN</a><a data-lang="fr" href="#" onclick="return __setLang('fr')">FR</a><a data-lang="de" href="#" onclick="return __setLang('de')">DE</a><a data-lang="it" href="#" onclick="return __setLang('it')">IT</a></span></nav></div></header>
@@ -152,7 +164,8 @@
     if(window.confirm(M[l]||M.en))location.href="mailto:"+m;return false;};
   var saved=null;try{saved=localStorage.getItem("snt_lang");}catch(e){}
   var nl=(navigator.language||"en").slice(0,2).toLowerCase();
-  apply(saved||(LANGS.indexOf(nl)>=0?nl:"en"));
+  var q=null;try{q=new URLSearchParams(location.search).get("lang");}catch(e){}
+  apply((LANGS.indexOf(q)>=0?q:null)||saved||(LANGS.indexOf(nl)>=0?nl:"en"));
 })();
 </script>
 </body>
