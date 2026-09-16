@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <!--
   PUBLIC TRANSPARENCY PAGE for Swiss Naturalization Test — multilingual (EN/FR/DE/IT).
 
@@ -31,7 +32,6 @@
 
   Last updated: 2026-09-14
 -->
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -58,7 +58,7 @@
     section { display: none; }
     section:target { display: block; }
     section#en { display: block; }
-    section:target ~ section#en { display: none; }
+    section#en:has(~ section:target) { display: none; }
     .sla {
       background: #f5f7fa;
       border-left: 4px solid #0066cc;

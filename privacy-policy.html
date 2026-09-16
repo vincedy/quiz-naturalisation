@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <!--
   LOCAL REFERENCE COPY of the privacy policy as published on GitHub Pages
   (vincedy/quiz-naturalisation). NOT the source of truth.
@@ -13,7 +14,6 @@
   Last synced: 2026-06-09 (iOS submission readiness)
   Status: iOS-ready — contains Technical Data Collection + Transparency link + iOS clarifications (IDFV, no IDFA, AWS Ireland data residency). Ready to be pasted onto vincedy/quiz-naturalisation public repo.
 -->
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -39,7 +39,7 @@
     section { display: none; }
     section:target { display: block; }
     section#en { display: block; }
-    section:target ~ section#en { display: none; }
+    section#en:has(~ section:target) { display: none; }
   </style>
 <!-- seo:start -->
 <link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/privacy-policy.html">

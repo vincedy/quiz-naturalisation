@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <!--
   LOCAL REFERENCE COPY of the account & data deletion page as published on
   GitHub Pages (vincedy/quiz-naturalisation). NOT the source of truth.
@@ -10,7 +11,6 @@
 
   Last synced: 2026-06-24 (optional Google/Apple sign-in compliance update)
 -->
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -36,7 +36,7 @@
     section { display: none; }
     section:target { display: block; }
     section#en { display: block; }
-    section:target ~ section#en { display: none; }
+    section#en:has(~ section:target) { display: none; }
   </style>
 <!-- seo:start -->
 <link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/account-deletion.html">

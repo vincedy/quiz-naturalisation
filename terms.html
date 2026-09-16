@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <!--
   LOCAL REFERENCE COPY of the Terms of Use, to be published on GitHub Pages
   (vincedy/quiz-naturalisation), served at
@@ -9,7 +10,6 @@
   DRAFT status: written to be reviewed by a legal professional before going live.
   Last updated: 15 July 2026
 -->
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -35,7 +35,7 @@
     section { display: none; }
     section:target { display: block; }
     section#en { display: block; }
-    section:target ~ section#en { display: none; }
+    section#en:has(~ section:target) { display: none; }
   </style>
 <!-- seo:start -->
 <link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/terms.html">
