@@ -27,6 +27,9 @@ def head_block(page, html):
     for l in LANGS:
         out.append(f'<link rel="alternate" hreflang="{l}" href="{lang_url(base, l)}">')
     out.append(f'<link rel="alternate" hreflang="x-default" href="{base}">')
+    # Google reads the site icon from the home page; every page declares it from the root.
+    out.append('<link rel="icon" href="/favicon.png" type="image/png" sizes="192x192">')
+    out.append('<link rel="apple-touch-icon" href="/apple-touch-icon.png">')
     # Canonical follows the ?lang= variant, so each language is indexed on its own URL.
     out.append('<script>(function(){var q=null;try{q=new URLSearchParams(location.search).get("lang");}catch(e){}'
                f'var c=document.createElement("link");c.rel="canonical";c.href="{base}"'
