@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vingt-six procédures, une seule application</title>
+<meta property="og:image" content="https://swissnaturalizationtest.ch/assets/social/og-26-cantons.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://swissnaturalizationtest.ch/assets/social/og-26-cantons.png">
+<link rel="icon" href="../app/icon.png">
+<style>
+  :root{--ink:#141821;--muted:#5a6472;--bg:#fff;--soft:#f6f8fb;--border:#e6ebf2;--red:#DA291C;--red-d:#b31f14;--navy:#0d1426;--shadow:0 10px 30px rgba(16,24,40,.10);--radius:16px;--font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font);color:var(--ink);margin:0;line-height:1.65;background:var(--bg);-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+  h1,h2,h3{letter-spacing:-.02em;line-height:1.2}
+  header.site{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid var(--border)}
+  .navbar{display:flex;align-items:center;gap:18px;height:64px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.02rem;letter-spacing:-.02em}
+  .brand img{width:30px;height:30px;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,.15)}
+  nav.main{margin-left:auto;display:flex;align-items:center;gap:4px}
+  nav.main a.link{padding:8px 12px;border-radius:9px;font-weight:600;font-size:.93rem;color:var(--muted);cursor:pointer}
+  nav.main a.link:hover{background:var(--soft);color:var(--ink)}
+  .langs{display:flex;gap:2px;margin-left:6px;padding-left:12px;border-left:1px solid var(--border)}
+  .langs a{font-size:.8rem;font-weight:700;color:var(--muted);padding:5px 9px;border-radius:999px;cursor:pointer}
+  .langs a.on,.langs a:hover{background:var(--ink);color:#fff}
+  #mnav{display:none}
+  .burger{margin-left:auto;display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
+  .burger span{width:24px;height:2px;background:var(--ink);border-radius:2px}
+  /* nav a 7 voci in 4 lingue: mai andare a capo, e passare al menu a panino
+     PRIMA che la barra si stringa (in tedesco le voci sono lunghissime) */
+  .brand,nav.main a.link{white-space:nowrap}
+  .navbar{gap:12px}
+  nav.main a.link{padding:7px 9px;font-size:.89rem}
+  @media(max-width:1280px){nav.main{position:fixed;inset:64px 0 auto 0;flex-direction:column;align-items:stretch;background:#fff;border-bottom:1px solid var(--border);padding:12px 24px 20px;gap:6px;transform:translateY(-140%);transition:transform .25s ease;box-shadow:var(--shadow)}#mnav:checked ~ .navbar nav.main{transform:translateY(0)}.burger{display:flex}nav.main a.link{padding:12px 10px;font-size:1rem}.langs{margin:6px 0 0;padding:12px 0 0;border-left:0;border-top:1px solid var(--border);justify-content:center}}
+  .article{max-width:720px;margin:0 auto;padding:34px 24px 8px}
+  .back{display:inline-block;color:var(--muted);font-weight:600;font-size:.9rem;margin-bottom:18px;cursor:pointer}
+  .back:hover{color:var(--red)}
+  .eyebrow{color:var(--red);font-weight:800;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;margin:0 0 14px}
+  .article h1{font-size:2.1rem;margin:0 0 10px;font-weight:850}
+  .sub{font-size:1.08rem;color:var(--muted);margin:0 0 6px;font-weight:600}
+  .abody{font-size:1.06rem;color:#2a3140}
+  .abody p{margin:0 0 18px}
+  .abody h2{font-size:1.45rem;margin:38px 0 12px;color:var(--ink)}
+  .abody h3{font-size:1.12rem;margin:26px 0 8px;color:var(--ink)}
+  .abody em{color:var(--muted)}
+  .abody strong{color:var(--ink)}
+  .abody ul{margin:0 0 18px;padding-left:20px}
+  .abody li{margin:6px 0}
+  .abody a{color:var(--red);font-weight:600;text-decoration:underline}
+  .abody hr{border:0;border-top:1px solid var(--border);margin:30px 0}
+  .abody blockquote{margin:22px 0;padding:14px 20px;border-left:3px solid var(--red);background:var(--soft);border-radius:0 12px 12px 0;color:#2a3140}
+  .abody table{width:100%;border-collapse:collapse;margin:0 0 20px;font-size:.96rem}
+  .abody th{text-align:left;font-weight:800;padding:9px 10px;border-bottom:2px solid var(--border);color:var(--ink)}
+  .abody td{padding:9px 10px;border-bottom:1px solid var(--border)}
+  .abody td:last-child,.abody th:last-child{text-align:right;white-space:nowrap}
+  .note{max-width:720px;margin:10px auto 0;padding:0 24px;font-size:.86rem;color:var(--muted);font-style:italic}
+  section.block{padding:50px 0}
+  .final{text-align:center}
+  h2.sec{font-size:1.5rem;text-align:center;margin:0 0 26px;font-weight:800}
+  .stores{display:flex;gap:14px;justify-content:center;align-items:center;flex-wrap:wrap}
+  .stores img.apple{height:50px}.stores img.google{height:74px;margin:-12px 0}
+  footer.site{background:var(--navy);color:#9fb0cc;padding:44px 24px;text-align:center;font-size:.92rem}
+  .fl{margin-bottom:14px}
+  .fl a{margin:0 8px;font-weight:600;cursor:pointer}
+  .disc{max-width:680px;margin:0 auto;font-size:.82rem;color:#7f90ad}
+</style>
+<link rel="canonical" href="https://swissnaturalizationtest.ch/fr/engineering.html">
+<link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/engineering.html">
+<link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/fr/engineering.html">
+<link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/de/engineering.html">
+<link rel="alternate" hreflang="it" href="https://swissnaturalizationtest.ch/it/engineering.html">
+<link rel="alternate" hreflang="x-default" href="https://swissnaturalizationtest.ch/engineering.html">
+<meta name="description" content="Construire un outil civique quand le contenu appartient à vingt-six administrations">
+<meta property="og:description" content="Construire un outil civique quand le contenu appartient à vingt-six administrations">
+<meta property="og:title" content="Vingt-six procédures, une seule application">
+<meta property="og:url" content="https://swissnaturalizationtest.ch/fr/engineering.html">
+<meta property="og:locale" content="fr">
+</head>
+<body>
+
+<header class="site"><input type="checkbox" id="mnav"><div class="wrap navbar"><a class="brand" href="landing.html"><img src="../app/icon.png" alt="">Swiss Naturalization Test</a><label class="burger" for="mnav" aria-label="Menu"><span></span><span></span><span></span></label><nav class="main"><a class="link" data-nav="home" href="landing.html">Home</a><a class="link" data-nav="cantons" href="../cantons/fr/index.html">Cantons</a><a class="link" data-nav="press" href="landing.html#press">Press</a><a class="link" data-nav="presskit" href="press-kit.html">Press kit</a><a class="link" data-nav="transp" href="transparency.html">Transparency</a><a class="link" data-nav="eng" href="engineering.html">Engineering</a><a class="link" data-nav="privacy" href="privacy-policy.html">Privacy</a><a class="link" data-nav="terms" href="terms.html">Terms</a><span class="langs"><a data-lang="en" href="../engineering.html">EN</a><a data-lang="fr" href="../fr/engineering.html">FR</a><a data-lang="de" href="../de/engineering.html">DE</a><a data-lang="it" href="../it/engineering.html">IT</a></span></nav></div></header>
+
+<!-- ═══════════════════════════ EN ═══════════════════════════ -->
+
+<article class="article">
+<a class="back" href="landing.html">&larr; Retour &agrave; l'application</a>
+<p class="eyebrow">Ing&eacute;nierie</p>
+<h1>Vingt-six proc&eacute;dures, une seule application</h1>
+<p class="sub">Construire un outil civique quand le contenu appartient &agrave; vingt-six administrations</p>
+<div class="abody">
+
+<h2>0. D'o&ugrave; vient ce texte</h2>
+<p>Je ne suis pas suisse. Je me suis install&eacute; &agrave; Morges en 2014, et en 2026 j'ai entam&eacute; la proc&eacute;dure de naturalisation ordinaire, qui dans le canton de Vaud se termine par un test &eacute;crit de connaissances organis&eacute; par la commune de domicile. J'ai construit cette application parce que j'en avais besoin, et j'ai continu&eacute; parce que les parties les plus difficiles n'&eacute;taient pas celles que j'attendais. En ao&ucirc;t 2026 j'ai pass&eacute; cet examen moi-m&ecirc;me et je l'ai r&eacute;ussi avec le maximum : 48 sur 48. Dans la salle, ce matin-l&agrave;, plusieurs autres candidats utilisaient l'application.</p>
+<p>Ceci est un texte d'ing&eacute;nierie, pas une pr&eacute;sentation de produit. Il parle de ce qui arrive quand la chose que vous livrez n'est pas vraiment du logiciel : c'est une affirmation sur des faits qui appartiennent &agrave; quelqu'un d'autre, et qui changent sans vous pr&eacute;venir.</p>
+
+<h2>1. Le probl&egrave;me, en une ligne</h2>
+<p>La Suisse n'a pas de test de naturalisation national. La loi f&eacute;d&eacute;rale n'en prescrit aucun, et chacun des vingt-six cantons est ma&icirc;tre de son format. Certains publient un catalogue complet de questions. D'autres publient du mat&eacute;riel d'&eacute;tude et aucune question. D'autres encore &eacute;valuent &agrave; l'oral et ne publient rien. Et dans un canton, le test n'est pas cantonal mais communal : les questions re&ccedil;ues d&eacute;pendent de laquelle des trois cents communes on habite.</p>
+<p>Le mod&egrave;le na&iuml;f, une banque de questions et un examen et une application, s'&eacute;croule donc en cinq minutes. La forme r&eacute;elle, ce sont vingt-six proc&eacute;dures diff&eacute;rentes, et &agrave; l'int&eacute;rieur de l'une d'elles, trois cents de plus.</p>
+<p>Aujourd'hui l'application porte <strong>13 497 questions d'examen pour les vingt-six cantons</strong>, dont <strong>9 565 sont communales</strong> : des questions qui n'existent que pour une commune et ne servent &agrave; personne d'autre. Choisir sa commune n'est donc pas une pr&eacute;f&eacute;rence. C'est la requ&ecirc;te.</p>
+
+<h2>2. Pourquoi le plus dur n'est pas l'application</h2>
+<p>Une application &agrave; choix multiples, c'est un week-end. Le travail est ailleurs : obtenir du mat&eacute;riel que vingt-six administrations publient dans des formats diff&eacute;rents, en trois langues, &agrave; leur propre rythme ; d&eacute;cider ce que chaque &eacute;l&eacute;ment <em>est</em> vraiment ; et garder tout cela honn&ecirc;te pendant des mois sans que personne ne vous dise que quelque chose a boug&eacute;.</p>
+<p>Quatorze cantons ont aujourd'hui leur propre catalogue dans l'application. Les douze autres re&ccedil;oivent la couche f&eacute;d&eacute;rale emprunt&eacute;e &agrave; l'ex&eacute;cution &agrave; un canton qui, lui, en publie une, et l'application le dit sur la question elle-m&ecirc;me. Cette distinction, <em>ceci est le mat&eacute;riel de votre canton</em> contre <em>ceci est du mat&eacute;riel f&eacute;d&eacute;ral que nous vous montrons parce que votre canton n'en publie pas</em>, n'est pas une note de bas de page. C'est la diff&eacute;rence entre un outil d'&eacute;tude et un outil trompeur.</p>
+
+<h2>3. La cha&icirc;ne du contenu, et ce que porte une question</h2>
+<p>Chaque question de l'application porte sa propre provenance : d'o&ugrave; elle vient, comment elle a &eacute;t&eacute; obtenue, &agrave; quelle date, et contre quelle empreinte de la source. La r&eacute;partition dit honn&ecirc;tement &agrave; quel point le paysage est in&eacute;gal :</p>
+<table><thead><tr><th>M&eacute;thode</th><th>Questions</th></tr></thead><tbody>
+<tr><td>API cantonale en direct</td><td>9 693</td></tr>
+<tr><td>Extraction de texte depuis des PDF publi&eacute;s</td><td>1 525</td></tr>
+<tr><td>Traduction automatique, signal&eacute;e comme non officielle</td><td>531</td></tr>
+<tr><td>R&eacute;dig&eacute;es &agrave; la main depuis du mat&eacute;riel officiel publi&eacute;</td><td>890</td></tr><tr><td>Curation manuelle</td><td>28</td></tr>
+<tr><td>Transcription manuelle v&eacute;rifi&eacute;e</td><td>281</td></tr>
+<tr><td>Mat&eacute;riel officiel d'apprentissage en ligne</td><td>126</td></tr>
+<tr><td>Autres formes d&eacute;clar&eacute;es</td><td>423</td></tr>
+</tbody></table>
+<p><strong>Aucune question de l'application n'est d&eacute;pourvue de bloc de provenance.</strong> C'&eacute;tait une contrainte de conception d&egrave;s le d&eacute;but, et c'est ce qui rend le reste de ce document possible.</p>
+<p>L&agrave; o&ugrave; aucun catalogue n'existe et o&ugrave; il faut r&eacute;diger, la r&eacute;daction n'est pas une composition libre. Chaque question r&eacute;dig&eacute;e porte une ancre : une cha&icirc;ne de caract&egrave;res reprise mot pour mot d'un document officiel publi&eacute;. &Agrave; la compilation, le g&eacute;n&eacute;rateur cherche cette cha&icirc;ne dans le corpus source, et sur trois cantons il <strong>&eacute;choue durement</strong> si l'ancre est introuvable. Pas de sortie, pas de publication. Une question qui ne peut pas pointer vers une phrase d'un document officiel ne part pas.</p>
+<p>La m&ecirc;me discipline vaut pour la certitude. Les param&egrave;tres de l'examen, combien de questions et quel seuil de r&eacute;ussite et quelle dur&eacute;e, ne sont pas affirm&eacute;s. Chacun porte un niveau de certitude : <em>officiel</em>, <em>estim&eacute;</em>, <em>d&eacute;clar&eacute; par l'organisme</em>, <em>non publi&eacute;</em>, <em>non applicable</em>. Dans l'ensemble des mod&egrave;les cantonaux, quarante-neuf de ces param&egrave;tres sont marqu&eacute;s <em>non publi&eacute;</em>, parce que le canton ne les publie r&eacute;ellement pas. Le montrer honn&ecirc;tement s'est av&eacute;r&eacute; plus convaincant, pour des lecteurs institutionnels, qu'un chiffre &agrave; l'air propre.</p>
+
+<h2>4. La surveillance nocturne, et le contr&ocirc;le que personne n'&eacute;crit</h2>
+<p>Les sources bougent. Un canton republie un PDF, renum&eacute;rote une s&eacute;rie, corrige une r&eacute;ponse. Personne n'envoie de notification.</p>
+<p>Treize cantons ont donc leur source publi&eacute;e v&eacute;rifi&eacute;e <strong>chaque nuit</strong> par une t&acirc;che planifi&eacute;e, &agrave; des heures d&eacute;cal&eacute;es. Chaque ex&eacute;cution t&eacute;l&eacute;charge la source, en prend l'empreinte, la compare &agrave; la r&eacute;f&eacute;rence stock&eacute;e, et se r&eacute;sout en l'un de cinq r&eacute;sultats : inchang&eacute;, chang&eacute;, source injoignable, r&eacute;g&eacute;n&eacute;ration &eacute;chou&eacute;e, ou &eacute;criture en base &eacute;chou&eacute;e. Un incident r&eacute;seau passager est d&eacute;lib&eacute;r&eacute;ment distingu&eacute; d'une vraie panne, parce que traiter une connexion capricieuse comme une source cass&eacute;e produit des alertes que personne ne lit.</p>
+<p>Chaque ex&eacute;cution ajoute une ligne sign&eacute;e &agrave; un journal en ajout seul, sur une branche s&eacute;par&eacute;e : l'horodatage, l'empreinte de la source, le code HTTP, la dur&eacute;e du t&eacute;l&eacute;chargement, et la r&eacute;vision du code ex&eacute;cut&eacute;. La reproductibilit&eacute; n'est pas une affirmation, c'est un registre.</p>
+<p>Mais le contr&ocirc;le vers lequel je dirigerais un &eacute;valuateur est un autre, et il existe &agrave; cause d'un &eacute;chec. Le d&eacute;tecteur compare les <em>sources en amont</em> &agrave; une r&eacute;f&eacute;rence stock&eacute;e. Il ne pose jamais la seule question qui compte apr&egrave;s publication : <strong>ce que nous servons correspond-il encore &agrave; ce que nous avons valid&eacute; ?</strong> Ce n'&eacute;tait pas le cas, et un canton a servi soixante-deux questions dont la correction avait &eacute;t&eacute; valid&eacute;e six semaines plus t&ocirc;t et jamais publi&eacute;e. En silence. Rien dans la cha&icirc;ne n'&eacute;tait con&ccedil;u pour le remarquer.</p>
+<p>Une seconde comparaison tourne donc d&eacute;sormais &agrave; <strong>chaque</strong> cycle, y compris, et surtout, les cycles o&ugrave; rien n'a chang&eacute;. Elle recalcule l'empreinte du contenu &agrave; partir du texte de la question, des r&eacute;ponses et de la bonne r&eacute;ponse, plut&ocirc;t que de faire confiance &agrave; l'empreinte enregistr&eacute;e, de sorte qu'une empreinte p&eacute;rim&eacute;e appara&icirc;t comme une divergence au lieu d'en cacher une. Un canton auquel personne ne touche est pr&eacute;cis&eacute;ment l&agrave; o&ugrave; une divergence dort.</p>
+
+<h2>5. Mettre &agrave; jour sans passer par les stores</h2>
+<p>Un examen a une date. Si le canton d'un candidat corrige une r&eacute;ponse trois semaines avant son test, une application qui ne peut livrer qu'&agrave; travers la validation d'un store n'est pas un outil d'&eacute;tude, c'est un risque.</p>
+<p>Le contenu ne voyage donc pas avec le binaire. Les corrections approuv&eacute;es atteignent les appareils par un canal diff&eacute;rentiel : au lancement et au retour au premier plan, le client demande tout ce qui se trouve au-dessus de son propre curseur et le fusionne par-dessus le catalogue embarqu&eacute;. Pas de soumission, pas de file d'attente, pas d'attente que les utilisateurs mettent &agrave; jour.</p>
+<p>Le chiffre, mesur&eacute; en production cette semaine : sur <strong>12 744 questions publi&eacute;es, 541, soit 4,2 pour cent, ont &eacute;t&eacute; r&eacute;vis&eacute;es au moins une fois depuis leur premi&egrave;re publication</strong> et livr&eacute;es de cette mani&egrave;re. La r&eacute;partition est in&eacute;gale et raconte son histoire. Les plus importantes : 148 en Valais, 140 dans le canton de Vaud, 112 &agrave; Lucerne, 43 &agrave; B&acirc;le-Ville, 36 &agrave; Neuch&acirc;tel, 27 &agrave; Zurich, 24 &agrave; Saint-Gall. Les questions d'un canton en sont &agrave; leur cinqui&egrave;me version.</p>
+<p>Deux garde-fous rendent cela d&eacute;fendable plut&ocirc;t qu'imprudent.</p>
+<p><strong>Rien ne se publie tout seul.</strong> Quand un &eacute;cart est d&eacute;tect&eacute;, la cha&icirc;ne r&eacute;g&eacute;n&egrave;re, &eacute;crit en base, et marque le canton <em>en attente de revue</em>. Dans cet &eacute;tat, le client refuse de se synchroniser : les utilisateurs continuent de voir le contenu pr&eacute;c&eacute;demment approuv&eacute;. Le passage &agrave; <em>en ligne</em> est manuel, toujours, et il est structurellement interdit &agrave; la cha&icirc;ne de le faire. En ce moment, les treize cantons publi&eacute;s sont tous <em>en ligne</em>.</p>
+<p><strong>Rien n'est &eacute;cras&eacute; en silence.</strong> Chaque modification archive la version pr&eacute;c&eacute;dente compl&egrave;te de la question, texte et r&eacute;ponses et bonne r&eacute;ponse et format, avant que la nouvelle n'arrive.</p>
+<p>Le cycle le plus rapide &agrave; ce jour : une d&eacute;l&eacute;gu&eacute;e &agrave; l'int&eacute;gration d'une r&eacute;gion germanophone a signal&eacute; que les r&eacute;ponses longues &eacute;taient tronqu&eacute;es. La cause &eacute;tait de notre fait, et pire que cosm&eacute;tique : la troncature s'appliquait &agrave; la bonne r&eacute;ponse mais pas aux distracteurs, si bien que la bonne r&eacute;ponse &eacute;tait syst&eacute;matiquement la plus courte, celle qui finissait par des points de suspension. Un indice, dans un simulateur d'examen. La r&eacute;paration a touch&eacute; 147 des 280 lignes de ce canton dans les deux langues, et la production a enregistr&eacute; le changement de contenu <strong>deux minutes apr&egrave;s la validation du correctif</strong>, le soir m&ecirc;me du signalement.</p>
+
+<h2>6. La transparence comme fonction, pas comme page</h2>
+<p>La plupart des applications traitent la transparence comme un document. Ici c'est une propri&eacute;t&eacute; d'ex&eacute;cution, et elle appara&icirc;t &agrave; trois endroits.</p>
+<p><strong>Sur la question.</strong> Sous chaque question, en entra&icirc;nement comme en examen blanc, le candidat voit d'o&ugrave; elle vient, si son format a &eacute;t&eacute; adapt&eacute; de l'original, si elle est emprunt&eacute;e au corpus officiel d'un autre canton, si elle a &eacute;t&eacute; traduite, et un marqueur de v&eacute;rification portant la date du dernier contr&ocirc;le de la source.</p>
+<p><strong>Avant l'examen.</strong> L'examen blanc d&eacute;clare, canton par canton, lesquels de ses param&egrave;tres sont officiels et lesquels sont estim&eacute;s, et distingue la voie &eacute;crite de la voie orale, parce que dans plusieurs cantons l'&eacute;valuation r&eacute;elle est un entretien et pr&eacute;senter une simulation &agrave; choix multiples comme &laquo;&nbsp;l'examen&nbsp;&raquo; serait faux.</p>
+<p><strong>En public.</strong> Une <a href="transparency.html">page de transparence</a>, en quatre langues, &eacute;nonce les engagements de service : sources v&eacute;rifi&eacute;es toutes les vingt-quatre heures, mise &agrave; jour ordinaire sous sept jours, corrections touchant l'exactitude sous septante-deux heures. Elle offre aussi aux autorit&eacute;s cantonales de naturalisation, au secr&eacute;tariat d'&Eacute;tat aux migrations et aux chercheurs accr&eacute;dit&eacute;s une inspection du registre de v&eacute;rification sur demande &eacute;crite, trait&eacute;e sous cinq jours ouvrables.</p>
+<p>Publier un engagement de service sur lequel on peut &ecirc;tre mesur&eacute; est inconfortable. C'est aussi la seule version de la transparence qui veuille dire quelque chose.</p>
+
+<h2>7. Un seul d&eacute;veloppeur, treize versions en dix-huit semaines</h2>
+<p>Le premier commit est dat&eacute; du 12 avril 2026. L'application &eacute;tait en production le 2 mai. Depuis : treize versions mineures publiques jusqu'&agrave; la 3.12, <strong>243 compilations</strong>, et au moins une compilation sur 89 des 142 jours.</p>
+<p>Ce rythme n'est tenable qu'&agrave; cause de ce qui se trouve dessous : <strong>186 fichiers de tests automatis&eacute;s</strong>, <strong>320 migrations de base de donn&eacute;es versionn&eacute;es</strong>, et une cha&icirc;ne de contenu qui v&eacute;rifie sa propre sortie au lieu de lui faire confiance. L'interface est tenue &agrave; quatre langues par un test qui refuse de compiler si une langue poss&egrave;de une cl&eacute; que les autres n'ont pas. Actuellement 3 426 cl&eacute;s, identiques dans les quatre.</p>
+<p>Rien de tout cela n'est h&eacute;ro&iuml;que. C'est la cons&eacute;quence ordinaire du fait qu'une seule personne ne peut pas tenir l'&eacute;tat de vingt-six cantons dans sa t&ecirc;te, et ne devrait pas essayer.</p>
+
+<h2>8. Les agents comme utilisateurs du syst&egrave;me</h2>
+<p>Voici le chapitre que je ne m'attendais pas &agrave; &eacute;crire.</p>
+<p>Une grande partie de ce projet a &eacute;t&eacute; construite avec des agents de programmation. L'int&eacute;ressant n'est pas qu'ils aient &eacute;crit du code. C'est qu'ils se sont r&eacute;v&eacute;l&eacute;s &ecirc;tre des <strong>utilisateurs du syst&egrave;me de production</strong>, et des utilisateurs co&ucirc;teux.</p>
+<p>Un jour d'ao&ucirc;t, le trafic sortant de la base de donn&eacute;es du projet se r&eacute;partissait ainsi : l'outillage, c'est-&agrave;-dire les scripts et les utilitaires internes et les agents qui mesuraient des choses, produisait environ <strong>cinq fois le trafic de tous les vrais utilisateurs de l'application r&eacute;unis</strong>. L'application n'a jamais &eacute;t&eacute; le probl&egrave;me. <em>Mesurer</em> l'application l'&eacute;tait. Et cela a pouss&eacute; le projet contre un seuil de facturation avec une &eacute;ch&eacute;ance.</p>
+<p>Le mode de d&eacute;faillance &eacute;tait pr&eacute;cis et, avec le recul, &eacute;vident. Un agent charg&eacute; de v&eacute;rifier qu'une insertion avait fonctionn&eacute; relisait la table. Un agent &agrave; qui l'on demandait combien de lignes existaient r&eacute;cup&eacute;rait les lignes et les comptait. Un agent charg&eacute; de savoir si quelque chose avait chang&eacute; le t&eacute;l&eacute;chargeait et comparait. Chacun de ces r&eacute;flexes est raisonnable pour un humain devant un terminal, et catastrophique &agrave; fr&eacute;quence machine.</p>
+<p>Il en est sorti une constitution de d&eacute;p&ocirc;t, lue automatiquement au d&eacute;but de chaque session d'agent, dont le premier chapitre ne parle pas de style de code. Il dit : <em>chaque requ&ecirc;te que tu lances contre cette base est factur&eacute;e</em>. Puis les r&egrave;gles qui en d&eacute;coulent. Ne jamais lire des lignes pour les mesurer, parce qu'un compte et un poids et une empreinte tiennent chacun sur une ligne. Ne jamais s&eacute;lectionner toutes les colonnes des tables lourdes. Agr&eacute;ger c&ocirc;t&eacute; serveur et recevoir dix lignes au lieu de dix mille. Une session par t&acirc;che, pas une par commande, parce que chaque nouvelle connexion paie un co&ucirc;t de protocole fixe avant m&ecirc;me que la requ&ecirc;te ne parte. Et v&eacute;rifier une &eacute;criture avec des nombres, jamais avec un vidage.</p>
+<p>&Agrave; c&ocirc;t&eacute; se trouve une m&eacute;moire de projet persistante, un fait par fichier, index&eacute;e, qui porte les d&eacute;cisions qu'un agent ne peut pas red&eacute;river du code : quels environnements peuvent &ecirc;tre &eacute;crits et &agrave; quelles conditions, quelles corrections ont d&eacute;j&agrave; &eacute;t&eacute; tent&eacute;es et ont &eacute;chou&eacute;, quelles parties de la cha&icirc;ne une session neuve ne doit pas toucher seule.</p>
+<p>La le&ccedil;on d&eacute;passe ce projet. Nous avons l'habitude de raisonner le co&ucirc;t d'un agent en jetons. Dans un syst&egrave;me avec un vrai backend, le co&ucirc;t d'un agent est aussi <strong>la charge qu'il met sur votre infrastructure</strong>, et ce nombre peut &eacute;craser le premier. Personne ne m'avait dit de l'instrumenter. La facture, si.</p>
+
+<h2>9. Ce que cela co&ucirc;te vraiment</h2>
+<p>L'infrastructure elle-m&ecirc;me, backend et distribution et comptes d&eacute;veloppeur, tourne pour <strong>quelques centaines de francs par an</strong>. La ligne dominante n'est pas l'infrastructure : c'est l'outillage d'intelligence artificielle qui fait l'essentiel de la construction, un abonnement que j'aurais de toute fa&ccedil;on et qui est partag&eacute; entre tout ce sur quoi je travaille. Enti&egrave;rement attribu&eacute;e, l'op&eacute;ration compl&egrave;te tourne autour de trois mille francs par an. Strictement attribu&eacute;e &agrave; ce projet, c'est une fraction de cela.</p>
+<p>Pour cela, au moment o&ugrave; j'&eacute;cris : <strong>10 010 profils enregistr&eacute;s</strong>, dont <strong>7 317 ont r&eacute;ellement &eacute;tudi&eacute; ou jou&eacute;</strong>, dans vingt-cinq des vingt-six cantons.</p>
+<p>Je mets ces chiffres parce que c'est la partie que les gens croient le moins, et parce qu'ils posent la vraie question. Ce n'est pas une histoire de faire beaucoup avec peu comme vertu. C'est qu'un outil civique &agrave; l'&eacute;chelle nationale peut d&eacute;sormais &ecirc;tre construit et <em>maintenu</em> par une seule personne, et que la contrainte a chang&eacute; de place. Ce n'est plus la capacit&eacute; d'ing&eacute;nierie. C'est de savoir si les institutions qui poss&egrave;dent le contenu ont un moyen de participer &agrave; le tenir correct, et &agrave; cette question aucun code ne r&eacute;pond tout seul.</p>
+
+</div>
+</article>
+<p class="note">Chiffres mesur&eacute;s le 9 septembre 2026 sur le syst&egrave;me de production et le d&eacute;p&ocirc;t &agrave; cette date. Le taux de r&eacute;ussite enregistr&eacute; par l'application est celui de sa propre simulation, pas d'un examen cantonal. Le mat&eacute;riel cantonal provient exclusivement de sources publi&eacute;es par ces cantons.</p>
+<section class="block final"><div class="wrap"><h2 class="sec">Commencez d&egrave;s aujourd'hui</h2><div class="stores"><a href="https://apps.apple.com/app/id6769993041" aria-label="App Store"><img class="apple" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store"></a><a href="https://play.google.com/store/apps/details?id=ch.vincedev.swisscitizenship" aria-label="Google Play"><img class="google" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Google Play"></a></div></div></section>
+<footer class="site"><div class="wrap"><div class="fl"><a href="landing.html">Accueil</a> &middot; <a href="landing.html#press">Presse</a> &middot; <a href="../cantons/fr/index.html">Cantons</a> &middot; <a href="transparency.html">Transparence</a> &middot; <a href="engineering.html">Ing&eacute;nierie</a> &middot; <a href="privacy-policy.html">Confidentialit&eacute;</a> &middot; <a href="terms.html">Conditions</a> &middot; <a href="account-deletion.html">Suppression des donn&eacute;es</a> &middot; <a href="mailto:swisscitizenshiptest@gmail.com" onclick="return __contact(event)">Contact</a></div><p class="disc">Swiss Naturalization Test est un compagnon d'&eacute;tude ind&eacute;pendant d&eacute;velopp&eacute; par Vincenzo Casini. Il n'est affili&eacute; &agrave; aucune autorit&eacute; gouvernementale. Pour le test officiel, r&eacute;f&eacute;rez-vous toujours &agrave; la plateforme officielle de votre canton.</p></div></footer>
+
+<script>
+window.__contact=function(e){if(e&&e.preventDefault)e.preventDefault();
+    var m="swisscitizenshiptest@gmail.com",l=(document.documentElement.lang||"en").slice(0,2);
+    var M={en:"Contact: "+m+"\n\nOpen your email app to write to us?",
+      fr:"Contact : "+m+"\n\nOuvrir votre messagerie pour nous écrire ?",
+      de:"Kontakt: "+m+"\n\nE-Mail-App öffnen, um uns zu schreiben?",
+      it:"Contatto: "+m+"\n\nAprire l'app di posta per scriverci?"};
+    try{if(navigator.clipboard)navigator.clipboard.writeText(m);}catch(_){}
+    if(window.confirm(M[l]||M.en))location.href="mailto:"+m;return false;};
+</script>
+<script>
+(function(){
+  // Links made before the split carried ?lang=: they are sent to the file that holds that
+  // language instead of quietly showing another one.
+  try{
+    var q=new URLSearchParams(location.search).get("lang"),L="fr";
+    if(q&&q!==L&&["en","fr","de","it"].indexOf(q)>=0){
+      var p=location.pathname,name=p.slice(p.lastIndexOf("/")+1)||"index.html";
+      var dir=p.slice(0,p.lastIndexOf("/")+1);
+      if(/\/(fr|de|it)\/$/.test(dir))dir=dir.replace(/(fr|de|it)\/$/,"");
+      location.replace(dir+(q==="en"?"":q+"/")+name+location.hash);
+    }
+  }catch(e){}
+  // The page is in one language: the menu is put in it and the flags link to the siblings.
+  var L="fr",NAV={en:{cantons:"Cantons",home:"Home",press:"Press",eng:"Engineering",presskit:"Press kit",terms:"Terms",transp:"Transparency",privacy:"Privacy"},
+    fr:{cantons:"Cantons",home:"Accueil",press:"Presse",eng:"Ing\u00e9nierie",presskit:"Dossier de presse",terms:"Conditions",transp:"Transparence",privacy:"Confidentialité"},
+    de:{cantons:"Kantone",home:"Start",press:"Presse",eng:"Technik",presskit:"Pressemappe",terms:"Nutzungsbedingungen",transp:"Transparenz",privacy:"Datenschutz"},
+    it:{cantons:"Cantoni",home:"Home",press:"Stampa",eng:"Ingegneria",presskit:"Press kit",terms:"Condizioni",transp:"Trasparenza",privacy:"Privacy"}},n=NAV[L]||NAV.en;
+  document.querySelectorAll("[data-nav]").forEach(function(a){
+    var k=a.getAttribute("data-nav");if(n&&n[k])a.textContent=n[k];});
+  document.querySelectorAll(".langs a").forEach(function(a){
+    a.classList.toggle("on",a.getAttribute("data-lang")===L);});
+  var mn=document.getElementById("mnav");
+  document.querySelectorAll("nav.main a").forEach(function(a){
+    a.addEventListener("click",function(){if(mn)mn.checked=false;});});
+})();
+</script>
+</body>
+</html>

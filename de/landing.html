@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<!--
+  PUBLIC LANDING PAGE for Swiss Naturalization Test — static, GitHub Pages ready.
+  Central hub. 4 languages (EN/FR/DE/IT) switched via a tiny JS toggle with
+  localStorage persistence (so the chosen language survives navigation). No build step.
+-->
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bereite dich auf deinen Einbürgerungstest vor</title>
+        <meta property="og:image" content="https://swissnaturalizationtest.ch/feature-graphic.png">
+  <link rel="icon" href="../app/icon.png">
+  <style>
+  :root{
+    --ink:#141821; --muted:#5a6472; --bg:#ffffff; --soft:#f6f8fb; --border:#e6ebf2;
+    --red:#DA291C; --red-d:#b31f14; --navy:#0d1426;
+    --shadow:0 10px 30px rgba(16,24,40,.10); --radius:16px;
+    --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font);color:var(--ink);margin:0;line-height:1.6;background:var(--bg);-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+  h1,h2,h3{letter-spacing:-.02em;line-height:1.1}
+
+  header.site{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.82);backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid var(--border)}
+  .navbar{display:flex;align-items:center;gap:18px;height:64px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.02rem;letter-spacing:-.02em}
+  .brand img{width:30px;height:30px;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,.15)}
+  nav.main{margin-left:auto;display:flex;align-items:center;gap:4px}
+  nav.main a.link{padding:8px 12px;border-radius:9px;font-weight:600;font-size:.93rem;color:var(--muted);cursor:pointer}
+  nav.main a.link:hover{background:var(--soft);color:var(--ink)}
+  .langs{display:flex;gap:2px;margin-left:6px;padding-left:12px;border-left:1px solid var(--border)}
+  .langs a{font-size:.8rem;font-weight:700;color:var(--muted);padding:5px 9px;border-radius:999px;cursor:pointer}
+  .langs a.on,.langs a:hover{background:var(--ink);color:#fff}
+  #mnav{display:none}
+  .burger{margin-left:auto;display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
+  .burger span{width:24px;height:2px;background:var(--ink);border-radius:2px}
+  /* nav a 7 voci in 4 lingue: mai andare a capo, e passare al menu a panino
+     PRIMA che la barra si stringa (in tedesco le voci sono lunghissime) */
+  .brand,nav.main a.link{white-space:nowrap}
+  .navbar{gap:12px}
+  nav.main a.link{padding:7px 9px;font-size:.89rem}
+  @media(max-width:1280px){
+    nav.main{position:fixed;inset:64px 0 auto 0;flex-direction:column;align-items:stretch;background:#fff;border-bottom:1px solid var(--border);padding:12px 24px 20px;gap:6px;transform:translateY(-140%);transition:transform .25s ease;box-shadow:var(--shadow)}
+    #mnav:checked ~ .navbar nav.main{transform:translateY(0)}
+    .burger{display:flex}
+    nav.main a.link{padding:12px 10px;font-size:1rem}
+    .langs{margin:6px 0 0;padding:12px 0 0;border-left:0;border-top:1px solid var(--border);justify-content:center}
+  }
+
+  .hero{position:relative;background:radial-gradient(1200px 500px at 50% -120px,#20304f 0%,var(--navy) 60%);color:#fff;text-align:center;padding:70px 24px 60px;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 46%,rgba(218,41,28,.14) 50%,transparent 54%),linear-gradient(0deg,transparent 46%,rgba(218,41,28,.14) 50%,transparent 54%);opacity:.5;pointer-events:none}
+  .hero .wrap{position:relative}
+  .kicker{display:inline-block;font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#ffd7d3;background:rgba(218,41,28,.22);border:1px solid rgba(218,41,28,.4);padding:5px 13px;border-radius:999px;margin-bottom:18px}
+  .hero h1{font-size:2.7rem;margin:0 0 12px;font-weight:850}
+  .hero p.tag{font-size:1.2rem;color:#c7d2e8;margin:0 auto 26px;max-width:620px}
+  .hero img.banner{width:100%;max-width:760px;border-radius:20px;margin:6px auto 26px;display:block;box-shadow:0 24px 60px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.08)}
+  .stores{display:flex;gap:14px;justify-content:center;align-items:center;flex-wrap:wrap}
+  .stores img.apple{height:52px}.stores img.google{height:77px;margin:-12px 0}
+
+  section.block{padding:60px 0}
+  .eyebrow{text-align:center;color:var(--red);font-weight:800;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;margin:0 0 8px}
+  h2.sec{font-size:1.7rem;text-align:center;margin:0 0 34px;font-weight:800}
+
+  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:20px;overflow:hidden}
+  .card{background:var(--bg);padding:26px 22px;transition:background .18s}
+  .card:hover{background:var(--soft)}
+  .card .chip{width:34px;height:34px;color:var(--red);margin-bottom:14px}
+  .card .chip svg{width:34px;height:34px;stroke:currentColor;stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+  .card .t{font-weight:750;font-size:1.02rem;letter-spacing:-.01em;margin-bottom:4px}
+  .card .d{font-size:.9rem;color:var(--muted);line-height:1.5}
+  .subwhy{text-align:center;color:var(--muted);margin:-26px auto 34px;max-width:560px}
+
+  .gallery{background:var(--soft);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+  .shots{display:flex;gap:14px;overflow-x:auto;padding:8px 2px 14px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+  .shots img{height:460px;border-radius:22px;border:1px solid var(--border);flex:0 0 auto;scroll-snap-align:center;box-shadow:0 8px 28px rgba(0,0,0,.16)}
+
+  .press{display:flex;gap:18px;justify-content:center;flex-wrap:wrap}
+  .pcard{display:flex;flex-direction:column;width:360px;max-width:100%;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:.16s}
+  .pcard:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+  .pthumb{height:150px;background-size:cover;background-position:center;background-color:var(--navy)}
+  .pthumb.txt{display:flex;align-items:center;justify-content:center;color:#fff;font-weight:850;font-size:1.4rem}
+  .p-24h{background:linear-gradient(135deg,#c1121f,#7a0c15)}
+  .pbody{padding:16px 18px;display:flex;flex-direction:column;gap:8px;flex:1}
+  .pub{font-size:.74rem;text-transform:uppercase;letter-spacing:.07em;color:var(--red);font-weight:800}
+  .ph{font-weight:650;line-height:1.35}
+  .pmeta{margin-top:auto;font-size:.85rem;color:var(--muted);display:flex;justify-content:space-between;align-items:center}
+  .pmeta .read{color:var(--red);font-weight:700}
+
+  .spot{background:var(--navy);color:#fff}
+  .spot .in{display:flex;gap:36px;align-items:center}
+  .spot img{width:46%;border-radius:16px;box-shadow:0 14px 40px rgba(0,0,0,.4)}
+  .spot .new{display:inline-block;background:var(--red);color:#fff;font-size:.72rem;font-weight:800;letter-spacing:.05em;padding:4px 11px;border-radius:999px;margin-bottom:12px}
+  .spot h2{font-size:1.6rem;margin:0 0 12px}
+  .spot p{color:#c7d2e8;margin:0;font-size:1.03rem}
+  @media(max-width:760px){.spot .in{flex-direction:column}.spot img{width:100%}}
+
+  .final{text-align:center}
+  footer.site{background:var(--navy);color:#9fb0cc;padding:44px 24px;text-align:center;font-size:.92rem;position:static;border:0;backdrop-filter:none;-webkit-backdrop-filter:none}
+  footer.site a{color:#cdd9ee}
+  footer.site .fl{margin-bottom:14px}
+  footer.site .fl a{margin:0 8px;font-weight:600;cursor:pointer}
+  footer.site .disc{max-width:680px;margin:0 auto;font-size:.82rem;color:#7f90ad}
+
+  @media(max-width:760px){.hero h1{font-size:2rem}.grid{grid-template-columns:1fr 1fr}h2.sec{font-size:1.4rem}}
+  @media(max-width:460px){.grid{grid-template-columns:1fr}}
+  .modegrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:20px;overflow:hidden}
+  .mode{background:var(--bg);padding:28px 24px;transition:background .18s}
+  .mode:hover{background:var(--soft)}
+  .mode .ic{width:32px;height:32px;color:var(--red);margin-bottom:14px}
+  .mode .ic svg{width:32px;height:32px;stroke:currentColor;stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+  .mode .t{font-weight:750;font-size:1.08rem;letter-spacing:-.01em;margin-bottom:5px}
+  .mode .d{font-size:.92rem;color:var(--muted);line-height:1.5}
+  @media(max-width:760px){.modegrid{grid-template-columns:1fr 1fr}}
+  @media(max-width:460px){.modegrid{grid-template-columns:1fr}}
+  .statband{background:var(--soft);border-bottom:1px solid var(--border)}
+  .statband .row{display:flex;flex-wrap:wrap;justify-content:center;padding:22px 0}
+  .stat{flex:1 1 0;min-width:120px;text-align:center;padding:8px 14px;border-right:1px solid var(--border)}
+  .stat:last-child{border-right:0}
+  .stat .n{font-size:1.7rem;font-weight:850;letter-spacing:-.02em;color:var(--ink);font-variant-numeric:tabular-nums}
+  .stat .l{font-size:.78rem;color:var(--muted);margin-top:3px}
+  .crow{padding:2px 0 16px}
+  .crow .cl{text-align:center;font-size:.74rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin:0 0 12px}
+  .cchips{display:flex;flex-wrap:wrap;justify-content:center;gap:9px}
+  .cchip{display:inline-flex;align-items:center;gap:7px;background:var(--bg);border:1px solid var(--border);border-radius:999px;padding:5px 13px 5px 8px;font-weight:800;color:var(--ink);font-variant-numeric:tabular-nums;font-size:.95rem}
+  .cchip img{width:20px;height:24px;object-fit:contain}
+  .cmore{display:inline-flex;align-items:center;color:var(--muted);font-weight:600;font-size:.9rem;padding:5px 6px}
+  a.cmore{color:var(--red);font-weight:700}
+  a.cmore:hover{text-decoration:underline}
+  @media(max-width:640px){.stat{flex:1 1 40%;border-right:0;padding:10px}}
+  .founder{border-bottom:1px solid var(--border)}
+  .founder .in{display:flex;gap:40px;align-items:center}
+  .founder img{width:46%;border-radius:16px;box-shadow:var(--shadow);object-fit:cover;aspect-ratio:16/10}
+  .founder h2{font-size:1.7rem;margin:0 0 14px;letter-spacing:-.02em}
+  .founder p{color:var(--muted);margin:0;font-size:1.05rem;line-height:1.6}
+  @media(max-width:760px){.founder .in{flex-direction:column}.founder img{width:100%}}
+  .quotes{background:var(--soft);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+  .qgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .quote{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:24px}
+  .quote .stars{color:#e8a33d;letter-spacing:2px;margin-bottom:10px}
+  .quote .txt{font-size:1rem;line-height:1.5;margin:0 0 14px;color:var(--ink)}
+  .quote .by{font-size:.85rem;color:var(--muted);font-weight:700}
+  @media(max-width:760px){.qgrid{grid-template-columns:1fr}}
+  .heroshots{display:flex;gap:14px;justify-content:center;align-items:center;margin:8px auto 26px;max-width:600px}
+  .heroshots img{width:30%;border-radius:22px;border:1px solid rgba(255,255,255,.12);box-shadow:0 22px 55px rgba(0,0,0,.55)}
+  .heroshots img:nth-child(2){width:34%;position:relative;z-index:2}
+  .heroshots img:nth-child(1){transform:rotate(-4deg) translateY(12px)}
+  .heroshots img:nth-child(3){transform:rotate(4deg) translateY(12px)}
+  @media(max-width:520px){.heroshots img:nth-child(1),.heroshots img:nth-child(3){display:none}.heroshots img:nth-child(2){width:66%}}
+  .pklink{display:inline-block;color:var(--red);font-weight:800;font-size:.95rem;border:1px solid var(--border);border-radius:999px;padding:10px 20px;background:var(--bg)}
+  .pklink:hover{background:var(--soft)}
+  .quote.more{display:none}
+  .qgrid.open .quote.more{display:block}
+  .morebtn{display:block;margin:22px auto 0;color:var(--red);font-weight:800;font-size:.9rem;border:1px solid var(--border);border-radius:999px;padding:9px 20px;background:var(--bg);cursor:pointer}
+  .morebtn:hover{background:var(--soft)}
+  </style>
+<link rel="canonical" href="https://swissnaturalizationtest.ch/de/landing.html">
+<link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/landing.html">
+<link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/fr/landing.html">
+<link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/de/landing.html">
+<link rel="alternate" hreflang="it" href="https://swissnaturalizationtest.ch/it/landing.html">
+<link rel="alternate" hreflang="x-default" href="https://swissnaturalizationtest.ch/landing.html">
+<meta name="description" content="Der kostenlose, umfassende Weg zur Vorbereitung auf Ihre Schweizer Einbürgerung.">
+<meta property="og:description" content="Der kostenlose, umfassende Weg zur Vorbereitung auf Ihre Schweizer Einbürgerung.">
+<meta property="og:title" content="Bereite dich auf deinen Einbürgerungstest vor">
+<meta property="og:url" content="https://swissnaturalizationtest.ch/de/landing.html">
+<meta property="og:locale" content="de">
+</head>
+<body>
+
+
+<header class="site">
+  <input type="checkbox" id="mnav">
+  <div class="wrap navbar">
+    <a class="brand" href="#" onclick="return __toTop()"><img src="../app/icon.png" alt="">Swiss Naturalization Test</a>
+    <label class="burger" for="mnav" aria-label="Menu"><span></span><span></span><span></span></label>
+    <nav class="main">
+      <a class="link" data-nav="home" href="#" onclick="return __toTop()">Home</a>
+      <a class="link" data-nav="cantons" href="../cantons/de/index.html">Cantons</a>
+      <a class="link" data-nav="press" href="#" onclick="return __toPress()">Press</a><a class="link" data-nav="presskit" href="press-kit.html">Press kit</a>
+      <a class="link" data-nav="transp" href="transparency.html">Transparency</a>
+      <a class="link" data-nav="eng" href="engineering.html">Engineering</a>
+      <a class="link" data-nav="privacy" href="privacy-policy.html">Privacy</a><a class="link" data-nav="terms" href="terms.html">Terms</a>
+      <span class="langs"><a data-lang="en" href="../landing.html">EN</a><a data-lang="fr" href="../fr/landing.html">FR</a><a data-lang="de" href="../de/landing.html">DE</a><a data-lang="it" href="../it/landing.html">IT</a></span>
+    </nav>
+  </div>
+</header>
+
+
+    <header class="hero"><div class="wrap">
+      <span class="kicker">26 Kantone &middot; deine Gemeinde</span>
+      <h1>Bereite dich auf deinen<br>Einb&uuml;rgerungstest vor</h1>
+      <p class="tag">Der kostenlose, umfassende Weg zur Vorbereitung auf Ihre Schweizer Einb&uuml;rgerung.</p>
+      <div class="heroshots"><img src="../screenshots/de/01-commune.png" alt=""><img src="../screenshots/de/06-heartbeat.png" alt=""><img src="../screenshots/de/03-mock-exam.png" alt=""></div>
+      <div class="stores"><a href="https://apps.apple.com/app/id6769993041" aria-label="App Store"><img loading="lazy" class="apple" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store"></a><a href="https://play.google.com/store/apps/details?id=ch.vincedev.swisscitizenship" aria-label="Google Play"><img loading="lazy" class="google" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Google Play"></a></div>
+    </div></header>
+    <section class="statband"><div class="wrap"><div class="row"><div class="stat"><div class="n">10'400+</div><div class="l">Nutzer:innen</div></div><div class="stat"><div class="n">7'600+</div><div class="l">aktive Nutzer:innen</div></div><div class="stat"><div class="n">26</div><div class="l">Kantone</div></div><div class="stat"><div class="n">13'000+</div><div class="l">Fragen</div></div><div class="stat"><div class="n">4.85<span style="color:var(--red)">&#9733;</span><span style="font-size:1rem;font-weight:600;color:var(--muted)"> /5</span></div><div class="l"><span style="display:block;color:var(--ink);font-weight:800;font-size:.98rem;letter-spacing:-.01em;margin-bottom:1px">400+ Bewertungen</span>App Store &amp; Google Play</div></div></div><div class="crow"><div class="cl">Aktivste Kantone</div><div class="cchips"><span class="cchip"><img loading="lazy" src="../assets/crests/VD.png" alt="VD">2'500+</span><span class="cchip"><img loading="lazy" src="../assets/crests/TI.png" alt="TI">1'400+</span><span class="cchip"><img loading="lazy" src="../assets/crests/GE.png" alt="GE">800+</span><span class="cchip"><img loading="lazy" src="../assets/crests/ZH.png" alt="ZH">500+</span><span class="cchip"><img loading="lazy" src="../assets/crests/AG.png" alt="AG">500+</span><span class="cchip"><img loading="lazy" src="../assets/crests/VS.png" alt="VS">500+</span><span class="cchip"><img loading="lazy" src="../assets/crests/NE.png" alt="NE">200+</span><span class="cchip"><img loading="lazy" src="../assets/crests/BE.png" alt="BE">200+</span><span class="cchip"><img loading="lazy" src="../assets/crests/FR.png" alt="FR">200+</span><a class="cmore" href="../cantons/de/index.html">und jeder Kanton des Landes &rarr;</a></div></div><div style="text-align:center;font-size:.74rem;color:var(--muted);padding:0 0 16px">Zahlen, Stand September 2026</div></div></section>
+
+    <section class="block"><div class="wrap">
+      <p class="eyebrow">Warum diese App</p><h2 class="sec">Von einem Kandidaten gebaut, nicht von einer Firma</h2>
+      <p class="subwhy">Keine Firma dahinter, keine Agenda: ein Kandidat, der sie brauchte, sie baute und sie verschenkte.</p>
+      <div class="grid">
+      <div class="card"><div class="chip"><svg viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5C11 3 12 8 12 8s1-5 4.5-5a2.5 2.5 0 0 1 0 5"/></svg></div><div class="t">100% gratis, werbefrei</div><div class="d">Keine Paywalls, keine Banner, nie.</div></div><div class="card"><div class="chip"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><div class="t">Kein Konto n&ouml;tig</div><div class="d">&Ouml;ffnen und loslegen. Keine Anmeldung.</div></div><div class="card"><div class="chip"><svg viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></div><div class="t">Keine personenbezogenen Daten</div><div class="d">Anonym, datenschutzfreundlich.</div></div><div class="card"><div class="chip"><svg viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></div><div class="t">26 Kantone, deine Gemeinde</div><div class="d">Dedizierte Vorbereitung in 13 Kantonen (~89% der Einb&uuml;rgerungen).</div></div><div class="card"><div class="chip"><svg viewBox="0 0 24 24"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg></div><div class="t">Ehrlich, Kanton f&uuml;r Kanton</div><div class="d">Echte offizielle Fragen, wo es sie gibt; sonst eidgen&ouml;ssische Grundlagen.</div></div><div class="card"><div class="chip"><svg viewBox="0 0 24 24"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg></div><div class="t">13'000+ Fragen</div><div class="d">Echte Kataloge, Kanton f&uuml;r Kanton.</div></div><div class="card"><div class="chip"><svg viewBox="0 0 24 24"><path d="M12 20h.01"/><path d="M8.5 16.4a5 5 0 0 1 7 0"/><path d="M5 12.9a10 10 0 0 1 14 0"/><path d="M2 8.8a15 15 0 0 1 20 0"/><path d="m2 2 20 20"/></svg></div><div class="t">100% offline</div><div class="d">Funktioniert ohne Verbindung, &uuml;berall.</div></div><div class="card"><div class="chip"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20M2 12h20"/></svg></div><div class="t">4 Sprachen</div><div class="d">FR &middot; DE &middot; IT &middot; EN.</div></div>
+      </div>
+    </div></section>
+
+    <section class="block gallery"><div class="wrap">
+      <p class="eyebrow">Ein Blick hinein</p><h2 class="sec">Ein Blick in die App</h2>
+      <div class="shots">
+        <img src="../screenshots/de/01-commune.png" alt="" loading="lazy">
+        <img src="../screenshots/de/02-exam-home.png" alt="" loading="lazy">
+        <img src="../screenshots/de/03-mock-exam.png" alt="" loading="lazy">
+        <img src="../screenshots/de/04-exam-question.png" alt="" loading="lazy">
+        <img src="../screenshots/de/05-insight.png" alt="" loading="lazy">
+        <img src="../screenshots/de/06-heartbeat.png" alt="" loading="lazy">
+        <img src="../screenshots/de/07-explore.png" alt="" loading="lazy">
+        <img src="../screenshots/de/08-which-of-these.png" alt="" loading="lazy">
+        <img src="../screenshots/de/09-play.png" alt="" loading="lazy">
+        <img src="../screenshots/de/10-hall-of-fame.png" alt="" loading="lazy">
+      </div>
+    </div></section>
+
+    <section class="block"><div class="wrap">
+      <p class="eyebrow">Modi</p><h2 class="sec">Alles, was du tun kannst</h2>
+      <div class="modegrid">
+      <div class="mode"><div class="ic"><svg viewBox="0 0 24 24"><path d="M21.42 10.92a1 1 0 0 0-.02-1.84L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.83l8.57 3.91a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg></div><div class="t">Lernen &amp; Pr&uuml;fung</div><div class="d">Probepr&uuml;fung, Training, Karteikarten und m&uuml;ndliche &Uuml;bung.</div></div><div class="mode"><div class="ic"><svg viewBox="0 0 24 24"><line x1="6" y1="11" x2="10" y2="11"/><line x1="8" y1="9" x2="8" y2="13"/><line x1="15" y1="12" x2="15.01" y2="12"/><line x1="18" y1="10" x2="18.01" y2="10"/><path d="M17.32 5H6.68a4 4 0 0 0-3.98 3.59c-.09.61-.7 5.5-.7 7.41a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.41-1.41A2 2 0 0 1 9.83 16h4.34a2 2 0 0 1 1.41.59L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.91-.61-6.8-.7-7.41A4 4 0 0 0 17.32 5z"/></svg></div><div class="t">Play</div><div class="d">Marathon, RapidFire, Zuordnen und mehr, zu Kantonen oder Kultur.</div></div><div class="mode"><div class="ic"><svg viewBox="0 0 24 24"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/></svg></div><div class="t">Daily</div><div class="d">Jeden Tag eine neue Challenge, gleiches Set f&uuml;r alle.</div></div><div class="mode"><div class="ic"><svg viewBox="0 0 24 24"><polyline points="14.5 17.5 3 6 3 3 6 3 17.5 14.5"/><line x1="13" y1="19" x2="19" y2="13"/><line x1="16" y1="16" x2="20" y2="20"/><line x1="19" y1="21" x2="21" y2="19"/><polyline points="14.5 6.5 18 3 21 3 21 6 17.5 9.5"/><line x1="5" y1="14" x2="9" y2="18"/><line x1="7" y1="17" x2="4" y2="20"/><line x1="3" y1="19" x2="5" y2="21"/></svg></div><div class="t">Versus</div><div class="d">Tris Duello: fordere einen anderen Kandidaten heraus, 1 gegen 1.</div></div><div class="mode"><div class="ic"><svg viewBox="0 0 24 24"><path d="M14.1 5.55a2 2 0 0 0 1.8 0l3.65-1.83A1 1 0 0 1 21 4.62v12.76a1 1 0 0 1-.55.9l-4.55 2.27a2 2 0 0 1-1.8 0l-4.2-2.1a2 2 0 0 0-1.8 0l-3.65 1.83A1 1 0 0 1 3 19.38V6.62a1 1 0 0 1 .55-.9l4.55-2.27a2 2 0 0 1 1.8 0z"/><path d="M15 5.76v15"/><path d="M9 3.24v15"/></svg></div><div class="t">Eroberung</div><div class="d">Die Waadt und ihre Nachbarkantone, Gemeinde f&uuml;r Gemeinde.</div></div><div class="mode"><div class="ic"><svg viewBox="0 0 24 24"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg></div><div class="t">Ranglisten &amp; Badges</div><div class="d">Hall of Fame, Streaks und Champion-Auren.</div></div>
+      </div>
+    </div></section>
+
+    
+    <section class="block founder"><div class="wrap in"><img loading="lazy" src="../assets/founder.jpg" alt="Vincenzo Casini"><div><h2>Wer dahintersteckt</h2><p>Ich heisse Vincenzo Casini. Ich bin Italiener und lebe seit 2014 in Morges. Von Beruf bin ich Ingenieur und Entwickler: Tech Lead, Software-Architekt, mit k&uuml;nstlicher Intelligenz im Zentrum meiner Arbeit. Diese App entstand, um meine eigene Einb&uuml;rgerungspr&uuml;fung vorzubereiten, und ich habe sie f&uuml;r alle Kandidatinnen und Kandidaten in der ganzen Schweiz gratis gemacht.</p><p style="margin-top:18px"><a class="pklink" href="https://www.linkedin.com/in/vincedx/" target="_blank" rel="noopener">LinkedIn &rarr;</a></p></div></div></section>
+
+    <section class="block press-section"><div class="wrap">
+      <p class="eyebrow">Bekannt aus</p><h2 class="sec">Die Schweizer Presse hat sie getestet</h2>
+      <div class="press">
+        <a class="pcard" href="../press/de/tsri.html"><div class="pthumb" style="background-image:url('https://media-tsri.wepublish.cloud/fa4a5178-495a-49de-a52e-d2dcdd5e87e3?resize=%7B%22width%22:1200,%22withoutEnlargement%22:true,%22fit%22:%22cover%22,%22position%22:%22top%22%7D&amp;quality=80&amp;sig=mMWhZNduBKaVz8yTpis9_As_DScZKmSZ6FaMYxEbLgx098tZRbJ6ru0aktL309RQaZa4kotvuqJRIJoBvPPUDg')"></div><div class="pbody"><div class="pub">Ts&uuml;ri.ch &middot; Z&uuml;rich</div><div class="ph">&laquo;&nbsp;Die 15 schwierigsten Einb&uuml;rgerungsfragen &ndash; wie viele weisst du?&nbsp;&raquo;</div><div class="pmeta"><span>September 2026</span><span class="read">Hier lesen &rarr;</span></div></div></a><a class="pcard" href="../press/de/leman-bleu.html"><div class="pthumb" style="background-image:url('https://www.lemanbleu.ch/Htdocs/Files/Videos/Pictures/25271.jpg?CacheBusterGUID=c6cb0415-04f9-42dc-a0fb-d364dfcd23c5')"></div><div class="pbody"><div class="pub">L&eacute;man Bleu &middot; Gen&egrave;ve</div><div class="ph">&laquo;&nbsp;Devenir Suisse, &ccedil;a se r&eacute;vise aussi sur son t&eacute;l&eacute;phone&nbsp;&raquo;</div><div class="pmeta"><span>September 2026</span><span class="read">Hier lesen &rarr;</span></div></div></a>
+        <a class="pcard" href="../press/de/corriere-del-ticino.html"><div class="pthumb" style="background-image:url('https://naxos-cdn01.gruppocdt.ch/cdt/stories/2026/08/06/1920x1080/af42d311-d54a-48fd-bda7-568d5fd55ded.jpeg')"></div><div class="pbody"><div class="pub">Corriere del Ticino &middot; Ticinonews</div><div class="ph">&laquo;&nbsp;Vuoi diventare svizzero? Ecco l'app che ti prepara all'esame&nbsp;&raquo;</div><div class="pmeta"><span>September 2026</span><span class="read">Hier lesen &rarr;</span></div></div></a>
+        <a class="pcard" href="../press/de/watson.html"><div class="pthumb" style="background-image:url('https://www.watson.ch/fr/imgdb/be83/Qx,A,0,24,2000,1125,1043,664,213,189/8248851515718932')"></div><div class="pbody"><div class="pub">watson</div><div class="ph">&laquo;&nbsp;M&eacute;ritez-vous le passeport suisse&nbsp;?&nbsp;&raquo;</div><div class="pmeta"><span>Juli 2026</span><span class="read">Hier lesen &rarr;</span></div></div></a>
+        <a class="pcard" href="../press/de/badener-tagblatt.html"><div class="pthumb" style="background-image:url('https://chm-images-prd.forward-publishing.io/2021/9/10/63633807-e620-4d5a-b5c2-ed8a788f784a.jpeg?s=a7539439ac2604b0555e6d2e93c24686&amp;w=1200&amp;auto=compress%2Cformat')"></div><div class="pbody"><div class="pub">Badener Tagblatt &middot; Aargau</div><div class="ph">&laquo;&nbsp;Mit dem Smartphone zum Schweizer Pass&nbsp;&raquo;</div><div class="pmeta"><span>Juli 2026</span><span class="read">Hier lesen &rarr;</span></div></div></a>
+        <a class="pcard" href="../press/de/24-heures.html"><div class="pthumb" style="background-image:url('https://journaldemorges.ch/wp-content/uploads/2026/05/G1_6444-720x480.jpg')"></div><div class="pbody"><div class="pub">24 heures &middot; Journal de Morges</div><div class="ph">&laquo;&nbsp;Une application vaudoise pour r&eacute;ussir l'examen&nbsp;&raquo;</div><div class="pmeta"><span>Juni 2026</span><span class="read">Hier lesen &rarr;</span></div></div></a>
+      </div>
+    </div></section>
+
+    
+    <section class="block" style="padding:0 0 54px"><div class="wrap" style="text-align:center"><a class="pklink" href="press-kit.html">Pressemappe &rarr;</a></div></section>
+
+    <section class="block quotes"><div class="wrap"><p class="eyebrow">Bewertungen</p><h2 class="sec">Stimmen der Nutzer</h2><div class="qgrid"><div class="quote"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="txt">&laquo;&nbsp;In meiner Gemeinde wechselte kürzlich der Gemeindepräsident, und die Fragen waren bereits aktualisiert. Test ohne Fehler bestanden.&nbsp;&raquo;</p><div class="by">Carlo A. &middot; Google Play</div></div><div class="quote"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="txt">&laquo;&nbsp;Ich habe meine Einb&uuml;rgerungspr&uuml;fung im Aargau bestanden, 43 von 45, mit dieser App.&nbsp;&raquo;</p><div class="by">R. &middot; Community</div></div><div class="quote"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="txt">&laquo;&nbsp;Diese App ist zu einem täglichen Ritual geworden, zu zweit. Unverzichtbar.&nbsp;&raquo;</p><div class="by">pyrame &middot; App Store</div></div><div class="quote"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="txt">&laquo;&nbsp;Ich wünschte, es hätte diese App gegeben, als ich für die Prüfung lernte: Ich musste meine Karteikarten selbst machen, hier ist alles fertig.&nbsp;&raquo;</p><div class="by">Swissstarr &middot; App Store</div></div><div class="quote"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="txt">&laquo;&nbsp;Genau das, was ich brauchte. Das adaptive Coaching findet meine Schwachstellen und die Probeprüfung ist wirklich nützlich.&nbsp;&raquo;</p><div class="by">schachaf a. &middot; Google Play</div></div><div class="quote"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="txt">&laquo;&nbsp;Man merkt, dass sie von jemandem gemacht wurde, der sich wirklich auf die Prüfung vorbereitet, nicht von einer Softwarefirma. Unglaublich viel Liebe zum Detail.&nbsp;&raquo;</p><div class="by">App Store</div></div><div class="quote more"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="txt">&laquo;&nbsp;Ich empfehle sie allen, die das Bürgerrecht beantragen wollen: Da es ein kantonales Verfahren ist, zeigt sie gut, was einen erwartet. Relevante und packende Fragebögen.&nbsp;&raquo;</p><div class="by">Julia R. &middot; Google Play</div></div><div class="quote more"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="txt">&laquo;&nbsp;Marathon und RapidFire nutze ich, wenn ich fünf Minuten habe oder im Zug sitze. Ich lerne mit Spass, ohne es überhaupt zu merken.&nbsp;&raquo;</p><div class="by">Maria T. &middot; Google Play</div></div><div class="quote more"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="txt">&laquo;&nbsp;Super einfach zu bedienen und sehr praktisch, ich liebe sie. Und der grösste Vorteil: keine Werbung und kein Paywall. Sie hilft mir enorm.&nbsp;&raquo;</p><div class="by">Guillaume P. &middot; Google Play</div></div><div class="quote more"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="txt">&laquo;&nbsp;Der Entwickler ist im Hintergrund sehr aktiv, die App ist wirklich super und scheint jede Menge nützliche Übungsfragen zu haben.&nbsp;&raquo;</p><div class="by">David L. &middot; Google Play</div></div><div class="quote more"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="txt">&laquo;&nbsp;Ich bin Schweizerin, aber ich liebe sie: Wir machen sogar kleine Quiz im Auto. Wirklich grossartig.&nbsp;&raquo;</p><div class="by">Alex S. &middot; Google Play</div></div><div class="quote more"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="txt">&laquo;&nbsp;Aufgeräumte Oberfläche, wunderschöner Dark Mode, riesige Inhalte. Der Kantone-Modus mit Wappen und Karten ist lehrreich und macht Spass. Sehr empfehlenswert.&nbsp;&raquo;</p><div class="by">Consuela M. &middot; Google Play</div></div><div class="quote more"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="txt">&laquo;&nbsp;Ich hatte eine falsche Antwort gefunden, und der Entwickler hat mich sofort kontaktiert, um sie zu beheben. Bewertung auf 5 Sterne erhöht.&nbsp;&raquo;</p><div class="by">Giovanni C. &middot; Google Play</div></div><div class="quote more"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="txt">&laquo;&nbsp;Der Kantone-Modus mit Wappen und Karten macht überraschend Spass, auch ausserhalb der Prüfungsvorbereitung. Dazu die Karteikarten mit verteilter Wiederholung, und man hat ein komplettes Werkzeug.&nbsp;&raquo;</p><div class="by">Sophie R. &middot; App Store</div></div></div><button type="button" class="morebtn" onclick="__moreRev(this)">Mehr Bewertungen</button></div></section>
+
+    <section class="block final"><div class="wrap">
+      <h2 class="sec">Jetzt loslegen</h2>
+      <div class="stores"><a href="https://apps.apple.com/app/id6769993041" aria-label="App Store"><img loading="lazy" class="apple" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store"></a><a href="https://play.google.com/store/apps/details?id=ch.vincedev.swisscitizenship" aria-label="Google Play"><img loading="lazy" class="google" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Google Play"></a></div>
+    </div></section>
+
+    <footer class="site"><div class="wrap">
+      <div class="fl"><a href="#" onclick="return __toTop()">Start</a> &middot; <a href="#" onclick="return __toPress()">Presse</a> &middot; <a href="../cantons/de/index.html">Kantone</a> &middot; <a href="transparency.html">Transparenz</a> &middot; <a href="engineering.html">Technik</a> &middot; <a href="privacy-policy.html">Datenschutz</a> &middot; <a href="terms.html">Nutzungsbedingungen</a> &middot; <a href="account-deletion.html">Datenlöschung</a> &middot; <a href="mailto:swisscitizenshiptest@gmail.com" onclick="return __contact(event)">Kontakt</a></div>
+      <p class="disc">Swiss Naturalization Test ist ein unabh&auml;ngiger Lernbegleiter, entwickelt von Vincenzo Casini. Er ist mit keiner Regierungsbeh&ouml;rde verbunden. F&uuml;r die offizielle Pr&uuml;fung beziehen Sie sich stets auf die offizielle Plattform Ihres Kantons.</p>
+    </div></footer>
+    
+<script>
+(function(){
+  // Split page: no more langblocks to switch between, so the legacy LANGS/NAV/apply()/__setLang
+  // machinery that used to drive the in-place language toggle is dropped here — this file only
+  // keeps the helpers still called from the markup below.
+  window.__toTop=function(){var mn=document.getElementById("mnav");if(mn)mn.checked=false;window.scrollTo({top:0,behavior:"smooth"});return false;};
+  window.__toPress=function(){var mn=document.getElementById("mnav");if(mn)mn.checked=false;var b=document.querySelector(".press-section");if(b)b.scrollIntoView({behavior:"smooth"});return false;};
+  window.__contact=function(e){if(e&&e.preventDefault)e.preventDefault();
+    var m="swisscitizenshiptest@gmail.com",l=(document.documentElement.lang||"en").slice(0,2);
+    var M={en:"Contact: "+m+"\n\nOpen your email app to write to us?",
+      fr:"Contact : "+m+"\n\nOuvrir votre messagerie pour nous \u00e9crire ?",
+      de:"Kontakt: "+m+"\n\nE-Mail-App \u00f6ffnen, um uns zu schreiben?",
+      it:"Contatto: "+m+"\n\nAprire l'app di posta per scriverci?"};
+    try{if(navigator.clipboard)navigator.clipboard.writeText(m);}catch(_){}
+    if(window.confirm(M[l]||M.en))location.href="mailto:"+m;return false;};
+  // Split page: this file is already one language (see the redirect script below), so the
+  // legacy switcher no longer auto-applies a browser/localStorage language on load — doing so
+  // used to hide/show langblocks; here it would only mutate <html lang> and briefly relabel the
+  // nav in the wrong language for a returning visitor whose localStorage remembers another one.
+  if(location.hash==="#press"){setTimeout(function(){var b=document.querySelector(".press-section");if(b)b.scrollIntoView();},60);}
+})();
+</script><script>window.__moreRev=function(b){var g=b.parentElement.querySelector(".qgrid");if(g)g.classList.add("open");b.style.display="none";};</script><script>
+(function(){
+  // Links made before the split carried ?lang=: they are sent to the file that holds that
+  // language instead of quietly showing another one.
+  try{
+    var q=new URLSearchParams(location.search).get("lang"),L="de";
+    if(q&&q!==L&&["en","fr","de","it"].indexOf(q)>=0){
+      var p=location.pathname,name=p.slice(p.lastIndexOf("/")+1)||"index.html";
+      var dir=p.slice(0,p.lastIndexOf("/")+1);
+      if(/\/(fr|de|it)\/$/.test(dir))dir=dir.replace(/(fr|de|it)\/$/,"");
+      location.replace(dir+(q==="en"?"":q+"/")+name+location.hash);
+    }
+  }catch(e){}
+  // The page is in one language: the menu is put in it and the flags link to the siblings.
+  var L="de",NAV={
+    en:{cantons:"Cantons",home:"Home",press:"Press",presskit:"Press kit",eng:"Engineering",terms:"Terms",transp:"Transparency",privacy:"Privacy"},
+    fr:{cantons:"Cantons",home:"Accueil",press:"Presse",presskit:"Dossier de presse",eng:"Ing\u00e9nierie",terms:"Conditions",transp:"Transparence",privacy:"Confidentialit\u00e9"},
+    de:{cantons:"Kantone",home:"Start",press:"Presse",presskit:"Pressemappe",eng:"Technik",terms:"Nutzungsbedingungen",transp:"Transparenz",privacy:"Datenschutz"},
+    it:{cantons:"Cantoni",home:"Home",press:"Stampa",presskit:"Press kit",eng:"Ingegneria",terms:"Condizioni",transp:"Trasparenza",privacy:"Privacy"}
+  },n=NAV[L]||NAV.en;
+  document.querySelectorAll("[data-nav]").forEach(function(a){
+    var k=a.getAttribute("data-nav");if(n&&n[k])a.textContent=n[k];});
+  document.querySelectorAll(".langs a").forEach(function(a){
+    a.classList.toggle("on",a.getAttribute("data-lang")===L);});
+  var mn=document.getElementById("mnav");
+  document.querySelectorAll("nav.main a").forEach(function(a){
+    a.addEventListener("click",function(){if(mn)mn.checked=false;});});
+})();
+</script>
+</body>
+</html>

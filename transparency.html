@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<!--
+  PUBLIC TRANSPARENCY PAGE for Swiss Naturalization Test — multilingual (EN/FR/DE/IT).
+
+  Source of truth: this file is the local working copy. The published
+  version lives at https://swissnaturalizationtest.ch/transparency.html
+  (vincedy/quiz-naturalisation repo, GitHub Pages).
+
+  Status: v3.4 — expanded to 11 cantons (added Ticino, Fribourg, St. Gallen); Neuchâtel refreshed to 211 questions (4 locales) — the canton's January 2026 edition, complete.
+  v3.8 — commune selectable in all 26 cantons; the 13 without a dedicated set use the shared official federal civic base (basic prep, not the canton's real exam).
+  v3.11 — Solothurn (85) and Basel-Stadt (91) gain their own cantonal questions, authored from official cantonal
+  sources; both keep the federal base borrowed from the Zurich pool. 13 cantons now have a dedicated set.
+  Same locale-switching pattern as the privacy policy mirror.
+  2026-08-18 — every per-canton figure is now what the app actually SERVES, not the row count of the
+  bundle: questions withheld for quality (anomalies retire-from-live / needs-human-review) and questions
+  withdrawn upstream are subtracted. VD 9'728→9'691, ZH 350→345, BE 408→388, AG 325→320, LU 100→98,
+  TI 240→233 (149 cantonal + 84 federal). NE already read 211 under this rule.
+
+  2026-09-05 — Ticino rebuilt on the canton's own course material: 233→375 served questions
+  (180 cantonal + 195 federal), a fifth exam category (socio-economic context), and the federal
+  layer no longer comes from Vaud alone. 111 questions are authored from the IFC Camorino manuals
+  (ed. 09.2025) and 119 more were verified against them, each with a verbatim anchor checked by the
+  pipeline; 70 are official questions of other cantons (VD, AG, BE, ZH, GE, NE) translated into
+  Italian. Searched all eight IFC PDFs: they state the syllabus, never the exam format — so the
+  question count, pass mark and duration remain our estimates, and the page now says so.
+
+  2026-09-14 — Bern: the French half is our translation from the German, not the canton's
+  French (the canton publishes one series in French and the deck does not use it). The row
+  said «560 official questions (280 per language)»: now 280 official questions in German, also
+  served in French in our translation, with the cantonal/federal split (28 + 252) the other
+  rows already give. The visible date had stayed at 18 August through the 5 September pass.
+
+  Last updated: 2026-09-14
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transparency — Catalogue update commitment</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      max-width: 820px;
+      margin: 40px auto;
+      padding: 0 24px;
+      color: #222;
+      line-height: 1.7;
+    }
+    h1 { font-size: 1.6rem; margin-bottom: 4px; }
+    h2 { font-size: 1.15rem; margin-top: 36px; color: #333; }
+    h3 { font-size: 1rem; margin-top: 24px; color: #444; }
+    p, li, td, th { font-size: 0.97rem; }
+    ul { padding-left: 20px; }
+    .meta { color: #666; font-size: 0.9rem; margin-bottom: 32px; }
+    a { color: #0066cc; }
+    .lang-nav { margin-bottom: 32px; padding: 12px; background: #f5f5f5; border-radius: 6px; }
+    .lang-nav a { margin-right: 16px; }
+    section{display:block}
+    .sla {
+      background: #f5f7fa;
+      border-left: 4px solid #0066cc;
+      padding: 14px 18px;
+      margin: 16px 0;
+      border-radius: 4px;
+    }
+    .sla strong { color: #003d7a; }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 12px;
+      font-size: 0.92rem;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th { background: #f5f5f5; font-weight: 600; }
+    .footer-note {
+      margin-top: 48px;
+      padding: 16px;
+      background: #fafafa;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      color: #555;
+    }
+    .pill {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+    .pill-green { background: #e7f6e7; color: #1d6f1d; }
+    .pill-blue { background: #e7f0fb; color: #1d4f8f; }
+    .pill-orange { background: #fdf0e3; color: #8a4a1d; }
+    .pill-federal { background: #eceff3; color: #465063; }
+    .pill-teal { background: #efe9fb; color: #5a3d9a; }
+  </style>
+<link rel="icon" href="/favicon.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://swissnaturalizationtest.ch/transparency.html">
+<link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/transparency.html">
+<link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/fr/transparency.html">
+<link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/de/transparency.html">
+<link rel="alternate" hreflang="it" href="https://swissnaturalizationtest.ch/it/transparency.html">
+<link rel="alternate" hreflang="x-default" href="https://swissnaturalizationtest.ch/transparency.html">
+<meta name="description" content="App: Swiss Naturalization Test · Developer: Vincenzo Casini · Last updated: 14 September 2026">
+<meta property="og:description" content="App: Swiss Naturalization Test · Developer: Vincenzo Casini · Last updated: 14 September 2026">
+<meta property="og:title" content="Transparency — Catalogue update commitment">
+<meta property="og:url" content="https://swissnaturalizationtest.ch/transparency.html">
+<meta property="og:locale" content="en">
+</head>
+<body>
+
+<style>
+/* injected shared header/footer (does not touch legal copy) */
+header.site{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid #e6ebf2;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+header.site .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+header.site .navbar{display:flex;align-items:center;gap:18px;height:64px}
+header.site .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.02rem;color:#141821;text-decoration:none;letter-spacing:-.02em}
+header.site .brand img{width:30px;height:30px;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,.15)}
+header.site nav.main{margin-left:auto;display:flex;align-items:center;gap:4px}
+header.site nav.main a.link{padding:8px 12px;border-radius:9px;font-weight:600;font-size:.93rem;color:#5a6472;text-decoration:none;cursor:pointer}
+header.site nav.main a.link:hover{background:#f6f8fb;color:#141821}
+header.site .langs{display:flex;gap:2px;margin-left:6px;padding-left:12px;border-left:1px solid #e6ebf2}
+header.site .langs a{font-size:.8rem;font-weight:700;color:#5a6472;padding:5px 9px;border-radius:999px;text-decoration:none;cursor:pointer}
+header.site .langs a.on,header.site .langs a:hover{background:#141821;color:#fff}
+#mnav{display:none}
+header.site .burger{margin-left:auto;display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
+header.site .burger span{width:24px;height:2px;background:#141821;border-radius:2px}
+/* nav a 7 voci in 4 lingue: mai andare a capo, e passare al menu a panino
+     PRIMA che la barra si stringa (in tedesco le voci sono lunghissime) */
+  .brand,nav.main a.link{white-space:nowrap}
+  .navbar{gap:12px}
+  nav.main a.link{padding:7px 9px;font-size:.89rem}
+  @media(max-width:1280px){header.site nav.main{position:fixed;inset:64px 0 auto 0;flex-direction:column;align-items:stretch;background:#fff;border-bottom:1px solid #e6ebf2;padding:12px 24px 20px;gap:6px;transform:translateY(-140%);transition:transform .25s;box-shadow:0 10px 30px rgba(16,24,40,.1)}#mnav:checked ~ .navbar nav.main{transform:translateY(0)}header.site .burger{display:flex}header.site .langs{margin:6px 0 0;padding:12px 0 0;border-left:0;border-top:1px solid #e6ebf2;justify-content:center}}
+footer.site{background:#0d1426;color:#9fb0cc;padding:34px 24px;text-align:center;font-size:.9rem;margin-top:44px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+footer.site a{color:#cdd9ee;text-decoration:none;margin:0 8px;font-weight:600}
+footer.site a:hover{text-decoration:underline}
+body>.lang-nav{display:none!important}
+/* free the injected header/footer from the legal page's centered column, then re-center just the content */
+body{max-width:none!important;margin:0!important;padding:0!important}
+body>section{max-width:840px;margin-left:auto!important;margin-right:auto!important;padding-left:24px;padding-right:24px}
+section[id]{scroll-margin-top:78px}
+</style>
+<header class="site"><input type="checkbox" id="mnav"><div class="wrap navbar">
+<a class="brand" href="landing.html"><img src="app/icon.png" alt="">Swiss Naturalization Test</a>
+<label class="burger" for="mnav" aria-label="Menu"><span></span><span></span><span></span></label>
+<nav class="main">
+<a class="link" data-nav="home" href="landing.html">Home</a><a class="link" data-nav="cantons" href="cantons/index.html">Cantons</a>
+<a class="link" data-nav="press" href="landing.html#press">Press</a><a class="link" data-nav="presskit" href="press-kit.html">Press kit</a>
+<a class="link" data-nav="transp" href="transparency.html">Transparency</a><a class="link" data-nav="eng" href="engineering.html">Engineering</a>
+<a class="link" data-nav="privacy" href="privacy-policy.html">Privacy</a>
+<a class="link" data-nav="terms" href="terms.html">Terms</a>
+<span class="langs"><a data-lang="en" href="transparency.html">EN</a><a data-lang="fr" href="fr/transparency.html">FR</a><a data-lang="de" href="de/transparency.html">DE</a><a data-lang="it" href="it/transparency.html">IT</a></span>
+</nav></div></header>
+  <div class="lang-nav">
+    <a href="transparency.html">English</a>
+    <a href="fr/transparency.html">Français</a>
+    <a href="de/transparency.html">Deutsch</a>
+    <a href="it/transparency.html">Italiano</a>
+  </div>
+
+  <section id="en">
+    <h1>Transparency — Catalogue update commitment</h1>
+    <p class="meta">App: <strong>Swiss Naturalization Test</strong> · Developer: Vincenzo Casini · Last updated: 14 September 2026</p>
+
+    <p><strong>This application is a study companion, not an official preparation tool.</strong> For the actual naturalization test, candidates must always refer to the official platform of their canton, linked in the table below.</p>
+
+    <h2>Why this page exists</h2>
+    <p>This app covers all 26 Swiss cantons. For each one we verified the official sources: in 13, exam preparation is dedicated; in the others we serve the official federal civic base (basic preparation, not that canton's real exam). Because each canton publishes its catalogue differently and updates it on its own schedule, users and institutions need a way to verify how this app keeps its data in sync with official sources. This page documents the verification process, the declared service level, the reporting channel for discrepancies, and the audit trail available on request.</p>
+    <p>This commitment is voluntary. The app is not affiliated with any government authority. It is independently developed by a naturalization applicant.</p>
+
+    <h2>Service Level — what we promise</h2>
+    <div class="sla">
+      <p><strong>Source verification:</strong> all 13 official cantonal sources are checked once every 24 hours via an automated continuous-integration pipeline. Checks run on a staggered schedule (between 03:00 and 07:00 UTC) to avoid concurrent writes to the audit log.</p>
+      <p><strong>Drift detection latency:</strong> a change in any official source is detected within <strong>24 hours</strong> of publication.</p>
+      <p><strong>Standard refresh window:</strong> when a change is detected, the updated catalogue is published in a new app version within <strong>7 days</strong>.</p>
+      <p><strong>Emergency refresh window:</strong> critical issues (factual errors flagged by users or canton authorities) are addressed within <strong>72 hours</strong>.</p>
+      <p><strong>Metadata review:</strong> the legal basis and procedure scope for each canton is manually re-verified every <strong>6 months</strong> or on-demand if the canton announces a procedural change.</p>
+    </div>
+
+    <h2>How verification works</h2>
+    <p>The pipeline is built in four layers:</p>
+    <ol>
+      <li><strong>Scraping</strong> — automated parsers read the official PDF or API for each canton, normalize the question and answer content, and produce a structured snapshot.</li>
+      <li><strong>Refresh orchestration</strong> — when a refresh is triggered, the parser re-runs from scratch. Existing question IDs are preserved; new questions get fresh IDs; questions removed by the canton are marked <em>deprecated</em> (never silently deleted).</li>
+      <li><strong>Drift detection</strong> — a nightly job computes a content hash of every official source and compares it against the previous baseline. If the hash differs, the job flags a drift event.</li>
+      <li><strong>Audit log</strong> — every verification run, drift or not, is recorded in an append-only structured log (one JSONL file per canton). Each entry includes timestamp, source URL, response status, content hash, previous hash, and any detected changes.</li>
+      <li><strong>No auto-acknowledgement</strong> — a drift event stays flagged as unresolved until a human reviews the change, updates the question set if needed, and commits a new baseline hash. The pipeline never silently resets the drift flag on its own.</li>
+    </ol>
+
+    <h2>Per-canton coverage</h2>
+    <!-- cantons:start -->
+<style>
+  /* the table keeps transparency.html's own look; these rules only add the crest and the link.
+     It is the widest thing on the page, so it steps out of the text column on a large screen. */
+  .cantontable{table-layout:fixed}
+  @media (min-width:1100px){
+    .cantontable{width:calc(100% + 240px);max-width:100vw;margin-left:-120px}
+  }
+  .cantontable col.c-canton{width:17%}
+  .cantontable col.c-offer{width:40%}
+  .cantontable col.c-source{width:16%}
+  .cantontable col.c-material{width:27%}
+  .cantontable td{font-size:0.88rem;line-height:1.35}
+  .cantontable .cname{display:flex;align-items:center;gap:8px;font-weight:600}
+  .cantontable .cname img{width:22px;height:22px;object-fit:contain;flex:none}
+  /* the exam type is a pill on the canton page too (layout.html: .pill pill-type); here it wears
+     the neutral this page already uses for its own grey pill */
+  .cantontable .pill-type{background:#eceff3;color:#465063;margin:4px 0 0 30px}
+  .cantontable .facts{margin:0;padding:0;list-style:none}
+  /* one parameter per line, its certainty on the same line so a row stays three lines high */
+  .cantontable .facts li{display:block;margin-top:1px}
+  .cantontable td a{word-break:break-word}   /* a long official host must not push the next column */
+  .cantontable .cert{font-size:0.76rem;color:#666;white-space:nowrap}
+  .cantontable .cert-warn{color:#8a4a1d}
+  .cantontable .claim{display:block;margin-top:5px;color:#444;font-size:0.84rem}
+  .cantontable td:last-child{font-size:0.84rem}
+  /* the three tones of the canton page, copied: green = the canton's own official questions,
+     blue = written by us from official sources, amber = another canton's federal pool.
+     The green and the amber are layout.html's .pill-light values; the blue is this page's own. */
+  .cantontable .pill-official{background:rgba(18,138,74,.12);color:#0f7a42}
+  .cantontable .pill-authored{background:#e7f0fb;color:#1d4f8f}
+  .cantontable .pill-federal{background:rgba(214,137,16,.14);color:#a8690c}
+  @media (max-width:760px){
+    .cantontable, .cantontable tbody, .cantontable tr, .cantontable td{display:block;width:100%}
+    .cantontable thead{display:none}
+    .cantontable tr{border:1px solid #ddd;border-radius:8px;margin-bottom:10px}
+    .cantontable td{border:0;border-top:1px solid #eee}
+    .cantontable td:first-child{border-top:0}
+  }
+</style>
+
+<table class="cantontable">
+  <colgroup><col class="c-canton"><col class="c-offer"><col class="c-source"><col class="c-material"></colgroup>
+  <thead><tr><th>Canton</th><th>What we serve</th><th>Official source</th><th>Official material</th></tr></thead>
+  <tbody>
+  
+    <tr>
+      <td><a class="cname" href="cantons/ag.html"><img src="assets/crests/AG.png" alt="">Aargau</a>
+        <span class="pill pill-type">Written + oral</span></td>
+      <td><span class="pill pill-official">Official questions</span><span class="claim">The official exam questions, unchanged. Every possible question is here.</span></td>
+      <td><a href="https://www.gemeinden-ag.ch/page/990">www.gemeinden-ag.ch</a></td>
+      <td><ul class="facts"><li><a href="https://www.gemeinden-ag.ch/page/990">Official practice tool</a></li><li><a href="https://www.ag.ch/media/kanton-aargau/dvi/dokumente/arp/buergerrecht-und-personenstand/einbuergerungen/handbuch-ordentliche-einbuergerungen/handbuch-anhang-4-themenvorschlaege-und-fragebeispiele-fuer-einbuergerungsgespraeche.pdf">Interview guideline</a></li><li><a href="https://www.ag.ch/media/kanton-aargau/dvi/dokumente/arp/buergerrecht-und-personenstand/einbuergerungen/merkblatt.pdf">Official study material</a></li></ul></td>
+    </tr>
+  
+    <tr>
+      <td><a class="cname" href="cantons/ar.html"><img src="assets/crests/AR.png" alt="">Appenzell Ausserrhoden</a>
+        <span class="pill pill-type">Written</span></td>
+      <td><span class="pill pill-federal">Federal base</span><span class="claim">Basic preparation: the official federal questions borrowed from another canton — not this canton’s real questions.</span></td>
+      <td><a href="https://ar.ch/verwaltung/departement-inneres-und-sicherheit/amt-fuer-inneres/abteilung-buergerrecht-und-zivilstand/einbuergerungen/staatskundetest/">ar.ch</a></td>
+      <td><ul class="facts"><li><a href="https://www.ch-info.swiss/">Official study material</a></li></ul></td>
+    </tr>
+  
+    <tr>
+      <td><a class="cname" href="cantons/ai.html"><img src="assets/crests/AI.png" alt="">Appenzell Innerrhoden</a>
+        <span class="pill pill-type">Oral</span></td>
+      <td><span class="pill pill-federal">Federal base</span><span class="claim">Basic preparation: the official federal questions borrowed from another canton — not this canton’s real questions.</span></td>
+      <td><a href="https://www.ai.ch/themen/auslaender/einbuergerung">www.ai.ch</a></td>
+      <td><ul class="facts"><li><a href="https://www.ai.ch/themen/auslaender/einbuergerung/publikationen/handreichung-2025.pdf/@@download/file/Handreichung%20April%202025.pdf">Official study material</a></li><li><a href="https://ai.clex.ch/api/de/texts_of_law/141.010">Legal text</a></li></ul></td>
+    </tr>
+  
+    <tr>
+      <td><a class="cname" href="cantons/bl.html"><img src="assets/crests/BL.png" alt="">Basel-Landschaft</a>
+        <span class="pill pill-type">Oral</span></td>
+      <td><span class="pill pill-federal">Federal base</span><span class="claim">Basic preparation: the official federal questions borrowed from another canton — not this canton’s real questions.</span></td>
+      <td><a href="https://www.baselland.ch/themen/einbuergerung">www.baselland.ch</a></td>
+      <td><ul class="facts"><li><a href="https://www.bg-muttenz.ch/public/upload/assets/717/Einbuergerungs_Quiz.pdf">Official study material</a></li></ul></td>
+    </tr>
+  
+    <tr>
+      <td><a class="cname" href="cantons/bs.html"><img src="assets/crests/BS.png" alt="">Basel-Stadt</a>
+        <span class="pill pill-type">Oral</span></td>
+      <td><span class="pill pill-authored">Written from official sources</span><span class="claim">Written from the official content; the real exam is an oral interview. The federal part uses official questions. Other questions are possible at the exam.</span></td>
+      <td><a href="https://bgbasel.ch/de/einbuergerungen/auslaenderinnen-auslaender.html">bgbasel.ch</a></td>
+      <td><ul class="facts"><li><a href="https://www.gesetzessammlung.bs.ch/app/de/texts_of_law/121.100">Official study material</a></li></ul></td>
+    </tr>
+  
+    <tr>
+      <td><a class="cname" href="cantons/be.html"><img src="assets/crests/BE.png" alt="">Bern</a>
+        <span class="pill pill-type">Written + oral</span></td>
+      <td><span class="pill pill-official">Official questions · partial set</span><span class="claim">The official exam series (past editions). Other questions are possible at the exam.</span></td>
+      <td><a href="https://www.einbuergerung.sid.be.ch/fr/start/einbuergerung/ordentliche-einbuergerung/einbuergerungstest.html">www.einbuergerung.sid.be.ch</a></td>
+      <td><ul class="facts"><li><a href="https://www.bwk.ch/wp-content/uploads/2021/11/EBueTest-Serie-24-2021.pdf">Official past series</a></li></ul></td>
+    </tr>
+  
+    <tr>
+      <td><a class="cname" href="cantons/fr.html"><img src="assets/crests/FR.png" alt="">Fribourg</a>
+        <span class="pill pill-type">Oral</span></td>
+      <td><span class="pill pill-authored">Written from official sources</span><span class="claim">Written from the official content; the real exam is an oral interview. The federal part uses official questions. Other questions are possible at the exam.</span></td>
+      <td><a href="https://www.fr.ch/vie-quotidienne/permis-de-sejour-et-naturalisation/documentation-pour-preparer-sa-naturalisation">www.fr.ch</a></td>
+      <td><ul class="facts"><li><a href="https://www.fr.ch/vie-quotidienne/permis-de-sejour-et-naturalisation/documentation-pour-preparer-sa-naturalisation">Official course</a></li></ul></td>
+    </tr>
+  
+    <tr>
+      <td><a class="cname" href="cantons/ge.html"><img src="assets/crests/GE.png" alt="">Geneva</a>
+        <span class="pill pill-type">Written</span></td>
+      <td><span class="pill pill-official">Official questions · adapted</span><span class="claim">The official exam content, as multiple-choice. Other questions are possible at the exam.</span></td>
+      <td><a href="https://www.ge.ch/connaitre-suisse-geneve">www.ge.ch</a></td>
+      <td><ul class="facts"><li><a href="https://www.ge.ch/document/25243/annexe/file/553372">Official question catalogue</a></li><li><a href="https://www.ge.ch/connaitre-suisse-geneve">Official study material</a></li></ul></td>
+    </tr>
+  
+    <tr>
+      <td><a class="cname" href="cantons/gl.html"><img src="assets/crests/GL.png" alt="">Glarus</a>
+        <span class="pill pill-type">Oral</span></td>
+      <td><span class="pill pill-federal">Federal base</span><span class="claim">Basic preparation: the official federal questions borrowed from another canton — not this canton’s real questions.</span></td>
+      <td><a href="https://www.kbsglarus.ch/weiterbildung/einbuergerung/vorbereitungskurse-einbuergerung/vorbereitungskurs_einbuergerung">www.kbsglarus.ch</a></td>
+      <td><ul class="facts"><li><a href="https://www.kbsglarus.ch/weiterbildung/einbuergerung/vorbereitungskurse-einbuergerung/vorbereitungskurs_einbuergerung">Official course</a></li><li><a href="https://en.heks.ch/echo">Official study material</a></li></ul></td>
+    </tr>
+  
+    <tr>
+      <td><a class="cname" href="cantons/gr.html"><img src="assets/crests/GR.png" alt="">Grisons</a>
+        <span class="pill pill-type">Oral</span></td>
+      <td><span class="pill pill-federal">Federal base</span><span class="claim">Basic preparation: the official federal questions borrowed from another canton — not this canton’s real questions.</span></td>
+      <td><a href="https://www.gr.ch/DE/institutionen/verwaltung/djsg/afm/dienstleistungen/buergerrecht/Seiten/OrdentlicheEinbuergerungAuslaender.aspx">www.gr.ch</a></td>
+      <td><ul class="facts"><li><a href="https://www.gr-lex.gr.ch/api/de/versions/2423/pdf_file">Legal text</a></li><li><a href="https://www.gr.ch/DE/institutionen/verwaltung/djsg/afm/dienstleistungen/buergerrecht/Seiten/OrdentlicheEinbuergerungAuslaender.aspx">Official course</a></li><li><a href="https://www.echo-ch.ch">Official study material</a></li></ul></td>
+    </tr>
+  
+    <tr>
+      <td><a class="cname" href="cantons/ju.html"><img src="assets/crests/JU.png" alt="">Jura</a>
+        <span class="pill pill-type">Oral</span></td>
+      <td><span class="pill pill-federal">Federal base</span><span class="claim">Basic preparation: the official federal questions borrowed from another canton — not this canton’s real questions.</span></td>
+      <td><a href="https://www.jura.ch/fr/Autorites/Administration/DSJP/SPOP/Naturalisations/Naturalisation-ordinaire/Naturalisation-ordinaire.html">www.jura.ch</a></td>
+      <td><ul class="facts"><li><a href="https://avenirformation.ch/cours/integrationetsociete/detail/S25/">Official course</a></li></ul></td>
+    </tr>
+  
+    <tr>
+      <td><a class="cname" href="cantons/lu.html"><img src="assets/crests/LU.png" alt="">Lucerne</a>
+        <span class="pill pill-type">Oral</span></td>
+      <td><span class="pill pill-authored">Written from official sources</span><span class="claim">Written from the official content; the real exam is an oral interview. The official catalogue alongside it is the facilitated-naturalisation one. Other questions are possible at the exam.</span></td>
+      <td><a href="https://gemeinden.lu.ch/Einbuergerungen">gemeinden.lu.ch</a></td>
+      <td><ul class="facts"><li><a href="https://gemeinden.lu.ch/-/media/Gemeinden/Dokumente/Einbuergerungen/neu_Kenntnisse_der_Schweiz_Fragen_und_Antworten.pdf">Official study material</a></li></ul></td>
+    </tr>
+  
+    <tr>
+      <td><a class="cname" href="cantons/ne.html"><img src="assets/crests/NE.png" alt="">Neuchâtel</a>
+        <span class="pill pill-type">Oral</span></td>
+      <td><span class="pill pill-official">Official questions · adapted</span><span class="claim">The official interview questionnaire, turned into multiple-choice by us. Closed list; our coverage is not guaranteed complete.</span></td>
+      <td><a href="https://www.ne.ch/themes/migration-et-integration/naturalisation">www.ne.ch</a></td>
+      <td><ul class="facts"><li><a href="https://www.ne.ch/sites/default/files/2026-01/Questionnaire%20avec%20r%C3%A9ponse%20%C3%A9dition%20Janvier%202026.pdf">Official question catalogue</a></li><li><a href="https://www.ne.ch/themes/migration-et-integration/preparation-la-naturalisation">Official course</a></li></ul></td>
+    </tr>
+  
+    <tr>
+      <td><a class="cname" href="cantons/nw.html"><img src="assets/crests/NW.png" alt="">Nidwalden</a>
+        <span class="pill pill-type">Oral</span></td>
+      <td><span class="pill pill-federal">Federal base</span><span class="claim">Basic preparation: the official federal questions borrowed from another canton — not this canton’s real questions.</span></td>
+      <td><a href="https://www.nw.ch/zsadienste/1481">www.nw.ch</a></td>
+      <td><ul class="facts"><li><a href="https://gemeinden.lu.ch/-/media/Gemeinden/Dokumente/Einbuergerungen/neu_Kenntnisse_der_Schweiz_Fragen_und_Antworten.pdf">Official study material</a></li></ul></td>
+    </tr>
+  
+    <tr>
+      <td><a class="cname" href="cantons/ow.html"><img src="assets/crests/OW.png" alt="">Obwalden</a>
+        <span class="pill pill-type">Written</span></td>
+      <td><span class="pill pill-federal">Federal base</span><span class="claim">Basic preparation: the official federal questions borrowed from another canton — not this canton’s real questions.</span></td>
+      <td><a href="https://www.ow.ch/dienstleistungen/619">www.ow.ch</a></td>
+      <td><ul class="facts"><li><a href="https://www.ow.ch/_doc/440693">Official study material</a></li><li><a href="https://weiterbildung.bwz-ow.ch/kurse/staatsbuergerliche-grundkenntnisse-26">Official course</a></li></ul></td>
+    </tr>
+  
+    <tr>
+      <td><a class="cname" href="cantons/sh.html"><img src="assets/crests/SH.png" alt="">Schaffhausen</a>
+        <span class="pill pill-type">Oral</span></td>
+      <td><span class="pill pill-federal">Federal base</span><span class="claim">Basic preparation: the official federal questions borrowed from another canton — not this canton’s real questions.</span></td>
+      <td><a href="https://www.stadt-schaffhausen.ch/dienste/90122">www.stadt-schaffhausen.ch</a></td>
+      <td><ul class="facts"><li><a href="https://sah-sh.ch/kurse/vorbereitungskurs-einbuergerung/">Official course</a></li><li><a href="https://www.stadt-schaffhausen.ch/_doc/5319517">Official study material</a></li></ul></td>
+    </tr>
+  
+    <tr>
+      <td><a class="cname" href="cantons/sz.html"><img src="assets/crests/SZ.png" alt="">Schwyz</a>
+        <span class="pill pill-type">Written</span></td>
+      <td><span class="pill pill-federal">Federal base</span><span class="claim">Basic preparation: the official federal questions borrowed from another canton — not this canton’s real questions.</span></td>
+      <td><a href="https://www.bbzp.ch/Weiterbildung/Einburgerungskurs">www.bbzp.ch</a></td>
+      <td><ul class="facts"><li><a href="https://www.bbzp.ch/BBZPfaffikon/media/content/Weiterbildung/PDFs/Einb%c3%bcrgerung/Musterfragen_Kt_SZ_20240109_Losung.pdf">Official question catalogue</a></li><li><a href="https://www.bbzp.ch/BBZPfaffikon/media/content/Weiterbildung/PDFs/Einb%c3%bcrgerung/250807_Informationen_zum_Kanton_Schwyz.pdf">Official study material</a></li><li><a href="https://www.bbzp.ch/Weiterbildung/Einburgerungskurs">Official course</a></li></ul></td>
+    </tr>
+  
+    <tr>
+      <td><a class="cname" href="cantons/so.html"><img src="assets/crests/SO.png" alt="">Solothurn</a>
+        <span class="pill pill-type">Written</span></td>
+      <td><span class="pill pill-authored">Written from official sources</span><span class="claim">Written from the official content. The federal part uses official questions. Other questions are possible at the exam.</span></td>
+      <td><a href="https://so.ch/verwaltung/volkswirtschaftsdepartement/amt-fuer-gemeinden/buergerrecht/neubuergerkurse/">so.ch</a></td>
+      <td><ul class="facts"><li><a href="https://so.ch/fileadmin/internet/vwd/vwd-agem/pdf/Buergerrecht/2026_01_01_Kurs-_und_Pruefungsreglement_NBK.pdf">Legal text</a></li></ul></td>
+    </tr>
+  
+    <tr>
+      <td><a class="cname" href="cantons/sg.html"><img src="assets/crests/SG.png" alt="">St. Gallen</a>
+        <span class="pill pill-type">Written + oral</span></td>
+      <td><span class="pill pill-authored">Written from official sources</span><span class="claim">Written from the official content. The federal part uses official questions. Other questions are possible at the exam. Question count and duration are estimates (not published).</span></td>
+      <td><a href="https://www.arge.ch/bilang/angebot/einbuergerung-und-staatskunde/staatskundetest">www.arge.ch</a></td>
+      <td><ul class="facts"><li><a href="https://www.arge.ch/bilang/angebot/einbuergerung-und-staatskunde/staatskundetest">Official study material</a></li><li><a href="https://www.arge.ch/bilang/angebot/einbuergerung-und-staatskunde/staatskundekurs">Official course</a></li></ul></td>
+    </tr>
+  
+    <tr>
+      <td><a class="cname" href="cantons/tg.html"><img src="assets/crests/TG.png" alt="">Thurgau</a>
+        <span class="pill pill-type">Written</span></td>
+      <td><span class="pill pill-federal">Federal base</span><span class="claim">Basic preparation: the official federal questions borrowed from another canton — not this canton’s real questions.</span></td>
+      <td><a href="https://hz.tg.ch/buergerrecht/ordentliche-einbuergerung.html/9059">hz.tg.ch</a></td>
+      <td><ul class="facts"><li><a href="https://www.amriswil.ch/_docn/4748005/Merkblatt_%C3%BCber_die_ordentliche_Einb%C3%BCrgerung.pdf">Official study material</a></li></ul></td>
+    </tr>
+  
+    <tr>
+      <td><a class="cname" href="cantons/ti.html"><img src="assets/crests/TI.png" alt="">Ticino</a>
+        <span class="pill pill-type">Written</span></td>
+      <td><span class="pill pill-authored">Written from official sources</span><span class="claim">Written from the official content. The federal part uses official questions. Other questions are possible at the exam. Question count and duration are estimates (not published).</span></td>
+      <td><a href="https://www4.ti.ch/di/spop/naturalizzazioni/informazioni-sulla-formazione-per-la-naturalizzazione/">www4.ti.ch</a></td>
+      <td><ul class="facts"><li><a href="https://www.ifc.ti.ch/">Official course</a></li></ul></td>
+    </tr>
+  
+    <tr>
+      <td><a class="cname" href="cantons/ur.html"><img src="assets/crests/UR.png" alt="">Uri</a>
+        <span class="pill pill-type">Written</span></td>
+      <td><span class="pill pill-federal">Federal base</span><span class="claim">Basic preparation: the official federal questions borrowed from another canton — not this canton’s real questions.</span></td>
+      <td><a href="https://www.ur.ch/dienstleistungen/3394">www.ur.ch</a></td>
+      <td><ul class="facts"><li><a href="https://www.ur.ch/_doc/443059">Official study material</a></li><li><a href="https://weiterbildung.bwzuri.ch/kursangebot/allgemeinbildung-29">Official course</a></li></ul></td>
+    </tr>
+  
+    <tr>
+      <td><a class="cname" href="cantons/vs.html"><img src="assets/crests/VS.png" alt="">Valais</a>
+        <span class="pill pill-type">Oral</span></td>
+      <td><span class="pill pill-official">Official questions · adapted</span><span class="claim">The official interview questionnaire, turned into multiple-choice by us. Other questions are possible at the exam.</span></td>
+      <td><a href="https://www.vs.ch/web/spm/naturalisation-ordinaire">www.vs.ch</a></td>
+      <td><ul class="facts"><li><a href="https://www.vs.ch/documents/17556437/17623473/Questionnaire+VS+-+REPONSES+-+2021_11_15.pdf">Official question catalogue</a></li></ul></td>
+    </tr>
+  
+    <tr>
+      <td><a class="cname" href="cantons/vd.html"><img src="assets/crests/VD.png" alt="">Vaud</a>
+        <span class="pill pill-type">Written</span></td>
+      <td><span class="pill pill-official">Official questions</span><span class="claim">The official exam questions, unchanged. Every possible question is here.</span></td>
+      <td><a href="https://www.vd.ch/population/population-etrangere/naturalisation/demande-de-naturalisation-ordinaire/test-de-connaissances">www.vd.ch</a></td>
+      <td><ul class="facts"><li><a href="https://prestations.vd.ch/pub/101112/">Official question catalogue</a></li><li><a href="https://didactnatu.vd.ch">Official study material</a></li></ul></td>
+    </tr>
+  
+    <tr>
+      <td><a class="cname" href="cantons/zg.html"><img src="assets/crests/ZG.png" alt="">Zug</a>
+        <span class="pill pill-type">Oral</span></td>
+      <td><span class="pill pill-federal">Federal base</span><span class="claim">Basic preparation: the official federal questions borrowed from another canton — not this canton’s real questions.</span></td>
+      <td><a href="https://zg.ch/de/migration-integration/einbuergerung/ordentliche-einbuergerung">zg.ch</a></td>
+      <td><ul class="facts"><li><a href="https://kr-geschaefte.zug.ch/dokumente/85/12821_Beilage.pdf">Official question catalogue</a></li><li><a href="https://zg.ch/de/migration-integration/einbuergerung/ordentliche-einbuergerung">Official course</a></li></ul></td>
+    </tr>
+  
+    <tr>
+      <td><a class="cname" href="cantons/zh.html"><img src="assets/crests/ZH.png" alt="">Zurich</a>
+        <span class="pill pill-type">Written</span></td>
+      <td><span class="pill pill-official">Official questions</span><span class="claim">The official exam questions, unchanged. Every possible question is here. Question count and duration are estimates (not published).</span></td>
+      <td><a href="https://www.zh.ch/de/migration-integration/einbuergerung/grundkenntnistest.html">www.zh.ch</a></td>
+      <td><ul class="facts"><li><a href="https://www.zh.ch/content/dam/zhweb/bilder-dokumente/themen/migration-integration/einbuergerung/gkt/grundkenntnistest_kanton_zuerich.pdf">Official question catalogue</a></li><li><a href="https://www.zh.ch/de/migration-integration/einbuergerung/grundkenntnistest.html">Official practice tool</a></li><li><a href="https://www.zh.ch/content/dam/zhweb/bilder-dokumente/themen/migration-integration/einbuergerung/gkt/broschuere_einbuergerung_grundkenntnistest.pdf">Official study material</a></li></ul></td>
+    </tr>
+  
+  </tbody>
+</table>
+<!-- cantons:end -->
+    <p style="margin-top:14px;font-size:0.88rem;color:#666;">Federal-level reference: <a href="https://www.sem.admin.ch/sem/de/home/integration-einbuergerung/schweizer-werden.html">State Secretariat for Migration (SEM)</a>.</p>
+
+    <h2>Per-question provenance</h2>
+    <p>Every question in the app carries structured metadata that records:</p>
+    <ul>
+      <li><strong>Extraction method</strong> (PDF text, OCR, manual curation, or API)</li>
+      <li><strong>Extraction date</strong> and the hash of the source document at extraction time</li>
+      <li><strong>Original answer format</strong> (true-false, MCQ, open) and the format actually delivered in the app</li>
+      <li>An <strong>adapted</strong> flag set when the delivered format differs from the original (for example, open questions reformatted as MCQ with alternative choices)</li>
+    </ul>
+    <p>This metadata makes every question independently verifiable against its source.</p>
+
+    <h2>Reporting discrepancies</h2>
+    <p>If you find a question that is outdated, incorrect, or missing relative to its official source, please report it. Reports are processed within the SLA above — 72 hours for critical issues, 7 days for standard updates.</p>
+    <ul><li>Email: <a href="mailto:swisscitizenshiptest@gmail.com">swisscitizenshiptest@gmail.com</a></li></ul>
+
+    <h2>Audit log access</h2>
+    <p>Every verification run is recorded in append-only structured logs (one JSONL file per canton). Logs include timestamp, source URL, response status, content hash, and any detected changes. Logs are kept indefinitely on a dedicated git branch.</p>
+    <p>The audit log is not published openly because it lives in the application's production repository. It is available for inspection by cantonal naturalization authorities, the State Secretariat for Migration, accredited researchers, or journalists on written request at <a href="mailto:swisscitizenshiptest@gmail.com">swisscitizenshiptest@gmail.com</a>. Inspection requests are honoured within 5 working days.</p>
+
+    <h2>Versioning policy</h2>
+    <p>Each catalogue snapshot is identified by:</p>
+    <ul>
+      <li>An ISO date (when the snapshot was captured from the official source)</li>
+      <li>A content hash (computed over the normalized catalogue)</li>
+      <li>An app version (the first published app release that ships this snapshot)</li>
+    </ul>
+    <p>Historical snapshots are preserved so any past version can be inspected and compared against the live one.</p>
+
+    <h2>About this app</h2>
+    <p>Swiss Naturalization Test is a free, ad-free study tool (with optional sign-in to sync across devices) for the Swiss naturalization knowledge test. It is independently developed by a naturalization applicant living in Switzerland. It is <strong>not affiliated</strong> with any government authority. Its purpose is to complement official preparation tools — not to replace them.</p>
+    <p>For questions about this transparency commitment or to discuss institutional collaboration: <a href="mailto:swisscitizenshiptest@gmail.com">swisscitizenshiptest@gmail.com</a>.</p>
+
+    <div class="footer-note"><strong>Note for institutions:</strong> if you represent a cantonal or municipal naturalization office and want to verify the audit trail or discuss how this app references your canton's catalogue, please reach out at the email above. We are happy to demonstrate the pipeline live, share the audit log for your canton, and document any wording adjustments you require.</div>
+  </section>
+
+<footer class="site">
+<a data-nav="home" href="landing.html">Home</a>&middot;<a data-nav="press" href="landing.html#press">Press</a>&middot;<a data-nav="transp" href="transparency.html">Transparency</a>&middot;<a data-nav="eng" href="engineering.html">Engineering</a>&middot;<a data-nav="privacy" href="privacy-policy.html">Privacy</a>&middot;<a data-nav="terms" href="terms.html">Terms</a>&middot;<a data-nav="del" href="account-deletion.html">Data deletion</a>&middot;<a data-nav="contact" href="mailto:swisscitizenshiptest@gmail.com" onclick="return __contact(event)">Contact</a>
+</footer>
+<script>
+window.__contact=function(e){if(e&&e.preventDefault)e.preventDefault();
+    var m="swisscitizenshiptest@gmail.com",l=(document.documentElement.lang||"en").slice(0,2);
+    var M={en:"Contact: "+m+"\n\nOpen your email app to write to us?",
+      fr:"Contact : "+m+"\n\nOuvrir votre messagerie pour nous \u00e9crire ?",
+      de:"Kontakt: "+m+"\n\nE-Mail-App \u00f6ffnen, um uns zu schreiben?",
+      it:"Contatto: "+m+"\n\nAprire l'app di posta per scriverci?"};
+    try{if(navigator.clipboard)navigator.clipboard.writeText(m);}catch(_){}
+    if(window.confirm(M[l]||M.en))location.href="mailto:"+m;return false;};
+</script>
+<script>
+(function(){
+  // Links made before the split carried ?lang=: they are sent to the file that holds that
+  // language instead of quietly showing another one.
+  try{
+    var q=new URLSearchParams(location.search).get("lang"),L="en";
+    if(q&&q!==L&&["en","fr","de","it"].indexOf(q)>=0){
+      var p=location.pathname,name=p.slice(p.lastIndexOf("/")+1)||"index.html";
+      var dir=p.slice(0,p.lastIndexOf("/")+1);
+      if(/\/(fr|de|it)\/$/.test(dir))dir=dir.replace(/(fr|de|it)\/$/,"");
+      location.replace(dir+(q==="en"?"":q+"/")+name+location.hash);
+    }
+  }catch(e){}
+  // The page is in one language: the menu is put in it and the flags link to the siblings.
+  var L="en",NAV={
+    en:{cantons:"Cantons",home:"Home",press:"Press",eng:"Engineering",presskit:"Press kit",transp:"Transparency",privacy:"Privacy",terms:"Terms",del:"Data deletion",contact:"Contact"},
+    fr:{cantons:"Cantons",home:"Accueil",press:"Presse",eng:"Ing\u00e9nierie",presskit:"Dossier de presse",transp:"Transparence",privacy:"Confidentialit\u00e9",terms:"Conditions",del:"Suppression des donn\u00e9es",contact:"Contact"},
+    de:{cantons:"Kantone",home:"Start",press:"Presse",eng:"Technik",presskit:"Pressemappe",transp:"Transparenz",privacy:"Datenschutz",terms:"Nutzungsbedingungen",del:"Datenl\u00f6schung",contact:"Kontakt"},
+    it:{cantons:"Cantoni",home:"Home",press:"Stampa",eng:"Ingegneria",presskit:"Press kit",transp:"Trasparenza",privacy:"Privacy",terms:"Condizioni",del:"Cancellazione dati",contact:"Contatto"}
+  },n=NAV[L]||NAV.en;
+  document.querySelectorAll("[data-nav]").forEach(function(a){
+    var k=a.getAttribute("data-nav");if(n&&n[k])a.textContent=n[k];});
+  document.querySelectorAll(".langs a").forEach(function(a){
+    a.classList.toggle("on",a.getAttribute("data-lang")===L);});
+  var mn=document.getElementById("mnav");
+  document.querySelectorAll("nav.main a").forEach(function(a){
+    a.addEventListener("click",function(){if(mn)mn.checked=false;});});
+})();
+</script>
+</body>
+</html>

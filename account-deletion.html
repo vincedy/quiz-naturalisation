@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<!--
+  LOCAL REFERENCE COPY of the account & data deletion page as published on
+  GitHub Pages (vincedy/quiz-naturalisation). NOT the source of truth.
+
+  Source of truth: vincedy/quiz-naturalisation repo, served at
+  https://swissnaturalizationtest.ch/account-deletion.html
+
+  This page satisfies the Google Play "Account deletion" data-safety
+  requirement and documents in-app + by-request deletion paths.
+
+  Last synced: 2026-06-24 (optional Google/Apple sign-in compliance update)
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account & Data Deletion — Swiss Naturalization Test</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 0 24px;
+      color: #222;
+      line-height: 1.7;
+    }
+    h1 { font-size: 1.6rem; margin-bottom: 4px; }
+    h2 { font-size: 1.1rem; margin-top: 32px; color: #333; }
+    p, li { font-size: 0.97rem; }
+    ul { padding-left: 20px; }
+    .meta { color: #666; font-size: 0.9rem; margin-bottom: 32px; }
+    a { color: #0066cc; }
+    .lang-nav { margin-bottom: 32px; padding: 12px; background: #f5f5f5; border-radius: 6px; }
+    .lang-nav a { margin-right: 16px; }
+    section{display:block}
+    </style>
+<link rel="icon" href="/favicon.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://swissnaturalizationtest.ch/account-deletion.html">
+<link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/account-deletion.html">
+<link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/fr/account-deletion.html">
+<link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/de/account-deletion.html">
+<link rel="alternate" hreflang="it" href="https://swissnaturalizationtest.ch/it/account-deletion.html">
+<link rel="alternate" hreflang="x-default" href="https://swissnaturalizationtest.ch/account-deletion.html">
+<meta name="description" content="App: Swiss Naturalization Test · Developer: Vincenzo Casini · Last updated: 24 June 2026">
+<meta property="og:description" content="App: Swiss Naturalization Test · Developer: Vincenzo Casini · Last updated: 24 June 2026">
+<meta property="og:title" content="Account & Data Deletion — Swiss Naturalization Test">
+<meta property="og:url" content="https://swissnaturalizationtest.ch/account-deletion.html">
+<meta property="og:locale" content="en">
+</head>
+<body>
+
+<style>
+/* injected shared header/footer (does not touch legal copy) */
+header.site{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid #e6ebf2;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+header.site .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+header.site .navbar{display:flex;align-items:center;gap:18px;height:64px}
+header.site .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.02rem;color:#141821;text-decoration:none;letter-spacing:-.02em}
+header.site .brand img{width:30px;height:30px;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,.15)}
+header.site nav.main{margin-left:auto;display:flex;align-items:center;gap:4px}
+header.site nav.main a.link{padding:8px 12px;border-radius:9px;font-weight:600;font-size:.93rem;color:#5a6472;text-decoration:none;cursor:pointer}
+header.site nav.main a.link:hover{background:#f6f8fb;color:#141821}
+header.site .langs{display:flex;gap:2px;margin-left:6px;padding-left:12px;border-left:1px solid #e6ebf2}
+header.site .langs a{font-size:.8rem;font-weight:700;color:#5a6472;padding:5px 9px;border-radius:999px;text-decoration:none;cursor:pointer}
+header.site .langs a.on,header.site .langs a:hover{background:#141821;color:#fff}
+#mnav{display:none}
+header.site .burger{margin-left:auto;display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
+header.site .burger span{width:24px;height:2px;background:#141821;border-radius:2px}
+/* nav a 7 voci in 4 lingue: mai andare a capo, e passare al menu a panino
+     PRIMA che la barra si stringa (in tedesco le voci sono lunghissime) */
+  .brand,nav.main a.link{white-space:nowrap}
+  .navbar{gap:12px}
+  nav.main a.link{padding:7px 9px;font-size:.89rem}
+  @media(max-width:1280px){header.site nav.main{position:fixed;inset:64px 0 auto 0;flex-direction:column;align-items:stretch;background:#fff;border-bottom:1px solid #e6ebf2;padding:12px 24px 20px;gap:6px;transform:translateY(-140%);transition:transform .25s;box-shadow:0 10px 30px rgba(16,24,40,.1)}#mnav:checked ~ .navbar nav.main{transform:translateY(0)}header.site .burger{display:flex}header.site .langs{margin:6px 0 0;padding:12px 0 0;border-left:0;border-top:1px solid #e6ebf2;justify-content:center}}
+footer.site{background:#0d1426;color:#9fb0cc;padding:34px 24px;text-align:center;font-size:.9rem;margin-top:44px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+footer.site a{color:#cdd9ee;text-decoration:none;margin:0 8px;font-weight:600}
+footer.site a:hover{text-decoration:underline}
+body>.lang-nav{display:none!important}
+/* free the injected header/footer from the legal page's centered column, then re-center just the content */
+body{max-width:none!important;margin:0!important;padding:0!important}
+body>section{max-width:840px;margin-left:auto!important;margin-right:auto!important;padding-left:24px;padding-right:24px}
+section[id]{scroll-margin-top:78px}
+</style>
+<header class="site"><input type="checkbox" id="mnav"><div class="wrap navbar">
+<a class="brand" href="landing.html"><img src="app/icon.png" alt="">Swiss Naturalization Test</a>
+<label class="burger" for="mnav" aria-label="Menu"><span></span><span></span><span></span></label>
+<nav class="main">
+<a class="link" data-nav="home" href="landing.html">Home</a><a class="link" data-nav="cantons" href="cantons/index.html">Cantons</a>
+<a class="link" data-nav="press" href="landing.html#press">Press</a><a class="link" data-nav="presskit" href="press-kit.html">Press kit</a>
+<a class="link" data-nav="transp" href="transparency.html">Transparency</a><a class="link" data-nav="eng" href="engineering.html">Engineering</a>
+<a class="link" data-nav="privacy" href="privacy-policy.html">Privacy</a>
+<a class="link" data-nav="terms" href="terms.html">Terms</a>
+<span class="langs"><a data-lang="en" href="account-deletion.html">EN</a><a data-lang="fr" href="fr/account-deletion.html">FR</a><a data-lang="de" href="de/account-deletion.html">DE</a><a data-lang="it" href="it/account-deletion.html">IT</a></span>
+</nav></div></header>
+  <div class="lang-nav">
+    <a href="account-deletion.html">English</a>
+    <a href="fr/account-deletion.html">Français</a>
+    <a href="de/account-deletion.html">Deutsch</a>
+    <a href="it/account-deletion.html">Italiano</a>
+  </div>
+
+  <section id="en">
+    <h1>Account &amp; Data Deletion</h1>
+    <p class="meta">App: <strong>Swiss Naturalization Test</strong> · Developer: Vincenzo Casini · Last updated: 24 June 2026</p>
+
+    <h2>Which account this covers</h2>
+    <p>This page explains how to delete your account and data from the Swiss Naturalization Test app. It covers two things: the <strong>optional account tied to your Google or Apple sign-in</strong> (created only if you choose to sign in), and the <strong>automatic anonymous account</strong> that the app creates on our servers when first launched. You can delete either or both.</p>
+
+    <h2>Delete in the app</h2>
+    <p>Open the app and go to <strong>Settings → “Reset all data” / “Delete my data”</strong>. This clears your local data on the device and requests deletion of your cloud data on our servers.</p>
+
+    <h2>Request deletion by email</h2>
+    <p>You can also request deletion by email. Send a message to <a href="mailto:swisscitizenshiptest@gmail.com">swisscitizenshiptest@gmail.com</a> from the email address you signed in with. We will delete your account, email address, display name, leaderboard entry and synchronized progress within 30 days and confirm once it is done.</p>
+
+    <h2>What gets deleted</h2>
+    <p>Deletion removes all of the following from our servers:</p>
+    <ul>
+      <li>Your email address (if you signed in with Google or Apple)</li>
+      <li>Your anonymous user ID and device identifier</li>
+      <li>Your display name</li>
+      <li>Your leaderboard entry</li>
+      <li>Your quiz progress (exam results, game scores, answered questions, mastery progress)</li>
+    </ul>
+    <p>Nothing is retained after deletion is complete, except where the law requires us to keep limited records.</p>
+
+    <h2>Uninstalling the app</h2>
+    <p>Uninstalling the app removes the local copy of your data from your device. To also remove your cloud data, use the in-app deletion option or email us as described above.</p>
+
+    <h2>Contact</h2>
+    <p>For deletion requests or questions: <a href="mailto:swisscitizenshiptest@gmail.com">swisscitizenshiptest@gmail.com</a>.</p>
+  </section>
+
+<footer class="site">
+<a data-nav="home" href="landing.html">Home</a>&middot;<a data-nav="press" href="landing.html#press">Press</a>&middot;<a data-nav="transp" href="transparency.html">Transparency</a>&middot;<a data-nav="eng" href="engineering.html">Engineering</a>&middot;<a data-nav="privacy" href="privacy-policy.html">Privacy</a>&middot;<a data-nav="terms" href="terms.html">Terms</a>&middot;<a data-nav="del" href="account-deletion.html">Data deletion</a>&middot;<a data-nav="contact" href="mailto:swisscitizenshiptest@gmail.com" onclick="return __contact(event)">Contact</a>
+</footer>
+<script>
+window.__contact=function(e){if(e&&e.preventDefault)e.preventDefault();
+    var m="swisscitizenshiptest@gmail.com",l=(document.documentElement.lang||"en").slice(0,2);
+    var M={en:"Contact: "+m+"\n\nOpen your email app to write to us?",
+      fr:"Contact : "+m+"\n\nOuvrir votre messagerie pour nous \u00e9crire ?",
+      de:"Kontakt: "+m+"\n\nE-Mail-App \u00f6ffnen, um uns zu schreiben?",
+      it:"Contatto: "+m+"\n\nAprire l'app di posta per scriverci?"};
+    try{if(navigator.clipboard)navigator.clipboard.writeText(m);}catch(_){}
+    if(window.confirm(M[l]||M.en))location.href="mailto:"+m;return false;};
+</script>
+<script>
+(function(){
+  // Links made before the split carried ?lang=: they are sent to the file that holds that
+  // language instead of quietly showing another one.
+  try{
+    var q=new URLSearchParams(location.search).get("lang"),L="en";
+    if(q&&q!==L&&["en","fr","de","it"].indexOf(q)>=0){
+      var p=location.pathname,name=p.slice(p.lastIndexOf("/")+1)||"index.html";
+      var dir=p.slice(0,p.lastIndexOf("/")+1);
+      if(/\/(fr|de|it)\/$/.test(dir))dir=dir.replace(/(fr|de|it)\/$/,"");
+      location.replace(dir+(q==="en"?"":q+"/")+name+location.hash);
+    }
+  }catch(e){}
+  // The page is in one language: the menu is put in it and the flags link to the siblings.
+  var L="en",NAV={
+    en:{cantons:"Cantons",home:"Home",press:"Press",eng:"Engineering",presskit:"Press kit",transp:"Transparency",privacy:"Privacy",terms:"Terms",del:"Data deletion",contact:"Contact"},
+    fr:{cantons:"Cantons",home:"Accueil",press:"Presse",eng:"Ing\u00e9nierie",presskit:"Dossier de presse",transp:"Transparence",privacy:"Confidentialit\u00e9",terms:"Conditions",del:"Suppression des donn\u00e9es",contact:"Contact"},
+    de:{cantons:"Kantone",home:"Start",press:"Presse",eng:"Technik",presskit:"Pressemappe",transp:"Transparenz",privacy:"Datenschutz",terms:"Nutzungsbedingungen",del:"Datenl\u00f6schung",contact:"Kontakt"},
+    it:{cantons:"Cantoni",home:"Home",press:"Stampa",eng:"Ingegneria",presskit:"Press kit",transp:"Trasparenza",privacy:"Privacy",terms:"Condizioni",del:"Cancellazione dati",contact:"Contatto"}
+  },n=NAV[L]||NAV.en;
+  document.querySelectorAll("[data-nav]").forEach(function(a){
+    var k=a.getAttribute("data-nav");if(n&&n[k])a.textContent=n[k];});
+  document.querySelectorAll(".langs a").forEach(function(a){
+    a.classList.toggle("on",a.getAttribute("data-lang")===L);});
+  var mn=document.getElementById("mnav");
+  document.querySelectorAll("nav.main a").forEach(function(a){
+    a.addEventListener("click",function(){if(mn)mn.checked=false;});});
+})();
+</script>
+</body>
+</html>

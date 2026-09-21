@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Twenty-six procedures, one app — Swiss Naturalization Test</title>
+<meta property="og:image" content="https://swissnaturalizationtest.ch/assets/social/og-26-cantons.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://swissnaturalizationtest.ch/assets/social/og-26-cantons.png">
+<link rel="icon" href="app/icon.png">
+<style>
+  :root{--ink:#141821;--muted:#5a6472;--bg:#fff;--soft:#f6f8fb;--border:#e6ebf2;--red:#DA291C;--red-d:#b31f14;--navy:#0d1426;--shadow:0 10px 30px rgba(16,24,40,.10);--radius:16px;--font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font);color:var(--ink);margin:0;line-height:1.65;background:var(--bg);-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+  h1,h2,h3{letter-spacing:-.02em;line-height:1.2}
+  header.site{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid var(--border)}
+  .navbar{display:flex;align-items:center;gap:18px;height:64px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.02rem;letter-spacing:-.02em}
+  .brand img{width:30px;height:30px;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,.15)}
+  nav.main{margin-left:auto;display:flex;align-items:center;gap:4px}
+  nav.main a.link{padding:8px 12px;border-radius:9px;font-weight:600;font-size:.93rem;color:var(--muted);cursor:pointer}
+  nav.main a.link:hover{background:var(--soft);color:var(--ink)}
+  .langs{display:flex;gap:2px;margin-left:6px;padding-left:12px;border-left:1px solid var(--border)}
+  .langs a{font-size:.8rem;font-weight:700;color:var(--muted);padding:5px 9px;border-radius:999px;cursor:pointer}
+  .langs a.on,.langs a:hover{background:var(--ink);color:#fff}
+  #mnav{display:none}
+  .burger{margin-left:auto;display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
+  .burger span{width:24px;height:2px;background:var(--ink);border-radius:2px}
+  /* nav a 7 voci in 4 lingue: mai andare a capo, e passare al menu a panino
+     PRIMA che la barra si stringa (in tedesco le voci sono lunghissime) */
+  .brand,nav.main a.link{white-space:nowrap}
+  .navbar{gap:12px}
+  nav.main a.link{padding:7px 9px;font-size:.89rem}
+  @media(max-width:1280px){nav.main{position:fixed;inset:64px 0 auto 0;flex-direction:column;align-items:stretch;background:#fff;border-bottom:1px solid var(--border);padding:12px 24px 20px;gap:6px;transform:translateY(-140%);transition:transform .25s ease;box-shadow:var(--shadow)}#mnav:checked ~ .navbar nav.main{transform:translateY(0)}.burger{display:flex}nav.main a.link{padding:12px 10px;font-size:1rem}.langs{margin:6px 0 0;padding:12px 0 0;border-left:0;border-top:1px solid var(--border);justify-content:center}}
+  .article{max-width:720px;margin:0 auto;padding:34px 24px 8px}
+  .back{display:inline-block;color:var(--muted);font-weight:600;font-size:.9rem;margin-bottom:18px;cursor:pointer}
+  .back:hover{color:var(--red)}
+  .eyebrow{color:var(--red);font-weight:800;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;margin:0 0 14px}
+  .article h1{font-size:2.1rem;margin:0 0 10px;font-weight:850}
+  .sub{font-size:1.08rem;color:var(--muted);margin:0 0 6px;font-weight:600}
+  .abody{font-size:1.06rem;color:#2a3140}
+  .abody p{margin:0 0 18px}
+  .abody h2{font-size:1.45rem;margin:38px 0 12px;color:var(--ink)}
+  .abody h3{font-size:1.12rem;margin:26px 0 8px;color:var(--ink)}
+  .abody em{color:var(--muted)}
+  .abody strong{color:var(--ink)}
+  .abody ul{margin:0 0 18px;padding-left:20px}
+  .abody li{margin:6px 0}
+  .abody a{color:var(--red);font-weight:600;text-decoration:underline}
+  .abody hr{border:0;border-top:1px solid var(--border);margin:30px 0}
+  .abody blockquote{margin:22px 0;padding:14px 20px;border-left:3px solid var(--red);background:var(--soft);border-radius:0 12px 12px 0;color:#2a3140}
+  .abody table{width:100%;border-collapse:collapse;margin:0 0 20px;font-size:.96rem}
+  .abody th{text-align:left;font-weight:800;padding:9px 10px;border-bottom:2px solid var(--border);color:var(--ink)}
+  .abody td{padding:9px 10px;border-bottom:1px solid var(--border)}
+  .abody td:last-child,.abody th:last-child{text-align:right;white-space:nowrap}
+  .note{max-width:720px;margin:10px auto 0;padding:0 24px;font-size:.86rem;color:var(--muted);font-style:italic}
+  section.block{padding:50px 0}
+  .final{text-align:center}
+  h2.sec{font-size:1.5rem;text-align:center;margin:0 0 26px;font-weight:800}
+  .stores{display:flex;gap:14px;justify-content:center;align-items:center;flex-wrap:wrap}
+  .stores img.apple{height:50px}.stores img.google{height:74px;margin:-12px 0}
+  footer.site{background:var(--navy);color:#9fb0cc;padding:44px 24px;text-align:center;font-size:.92rem}
+  .fl{margin-bottom:14px}
+  .fl a{margin:0 8px;font-weight:600;cursor:pointer}
+  .disc{max-width:680px;margin:0 auto;font-size:.82rem;color:#7f90ad}
+</style>
+<link rel="canonical" href="https://swissnaturalizationtest.ch/engineering.html">
+<link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/engineering.html">
+<link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/fr/engineering.html">
+<link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/de/engineering.html">
+<link rel="alternate" hreflang="it" href="https://swissnaturalizationtest.ch/it/engineering.html">
+<link rel="alternate" hreflang="x-default" href="https://swissnaturalizationtest.ch/engineering.html">
+<meta name="description" content="Engineering a civic study tool when the content belongs to twenty-six administrations">
+<meta property="og:description" content="Engineering a civic study tool when the content belongs to twenty-six administrations">
+<meta property="og:title" content="Twenty-six procedures, one app — Swiss Naturalization Test">
+<meta property="og:url" content="https://swissnaturalizationtest.ch/engineering.html">
+<meta property="og:locale" content="en">
+</head>
+<body>
+
+<header class="site"><input type="checkbox" id="mnav"><div class="wrap navbar"><a class="brand" href="landing.html"><img src="app/icon.png" alt="">Swiss Naturalization Test</a><label class="burger" for="mnav" aria-label="Menu"><span></span><span></span><span></span></label><nav class="main"><a class="link" data-nav="home" href="landing.html">Home</a><a class="link" data-nav="cantons" href="cantons/index.html">Cantons</a><a class="link" data-nav="press" href="landing.html#press">Press</a><a class="link" data-nav="presskit" href="press-kit.html">Press kit</a><a class="link" data-nav="transp" href="transparency.html">Transparency</a><a class="link" data-nav="eng" href="engineering.html">Engineering</a><a class="link" data-nav="privacy" href="privacy-policy.html">Privacy</a><a class="link" data-nav="terms" href="terms.html">Terms</a><span class="langs"><a data-lang="en" href="engineering.html">EN</a><a data-lang="fr" href="fr/engineering.html">FR</a><a data-lang="de" href="de/engineering.html">DE</a><a data-lang="it" href="it/engineering.html">IT</a></span></nav></div></header>
+
+<!-- ═══════════════════════════ EN ═══════════════════════════ -->
+
+<article class="article">
+<a class="back" href="landing.html">&larr; Back to the app</a>
+<p class="eyebrow">Engineering</p>
+<h1>Twenty-six procedures, one app</h1>
+<p class="sub">Engineering a civic study tool when the content belongs to twenty-six administrations</p>
+<div class="abody">
+
+<h2>0. Where this comes from</h2>
+<p>I am not a Swiss citizen. I moved to Morges in 2014, and in 2026 I started the ordinary naturalisation procedure, which in the canton of Vaud ends with a written knowledge test organised by the commune where you live. I built this app because I needed it, and I kept building it because the parts I found hardest were not the parts I expected. In August 2026 I sat that exam myself and passed it with full marks &mdash; 48 out of 48. In the room that morning, several other candidates were using the app.</p>
+<p>This is an engineering write-up, not a product pitch. It is about what happens when the thing you are shipping is not really software: it is a claim about facts that belong to somebody else, and that change without telling you.</p>
+
+<h2>1. The problem, in one line</h2>
+<p>Switzerland has no national naturalisation test. Federal law prescribes none, and each of the twenty-six cantons owns its own format. Some publish a complete question catalogue. Some publish study material and no questions. Some assess orally and publish nothing at all. And in one canton the test is not cantonal but municipal: the questions a candidate receives depend on which of three hundred communes they live in.</p>
+<p>So the naive model, one question bank and one exam and one app, is wrong in the first five minutes. The real shape is twenty-six different procedures, and inside one of them, three hundred more.</p>
+<p>Today the app carries <strong>13,497 exam questions across all twenty-six cantons</strong>, of which <strong>9,565 are municipal</strong>: questions that exist only for one commune, and are useless to everyone else. Selecting a commune is therefore not a preference. It is the query.</p>
+
+<h2>2. Why the hard part is not the app</h2>
+<p>An app that asks multiple-choice questions is a weekend. The work is everywhere else: obtaining material that twenty-six administrations publish in different formats, in three languages, at their own pace; deciding what each item actually <em>is</em>; and keeping all of it honest for months while nobody tells you anything has moved.</p>
+<p>Fourteen cantons now have their own catalogue in the app. The remaining twelve are served the federal layer borrowed at runtime from a canton that does publish one, and the app says so on the question itself. That distinction, <em>this is your canton's material</em> versus <em>this is federal material we are showing you because your canton publishes none</em>, is not a footnote. It is the difference between a study tool and a misleading one.</p>
+
+<h2>3. The content chain, and what a question carries</h2>
+<p>Every question in the app carries its own provenance: where it came from, how it was obtained, on what date, and against which fingerprint of the source. The split is honest about how uneven the landscape is:</p>
+<table><thead><tr><th>Method</th><th>Questions</th></tr></thead><tbody>
+<tr><td>Live cantonal API</td><td>9,693</td></tr>
+<tr><td>Text extraction from published PDFs</td><td>1,525</td></tr>
+<tr><td>Machine translation, flagged as unofficial</td><td>531</td></tr>
+<tr><td>Hand-authored from official published material</td><td>890</td></tr><tr><td>Manually curated</td><td>28</td></tr>
+<tr><td>Verified manual transcription</td><td>281</td></tr>
+<tr><td>Official e-learning material</td><td>126</td></tr>
+<tr><td>Other declared forms</td><td>423</td></tr>
+</tbody></table>
+<p><strong>No question in the app lacks a provenance block.</strong> That was a design constraint from early on, and it is the reason the rest of this document is possible.</p>
+<p>Where no catalogue exists and the deck has to be written, hand-authoring is not free composition. Each authored question carries an anchor: a verbatim string from an official published document. At build time the generator searches the source corpus for that string, and on three cantons it <strong>fails hard</strong> if the anchor is not found. No output, no publication. A question that cannot point at a sentence in an official document does not ship.</p>
+<p>The same discipline applies to certainty. Exam parameters, how many questions and what pass mark and how long, are not asserted. Each carries a confidence level: <em>official</em>, <em>estimated</em>, <em>reported by the provider</em>, <em>not published</em>, <em>not applicable</em>. Across the cantonal models, forty-nine of these parameters are marked <em>not published</em>, because the canton genuinely does not publish them. Showing that honestly turned out to be more persuasive to institutional readers than a clean-looking number would have been.</p>
+
+<h2>4. Nightly surveillance, and the check that nobody writes</h2>
+<p>Sources move. A canton republishes a PDF, renumbers a series, corrects an answer. Nobody sends a notification.</p>
+<p>Thirteen cantons therefore have their published source checked <strong>every night</strong> by a scheduled job, on staggered hours. Each run fetches the source, fingerprints it, compares it against the stored baseline, and resolves into one of five outcomes: unchanged, changed, source unreachable, refresh failed, or database write failed. Transient network trouble is deliberately distinguished from a real failure, because treating a flaky connection as a broken source produces alarms nobody reads.</p>
+<p>Every run appends one signed line to an append-only journal on a separate branch: the timestamp, the source fingerprint, the HTTP status, the fetch duration, and the commit of the code that ran. Reproducibility is not a claim; it is a record.</p>
+<p>But the check I would point a reviewer at is a different one, and it exists because of a failure. The drift detector compares <em>upstream sources</em> against a stored baseline. It never asks the one question that matters after publication: <strong>does what we are serving still match what we committed?</strong> It did not, and one canton served sixty-two questions whose parser fix had been committed six weeks earlier and never published. Silently. Nothing in the pipeline was designed to notice.</p>
+<p>So a second comparison now runs on <strong>every</strong> cycle, including, especially, the cycles where nothing changed. It recomputes the content fingerprint from the question text, the answers and the correct answer rather than trusting the stored stamp, so a stale stamp shows up as a divergence instead of hiding one. A canton nobody is touching is exactly where a divergence sits unnoticed.</p>
+
+<h2>5. Updating without the stores</h2>
+<p>An exam is on a date. If a candidate's canton corrects an answer three weeks before their test, an app that can only ship through a store review is not a study tool, it is a liability.</p>
+<p>So content does not travel with the binary. Approved corrections reach devices through a differential channel: on launch and on return to the foreground, the client asks for everything above its own cursor and merges it over the bundled catalogue. No store submission, no review queue, no waiting for users to update.</p>
+<p>The number, measured on production this week: of <strong>12,744 published questions, 541, or 4.2 per cent, have been revised at least once since first publication</strong> and delivered this way. The distribution is uneven and tells its own story. The largest counts: 148 in Valais, 140 in Vaud, 112 in Lucerne, 43 in Basel-Stadt, 36 in Neuchâtel, 27 in Zurich, 24 in St. Gallen. One canton's questions have reached their fifth version.</p>
+<p>Two safeguards make this defensible rather than reckless.</p>
+<p><strong>Nothing publishes itself.</strong> When drift is detected the pipeline regenerates, writes to the database, and marks the canton <em>awaiting review</em>. In that state the client refuses to sync: users keep seeing the previously approved content. Promotion to <em>live</em> is manual, always, and the pipeline is structurally forbidden from doing it. Right now all thirteen published cantons sit in <em>live</em>.</p>
+<p><strong>Nothing is overwritten silently.</strong> Every modification archives the complete previous version of the question, text and answers and correct answer and format, before the new one lands.</p>
+<p>The fastest cycle so far: an integration officer in a German-speaking region reported that long answers were being truncated. The cause was ours, and worse than cosmetic. The truncation was applied to the correct answer but not to the distractors, so the right answer was systematically the short one ending in an ellipsis. A tell, in an exam trainer. The repair touched 147 of that canton's 280 rows across both languages, and production recorded the content change <strong>two minutes after the fix was committed</strong>, the same evening as the report.</p>
+
+<h2>6. Transparency as a function, not a page</h2>
+<p>Most apps treat transparency as a document. Here it is a runtime property, and it shows up in three places.</p>
+<p><strong>On the question.</strong> Under every question, in practice and in mock exams, the candidate sees where it came from, whether its format was adapted from the original, whether it was borrowed from another canton's official pool, whether it was translated, and a verification badge carrying the date the source was last checked.</p>
+<p><strong>Before the exam.</strong> The mock exam declares, per canton, which of its parameters are official and which are estimated, and distinguishes the written track from the oral one, because in several cantons the real assessment is an interview and presenting a multiple-choice simulation as "the exam" would be false.</p>
+<p><strong>In public.</strong> A <a href="transparency.html">transparency page</a>, in four languages, states the service commitments: sources checked every twenty-four hours, ordinary refresh within seven days, corrections affecting correctness within seventy-two hours. It also offers cantonal naturalisation authorities, the federal migration secretariat and accredited researchers an inspection of the verification record on written request, answered within five working days.</p>
+<p>Publishing a service commitment you can be measured against is uncomfortable. It is also the only version of transparency that means anything.</p>
+
+<h2>7. One developer, thirteen releases in eighteen weeks</h2>
+<p>The first commit is dated 12 April 2026. The app was in production on 2 May. Since then: thirteen public minor versions through to 3.12, <strong>243 builds</strong>, and at least one build on 89 of the 142 days.</p>
+<p>That pace is only survivable because of what sits underneath it: <strong>186 automated test files</strong>, <strong>320 versioned database migrations</strong>, and a content pipeline that verifies its own output rather than trusting it. The interface is held to four languages by a test that refuses to build if one locale has a key the others do not. Currently 3,426 keys, identical across all four.</p>
+<p>None of this is heroic. It is the ordinary consequence of the fact that a single person cannot hold the state of twenty-six cantons in their head, and should not try.</p>
+
+<h2>8. The agents as users of the system</h2>
+<p>This is the chapter I did not expect to write.</p>
+<p>Much of this project was built with AI coding agents. The interesting part is not that they wrote code. It is that they turned out to be <strong>users of the production system</strong>, and expensive ones.</p>
+<p>On one day in August, the project's database egress broke down as follows: the tooling, meaning scripts and internal utilities and agents measuring things, produced roughly <strong>five times the traffic of every real user of the app combined</strong>. The app was never the problem. <em>Measuring</em> the app was. And it pushed the project against a hard billing threshold with a deadline.</p>
+<p>The failure mode was specific and, in hindsight, obvious. An agent asked to check that a seed worked would read the table back. An agent asked how many rows existed would fetch the rows and count them. An agent asked whether something had changed would download it and compare. Every one of those is a reasonable instinct for a human at a terminal, and catastrophic at machine frequency.</p>
+<p>What came out of it is a repository constitution, read automatically at the start of every agent session, whose first chapter is not about code style. It is: <em>every query you run against this database is billed</em>. Then the rules that follow from it. Never read rows in order to measure them, because a count and a size and a fingerprint are one row each. Never select every column from the heavy tables. Aggregate on the server and receive ten rows instead of ten thousand. One session per task, not one per command, because every new connection pays a fixed protocol cost before the query even runs. And verify a write with numbers, never with a dump.</p>
+<p>Alongside it sits a persistent project memory, one fact per file, indexed, carrying the decisions an agent cannot re-derive from the code: which environments may be written to and under what conditions, which corrections were already tried and failed, which parts of the pipeline a fresh session must not touch alone.</p>
+<p>The lesson generalises beyond this project. We are used to reasoning about an agent's cost in tokens. In a system with a real backend, the agent's cost is also <strong>the load it puts on your infrastructure</strong>, and that number can dwarf the first one. Nobody had told me to instrument it. The bill did.</p>
+
+<h2>9. What it actually costs</h2>
+<p>The infrastructure itself, backend and distribution and developer accounts, runs on the order of <strong>a few hundred Swiss francs a year</strong>. The dominant line is not infrastructure at all: it is the AI tooling that does most of the building, a subscription I would hold anyway and that is shared across everything I work on. Fully attributed, the whole operation sits around three thousand francs a year. Strictly attributed to this project, it is a fraction of that.</p>
+<p>For that, at the time of writing: <strong>10,010 registered profiles</strong>, of which <strong>7,317 have actually studied or played</strong>, across twenty-five of the twenty-six cantons.</p>
+<p>I put the numbers in because they are the part people find hardest to believe, and because they frame the real question. This is not a story about doing a lot with very little as a virtue. It is that a civic tool at national scale can now be built and <em>maintained</em> by one person, and that the binding constraint has moved. It is no longer engineering capacity. It is whether the institutions that own the content have a way to participate in keeping it correct, and that is a question no amount of code answers on its own.</p>
+
+</div>
+</article>
+<p class="note">Figures measured on 9 September 2026 against the production system and the repository at that date. The pass rate the app records is the pass rate of its own simulation, not of any cantonal examination. Cantonal material is obtained exclusively from sources those cantons publish.</p>
+<section class="block final"><div class="wrap"><h2 class="sec">Start preparing today</h2><div class="stores"><a href="https://apps.apple.com/app/id6769993041" aria-label="App Store"><img class="apple" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store"></a><a href="https://play.google.com/store/apps/details?id=ch.vincedev.swisscitizenship" aria-label="Google Play"><img class="google" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Google Play"></a></div></div></section>
+<footer class="site"><div class="wrap"><div class="fl"><a href="landing.html">Home</a> &middot; <a href="landing.html#press">Press</a> &middot; <a href="cantons/index.html">Cantons</a> &middot; <a href="transparency.html">Transparency</a> &middot; <a href="engineering.html">Engineering</a> &middot; <a href="privacy-policy.html">Privacy</a> &middot; <a href="terms.html">Terms</a> &middot; <a href="account-deletion.html">Data deletion</a> &middot; <a href="mailto:swisscitizenshiptest@gmail.com" onclick="return __contact(event)">Contact</a></div><p class="disc">Swiss Naturalization Test is an independent study companion developed by Vincenzo Casini. It is not affiliated with any government authority. For the official test, always refer to your canton's official platform.</p></div></footer>
+
+<script>
+window.__contact=function(e){if(e&&e.preventDefault)e.preventDefault();
+    var m="swisscitizenshiptest@gmail.com",l=(document.documentElement.lang||"en").slice(0,2);
+    var M={en:"Contact: "+m+"\n\nOpen your email app to write to us?",
+      fr:"Contact : "+m+"\n\nOuvrir votre messagerie pour nous écrire ?",
+      de:"Kontakt: "+m+"\n\nE-Mail-App öffnen, um uns zu schreiben?",
+      it:"Contatto: "+m+"\n\nAprire l'app di posta per scriverci?"};
+    try{if(navigator.clipboard)navigator.clipboard.writeText(m);}catch(_){}
+    if(window.confirm(M[l]||M.en))location.href="mailto:"+m;return false;};
+</script>
+<script>
+(function(){
+  // Links made before the split carried ?lang=: they are sent to the file that holds that
+  // language instead of quietly showing another one.
+  try{
+    var q=new URLSearchParams(location.search).get("lang"),L="en";
+    if(q&&q!==L&&["en","fr","de","it"].indexOf(q)>=0){
+      var p=location.pathname,name=p.slice(p.lastIndexOf("/")+1)||"index.html";
+      var dir=p.slice(0,p.lastIndexOf("/")+1);
+      if(/\/(fr|de|it)\/$/.test(dir))dir=dir.replace(/(fr|de|it)\/$/,"");
+      location.replace(dir+(q==="en"?"":q+"/")+name+location.hash);
+    }
+  }catch(e){}
+  // The page is in one language: the menu is put in it and the flags link to the siblings.
+  var L="en",NAV={en:{cantons:"Cantons",home:"Home",press:"Press",eng:"Engineering",presskit:"Press kit",terms:"Terms",transp:"Transparency",privacy:"Privacy"},
+    fr:{cantons:"Cantons",home:"Accueil",press:"Presse",eng:"Ing\u00e9nierie",presskit:"Dossier de presse",terms:"Conditions",transp:"Transparence",privacy:"Confidentialité"},
+    de:{cantons:"Kantone",home:"Start",press:"Presse",eng:"Technik",presskit:"Pressemappe",terms:"Nutzungsbedingungen",transp:"Transparenz",privacy:"Datenschutz"},
+    it:{cantons:"Cantoni",home:"Home",press:"Stampa",eng:"Ingegneria",presskit:"Press kit",terms:"Condizioni",transp:"Trasparenza",privacy:"Privacy"}},n=NAV[L]||NAV.en;
+  document.querySelectorAll("[data-nav]").forEach(function(a){
+    var k=a.getAttribute("data-nav");if(n&&n[k])a.textContent=n[k];});
+  document.querySelectorAll(".langs a").forEach(function(a){
+    a.classList.toggle("on",a.getAttribute("data-lang")===L);});
+  var mn=document.getElementById("mnav");
+  document.querySelectorAll("nav.main a").forEach(function(a){
+    a.addEventListener("click",function(){if(mn)mn.checked=false;});});
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Want to become Swiss? Here's the app that prepares you for the exam</title>
+<meta property="og:title" content="Corriere del Ticino">
+<link rel="icon" href="../app/icon.png">
+<style>
+  :root{--ink:#141821;--muted:#5a6472;--bg:#fff;--soft:#f6f8fb;--border:#e6ebf2;--red:#DA291C;--red-d:#b31f14;--navy:#0d1426;--shadow:0 10px 30px rgba(16,24,40,.10);--radius:16px;--font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font);color:var(--ink);margin:0;line-height:1.65;background:var(--bg);-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+  h1,h2,h3{letter-spacing:-.02em;line-height:1.2}
+  header.site{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid var(--border)}
+  .navbar{display:flex;align-items:center;gap:18px;height:64px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.02rem;letter-spacing:-.02em}
+  .brand img{width:30px;height:30px;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,.15)}
+  nav.main{margin-left:auto;display:flex;align-items:center;gap:4px}
+  nav.main a.link{padding:8px 12px;border-radius:9px;font-weight:600;font-size:.93rem;color:var(--muted);cursor:pointer}
+  nav.main a.link:hover{background:var(--soft);color:var(--ink)}
+  .langs{display:flex;gap:2px;margin-left:6px;padding-left:12px;border-left:1px solid var(--border)}
+  .langs a{font-size:.8rem;font-weight:700;color:var(--muted);padding:5px 9px;border-radius:999px;cursor:pointer}
+  .langs a.on,.langs a:hover{background:var(--ink);color:#fff}
+  #mnav{display:none}
+  .burger{margin-left:auto;display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
+  .burger span{width:24px;height:2px;background:var(--ink);border-radius:2px}
+  /* nav a 7 voci in 4 lingue: mai andare a capo, e passare al menu a panino
+     PRIMA che la barra si stringa (in tedesco le voci sono lunghissime) */
+  .brand,nav.main a.link{white-space:nowrap}
+  .navbar{gap:12px}
+  nav.main a.link{padding:7px 9px;font-size:.89rem}
+  @media(max-width:1280px){nav.main{position:fixed;inset:64px 0 auto 0;flex-direction:column;align-items:stretch;background:#fff;border-bottom:1px solid var(--border);padding:12px 24px 20px;gap:6px;transform:translateY(-140%);transition:transform .25s ease;box-shadow:var(--shadow)}#mnav:checked ~ .navbar nav.main{transform:translateY(0)}.burger{display:flex}nav.main a.link{padding:12px 10px;font-size:1rem}.langs{margin:6px 0 0;padding:12px 0 0;border-left:0;border-top:1px solid var(--border);justify-content:center}}
+  /* article */
+  .article{max-width:720px;margin:0 auto;padding:34px 24px 8px}
+  .back{display:inline-block;color:var(--muted);font-weight:600;font-size:.9rem;margin-bottom:18px;cursor:pointer}
+  .back:hover{color:var(--red)}
+  .eyebrow{color:var(--red);font-weight:800;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;margin:0 0 14px}
+  .ahero{width:100%;border-radius:18px;border:1px solid var(--border);box-shadow:var(--shadow);margin:0 0 26px;display:block;aspect-ratio:16/10;object-fit:cover;background:var(--navy)}
+  .abody{font-size:1.06rem;color:#2a3140}
+  .abody p{margin:0 0 18px}
+  .abody h2{font-size:1.45rem;margin:34px 0 12px}
+  .abody h3{font-size:1.12rem;margin:26px 0 8px}
+  .abody em{color:var(--muted)}
+  .abody strong{color:var(--ink)}
+  .abody ul{margin:0 0 18px;padding-left:20px}
+  .abody li{margin:6px 0}
+  .abody a{color:var(--red);font-weight:600;text-decoration:underline}
+  .abody hr{border:0;border-top:1px solid var(--border);margin:26px 0}
+  .abody blockquote{margin:22px 0;padding:14px 20px;border-left:3px solid var(--red);background:var(--soft);border-radius:0 12px 12px 0;color:#2a3140}
+  .abody blockquote em{color:#2a3140}
+  .orig{max-width:720px;margin:8px auto 0;padding:22px 24px 4px;text-align:center}
+  .btn{display:inline-block;background:var(--red);color:#fff;font-weight:700;padding:12px 22px;border-radius:999px;box-shadow:0 8px 18px rgba(218,41,28,.28)}
+  .btn:hover{background:var(--red-d)}
+  .orignote{display:block;margin-top:10px;font-size:.84rem;color:var(--muted)}
+  section.block{padding:50px 0}
+  .final{text-align:center}
+  h2.sec{font-size:1.5rem;text-align:center;margin:0 0 26px;font-weight:800}
+  .stores{display:flex;gap:14px;justify-content:center;align-items:center;flex-wrap:wrap}
+  .stores img.apple{height:50px}.stores img.google{height:74px;margin:-12px 0}
+  footer.site{background:var(--navy);color:#9fb0cc;padding:44px 24px;text-align:center;font-size:.92rem;position:static;border:0}
+  footer.site a{color:#cdd9ee}
+  footer.site .fl{margin-bottom:14px}
+  footer.site .fl a{margin:0 8px;font-weight:600;cursor:pointer}
+  footer.site .disc{max-width:680px;margin:0 auto;font-size:.82rem;color:#7f90ad}
+</style>
+<link rel="canonical" href="https://swissnaturalizationtest.ch/press/corriere-del-ticino.html">
+<link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/press/corriere-del-ticino.html">
+<link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/press/fr/corriere-del-ticino.html">
+<link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/press/de/corriere-del-ticino.html">
+<link rel="alternate" hreflang="it" href="https://swissnaturalizationtest.ch/press/it/corriere-del-ticino.html">
+<link rel="alternate" hreflang="x-default" href="https://swissnaturalizationtest.ch/press/corriere-del-ticino.html">
+<meta name="description" content="An application developed by an Italian citizen who has been living in Switzerland since 2014 prepares naturalization candidates who want to obtain the Swis">
+<meta property="og:description" content="An application developed by an Italian citizen who has been living in Switzerland since 2014 prepares naturalization candidates who want to obtain the Swis">
+<meta property="og:url" content="https://swissnaturalizationtest.ch/press/corriere-del-ticino.html">
+<meta property="og:locale" content="en">
+</head>
+<body>
+
+<header class="site"><input type="checkbox" id="mnav"><div class="wrap navbar"><a class="brand" href="../landing.html"><img src="../app/icon.png" alt="">Swiss Naturalization Test</a><label class="burger" for="mnav" aria-label="Menu"><span></span><span></span><span></span></label><nav class="main"><a class="link" data-nav="home" href="../landing.html">Home</a><a class="link" data-nav="cantons" href="../cantons/index.html">Cantons</a><a class="link" data-nav="press" href="../landing.html#press">Press</a><a class="link" data-nav="presskit" href="../press-kit.html">Press kit</a><a class="link" data-nav="transp" href="../transparency.html">Transparency</a><a class="link" data-nav="eng" href="../engineering.html">Engineering</a><a class="link" data-nav="privacy" href="../privacy-policy.html">Privacy</a><a class="link" data-nav="terms" href="../terms.html">Terms</a><span class="langs"><a data-lang="en" href="corriere-del-ticino.html">EN</a><a data-lang="fr" href="fr/corriere-del-ticino.html">FR</a><a data-lang="de" href="de/corriere-del-ticino.html">DE</a><a data-lang="it" href="it/corriere-del-ticino.html">IT</a></span></nav></div></header>
+<article class="article"><a class="back" href="../landing.html#press">← All coverage</a><p class="eyebrow">In the press &middot; Corriere del Ticino &middot; Ticinonews</p><img class="ahero" src="https://naxos-cdn01.gruppocdt.ch/cdt/stories/2026/08/06/1920x1080/af42d311-d54a-48fd-bda7-568d5fd55ded.jpeg" alt=""><div class="abody">
+<h2>Want to become Swiss? Here's the app that prepares you for the exam</h2>
+<p><em>By Andrea Scolari · 8 August 2026</em></p>
+<p><em>An application developed by an Italian citizen who has been living in Switzerland since 2014 prepares naturalization candidates who want to obtain the Swiss passport</em></p>
+<p>"My written exam is in two weeks. The app's indicator reads 100%, we'll see how it goes." The reference is to the naturalization test to obtain the Swiss passport that Vincenzo Casini will soon be taking. He is a 43-year-old Italian who has been living in Switzerland since 2014 and works as an AI Architect at UEFA. But he is also the mind behind the application "Swiss Naturalization Test", which today covers all 26 cantons and is also available in Italian.</p>
+<p>"The idea," he explains, "came from my own procedure. My wife and I are going through this process in the canton of Vaud, and I found it difficult to study and prepare for the exam. So, being a developer, I created this application: the very first version was a simple web page created in less than an hour with the official questions of my municipality, Morges." Later, Casini continues, "my brothers-in-law asked me for the same thing for Gland, and there I noticed an aspect that changed the entire project: the Vaud system made the questions available with the exact same structure for each of the 302 municipalities. If the pattern was the same, I could cover them all, and that's what happened." In short, "once the base of questions was consolidated, I chose to include other cantons as well and to call the application 'Swiss Naturalization Test' right from the start." The ambition, our interlocutor emphasizes, "was national from day one."</p>
+<h3>From web page to application</h3>
+<p>"To be honest, today the application is not just a tool to prepare for the naturalization exam, but also a space to get to know Switzerland while playing." An aspect made possible "also thanks to the choice of pairing the exam mode (rigorous and in the language of the canton where you live) with the game mode, free of any barrier and of the languages imposed by your place of residence."</p>
+<h3>Where do the questions come from?</h3>
+<p>But how did Casini manage to gather all the material so that one can prepare for the naturalization exam in each of the 26 cantons? "Canton by canton, always starting from official public sources," he recounts, specifying that he did so "with a rule of transparency that is publicly declared on the project's website: official questions where they exist; content drafted on official bases and verified where they do not." Moreover, "when a user reports an error, it is corrected immediately."</p>
+<h3>The "Ticino case"</h3>
+<p>In this sense "Ticino was the most delicate case, because the canton does not publish any catalogue of questions." For this reason "the content was drafted by hand based on official sources." And here "the application explicitly declares the origin of the questions." Casini confides in us that "he prefers a candidate who knows exactly what they are training with to one deluded into thinking they have the real questions that no one has."</p>
+<h3>Contact with the authorities</h3>
+<p>In the process of creating the application, Casini had contacts with the offices for the integration of foreigners of some municipalities and cantons. "For the canton of Aargau, the Anlaufstelle Integration Aargau supported me in integrating further official material, that of preparation for the interview. In the canton of Vaud I received approval to integrate the official teaching material, even though the collaboration has not yet materialized. I am in dialogue with the offices of Valais and Fribourg, and in the coming weeks I will meet the competent service of Neuchâtel. And I say it openly: I hope to build a dialogue also with the Ticino authorities that deal with naturalization and integration. For an independent and free project, seeing the cantonal offices respond and collaborate is the best confirmation that the tool is truly useful."</p>
+<h3>Studying while playing</h3>
+<p>The application allows one to prepare for the naturalization exam, but also to play by testing one's knowledge of civics, geography and much more. It is precisely in this sense that Casini has received various pieces of feedback. "It is the part I enjoy the most, because the reviews recount uses I hadn't even foreseen. One user writes that the application has become ‘a daily ritual’, another already naturalized that she ‘would have wanted it when she was preparing for the exam’. Then there are those who use it on public transport on their way home from work and ‘learn without realizing it’, those who use the mode on the coats of arms and maps of the cantons ‘as an educational game’." But there is also someone who, thanks to their comment, "managed to summarize ‘Swiss Naturalization Test’ perfectly, describing it as ‘an app designed for everyone, to rediscover Switzerland in a fun way’."</p>
+<h3>The application's first words</h3>
+<p>A few days ago the developer also implemented an oral training. "The candidate listens to the question spoken aloud, or reads it, and answers without having options available. Only afterwards do they check how they did." But why all this? "For two reasons. For fidelity: my goal is to reproduce the conditions of the exam as much as possible, and in several cantons the exam is an interview — putting the candidate in a real situation of listening and comprehension is part of the preparation just as much as the notions. Second, because the infrastructure I had built allowed me to do it with an acceptable effort — and it's nice to think that the app, after learning to walk fast, has now also said its first words."</p>
+</div></article><div class="orig"><a class="btn" href="https://www.cdt.ch/news/vuoi-diventare-svizzero-ecco-lapp-che-ti-prepara-allesame-436089" target="_blank" rel="noopener">Read on Corriere del Ticino →</a><span class="orignote">Ticinonews also covered the app &middot; <a href="https://www.ticinonews.ch/svizzera/diventare-svizzeri-giocando-ecco-lapp-che-prepara-allesame-440320" target="_blank" rel="noopener">read on Ticinonews &#8599;</a></span></div><section class="block final"><div class="wrap"><h2 class="sec">Start preparing today</h2><div class="stores"><a href="https://apps.apple.com/app/id6769993041" aria-label="App Store"><img class="apple" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store"></a><a href="https://play.google.com/store/apps/details?id=ch.vincedev.swisscitizenship" aria-label="Google Play"><img class="google" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Google Play"></a></div></div></section><footer class="site"><div class="wrap"><div class="fl"><a href="../landing.html">Home</a> &middot; <a href="../landing.html#press">Press</a> &middot; <a href="../cantons/index.html">Cantons</a> &middot; <a href="../transparency.html">Transparency</a> &middot; <a href="../engineering.html">Engineering</a> &middot; <a href="../privacy-policy.html">Privacy</a> &middot; <a href="../terms.html">Terms</a> &middot; <a href="../account-deletion.html">Data deletion</a> &middot; <a href="mailto:swisscitizenshiptest@gmail.com" onclick="return __contact(event)">Contact</a></div><p class="disc">Swiss Naturalization Test is an independent study companion developed by Vincenzo Casini. It is not affiliated with any government authority. For the official test, always refer to your canton's official platform.</p></div></footer>
+<script>
+(function(){
+  window.__contact=function(e){if(e&&e.preventDefault)e.preventDefault();
+    var m="swisscitizenshiptest@gmail.com",l=(document.documentElement.lang||"en").slice(0,2);
+    var M={en:"Contact: "+m+"\\n\\nOpen your email app to write to us?",
+      fr:"Contact : "+m+"\\n\\nOuvrir votre messagerie pour nous \\u00e9crire ?",
+      de:"Kontakt: "+m+"\\n\\nE-Mail-App \\u00f6ffnen, um uns zu schreiben?",
+      it:"Contatto: "+m+"\\n\\nAprire l'app di posta per scriverci?"};
+    try{if(navigator.clipboard)navigator.clipboard.writeText(m);}catch(_){}
+    if(window.confirm(M[l]||M.en))location.href="mailto:"+m;return false;};
+  var saved=null;try{saved=localStorage.getItem("snt_lang");}catch(e){}
+  var nl=(navigator.language||"en").slice(0,2).toLowerCase();
+  var q=null;try{q=new URLSearchParams(location.search).get("lang");}catch(e){}
+  apply((LANGS.indexOf(q)>=0?q:null)||saved||(LANGS.indexOf(nl)>=0?nl:"en"));
+})();
+</script><script>
+(function(){
+  // Links made before the split carried ?lang=: they are sent to the file that holds that
+  // language instead of quietly showing another one.
+  try{
+    var q=new URLSearchParams(location.search).get("lang"),L="en";
+    if(q&&q!==L&&["en","fr","de","it"].indexOf(q)>=0){
+      var p=location.pathname,name=p.slice(p.lastIndexOf("/")+1)||"index.html";
+      var dir=p.slice(0,p.lastIndexOf("/")+1);
+      if(/\/(fr|de|it)\/$/.test(dir))dir=dir.replace(/(fr|de|it)\/$/,"");
+      location.replace(dir+(q==="en"?"":q+"/")+name+location.hash);
+    }
+  }catch(e){}
+  // The page is in one language: the menu is put in it and the flags link to the siblings.
+  var L="en",NAV={en:{cantons:"Cantons",home:"Home",press:"Press",eng:"Engineering",presskit:"Press kit",terms:"Terms",transp:"Transparency",privacy:"Privacy"},
+    fr:{cantons:"Cantons",home:"Accueil",press:"Presse",eng:"Ing\u00e9nierie",presskit:"Dossier de presse",terms:"Conditions",transp:"Transparence",privacy:"Confidentialité"},
+    de:{cantons:"Kantone",home:"Start",press:"Presse",eng:"Technik",presskit:"Pressemappe",terms:"Nutzungsbedingungen",transp:"Transparenz",privacy:"Datenschutz"},
+    it:{cantons:"Cantoni",home:"Home",press:"Stampa",eng:"Ingegneria",presskit:"Press kit",terms:"Condizioni",transp:"Trasparenza",privacy:"Privacy"}},n=NAV[L]||NAV.en;
+  document.querySelectorAll("[data-nav]").forEach(function(a){
+    var k=a.getAttribute("data-nav");if(n&&n[k])a.textContent=n[k];});
+  document.querySelectorAll(".langs a").forEach(function(a){
+    a.classList.toggle("on",a.getAttribute("data-lang")===L);});
+  var mn=document.getElementById("mnav");
+  document.querySelectorAll("nav.main a").forEach(function(a){
+    a.addEventListener("click",function(){if(mn)mn.checked=false;});});
+})();
+</script>
+</body>
+</html>

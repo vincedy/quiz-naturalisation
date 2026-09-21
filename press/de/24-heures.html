@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Er will eine spielerische Einbürgerung</title>
+<meta property="og:title" content="24 heures & Journal de Morges">
+<link rel="icon" href="../../app/icon.png">
+<style>
+  :root{--ink:#141821;--muted:#5a6472;--bg:#fff;--soft:#f6f8fb;--border:#e6ebf2;--red:#DA291C;--red-d:#b31f14;--navy:#0d1426;--shadow:0 10px 30px rgba(16,24,40,.10);--radius:16px;--font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font);color:var(--ink);margin:0;line-height:1.65;background:var(--bg);-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+  h1,h2,h3{letter-spacing:-.02em;line-height:1.2}
+  header.site{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid var(--border)}
+  .navbar{display:flex;align-items:center;gap:18px;height:64px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.02rem;letter-spacing:-.02em}
+  .brand img{width:30px;height:30px;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,.15)}
+  nav.main{margin-left:auto;display:flex;align-items:center;gap:4px}
+  nav.main a.link{padding:8px 12px;border-radius:9px;font-weight:600;font-size:.93rem;color:var(--muted);cursor:pointer}
+  nav.main a.link:hover{background:var(--soft);color:var(--ink)}
+  .langs{display:flex;gap:2px;margin-left:6px;padding-left:12px;border-left:1px solid var(--border)}
+  .langs a{font-size:.8rem;font-weight:700;color:var(--muted);padding:5px 9px;border-radius:999px;cursor:pointer}
+  .langs a.on,.langs a:hover{background:var(--ink);color:#fff}
+  #mnav{display:none}
+  .burger{margin-left:auto;display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
+  .burger span{width:24px;height:2px;background:var(--ink);border-radius:2px}
+  /* nav a 7 voci in 4 lingue: mai andare a capo, e passare al menu a panino
+     PRIMA che la barra si stringa (in tedesco le voci sono lunghissime) */
+  .brand,nav.main a.link{white-space:nowrap}
+  .navbar{gap:12px}
+  nav.main a.link{padding:7px 9px;font-size:.89rem}
+  @media(max-width:1280px){nav.main{position:fixed;inset:64px 0 auto 0;flex-direction:column;align-items:stretch;background:#fff;border-bottom:1px solid var(--border);padding:12px 24px 20px;gap:6px;transform:translateY(-140%);transition:transform .25s ease;box-shadow:var(--shadow)}#mnav:checked ~ .navbar nav.main{transform:translateY(0)}.burger{display:flex}nav.main a.link{padding:12px 10px;font-size:1rem}.langs{margin:6px 0 0;padding:12px 0 0;border-left:0;border-top:1px solid var(--border);justify-content:center}}
+  /* article */
+  .article{max-width:720px;margin:0 auto;padding:34px 24px 8px}
+  .back{display:inline-block;color:var(--muted);font-weight:600;font-size:.9rem;margin-bottom:18px;cursor:pointer}
+  .back:hover{color:var(--red)}
+  .eyebrow{color:var(--red);font-weight:800;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;margin:0 0 14px}
+  .ahero{width:100%;border-radius:18px;border:1px solid var(--border);box-shadow:var(--shadow);margin:0 0 26px;display:block;aspect-ratio:16/10;object-fit:cover;background:var(--navy)}
+  .abody{font-size:1.06rem;color:#2a3140}
+  .abody p{margin:0 0 18px}
+  .abody h2{font-size:1.45rem;margin:34px 0 12px}
+  .abody h3{font-size:1.12rem;margin:26px 0 8px}
+  .abody em{color:var(--muted)}
+  .abody strong{color:var(--ink)}
+  .abody ul{margin:0 0 18px;padding-left:20px}
+  .abody li{margin:6px 0}
+  .abody a{color:var(--red);font-weight:600;text-decoration:underline}
+  .abody hr{border:0;border-top:1px solid var(--border);margin:26px 0}
+  .abody blockquote{margin:22px 0;padding:14px 20px;border-left:3px solid var(--red);background:var(--soft);border-radius:0 12px 12px 0;color:#2a3140}
+  .abody blockquote em{color:#2a3140}
+  .orig{max-width:720px;margin:8px auto 0;padding:22px 24px 4px;text-align:center}
+  .btn{display:inline-block;background:var(--red);color:#fff;font-weight:700;padding:12px 22px;border-radius:999px;box-shadow:0 8px 18px rgba(218,41,28,.28)}
+  .btn:hover{background:var(--red-d)}
+  .orignote{display:block;margin-top:10px;font-size:.84rem;color:var(--muted)}
+  section.block{padding:50px 0}
+  .final{text-align:center}
+  h2.sec{font-size:1.5rem;text-align:center;margin:0 0 26px;font-weight:800}
+  .stores{display:flex;gap:14px;justify-content:center;align-items:center;flex-wrap:wrap}
+  .stores img.apple{height:50px}.stores img.google{height:74px;margin:-12px 0}
+  footer.site{background:var(--navy);color:#9fb0cc;padding:44px 24px;text-align:center;font-size:.92rem;position:static;border:0}
+  footer.site a{color:#cdd9ee}
+  footer.site .fl{margin-bottom:14px}
+  footer.site .fl a{margin:0 8px;font-weight:600;cursor:pointer}
+  footer.site .disc{max-width:680px;margin:0 auto;font-size:.82rem;color:#7f90ad}
+</style>
+<link rel="canonical" href="https://swissnaturalizationtest.ch/press/de/24-heures.html">
+<link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/press/24-heures.html">
+<link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/press/fr/24-heures.html">
+<link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/press/de/24-heures.html">
+<link rel="alternate" hreflang="it" href="https://swissnaturalizationtest.ch/press/it/24-heures.html">
+<link rel="alternate" hreflang="x-default" href="https://swissnaturalizationtest.ch/press/24-heures.html">
+<meta name="description" content="Von Sarah Rempe · Freitag, 29. Mai 2026 · TECHNOLOGIE | LERNEN">
+<meta property="og:description" content="Von Sarah Rempe · Freitag, 29. Mai 2026 · TECHNOLOGIE | LERNEN">
+<meta property="og:url" content="https://swissnaturalizationtest.ch/press/de/24-heures.html">
+<meta property="og:locale" content="de">
+</head>
+<body>
+
+<header class="site"><input type="checkbox" id="mnav"><div class="wrap navbar"><a class="brand" href="../../de/landing.html"><img src="../../app/icon.png" alt="">Swiss Naturalization Test</a><label class="burger" for="mnav" aria-label="Menu"><span></span><span></span><span></span></label><nav class="main"><a class="link" data-nav="home" href="../../de/landing.html">Home</a><a class="link" data-nav="cantons" href="../../cantons/de/index.html">Cantons</a><a class="link" data-nav="press" href="../../de/landing.html#press">Press</a><a class="link" data-nav="presskit" href="../../de/press-kit.html">Press kit</a><a class="link" data-nav="transp" href="../../de/transparency.html">Transparency</a><a class="link" data-nav="eng" href="../../de/engineering.html">Engineering</a><a class="link" data-nav="privacy" href="../../de/privacy-policy.html">Privacy</a><a class="link" data-nav="terms" href="../../de/terms.html">Terms</a><span class="langs"><a data-lang="en" href="../24-heures.html">EN</a><a data-lang="fr" href="../fr/24-heures.html">FR</a><a data-lang="de" href="../de/24-heures.html">DE</a><a data-lang="it" href="../it/24-heures.html">IT</a></span></nav></div></header>
+<article class="article"><a class="back" href="../../de/landing.html#press">← Zur Presse-Übersicht</a><p class="eyebrow">In der Presse &middot; 24 heures &middot; Journal de Morges</p><img class="ahero" src="https://journaldemorges.ch/wp-content/uploads/2026/05/G1_6444-720x480.jpg" alt=""><div class="abody">
+<h2>Er will eine spielerische Einbürgerung</h2>
+<p><em>Von Sarah Rempe · Freitag, 29. Mai 2026 · TECHNOLOGIE | LERNEN</em></p>
+<p><em>Vincenzo Casini hat eine mobile App entwickelt, um für den Schweizer Einbürgerungstest zu üben – und um zugleich mehr über sein Land und seine Region zu lernen.</em></p>
+<p>Es gibt mobile Apps für den Autoführerschein, den Bootsführerschein und sogar für den Schweizer Pass. Vincenzo Casini wollte dieser Art von Technologie jedoch einen anderen Schwung geben. «Meine Frau und ich stecken in einem Einbürgerungsverfahren, und es war sehr kompliziert, uns zu motivieren, all die Fragen zu repetieren», erklärt der Italiener, der seit 2014 in Morges lebt.</p>
+<p>Der gelernte Entwickler macht sich daraufhin an die Konzeption einer neuen App, die er einfach, wirksam und spielerisch haben will. «Die erste Version war eine schlichte Webseite und kostete mich weniger als eine Stunde.» Mithilfe der auf der Website des Kantons Waadt verfügbaren Einbürgerungsfragen erstellt er einen Fragebogen für die Einwohner von Morges. «Die kantonale Website ist sehr gut gemacht, man findet dort viele Daten und die offiziellen Prüfungsfragen», erklärt Vincenzo Casini.</p>
+<p>Ursprünglich nur für den persönlichen Gebrauch gedacht, wird der 43-jährige Morges-Einwohner dann von seinen Eltern angesprochen. «Auch sie stecken im Einbürgerungsverfahren, aber in Gland. Also fragten sie mich, ob ich dasselbe mit den Fragen ihrer Gemeinde machen könnte.»</p>
+<p>Warum also nicht weitergehen und diesen Test für jede Waadtländer Gemeinde anbieten – und sogar für andere Kantone?</p>
+<h2>Von seiner Leidenschaft gepackt</h2>
+<p>Die offizielle Prüfung besteht aus 48 zufälligen Fragen, bei denen man innerhalb einer Stunde mindestens 70% richtige Antworten erreichen muss. Die Kandidaten werden zu vier Themen befragt: Geschichte, Geografie, politische Institutionen und Gesellschaft. «Insgesamt gibt es 160 allgemeine Fragen zur Schweiz und zum Kanton und 32 ergänzende, die spezifisch für die Gemeinde sind. Multipliziert mit den 300 bestehenden Gemeinden ergibt das etwas mehr als 9700 Fragen», führt der Entwickler aus.</p>
+<p>Allerdings sind nicht alle Fragen im Web verfügbar. Die App von Vincenzo Casini erlaubt es daher vorerst, die Prüfung für die Kantone Waadt, Genf, Neuenburg, Bern, Zürich, Aargau, Luzern und Wallis abzulegen.</p>
+<p>«Die Idee ist auch, seinen Fortschritt verfolgen und sehen zu können, in welchem Thema man weniger gut ist», erzählt jener, der das neben seiner Arbeit als technischer Leiter mit Spezialisierung auf künstliche Intelligenz bei der UEFA macht. «Man kann zum Beispiel das Datum seiner Prüfung eingeben, und die App sagt einem, wie man trainieren soll, um am Tag X bereit zu sein.»</p>
+<h2>Für alle</h2>
+<p>Doch die Ideen von Vincenzo Casini enden hier nicht. «Die App richtet sich an jene, die den Einbürgerungstest machen wollen, aber nicht nur. Ich wollte einen spielerischen Aspekt entwickeln, um sein Wissen über sein Land und seine Region testen zu können.» Die Kantonswappen des Landes erkennen, die richtige Hauptstadt dem richtigen Kanton zuordnen oder verschiedene Quiz beantworten sind mehrere Optionen, die die App Swiss Naturalization Test anbietet. Und das alles völlig gratis. «Es gibt andere Apps, die kostenpflichtig sind, aber es ist nicht mein Ziel, damit Geld zu verdienen», versichert Vincenzo Casini. «Es ist meine Leidenschaft, ich habe Spass daran, das zu realisieren, also ist mein Ziel, dass möglichst viele Leute sie testen und sich damit vergnügen.»</p>
+<p>In der Zwischenzeit nutzt der Italiener sie für den eigenen Gebrauch, während er auf ein Prüfungsdatum wartet, um seinen Pass mit dem weissen Kreuz zu erhalten. «Es wäre der Gipfel, wenn der Schöpfer der App durchfallen würde», scherzt jener, der zugibt, «noch etwas Mühe mit den politischen Fragen» zu haben. «Aber ich lerne enorm viel, und ich bin sicher, dass sogar jene, die Schweizer sind, ebenfalls neue Kenntnisse erwerben können.»</p>
+<blockquote>«Ich wollte einen spielerischen Aspekt entwickeln, um sein Wissen über seine Region testen zu können, auch ohne den Test zu machen.»<br>— Vincenzo Casini, Entwickler</blockquote>
+<h3>Den Kanton erobern!</h3>
+<p>Unter seinen Entwicklungsideen würde Vincenzo Casini gerne ein Eroberungsspiel realisieren. «Ich fände es sympathisch, wenn man, von einer Gemeinde ausgehend, die Nachbardörfer gewinnen müsste, indem man jedes Mal Fragen zu ihrer Geschichte beantwortet. Nach und nach wäre das Ziel, alle Gemeinden des Kantons zu gewinnen.» Eine Gelegenheit, mehr über seine Region zu erfahren und dabei Spass zu haben. Das könnte die Tausenden jährlichen Einbürgerungskandidaten interessieren (5412 neue Waadtländer 2025), aber auch jene, die ihre Region schätzen und mehr über ihre Geschichte, ihre Geografie oder ihre politischen Grundsätze erfahren möchten.</p>
+</div></article><div class="orig"><a class="btn" href="https://journaldemorges.ch/actualite/il-veut-une-naturalisation-ludique/" target="_blank" rel="noopener">Auf Journal de Morges lesen →</a><span class="orignote">Auch die Tageszeitung 24 heures berichtete über die App &middot; <a href="https://www.24heures.ch/naturalisation-une-application-vaudoise-pour-reussir-lexamen-817466487746" target="_blank" rel="noopener">auf 24 heures lesen &#8599;</a></span></div><section class="block final"><div class="wrap"><h2 class="sec">Jetzt loslegen</h2><div class="stores"><a href="https://apps.apple.com/app/id6769993041" aria-label="App Store"><img class="apple" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store"></a><a href="https://play.google.com/store/apps/details?id=ch.vincedev.swisscitizenship" aria-label="Google Play"><img class="google" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Google Play"></a></div></div></section><footer class="site"><div class="wrap"><div class="fl"><a href="../../de/landing.html">Start</a> &middot; <a href="../../de/landing.html#press">Presse</a> &middot; <a href="../../cantons/de/index.html">Kantone</a> &middot; <a href="../../de/transparency.html">Transparenz</a> &middot; <a href="../../de/engineering.html">Technik</a> &middot; <a href="../../de/privacy-policy.html">Datenschutz</a> &middot; <a href="../../de/terms.html">Nutzungsbedingungen</a> &middot; <a href="../../de/account-deletion.html">Datenlöschung</a> &middot; <a href="mailto:swisscitizenshiptest@gmail.com" onclick="return __contact(event)">Kontakt</a></div><p class="disc">Swiss Naturalization Test ist ein unabhängiger Lernbegleiter, entwickelt von Vincenzo Casini. Er ist mit keiner Regierungsbehörde verbunden. Für die offizielle Prüfung beziehen Sie sich stets auf die offizielle Plattform Ihres Kantons.</p></div></footer>
+<script>
+(function(){
+  window.__contact=function(e){if(e&&e.preventDefault)e.preventDefault();
+    var m="swisscitizenshiptest@gmail.com",l=(document.documentElement.lang||"en").slice(0,2);
+    var M={en:"Contact: "+m+"\\n\\nOpen your email app to write to us?",
+      fr:"Contact : "+m+"\\n\\nOuvrir votre messagerie pour nous \\u00e9crire ?",
+      de:"Kontakt: "+m+"\\n\\nE-Mail-App \\u00f6ffnen, um uns zu schreiben?",
+      it:"Contatto: "+m+"\\n\\nAprire l'app di posta per scriverci?"};
+    try{if(navigator.clipboard)navigator.clipboard.writeText(m);}catch(_){}
+    if(window.confirm(M[l]||M.en))location.href="mailto:"+m;return false;};
+  var saved=null;try{saved=localStorage.getItem("snt_lang");}catch(e){}
+  var nl=(navigator.language||"en").slice(0,2).toLowerCase();
+  var q=null;try{q=new URLSearchParams(location.search).get("lang");}catch(e){}
+  apply((LANGS.indexOf(q)>=0?q:null)||saved||(LANGS.indexOf(nl)>=0?nl:"en"));
+})();
+</script><script>
+(function(){
+  // Links made before the split carried ?lang=: they are sent to the file that holds that
+  // language instead of quietly showing another one.
+  try{
+    var q=new URLSearchParams(location.search).get("lang"),L="de";
+    if(q&&q!==L&&["en","fr","de","it"].indexOf(q)>=0){
+      var p=location.pathname,name=p.slice(p.lastIndexOf("/")+1)||"index.html";
+      var dir=p.slice(0,p.lastIndexOf("/")+1);
+      if(/\/(fr|de|it)\/$/.test(dir))dir=dir.replace(/(fr|de|it)\/$/,"");
+      location.replace(dir+(q==="en"?"":q+"/")+name+location.hash);
+    }
+  }catch(e){}
+  // The page is in one language: the menu is put in it and the flags link to the siblings.
+  var L="de",NAV={en:{cantons:"Cantons",home:"Home",press:"Press",eng:"Engineering",presskit:"Press kit",terms:"Terms",transp:"Transparency",privacy:"Privacy"},
+    fr:{cantons:"Cantons",home:"Accueil",press:"Presse",eng:"Ing\u00e9nierie",presskit:"Dossier de presse",terms:"Conditions",transp:"Transparence",privacy:"Confidentialité"},
+    de:{cantons:"Kantone",home:"Start",press:"Presse",eng:"Technik",presskit:"Pressemappe",terms:"Nutzungsbedingungen",transp:"Transparenz",privacy:"Datenschutz"},
+    it:{cantons:"Cantoni",home:"Home",press:"Stampa",eng:"Ingegneria",presskit:"Press kit",terms:"Condizioni",transp:"Trasparenza",privacy:"Privacy"}},n=NAV[L]||NAV.en;
+  document.querySelectorAll("[data-nav]").forEach(function(a){
+    var k=a.getAttribute("data-nav");if(n&&n[k])a.textContent=n[k];});
+  document.querySelectorAll(".langs a").forEach(function(a){
+    a.classList.toggle("on",a.getAttribute("data-lang")===L);});
+  var mn=document.getElementById("mnav");
+  document.querySelectorAll("nav.main a").forEach(function(a){
+    a.addEventListener("click",function(){if(mn)mn.checked=false;});});
+})();
+</script>
+</body>
+</html>
