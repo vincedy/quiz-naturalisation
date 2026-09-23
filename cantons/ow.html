@@ -453,7 +453,7 @@
   <a class="host" href="https://www.ow.ch/dienstleistungen/619" target="_blank" rel="noopener">www.ow.ch &nearr;</a>
   <a class="meta" href="https://www.ow.ch/dienstleistungen/619" target="_blank" rel="noopener">Amt für Justiz</a>
   
-  <div class="stamp"><span>Checked today</span><b data-today>21 September 2026</b></div>
+  <div class="stamp"><span>Last checked</span><b>23 September 2026</b></div>
 </div></div>
 
 
@@ -468,7 +468,7 @@
 <section class="sec"><div class="wrap">
   <p class="eyebrow">Real exam — How the test works</p>
   <h2>Written BWZ exam, every block counts</h2>
-  <p class="lead">Real exam: written, mostly multiple choice, 6 topic blocks (federal + canton + commune), ~90 min; the number of questions and pass mark are not published. The catalogue is not public. For now, we prepare you with the basic federal questions (taken from Zürich&#x27;s Grundkenntnistest) — these are not the real exam questions.</p>
+  <p class="lead">Real exam: written, mostly multiple choice, topic blocks (federal + canton + commune); the number of questions and pass mark are not published. The catalogue is not public. For now, we prepare you with the basic federal questions (taken from Zürich&#x27;s Grundkenntnistest) — these are not the real exam questions.</p>
   <div class="specs">
     <div class="spec"><div class="k">Format</div><div class="v ">Written (MCQ)</div>
       </div><div class="spec"><div class="k">Question language</div><div class="v ">German</div>
@@ -600,11 +600,16 @@ if(!window.__cfilter){window.__cfilter=function(input){
   // the date in the source is what the build knew, and is replaced here by the reader's own day.
   // A source checked every night is the claim; a date frozen at build time would deny it.
   try{
-    var t=document.querySelector("[data-today]");
+    var t=document.querySelector("[data-today]"), lab=document.querySelector("[data-today-label]");
     // the month names are the ones labels.json already holds, so the date reads the same
     // whether the build wrote it or the page did — toLocaleDateString words it differently
     var M=["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"], d=new Date();
-    if(t)t.textContent=d.getDate()+" "+M[d.getMonth()]+" "+d.getFullYear();
+    if(t){
+      t.textContent=d.getDate()+" "+M[d.getMonth()]+" "+d.getFullYear();
+      // the label may only say "today" once the date beside it really is today: without this
+      // script the page keeps the build date, and must call it what it is.
+      if(lab)lab.textContent=lab.getAttribute("data-today-label");
+    }
   }catch(e){}
   var NAV={
     en:{cantons:"Cantons",home:"Home",press:"Press",presskit:"Press kit",eng:"Engineering",terms:"Terms",transp:"Transparency",privacy:"Privacy"},

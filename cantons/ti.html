@@ -453,7 +453,7 @@
   <a class="host" href="https://www4.ti.ch/di/spop/naturalizzazioni/informazioni-sulla-formazione-per-la-naturalizzazione/" target="_blank" rel="noopener">www4.ti.ch &nearr;</a>
   <a class="meta" href="https://www4.ti.ch/di/spop/naturalizzazioni/informazioni-sulla-formazione-per-la-naturalizzazione/" target="_blank" rel="noopener">Sezione della popolazione</a>
   <span class="live"><i></i>checked every night</span>
-  <div class="stamp"><span>Checked today</span><b data-today>21 September 2026</b></div>
+  <div class="stamp"><span data-today-label="Checked today">Last checked</span><b data-today>23 September 2026</b></div>
 </div></div>
 
 
@@ -632,11 +632,16 @@ if(!window.__cfilter){window.__cfilter=function(input){
   // the date in the source is what the build knew, and is replaced here by the reader's own day.
   // A source checked every night is the claim; a date frozen at build time would deny it.
   try{
-    var t=document.querySelector("[data-today]");
+    var t=document.querySelector("[data-today]"), lab=document.querySelector("[data-today-label]");
     // the month names are the ones labels.json already holds, so the date reads the same
     // whether the build wrote it or the page did — toLocaleDateString words it differently
     var M=["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"], d=new Date();
-    if(t)t.textContent=d.getDate()+" "+M[d.getMonth()]+" "+d.getFullYear();
+    if(t){
+      t.textContent=d.getDate()+" "+M[d.getMonth()]+" "+d.getFullYear();
+      // the label may only say "today" once the date beside it really is today: without this
+      // script the page keeps the build date, and must call it what it is.
+      if(lab)lab.textContent=lab.getAttribute("data-today-label");
+    }
   }catch(e){}
   var NAV={
     en:{cantons:"Cantons",home:"Home",press:"Press",presskit:"Press kit",eng:"Engineering",terms:"Terms",transp:"Transparency",privacy:"Privacy"},

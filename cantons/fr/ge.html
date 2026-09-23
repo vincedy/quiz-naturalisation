@@ -453,7 +453,7 @@
   <a class="host" href="https://www.ge.ch/connaitre-suisse-geneve" target="_blank" rel="noopener">www.ge.ch &nearr;</a>
   <a class="meta" href="https://www.ge.ch/organisation/office-cantonal-population-migrations-ocpm" target="_blank" rel="noopener">Office cantonal de la population et des migrations (OCPM), République et canton de Genève</a>
   <span class="live"><i></i>vérifiée chaque nuit</span>
-  <div class="stamp"><span>Vérifiée aujourd&#x27;hui</span><b data-today>21 septembre 2026</b></div>
+  <div class="stamp"><span data-today-label="Vérifiée aujourd&#x27;hui">Dernière vérification</span><b data-today>23 septembre 2026</b></div>
 </div></div>
 
 
@@ -468,7 +468,7 @@
 <section class="sec"><div class="wrap">
   <p class="eyebrow">Examen réel — Comment se déroule le test</p>
   <h2>Test écrit OCPM — catalogue officiel</h2>
-  <p class="lead">Examen réel : épreuve écrite sur convocation à l&#x27;OCPM (en français), 45 questions — pas d&#x27;oral sur les connaissances. Genève publie le même catalogue deux fois : un PDF qui ne donne que les bonnes réponses, et un quiz en ligne qui montre aussi les mauvaises options. De là, 116 questions viennent entièrement du canton, options comprises. Nous adaptons les 31 autres : 21 transcrites des modules du didacticiel, où les mauvaises options sont les nôtres, et 10 où le canton attend plusieurs réponses que nous réunissons en une seule. Le catalogue s&#x27;intitule « 141 questions » mais en publie 126 : à l&#x27;examen, vous pouvez rencontrer des questions absentes d&#x27;ici.</p>
+  <p class="lead">Examen réel : épreuve écrite sur convocation à l&#x27;OCPM (en français) — pas d&#x27;oral sur les connaissances. Genève publie le même catalogue à la fois dans un PDF qui ne donne que les bonnes réponses et dans un quiz en ligne qui montre aussi les mauvaises options. De là, des questions viennent entièrement du canton, options comprises. Nous adaptons les autres : les unes transcrites des modules du didacticiel, où les mauvaises options sont les nôtres, les autres là où le canton attend plusieurs réponses que nous réunissons en une seule. Le catalogue en publie moins que son titre n&#x27;annonce : à l&#x27;examen, vous pouvez rencontrer des questions absentes d&#x27;ici.</p>
   <div class="specs">
     <div class="spec"><div class="k">Format</div><div class="v ">Écrit (QCM)</div>
       </div><div class="spec"><div class="k">Langue des questions</div><div class="v ">français</div>
@@ -652,11 +652,16 @@ if(!window.__cfilter){window.__cfilter=function(input){
   // the date in the source is what the build knew, and is replaced here by the reader's own day.
   // A source checked every night is the claim; a date frozen at build time would deny it.
   try{
-    var t=document.querySelector("[data-today]");
+    var t=document.querySelector("[data-today]"), lab=document.querySelector("[data-today-label]");
     // the month names are the ones labels.json already holds, so the date reads the same
     // whether the build wrote it or the page did — toLocaleDateString words it differently
     var M=["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"], d=new Date();
-    if(t)t.textContent=d.getDate()+" "+M[d.getMonth()]+" "+d.getFullYear();
+    if(t){
+      t.textContent=d.getDate()+" "+M[d.getMonth()]+" "+d.getFullYear();
+      // the label may only say "today" once the date beside it really is today: without this
+      // script the page keeps the build date, and must call it what it is.
+      if(lab)lab.textContent=lab.getAttribute("data-today-label");
+    }
   }catch(e){}
   var NAV={
     en:{cantons:"Cantons",home:"Home",press:"Press",presskit:"Press kit",eng:"Engineering",terms:"Terms",transp:"Transparency",privacy:"Privacy"},

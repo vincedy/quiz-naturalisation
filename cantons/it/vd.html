@@ -12,7 +12,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Test di naturalizzazione nel Cantone Vaud</title>
-<meta name="description" content="Le domande ufficiali dell&#x27;esame, identiche. Tutte le domande possibili sono qui. Esame reale: A-Vaud-Test scritto, 1 ora, 70% per superare. L&#x27;esame estrae">
+<meta name="description" content="Le domande ufficiali dell&#x27;esame, identiche. Tutte le domande possibili sono qui. Esame reale: A-Vaud-Test scritto. L&#x27;esame estrae domande a scelta multipla">
 <link rel="canonical" href="https://swissnaturalizationtest.ch/cantons/it/vd.html">
 <link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/cantons/vd.html">
 <link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/cantons/fr/vd.html">
@@ -20,7 +20,7 @@
 <link rel="alternate" hreflang="it" href="https://swissnaturalizationtest.ch/cantons/it/vd.html">
 <link rel="alternate" hreflang="x-default" href="https://swissnaturalizationtest.ch/cantons/vd.html">
 <meta property="og:title" content="Test di naturalizzazione nel Cantone Vaud">
-<meta property="og:description" content="Le domande ufficiali dell&#x27;esame, identiche. Tutte le domande possibili sono qui. Esame reale: A-Vaud-Test scritto, 1 ora, 70% per superare. L&#x27;esame estrae">
+<meta property="og:description" content="Le domande ufficiali dell&#x27;esame, identiche. Tutte le domande possibili sono qui. Esame reale: A-Vaud-Test scritto. L&#x27;esame estrae domande a scelta multipla">
 <meta property="og:url" content="https://swissnaturalizationtest.ch/cantons/it/vd.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Swiss Naturalization Test">
@@ -453,7 +453,7 @@
   <a class="host" href="https://www.vd.ch/population/population-etrangere/naturalisation/demande-de-naturalisation-ordinaire/test-de-connaissances" target="_blank" rel="noopener">www.vd.ch &nearr;</a>
   <a class="meta" href="https://www.vd.ch/deiep/spop" target="_blank" rel="noopener">Service de la population du Canton de Vaud (SPOP)</a>
   <span class="live"><i></i>verificata ogni notte</span>
-  <div class="stamp"><span>Verificata oggi</span><b data-today>21 settembre 2026</b></div>
+  <div class="stamp"><span data-today-label="Verificata oggi">Ultima verifica</span><b data-today>23 settembre 2026</b></div>
 </div></div>
 
 
@@ -468,7 +468,7 @@
 <section class="sec"><div class="wrap">
   <p class="eyebrow">Esame reale — Come si svolge il test</p>
   <h2>A-Vaud-Test: le vere domande dell&#x27;esame</h2>
-  <p class="lead">Esame reale: A-Vaud-Test scritto, 1 ora, 70% per superare. L&#x27;esame estrae 48 domande a scelta multipla dal catalogo ufficiale di 160 (128 federali e cantonali + 32 del tuo comune): sono le vere domande ufficiali vodesi, stesso formato e stesso contenuto dell&#x27;esame.</p>
+  <p class="lead">Esame reale: A-Vaud-Test scritto. L&#x27;esame estrae domande a scelta multipla dal catalogo ufficiale (federali e cantonali + quelle del tuo comune): sono le vere domande ufficiali vodesi, stesso formato e stesso contenuto dell&#x27;esame.</p>
   <div class="specs">
     <div class="spec"><div class="k">Formato</div><div class="v ">Scritto (scelta multipla)</div>
       </div><div class="spec"><div class="k">Lingua delle domande</div><div class="v ">francese</div>
@@ -660,11 +660,16 @@ if(!window.__cfilter){window.__cfilter=function(input){
   // the date in the source is what the build knew, and is replaced here by the reader's own day.
   // A source checked every night is the claim; a date frozen at build time would deny it.
   try{
-    var t=document.querySelector("[data-today]");
+    var t=document.querySelector("[data-today]"), lab=document.querySelector("[data-today-label]");
     // the month names are the ones labels.json already holds, so the date reads the same
     // whether the build wrote it or the page did — toLocaleDateString words it differently
     var M=["gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno", "luglio", "agosto", "settembre", "ottobre", "novembre", "dicembre"], d=new Date();
-    if(t)t.textContent=d.getDate()+" "+M[d.getMonth()]+" "+d.getFullYear();
+    if(t){
+      t.textContent=d.getDate()+" "+M[d.getMonth()]+" "+d.getFullYear();
+      // the label may only say "today" once the date beside it really is today: without this
+      // script the page keeps the build date, and must call it what it is.
+      if(lab)lab.textContent=lab.getAttribute("data-today-label");
+    }
   }catch(e){}
   var NAV={
     en:{cantons:"Cantons",home:"Home",press:"Press",presskit:"Press kit",eng:"Engineering",terms:"Terms",transp:"Transparency",privacy:"Privacy"},

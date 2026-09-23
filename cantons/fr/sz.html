@@ -453,7 +453,7 @@
   <a class="host" href="https://www.bbzp.ch/Weiterbildung/Einburgerungskurs" target="_blank" rel="noopener">www.bbzp.ch &nearr;</a>
   <a class="meta" href="https://www.sz.ch/behoerden/verwaltung/departement-des-innern/departementssekretariat/buergerrecht.html/8756-8758-8802-9316-9472-9477" target="_blank" rel="noopener">Departement des Innern, Departementssekretariat (Bürgerrecht)</a>
   
-  <div class="stamp"><span>Vérifiée aujourd&#x27;hui</span><b data-today>21 septembre 2026</b></div>
+  <div class="stamp"><span>Dernière vérification</span><b>23 septembre 2026</b></div>
 </div></div>
 
 
@@ -467,8 +467,8 @@
 
 <section class="sec"><div class="wrap">
   <p class="eyebrow">Examen réel — Comment se déroule le test</p>
-  <h2>Écrit : questions ouvertes et QCM, 75 min</h2>
-  <p class="lead">Examen réel : écrit au BBZ Pfäffikon/Goldau, 35 à 41 questions ouvertes et à choix multiple, 75 min ; seuil de réussite interne au BBZ. Le catalogue évalué n&#x27;est pas public. L&#x27;entretien oral communal est distinct. Pour l&#x27;instant, nous vous préparons avec les questions fédérales de base (reprises du Grundkenntnistest de Zurich) — ce ne sont pas les vraies questions de l&#x27;examen.</p>
+  <h2>Écrit : questions ouvertes et QCM</h2>
+  <p class="lead">Examen réel : écrit au BBZ Pfäffikon/Goldau, questions ouvertes et à choix multiple ; seuil de réussite interne au BBZ. Le catalogue évalué n&#x27;est pas public. L&#x27;entretien oral communal est distinct. Pour l&#x27;instant, nous vous préparons avec les questions fédérales de base (reprises du Grundkenntnistest de Zurich) — ce ne sont pas les vraies questions de l&#x27;examen.</p>
   <div class="specs">
     <div class="spec"><div class="k">Format</div><div class="v ">Écrit</div>
       </div><div class="spec"><div class="k">Langue des questions</div><div class="v ">allemand</div>
@@ -644,11 +644,16 @@ if(!window.__cfilter){window.__cfilter=function(input){
   // the date in the source is what the build knew, and is replaced here by the reader's own day.
   // A source checked every night is the claim; a date frozen at build time would deny it.
   try{
-    var t=document.querySelector("[data-today]");
+    var t=document.querySelector("[data-today]"), lab=document.querySelector("[data-today-label]");
     // the month names are the ones labels.json already holds, so the date reads the same
     // whether the build wrote it or the page did — toLocaleDateString words it differently
     var M=["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"], d=new Date();
-    if(t)t.textContent=d.getDate()+" "+M[d.getMonth()]+" "+d.getFullYear();
+    if(t){
+      t.textContent=d.getDate()+" "+M[d.getMonth()]+" "+d.getFullYear();
+      // the label may only say "today" once the date beside it really is today: without this
+      // script the page keeps the build date, and must call it what it is.
+      if(lab)lab.textContent=lab.getAttribute("data-today-label");
+    }
   }catch(e){}
   var NAV={
     en:{cantons:"Cantons",home:"Home",press:"Press",presskit:"Press kit",eng:"Engineering",terms:"Terms",transp:"Transparency",privacy:"Privacy"},

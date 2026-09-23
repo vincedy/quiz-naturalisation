@@ -453,7 +453,7 @@
   <a class="host" href="https://www.ge.ch/connaitre-suisse-geneve" target="_blank" rel="noopener">www.ge.ch &nearr;</a>
   <a class="meta" href="https://www.ge.ch/organisation/office-cantonal-population-migrations-ocpm" target="_blank" rel="noopener">Office cantonal de la population et des migrations (OCPM), République et canton de Genève</a>
   <span class="live"><i></i>jede Nacht geprüft</span>
-  <div class="stamp"><span>Heute geprüft</span><b data-today>21 September 2026</b></div>
+  <div class="stamp"><span data-today-label="Heute geprüft">Zuletzt geprüft</span><b data-today>23 September 2026</b></div>
 </div></div>
 
 
@@ -468,7 +468,7 @@
 <section class="sec"><div class="wrap">
   <p class="eyebrow">Echte Prüfung — So läuft der Test ab</p>
   <h2>Schriftlicher OCPM-Test — offizieller Katalog</h2>
-  <p class="lead">Echte Prüfung: schriftlich auf Vorladung beim OCPM (auf Französisch), 45 Fragen — keine mündliche Wissensprüfung. Genf veröffentlicht denselben Katalog zweimal: ein PDF, das nur die richtigen Antworten nennt, und ein Online-Quiz, das auch die falschen Optionen zeigt. 116 Fragen stammen daher vollständig vom Kanton, Optionen inbegriffen. Die übrigen 31 passen wir an: 21 aus den Modulen des Lernprogramms übertragen, wo die falschen Optionen von uns sind, und 10, bei denen der Kanton mehrere Antworten erwartet, die wir zu einer einzigen zusammenfassen. Der Katalog heisst « 141 Fragen », veröffentlicht aber 126: An der Prüfung sind Fragen möglich, die hier fehlen.</p>
+  <p class="lead">Echte Prüfung: schriftlich auf Vorladung beim OCPM (auf Französisch) — keine mündliche Wissensprüfung. Genf veröffentlicht denselben Katalog zweimal: ein PDF, das nur die richtigen Antworten nennt, und ein Online-Quiz, das auch die falschen Optionen zeigt. Ein Teil der Fragen stammt daher vollständig vom Kanton, Optionen inbegriffen. Die übrigen passen wir an: einige aus den Modulen des Lernprogramms übertragen, wo die falschen Optionen von uns sind, und andere, bei denen der Kanton mehrere Antworten erwartet, die wir zu einer einzigen zusammenfassen. Der Katalog veröffentlicht weniger Fragen, als sein Name nennt: An der Prüfung sind Fragen möglich, die hier fehlen.</p>
   <div class="specs">
     <div class="spec"><div class="k">Format</div><div class="v ">Schriftlich (MC)</div>
       </div><div class="spec"><div class="k">Sprache der Fragen</div><div class="v ">Französisch</div>
@@ -652,11 +652,16 @@ if(!window.__cfilter){window.__cfilter=function(input){
   // the date in the source is what the build knew, and is replaced here by the reader's own day.
   // A source checked every night is the claim; a date frozen at build time would deny it.
   try{
-    var t=document.querySelector("[data-today]");
+    var t=document.querySelector("[data-today]"), lab=document.querySelector("[data-today-label]");
     // the month names are the ones labels.json already holds, so the date reads the same
     // whether the build wrote it or the page did — toLocaleDateString words it differently
     var M=["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"], d=new Date();
-    if(t)t.textContent=d.getDate()+" "+M[d.getMonth()]+" "+d.getFullYear();
+    if(t){
+      t.textContent=d.getDate()+" "+M[d.getMonth()]+" "+d.getFullYear();
+      // the label may only say "today" once the date beside it really is today: without this
+      // script the page keeps the build date, and must call it what it is.
+      if(lab)lab.textContent=lab.getAttribute("data-today-label");
+    }
   }catch(e){}
   var NAV={
     en:{cantons:"Cantons",home:"Home",press:"Press",presskit:"Press kit",eng:"Engineering",terms:"Terms",transp:"Transparency",privacy:"Privacy"},

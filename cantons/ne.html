@@ -12,7 +12,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Naturalisation test in the canton of Neuchâtel</title>
-<meta name="description" content="The official interview questionnaire, turned into multiple-choice by us. Closed list; our coverage is not guaranteed complete. Real exam: oral, 16 question">
+<meta name="description" content="The official interview questionnaire, turned into multiple-choice by us. Closed list; our coverage is not guaranteed complete. Real exam: oral, questions a">
 <link rel="canonical" href="https://swissnaturalizationtest.ch/cantons/ne.html">
 <link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/cantons/ne.html">
 <link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/cantons/fr/ne.html">
@@ -20,7 +20,7 @@
 <link rel="alternate" hreflang="it" href="https://swissnaturalizationtest.ch/cantons/it/ne.html">
 <link rel="alternate" hreflang="x-default" href="https://swissnaturalizationtest.ch/cantons/ne.html">
 <meta property="og:title" content="Naturalisation test in the canton of Neuchâtel">
-<meta property="og:description" content="The official interview questionnaire, turned into multiple-choice by us. Closed list; our coverage is not guaranteed complete. Real exam: oral, 16 question">
+<meta property="og:description" content="The official interview questionnaire, turned into multiple-choice by us. Closed list; our coverage is not guaranteed complete. Real exam: oral, questions a">
 <meta property="og:url" content="https://swissnaturalizationtest.ch/cantons/ne.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Swiss Naturalization Test">
@@ -453,7 +453,7 @@
   <a class="host" href="https://www.ne.ch/themes/migration-et-integration/naturalisation" target="_blank" rel="noopener">www.ne.ch &nearr;</a>
   <a class="meta" href="https://www.ne.ch/themes/migration-et-integration/preparation-la-naturalisation" target="_blank" rel="noopener">Service de la cohésion multiculturelle (COSM), Canton de Neuchâtel</a>
   <span class="live"><i></i>checked every night</span>
-  <div class="stamp"><span>Checked today</span><b data-today>21 September 2026</b></div>
+  <div class="stamp"><span data-today-label="Checked today">Last checked</span><b data-today>23 September 2026</b></div>
 </div></div>
 
 
@@ -467,8 +467,8 @@
 
 <section class="sec"><div class="wrap">
   <p class="eyebrow">Real exam — How the test works</p>
-  <h2>Oral at COSM, 16 official questions</h2>
-  <p class="lead">Real exam: oral, 16 questions asked live in the COSM interview (4 per theme — geography, history, politics, society; at least one on Neuchâtel), pass from 10/16. The canton publishes the whole questionnaire with answers: we serve it for study (211 questions) as multiple choice — the correct answers are official, but the exam&#x27;s 16 are drawn live in the interview.</p>
+  <h2>Oral at COSM, official questions</h2>
+  <p class="lead">Real exam: oral, questions asked live in the COSM interview (per theme — geography, history, politics, society; at least one on Neuchâtel). The canton publishes the whole questionnaire with answers: we serve it for study as multiple choice — the correct answers are official, but the exam&#x27;s questions are drawn live in the interview.</p>
   <div class="specs">
     <div class="spec"><div class="k">Format</div><div class="v ">Oral</div>
       </div><div class="spec"><div class="k">Question language</div><div class="v ">French</div>
@@ -680,11 +680,16 @@ if(!window.__cfilter){window.__cfilter=function(input){
   // the date in the source is what the build knew, and is replaced here by the reader's own day.
   // A source checked every night is the claim; a date frozen at build time would deny it.
   try{
-    var t=document.querySelector("[data-today]");
+    var t=document.querySelector("[data-today]"), lab=document.querySelector("[data-today-label]");
     // the month names are the ones labels.json already holds, so the date reads the same
     // whether the build wrote it or the page did — toLocaleDateString words it differently
     var M=["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"], d=new Date();
-    if(t)t.textContent=d.getDate()+" "+M[d.getMonth()]+" "+d.getFullYear();
+    if(t){
+      t.textContent=d.getDate()+" "+M[d.getMonth()]+" "+d.getFullYear();
+      // the label may only say "today" once the date beside it really is today: without this
+      // script the page keeps the build date, and must call it what it is.
+      if(lab)lab.textContent=lab.getAttribute("data-today-label");
+    }
   }catch(e){}
   var NAV={
     en:{cantons:"Cantons",home:"Home",press:"Press",presskit:"Press kit",eng:"Engineering",terms:"Terms",transp:"Transparency",privacy:"Privacy"},

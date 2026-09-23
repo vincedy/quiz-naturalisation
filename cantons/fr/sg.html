@@ -453,7 +453,7 @@
   <a class="host" href="https://www.arge.ch/bilang/angebot/einbuergerung-und-staatskunde/staatskundetest" target="_blank" rel="noopener">www.arge.ch &nearr;</a>
   <a class="meta" href="https://www.sg.ch/recht/buergerrecht-zivilstand.html" target="_blank" rel="noopener">Amt für Gemeinden und Bürgerrecht</a>
   <span class="live"><i></i>vérifiée chaque nuit</span>
-  <div class="stamp"><span>Vérifiée aujourd&#x27;hui</span><b data-today>21 septembre 2026</b></div>
+  <div class="stamp"><span data-today-label="Vérifiée aujourd&#x27;hui">Dernière vérification</span><b data-today>23 septembre 2026</b></div>
 </div></div>
 
 
@@ -468,7 +468,7 @@
 <section class="sec"><div class="wrap">
   <p class="eyebrow">Examen réel — Comment se déroule le test</p>
   <h2>Test ARGE reconstitué, valeurs estimées</h2>
-  <p class="lead">Chaque examen mêle 20 questions cantonales et 25 fédérales. Les cantonales, c&#x27;est NOUS qui les avons écrites, d&#x27;après les livrets officiels ARGE et les lois du canton (Constitution, loi sur le droit de cité, loi sur le référendum et l&#x27;initiative) ; pour l&#x27;histoire, la géographie et la société, là où ces textes se taisent, d&#x27;après des sources publiques (Wikipédia, CC BY-SA). Les fédérales sont officielles, reprises en allemand du test de Zurich. Le vrai test ARGE est écrit, mais le canton ne publie ni les questions ni le nombre ou le seuil : les 45 questions, le seuil de 60 % et les 60 minutes sont nos estimations, alignées sur les tests écrits alémaniques (Zurich 50, Argovie 45, Berne 48). Ce ne sont pas les questions du vrai test saint-gallois.</p>
+  <p class="lead">Chaque examen mêle questions cantonales et fédérales. Les cantonales, c&#x27;est NOUS qui les avons écrites, d&#x27;après les livrets officiels ARGE et les lois du canton (Constitution, loi sur le droit de cité, loi sur le référendum et l&#x27;initiative) ; pour l&#x27;histoire, la géographie et la société, là où ces textes se taisent, d&#x27;après des sources publiques (Wikipédia, CC BY-SA). Les fédérales sont officielles, reprises en allemand du test de Zurich. Le vrai test ARGE est écrit, mais le canton ne publie ni les questions ni le nombre ou le seuil : le nombre de questions, le seuil et la durée sont nos estimations, alignées sur les tests écrits alémaniques (Zurich, Argovie, Berne). Ce ne sont pas les questions du vrai test saint-gallois.</p>
   <div class="specs">
     <div class="spec"><div class="k">Format</div><div class="v ">Écrit (QCM)</div>
       </div><div class="spec"><div class="k">Langue des questions</div><div class="v ">allemand</div>
@@ -642,11 +642,16 @@ if(!window.__cfilter){window.__cfilter=function(input){
   // the date in the source is what the build knew, and is replaced here by the reader's own day.
   // A source checked every night is the claim; a date frozen at build time would deny it.
   try{
-    var t=document.querySelector("[data-today]");
+    var t=document.querySelector("[data-today]"), lab=document.querySelector("[data-today-label]");
     // the month names are the ones labels.json already holds, so the date reads the same
     // whether the build wrote it or the page did — toLocaleDateString words it differently
     var M=["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"], d=new Date();
-    if(t)t.textContent=d.getDate()+" "+M[d.getMonth()]+" "+d.getFullYear();
+    if(t){
+      t.textContent=d.getDate()+" "+M[d.getMonth()]+" "+d.getFullYear();
+      // the label may only say "today" once the date beside it really is today: without this
+      // script the page keeps the build date, and must call it what it is.
+      if(lab)lab.textContent=lab.getAttribute("data-today-label");
+    }
   }catch(e){}
   var NAV={
     en:{cantons:"Cantons",home:"Home",press:"Press",presskit:"Press kit",eng:"Engineering",terms:"Terms",transp:"Transparency",privacy:"Privacy"},

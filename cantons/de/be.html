@@ -12,7 +12,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Einbürgerungstest im Kanton Bern — Swiss Naturalization Test</title>
-<meta name="description" content="Die offiziellen Prüfungsserien (frühere Ausgaben). An der Prüfung sind weitere Fragen möglich. Echte Prüfung: schriftlicher Test, 48 Fragen, 90 Min., 60 %">
+<meta name="description" content="Die offiziellen Prüfungsserien (frühere Ausgaben). An der Prüfung sind weitere Fragen möglich. Echte Prüfung: schriftlicher Test. Diese Fragen stammen aus">
 <link rel="canonical" href="https://swissnaturalizationtest.ch/cantons/de/be.html">
 <link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/cantons/be.html">
 <link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/cantons/fr/be.html">
@@ -20,7 +20,7 @@
 <link rel="alternate" hreflang="it" href="https://swissnaturalizationtest.ch/cantons/it/be.html">
 <link rel="alternate" hreflang="x-default" href="https://swissnaturalizationtest.ch/cantons/be.html">
 <meta property="og:title" content="Einbürgerungstest im Kanton Bern — Swiss Naturalization Test">
-<meta property="og:description" content="Die offiziellen Prüfungsserien (frühere Ausgaben). An der Prüfung sind weitere Fragen möglich. Echte Prüfung: schriftlicher Test, 48 Fragen, 90 Min., 60 %">
+<meta property="og:description" content="Die offiziellen Prüfungsserien (frühere Ausgaben). An der Prüfung sind weitere Fragen möglich. Echte Prüfung: schriftlicher Test. Diese Fragen stammen aus">
 <meta property="og:url" content="https://swissnaturalizationtest.ch/cantons/de/be.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Swiss Naturalization Test">
@@ -453,7 +453,7 @@
   <a class="host" href="https://www.einbuergerung.sid.be.ch/fr/start/einbuergerung/ordentliche-einbuergerung/einbuergerungstest.html" target="_blank" rel="noopener">www.einbuergerung.sid.be.ch &nearr;</a>
   <a class="meta" href="https://www.einbuergerung.sid.be.ch/de/start/einbuergerung/ordentliche-einbuergerung/einbuergerungstest.html" target="_blank" rel="noopener">Sicherheitsdirektion des Kantons Bern, Zivilstands- und Bürgerrechtsdienst</a>
   <span class="live"><i></i>jede Nacht geprüft</span>
-  <div class="stamp"><span>Heute geprüft</span><b data-today>21 September 2026</b></div>
+  <div class="stamp"><span data-today-label="Heute geprüft">Zuletzt geprüft</span><b data-today>23 September 2026</b></div>
 </div></div>
 
 
@@ -468,7 +468,7 @@
 <section class="sec"><div class="wrap">
   <p class="eyebrow">Echte Prüfung — So läuft der Test ab</p>
   <h2>Schriftlicher Test — die offiziellen Serien 2016-2024</h2>
-  <p class="lead">Echte Prüfung: schriftlicher Test, 48 Fragen, 90 Min., 60 % zum Bestehen. Diese Fragen stammen aus den offiziellen Serien 2016–2024 (auf Deutsch und Französisch) — dieselben Fragen wie in der Prüfung, aus den früheren Serien. Der Test ist fast ganz eidgenössisch: Die kantonale Verordnung nennt Bern nur in der Kategorie Geografie, Geschichte und Kultur, und in den zehn publizierten Serien enthält eine Prüfung im Schnitt 4 Berner Fragen von 48.</p>
+  <p class="lead">Echte Prüfung: schriftlicher Test. Diese Fragen stammen aus den offiziellen Serien 2016–2024 (auf Deutsch und Französisch) — dieselben Fragen wie in der Prüfung, aus den früheren Serien. Der Test ist fast ganz eidgenössisch: Die kantonale Verordnung nennt Bern nur in der Kategorie Geografie, Geschichte und Kultur.</p>
   <div class="specs">
     <div class="spec"><div class="k">Format</div><div class="v ">Schriftlich (MC)</div>
       </div><div class="spec"><div class="k">Sprache der Fragen</div><div class="v ">Deutsch · Französisch</div>
@@ -647,11 +647,16 @@ if(!window.__cfilter){window.__cfilter=function(input){
   // the date in the source is what the build knew, and is replaced here by the reader's own day.
   // A source checked every night is the claim; a date frozen at build time would deny it.
   try{
-    var t=document.querySelector("[data-today]");
+    var t=document.querySelector("[data-today]"), lab=document.querySelector("[data-today-label]");
     // the month names are the ones labels.json already holds, so the date reads the same
     // whether the build wrote it or the page did — toLocaleDateString words it differently
     var M=["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"], d=new Date();
-    if(t)t.textContent=d.getDate()+" "+M[d.getMonth()]+" "+d.getFullYear();
+    if(t){
+      t.textContent=d.getDate()+" "+M[d.getMonth()]+" "+d.getFullYear();
+      // the label may only say "today" once the date beside it really is today: without this
+      // script the page keeps the build date, and must call it what it is.
+      if(lab)lab.textContent=lab.getAttribute("data-today-label");
+    }
   }catch(e){}
   var NAV={
     en:{cantons:"Cantons",home:"Home",press:"Press",presskit:"Press kit",eng:"Engineering",terms:"Terms",transp:"Transparency",privacy:"Privacy"},

@@ -12,7 +12,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Test de naturalisation dans le canton de Neuchâtel</title>
-<meta name="description" content="Le questionnaire officiel de l&#x27;audition, adapté en QCM par nos soins. Liste fermée ; notre couverture n&#x27;est pas garantie complète. Examen réel : oral, 16 q">
+<meta name="description" content="Le questionnaire officiel de l&#x27;audition, adapté en QCM par nos soins. Liste fermée ; notre couverture n&#x27;est pas garantie complète. Examen réel : oral, ques">
 <link rel="canonical" href="https://swissnaturalizationtest.ch/cantons/fr/ne.html">
 <link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/cantons/ne.html">
 <link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/cantons/fr/ne.html">
@@ -20,7 +20,7 @@
 <link rel="alternate" hreflang="it" href="https://swissnaturalizationtest.ch/cantons/it/ne.html">
 <link rel="alternate" hreflang="x-default" href="https://swissnaturalizationtest.ch/cantons/ne.html">
 <meta property="og:title" content="Test de naturalisation dans le canton de Neuchâtel">
-<meta property="og:description" content="Le questionnaire officiel de l&#x27;audition, adapté en QCM par nos soins. Liste fermée ; notre couverture n&#x27;est pas garantie complète. Examen réel : oral, 16 q">
+<meta property="og:description" content="Le questionnaire officiel de l&#x27;audition, adapté en QCM par nos soins. Liste fermée ; notre couverture n&#x27;est pas garantie complète. Examen réel : oral, ques">
 <meta property="og:url" content="https://swissnaturalizationtest.ch/cantons/fr/ne.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Swiss Naturalization Test">
@@ -453,7 +453,7 @@
   <a class="host" href="https://www.ne.ch/themes/migration-et-integration/naturalisation" target="_blank" rel="noopener">www.ne.ch &nearr;</a>
   <a class="meta" href="https://www.ne.ch/themes/migration-et-integration/preparation-la-naturalisation" target="_blank" rel="noopener">Service de la cohésion multiculturelle (COSM), Canton de Neuchâtel</a>
   <span class="live"><i></i>vérifiée chaque nuit</span>
-  <div class="stamp"><span>Vérifiée aujourd&#x27;hui</span><b data-today>21 septembre 2026</b></div>
+  <div class="stamp"><span data-today-label="Vérifiée aujourd&#x27;hui">Dernière vérification</span><b data-today>23 septembre 2026</b></div>
 </div></div>
 
 
@@ -467,8 +467,8 @@
 
 <section class="sec"><div class="wrap">
   <p class="eyebrow">Examen réel — Comment se déroule le test</p>
-  <h2>Oral au COSM, 16 questions officielles</h2>
-  <p class="lead">Examen réel : oral, 16 questions posées en direct lors de l&#x27;entretien COSM (4 par thème — géographie, histoire, politique, société ; au moins une sur Neuchâtel), réussi dès 10/16. Le canton publie tout le questionnaire avec les réponses : nous le servons pour étudier (211 questions) en choix multiple — les bonnes réponses sont officielles, mais les 16 de l&#x27;examen sont tirées en direct lors de l&#x27;entretien.</p>
+  <h2>Oral au COSM, les questions officielles</h2>
+  <p class="lead">Examen réel : oral, questions posées en direct lors de l&#x27;entretien COSM (par thème — géographie, histoire, politique, société ; au moins une sur Neuchâtel). Le canton publie tout le questionnaire avec les réponses : nous le servons pour étudier en choix multiple — les bonnes réponses sont officielles, mais celles de l&#x27;examen sont tirées en direct lors de l&#x27;entretien.</p>
   <div class="specs">
     <div class="spec"><div class="k">Format</div><div class="v ">Oral</div>
       </div><div class="spec"><div class="k">Langue des questions</div><div class="v ">français</div>
@@ -680,11 +680,16 @@ if(!window.__cfilter){window.__cfilter=function(input){
   // the date in the source is what the build knew, and is replaced here by the reader's own day.
   // A source checked every night is the claim; a date frozen at build time would deny it.
   try{
-    var t=document.querySelector("[data-today]");
+    var t=document.querySelector("[data-today]"), lab=document.querySelector("[data-today-label]");
     // the month names are the ones labels.json already holds, so the date reads the same
     // whether the build wrote it or the page did — toLocaleDateString words it differently
     var M=["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"], d=new Date();
-    if(t)t.textContent=d.getDate()+" "+M[d.getMonth()]+" "+d.getFullYear();
+    if(t){
+      t.textContent=d.getDate()+" "+M[d.getMonth()]+" "+d.getFullYear();
+      // the label may only say "today" once the date beside it really is today: without this
+      // script the page keeps the build date, and must call it what it is.
+      if(lab)lab.textContent=lab.getAttribute("data-today-label");
+    }
   }catch(e){}
   var NAV={
     en:{cantons:"Cantons",home:"Home",press:"Press",presskit:"Press kit",eng:"Engineering",terms:"Terms",transp:"Transparency",privacy:"Privacy"},

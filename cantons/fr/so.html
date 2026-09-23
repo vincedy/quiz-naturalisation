@@ -453,7 +453,7 @@
   <a class="host" href="https://so.ch/verwaltung/volkswirtschaftsdepartement/amt-fuer-gemeinden/buergerrecht/neubuergerkurse/" target="_blank" rel="noopener">so.ch &nearr;</a>
   <a class="meta" href="https://so.ch/verwaltung/volkswirtschaftsdepartement/amt-fuer-gemeinden/buergerrecht/neubuergerkurse/" target="_blank" rel="noopener">Amt für Gemeinden, Volkswirtschaftsdepartement</a>
   <span class="live"><i></i>vérifiée chaque nuit</span>
-  <div class="stamp"><span>Vérifiée aujourd&#x27;hui</span><b data-today>21 septembre 2026</b></div>
+  <div class="stamp"><span data-today-label="Vérifiée aujourd&#x27;hui">Dernière vérification</span><b data-today>23 septembre 2026</b></div>
 </div></div>
 
 
@@ -468,7 +468,7 @@
 <section class="sec"><div class="wrap">
   <p class="eyebrow">Examen réel — Comment se déroule le test</p>
   <h2>Examen final de cours : livre fermé/ouvert</h2>
-  <p class="lead">Examen réel : examen écrit final du Neubürgerkurs (deux parties), max. 90 min, note globale 4.0 requise ; le nombre de questions n&#x27;est pas publié. Le catalogue n&#x27;est pas public — les épreuves sont rédigées cours par cours et ne portent que sur le contenu du cours, lui non plus publié. Les questions cantonales ici, c&#x27;est NOUS qui les avons écrites, à partir de la Constitution cantonale, de la loi sur le droit de cité et de la loi sur les droits politiques ; pour l&#x27;histoire et la culture, là où les lois se taisent, à partir de sources publiques (Wikipédia, CC BY-SA) ; le volet fédéral vient du Grundkenntnistest officiel de Zurich. Ce ne sont pas les vraies questions de l&#x27;examen. L&#x27;entretien oral (Oberamt/commune bourgeoise) est distinct et porte sur l&#x27;intégration, pas sur les connaissances.</p>
+  <p class="lead">Examen réel : examen écrit final du Neubürgerkurs ; le nombre de questions n&#x27;est pas publié. Le catalogue n&#x27;est pas public — les épreuves sont rédigées cours par cours et ne portent que sur le contenu du cours, lui non plus publié. Les questions cantonales ici, c&#x27;est NOUS qui les avons écrites, à partir de la Constitution cantonale, de la loi sur le droit de cité et de la loi sur les droits politiques ; pour l&#x27;histoire et la culture, là où les lois se taisent, à partir de sources publiques (Wikipédia, CC BY-SA) ; le volet fédéral vient du Grundkenntnistest officiel de Zurich. Ce ne sont pas les vraies questions de l&#x27;examen. L&#x27;entretien oral (Oberamt/commune bourgeoise) est distinct et porte sur l&#x27;intégration, pas sur les connaissances.</p>
   <div class="specs">
     <div class="spec"><div class="k">Format</div><div class="v ">Écrit</div>
       </div><div class="spec"><div class="k">Langue des questions</div><div class="v ">allemand</div>
@@ -650,11 +650,16 @@ if(!window.__cfilter){window.__cfilter=function(input){
   // the date in the source is what the build knew, and is replaced here by the reader's own day.
   // A source checked every night is the claim; a date frozen at build time would deny it.
   try{
-    var t=document.querySelector("[data-today]");
+    var t=document.querySelector("[data-today]"), lab=document.querySelector("[data-today-label]");
     // the month names are the ones labels.json already holds, so the date reads the same
     // whether the build wrote it or the page did — toLocaleDateString words it differently
     var M=["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"], d=new Date();
-    if(t)t.textContent=d.getDate()+" "+M[d.getMonth()]+" "+d.getFullYear();
+    if(t){
+      t.textContent=d.getDate()+" "+M[d.getMonth()]+" "+d.getFullYear();
+      // the label may only say "today" once the date beside it really is today: without this
+      // script the page keeps the build date, and must call it what it is.
+      if(lab)lab.textContent=lab.getAttribute("data-today-label");
+    }
   }catch(e){}
   var NAV={
     en:{cantons:"Cantons",home:"Home",press:"Press",presskit:"Press kit",eng:"Engineering",terms:"Terms",transp:"Transparency",privacy:"Privacy"},

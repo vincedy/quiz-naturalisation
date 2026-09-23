@@ -12,7 +12,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Naturalisation test in the canton of Valais</title>
-<meta name="description" content="The official interview questionnaire, turned into multiple-choice by us. Other questions are possible at the exam. Real exam: oral, in 2 mandatory hearings">
+<meta name="description" content="The official interview questionnaire, turned into multiple-choice by us. Other questions are possible at the exam. Real exam: oral, in mandatory hearings (">
 <link rel="canonical" href="https://swissnaturalizationtest.ch/cantons/vs.html">
 <link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/cantons/vs.html">
 <link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/cantons/fr/vs.html">
@@ -20,7 +20,7 @@
 <link rel="alternate" hreflang="it" href="https://swissnaturalizationtest.ch/cantons/it/vs.html">
 <link rel="alternate" hreflang="x-default" href="https://swissnaturalizationtest.ch/cantons/vs.html">
 <meta property="og:title" content="Naturalisation test in the canton of Valais">
-<meta property="og:description" content="The official interview questionnaire, turned into multiple-choice by us. Other questions are possible at the exam. Real exam: oral, in 2 mandatory hearings">
+<meta property="og:description" content="The official interview questionnaire, turned into multiple-choice by us. Other questions are possible at the exam. Real exam: oral, in mandatory hearings (">
 <meta property="og:url" content="https://swissnaturalizationtest.ch/cantons/vs.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Swiss Naturalization Test">
@@ -453,7 +453,7 @@
   <a class="host" href="https://www.vs.ch/web/spm/naturalisation-ordinaire" target="_blank" rel="noopener">www.vs.ch &nearr;</a>
   <a class="meta" href="https://www.vs.ch/web/spm" target="_blank" rel="noopener">Service de la population et des migrations du Canton du Valais (SPM)</a>
   <span class="live"><i></i>checked every night</span>
-  <div class="stamp"><span>Checked today</span><b data-today>21 September 2026</b></div>
+  <div class="stamp"><span data-today-label="Checked today">Last checked</span><b data-today>23 September 2026</b></div>
 </div></div>
 
 
@@ -467,8 +467,8 @@
 
 <section class="sec"><div class="wrap">
   <p class="eyebrow">Real exam — How the test works</p>
-  <h2>Oral, 2 hearings, official questionnaire</h2>
-  <p class="lead">Real exam: oral, in 2 mandatory hearings (first the commune, then the Grand Council&#x27;s «Naturalisations» sub-commission); no grade — a positive overall assessment is enough. The questions come from the canton&#x27;s official questionnaire (140 questions, 8 themes). We serve it for study, turned into multiple choice — the correct answers are official, but we do not reproduce the oral format.</p>
+  <h2>Oral hearings, official questionnaire</h2>
+  <p class="lead">Real exam: oral, in mandatory hearings (first the commune, then the Grand Council&#x27;s «Naturalisations» sub-commission); no grade — a positive overall assessment is enough. The questions come from the canton&#x27;s official questionnaire. We serve it for study, turned into multiple choice — the correct answers are official, but we do not reproduce the oral format.</p>
   <div class="specs">
     <div class="spec"><div class="k">Format</div><div class="v ">Oral</div>
       </div><div class="spec"><div class="k">Question language</div><div class="v ">French · German</div>
@@ -666,11 +666,16 @@ if(!window.__cfilter){window.__cfilter=function(input){
   // the date in the source is what the build knew, and is replaced here by the reader's own day.
   // A source checked every night is the claim; a date frozen at build time would deny it.
   try{
-    var t=document.querySelector("[data-today]");
+    var t=document.querySelector("[data-today]"), lab=document.querySelector("[data-today-label]");
     // the month names are the ones labels.json already holds, so the date reads the same
     // whether the build wrote it or the page did — toLocaleDateString words it differently
     var M=["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"], d=new Date();
-    if(t)t.textContent=d.getDate()+" "+M[d.getMonth()]+" "+d.getFullYear();
+    if(t){
+      t.textContent=d.getDate()+" "+M[d.getMonth()]+" "+d.getFullYear();
+      // the label may only say "today" once the date beside it really is today: without this
+      // script the page keeps the build date, and must call it what it is.
+      if(lab)lab.textContent=lab.getAttribute("data-today-label");
+    }
   }catch(e){}
   var NAV={
     en:{cantons:"Cantons",home:"Home",press:"Press",presskit:"Press kit",eng:"Engineering",terms:"Terms",transp:"Transparency",privacy:"Privacy"},

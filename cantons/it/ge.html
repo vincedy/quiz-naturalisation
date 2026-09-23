@@ -12,7 +12,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Test di naturalizzazione nel Cantone Ginevra</title>
-<meta name="description" content="Il contenuto ufficiale dell&#x27;esame, in quiz. All&#x27;esame sono possibili altre domande. Esame reale: prova scritta su convocazione all&#x27;OCPM (in francese), 45 d">
+<meta name="description" content="Il contenuto ufficiale dell&#x27;esame, in quiz. All&#x27;esame sono possibili altre domande. Esame reale: prova scritta su convocazione all&#x27;OCPM (in francese) — nes">
 <link rel="canonical" href="https://swissnaturalizationtest.ch/cantons/it/ge.html">
 <link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/cantons/ge.html">
 <link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/cantons/fr/ge.html">
@@ -20,7 +20,7 @@
 <link rel="alternate" hreflang="it" href="https://swissnaturalizationtest.ch/cantons/it/ge.html">
 <link rel="alternate" hreflang="x-default" href="https://swissnaturalizationtest.ch/cantons/ge.html">
 <meta property="og:title" content="Test di naturalizzazione nel Cantone Ginevra">
-<meta property="og:description" content="Il contenuto ufficiale dell&#x27;esame, in quiz. All&#x27;esame sono possibili altre domande. Esame reale: prova scritta su convocazione all&#x27;OCPM (in francese), 45 d">
+<meta property="og:description" content="Il contenuto ufficiale dell&#x27;esame, in quiz. All&#x27;esame sono possibili altre domande. Esame reale: prova scritta su convocazione all&#x27;OCPM (in francese) — nes">
 <meta property="og:url" content="https://swissnaturalizationtest.ch/cantons/it/ge.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Swiss Naturalization Test">
@@ -453,7 +453,7 @@
   <a class="host" href="https://www.ge.ch/connaitre-suisse-geneve" target="_blank" rel="noopener">www.ge.ch &nearr;</a>
   <a class="meta" href="https://www.ge.ch/organisation/office-cantonal-population-migrations-ocpm" target="_blank" rel="noopener">Office cantonal de la population et des migrations (OCPM), République et canton de Genève</a>
   <span class="live"><i></i>verificata ogni notte</span>
-  <div class="stamp"><span>Verificata oggi</span><b data-today>21 settembre 2026</b></div>
+  <div class="stamp"><span data-today-label="Verificata oggi">Ultima verifica</span><b data-today>23 settembre 2026</b></div>
 </div></div>
 
 
@@ -468,7 +468,7 @@
 <section class="sec"><div class="wrap">
   <p class="eyebrow">Esame reale — Come si svolge il test</p>
   <h2>Test scritto OCPM — catalogo ufficiale</h2>
-  <p class="lead">Esame reale: prova scritta su convocazione all&#x27;OCPM (in francese), 45 domande — nessun orale sulle conoscenze. Ginevra pubblica lo stesso catalogo due volte: un PDF con le sole risposte giuste e un quiz online che mostra anche le opzioni sbagliate. Da lì 116 domande arrivano intere dal cantone, opzioni comprese. Le altre 31 le adattiamo: 21 trascritte dai moduli del corso online, dove le opzioni sbagliate sono nostre, e 10 in cui il cantone attende più risposte e noi le riuniamo in una sola. Il catalogo si intitola « 141 domande » ma ne pubblica 126: all&#x27;esame sono possibili domande che qui non troverai.</p>
+  <p class="lead">Esame reale: prova scritta su convocazione all&#x27;OCPM (in francese) — nessun orale sulle conoscenze. Ginevra pubblica lo stesso catalogo due volte: un PDF con le sole risposte giuste e un quiz online che mostra anche le opzioni sbagliate. Da lì parte delle domande arriva intera dal cantone, opzioni comprese. Le altre le adattiamo: alcune trascritte dai moduli del corso online, dove le opzioni sbagliate sono nostre, altre in cui il cantone attende più risposte e noi le riuniamo in una sola. Il catalogo pubblica meno domande di quante ne annuncia il titolo: all&#x27;esame sono possibili domande che qui non troverai.</p>
   <div class="specs">
     <div class="spec"><div class="k">Formato</div><div class="v ">Scritto (scelta multipla)</div>
       </div><div class="spec"><div class="k">Lingua delle domande</div><div class="v ">francese</div>
@@ -652,11 +652,16 @@ if(!window.__cfilter){window.__cfilter=function(input){
   // the date in the source is what the build knew, and is replaced here by the reader's own day.
   // A source checked every night is the claim; a date frozen at build time would deny it.
   try{
-    var t=document.querySelector("[data-today]");
+    var t=document.querySelector("[data-today]"), lab=document.querySelector("[data-today-label]");
     // the month names are the ones labels.json already holds, so the date reads the same
     // whether the build wrote it or the page did — toLocaleDateString words it differently
     var M=["gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno", "luglio", "agosto", "settembre", "ottobre", "novembre", "dicembre"], d=new Date();
-    if(t)t.textContent=d.getDate()+" "+M[d.getMonth()]+" "+d.getFullYear();
+    if(t){
+      t.textContent=d.getDate()+" "+M[d.getMonth()]+" "+d.getFullYear();
+      // the label may only say "today" once the date beside it really is today: without this
+      // script the page keeps the build date, and must call it what it is.
+      if(lab)lab.textContent=lab.getAttribute("data-today-label");
+    }
   }catch(e){}
   var NAV={
     en:{cantons:"Cantons",home:"Home",press:"Press",presskit:"Press kit",eng:"Engineering",terms:"Terms",transp:"Transparency",privacy:"Privacy"},

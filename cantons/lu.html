@@ -453,7 +453,7 @@
   <a class="host" href="https://gemeinden.lu.ch/Einbuergerungen" target="_blank" rel="noopener">gemeinden.lu.ch &nearr;</a>
   <a class="meta" href="https://gemeinden.lu.ch/Einbuergerungen/einbuergerung_schweiz" target="_blank" rel="noopener">Dienststelle Soziales und Gesellschaft (DISG), Kanton Luzern</a>
   <span class="live"><i></i>checked every night</span>
-  <div class="stamp"><span>Checked today</span><b data-today>21 September 2026</b></div>
+  <div class="stamp"><span data-today-label="Checked today">Last checked</span><b data-today>23 September 2026</b></div>
 </div></div>
 
 
@@ -468,7 +468,7 @@
 <section class="sec"><div class="wrap">
   <p class="eyebrow">Real exam — How the test works</p>
   <h2>Oral by commune — no question catalogue</h2>
-  <p class="lead">The Canton of Lucerne has no unified written test. Ordinary naturalisation is assessed orally by each commune&#x27;s Bürgerrechtskommission, with no fixed question set. Every mock exam mixes 24 cantonal and 20 federal questions. The cantonal ones were written by US, from the cantonal constitution, the citizenship act and the political rights act; for history, geography and society, where the legal texts are silent, from public sources (Wikipedia, CC BY-SA). The federal ones come from the 100 «Kenntnisse der Schweiz», the official study aid of the facilitated naturalisation (federal SEM), not of the communal interview. These are not the questions of the real interview.</p>
+  <p class="lead">The Canton of Lucerne has no unified written test. Ordinary naturalisation is assessed orally by each commune&#x27;s Bürgerrechtskommission, with no fixed question set. Every mock exam mixes cantonal and federal questions. The cantonal ones were written by US, from the cantonal constitution, the citizenship act and the political rights act; for history, geography and society, where the legal texts are silent, from public sources (Wikipedia, CC BY-SA). The federal ones come from the «Kenntnisse der Schweiz», the official study aid of the facilitated naturalisation (federal SEM), not of the communal interview. These are not the questions of the real interview.</p>
   <div class="specs">
     <div class="spec"><div class="k">Format</div><div class="v ">Oral</div>
       </div><div class="spec"><div class="k">Question language</div><div class="v ">German</div>
@@ -666,11 +666,16 @@ if(!window.__cfilter){window.__cfilter=function(input){
   // the date in the source is what the build knew, and is replaced here by the reader's own day.
   // A source checked every night is the claim; a date frozen at build time would deny it.
   try{
-    var t=document.querySelector("[data-today]");
+    var t=document.querySelector("[data-today]"), lab=document.querySelector("[data-today-label]");
     // the month names are the ones labels.json already holds, so the date reads the same
     // whether the build wrote it or the page did — toLocaleDateString words it differently
     var M=["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"], d=new Date();
-    if(t)t.textContent=d.getDate()+" "+M[d.getMonth()]+" "+d.getFullYear();
+    if(t){
+      t.textContent=d.getDate()+" "+M[d.getMonth()]+" "+d.getFullYear();
+      // the label may only say "today" once the date beside it really is today: without this
+      // script the page keeps the build date, and must call it what it is.
+      if(lab)lab.textContent=lab.getAttribute("data-today-label");
+    }
   }catch(e){}
   var NAV={
     en:{cantons:"Cantons",home:"Home",press:"Press",presskit:"Press kit",eng:"Engineering",terms:"Terms",transp:"Transparency",privacy:"Privacy"},

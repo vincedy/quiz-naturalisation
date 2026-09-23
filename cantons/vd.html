@@ -12,7 +12,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Naturalisation test in the canton of Vaud</title>
-<meta name="description" content="The official exam questions, unchanged. Every possible question is here. Real exam: written A-Vaud-Test, 1 hour, 70% to pass. The exam draws 48 multiple-ch">
+<meta name="description" content="The official exam questions, unchanged. Every possible question is here. Real exam: written A-Vaud-Test. The exam draws multiple-choice questions from the">
 <link rel="canonical" href="https://swissnaturalizationtest.ch/cantons/vd.html">
 <link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/cantons/vd.html">
 <link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/cantons/fr/vd.html">
@@ -20,7 +20,7 @@
 <link rel="alternate" hreflang="it" href="https://swissnaturalizationtest.ch/cantons/it/vd.html">
 <link rel="alternate" hreflang="x-default" href="https://swissnaturalizationtest.ch/cantons/vd.html">
 <meta property="og:title" content="Naturalisation test in the canton of Vaud">
-<meta property="og:description" content="The official exam questions, unchanged. Every possible question is here. Real exam: written A-Vaud-Test, 1 hour, 70% to pass. The exam draws 48 multiple-ch">
+<meta property="og:description" content="The official exam questions, unchanged. Every possible question is here. Real exam: written A-Vaud-Test. The exam draws multiple-choice questions from the">
 <meta property="og:url" content="https://swissnaturalizationtest.ch/cantons/vd.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Swiss Naturalization Test">
@@ -453,7 +453,7 @@
   <a class="host" href="https://www.vd.ch/population/population-etrangere/naturalisation/demande-de-naturalisation-ordinaire/test-de-connaissances" target="_blank" rel="noopener">www.vd.ch &nearr;</a>
   <a class="meta" href="https://www.vd.ch/deiep/spop" target="_blank" rel="noopener">Service de la population du Canton de Vaud (SPOP)</a>
   <span class="live"><i></i>checked every night</span>
-  <div class="stamp"><span>Checked today</span><b data-today>21 September 2026</b></div>
+  <div class="stamp"><span data-today-label="Checked today">Last checked</span><b data-today>23 September 2026</b></div>
 </div></div>
 
 
@@ -468,7 +468,7 @@
 <section class="sec"><div class="wrap">
   <p class="eyebrow">Real exam — How the test works</p>
   <h2>A-Vaud-Test: the real exam questions</h2>
-  <p class="lead">Real exam: written A-Vaud-Test, 1 hour, 70% to pass. The exam draws 48 multiple-choice questions from the official 160-question catalogue (128 federal and cantonal + 32 from your commune): these are the real official Vaud questions, same format and content as the exam.</p>
+  <p class="lead">Real exam: written A-Vaud-Test. The exam draws multiple-choice questions from the official catalogue (federal and cantonal questions + questions from your commune): these are the real official Vaud questions, same format and content as the exam.</p>
   <div class="specs">
     <div class="spec"><div class="k">Format</div><div class="v ">Written (MCQ)</div>
       </div><div class="spec"><div class="k">Question language</div><div class="v ">French</div>
@@ -660,11 +660,16 @@ if(!window.__cfilter){window.__cfilter=function(input){
   // the date in the source is what the build knew, and is replaced here by the reader's own day.
   // A source checked every night is the claim; a date frozen at build time would deny it.
   try{
-    var t=document.querySelector("[data-today]");
+    var t=document.querySelector("[data-today]"), lab=document.querySelector("[data-today-label]");
     // the month names are the ones labels.json already holds, so the date reads the same
     // whether the build wrote it or the page did — toLocaleDateString words it differently
     var M=["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"], d=new Date();
-    if(t)t.textContent=d.getDate()+" "+M[d.getMonth()]+" "+d.getFullYear();
+    if(t){
+      t.textContent=d.getDate()+" "+M[d.getMonth()]+" "+d.getFullYear();
+      // the label may only say "today" once the date beside it really is today: without this
+      // script the page keeps the build date, and must call it what it is.
+      if(lab)lab.textContent=lab.getAttribute("data-today-label");
+    }
   }catch(e){}
   var NAV={
     en:{cantons:"Cantons",home:"Home",press:"Press",presskit:"Press kit",eng:"Engineering",terms:"Terms",transp:"Transparency",privacy:"Privacy"},

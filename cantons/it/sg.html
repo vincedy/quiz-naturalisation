@@ -453,7 +453,7 @@
   <a class="host" href="https://www.arge.ch/bilang/angebot/einbuergerung-und-staatskunde/staatskundetest" target="_blank" rel="noopener">www.arge.ch &nearr;</a>
   <a class="meta" href="https://www.sg.ch/recht/buergerrecht-zivilstand.html" target="_blank" rel="noopener">Amt für Gemeinden und Bürgerrecht</a>
   <span class="live"><i></i>verificata ogni notte</span>
-  <div class="stamp"><span>Verificata oggi</span><b data-today>21 settembre 2026</b></div>
+  <div class="stamp"><span data-today-label="Verificata oggi">Ultima verifica</span><b data-today>23 settembre 2026</b></div>
 </div></div>
 
 
@@ -468,7 +468,7 @@
 <section class="sec"><div class="wrap">
   <p class="eyebrow">Esame reale — Come si svolge il test</p>
   <h2>Test ARGE ricostruito, valori stimati</h2>
-  <p class="lead">Ogni esame mescola 20 domande cantonali e 25 federali. Le cantonali le abbiamo scritte NOI, dai libretti ufficiali ARGE e dalle leggi del cantone (Costituzione, legge sulla cittadinanza, legge su referendum e iniziativa); per storia, geografia e società, dove quei testi tacciono, da fonti pubbliche (Wikipedia, CC BY-SA). Le federali sono ufficiali, riprese in tedesco dal test di Zurigo. Il test ARGE reale è scritto, ma il cantone non pubblica né le domande né il numero o la soglia: i 45 quesiti, la soglia del 60% e i 60 minuti sono nostre stime, allineate ai test scritti tedeschi (Zurigo 50, Argovia 45, Berna 48). Non sono le domande del test reale di San Gallo.</p>
+  <p class="lead">Ogni esame mescola domande cantonali e federali. Le cantonali le abbiamo scritte NOI, dai libretti ufficiali ARGE e dalle leggi del cantone (Costituzione, legge sulla cittadinanza, legge su referendum e iniziativa); per storia, geografia e società, dove quei testi tacciono, da fonti pubbliche (Wikipedia, CC BY-SA). Le federali sono ufficiali, riprese in tedesco dal test di Zurigo. Il test ARGE reale è scritto, ma il cantone non pubblica né le domande né il numero o la soglia: il numero di quesiti, la soglia e la durata sono nostre stime, allineate ai test scritti tedeschi (Zurigo, Argovia, Berna). Non sono le domande del test reale di San Gallo.</p>
   <div class="specs">
     <div class="spec"><div class="k">Formato</div><div class="v ">Scritto (scelta multipla)</div>
       </div><div class="spec"><div class="k">Lingua delle domande</div><div class="v ">tedesco</div>
@@ -642,11 +642,16 @@ if(!window.__cfilter){window.__cfilter=function(input){
   // the date in the source is what the build knew, and is replaced here by the reader's own day.
   // A source checked every night is the claim; a date frozen at build time would deny it.
   try{
-    var t=document.querySelector("[data-today]");
+    var t=document.querySelector("[data-today]"), lab=document.querySelector("[data-today-label]");
     // the month names are the ones labels.json already holds, so the date reads the same
     // whether the build wrote it or the page did — toLocaleDateString words it differently
     var M=["gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno", "luglio", "agosto", "settembre", "ottobre", "novembre", "dicembre"], d=new Date();
-    if(t)t.textContent=d.getDate()+" "+M[d.getMonth()]+" "+d.getFullYear();
+    if(t){
+      t.textContent=d.getDate()+" "+M[d.getMonth()]+" "+d.getFullYear();
+      // the label may only say "today" once the date beside it really is today: without this
+      // script the page keeps the build date, and must call it what it is.
+      if(lab)lab.textContent=lab.getAttribute("data-today-label");
+    }
   }catch(e){}
   var NAV={
     en:{cantons:"Cantons",home:"Home",press:"Press",presskit:"Press kit",eng:"Engineering",terms:"Terms",transp:"Transparency",privacy:"Privacy"},

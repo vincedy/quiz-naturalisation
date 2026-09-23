@@ -453,7 +453,7 @@
   <a class="host" href="https://bgbasel.ch/de/einbuergerungen/auslaenderinnen-auslaender.html" target="_blank" rel="noopener">bgbasel.ch &nearr;</a>
   <a class="meta" href="https://bgbasel.ch/de/einbuergerungen/auslaenderinnen-auslaender.html" target="_blank" rel="noopener">Bürgergemeinde der Stadt Basel</a>
   <span class="live"><i></i>vérifiée chaque nuit</span>
-  <div class="stamp"><span>Vérifiée aujourd&#x27;hui</span><b data-today>21 septembre 2026</b></div>
+  <div class="stamp"><span data-today-label="Vérifiée aujourd&#x27;hui">Dernière vérification</span><b data-today>23 septembre 2026</b></div>
 </div></div>
 
 
@@ -468,7 +468,7 @@
 <section class="sec"><div class="wrap">
   <p class="eyebrow">Examen réel — Comment se déroule le test</p>
   <h2>Entretien enregistré, évaluation globale</h2>
-  <p class="lead">Bâle-Ville n&#x27;a pas de test écrit. Les connaissances sont évaluées oralement lors de l&#x27;entretien de naturalisation enregistré de la commission des naturalisations — sans catalogue de questions, sans exemples officiels et sans seuil de points : la commission tranche à la majorité. Le programme relève du §11 BüRG (géographie, histoire, politique, société, aux niveaux fédéral, cantonal et communal). Les questions cantonales ici, c&#x27;est NOUS qui les avons écrites, à partir de la Constitution cantonale, de la loi sur le droit de cité et de la brochure civique du Grand Conseil ; pour l&#x27;histoire, la géographie, la culture et la société, là où ces textes se taisent, à partir de sources publiques (Wikipédia, CC BY-SA) — près de la moitié des questions cantonales ; le volet fédéral vient du Grundkenntnistest officiel de Zurich. Ce ne sont pas les vraies questions de l&#x27;entretien. Qui a fait tout le secondaire I à Bâle-Ville n&#x27;est pas interrogé sur le civisme.</p>
+  <p class="lead">Bâle-Ville n&#x27;a pas de test écrit. Les connaissances sont évaluées oralement lors de l&#x27;entretien de naturalisation enregistré de la commission des naturalisations — sans catalogue de questions, sans exemples officiels et sans seuil de points : la commission tranche à la majorité. Le programme relève du BüRG (géographie, histoire, politique, société, aux niveaux fédéral, cantonal et communal). Les questions cantonales ici, c&#x27;est NOUS qui les avons écrites, à partir de la Constitution cantonale, de la loi sur le droit de cité et de la brochure civique du Grand Conseil ; pour l&#x27;histoire, la géographie, la culture et la société, là où ces textes se taisent, à partir de sources publiques (Wikipédia, CC BY-SA) ; le volet fédéral vient du Grundkenntnistest officiel de Zurich. Ce ne sont pas les vraies questions de l&#x27;entretien. Qui a fait tout le secondaire I à Bâle-Ville n&#x27;est pas interrogé sur le civisme.</p>
   <div class="specs">
     <div class="spec"><div class="k">Format</div><div class="v ">Oral</div>
       </div><div class="spec"><div class="k">Langue des questions</div><div class="v ">allemand</div>
@@ -683,11 +683,16 @@ if(!window.__cfilter){window.__cfilter=function(input){
   // the date in the source is what the build knew, and is replaced here by the reader's own day.
   // A source checked every night is the claim; a date frozen at build time would deny it.
   try{
-    var t=document.querySelector("[data-today]");
+    var t=document.querySelector("[data-today]"), lab=document.querySelector("[data-today-label]");
     // the month names are the ones labels.json already holds, so the date reads the same
     // whether the build wrote it or the page did — toLocaleDateString words it differently
     var M=["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"], d=new Date();
-    if(t)t.textContent=d.getDate()+" "+M[d.getMonth()]+" "+d.getFullYear();
+    if(t){
+      t.textContent=d.getDate()+" "+M[d.getMonth()]+" "+d.getFullYear();
+      // the label may only say "today" once the date beside it really is today: without this
+      // script the page keeps the build date, and must call it what it is.
+      if(lab)lab.textContent=lab.getAttribute("data-today-label");
+    }
   }catch(e){}
   var NAV={
     en:{cantons:"Cantons",home:"Home",press:"Press",presskit:"Press kit",eng:"Engineering",terms:"Terms",transp:"Transparency",privacy:"Privacy"},

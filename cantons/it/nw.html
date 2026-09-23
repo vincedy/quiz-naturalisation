@@ -453,7 +453,7 @@
   <a class="host" href="https://www.nw.ch/zsadienste/1481" target="_blank" rel="noopener">www.nw.ch &nearr;</a>
   <a class="meta" href="https://www.nw.ch/zsadienste/1481" target="_blank" rel="noopener">Zivilstandsamt und Bürgerrecht</a>
   
-  <div class="stamp"><span>Verificata oggi</span><b data-today>21 settembre 2026</b></div>
+  <div class="stamp"><span>Ultima verifica</span><b>23 settembre 2026</b></div>
 </div></div>
 
 
@@ -468,7 +468,7 @@
 <section class="sec"><div class="wrap">
   <p class="eyebrow">Esame reale — Come si svolge il test</p>
   <h2>Orale in due fasi: polizia + comune</h2>
-  <p class="lead">Nidvaldo non ha un test scritto. L&#x27;esame è orale e in due fasi (colloquio d&#x27;indagine della polizia criminale + colloquio di naturalizzazione del comune), senza catalogo di domande fisso. Per le conoscenze il cantone rimanda alle « 100 domande » di Lucerna e al test di Argovia. Per ora vi prepariamo con le domande federali di base (riprese dal Grundkenntnistest di Zurigo) — non sono le vere domande poste dal comune.</p>
+  <p class="lead">Nidvaldo non ha un test scritto. L&#x27;esame è orale e in due fasi (colloquio d&#x27;indagine della polizia criminale + colloquio di naturalizzazione del comune), senza catalogo di domande fisso. Per le conoscenze il cantone rimanda alle domande di Lucerna e al test di Argovia. Per ora vi prepariamo con le domande federali di base (riprese dal Grundkenntnistest di Zurigo) — non sono le vere domande poste dal comune.</p>
   <div class="specs">
     <div class="spec"><div class="k">Formato</div><div class="v ">Orale</div>
       </div><div class="spec"><div class="k">Lingua delle domande</div><div class="v ">tedesco</div>
@@ -635,11 +635,16 @@ if(!window.__cfilter){window.__cfilter=function(input){
   // the date in the source is what the build knew, and is replaced here by the reader's own day.
   // A source checked every night is the claim; a date frozen at build time would deny it.
   try{
-    var t=document.querySelector("[data-today]");
+    var t=document.querySelector("[data-today]"), lab=document.querySelector("[data-today-label]");
     // the month names are the ones labels.json already holds, so the date reads the same
     // whether the build wrote it or the page did — toLocaleDateString words it differently
     var M=["gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno", "luglio", "agosto", "settembre", "ottobre", "novembre", "dicembre"], d=new Date();
-    if(t)t.textContent=d.getDate()+" "+M[d.getMonth()]+" "+d.getFullYear();
+    if(t){
+      t.textContent=d.getDate()+" "+M[d.getMonth()]+" "+d.getFullYear();
+      // the label may only say "today" once the date beside it really is today: without this
+      // script the page keeps the build date, and must call it what it is.
+      if(lab)lab.textContent=lab.getAttribute("data-today-label");
+    }
   }catch(e){}
   var NAV={
     en:{cantons:"Cantons",home:"Home",press:"Press",presskit:"Press kit",eng:"Engineering",terms:"Terms",transp:"Transparency",privacy:"Privacy"},

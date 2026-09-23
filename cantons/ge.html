@@ -12,7 +12,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Naturalisation test in the canton of Geneva</title>
-<meta name="description" content="The official exam content, as multiple-choice. Other questions are possible at the exam. Real exam: written test by convocation at the OCPM (in French), 45">
+<meta name="description" content="The official exam content, as multiple-choice. Other questions are possible at the exam. Real exam: written test by convocation at the OCPM (in French) — n">
 <link rel="canonical" href="https://swissnaturalizationtest.ch/cantons/ge.html">
 <link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/cantons/ge.html">
 <link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/cantons/fr/ge.html">
@@ -20,7 +20,7 @@
 <link rel="alternate" hreflang="it" href="https://swissnaturalizationtest.ch/cantons/it/ge.html">
 <link rel="alternate" hreflang="x-default" href="https://swissnaturalizationtest.ch/cantons/ge.html">
 <meta property="og:title" content="Naturalisation test in the canton of Geneva">
-<meta property="og:description" content="The official exam content, as multiple-choice. Other questions are possible at the exam. Real exam: written test by convocation at the OCPM (in French), 45">
+<meta property="og:description" content="The official exam content, as multiple-choice. Other questions are possible at the exam. Real exam: written test by convocation at the OCPM (in French) — n">
 <meta property="og:url" content="https://swissnaturalizationtest.ch/cantons/ge.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Swiss Naturalization Test">
@@ -453,7 +453,7 @@
   <a class="host" href="https://www.ge.ch/connaitre-suisse-geneve" target="_blank" rel="noopener">www.ge.ch &nearr;</a>
   <a class="meta" href="https://www.ge.ch/organisation/office-cantonal-population-migrations-ocpm" target="_blank" rel="noopener">Office cantonal de la population et des migrations (OCPM), République et canton de Genève</a>
   <span class="live"><i></i>checked every night</span>
-  <div class="stamp"><span>Checked today</span><b data-today>21 September 2026</b></div>
+  <div class="stamp"><span data-today-label="Checked today">Last checked</span><b data-today>23 September 2026</b></div>
 </div></div>
 
 
@@ -468,7 +468,7 @@
 <section class="sec"><div class="wrap">
   <p class="eyebrow">Real exam — How the test works</p>
   <h2>OCPM written test — official catalogue</h2>
-  <p class="lead">Real exam: written test by convocation at the OCPM (in French), 45 questions — no oral knowledge exam. Geneva publishes the same catalogue twice: a PDF giving only the right answers, and an online quiz that also shows the wrong options. From it, 116 questions come whole from the canton, options included. We adapt the other 31: 21 transcribed from the tutorial modules, where the wrong options are ours, and 10 where the canton expects several answers that we bundle into one. The catalogue is titled « 141 questions » but publishes 126: at the exam you may meet questions that are not here.</p>
+  <p class="lead">Real exam: written test by convocation at the OCPM (in French) — no oral knowledge exam. Geneva publishes the same catalogue twice: a PDF giving only the right answers, and an online quiz that also shows the wrong options. From it, some questions come whole from the canton, options included. We adapt the others: some transcribed from the tutorial modules, where the wrong options are ours, and some where the canton expects several answers that we bundle into one. The catalogue announces more questions than it publishes: at the exam you may meet questions that are not here.</p>
   <div class="specs">
     <div class="spec"><div class="k">Format</div><div class="v ">Written (MCQ)</div>
       </div><div class="spec"><div class="k">Question language</div><div class="v ">French</div>
@@ -652,11 +652,16 @@ if(!window.__cfilter){window.__cfilter=function(input){
   // the date in the source is what the build knew, and is replaced here by the reader's own day.
   // A source checked every night is the claim; a date frozen at build time would deny it.
   try{
-    var t=document.querySelector("[data-today]");
+    var t=document.querySelector("[data-today]"), lab=document.querySelector("[data-today-label]");
     // the month names are the ones labels.json already holds, so the date reads the same
     // whether the build wrote it or the page did — toLocaleDateString words it differently
     var M=["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"], d=new Date();
-    if(t)t.textContent=d.getDate()+" "+M[d.getMonth()]+" "+d.getFullYear();
+    if(t){
+      t.textContent=d.getDate()+" "+M[d.getMonth()]+" "+d.getFullYear();
+      // the label may only say "today" once the date beside it really is today: without this
+      // script the page keeps the build date, and must call it what it is.
+      if(lab)lab.textContent=lab.getAttribute("data-today-label");
+    }
   }catch(e){}
   var NAV={
     en:{cantons:"Cantons",home:"Home",press:"Press",presskit:"Press kit",eng:"Engineering",terms:"Terms",transp:"Transparency",privacy:"Privacy"},
