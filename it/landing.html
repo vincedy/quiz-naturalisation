@@ -88,6 +88,33 @@
   .pub{font-size:.74rem;text-transform:uppercase;letter-spacing:.07em;color:var(--red);font-weight:800}
   .ph{font-weight:650;line-height:1.35}
   .pmeta{margin-top:auto;font-size:.85rem;color:var(--muted);display:flex;justify-content:space-between;align-items:center}
+
+  /* Referenze istituzionali — una scheda per cantone. Riusa i token della sezione stampa
+     (larghezza, bordo, raggio, il rosso dell'occhiello): cresce di una scheda quando un altro
+     cantone si aggiunge, senza che quelle esistenti vengano toccate. */
+  .refs{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;align-items:stretch}
+  .ref{display:flex;flex-direction:column;width:480px;max-width:100%;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:22px 24px;gap:10px}
+  .ref .head{display:flex;align-items:center;gap:12px}
+  .ref .head img.crest{width:34px;height:34px;object-fit:contain;flex:0 0 34px}
+  .ref .titles{min-width:0}
+  .ref .logo{height:44px;width:auto;max-width:170px;object-fit:contain;margin-left:auto;opacity:.9}
+  .ref .ct{font-size:.74rem;text-transform:uppercase;letter-spacing:.07em;color:var(--red);font-weight:800}
+  .ref .who{font-weight:700;font-size:1.02rem;line-height:1.3}
+  .ref .what{color:var(--muted);font-size:.93rem;line-height:1.55;margin:0}
+  .ref blockquote{margin:4px 0 0;padding:14px 16px;background:var(--soft);border-radius:10px;border-left:3px solid var(--red)}
+  .ref blockquote .orig{font-size:.95rem;line-height:1.5;font-weight:600;font-style:italic;margin:0}
+  .ref blockquote .tr{font-size:.88rem;line-height:1.5;color:var(--muted);margin:8px 0 0}
+  .ref blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:var(--muted)}
+  .ref .also{margin-top:auto;padding-top:16px;display:flex;flex-direction:column;gap:6px}
+  .ref .alsolbl{font-size:.74rem;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);font-weight:700;margin-bottom:2px}
+  .ref .alsorow{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:10px 12px;border:1px solid var(--border);border-radius:10px;background:var(--bg);transition:.16s}
+  .ref a.alsorow:hover{border-color:var(--red);background:var(--soft)}
+  .ref .alsorow.static{opacity:.72}
+  .ref .alsorow .n{font-weight:650;font-size:.9rem;line-height:1.3}
+  .ref a.alsorow .n{color:var(--red)}
+  .ref .alsorow .d{font-size:.8rem;color:var(--muted);white-space:nowrap}
+  .refnote{text-align:center;color:var(--muted);font-size:.82rem;max-width:62ch;margin:26px auto 0;line-height:1.6}
+
   .pmeta .read{color:var(--red);font-weight:700}
 
   .spot{background:var(--navy);color:#fff}
@@ -185,6 +212,7 @@
       <a class="link" data-nav="home" href="#" onclick="return __toTop()">Home</a>
       <a class="link" data-nav="cantons" href="../cantons/it/index.html">Cantons</a>
       <a class="link" data-nav="press" href="#" onclick="return __toPress()">Press</a>
+      <a class="link" data-nav="refs" href="#" onclick="return __toRefs()">References</a>
       <a class="link" data-nav="transp" href="transparency.html">Transparency</a>
       <a class="link" data-nav="eng" href="engineering.html">Engineering</a>
       <a class="link" data-nav="privacy" href="privacy-policy.html">Privacy</a><a class="link" data-nav="terms" href="terms.html">Terms</a>
@@ -237,7 +265,7 @@
     
     <section class="block founder"><div class="wrap in"><img loading="lazy" src="../assets/founder.jpg" alt="Vincenzo Casini"><div><h2>Chi c'&egrave; dietro</h2><p>Mi chiamo Vincenzo Casini. Sono italiano, vivo a Morges dal 2014. Di mestiere sono ingegnere e sviluppatore: tech lead, architetto software, con l'intelligenza artificiale al centro del lavoro. Quest'app &egrave; nata per preparare il mio esame di naturalizzazione, e l'ho resa gratuita per tutti i candidati, in tutta la Svizzera.</p><p style="margin-top:18px"><a class="pklink" href="https://www.linkedin.com/in/vincedx/" target="_blank" rel="noopener">LinkedIn &rarr;</a></p></div></div></section>
 
-    <section class="block press-section"><div class="wrap">
+    <section id="press" class="block press-section"><div class="wrap">
       <p class="eyebrow">Ne hanno parlato</p><h2 class="sec">La stampa svizzera l'ha provata</h2>
       <div class="press">
         <a class="pcard" href="../press/it/tsri.html"><div class="pthumb" style="background-image:url('https://media-tsri.wepublish.cloud/fa4a5178-495a-49de-a52e-d2dcdd5e87e3?resize=%7B%22width%22:1200,%22withoutEnlargement%22:true,%22fit%22:%22cover%22,%22position%22:%22top%22%7D&amp;quality=80&amp;sig=mMWhZNduBKaVz8yTpis9_As_DScZKmSZ6FaMYxEbLgx098tZRbJ6ru0aktL309RQaZa4kotvuqJRIJoBvPPUDg')"></div><div class="pbody"><div class="pub">Ts&uuml;ri.ch &middot; Z&uuml;rich</div><div class="ph">&laquo;&nbsp;Die 15 schwierigsten Einb&uuml;rgerungsfragen &ndash; wie viele weisst du?&nbsp;&raquo;</div><div class="pmeta"><span>Set 2026</span><span class="read">Leggi qui &rarr;</span></div></div></a><a class="pcard" href="../press/it/leman-bleu.html"><div class="pthumb" style="background-image:url('https://www.lemanbleu.ch/Htdocs/Files/Videos/Pictures/25271.jpg?CacheBusterGUID=c6cb0415-04f9-42dc-a0fb-d364dfcd23c5')"></div><div class="pbody"><div class="pub">L&eacute;man Bleu &middot; Gen&egrave;ve</div><div class="ph">&laquo;&nbsp;Devenir Suisse, &ccedil;a se r&eacute;vise aussi sur son t&eacute;l&eacute;phone&nbsp;&raquo;</div><div class="pmeta"><span>Ago 2026</span><span class="read">Leggi qui &rarr;</span></div></div></a>
@@ -250,6 +278,52 @@
 
     
     <section class="block" style="padding:0 0 54px"><div class="wrap" style="text-align:center"></div></section>
+
+    <section id="refs" class="block refs-section"><div class="wrap">
+      <p class="eyebrow">Servizi d'integrazione</p><h2 class="sec">Gli uffici pubblici che la conoscono</h2>
+      <div class="refs">
+        <div class="ref">
+          <div class="head">
+            <img class="crest" src="../assets/crests/AG.png" alt="">
+            <div class="titles"><div class="ct">Argovia</div><div class="who">Anlaufstelle Integration Aargau</div></div>
+            <img class="logo" src="../assets/offices/integration-aargau.png" alt="Integration Aargau">
+          </div>
+          <p class="what">Ha sostenuto il lavoro sui contenuti argoviesi dell'applicazione e l'ha presentata ai propri iscritti nella newsletter di agosto 2026.</p>
+          <blockquote>
+            <p class="orig">&laquo;&nbsp;L'applicazione &egrave; stata sviluppata da Vincenzo Casini durante la sua stessa procedura di naturalizzazione. L'Anlaufstelle Integration Aargau lo ha sostenuto nello sviluppo per il cantone di Argovia.&nbsp;&raquo;</p>
+            <cite>Anlaufstelle Integration Aargau &mdash; newsletter di agosto 2026, tradotto dal tedesco</cite>
+          </blockquote>
+          <div class="also">
+            <div class="alsolbl">L'hanno presentata anche</div>
+            <a class="alsorow" href="https://us4.campaign-archive.com/?u=2720c2b60be0725ac98b8c733&amp;id=4b54df8355" target="_blank" rel="noopener">
+              <span class="n">Fachstelle Integration Zofingenregio</span>
+              <span class="d">newsletter di settembre 2026 &nearr;</span>
+            </a>
+            <div class="alsorow static">
+              <span class="n">Integration Region Baden</span>
+              <span class="d">newsletter di agosto 2026</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- SCHEDA NEUCHATEL — PARCHEGGIATA, NON CANCELLATA. Si riesuma togliendo questo commento
+         il giorno in cui il cantone mette online il referenziamento: la scheda e pronta e
+         manca solo l'indirizzo vero di ne.ch al posto di href="#". Finche quella pagina non
+         e pubblica, qui non si mostra nulla.
+
+        <div class="ref" data-preview="neuchatel" style="outline:2px dashed rgba(216,35,42,.45);outline-offset:6px">
+          <div class="head">
+            <img class="crest" src="../assets/crests/NE.png" alt="">
+            <div class="titles"><div class="ct">Neuch&acirc;tel</div><div class="who">Service de la coh&eacute;sion multiculturelle</div></div>
+            <img class="logo" src="../assets/offices/ne-canton.svg" alt="R&eacute;publique et Canton de Neuch&acirc;tel">
+          </div>
+          <p class="what">Referenzia l'applicazione sul sito del cantone come strumento complementare e gratuito di preparazione all'esame, e partecipa ai costi d'infrastruttura.</p>
+          <div class="also">Pagina cantonale: <a href="#" target="_blank" rel="noopener">ne.ch &nearr;</a></div>
+        </div>
+        -->
+      </div>
+      <p class="refnote">Sono gli uffici d'integrazione, con parole loro. Nessun cantone ha emesso una raccomandazione ufficiale, e questa pagina non ne rivendica nessuna.</p>
+    </div></section>
 
     <section class="block quotes"><div class="wrap"><p class="eyebrow">Recensioni</p><h2 class="sec">Dicono di lei</h2><div class="qgrid"><div class="quote"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="txt">&laquo;&nbsp;Nel mio comune è cambiato il sindaco da poco e le domande erano già aggiornate. Test passato senza errori.&nbsp;&raquo;</p><div class="by">Carlo A. &middot; Google Play</div></div><div class="quote"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="txt">&laquo;&nbsp;Ho superato l'esame di naturalizzazione in Argovia, 43 su 45, con questa app.&nbsp;&raquo;</p><div class="by">R. &middot; Community</div></div><div class="quote"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="txt">&laquo;&nbsp;Questa app è diventata un rituale quotidiano, in coppia. Imprescindibile.&nbsp;&raquo;</p><div class="by">pyrame &middot; App Store</div></div><div class="quote"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="txt">&laquo;&nbsp;Vorrei che questa app fosse esistita quando studiavo per l'esame: mi ero fatto le flashcard da solo, qui è già tutto pronto.&nbsp;&raquo;</p><div class="by">Swissstarr &middot; App Store</div></div><div class="quote"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="txt">&laquo;&nbsp;Esattamente ciò di cui avevo bisogno. Il coaching adattivo individua i miei punti deboli e la simulazione d'esame è davvero utile.&nbsp;&raquo;</p><div class="by">schachaf a. &middot; Google Play</div></div><div class="quote"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="txt">&laquo;&nbsp;Si vede che è fatta da chi sta davvero preparando il test, non da una software house. Un'attenzione ai dettagli incredibile.&nbsp;&raquo;</p><div class="by">App Store</div></div><div class="quote more"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="txt">&laquo;&nbsp;La consiglio a chiunque voglia richiedere la cittadinanza: essendo una procedura cantonale, guida bene su cosa aspettarsi. Questionari pertinenti e coinvolgenti.&nbsp;&raquo;</p><div class="by">Julia R. &middot; Google Play</div></div><div class="quote more"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="txt">&laquo;&nbsp;Marathon e RapidFire le uso quando ho cinque minuti o sono sui mezzi. Imparo divertendomi senza nemmeno accorgermene.&nbsp;&raquo;</p><div class="by">Maria T. &middot; Google Play</div></div><div class="quote more"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="txt">&laquo;&nbsp;Super facile da usare e molto pratica, la adoro. E il vantaggio più grande: niente pubblicità e nessun paywall. Mi aiuta tantissimo.&nbsp;&raquo;</p><div class="by">Guillaume P. &middot; Google Play</div></div><div class="quote more"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="txt">&laquo;&nbsp;Lo sviluppatore è molto attivo dietro le quinte, l'app è davvero ottima e sembra avere tantissime domande utili per allenarsi.&nbsp;&raquo;</p><div class="by">David L. &middot; Google Play</div></div><div class="quote more"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="txt">&laquo;&nbsp;Sono svizzera ma la adoro: facciamo persino dei piccoli quiz in macchina, è davvero fantastica.&nbsp;&raquo;</p><div class="by">Alex S. &middot; Google Play</div></div><div class="quote more"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="txt">&laquo;&nbsp;Interfaccia pulita, dark mode bellissima, contenuto enorme. La modalità Cantoni con stemmi e mappe è educativa e divertente. Consigliatissima.&nbsp;&raquo;</p><div class="by">Consuela M. &middot; Google Play</div></div><div class="quote more"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="txt">&laquo;&nbsp;Avevo trovato una risposta sbagliata e lo sviluppatore mi ha contattato subito per risolverla. Valutazione portata a 5 stelle.&nbsp;&raquo;</p><div class="by">Giovanni C. &middot; Google Play</div></div><div class="quote more"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="txt">&laquo;&nbsp;La modalità Cantoni con stemmi e mappe è sorprendentemente divertente, anche fuori dalla preparazione. Aggiungi le flashcard a ripetizione spaziata e hai uno strumento completo.&nbsp;&raquo;</p><div class="by">Sophie R. &middot; App Store</div></div></div><button type="button" class="morebtn" onclick="__moreRev(this)">Mostra altre recensioni</button></div></section>
 
@@ -270,6 +344,7 @@
   // keeps the helpers still called from the markup below.
   window.__toTop=function(){var mn=document.getElementById("mnav");if(mn)mn.checked=false;window.scrollTo({top:0,behavior:"smooth"});return false;};
   window.__toPress=function(){var mn=document.getElementById("mnav");if(mn)mn.checked=false;var b=document.querySelector(".press-section");if(b)b.scrollIntoView({behavior:"smooth"});return false;};
+  window.__toRefs=function(){var mn=document.getElementById("mnav");if(mn)mn.checked=false;var b=document.querySelector(".refs-section");if(b)b.scrollIntoView({behavior:"smooth"});return false;};
   window.__contact=function(e){if(e&&e.preventDefault)e.preventDefault();
     var m="swisscitizenshiptest@gmail.com",l=(document.documentElement.lang||"en").slice(0,2);
     var M={en:"Contact: "+m+"\n\nOpen your email app to write to us?",
@@ -283,6 +358,7 @@
   // used to hide/show langblocks; here it would only mutate <html lang> and briefly relabel the
   // nav in the wrong language for a returning visitor whose localStorage remembers another one.
   if(location.hash==="#press"){setTimeout(function(){var b=document.querySelector(".press-section");if(b)b.scrollIntoView();},60);}
+  if(location.hash==="#refs"){setTimeout(function(){var b=document.querySelector(".refs-section");if(b)b.scrollIntoView();},60);}
 })();
 </script><script>window.__moreRev=function(b){var g=b.parentElement.querySelector(".qgrid");if(g)g.classList.add("open");b.style.display="none";};</script><script>
 (function(){
@@ -299,10 +375,10 @@
   }catch(e){}
   // The page is in one language: the menu is put in it and the flags link to the siblings.
   var L="it",NAV={
-    en:{cantons:"Cantons",home:"Home",press:"Press",eng:"Engineering",terms:"Terms",transp:"Transparency",privacy:"Privacy"},
-    fr:{cantons:"Cantons",home:"Accueil",press:"Presse",eng:"Ing\u00e9nierie",terms:"Conditions",transp:"Transparence",privacy:"Confidentialit\u00e9"},
-    de:{cantons:"Kantone",home:"Start",press:"Presse",eng:"Technik",terms:"Nutzungsbedingungen",transp:"Transparenz",privacy:"Datenschutz"},
-    it:{cantons:"Cantoni",home:"Home",press:"Stampa",eng:"Ingegneria",terms:"Condizioni",transp:"Trasparenza",privacy:"Privacy"}
+    en:{cantons:"Cantons",home:"Home",press:"Press",refs:"References",eng:"Engineering",terms:"Terms",transp:"Transparency",privacy:"Privacy"},
+    fr:{cantons:"Cantons",home:"Accueil",press:"Presse",refs:"Références",eng:"Ing\u00e9nierie",terms:"Conditions",transp:"Transparence",privacy:"Confidentialit\u00e9"},
+    de:{cantons:"Kantone",home:"Start",press:"Presse",refs:"Referenzen",eng:"Technik",terms:"Nutzungsbedingungen",transp:"Transparenz",privacy:"Datenschutz"},
+    it:{cantons:"Cantoni",home:"Home",press:"Stampa",refs:"Referenze",eng:"Ingegneria",terms:"Condizioni",transp:"Trasparenza",privacy:"Privacy"}
   },n=NAV[L]||NAV.en;
   document.querySelectorAll("[data-nav]").forEach(function(a){
     var k=a.getAttribute("data-nav");if(n&&n[k])a.textContent=n[k];});

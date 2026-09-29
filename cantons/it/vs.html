@@ -107,6 +107,31 @@
   .pmeta{margin-top:auto;font-size:.85rem;color:var(--muted);display:flex;justify-content:space-between;align-items:center}
   .pmeta .read{color:var(--red);font-weight:700}
 
+  /* Institutional references — one card per canton. Reuses the press section's own tokens
+     (width, border, radius, the eyebrow red): it grows by one card when another canton joins,
+     without any existing card being touched. */
+  .refs{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;align-items:stretch}
+  .ref{display:flex;flex-direction:column;width:480px;max-width:100%;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:22px 24px;gap:10px}
+  .ref .head{display:flex;align-items:center;gap:12px}
+  .ref .head img.crest{width:34px;height:34px;object-fit:contain;flex:0 0 34px}
+  .ref .titles{min-width:0}
+  .ref .logo{height:44px;width:auto;max-width:170px;object-fit:contain;margin-left:auto;opacity:.9}
+  .ref .ct{font-size:.74rem;text-transform:uppercase;letter-spacing:.07em;color:var(--red);font-weight:800}
+  .ref .who{font-weight:700;font-size:1.02rem;line-height:1.3}
+  .ref .what{color:var(--muted);font-size:.93rem;line-height:1.55;margin:0}
+  .ref blockquote{margin:4px 0 0;padding:14px 16px;background:var(--soft);border-radius:10px;border-left:3px solid var(--red)}
+  .ref blockquote .orig{font-size:.95rem;line-height:1.5;font-weight:600;font-style:italic;margin:0}
+  .ref blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:var(--muted)}
+  .ref .also{margin-top:auto;padding-top:16px;display:flex;flex-direction:column;gap:6px}
+  .ref .alsolbl{font-size:.74rem;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);font-weight:700;margin-bottom:2px}
+  .ref .alsorow{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:10px 12px;border:1px solid var(--border);border-radius:10px;background:var(--bg);transition:.16s}
+  .ref a.alsorow:hover{border-color:var(--red);background:var(--soft)}
+  .ref .alsorow.static{opacity:.72}
+  .ref .alsorow .n{font-weight:650;font-size:.9rem;line-height:1.3}
+  .ref a.alsorow .n{color:var(--red)}
+  .ref .alsorow .d{font-size:.8rem;color:var(--muted);white-space:nowrap}
+  .refnote{text-align:center;color:var(--muted);font-size:.82rem;max-width:62ch;margin:26px auto 0;line-height:1.6}
+
   .spot{background:var(--navy);color:#fff}
   .spot .in{display:flex;gap:36px;align-items:center}
   .spot img{width:46%;border-radius:16px;box-shadow:0 14px 40px rgba(0,0,0,.4)}
@@ -426,6 +451,7 @@
       <a class="link" data-nav="home" href="../../it/landing.html">Home</a>
       <a class="link" data-nav="cantons" href="../../cantons/it/index.html">Cantons</a>
       <a class="link" data-nav="press" href="../../it/landing.html#press">Press</a>
+      <a class="link" data-nav="refs" href="../../it/landing.html#refs">References</a>
       <a class="link" data-nav="transp" href="../../it/transparency.html">Transparency</a>
       <a class="link" data-nav="eng" href="../../it/engineering.html">Engineering</a>
       <a class="link" data-nav="privacy" href="../../it/privacy-policy.html">Privacy</a><a class="link" data-nav="terms" href="../../it/terms.html">Terms</a>
@@ -453,7 +479,7 @@
   <a class="host" href="https://www.vs.ch/web/spm/naturalisation-ordinaire" target="_blank" rel="noopener">www.vs.ch &nearr;</a>
   <a class="meta" href="https://www.vs.ch/web/spm" target="_blank" rel="noopener">Service de la population et des migrations du Canton du Valais (SPM)</a>
   <span class="live"><i></i>verificata ogni notte</span>
-  <div class="stamp"><span data-today-label="Verificata oggi">Ultima verifica</span><b data-today>23 settembre 2026</b></div>
+  <div class="stamp"><span data-today-label="Verificata oggi">Ultima verifica</span><b data-today>29 settembre 2026</b></div>
 </div></div>
 
 
@@ -678,10 +704,10 @@ if(!window.__cfilter){window.__cfilter=function(input){
     }
   }catch(e){}
   var NAV={
-    en:{cantons:"Cantons",home:"Home",press:"Press",eng:"Engineering",terms:"Terms",transp:"Transparency",privacy:"Privacy"},
-    fr:{cantons:"Cantons",home:"Accueil",press:"Presse",eng:"Ing\u00e9nierie",terms:"Conditions",transp:"Transparence",privacy:"Confidentialit\u00e9"},
-    de:{cantons:"Kantone",home:"Start",press:"Presse",eng:"Technik",terms:"Nutzungsbedingungen",transp:"Transparenz",privacy:"Datenschutz"},
-    it:{cantons:"Cantoni",home:"Home",press:"Stampa",eng:"Ingegneria",terms:"Condizioni",transp:"Trasparenza",privacy:"Privacy"}
+    en:{cantons:"Cantons",home:"Home",press:"Press",refs:"References",eng:"Engineering",terms:"Terms",transp:"Transparency",privacy:"Privacy"},
+    fr:{cantons:"Cantons",home:"Accueil",press:"Presse",refs:"R\u00e9f\u00e9rences",eng:"Ing\u00e9nierie",terms:"Conditions",transp:"Transparence",privacy:"Confidentialit\u00e9"},
+    de:{cantons:"Kantone",home:"Start",press:"Presse",refs:"Referenzen",eng:"Technik",terms:"Nutzungsbedingungen",transp:"Transparenz",privacy:"Datenschutz"},
+    it:{cantons:"Cantoni",home:"Home",press:"Stampa",refs:"Referenze",eng:"Ingegneria",terms:"Condizioni",transp:"Trasparenza",privacy:"Privacy"}
   };
   var n=NAV[L]||NAV.en;
   document.querySelectorAll("[data-nav]").forEach(function(a){

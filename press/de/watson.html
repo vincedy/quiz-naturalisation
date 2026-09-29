@@ -82,7 +82,7 @@
 </head>
 <body>
 
-<header class="site"><input type="checkbox" id="mnav"><div class="wrap navbar"><a class="brand" href="../../de/landing.html"><img src="../../app/icon.png" alt="">Swiss Naturalization Test</a><label class="burger" for="mnav" aria-label="Menu"><span></span><span></span><span></span></label><nav class="main"><a class="link" data-nav="home" href="../../de/landing.html">Home</a><a class="link" data-nav="cantons" href="../../cantons/de/index.html">Cantons</a><a class="link" data-nav="press" href="../../de/landing.html#press">Press</a><a class="link" data-nav="transp" href="../../de/transparency.html">Transparency</a><a class="link" data-nav="eng" href="../../de/engineering.html">Engineering</a><a class="link" data-nav="privacy" href="../../de/privacy-policy.html">Privacy</a><a class="link" data-nav="terms" href="../../de/terms.html">Terms</a><span class="langs"><a data-lang="en" href="../watson.html">EN</a><a data-lang="fr" href="../fr/watson.html">FR</a><a data-lang="de" href="../de/watson.html">DE</a><a data-lang="it" href="../it/watson.html">IT</a></span></nav></div></header>
+<header class="site"><input type="checkbox" id="mnav"><div class="wrap navbar"><a class="brand" href="../../de/landing.html"><img src="../../app/icon.png" alt="">Swiss Naturalization Test</a><label class="burger" for="mnav" aria-label="Menu"><span></span><span></span><span></span></label><nav class="main"><a class="link" data-nav="home" href="../../de/landing.html">Home</a><a class="link" data-nav="cantons" href="../../cantons/de/index.html">Cantons</a><a class="link" data-nav="press" href="../../de/landing.html#press">Press</a><a class="link" data-nav="refs" href="../../de/landing.html#refs">References</a><a class="link" data-nav="transp" href="../../de/transparency.html">Transparency</a><a class="link" data-nav="eng" href="../../de/engineering.html">Engineering</a><a class="link" data-nav="privacy" href="../../de/privacy-policy.html">Privacy</a><a class="link" data-nav="terms" href="../../de/terms.html">Terms</a><span class="langs"><a data-lang="en" href="../watson.html">EN</a><a data-lang="fr" href="../fr/watson.html">FR</a><a data-lang="de" href="../de/watson.html">DE</a><a data-lang="it" href="../it/watson.html">IT</a></span></nav></div></header>
 <article class="article"><a class="back" href="../../de/landing.html#press">← Zur Presse-Übersicht</a><p class="eyebrow">In der Presse &middot; watson</p><img class="ahero" src="https://www.watson.ch/fr/imgdb/be83/Qx,A,0,24,2000,1125,1043,664,213,189/8248851515718932" alt=""><div class="abody">
 <h2>Verdienen Sie den Schweizer Pass? Diese App verrät es</h2>
 <p><em>Von Matthias Niederberger · 24.07.2026</em></p>
@@ -126,10 +126,10 @@
     }
   }catch(e){}
   // The page is in one language: the menu is put in it and the flags link to the siblings.
-  var L="de",NAV={en:{cantons:"Cantons",home:"Home",press:"Press",eng:"Engineering",terms:"Terms",transp:"Transparency",privacy:"Privacy"},
-    fr:{cantons:"Cantons",home:"Accueil",press:"Presse",eng:"Ing\u00e9nierie",terms:"Conditions",transp:"Transparence",privacy:"Confidentialité"},
-    de:{cantons:"Kantone",home:"Start",press:"Presse",eng:"Technik",terms:"Nutzungsbedingungen",transp:"Transparenz",privacy:"Datenschutz"},
-    it:{cantons:"Cantoni",home:"Home",press:"Stampa",eng:"Ingegneria",terms:"Condizioni",transp:"Trasparenza",privacy:"Privacy"}},n=NAV[L]||NAV.en;
+  var L="de",NAV={en:{cantons:"Cantons",home:"Home",press:"Press",refs:"References",eng:"Engineering",terms:"Terms",transp:"Transparency",privacy:"Privacy"},
+    fr:{cantons:"Cantons",home:"Accueil",press:"Presse",refs:"R\u00e9f\u00e9rences",eng:"Ing\u00e9nierie",terms:"Conditions",transp:"Transparence",privacy:"Confidentialité"},
+    de:{cantons:"Kantone",home:"Start",press:"Presse",refs:"Referenzen",eng:"Technik",terms:"Nutzungsbedingungen",transp:"Transparenz",privacy:"Datenschutz"},
+    it:{cantons:"Cantoni",home:"Home",press:"Stampa",refs:"Referenze",eng:"Ingegneria",terms:"Condizioni",transp:"Trasparenza",privacy:"Privacy"}},n=NAV[L]||NAV.en;
   document.querySelectorAll("[data-nav]").forEach(function(a){
     var k=a.getAttribute("data-nav");if(n&&n[k])a.textContent=n[k];});
   document.querySelectorAll(".langs a").forEach(function(a){

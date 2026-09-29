@@ -90,6 +90,31 @@
   .pmeta{margin-top:auto;font-size:.85rem;color:var(--muted);display:flex;justify-content:space-between;align-items:center}
   .pmeta .read{color:var(--red);font-weight:700}
 
+  /* Institutionelle Referenzen — eine Karte pro Kanton. Verwendet die Tokens des Presseblocks
+     (Breite, Rahmen, Radius, das Rot der Dachzeile): Kommt ein weiterer Kanton dazu, wächst der
+     Block um eine Karte, ohne dass eine bestehende Karte angefasst wird. */
+  .refs{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;align-items:stretch}
+  .ref{display:flex;flex-direction:column;width:480px;max-width:100%;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:22px 24px;gap:10px}
+  .ref .head{display:flex;align-items:center;gap:12px}
+  .ref .head img.crest{width:34px;height:34px;object-fit:contain;flex:0 0 34px}
+  .ref .titles{min-width:0}
+  .ref .logo{height:44px;width:auto;max-width:170px;object-fit:contain;margin-left:auto;opacity:.9}
+  .ref .ct{font-size:.74rem;text-transform:uppercase;letter-spacing:.07em;color:var(--red);font-weight:800}
+  .ref .who{font-weight:700;font-size:1.02rem;line-height:1.3}
+  .ref .what{color:var(--muted);font-size:.93rem;line-height:1.55;margin:0}
+  .ref blockquote{margin:4px 0 0;padding:14px 16px;background:var(--soft);border-radius:10px;border-left:3px solid var(--red)}
+  .ref blockquote .orig{font-size:.95rem;line-height:1.5;font-weight:600;font-style:italic;margin:0}
+  .ref blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:var(--muted)}
+  .ref .also{margin-top:auto;padding-top:16px;display:flex;flex-direction:column;gap:6px}
+  .ref .alsolbl{font-size:.74rem;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);font-weight:700;margin-bottom:2px}
+  .ref .alsorow{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:10px 12px;border:1px solid var(--border);border-radius:10px;background:var(--bg);transition:.16s}
+  .ref a.alsorow:hover{border-color:var(--red);background:var(--soft)}
+  .ref .alsorow.static{opacity:.72}
+  .ref .alsorow .n{font-weight:650;font-size:.9rem;line-height:1.3}
+  .ref a.alsorow .n{color:var(--red)}
+  .ref .alsorow .d{font-size:.8rem;color:var(--muted);white-space:nowrap}
+  .refnote{text-align:center;color:var(--muted);font-size:.82rem;max-width:62ch;margin:26px auto 0;line-height:1.6}
+
   .spot{background:var(--navy);color:#fff}
   .spot .in{display:flex;gap:36px;align-items:center}
   .spot img{width:46%;border-radius:16px;box-shadow:0 14px 40px rgba(0,0,0,.4)}
@@ -185,6 +210,7 @@
       <a class="link" data-nav="home" href="#" onclick="return __toTop()">Home</a>
       <a class="link" data-nav="cantons" href="../cantons/de/index.html">Cantons</a>
       <a class="link" data-nav="press" href="#" onclick="return __toPress()">Press</a>
+      <a class="link" data-nav="refs" href="#" onclick="return __toRefs()">References</a>
       <a class="link" data-nav="transp" href="transparency.html">Transparency</a>
       <a class="link" data-nav="eng" href="engineering.html">Engineering</a>
       <a class="link" data-nav="privacy" href="privacy-policy.html">Privacy</a><a class="link" data-nav="terms" href="terms.html">Terms</a>
@@ -237,7 +263,7 @@
     
     <section class="block founder"><div class="wrap in"><img loading="lazy" src="../assets/founder.jpg" alt="Vincenzo Casini"><div><h2>Wer dahintersteckt</h2><p>Ich heisse Vincenzo Casini. Ich bin Italiener und lebe seit 2014 in Morges. Von Beruf bin ich Ingenieur und Entwickler: Tech Lead, Software-Architekt, mit k&uuml;nstlicher Intelligenz im Zentrum meiner Arbeit. Diese App entstand, um meine eigene Einb&uuml;rgerungspr&uuml;fung vorzubereiten, und ich habe sie f&uuml;r alle Kandidatinnen und Kandidaten in der ganzen Schweiz gratis gemacht.</p><p style="margin-top:18px"><a class="pklink" href="https://www.linkedin.com/in/vincedx/" target="_blank" rel="noopener">LinkedIn &rarr;</a></p></div></div></section>
 
-    <section class="block press-section"><div class="wrap">
+    <section id="press" class="block press-section"><div class="wrap">
       <p class="eyebrow">Bekannt aus</p><h2 class="sec">Die Schweizer Presse hat sie getestet</h2>
       <div class="press">
         <a class="pcard" href="../press/de/tsri.html"><div class="pthumb" style="background-image:url('https://media-tsri.wepublish.cloud/fa4a5178-495a-49de-a52e-d2dcdd5e87e3?resize=%7B%22width%22:1200,%22withoutEnlargement%22:true,%22fit%22:%22cover%22,%22position%22:%22top%22%7D&amp;quality=80&amp;sig=mMWhZNduBKaVz8yTpis9_As_DScZKmSZ6FaMYxEbLgx098tZRbJ6ru0aktL309RQaZa4kotvuqJRIJoBvPPUDg')"></div><div class="pbody"><div class="pub">Ts&uuml;ri.ch &middot; Z&uuml;rich</div><div class="ph">&laquo;&nbsp;Die 15 schwierigsten Einb&uuml;rgerungsfragen &ndash; wie viele weisst du?&nbsp;&raquo;</div><div class="pmeta"><span>September 2026</span><span class="read">Hier lesen &rarr;</span></div></div></a><a class="pcard" href="../press/de/leman-bleu.html"><div class="pthumb" style="background-image:url('https://www.lemanbleu.ch/Htdocs/Files/Videos/Pictures/25271.jpg?CacheBusterGUID=c6cb0415-04f9-42dc-a0fb-d364dfcd23c5')"></div><div class="pbody"><div class="pub">L&eacute;man Bleu &middot; Gen&egrave;ve</div><div class="ph">&laquo;&nbsp;Devenir Suisse, &ccedil;a se r&eacute;vise aussi sur son t&eacute;l&eacute;phone&nbsp;&raquo;</div><div class="pmeta"><span>September 2026</span><span class="read">Hier lesen &rarr;</span></div></div></a>
@@ -246,6 +272,52 @@
         <a class="pcard" href="../press/de/badener-tagblatt.html"><div class="pthumb" style="background-image:url('https://chm-images-prd.forward-publishing.io/2021/9/10/63633807-e620-4d5a-b5c2-ed8a788f784a.jpeg?s=a7539439ac2604b0555e6d2e93c24686&amp;w=1200&amp;auto=compress%2Cformat')"></div><div class="pbody"><div class="pub">Badener Tagblatt &middot; Aargau</div><div class="ph">&laquo;&nbsp;Mit dem Smartphone zum Schweizer Pass&nbsp;&raquo;</div><div class="pmeta"><span>Juli 2026</span><span class="read">Hier lesen &rarr;</span></div></div></a>
         <a class="pcard" href="../press/de/24-heures.html"><div class="pthumb" style="background-image:url('https://journaldemorges.ch/wp-content/uploads/2026/05/G1_6444-720x480.jpg')"></div><div class="pbody"><div class="pub">24 heures &middot; Journal de Morges</div><div class="ph">&laquo;&nbsp;Une application vaudoise pour r&eacute;ussir l'examen&nbsp;&raquo;</div><div class="pmeta"><span>Juni 2026</span><span class="read">Hier lesen &rarr;</span></div></div></a>
       </div>
+    </div></section>
+
+    <section id="refs" class="block refs-section"><div class="wrap">
+      <p class="eyebrow">Integrationsdienste</p><h2 class="sec">Die &ouml;ffentlichen Stellen, die sie kennen</h2>
+      <div class="refs">
+        <div class="ref">
+          <div class="head">
+            <img class="crest" src="../assets/crests/AG.png" alt="">
+            <div class="titles"><div class="ct">Aargau</div><div class="who">Anlaufstelle Integration Aargau</div></div>
+            <img class="logo" src="../assets/offices/integration-aargau.png" alt="Integration Aargau">
+          </div>
+          <p class="what">Sie hat die Arbeit an den Aargauer Inhalten der App unterst&uuml;tzt und die App im Newsletter vom August 2026 ihren Abonnentinnen und Abonnenten vorgestellt.</p>
+          <blockquote>
+            <p class="orig">&laquo;&nbsp;Die App wurde von Vincenzo Casini w&auml;hrend seinem eigenen Einb&uuml;rgerungsverfahren entwickelt. Die Anlaufstelle Integration Aargau hat ihn bei der Weiterentwicklung f&uuml;r den Kanton Aargau unterst&uuml;tzt.&nbsp;&raquo;</p>
+            <cite>Anlaufstelle Integration Aargau &mdash; Newsletter August 2026</cite>
+          </blockquote>
+          <div class="also">
+            <div class="alsolbl">Ebenfalls vorgestellt von</div>
+            <a class="alsorow" href="https://us4.campaign-archive.com/?u=2720c2b60be0725ac98b8c733&amp;id=4b54df8355" target="_blank" rel="noopener">
+              <span class="n">Fachstelle Integration Zofingenregio</span>
+              <span class="d">Newsletter September 2026 &nearr;</span>
+            </a>
+            <div class="alsorow static">
+              <span class="n">Integration Region Baden</span>
+              <span class="d">Newsletter August 2026</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- KARTE NEUENBURG — ZURUECKGESTELLT, NICHT GELOESCHT. Wieder aktivieren, indem dieser
+         Kommentar entfernt wird, sobald der Kanton seine Verweisung online stellt: die Karte
+         ist fertig, es fehlt nur die echte ne.ch-Adresse anstelle von href="#". Solange jene
+         Seite nicht oeffentlich ist, darf hier nichts angezeigt werden.
+
+        <div class="ref" data-preview="neuchatel" style="outline:2px dashed rgba(216,35,42,.45);outline-offset:6px">
+          <div class="head">
+            <img class="crest" src="../assets/crests/NE.png" alt="">
+            <div class="titles"><div class="ct">Neuenburg</div><div class="who">Service de la coh&eacute;sion multiculturelle</div></div>
+            <img class="logo" src="../assets/offices/ne-canton.svg" alt="R&eacute;publique et Canton de Neuch&acirc;tel">
+          </div>
+          <p class="what">Verweist auf der Website des Kantons auf die App als kostenloses, erg&auml;nzendes Hilfsmittel zur Pr&uuml;fungsvorbereitung und beteiligt sich an den Infrastrukturkosten.</p>
+          <div class="also">Kantonsseite: <a href="#" target="_blank" rel="noopener">ne.ch &nearr;</a></div>
+        </div>
+        -->
+      </div>
+      <p class="refnote">Es sind die Integrationsstellen, mit ihren eigenen Worten. Kein Kanton hat eine offizielle Empfehlung ausgesprochen, und diese Seite beansprucht keine.</p>
     </div></section>
 
     
@@ -270,6 +342,7 @@
   // keeps the helpers still called from the markup below.
   window.__toTop=function(){var mn=document.getElementById("mnav");if(mn)mn.checked=false;window.scrollTo({top:0,behavior:"smooth"});return false;};
   window.__toPress=function(){var mn=document.getElementById("mnav");if(mn)mn.checked=false;var b=document.querySelector(".press-section");if(b)b.scrollIntoView({behavior:"smooth"});return false;};
+  window.__toRefs=function(){var mn=document.getElementById("mnav");if(mn)mn.checked=false;var b=document.querySelector(".refs-section");if(b)b.scrollIntoView({behavior:"smooth"});return false;};
   window.__contact=function(e){if(e&&e.preventDefault)e.preventDefault();
     var m="swisscitizenshiptest@gmail.com",l=(document.documentElement.lang||"en").slice(0,2);
     var M={en:"Contact: "+m+"\n\nOpen your email app to write to us?",
@@ -283,6 +356,7 @@
   // used to hide/show langblocks; here it would only mutate <html lang> and briefly relabel the
   // nav in the wrong language for a returning visitor whose localStorage remembers another one.
   if(location.hash==="#press"){setTimeout(function(){var b=document.querySelector(".press-section");if(b)b.scrollIntoView();},60);}
+  if(location.hash==="#refs"){setTimeout(function(){var b=document.querySelector(".refs-section");if(b)b.scrollIntoView();},60);}
 })();
 </script><script>window.__moreRev=function(b){var g=b.parentElement.querySelector(".qgrid");if(g)g.classList.add("open");b.style.display="none";};</script><script>
 (function(){
@@ -299,10 +373,10 @@
   }catch(e){}
   // The page is in one language: the menu is put in it and the flags link to the siblings.
   var L="de",NAV={
-    en:{cantons:"Cantons",home:"Home",press:"Press",eng:"Engineering",terms:"Terms",transp:"Transparency",privacy:"Privacy"},
-    fr:{cantons:"Cantons",home:"Accueil",press:"Presse",eng:"Ing\u00e9nierie",terms:"Conditions",transp:"Transparence",privacy:"Confidentialit\u00e9"},
-    de:{cantons:"Kantone",home:"Start",press:"Presse",eng:"Technik",terms:"Nutzungsbedingungen",transp:"Transparenz",privacy:"Datenschutz"},
-    it:{cantons:"Cantoni",home:"Home",press:"Stampa",eng:"Ingegneria",terms:"Condizioni",transp:"Trasparenza",privacy:"Privacy"}
+    en:{cantons:"Cantons",home:"Home",press:"Press",refs:"References",eng:"Engineering",terms:"Terms",transp:"Transparency",privacy:"Privacy"},
+    fr:{cantons:"Cantons",home:"Accueil",press:"Presse",refs:"R\u00e9f\u00e9rences",eng:"Ing\u00e9nierie",terms:"Conditions",transp:"Transparence",privacy:"Confidentialit\u00e9"},
+    de:{cantons:"Kantone",home:"Start",press:"Presse",refs:"Referenzen",eng:"Technik",terms:"Nutzungsbedingungen",transp:"Transparenz",privacy:"Datenschutz"},
+    it:{cantons:"Cantoni",home:"Home",press:"Stampa",refs:"Referenze",eng:"Ingegneria",terms:"Condizioni",transp:"Trasparenza",privacy:"Privacy"}
   },n=NAV[L]||NAV.en;
   document.querySelectorAll("[data-nav]").forEach(function(a){
     var k=a.getAttribute("data-nav");if(n&&n[k])a.textContent=n[k];});
