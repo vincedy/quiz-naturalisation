@@ -82,7 +82,7 @@
 </head>
 <body>
 
-<header class="site"><input type="checkbox" id="mnav"><div class="wrap navbar"><a class="brand" href="../../fr/landing.html"><img src="../../app/icon.png" alt="">Swiss Naturalization Test</a><label class="burger" for="mnav" aria-label="Menu"><span></span><span></span><span></span></label><nav class="main"><a class="link" data-nav="home" href="../../fr/landing.html">Home</a><a class="link" data-nav="cantons" href="../../cantons/fr/index.html">Cantons</a><a class="link" data-nav="press" href="../../fr/landing.html#press">Press</a><a class="link" data-nav="presskit" href="../../fr/press-kit.html">Press kit</a><a class="link" data-nav="transp" href="../../fr/transparency.html">Transparency</a><a class="link" data-nav="eng" href="../../fr/engineering.html">Engineering</a><a class="link" data-nav="privacy" href="../../fr/privacy-policy.html">Privacy</a><a class="link" data-nav="terms" href="../../fr/terms.html">Terms</a><span class="langs"><a data-lang="en" href="../corriere-del-ticino.html">EN</a><a data-lang="fr" href="../fr/corriere-del-ticino.html">FR</a><a data-lang="de" href="../de/corriere-del-ticino.html">DE</a><a data-lang="it" href="../it/corriere-del-ticino.html">IT</a></span></nav></div></header>
+<header class="site"><input type="checkbox" id="mnav"><div class="wrap navbar"><a class="brand" href="../../fr/landing.html"><img src="../../app/icon.png" alt="">Swiss Naturalization Test</a><label class="burger" for="mnav" aria-label="Menu"><span></span><span></span><span></span></label><nav class="main"><a class="link" data-nav="home" href="../../fr/landing.html">Home</a><a class="link" data-nav="cantons" href="../../cantons/fr/index.html">Cantons</a><a class="link" data-nav="press" href="../../fr/landing.html#press">Press</a><a class="link" data-nav="transp" href="../../fr/transparency.html">Transparency</a><a class="link" data-nav="eng" href="../../fr/engineering.html">Engineering</a><a class="link" data-nav="privacy" href="../../fr/privacy-policy.html">Privacy</a><a class="link" data-nav="terms" href="../../fr/terms.html">Terms</a><span class="langs"><a data-lang="en" href="../corriere-del-ticino.html">EN</a><a data-lang="fr" href="../fr/corriere-del-ticino.html">FR</a><a data-lang="de" href="../de/corriere-del-ticino.html">DE</a><a data-lang="it" href="../it/corriere-del-ticino.html">IT</a></span></nav></div></header>
 <article class="article"><a class="back" href="../../fr/landing.html#press">← Toute la revue de presse</a><p class="eyebrow">On en parle &middot; Corriere del Ticino &middot; Ticinonews</p><img class="ahero" src="https://naxos-cdn01.gruppocdt.ch/cdt/stories/2026/08/06/1920x1080/af42d311-d54a-48fd-bda7-568d5fd55ded.jpeg" alt=""><div class="abody">
 <h2>Vous voulez devenir suisse ? Voici l'appli qui vous prépare à l'examen</h2>
 <p><em>Par Andrea Scolari · 08.08.2026</em></p>
@@ -131,10 +131,10 @@
     }
   }catch(e){}
   // The page is in one language: the menu is put in it and the flags link to the siblings.
-  var L="fr",NAV={en:{cantons:"Cantons",home:"Home",press:"Press",eng:"Engineering",presskit:"Press kit",terms:"Terms",transp:"Transparency",privacy:"Privacy"},
-    fr:{cantons:"Cantons",home:"Accueil",press:"Presse",eng:"Ing\u00e9nierie",presskit:"Dossier de presse",terms:"Conditions",transp:"Transparence",privacy:"Confidentialité"},
-    de:{cantons:"Kantone",home:"Start",press:"Presse",eng:"Technik",presskit:"Pressemappe",terms:"Nutzungsbedingungen",transp:"Transparenz",privacy:"Datenschutz"},
-    it:{cantons:"Cantoni",home:"Home",press:"Stampa",eng:"Ingegneria",presskit:"Press kit",terms:"Condizioni",transp:"Trasparenza",privacy:"Privacy"}},n=NAV[L]||NAV.en;
+  var L="fr",NAV={en:{cantons:"Cantons",home:"Home",press:"Press",eng:"Engineering",terms:"Terms",transp:"Transparency",privacy:"Privacy"},
+    fr:{cantons:"Cantons",home:"Accueil",press:"Presse",eng:"Ing\u00e9nierie",terms:"Conditions",transp:"Transparence",privacy:"Confidentialité"},
+    de:{cantons:"Kantone",home:"Start",press:"Presse",eng:"Technik",terms:"Nutzungsbedingungen",transp:"Transparenz",privacy:"Datenschutz"},
+    it:{cantons:"Cantoni",home:"Home",press:"Stampa",eng:"Ingegneria",terms:"Condizioni",transp:"Trasparenza",privacy:"Privacy"}},n=NAV[L]||NAV.en;
   document.querySelectorAll("[data-nav]").forEach(function(a){
     var k=a.getAttribute("data-nav");if(n&&n[k])a.textContent=n[k];});
   document.querySelectorAll(".langs a").forEach(function(a){

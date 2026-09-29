@@ -90,7 +90,7 @@ section[id]{scroll-margin-top:78px}
 <label class="burger" for="mnav" aria-label="Menu"><span></span><span></span><span></span></label>
 <nav class="main">
 <a class="link" data-nav="home" href="landing.html">Home</a><a class="link" data-nav="cantons" href="../cantons/it/index.html">Cantons</a>
-<a class="link" data-nav="press" href="landing.html#press">Press</a><a class="link" data-nav="presskit" href="press-kit.html">Press kit</a>
+<a class="link" data-nav="press" href="landing.html#press">Press</a>
 <a class="link" data-nav="transp" href="transparency.html">Transparency</a><a class="link" data-nav="eng" href="engineering.html">Engineering</a>
 <a class="link" data-nav="privacy" href="privacy-policy.html">Privacy</a>
 <a class="link" data-nav="terms" href="terms.html">Terms</a>
@@ -162,10 +162,10 @@ window.__contact=function(e){if(e&&e.preventDefault)e.preventDefault();
   }catch(e){}
   // The page is in one language: the menu is put in it and the flags link to the siblings.
   var L="it",NAV={
-    en:{cantons:"Cantons",home:"Home",press:"Press",eng:"Engineering",presskit:"Press kit",transp:"Transparency",privacy:"Privacy",terms:"Terms",del:"Data deletion",contact:"Contact"},
-    fr:{cantons:"Cantons",home:"Accueil",press:"Presse",eng:"Ing\u00e9nierie",presskit:"Dossier de presse",transp:"Transparence",privacy:"Confidentialit\u00e9",terms:"Conditions",del:"Suppression des donn\u00e9es",contact:"Contact"},
-    de:{cantons:"Kantone",home:"Start",press:"Presse",eng:"Technik",presskit:"Pressemappe",transp:"Transparenz",privacy:"Datenschutz",terms:"Nutzungsbedingungen",del:"Datenl\u00f6schung",contact:"Kontakt"},
-    it:{cantons:"Cantoni",home:"Home",press:"Stampa",eng:"Ingegneria",presskit:"Press kit",transp:"Trasparenza",privacy:"Privacy",terms:"Condizioni",del:"Cancellazione dati",contact:"Contatto"}
+    en:{cantons:"Cantons",home:"Home",press:"Press",eng:"Engineering",transp:"Transparency",privacy:"Privacy",terms:"Terms",del:"Data deletion",contact:"Contact"},
+    fr:{cantons:"Cantons",home:"Accueil",press:"Presse",eng:"Ing\u00e9nierie",transp:"Transparence",privacy:"Confidentialit\u00e9",terms:"Conditions",del:"Suppression des donn\u00e9es",contact:"Contact"},
+    de:{cantons:"Kantone",home:"Start",press:"Presse",eng:"Technik",transp:"Transparenz",privacy:"Datenschutz",terms:"Nutzungsbedingungen",del:"Datenl\u00f6schung",contact:"Kontakt"},
+    it:{cantons:"Cantoni",home:"Home",press:"Stampa",eng:"Ingegneria",transp:"Trasparenza",privacy:"Privacy",terms:"Condizioni",del:"Cancellazione dati",contact:"Contatto"}
   },n=NAV[L]||NAV.en;
   document.querySelectorAll("[data-nav]").forEach(function(a){
     var k=a.getAttribute("data-nav");if(n&&n[k])a.textContent=n[k];});

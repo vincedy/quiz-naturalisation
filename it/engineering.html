@@ -85,7 +85,7 @@
 </head>
 <body>
 
-<header class="site"><input type="checkbox" id="mnav"><div class="wrap navbar"><a class="brand" href="landing.html"><img src="../app/icon.png" alt="">Swiss Naturalization Test</a><label class="burger" for="mnav" aria-label="Menu"><span></span><span></span><span></span></label><nav class="main"><a class="link" data-nav="home" href="landing.html">Home</a><a class="link" data-nav="cantons" href="../cantons/it/index.html">Cantons</a><a class="link" data-nav="press" href="landing.html#press">Press</a><a class="link" data-nav="presskit" href="press-kit.html">Press kit</a><a class="link" data-nav="transp" href="transparency.html">Transparency</a><a class="link" data-nav="eng" href="engineering.html">Engineering</a><a class="link" data-nav="privacy" href="privacy-policy.html">Privacy</a><a class="link" data-nav="terms" href="terms.html">Terms</a><span class="langs"><a data-lang="en" href="../engineering.html">EN</a><a data-lang="fr" href="../fr/engineering.html">FR</a><a data-lang="de" href="../de/engineering.html">DE</a><a data-lang="it" href="../it/engineering.html">IT</a></span></nav></div></header>
+<header class="site"><input type="checkbox" id="mnav"><div class="wrap navbar"><a class="brand" href="landing.html"><img src="../app/icon.png" alt="">Swiss Naturalization Test</a><label class="burger" for="mnav" aria-label="Menu"><span></span><span></span><span></span></label><nav class="main"><a class="link" data-nav="home" href="landing.html">Home</a><a class="link" data-nav="cantons" href="../cantons/it/index.html">Cantons</a><a class="link" data-nav="press" href="landing.html#press">Press</a><a class="link" data-nav="transp" href="transparency.html">Transparency</a><a class="link" data-nav="eng" href="engineering.html">Engineering</a><a class="link" data-nav="privacy" href="privacy-policy.html">Privacy</a><a class="link" data-nav="terms" href="terms.html">Terms</a><span class="langs"><a data-lang="en" href="../engineering.html">EN</a><a data-lang="fr" href="../fr/engineering.html">FR</a><a data-lang="de" href="../de/engineering.html">DE</a><a data-lang="it" href="../it/engineering.html">IT</a></span></nav></div></header>
 
 <!-- ═══════════════════════════ EN ═══════════════════════════ -->
 
@@ -196,10 +196,10 @@ window.__contact=function(e){if(e&&e.preventDefault)e.preventDefault();
     }
   }catch(e){}
   // The page is in one language: the menu is put in it and the flags link to the siblings.
-  var L="it",NAV={en:{cantons:"Cantons",home:"Home",press:"Press",eng:"Engineering",presskit:"Press kit",terms:"Terms",transp:"Transparency",privacy:"Privacy"},
-    fr:{cantons:"Cantons",home:"Accueil",press:"Presse",eng:"Ing\u00e9nierie",presskit:"Dossier de presse",terms:"Conditions",transp:"Transparence",privacy:"Confidentialité"},
-    de:{cantons:"Kantone",home:"Start",press:"Presse",eng:"Technik",presskit:"Pressemappe",terms:"Nutzungsbedingungen",transp:"Transparenz",privacy:"Datenschutz"},
-    it:{cantons:"Cantoni",home:"Home",press:"Stampa",eng:"Ingegneria",presskit:"Press kit",terms:"Condizioni",transp:"Trasparenza",privacy:"Privacy"}},n=NAV[L]||NAV.en;
+  var L="it",NAV={en:{cantons:"Cantons",home:"Home",press:"Press",eng:"Engineering",terms:"Terms",transp:"Transparency",privacy:"Privacy"},
+    fr:{cantons:"Cantons",home:"Accueil",press:"Presse",eng:"Ing\u00e9nierie",terms:"Conditions",transp:"Transparence",privacy:"Confidentialité"},
+    de:{cantons:"Kantone",home:"Start",press:"Presse",eng:"Technik",terms:"Nutzungsbedingungen",transp:"Transparenz",privacy:"Datenschutz"},
+    it:{cantons:"Cantoni",home:"Home",press:"Stampa",eng:"Ingegneria",terms:"Condizioni",transp:"Trasparenza",privacy:"Privacy"}},n=NAV[L]||NAV.en;
   document.querySelectorAll("[data-nav]").forEach(function(a){
     var k=a.getAttribute("data-nav");if(n&&n[k])a.textContent=n[k];});
   document.querySelectorAll(".langs a").forEach(function(a){
