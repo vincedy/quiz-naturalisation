@@ -130,6 +130,24 @@
   .ref .alsorow .n{font-weight:650;font-size:.9rem;line-height:1.3}
   .ref a.alsorow .n{color:var(--red)}
   .ref .alsorow .d{font-size:.8rem;color:var(--muted);white-space:nowrap}
+  /* The body of a reference card. With more than one card it stays a column, exactly as
+     before; with a single card it opens across the row, because a 480px card beside empty
+     space says the opposite of what the section is for. The day Neuchatel comes out of its
+     comment, :only-child stops matching and the grid returns on its own. */
+  .ref .obody{display:flex;flex-direction:column;gap:10px}
+  .ref .ocol{display:flex;flex-direction:column;gap:10px;min-width:0}
+  .ref .ocol.side{margin-top:auto}
+  .ref:only-child{width:100%;max-width:none}
+  .ref:only-child .obody{flex-direction:row;gap:26px;align-items:flex-start}
+  .ref:only-child .ocol{flex:1 1 0}
+  .ref:only-child .ocol.side{flex:0 1 340px;margin-top:0}
+  .ref:only-child .also{margin-top:0;padding-top:0}
+  .ref:only-child .alsorow{flex-direction:column;align-items:flex-start;gap:3px}
+  .ref:only-child .alsorow .d{white-space:normal}
+  @media (max-width:900px){
+    .ref:only-child .obody{flex-direction:column;gap:14px}
+    .ref:only-child .ocol.side{flex:1 1 auto;width:100%}
+  }
   .refnote{text-align:center;color:var(--muted);font-size:.82rem;max-width:62ch;margin:26px auto 0;line-height:1.6}
 
   .spot{background:var(--navy);color:#fff}
@@ -291,6 +309,47 @@
     padding:9px 18px 9px 13px;font-weight:750;
     box-shadow:inset 0 0 0 999px color-mix(in srgb, var(--c) 8%, transparent)}
   .chip svg{width:19px;height:19px;flex:none;color:color-mix(in srgb, var(--c) 72%, var(--ink))}
+  .officeband{background:var(--bg);border-bottom:1px solid var(--border)}
+  .officeband .wrap{padding:22px 24px}
+  /* the landing stylesheet sizes .ref for its two-card grid (width:480px): on a canton
+     page the card owns the whole row, so the width is taken back here. */
+  .officeband .ref{width:auto;max-width:none;display:flex;flex-direction:column;gap:10px;background:var(--bg);
+    border:1px solid var(--border);border-radius:var(--radius);padding:22px 24px}
+  .officeband .head{display:flex;align-items:center;gap:12px}
+  .officeband .titles{min-width:0}
+  .officeband .logo{height:44px;width:auto;max-width:170px;object-fit:contain;margin-left:auto;opacity:.9}
+  .officeband .ct{font-size:.74rem;text-transform:uppercase;letter-spacing:.07em;color:var(--red);font-weight:800}
+  .officeband .who{font-weight:700;font-size:1.02rem;line-height:1.3}
+  .officeband .obody{display:flex;gap:26px;align-items:flex-start}
+  .officeband .ocol{flex:1 1 0;min-width:0;display:flex;flex-direction:column;gap:10px}
+  .officeband .ocol.side{flex:0 1 340px}
+  /* the side column is half the width of a landing card, so the row stacks instead of
+     breaking the office name over three lines */
+  .officeband .side .alsorow{flex-direction:column;align-items:flex-start;gap:3px}
+  .officeband .side .alsorow .d{white-space:normal}
+  .officeband .what{color:var(--muted);font-size:.93rem;line-height:1.55;margin:0}
+  .officeband blockquote{margin:4px 0 0;padding:14px 16px;background:var(--soft);
+    border-radius:10px;border-left:3px solid var(--red)}
+  .officeband blockquote .orig{font-size:.95rem;line-height:1.5;font-weight:600;font-style:italic;margin:0}
+  .officeband blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:var(--muted)}
+  .officeband .also{display:flex;flex-direction:column;gap:6px}
+  .officeband .alsolbl{font-size:.74rem;text-transform:uppercase;letter-spacing:.07em;
+    color:var(--muted);font-weight:700;margin-bottom:2px}
+  .officeband .alsorow{display:flex;justify-content:space-between;align-items:baseline;gap:14px;
+    padding:10px 12px;border:1px solid var(--border);border-radius:10px;background:var(--bg);transition:.16s}
+  .officeband a.alsorow{text-decoration:none}
+  .officeband a.alsorow:hover{border-color:var(--red);background:var(--soft)}
+  .officeband .alsorow.static{opacity:.72}
+  .officeband .alsorow .n{font-weight:650;font-size:.9rem;line-height:1.3}
+  .officeband a.alsorow .n{color:var(--red)}
+  .officeband .alsorow .d{font-size:.8rem;color:var(--muted);white-space:nowrap}
+  @media (max-width:900px){ .officeband .obody{flex-direction:column;gap:14px}
+    .officeband .ocol.side{flex:1 1 auto;width:100%} }
+  @media (max-width:720px){
+    .officeband .logo{height:34px}
+    .officeband .alsorow{flex-direction:column;align-items:flex-start;gap:3px}
+    .officeband .alsorow .d{white-space:normal}
+  }
   .claimband{background:var(--bg);border-bottom:1px solid var(--border)}
   .claimband .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:12px 16px;padding:18px 24px}
   .claimband p{margin:0;color:var(--ink);font-size:1.02rem;max-width:78ch}
@@ -479,7 +538,7 @@
   <a class="host" href="https://www.fr.ch/vie-quotidienne/permis-de-sejour-et-naturalisation/documentation-pour-preparer-sa-naturalisation" target="_blank" rel="noopener">www.fr.ch &nearr;</a>
   <a class="meta" href="https://www.fr.ch/vie-quotidienne/permis-de-sejour-et-naturalisation/documentation-pour-preparer-sa-naturalisation" target="_blank" rel="noopener">Service de l&#x27;état civil et des naturalisations</a>
   <span class="live"><i></i>jede Nacht geprüft</span>
-  <div class="stamp"><span data-today-label="Heute geprüft">Zuletzt geprüft</span><b data-today>29 September 2026</b></div>
+  <div class="stamp"><span data-today-label="Heute geprüft">Zuletzt geprüft</span><b data-today>1 Oktober 2026</b></div>
 </div></div>
 
 
@@ -489,6 +548,8 @@
   <p>Nach dem offiziellen Stoff verfasst; die echte Prüfung ist ein mündliches Gespräch. Der Bundesteil übernimmt offizielle Fragen. An der Prüfung sind weitere Fragen möglich. </p>
   <p class="warnline">Lernfragen, erstellt anhand des offiziellen Staatskundekurses des Kantons. Die Prüfung ist ein mündliches Gespräch — dies sind nicht die Prüfungsfragen.</p>
 </div></div>
+
+
 
 
 <section class="sec"><div class="wrap">
