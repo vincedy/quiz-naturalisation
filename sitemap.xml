@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://swissnaturalizationtest.ch/landing.html</loc>
-    <lastmod>2026-09-29</lastmod>
+    <lastmod>2026-09-30</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/landing.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/fr/landing.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/de/landing.html"/>
@@ -107,6 +107,14 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/press/de/watson.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://swissnaturalizationtest.ch/press/it/watson.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://swissnaturalizationtest.ch/press/watson.html"/>
+  </url>
+  <url>
+    <loc>https://swissnaturalizationtest.ch/press/zentralplus.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/press/zentralplus.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/press/fr/zentralplus.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/press/de/zentralplus.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://swissnaturalizationtest.ch/press/it/zentralplus.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://swissnaturalizationtest.ch/press/zentralplus.html"/>
   </url>
   <url>
     <loc>https://swissnaturalizationtest.ch/cantons/ag.html</loc>
@@ -1100,7 +1108,7 @@
   </url>
   <url>
     <loc>https://swissnaturalizationtest.ch/de/landing.html</loc>
-    <lastmod>2026-09-29</lastmod>
+    <lastmod>2026-09-30</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/landing.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/fr/landing.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/de/landing.html"/>
@@ -1154,7 +1162,7 @@
   </url>
   <url>
     <loc>https://swissnaturalizationtest.ch/fr/landing.html</loc>
-    <lastmod>2026-09-29</lastmod>
+    <lastmod>2026-09-30</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/landing.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/fr/landing.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/de/landing.html"/>
@@ -1208,7 +1216,7 @@
   </url>
   <url>
     <loc>https://swissnaturalizationtest.ch/it/landing.html</loc>
-    <lastmod>2026-09-29</lastmod>
+    <lastmod>2026-09-30</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/landing.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/fr/landing.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/de/landing.html"/>
@@ -1297,6 +1305,14 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://swissnaturalizationtest.ch/press/watson.html"/>
   </url>
   <url>
+    <loc>https://swissnaturalizationtest.ch/press/de/zentralplus.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/press/zentralplus.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/press/fr/zentralplus.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/press/de/zentralplus.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://swissnaturalizationtest.ch/press/it/zentralplus.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://swissnaturalizationtest.ch/press/zentralplus.html"/>
+  </url>
+  <url>
     <loc>https://swissnaturalizationtest.ch/press/fr/24-heures.html</loc>
     <lastmod>2026-09-29</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/press/24-heures.html"/>
@@ -1351,6 +1367,14 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://swissnaturalizationtest.ch/press/watson.html"/>
   </url>
   <url>
+    <loc>https://swissnaturalizationtest.ch/press/fr/zentralplus.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/press/zentralplus.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/press/fr/zentralplus.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/press/de/zentralplus.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://swissnaturalizationtest.ch/press/it/zentralplus.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://swissnaturalizationtest.ch/press/zentralplus.html"/>
+  </url>
+  <url>
     <loc>https://swissnaturalizationtest.ch/press/it/24-heures.html</loc>
     <lastmod>2026-09-29</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/press/24-heures.html"/>
@@ -1403,5 +1427,13 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/press/de/watson.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://swissnaturalizationtest.ch/press/it/watson.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://swissnaturalizationtest.ch/press/watson.html"/>
+  </url>
+  <url>
+    <loc>https://swissnaturalizationtest.ch/press/it/zentralplus.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/press/zentralplus.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/press/fr/zentralplus.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/press/de/zentralplus.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://swissnaturalizationtest.ch/press/it/zentralplus.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://swissnaturalizationtest.ch/press/zentralplus.html"/>
   </url>
 </urlset>
