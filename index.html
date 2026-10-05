@@ -15,8 +15,23 @@
 <link rel="icon" href="/favicon.png" type="image/png" sizes="192x192">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="canonical" href="https://swissnaturalizationtest.ch/landing.html">
-<meta http-equiv="refresh" content="0;url=landing.html">
-<script>location.replace("landing.html"+location.search+location.hash);</script>
+<!-- No-JS fallback, one second behind so the language script below wins when JS runs. -->
+<meta http-equiv="refresh" content="1;url=landing.html">
+<script>
+// The root is given out as the address of the project (press, cantonal offices, print
+// material), so it must land in the reader's own language instead of always English.
+// Only the three languages that have a landing are routed; everything else keeps English.
+(function () {
+  var tags = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ""];
+  var dir = "";
+  for (var i = 0; i < tags.length; i++) {
+    var code = String(tags[i]).slice(0, 2).toLowerCase();
+    if (code === "fr" || code === "de" || code === "it") { dir = code + "/"; break; }
+    if (code === "en") break;            // an explicit English preference stops the search
+  }
+  location.replace(dir + "landing.html" + location.search + location.hash);
+})();
+</script>
 </head>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "4acc64c862554fd7a6eff428c13f9a5d"}'></script>
 </html>
