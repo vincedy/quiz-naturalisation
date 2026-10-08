@@ -180,16 +180,21 @@ body{max-width:none!important;margin:0!important;padding:0!important}
 body>section{max-width:840px;margin-left:auto!important;margin-right:auto!important;padding-left:24px;padding-right:24px}
 section[id]{scroll-margin-top:78px}
 </style>
-<header class="site"><input type="checkbox" id="mnav"><div class="wrap navbar">
-<a class="brand" href="landing.html"><img src="../app/icon.png" alt="">Swiss Naturalization Test</a>
-<label class="burger" for="mnav" aria-label="Menu"><span></span><span></span><span></span></label>
-<nav class="main">
-<a class="link" data-nav="home" href="landing.html">Home</a><a class="link" data-nav="cantons" href="../cantons/fr/index.html">Cantons</a>
-<a class="link" data-nav="press" href="landing.html#press">Press</a>
-      <a class="link" data-nav="refs" href="landing.html#refs">References</a>
-<a class="link" data-nav="transp" href="transparency.html">Transparency</a>
-<span class="langs"><a data-lang="en" href="../transparency.html">EN</a><a data-lang="fr" href="../fr/transparency.html">FR</a><a data-lang="de" href="../de/transparency.html">DE</a><a data-lang="it" href="../it/transparency.html">IT</a></span>
-</nav></div></header>
+<header class="site">
+  <input type="checkbox" id="mnav">
+  <div class="wrap navbar">
+    <a class="brand" href="../fr/landing.html"><img src="../app/icon.png" alt="">Swiss Naturalization Test</a>
+    <label class="burger" for="mnav" aria-label="Menu"><span></span><span></span><span></span></label>
+    <nav class="main">
+      <a class="link" data-nav="home" href="../fr/landing.html">Accueil</a>
+      <a class="link" data-nav="cantons" href="../cantons/fr/index.html">Cantons</a>
+      <a class="link" data-nav="press" href="../fr/landing.html#press">Presse</a>
+      <a class="link" data-nav="refs" href="../fr/landing.html#refs">R&eacute;f&eacute;rences</a>
+      <a class="link" data-nav="transp" href="../fr/transparency.html">Transparence</a>
+      <span class="langs"><a data-lang="en" href="../transparency.html">EN</a><a data-lang="fr" href="../fr/transparency.html">FR</a><a data-lang="de" href="../de/transparency.html">DE</a><a data-lang="it" href="../it/transparency.html">IT</a></span>
+    </nav>
+  </div>
+</header>
 <section id="fr">
     <header class="pagehero"><div class="wrap"><h1>Transparence — Engagement de mise à jour du catalogue</h1>
     <p class="meta">App : <strong>Swiss Naturalization Test</strong> · Développeur : Vincenzo Casini · Dernière mise à jour : 14 septembre 2026</p>
@@ -514,10 +519,11 @@ section[id]{scroll-margin-top:78px}
     <div class="footer-note"><strong>Note aux institutions :</strong> si vous représentez un office cantonal ou communal de naturalisation et souhaitez vérifier le journal d'audit ou discuter de la façon dont cette application référence le catalogue de votre canton, n'hésitez pas à nous contacter à l'adresse ci-dessus. Nous sommes ravis de démontrer le pipeline en direct, de partager le journal d'audit de votre canton, et de documenter toute adaptation de formulation que vous demanderiez.</div>
   </section>
 
-<footer class="site">
-<a data-nav="home" href="landing.html">Home</a>&middot;<a data-nav="press" href="landing.html#press">Press</a>&middot;<a data-nav="refs" href="landing.html#refs">References</a>&middot;<a data-nav="transp" href="transparency.html">Transparency</a>&middot;<a data-nav="eng" href="engineering.html">Engineering</a>&middot;<a data-nav="privacy" href="privacy-policy.html">Privacy</a>&middot;<a data-nav="terms" href="terms.html">Terms</a>&middot;<a data-nav="del" href="account-deletion.html">Data deletion</a>&middot;<a data-nav="contact" href="mailto:swisscitizenshiptest@gmail.com" onclick="return __contact(event)">Contact</a>
-      <div class="forauth">Pour les autorit&eacute;s cantonales&nbsp;: <a href="for-cantons.html">la note pour les services d&rsquo;int&eacute;gration</a> &rarr;</div>
-</footer>
+<footer class="site"><div class="wrap">
+      <div class="fl"><a href="../fr/landing.html">Accueil</a> &middot; <a href="../fr/landing.html#press">Presse</a> &middot; <a href="../fr/landing.html#refs">R&eacute;f&eacute;rences</a> &middot; <a href="../cantons/fr/index.html">Cantons</a> &middot; <a href="../fr/transparency.html">Transparence</a> &middot; <a href="../fr/engineering.html">Ing&eacute;nierie</a> &middot; <a href="../fr/privacy-policy.html">Confidentialit&eacute;</a> &middot; <a href="../fr/terms.html">Conditions</a> &middot; <a href="../fr/account-deletion.html">Suppression des donn&eacute;es</a> &middot; <a href="mailto:swisscitizenshiptest@gmail.com">Contact</a></div>
+      <div class="forauth">Pour les autorit&eacute;s cantonales&nbsp;: <a href="../fr/for-cantons.html">la note pour les services d&rsquo;int&eacute;gration</a> &rarr;</div>
+      <p class="disc"></p>
+</div></footer>
 <script>
 window.__contact=function(e){if(e&&e.preventDefault)e.preventDefault();
     var m="swisscitizenshiptest@gmail.com",l=(document.documentElement.lang||"en").slice(0,2);

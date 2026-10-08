@@ -139,16 +139,21 @@ section[id]{scroll-margin-top:78px}
   /* pillola: la terza misura, e l'unica tonda */
   .pill{border-radius:999px;padding:4px 11px;font-size:.74rem;font-weight:800;letter-spacing:.02em}
 </style>
-<header class="site"><input type="checkbox" id="mnav"><div class="wrap navbar">
-<a class="brand" href="landing.html"><img src="app/icon.png" alt="">Swiss Naturalization Test</a>
-<label class="burger" for="mnav" aria-label="Menu"><span></span><span></span><span></span></label>
-<nav class="main">
-<a class="link" data-nav="home" href="landing.html">Home</a><a class="link" data-nav="cantons" href="cantons/index.html">Cantons</a>
-<a class="link" data-nav="press" href="landing.html#press">Press</a>
+<header class="site">
+  <input type="checkbox" id="mnav">
+  <div class="wrap navbar">
+    <a class="brand" href="landing.html"><img src="app/icon.png" alt="">Swiss Naturalization Test</a>
+    <label class="burger" for="mnav" aria-label="Menu"><span></span><span></span><span></span></label>
+    <nav class="main">
+      <a class="link" data-nav="home" href="landing.html">Home</a>
+      <a class="link" data-nav="cantons" href="cantons/index.html">Cantons</a>
+      <a class="link" data-nav="press" href="landing.html#press">Press</a>
       <a class="link" data-nav="refs" href="landing.html#refs">References</a>
-<a class="link" data-nav="transp" href="transparency.html">Transparency</a>
-<span class="langs"><a data-lang="en" href="account-deletion.html">EN</a><a data-lang="fr" href="fr/account-deletion.html">FR</a><a data-lang="de" href="de/account-deletion.html">DE</a><a data-lang="it" href="it/account-deletion.html">IT</a></span>
-</nav></div></header>
+      <a class="link" data-nav="transp" href="transparency.html">Transparency</a>
+      <span class="langs"><a data-lang="en" href="account-deletion.html">EN</a><a data-lang="fr" href="fr/account-deletion.html">FR</a><a data-lang="de" href="de/account-deletion.html">DE</a><a data-lang="it" href="it/account-deletion.html">IT</a></span>
+    </nav>
+  </div>
+</header>
 <section id="en">
     <header class="pagehero"><div class="wrap"><h1>Account &amp; Data Deletion</h1>
     <p class="meta">App: <strong>Swiss Naturalization Test</strong> · Developer: Vincenzo Casini · Last updated: 24 June 2026</p></div></header>
@@ -180,9 +185,11 @@ section[id]{scroll-margin-top:78px}
     <p>For deletion requests or questions: <a href="mailto:swisscitizenshiptest@gmail.com">swisscitizenshiptest@gmail.com</a>.</p>
   </section>
 
-<footer class="site">
-<a data-nav="home" href="landing.html">Home</a>&middot;<a data-nav="press" href="landing.html#press">Press</a>&middot;<a data-nav="refs" href="landing.html#refs">References</a>&middot;<a data-nav="transp" href="transparency.html">Transparency</a>&middot;<a data-nav="eng" href="engineering.html">Engineering</a>&middot;<a data-nav="privacy" href="privacy-policy.html">Privacy</a>&middot;<a data-nav="terms" href="terms.html">Terms</a>&middot;<a data-nav="del" href="account-deletion.html">Data deletion</a>&middot;<a data-nav="contact" href="mailto:swisscitizenshiptest@gmail.com" onclick="return __contact(event)">Contact</a>
-</footer>
+<footer class="site"><div class="wrap">
+      <div class="fl"><a href="landing.html">Home</a> &middot; <a href="landing.html#press">Press</a> &middot; <a href="landing.html#refs">References</a> &middot; <a href="cantons/index.html">Cantons</a> &middot; <a href="transparency.html">Transparency</a> &middot; <a href="engineering.html">Engineering</a> &middot; <a href="privacy-policy.html">Privacy</a> &middot; <a href="terms.html">Terms</a> &middot; <a href="account-deletion.html">Data deletion</a> &middot; <a href="mailto:swisscitizenshiptest@gmail.com">Contact</a></div>
+      <div class="forauth">For cantonal authorities: <a href="for-cantons.html">the note for integration services</a> &rarr;</div>
+      <p class="disc"></p>
+</div></footer>
 <script>
 window.__contact=function(e){if(e&&e.preventDefault)e.preventDefault();
     var m="swisscitizenshiptest@gmail.com",l=(document.documentElement.lang||"en").slice(0,2);
