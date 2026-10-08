@@ -179,6 +179,49 @@
   .langmenu a:hover{background:var(--soft,#f6f8fb)}
   .langmenu a[aria-current="true"]{color:var(--red,#DA291C);font-weight:800}
   @media(max-width:720px){ .langpick{margin-left:auto} }
+</style><style>
+  .langpick{position:relative;margin-left:14px}
+  .langpick summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:7px;
+    padding:6px 10px;border:1px solid var(--border,#e6ebf2);border-radius:999px;font-weight:700;
+    font-size:.82rem;line-height:1;color:inherit;user-select:none}
+  .langpick summary::-webkit-details-marker{display:none}
+  .langpick summary:hover{border-color:var(--red,#DA291C)}
+  .langpick .flag{width:20px;height:14px;border-radius:2px;display:block;flex:none;
+    box-shadow:0 0 0 1px rgba(0,0,0,.08)}
+  .langpick .chev{width:9px;height:9px;border-right:1.6px solid currentColor;
+    border-bottom:1.6px solid currentColor;transform:rotate(45deg) translate(-1px,-1px);opacity:.55}
+  .langpick[open] summary{border-color:var(--red,#DA291C)}
+  .langmenu{position:absolute;right:0;top:calc(100% + 8px);z-index:60;min-width:168px;
+    background:#fff;border:1px solid var(--border,#e6ebf2);border-radius:14px;padding:6px;
+    box-shadow:0 14px 34px rgba(13,20,38,.16)}
+  .langmenu a{display:flex;align-items:center;gap:10px;padding:9px 11px;border-radius:10px;
+    text-decoration:none;color:var(--ink,#141821);font-size:.9rem;font-weight:650}
+  .langmenu a:hover{background:var(--soft,#f6f8fb)}
+  .langmenu a[aria-current="true"]{color:var(--red,#DA291C);font-weight:800}
+  @media(max-width:720px){ .langpick{margin-left:auto} }
+
+  /* ── la tipografia della carta grafica, come la nota ai cantoni ───────────── */
+  .article{max-width:888px;padding:0 24px 8px}
+  .article > p,.article li{font-size:1.02rem;line-height:1.66;color:var(--ink)}
+  .article h2{font-size:1.7rem;font-weight:800;letter-spacing:-.01em;margin:54px 0 16px;color:var(--ink)}
+  .article h3{font-size:1.14rem;font-weight:750;margin:30px 0 8px}
+  .article h2 + p,.article h3 + p{margin-top:0}
+  .article strong{color:var(--ink)}
+  .article blockquote{margin:20px 0 0;padding:16px 20px;background:var(--soft);
+    border:1px solid var(--border);border-left:4px solid var(--red);border-radius:14px}
+  .article blockquote p{margin:0}
+  .article pre,.article code{border-radius:10px}
+  .article table{border:1px solid var(--border);border-radius:10px;overflow:hidden;width:100%;
+    border-collapse:separate;border-spacing:0}
+  .article th,.article td{border:0;border-bottom:1px solid var(--border);padding:12px 14px;text-align:left}
+  .article thead th{background:var(--soft);font-size:.78rem;text-transform:uppercase;
+    letter-spacing:.06em;color:var(--muted);font-weight:800}
+  .article tbody tr:last-child td,.article tbody tr:last-child th{border-bottom:0}
+
+  /* Il numero del capitolo è struttura, non decorazione: entra nel titolo in rosso, come il
+     sito numera i propri blocchi, e il titolo resta in nero alla misura della carta. */
+  .article h2 .chapnum{color:var(--red);font-variant-numeric:tabular-nums;margin-right:.42em}
+  .article h2{display:flex;gap:0;align-items:baseline;flex-wrap:wrap}
 </style><header class="site">
   <input type="checkbox" id="mnav">
   <div class="wrap navbar">
@@ -198,23 +241,23 @@
 <!-- ═══════════════════════════ EN ═══════════════════════════ -->
 
 <article class="article">
-<header class="pagehero"><div class="wrap"><a class="back" href="landing.html">&larr; Zur&uuml;ck zur App</a><p class="eyebrow">Technik</p><h1>Sechsundzwanzig Verfahren, eine App</h1><p class="sub">Ein staatsb&uuml;rgerliches Lernwerkzeug bauen, wenn der Inhalt sechsundzwanzig Verwaltungen geh&ouml;rt</p><div class="stores stores-top"><a href="https://apps.apple.com/app/id6769993041" aria-label="App Store"><img loading="lazy" class="apple" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store"></a><a href="https://play.google.com/store/apps/details?id=ch.vincedev.swisscitizenship" aria-label="Google Play"><img loading="lazy" class="google" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Google Play"></a></div></div></header>
+<header class="pagehero"><div class="wrap"><a class="back" href="../de/landing.html">&larr; Start</a><h1>Sechsundzwanzig Verfahren, eine App</h1><p class="sub">Ein staatsb&uuml;rgerliches Lernwerkzeug bauen, wenn der Inhalt sechsundzwanzig Verwaltungen geh&ouml;rt</p><div class="stores stores-top"><a href="https://apps.apple.com/app/id6769993041" aria-label="App Store"><img loading="lazy" class="apple" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store"></a><a href="https://play.google.com/store/apps/details?id=ch.vincedev.swisscitizenship" aria-label="Google Play"><img loading="lazy" class="google" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Google Play"></a></div></div></header>
 <div class="abody">
 
-<h2>0. Woher dieser Text kommt</h2>
+<h2><span class="chapnum">0.</span>Woher dieser Text kommt</h2>
 <p>Ich bin kein Schweizer. Ich bin 2014 nach Morges gezogen, und 2026 habe ich das ordentliche Einb&uuml;rgerungsverfahren begonnen, das im Kanton Waadt mit einem schriftlichen Wissenstest endet, den die Wohngemeinde organisiert. Ich habe diese App gebaut, weil ich sie brauchte, und ich habe weitergebaut, weil die schwierigsten Teile nicht die waren, die ich erwartet hatte. Im August 2026 habe ich diese Pr&uuml;fung selbst abgelegt und mit der vollen Punktzahl bestanden: 48 von 48. An jenem Morgen sassen im Raum mehrere andere Kandidatinnen und Kandidaten, die die App benutzten.</p>
 <p>Dies ist ein technischer Text, keine Produktpr&auml;sentation. Er handelt davon, was passiert, wenn das, was man ausliefert, gar keine Software ist: es ist eine Behauptung &uuml;ber Tatsachen, die jemand anderem geh&ouml;ren und sich &auml;ndern, ohne dass es einem jemand sagt.</p>
 
-<h2>1. Das Problem, in einer Zeile</h2>
+<h2><span class="chapnum">1.</span>Das Problem, in einer Zeile</h2>
 <p>Die Schweiz hat keinen nationalen Einb&uuml;rgerungstest. Das Bundesrecht schreibt keinen vor, und jeder der sechsundzwanzig Kantone bestimmt sein eigenes Format. Manche ver&ouml;ffentlichen einen vollst&auml;ndigen Fragenkatalog. Manche ver&ouml;ffentlichen Lernmaterial und keine Fragen. Manche pr&uuml;fen m&uuml;ndlich und ver&ouml;ffentlichen gar nichts. Und in einem Kanton ist die Pr&uuml;fung nicht kantonal, sondern kommunal: welche Fragen jemand erh&auml;lt, h&auml;ngt davon ab, in welcher von dreihundert Gemeinden er wohnt.</p>
 <p>Das naive Modell, eine Fragenbank und eine Pr&uuml;fung und eine App, f&auml;llt also in den ersten f&uuml;nf Minuten auseinander. Die tats&auml;chliche Form sind sechsundzwanzig verschiedene Verfahren, und innerhalb eines davon noch einmal dreihundert.</p>
 <p>Heute tr&auml;gt die App <strong>mehr als dreizehntausend Pr&uuml;fungsfragen f&uuml;r alle sechsundzwanzig Kantone</strong>, und <strong>rund zwei Drittel davon sind kommunal</strong>: Fragen, die nur f&uuml;r eine einzige Gemeinde existieren und f&uuml;r alle anderen nutzlos sind. Die Gemeinde zu w&auml;hlen ist deshalb keine Einstellung. Es ist die Abfrage.</p>
 
-<h2>2. Warum das Schwierige nicht die App ist</h2>
+<h2><span class="chapnum">2.</span>Warum das Schwierige nicht die App ist</h2>
 <p>Eine App mit Multiple-Choice-Fragen ist ein Wochenende. Die Arbeit liegt &uuml;berall sonst: Material zu beschaffen, das sechsundzwanzig Verwaltungen in unterschiedlichen Formaten, in drei Sprachen und in ihrem eigenen Rhythmus ver&ouml;ffentlichen; zu entscheiden, was jedes einzelne St&uuml;ck tats&auml;chlich <em>ist</em>; und das Ganze monatelang ehrlich zu halten, w&auml;hrend niemand einem sagt, dass sich etwas bewegt hat.</p>
 <p>Im September 2026 hatten vierzehn der sechsundzwanzig Kantone einen eigenen Katalog in der App. Die &uuml;brigen erhalten die eidgen&ouml;ssische Ebene, zur Laufzeit von einem Kanton geliehen, der eine ver&ouml;ffentlicht, und die App sagt das an der Frage selbst. Dieser Unterschied, <em>dies ist das Material Ihres Kantons</em> gegen&uuml;ber <em>dies ist eidgen&ouml;ssisches Material, das wir Ihnen zeigen, weil Ihr Kanton keines ver&ouml;ffentlicht</em>, ist keine Fussnote. Er ist der Unterschied zwischen einem Lernwerkzeug und einem irref&uuml;hrenden Werkzeug.</p>
 
-<h2>3. Die Inhaltskette, und was eine Frage mit sich tr&auml;gt</h2>
+<h2><span class="chapnum">3.</span>Die Inhaltskette, und was eine Frage mit sich tr&auml;gt</h2>
 <p>Jede Frage in der App tr&auml;gt ihre eigene Herkunft: woher sie stammt, wie sie gewonnen wurde, an welchem Datum, und gegen welchen Fingerabdruck der Quelle. Die Aufteilung sagt ehrlich, wie ungleich die Landschaft ist:</p>
 <table><thead><tr><th>Methode</th><th>Anteil am Fragenbestand</th></tr></thead><tbody>
 <tr><td>Live-Schnittstelle des Kantons</td><td>rund drei Viertel</td></tr>
@@ -229,14 +272,14 @@
 <p>Wo kein Katalog existiert und die Fragen geschrieben werden m&uuml;ssen, ist das keine freie Komposition. Jede verfasste Frage tr&auml;gt einen Anker: eine w&ouml;rtlich &uuml;bernommene Zeichenfolge aus einem offiziellen ver&ouml;ffentlichten Dokument. Beim Erzeugen sucht der Generator diese Zeichenfolge im Quellkorpus, und bei drei Kantonen <strong>bricht er hart ab</strong>, wenn der Anker nicht gefunden wird. Keine Ausgabe, keine Ver&ouml;ffentlichung. Eine Frage, die nicht auf einen Satz in einem offiziellen Dokument zeigen kann, geht nicht raus.</p>
 <p>Dieselbe Disziplin gilt f&uuml;r Gewissheit. Die Pr&uuml;fungsparameter, wie viele Fragen und welche Bestehensgrenze und welche Dauer, werden nicht behauptet. Jeder tr&auml;gt eine Sicherheitsstufe: <em>offiziell</em>, <em>gesch&auml;tzt</em>, <em>vom Anbieter angegeben</em>, <em>nicht ver&ouml;ffentlicht</em>, <em>nicht anwendbar</em>. &Uuml;ber alle kantonalen Modelle hinweg sind Dutzende dieser Parameter als <em>nicht ver&ouml;ffentlicht</em> markiert, weil der Kanton sie tats&auml;chlich nicht ver&ouml;ffentlicht. Das ehrlich zu zeigen hat sich bei institutionellen Lesern als &uuml;berzeugender erwiesen als eine sauber aussehende Zahl.</p>
 
-<h2>4. Die n&auml;chtliche &Uuml;berwachung, und die Pr&uuml;fung, die niemand schreibt</h2>
+<h2><span class="chapnum">4.</span>Die n&auml;chtliche &Uuml;berwachung, und die Pr&uuml;fung, die niemand schreibt</h2>
 <p>Quellen bewegen sich. Ein Kanton ver&ouml;ffentlicht ein PDF neu, nummeriert eine Serie um, korrigiert eine Antwort. Niemand schickt eine Benachrichtigung.</p>
 <p>Bei den Kantonen, die eine Quelle ver&ouml;ffentlichen, die wir beobachten k&ouml;nnen, wird sie deshalb <strong>jede Nacht</strong> von einem geplanten Auftrag gepr&uuml;ft, zu versetzten Zeiten. Jeder Lauf holt die Quelle, nimmt ihren Fingerabdruck, vergleicht ihn mit der gespeicherten Referenz und endet in einem von f&uuml;nf Ergebnissen: unver&auml;ndert, ver&auml;ndert, Quelle nicht erreichbar, Neuerzeugung fehlgeschlagen, oder Datenbankschreibung fehlgeschlagen. Eine vor&uuml;bergehende Netzst&ouml;rung wird bewusst von einem echten Fehler unterschieden, denn eine wacklige Verbindung wie eine kaputte Quelle zu behandeln erzeugt Alarme, die niemand liest.</p>
 <p>Jeder Lauf h&auml;ngt eine signierte Zeile an ein Journal auf einem separaten Zweig an, das nur erg&auml;nzt wird: Zeitstempel, Fingerabdruck der Quelle, HTTP-Status, Dauer des Abrufs und die Revision des ausgef&uuml;hrten Codes. Reproduzierbarkeit ist keine Behauptung, sondern ein Register.</p>
 <p>Aber die Pr&uuml;fung, auf die ich eine Gutachterin hinweisen w&uuml;rde, ist eine andere, und sie existiert wegen eines Versagens. Der Detektor vergleicht <em>vorgelagerte Quellen</em> mit einer gespeicherten Referenz. Er stellt nie die eine Frage, die nach der Ver&ouml;ffentlichung z&auml;hlt: <strong>entspricht das, was wir ausliefern, noch dem, was wir freigegeben haben?</strong> Es entsprach nicht, und ein Kanton lieferte zweiundsechzig Fragen aus, deren Korrektur sechs Wochen zuvor freigegeben und nie ver&ouml;ffentlicht worden war. Lautlos. Nichts in der Kette war daf&uuml;r gebaut, das zu bemerken.</p>
 <p>Deshalb l&auml;uft nun bei <strong>jedem</strong> Zyklus ein zweiter Vergleich, auch und gerade in den Zyklen, in denen sich nichts ge&auml;ndert hat. Er berechnet den Inhaltsfingerabdruck aus Fragetext, Antworten und richtiger Antwort neu, statt dem gespeicherten Stempel zu vertrauen, sodass ein veralteter Stempel als Abweichung erscheint, statt eine zu verdecken. Ein Kanton, den niemand anfasst, ist genau dort, wo eine Abweichung unbemerkt liegen bleibt.</p>
 
-<h2>5. Aktualisieren ohne die Stores</h2>
+<h2><span class="chapnum">5.</span>Aktualisieren ohne die Stores</h2>
 <p>Eine Pr&uuml;fung hat ein Datum. Wenn der Kanton drei Wochen vor dem Test eine Antwort korrigiert, ist eine App, die nur &uuml;ber eine Store-Pr&uuml;fung ausliefern kann, kein Lernwerkzeug, sondern ein Risiko.</p>
 <p>Inhalt reist deshalb nicht mit dem Programm. Freigegebene Korrekturen erreichen die Ger&auml;te &uuml;ber einen differenziellen Kanal: beim Start und bei der R&uuml;ckkehr in den Vordergrund fragt der Client alles ab, was oberhalb seines eigenen Standes liegt, und legt es &uuml;ber den mitgelieferten Katalog. Keine Einreichung, keine Warteschlange, kein Warten darauf, dass Nutzer aktualisieren.</p>
 <p><strong>Etwa jede zwanzigste ver&ouml;ffentlichte Frage wurde seit ihrem ersten Erscheinen mindestens einmal &uuml;berarbeitet</strong> und hat die Ger&auml;te auf diesem Weg erreicht. Die Verteilung ist ungleich und erz&auml;hlt ihre eigene Geschichte: die meisten dieser Korrekturen liegen in einer Handvoll Kantone, zuerst im Wallis, in der Waadt und in Luzern. Die Fragen eines Kantons stehen bei ihrer f&uuml;nften Version.</p>
@@ -245,19 +288,19 @@
 <p><strong>Nichts wird still &uuml;berschrieben.</strong> Jede &Auml;nderung archiviert die vollst&auml;ndige vorherige Fassung der Frage, Text und Antworten und richtige Antwort und Format, bevor die neue ankommt.</p>
 <p>Der schnellste Zyklus bisher: eine Integrationsdelegierte einer deutschsprachigen Region meldete, dass lange Antworten abgeschnitten wurden. Die Ursache lag bei uns und war schlimmer als kosmetisch: die K&uuml;rzung traf die richtige Antwort, nicht aber die Ablenker, sodass die richtige Antwort systematisch die kurze mit den Auslassungspunkten war. Ein verr&auml;terisches Zeichen, in einem Pr&uuml;fungstrainer. Die Reparatur ber&uuml;hrte 147 der 280 Zeilen dieses Kantons in beiden Sprachen, und die Produktion verzeichnete die Inhalts&auml;nderung <strong>zwei Minuten nach der Freigabe der Korrektur</strong>, am selben Abend wie die Meldung.</p>
 
-<h2>6. Transparenz als Funktion, nicht als Seite</h2>
+<h2><span class="chapnum">6.</span>Transparenz als Funktion, nicht als Seite</h2>
 <p>Die meisten Apps behandeln Transparenz als Dokument. Hier ist sie eine Eigenschaft zur Laufzeit, und sie zeigt sich an drei Stellen.</p>
 <p><strong>An der Frage.</strong> Unter jeder Frage, im &Uuml;ben wie in der Probepr&uuml;fung, sieht die Kandidatin, woher sie stammt, ob ihr Format vom Original abgewandelt wurde, ob sie aus dem offiziellen Bestand eines anderen Kantons geliehen ist, ob sie &uuml;bersetzt wurde, und ein Pr&uuml;fzeichen mit dem Datum der letzten Quellenkontrolle.</p>
 <p><strong>Vor der Pr&uuml;fung.</strong> Die Probepr&uuml;fung erkl&auml;rt kantonsweise, welche ihrer Parameter offiziell und welche gesch&auml;tzt sind, und unterscheidet den schriftlichen vom m&uuml;ndlichen Weg, denn in mehreren Kantonen ist die eigentliche Pr&uuml;fung ein Gespr&auml;ch, und eine Multiple-Choice-Simulation als &laquo;&nbsp;die Pr&uuml;fung&nbsp;&raquo; auszugeben w&auml;re falsch.</p>
 <p><strong>&Ouml;ffentlich.</strong> Eine <a href="transparency.html">Transparenzseite</a> in vier Sprachen nennt die Serviceversprechen: Quellen alle vierundzwanzig Stunden gepr&uuml;ft, gew&ouml;hnliche Aktualisierung innert sieben Tagen, inhaltliche Korrekturen innert zweiundsiebzig Stunden. Sie bietet zudem kantonalen Einb&uuml;rgerungsbeh&ouml;rden, dem Staatssekretariat f&uuml;r Migration und akkreditierten Forschenden auf schriftliche Anfrage Einsicht in das Pr&uuml;fregister, beantwortet innert f&uuml;nf Arbeitstagen.</p>
 <p>Ein Serviceversprechen zu ver&ouml;ffentlichen, an dem man gemessen werden kann, ist unbequem. Es ist auch die einzige Fassung von Transparenz, die etwas bedeutet.</p>
 
-<h2>7. Ein Entwickler, alle ein bis zwei Wochen eine Version</h2>
+<h2><span class="chapnum">7.</span>Ein Entwickler, alle ein bis zwei Wochen eine Version</h2>
 <p>Der erste Commit datiert vom 12. April 2026. Am 2. Mai war die App in Produktion. Seither: alle ein bis zwei Wochen eine ver&ouml;ffentlichte Nebenversion, Hunderte von Builds, und an den meisten Tagen mindestens ein Build.</p>
 <p>Dieses Tempo ist nur tragbar wegen dessen, was darunter liegt: im September 2026 <strong>186 automatisierte Testdateien</strong> und <strong>320 versionierte Datenbankmigrationen</strong>, und eine Inhaltskette, die ihre eigene Ausgabe pr&uuml;ft, statt ihr zu vertrauen. Die Oberfl&auml;che wird von einem Test auf vier Sprachen festgehalten, der die Erzeugung verweigert, wenn eine Sprache einen Schl&uuml;ssel hat, den die anderen nicht haben. Tausende von Schl&uuml;sseln, in allen vieren identisch.</p>
 <p>Nichts davon ist heldenhaft. Es ist die gew&ouml;hnliche Folge davon, dass ein einzelner Mensch den Zustand von sechsundzwanzig Kantonen nicht im Kopf behalten kann und es auch nicht versuchen sollte.</p>
 
-<h2>8. Die Agenten als Nutzer des Systems</h2>
+<h2><span class="chapnum">8.</span>Die Agenten als Nutzer des Systems</h2>
 <p>Das ist das Kapitel, das zu schreiben ich nicht erwartet hatte.</p>
 <p>Ein grosser Teil dieses Projekts wurde mit KI-Programmieragenten gebaut. Das Interessante ist nicht, dass sie Code geschrieben haben. Es ist, dass sie sich als <strong>Nutzer des Produktivsystems</strong> herausstellten, und als teure.</p>
 <p>An einem Tag im August verteilte sich der Datenausgang der Projektdatenbank so: das Werkzeug, also Skripte und interne Hilfsmittel und Agenten, die etwas massen, erzeugte rund <strong>das F&uuml;nffache des Verkehrs aller echten Nutzer der App zusammen</strong>. Die App war nie das Problem. Die App zu <em>messen</em> war es. Und es dr&uuml;ckte das Projekt gegen eine harte Abrechnungsschwelle mit Frist.</p>
@@ -266,7 +309,7 @@
 <p>Daneben steht ein bleibendes Projektged&auml;chtnis, eine Tatsache pro Datei, indexiert, das die Entscheidungen tr&auml;gt, die ein Agent nicht aus dem Code herleiten kann: welche Umgebungen unter welchen Bedingungen beschrieben werden d&uuml;rfen, welche Korrekturen schon versucht wurden und scheiterten, welche Teile der Kette eine frische Sitzung nicht allein anfassen darf.</p>
 <p>Die Lehre reicht &uuml;ber dieses Projekt hinaus. Wir sind es gewohnt, die Kosten eines Agenten in Token zu denken. In einem System mit einem echten Backend sind die Kosten eines Agenten auch <strong>die Last, die er auf Ihre Infrastruktur legt</strong>, und diese Zahl kann die erste in den Schatten stellen. Niemand hatte mir gesagt, das zu messen. Die Rechnung schon.</p>
 
-<h2>9. Was es wirklich kostet</h2>
+<h2><span class="chapnum">9.</span>Was es wirklich kostet</h2>
 <p>Die Infrastruktur selbst, Backend und Vertrieb und Entwicklerkonten, l&auml;uft in der Gr&ouml;ssenordnung von <strong>einigen hundert Franken im Jahr</strong>. Der dominierende Posten ist gar nicht die Infrastruktur: es ist das KI-Werkzeug, das den Grossteil der Arbeit macht, ein Abonnement, das ich ohnehin h&auml;tte und das ich f&uuml;r alles nutze, woran ich arbeite. Vollst&auml;ndig zugerechnet liegt der ganze Betrieb bei rund dreitausend Franken im Jahr. Streng diesem Projekt zugerechnet ist es ein Bruchteil davon.</p>
 <p>Daf&uuml;r, zum Zeitpunkt des Schreibens: <strong>zehntausend registrierte Profile</strong>, und <strong>sieben von zehn davon haben tats&auml;chlich gelernt oder gespielt</strong>, in nahezu jedem Kanton.</p>
 <p>Ich nenne die Zahlen, weil sie der Teil sind, den man am schwersten glaubt, und weil sie die eigentliche Frage stellen. Dies ist keine Geschichte dar&uuml;ber, viel aus wenig zu machen, als Tugend. Es ist, dass ein staatsb&uuml;rgerliches Werkzeug in nationalem Massstab heute von einer einzigen Person gebaut und <em>unterhalten</em> werden kann, und dass sich die bindende Beschr&auml;nkung verschoben hat. Sie ist nicht mehr die technische Kapazit&auml;t. Sie ist die Frage, ob die Institutionen, denen der Inhalt geh&ouml;rt, einen Weg haben, an dessen Richtigkeit mitzuwirken, und diese Frage beantwortet kein Code von allein.</p>

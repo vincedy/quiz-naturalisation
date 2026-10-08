@@ -179,6 +179,49 @@
   .langmenu a:hover{background:var(--soft,#f6f8fb)}
   .langmenu a[aria-current="true"]{color:var(--red,#DA291C);font-weight:800}
   @media(max-width:720px){ .langpick{margin-left:auto} }
+</style><style>
+  .langpick{position:relative;margin-left:14px}
+  .langpick summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:7px;
+    padding:6px 10px;border:1px solid var(--border,#e6ebf2);border-radius:999px;font-weight:700;
+    font-size:.82rem;line-height:1;color:inherit;user-select:none}
+  .langpick summary::-webkit-details-marker{display:none}
+  .langpick summary:hover{border-color:var(--red,#DA291C)}
+  .langpick .flag{width:20px;height:14px;border-radius:2px;display:block;flex:none;
+    box-shadow:0 0 0 1px rgba(0,0,0,.08)}
+  .langpick .chev{width:9px;height:9px;border-right:1.6px solid currentColor;
+    border-bottom:1.6px solid currentColor;transform:rotate(45deg) translate(-1px,-1px);opacity:.55}
+  .langpick[open] summary{border-color:var(--red,#DA291C)}
+  .langmenu{position:absolute;right:0;top:calc(100% + 8px);z-index:60;min-width:168px;
+    background:#fff;border:1px solid var(--border,#e6ebf2);border-radius:14px;padding:6px;
+    box-shadow:0 14px 34px rgba(13,20,38,.16)}
+  .langmenu a{display:flex;align-items:center;gap:10px;padding:9px 11px;border-radius:10px;
+    text-decoration:none;color:var(--ink,#141821);font-size:.9rem;font-weight:650}
+  .langmenu a:hover{background:var(--soft,#f6f8fb)}
+  .langmenu a[aria-current="true"]{color:var(--red,#DA291C);font-weight:800}
+  @media(max-width:720px){ .langpick{margin-left:auto} }
+
+  /* ── la tipografia della carta grafica, come la nota ai cantoni ───────────── */
+  .article{max-width:888px;padding:0 24px 8px}
+  .article > p,.article li{font-size:1.02rem;line-height:1.66;color:var(--ink)}
+  .article h2{font-size:1.7rem;font-weight:800;letter-spacing:-.01em;margin:54px 0 16px;color:var(--ink)}
+  .article h3{font-size:1.14rem;font-weight:750;margin:30px 0 8px}
+  .article h2 + p,.article h3 + p{margin-top:0}
+  .article strong{color:var(--ink)}
+  .article blockquote{margin:20px 0 0;padding:16px 20px;background:var(--soft);
+    border:1px solid var(--border);border-left:4px solid var(--red);border-radius:14px}
+  .article blockquote p{margin:0}
+  .article pre,.article code{border-radius:10px}
+  .article table{border:1px solid var(--border);border-radius:10px;overflow:hidden;width:100%;
+    border-collapse:separate;border-spacing:0}
+  .article th,.article td{border:0;border-bottom:1px solid var(--border);padding:12px 14px;text-align:left}
+  .article thead th{background:var(--soft);font-size:.78rem;text-transform:uppercase;
+    letter-spacing:.06em;color:var(--muted);font-weight:800}
+  .article tbody tr:last-child td,.article tbody tr:last-child th{border-bottom:0}
+
+  /* Il numero del capitolo è struttura, non decorazione: entra nel titolo in rosso, come il
+     sito numera i propri blocchi, e il titolo resta in nero alla misura della carta. */
+  .article h2 .chapnum{color:var(--red);font-variant-numeric:tabular-nums;margin-right:.42em}
+  .article h2{display:flex;gap:0;align-items:baseline;flex-wrap:wrap}
 </style><header class="site">
   <input type="checkbox" id="mnav">
   <div class="wrap navbar">
@@ -198,23 +241,23 @@
 <!-- ═══════════════════════════ EN ═══════════════════════════ -->
 
 <article class="article">
-<header class="pagehero"><div class="wrap"><a class="back" href="landing.html">&larr; Back to the app</a><p class="eyebrow">Engineering</p><h1>Twenty-six procedures, one app</h1><p class="sub">Engineering a civic study tool when the content belongs to twenty-six administrations</p><div class="stores stores-top"><a href="https://apps.apple.com/app/id6769993041" aria-label="App Store"><img loading="lazy" class="apple" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store"></a><a href="https://play.google.com/store/apps/details?id=ch.vincedev.swisscitizenship" aria-label="Google Play"><img loading="lazy" class="google" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Google Play"></a></div></div></header>
+<header class="pagehero"><div class="wrap"><a class="back" href="landing.html">&larr; Home</a><h1>Twenty-six procedures, one app</h1><p class="sub">Engineering a civic study tool when the content belongs to twenty-six administrations</p><div class="stores stores-top"><a href="https://apps.apple.com/app/id6769993041" aria-label="App Store"><img loading="lazy" class="apple" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store"></a><a href="https://play.google.com/store/apps/details?id=ch.vincedev.swisscitizenship" aria-label="Google Play"><img loading="lazy" class="google" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Google Play"></a></div></div></header>
 <div class="abody">
 
-<h2>0. Where this comes from</h2>
+<h2><span class="chapnum">0.</span>Where this comes from</h2>
 <p>I am not a Swiss citizen. I moved to Morges in 2014, and in 2026 I started the ordinary naturalisation procedure, which in the canton of Vaud ends with a written knowledge test organised by the commune where you live. I built this app because I needed it, and I kept building it because the parts I found hardest were not the parts I expected. In August 2026 I sat that exam myself and passed it with full marks &mdash; 48 out of 48. In the room that morning, several other candidates were using the app.</p>
 <p>This is an engineering write-up, not a product pitch. It is about what happens when the thing you are shipping is not really software: it is a claim about facts that belong to somebody else, and that change without telling you.</p>
 
-<h2>1. The problem, in one line</h2>
+<h2><span class="chapnum">1.</span>The problem, in one line</h2>
 <p>Switzerland has no national naturalisation test. Federal law prescribes none, and each of the twenty-six cantons owns its own format. Some publish a complete question catalogue. Some publish study material and no questions. Some assess orally and publish nothing at all. And in one canton the test is not cantonal but municipal: the questions a candidate receives depend on which of three hundred communes they live in.</p>
 <p>So the naive model, one question bank and one exam and one app, is wrong in the first five minutes. The real shape is twenty-six different procedures, and inside one of them, three hundred more.</p>
 <p>Today the app carries <strong>more than thirteen thousand exam questions across all twenty-six cantons</strong>, and <strong>about two thirds of them are municipal</strong>: questions that exist only for one commune, and are useless to everyone else. Selecting a commune is therefore not a preference. It is the query.</p>
 
-<h2>2. Why the hard part is not the app</h2>
+<h2><span class="chapnum">2.</span>Why the hard part is not the app</h2>
 <p>An app that asks multiple-choice questions is a weekend. The work is everywhere else: obtaining material that twenty-six administrations publish in different formats, in three languages, at their own pace; deciding what each item actually <em>is</em>; and keeping all of it honest for months while nobody tells you anything has moved.</p>
 <p>In September 2026, fourteen of the twenty-six cantons had their own catalogue in the app. The rest are served the federal layer borrowed at runtime from a canton that does publish one, and the app says so on the question itself. That distinction, <em>this is your canton's material</em> versus <em>this is federal material we are showing you because your canton publishes none</em>, is not a footnote. It is the difference between a study tool and a misleading one.</p>
 
-<h2>3. The content chain, and what a question carries</h2>
+<h2><span class="chapnum">3.</span>The content chain, and what a question carries</h2>
 <p>Every question in the app carries its own provenance: where it came from, how it was obtained, on what date, and against which fingerprint of the source. The split is honest about how uneven the landscape is:</p>
 <table><thead><tr><th>Method</th><th>Share of the deck</th></tr></thead><tbody>
 <tr><td>Live cantonal API</td><td>about three quarters</td></tr>
@@ -229,14 +272,14 @@
 <p>Where no catalogue exists and the deck has to be written, hand-authoring is not free composition. Each authored question carries an anchor: a verbatim string from an official published document. At build time the generator searches the source corpus for that string, and on three cantons it <strong>fails hard</strong> if the anchor is not found. No output, no publication. A question that cannot point at a sentence in an official document does not ship.</p>
 <p>The same discipline applies to certainty. Exam parameters, how many questions and what pass mark and how long, are not asserted. Each carries a confidence level: <em>official</em>, <em>estimated</em>, <em>reported by the provider</em>, <em>not published</em>, <em>not applicable</em>. Across the cantonal models, dozens of these parameters are marked <em>not published</em>, because the canton genuinely does not publish them. Showing that honestly turned out to be more persuasive to institutional readers than a clean-looking number would have been.</p>
 
-<h2>4. Nightly surveillance, and the check that nobody writes</h2>
+<h2><span class="chapnum">4.</span>Nightly surveillance, and the check that nobody writes</h2>
 <p>Sources move. A canton republishes a PDF, renumbers a series, corrects an answer. Nobody sends a notification.</p>
 <p>The cantons that publish a source we can watch therefore have it checked <strong>every night</strong> by a scheduled job, on staggered hours. Each run fetches the source, fingerprints it, compares it against the stored baseline, and resolves into one of five outcomes: unchanged, changed, source unreachable, refresh failed, or database write failed. Transient network trouble is deliberately distinguished from a real failure, because treating a flaky connection as a broken source produces alarms nobody reads.</p>
 <p>Every run appends one signed line to an append-only journal on a separate branch: the timestamp, the source fingerprint, the HTTP status, the fetch duration, and the commit of the code that ran. Reproducibility is not a claim; it is a record.</p>
 <p>But the check I would point a reviewer at is a different one, and it exists because of a failure. The drift detector compares <em>upstream sources</em> against a stored baseline. It never asks the one question that matters after publication: <strong>does what we are serving still match what we committed?</strong> It did not, and one canton served sixty-two questions whose parser fix had been committed six weeks earlier and never published. Silently. Nothing in the pipeline was designed to notice.</p>
 <p>So a second comparison now runs on <strong>every</strong> cycle, including, especially, the cycles where nothing changed. It recomputes the content fingerprint from the question text, the answers and the correct answer rather than trusting the stored stamp, so a stale stamp shows up as a divergence instead of hiding one. A canton nobody is touching is exactly where a divergence sits unnoticed.</p>
 
-<h2>5. Updating without the stores</h2>
+<h2><span class="chapnum">5.</span>Updating without the stores</h2>
 <p>An exam is on a date. If a candidate's canton corrects an answer three weeks before their test, an app that can only ship through a store review is not a study tool, it is a liability.</p>
 <p>So content does not travel with the binary. Approved corrections reach devices through a differential channel: on launch and on return to the foreground, the client asks for everything above its own cursor and merges it over the bundled catalogue. No store submission, no review queue, no waiting for users to update.</p>
 <p><strong>About one published question in twenty has been revised at least once since it first shipped</strong>, and reached devices this way. The distribution is uneven and tells its own story: most of those corrections sit in a handful of cantons, Valais and Vaud and Lucerne first. One canton's questions have reached their fifth version.</p>
@@ -245,19 +288,19 @@
 <p><strong>Nothing is overwritten silently.</strong> Every modification archives the complete previous version of the question, text and answers and correct answer and format, before the new one lands.</p>
 <p>The fastest cycle so far: an integration officer in a German-speaking region reported that long answers were being truncated. The cause was ours, and worse than cosmetic. The truncation was applied to the correct answer but not to the distractors, so the right answer was systematically the short one ending in an ellipsis. A tell, in an exam trainer. The repair touched 147 of that canton's 280 rows across both languages, and production recorded the content change <strong>two minutes after the fix was committed</strong>, the same evening as the report.</p>
 
-<h2>6. Transparency as a function, not a page</h2>
+<h2><span class="chapnum">6.</span>Transparency as a function, not a page</h2>
 <p>Most apps treat transparency as a document. Here it is a runtime property, and it shows up in three places.</p>
 <p><strong>On the question.</strong> Under every question, in practice and in mock exams, the candidate sees where it came from, whether its format was adapted from the original, whether it was borrowed from another canton's official pool, whether it was translated, and a verification badge carrying the date the source was last checked.</p>
 <p><strong>Before the exam.</strong> The mock exam declares, per canton, which of its parameters are official and which are estimated, and distinguishes the written track from the oral one, because in several cantons the real assessment is an interview and presenting a multiple-choice simulation as "the exam" would be false.</p>
 <p><strong>In public.</strong> A <a href="transparency.html">transparency page</a>, in four languages, states the service commitments: sources checked every twenty-four hours, ordinary refresh within seven days, corrections affecting correctness within seventy-two hours. It also offers cantonal naturalisation authorities, the federal migration secretariat and accredited researchers an inspection of the verification record on written request, answered within five working days.</p>
 <p>Publishing a service commitment you can be measured against is uncomfortable. It is also the only version of transparency that means anything.</p>
 
-<h2>7. One developer, a release every week or two</h2>
+<h2><span class="chapnum">7.</span>One developer, a release every week or two</h2>
 <p>The first commit is dated 12 April 2026. The app was in production on 2 May. Since then a public minor version every week or two, hundreds of builds, and at least one build on most days.</p>
 <p>That pace is only survivable because of what sits underneath it: in September 2026, <strong>186 automated test files</strong> and <strong>320 versioned database migrations</strong>, and a content pipeline that verifies its own output rather than trusting it. The interface is held to four languages by a test that refuses to build if one locale has a key the others do not. Thousands of keys, identical across all four.</p>
 <p>None of this is heroic. It is the ordinary consequence of the fact that a single person cannot hold the state of twenty-six cantons in their head, and should not try.</p>
 
-<h2>8. The agents as users of the system</h2>
+<h2><span class="chapnum">8.</span>The agents as users of the system</h2>
 <p>This is the chapter I did not expect to write.</p>
 <p>Much of this project was built with AI coding agents. The interesting part is not that they wrote code. It is that they turned out to be <strong>users of the production system</strong>, and expensive ones.</p>
 <p>On one day in August, the project's database egress broke down as follows: the tooling, meaning scripts and internal utilities and agents measuring things, produced roughly <strong>five times the traffic of every real user of the app combined</strong>. The app was never the problem. <em>Measuring</em> the app was. And it pushed the project against a hard billing threshold with a deadline.</p>
@@ -266,7 +309,7 @@
 <p>Alongside it sits a persistent project memory, one fact per file, indexed, carrying the decisions an agent cannot re-derive from the code: which environments may be written to and under what conditions, which corrections were already tried and failed, which parts of the pipeline a fresh session must not touch alone.</p>
 <p>The lesson generalises beyond this project. We are used to reasoning about an agent's cost in tokens. In a system with a real backend, the agent's cost is also <strong>the load it puts on your infrastructure</strong>, and that number can dwarf the first one. Nobody had told me to instrument it. The bill did.</p>
 
-<h2>9. What it actually costs</h2>
+<h2><span class="chapnum">9.</span>What it actually costs</h2>
 <p>The infrastructure itself, backend and distribution and developer accounts, runs on the order of <strong>a few hundred Swiss francs a year</strong>. The dominant line is not infrastructure at all: it is the AI tooling that does most of the building, a subscription I would hold anyway and that is shared across everything I work on. Fully attributed, the whole operation sits around three thousand francs a year. Strictly attributed to this project, it is a fraction of that.</p>
 <p>For that, at the time of writing: <strong>ten thousand registered profiles</strong>, and <strong>seven in ten of them have actually studied or played</strong>, across nearly every canton.</p>
 <p>I put the numbers in because they are the part people find hardest to believe, and because they frame the real question. This is not a story about doing a lot with very little as a virtue. It is that a civic tool at national scale can now be built and <em>maintained</em> by one person, and that the binding constraint has moved. It is no longer engineering capacity. It is whether the institutions that own the content have a way to participate in keeping it correct, and that is a question no amount of code answers on its own.</p>

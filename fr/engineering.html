@@ -179,6 +179,49 @@
   .langmenu a:hover{background:var(--soft,#f6f8fb)}
   .langmenu a[aria-current="true"]{color:var(--red,#DA291C);font-weight:800}
   @media(max-width:720px){ .langpick{margin-left:auto} }
+</style><style>
+  .langpick{position:relative;margin-left:14px}
+  .langpick summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:7px;
+    padding:6px 10px;border:1px solid var(--border,#e6ebf2);border-radius:999px;font-weight:700;
+    font-size:.82rem;line-height:1;color:inherit;user-select:none}
+  .langpick summary::-webkit-details-marker{display:none}
+  .langpick summary:hover{border-color:var(--red,#DA291C)}
+  .langpick .flag{width:20px;height:14px;border-radius:2px;display:block;flex:none;
+    box-shadow:0 0 0 1px rgba(0,0,0,.08)}
+  .langpick .chev{width:9px;height:9px;border-right:1.6px solid currentColor;
+    border-bottom:1.6px solid currentColor;transform:rotate(45deg) translate(-1px,-1px);opacity:.55}
+  .langpick[open] summary{border-color:var(--red,#DA291C)}
+  .langmenu{position:absolute;right:0;top:calc(100% + 8px);z-index:60;min-width:168px;
+    background:#fff;border:1px solid var(--border,#e6ebf2);border-radius:14px;padding:6px;
+    box-shadow:0 14px 34px rgba(13,20,38,.16)}
+  .langmenu a{display:flex;align-items:center;gap:10px;padding:9px 11px;border-radius:10px;
+    text-decoration:none;color:var(--ink,#141821);font-size:.9rem;font-weight:650}
+  .langmenu a:hover{background:var(--soft,#f6f8fb)}
+  .langmenu a[aria-current="true"]{color:var(--red,#DA291C);font-weight:800}
+  @media(max-width:720px){ .langpick{margin-left:auto} }
+
+  /* ── la tipografia della carta grafica, come la nota ai cantoni ───────────── */
+  .article{max-width:888px;padding:0 24px 8px}
+  .article > p,.article li{font-size:1.02rem;line-height:1.66;color:var(--ink)}
+  .article h2{font-size:1.7rem;font-weight:800;letter-spacing:-.01em;margin:54px 0 16px;color:var(--ink)}
+  .article h3{font-size:1.14rem;font-weight:750;margin:30px 0 8px}
+  .article h2 + p,.article h3 + p{margin-top:0}
+  .article strong{color:var(--ink)}
+  .article blockquote{margin:20px 0 0;padding:16px 20px;background:var(--soft);
+    border:1px solid var(--border);border-left:4px solid var(--red);border-radius:14px}
+  .article blockquote p{margin:0}
+  .article pre,.article code{border-radius:10px}
+  .article table{border:1px solid var(--border);border-radius:10px;overflow:hidden;width:100%;
+    border-collapse:separate;border-spacing:0}
+  .article th,.article td{border:0;border-bottom:1px solid var(--border);padding:12px 14px;text-align:left}
+  .article thead th{background:var(--soft);font-size:.78rem;text-transform:uppercase;
+    letter-spacing:.06em;color:var(--muted);font-weight:800}
+  .article tbody tr:last-child td,.article tbody tr:last-child th{border-bottom:0}
+
+  /* Il numero del capitolo è struttura, non decorazione: entra nel titolo in rosso, come il
+     sito numera i propri blocchi, e il titolo resta in nero alla misura della carta. */
+  .article h2 .chapnum{color:var(--red);font-variant-numeric:tabular-nums;margin-right:.42em}
+  .article h2{display:flex;gap:0;align-items:baseline;flex-wrap:wrap}
 </style><header class="site">
   <input type="checkbox" id="mnav">
   <div class="wrap navbar">
@@ -198,23 +241,23 @@
 <!-- ═══════════════════════════ EN ═══════════════════════════ -->
 
 <article class="article">
-<header class="pagehero"><div class="wrap"><a class="back" href="landing.html">&larr; Retour &agrave; l'application</a><p class="eyebrow">Ing&eacute;nierie</p><h1>Vingt-six proc&eacute;dures, une seule application</h1><p class="sub">Construire un outil civique quand le contenu appartient &agrave; vingt-six administrations</p><div class="stores stores-top"><a href="https://apps.apple.com/app/id6769993041" aria-label="App Store"><img loading="lazy" class="apple" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store"></a><a href="https://play.google.com/store/apps/details?id=ch.vincedev.swisscitizenship" aria-label="Google Play"><img loading="lazy" class="google" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Google Play"></a></div></div></header>
+<header class="pagehero"><div class="wrap"><a class="back" href="../fr/landing.html">&larr; Accueil</a><h1>Vingt-six proc&eacute;dures, une seule application</h1><p class="sub">Construire un outil civique quand le contenu appartient &agrave; vingt-six administrations</p><div class="stores stores-top"><a href="https://apps.apple.com/app/id6769993041" aria-label="App Store"><img loading="lazy" class="apple" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store"></a><a href="https://play.google.com/store/apps/details?id=ch.vincedev.swisscitizenship" aria-label="Google Play"><img loading="lazy" class="google" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Google Play"></a></div></div></header>
 <div class="abody">
 
-<h2>0. D'o&ugrave; vient ce texte</h2>
+<h2><span class="chapnum">0.</span>D'o&ugrave; vient ce texte</h2>
 <p>Je ne suis pas suisse. Je me suis install&eacute; &agrave; Morges en 2014, et en 2026 j'ai entam&eacute; la proc&eacute;dure de naturalisation ordinaire, qui dans le canton de Vaud se termine par un test &eacute;crit de connaissances organis&eacute; par la commune de domicile. J'ai construit cette application parce que j'en avais besoin, et j'ai continu&eacute; parce que les parties les plus difficiles n'&eacute;taient pas celles que j'attendais. En ao&ucirc;t 2026 j'ai pass&eacute; cet examen moi-m&ecirc;me et je l'ai r&eacute;ussi avec le maximum : 48 sur 48. Dans la salle, ce matin-l&agrave;, plusieurs autres candidats utilisaient l'application.</p>
 <p>Ceci est un texte d'ing&eacute;nierie, pas une pr&eacute;sentation de produit. Il parle de ce qui arrive quand la chose que vous livrez n'est pas vraiment du logiciel : c'est une affirmation sur des faits qui appartiennent &agrave; quelqu'un d'autre, et qui changent sans vous pr&eacute;venir.</p>
 
-<h2>1. Le probl&egrave;me, en une ligne</h2>
+<h2><span class="chapnum">1.</span>Le probl&egrave;me, en une ligne</h2>
 <p>La Suisse n'a pas de test de naturalisation national. La loi f&eacute;d&eacute;rale n'en prescrit aucun, et chacun des vingt-six cantons est ma&icirc;tre de son format. Certains publient un catalogue complet de questions. D'autres publient du mat&eacute;riel d'&eacute;tude et aucune question. D'autres encore &eacute;valuent &agrave; l'oral et ne publient rien. Et dans un canton, le test n'est pas cantonal mais communal : les questions re&ccedil;ues d&eacute;pendent de laquelle des trois cents communes on habite.</p>
 <p>Le mod&egrave;le na&iuml;f, une banque de questions et un examen et une application, s'&eacute;croule donc en cinq minutes. La forme r&eacute;elle, ce sont vingt-six proc&eacute;dures diff&eacute;rentes, et &agrave; l'int&eacute;rieur de l'une d'elles, trois cents de plus.</p>
 <p>Aujourd'hui l'application porte <strong>plus de treize mille questions d'examen pour les vingt-six cantons</strong>, dont <strong>environ deux tiers sont communales</strong> : des questions qui n'existent que pour une commune et ne servent &agrave; personne d'autre. Choisir sa commune n'est donc pas une pr&eacute;f&eacute;rence. C'est la requ&ecirc;te.</p>
 
-<h2>2. Pourquoi le plus dur n'est pas l'application</h2>
+<h2><span class="chapnum">2.</span>Pourquoi le plus dur n'est pas l'application</h2>
 <p>Une application &agrave; choix multiples, c'est un week-end. Le travail est ailleurs : obtenir du mat&eacute;riel que vingt-six administrations publient dans des formats diff&eacute;rents, en trois langues, &agrave; leur propre rythme ; d&eacute;cider ce que chaque &eacute;l&eacute;ment <em>est</em> vraiment ; et garder tout cela honn&ecirc;te pendant des mois sans que personne ne vous dise que quelque chose a boug&eacute;.</p>
 <p>En septembre 2026, quatorze des vingt-six cantons avaient leur propre catalogue dans l'application. Les autres re&ccedil;oivent la couche f&eacute;d&eacute;rale emprunt&eacute;e &agrave; l'ex&eacute;cution &agrave; un canton qui, lui, en publie une, et l'application le dit sur la question elle-m&ecirc;me. Cette distinction, <em>ceci est le mat&eacute;riel de votre canton</em> contre <em>ceci est du mat&eacute;riel f&eacute;d&eacute;ral que nous vous montrons parce que votre canton n'en publie pas</em>, n'est pas une note de bas de page. C'est la diff&eacute;rence entre un outil d'&eacute;tude et un outil trompeur.</p>
 
-<h2>3. La cha&icirc;ne du contenu, et ce que porte une question</h2>
+<h2><span class="chapnum">3.</span>La cha&icirc;ne du contenu, et ce que porte une question</h2>
 <p>Chaque question de l'application porte sa propre provenance : d'o&ugrave; elle vient, comment elle a &eacute;t&eacute; obtenue, &agrave; quelle date, et contre quelle empreinte de la source. La r&eacute;partition dit honn&ecirc;tement &agrave; quel point le paysage est in&eacute;gal :</p>
 <table><thead><tr><th>M&eacute;thode</th><th>Part du catalogue</th></tr></thead><tbody>
 <tr><td>API cantonale en direct</td><td>environ trois quarts</td></tr>
@@ -229,14 +272,14 @@
 <p>L&agrave; o&ugrave; aucun catalogue n'existe et o&ugrave; il faut r&eacute;diger, la r&eacute;daction n'est pas une composition libre. Chaque question r&eacute;dig&eacute;e porte une ancre : une cha&icirc;ne de caract&egrave;res reprise mot pour mot d'un document officiel publi&eacute;. &Agrave; la compilation, le g&eacute;n&eacute;rateur cherche cette cha&icirc;ne dans le corpus source, et sur trois cantons il <strong>&eacute;choue durement</strong> si l'ancre est introuvable. Pas de sortie, pas de publication. Une question qui ne peut pas pointer vers une phrase d'un document officiel ne part pas.</p>
 <p>La m&ecirc;me discipline vaut pour la certitude. Les param&egrave;tres de l'examen, combien de questions et quel seuil de r&eacute;ussite et quelle dur&eacute;e, ne sont pas affirm&eacute;s. Chacun porte un niveau de certitude : <em>officiel</em>, <em>estim&eacute;</em>, <em>d&eacute;clar&eacute; par l'organisme</em>, <em>non publi&eacute;</em>, <em>non applicable</em>. Dans l'ensemble des mod&egrave;les cantonaux, des dizaines de ces param&egrave;tres sont marqu&eacute;s <em>non publi&eacute;</em>, parce que le canton ne les publie r&eacute;ellement pas. Le montrer honn&ecirc;tement s'est av&eacute;r&eacute; plus convaincant, pour des lecteurs institutionnels, qu'un chiffre &agrave; l'air propre.</p>
 
-<h2>4. La surveillance nocturne, et le contr&ocirc;le que personne n'&eacute;crit</h2>
+<h2><span class="chapnum">4.</span>La surveillance nocturne, et le contr&ocirc;le que personne n'&eacute;crit</h2>
 <p>Les sources bougent. Un canton republie un PDF, renum&eacute;rote une s&eacute;rie, corrige une r&eacute;ponse. Personne n'envoie de notification.</p>
 <p>Les cantons qui publient une source que nous pouvons surveiller la voient donc v&eacute;rifi&eacute;e <strong>chaque nuit</strong> par une t&acirc;che planifi&eacute;e, &agrave; des heures d&eacute;cal&eacute;es. Chaque ex&eacute;cution t&eacute;l&eacute;charge la source, en prend l'empreinte, la compare &agrave; la r&eacute;f&eacute;rence stock&eacute;e, et se r&eacute;sout en l'un de cinq r&eacute;sultats : inchang&eacute;, chang&eacute;, source injoignable, r&eacute;g&eacute;n&eacute;ration &eacute;chou&eacute;e, ou &eacute;criture en base &eacute;chou&eacute;e. Un incident r&eacute;seau passager est d&eacute;lib&eacute;r&eacute;ment distingu&eacute; d'une vraie panne, parce que traiter une connexion capricieuse comme une source cass&eacute;e produit des alertes que personne ne lit.</p>
 <p>Chaque ex&eacute;cution ajoute une ligne sign&eacute;e &agrave; un journal en ajout seul, sur une branche s&eacute;par&eacute;e : l'horodatage, l'empreinte de la source, le code HTTP, la dur&eacute;e du t&eacute;l&eacute;chargement, et la r&eacute;vision du code ex&eacute;cut&eacute;. La reproductibilit&eacute; n'est pas une affirmation, c'est un registre.</p>
 <p>Mais le contr&ocirc;le vers lequel je dirigerais un &eacute;valuateur est un autre, et il existe &agrave; cause d'un &eacute;chec. Le d&eacute;tecteur compare les <em>sources en amont</em> &agrave; une r&eacute;f&eacute;rence stock&eacute;e. Il ne pose jamais la seule question qui compte apr&egrave;s publication : <strong>ce que nous servons correspond-il encore &agrave; ce que nous avons valid&eacute; ?</strong> Ce n'&eacute;tait pas le cas, et un canton a servi soixante-deux questions dont la correction avait &eacute;t&eacute; valid&eacute;e six semaines plus t&ocirc;t et jamais publi&eacute;e. En silence. Rien dans la cha&icirc;ne n'&eacute;tait con&ccedil;u pour le remarquer.</p>
 <p>Une seconde comparaison tourne donc d&eacute;sormais &agrave; <strong>chaque</strong> cycle, y compris, et surtout, les cycles o&ugrave; rien n'a chang&eacute;. Elle recalcule l'empreinte du contenu &agrave; partir du texte de la question, des r&eacute;ponses et de la bonne r&eacute;ponse, plut&ocirc;t que de faire confiance &agrave; l'empreinte enregistr&eacute;e, de sorte qu'une empreinte p&eacute;rim&eacute;e appara&icirc;t comme une divergence au lieu d'en cacher une. Un canton auquel personne ne touche est pr&eacute;cis&eacute;ment l&agrave; o&ugrave; une divergence dort.</p>
 
-<h2>5. Mettre &agrave; jour sans passer par les stores</h2>
+<h2><span class="chapnum">5.</span>Mettre &agrave; jour sans passer par les stores</h2>
 <p>Un examen a une date. Si le canton d'un candidat corrige une r&eacute;ponse trois semaines avant son test, une application qui ne peut livrer qu'&agrave; travers la validation d'un store n'est pas un outil d'&eacute;tude, c'est un risque.</p>
 <p>Le contenu ne voyage donc pas avec le binaire. Les corrections approuv&eacute;es atteignent les appareils par un canal diff&eacute;rentiel : au lancement et au retour au premier plan, le client demande tout ce qui se trouve au-dessus de son propre curseur et le fusionne par-dessus le catalogue embarqu&eacute;. Pas de soumission, pas de file d'attente, pas d'attente que les utilisateurs mettent &agrave; jour.</p>
 <p><strong>Environ une question publi&eacute;e sur vingt a &eacute;t&eacute; r&eacute;vis&eacute;e au moins une fois depuis sa premi&egrave;re publication</strong>, et a rejoint les appareils par ce canal. La r&eacute;partition est in&eacute;gale et raconte son histoire : l'essentiel de ces corrections se concentre dans une poign&eacute;e de cantons, le Valais et Vaud et Lucerne en t&ecirc;te. Les questions d'un canton en sont &agrave; leur cinqui&egrave;me version.</p>
@@ -245,19 +288,19 @@
 <p><strong>Rien n'est &eacute;cras&eacute; en silence.</strong> Chaque modification archive la version pr&eacute;c&eacute;dente compl&egrave;te de la question, texte et r&eacute;ponses et bonne r&eacute;ponse et format, avant que la nouvelle n'arrive.</p>
 <p>Le cycle le plus rapide &agrave; ce jour : une d&eacute;l&eacute;gu&eacute;e &agrave; l'int&eacute;gration d'une r&eacute;gion germanophone a signal&eacute; que les r&eacute;ponses longues &eacute;taient tronqu&eacute;es. La cause &eacute;tait de notre fait, et pire que cosm&eacute;tique : la troncature s'appliquait &agrave; la bonne r&eacute;ponse mais pas aux distracteurs, si bien que la bonne r&eacute;ponse &eacute;tait syst&eacute;matiquement la plus courte, celle qui finissait par des points de suspension. Un indice, dans un simulateur d'examen. La r&eacute;paration a touch&eacute; 147 des 280 lignes de ce canton dans les deux langues, et la production a enregistr&eacute; le changement de contenu <strong>deux minutes apr&egrave;s la validation du correctif</strong>, le soir m&ecirc;me du signalement.</p>
 
-<h2>6. La transparence comme fonction, pas comme page</h2>
+<h2><span class="chapnum">6.</span>La transparence comme fonction, pas comme page</h2>
 <p>La plupart des applications traitent la transparence comme un document. Ici c'est une propri&eacute;t&eacute; d'ex&eacute;cution, et elle appara&icirc;t &agrave; trois endroits.</p>
 <p><strong>Sur la question.</strong> Sous chaque question, en entra&icirc;nement comme en examen blanc, le candidat voit d'o&ugrave; elle vient, si son format a &eacute;t&eacute; adapt&eacute; de l'original, si elle est emprunt&eacute;e au corpus officiel d'un autre canton, si elle a &eacute;t&eacute; traduite, et un marqueur de v&eacute;rification portant la date du dernier contr&ocirc;le de la source.</p>
 <p><strong>Avant l'examen.</strong> L'examen blanc d&eacute;clare, canton par canton, lesquels de ses param&egrave;tres sont officiels et lesquels sont estim&eacute;s, et distingue la voie &eacute;crite de la voie orale, parce que dans plusieurs cantons l'&eacute;valuation r&eacute;elle est un entretien et pr&eacute;senter une simulation &agrave; choix multiples comme &laquo;&nbsp;l'examen&nbsp;&raquo; serait faux.</p>
 <p><strong>En public.</strong> Une <a href="transparency.html">page de transparence</a>, en quatre langues, &eacute;nonce les engagements de service : sources v&eacute;rifi&eacute;es toutes les vingt-quatre heures, mise &agrave; jour ordinaire sous sept jours, corrections touchant l'exactitude sous septante-deux heures. Elle offre aussi aux autorit&eacute;s cantonales de naturalisation, au secr&eacute;tariat d'&Eacute;tat aux migrations et aux chercheurs accr&eacute;dit&eacute;s une inspection du registre de v&eacute;rification sur demande &eacute;crite, trait&eacute;e sous cinq jours ouvrables.</p>
 <p>Publier un engagement de service sur lequel on peut &ecirc;tre mesur&eacute; est inconfortable. C'est aussi la seule version de la transparence qui veuille dire quelque chose.</p>
 
-<h2>7. Un seul d&eacute;veloppeur, une version tous les huit &agrave; quinze jours</h2>
+<h2><span class="chapnum">7.</span>Un seul d&eacute;veloppeur, une version tous les huit &agrave; quinze jours</h2>
 <p>Le premier commit est dat&eacute; du 12 avril 2026. L'application &eacute;tait en production le 2 mai. Depuis : une version mineure publique tous les huit &agrave; quinze jours, des centaines de compilations, et au moins une compilation la plupart des jours.</p>
 <p>Ce rythme n'est tenable qu'&agrave; cause de ce qui se trouve dessous : en septembre 2026, <strong>186 fichiers de tests automatis&eacute;s</strong> et <strong>320 migrations de base de donn&eacute;es versionn&eacute;es</strong>, et une cha&icirc;ne de contenu qui v&eacute;rifie sa propre sortie au lieu de lui faire confiance. L'interface est tenue &agrave; quatre langues par un test qui refuse de compiler si une langue poss&egrave;de une cl&eacute; que les autres n'ont pas. Des milliers de cl&eacute;s, identiques dans les quatre.</p>
 <p>Rien de tout cela n'est h&eacute;ro&iuml;que. C'est la cons&eacute;quence ordinaire du fait qu'une seule personne ne peut pas tenir l'&eacute;tat de vingt-six cantons dans sa t&ecirc;te, et ne devrait pas essayer.</p>
 
-<h2>8. Les agents comme utilisateurs du syst&egrave;me</h2>
+<h2><span class="chapnum">8.</span>Les agents comme utilisateurs du syst&egrave;me</h2>
 <p>Voici le chapitre que je ne m'attendais pas &agrave; &eacute;crire.</p>
 <p>Une grande partie de ce projet a &eacute;t&eacute; construite avec des agents de programmation. L'int&eacute;ressant n'est pas qu'ils aient &eacute;crit du code. C'est qu'ils se sont r&eacute;v&eacute;l&eacute;s &ecirc;tre des <strong>utilisateurs du syst&egrave;me de production</strong>, et des utilisateurs co&ucirc;teux.</p>
 <p>Un jour d'ao&ucirc;t, le trafic sortant de la base de donn&eacute;es du projet se r&eacute;partissait ainsi : l'outillage, c'est-&agrave;-dire les scripts et les utilitaires internes et les agents qui mesuraient des choses, produisait environ <strong>cinq fois le trafic de tous les vrais utilisateurs de l'application r&eacute;unis</strong>. L'application n'a jamais &eacute;t&eacute; le probl&egrave;me. <em>Mesurer</em> l'application l'&eacute;tait. Et cela a pouss&eacute; le projet contre un seuil de facturation avec une &eacute;ch&eacute;ance.</p>
@@ -266,7 +309,7 @@
 <p>&Agrave; c&ocirc;t&eacute; se trouve une m&eacute;moire de projet persistante, un fait par fichier, index&eacute;e, qui porte les d&eacute;cisions qu'un agent ne peut pas red&eacute;river du code : quels environnements peuvent &ecirc;tre &eacute;crits et &agrave; quelles conditions, quelles corrections ont d&eacute;j&agrave; &eacute;t&eacute; tent&eacute;es et ont &eacute;chou&eacute;, quelles parties de la cha&icirc;ne une session neuve ne doit pas toucher seule.</p>
 <p>La le&ccedil;on d&eacute;passe ce projet. Nous avons l'habitude de raisonner le co&ucirc;t d'un agent en jetons. Dans un syst&egrave;me avec un vrai backend, le co&ucirc;t d'un agent est aussi <strong>la charge qu'il met sur votre infrastructure</strong>, et ce nombre peut &eacute;craser le premier. Personne ne m'avait dit de l'instrumenter. La facture, si.</p>
 
-<h2>9. Ce que cela co&ucirc;te vraiment</h2>
+<h2><span class="chapnum">9.</span>Ce que cela co&ucirc;te vraiment</h2>
 <p>L'infrastructure elle-m&ecirc;me, backend et distribution et comptes d&eacute;veloppeur, tourne pour <strong>quelques centaines de francs par an</strong>. La ligne dominante n'est pas l'infrastructure : c'est l'outillage d'intelligence artificielle qui fait l'essentiel de la construction, un abonnement que j'aurais de toute fa&ccedil;on et qui est partag&eacute; entre tout ce sur quoi je travaille. Enti&egrave;rement attribu&eacute;e, l'op&eacute;ration compl&egrave;te tourne autour de trois mille francs par an. Strictement attribu&eacute;e &agrave; ce projet, c'est une fraction de cela.</p>
 <p>Pour cela, au moment o&ugrave; j'&eacute;cris : <strong>dix mille profils enregistr&eacute;s</strong>, et <strong>sept sur dix ont r&eacute;ellement &eacute;tudi&eacute; ou jou&eacute;</strong>, dans presque tous les cantons.</p>
 <p>Je mets ces chiffres parce que c'est la partie que les gens croient le moins, et parce qu'ils posent la vraie question. Ce n'est pas une histoire de faire beaucoup avec peu comme vertu. C'est qu'un outil civique &agrave; l'&eacute;chelle nationale peut d&eacute;sormais &ecirc;tre construit et <em>maintenu</em> par une seule personne, et que la contrainte a chang&eacute; de place. Ce n'est plus la capacit&eacute; d'ing&eacute;nierie. C'est de savoir si les institutions qui poss&egrave;dent le contenu ont un moyen de participer &agrave; le tenir correct, et &agrave; cette question aucun code ne r&eacute;pond tout seul.</p>

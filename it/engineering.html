@@ -179,6 +179,49 @@
   .langmenu a:hover{background:var(--soft,#f6f8fb)}
   .langmenu a[aria-current="true"]{color:var(--red,#DA291C);font-weight:800}
   @media(max-width:720px){ .langpick{margin-left:auto} }
+</style><style>
+  .langpick{position:relative;margin-left:14px}
+  .langpick summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:7px;
+    padding:6px 10px;border:1px solid var(--border,#e6ebf2);border-radius:999px;font-weight:700;
+    font-size:.82rem;line-height:1;color:inherit;user-select:none}
+  .langpick summary::-webkit-details-marker{display:none}
+  .langpick summary:hover{border-color:var(--red,#DA291C)}
+  .langpick .flag{width:20px;height:14px;border-radius:2px;display:block;flex:none;
+    box-shadow:0 0 0 1px rgba(0,0,0,.08)}
+  .langpick .chev{width:9px;height:9px;border-right:1.6px solid currentColor;
+    border-bottom:1.6px solid currentColor;transform:rotate(45deg) translate(-1px,-1px);opacity:.55}
+  .langpick[open] summary{border-color:var(--red,#DA291C)}
+  .langmenu{position:absolute;right:0;top:calc(100% + 8px);z-index:60;min-width:168px;
+    background:#fff;border:1px solid var(--border,#e6ebf2);border-radius:14px;padding:6px;
+    box-shadow:0 14px 34px rgba(13,20,38,.16)}
+  .langmenu a{display:flex;align-items:center;gap:10px;padding:9px 11px;border-radius:10px;
+    text-decoration:none;color:var(--ink,#141821);font-size:.9rem;font-weight:650}
+  .langmenu a:hover{background:var(--soft,#f6f8fb)}
+  .langmenu a[aria-current="true"]{color:var(--red,#DA291C);font-weight:800}
+  @media(max-width:720px){ .langpick{margin-left:auto} }
+
+  /* ── la tipografia della carta grafica, come la nota ai cantoni ───────────── */
+  .article{max-width:888px;padding:0 24px 8px}
+  .article > p,.article li{font-size:1.02rem;line-height:1.66;color:var(--ink)}
+  .article h2{font-size:1.7rem;font-weight:800;letter-spacing:-.01em;margin:54px 0 16px;color:var(--ink)}
+  .article h3{font-size:1.14rem;font-weight:750;margin:30px 0 8px}
+  .article h2 + p,.article h3 + p{margin-top:0}
+  .article strong{color:var(--ink)}
+  .article blockquote{margin:20px 0 0;padding:16px 20px;background:var(--soft);
+    border:1px solid var(--border);border-left:4px solid var(--red);border-radius:14px}
+  .article blockquote p{margin:0}
+  .article pre,.article code{border-radius:10px}
+  .article table{border:1px solid var(--border);border-radius:10px;overflow:hidden;width:100%;
+    border-collapse:separate;border-spacing:0}
+  .article th,.article td{border:0;border-bottom:1px solid var(--border);padding:12px 14px;text-align:left}
+  .article thead th{background:var(--soft);font-size:.78rem;text-transform:uppercase;
+    letter-spacing:.06em;color:var(--muted);font-weight:800}
+  .article tbody tr:last-child td,.article tbody tr:last-child th{border-bottom:0}
+
+  /* Il numero del capitolo è struttura, non decorazione: entra nel titolo in rosso, come il
+     sito numera i propri blocchi, e il titolo resta in nero alla misura della carta. */
+  .article h2 .chapnum{color:var(--red);font-variant-numeric:tabular-nums;margin-right:.42em}
+  .article h2{display:flex;gap:0;align-items:baseline;flex-wrap:wrap}
 </style><header class="site">
   <input type="checkbox" id="mnav">
   <div class="wrap navbar">
@@ -198,23 +241,23 @@
 <!-- ═══════════════════════════ EN ═══════════════════════════ -->
 
 <article class="article">
-<header class="pagehero"><div class="wrap"><a class="back" href="landing.html">&larr; Torna all'app</a><p class="eyebrow">Ingegneria</p><h1>Ventisei procedure, una sola app</h1><p class="sub">Costruire uno strumento civico quando il contenuto appartiene a ventisei amministrazioni</p><div class="stores stores-top"><a href="https://apps.apple.com/app/id6769993041" aria-label="App Store"><img loading="lazy" class="apple" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store"></a><a href="https://play.google.com/store/apps/details?id=ch.vincedev.swisscitizenship" aria-label="Google Play"><img loading="lazy" class="google" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Google Play"></a></div></div></header>
+<header class="pagehero"><div class="wrap"><a class="back" href="../it/landing.html">&larr; Home</a><h1>Ventisei procedure, una sola app</h1><p class="sub">Costruire uno strumento civico quando il contenuto appartiene a ventisei amministrazioni</p><div class="stores stores-top"><a href="https://apps.apple.com/app/id6769993041" aria-label="App Store"><img loading="lazy" class="apple" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store"></a><a href="https://play.google.com/store/apps/details?id=ch.vincedev.swisscitizenship" aria-label="Google Play"><img loading="lazy" class="google" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Google Play"></a></div></div></header>
 <div class="abody">
 
-<h2>0. Da dove viene questo testo</h2>
+<h2><span class="chapnum">0.</span>Da dove viene questo testo</h2>
 <p>Non sono svizzero. Mi sono trasferito a Morges nel 2014 e nel 2026 ho avviato la procedura di naturalizzazione ordinaria, che nel Canton Vaud si chiude con un test scritto di conoscenze organizzato dal comune di domicilio. Ho costruito questa app perch&eacute; mi serviva, e ho continuato perch&eacute; le parti pi&ugrave; difficili non erano quelle che mi aspettavo. Nell'agosto 2026 ho sostenuto io stesso quell'esame e l'ho superato con il massimo: 48 su 48. In aula, quella mattina, diversi altri candidati stavano usando l'app.</p>
 <p>Questo &egrave; un testo di ingegneria, non la presentazione di un prodotto. Parla di cosa succede quando la cosa che consegni non &egrave; davvero software: &egrave; un'affermazione su fatti che appartengono a qualcun altro e che cambiano senza avvisarti.</p>
 
-<h2>1. Il problema, in una riga</h2>
+<h2><span class="chapnum">1.</span>Il problema, in una riga</h2>
 <p>La Svizzera non ha un test di naturalizzazione nazionale. La legge federale non ne prescrive nessuno, e ciascuno dei ventisei cantoni &egrave; padrone del proprio formato. Alcuni pubblicano un catalogo completo di domande. Altri pubblicano materiale di studio e nessuna domanda. Altri ancora valutano oralmente e non pubblicano niente. E in un cantone il test non &egrave; cantonale ma comunale: le domande che riceve un candidato dipendono da quale delle trecento comuni abita.</p>
 <p>Il modello ingenuo, una banca di domande e un esame e un'app, crolla quindi nei primi cinque minuti. La forma reale sono ventisei procedure diverse, e dentro una di esse altre trecento.</p>
 <p>Oggi l'app porta <strong>pi&ugrave; di tredicimila domande d'esame per tutti e ventisei i cantoni</strong>, e <strong>circa due terzi sono comunali</strong>: domande che esistono solo per un comune e sono inutili a tutti gli altri. Scegliere il comune non &egrave; dunque una preferenza. &Egrave; la query.</p>
 
-<h2>2. Perch&eacute; la parte difficile non &egrave; l'app</h2>
+<h2><span class="chapnum">2.</span>Perch&eacute; la parte difficile non &egrave; l'app</h2>
 <p>Un'app a scelta multipla &egrave; un fine settimana. Il lavoro sta in tutto il resto: ottenere materiale che ventisei amministrazioni pubblicano in formati diversi, in tre lingue, con i loro tempi; decidere cosa ciascun elemento <em>sia</em> davvero; e tenere tutto onesto per mesi mentre nessuno ti dice che qualcosa si &egrave; mosso.</p>
 <p>A settembre 2026, quattordici dei ventisei cantoni avevano un catalogo proprio dentro l'app. Gli altri ricevono il livello federale preso in prestito, a tempo di esecuzione, da un cantone che invece lo pubblica, e l'app lo dichiara sulla domanda stessa. Quella distinzione, <em>questo &egrave; il materiale del tuo cantone</em> contro <em>questo &egrave; materiale federale che ti mostriamo perch&eacute; il tuo cantone non ne pubblica</em>, non &egrave; una nota a pi&eacute; di pagina. &Egrave; la differenza fra uno strumento di studio e uno strumento ingannevole.</p>
 
-<h2>3. La catena del contenuto, e cosa porta con s&eacute; una domanda</h2>
+<h2><span class="chapnum">3.</span>La catena del contenuto, e cosa porta con s&eacute; una domanda</h2>
 <p>Ogni domanda dell'app porta la propria provenienza: da dove viene, come &egrave; stata ottenuta, in che data e contro quale impronta della fonte. La ripartizione dice onestamente quanto sia disomogeneo il panorama:</p>
 <table><thead><tr><th>Metodo</th><th>Quota del totale</th></tr></thead><tbody>
 <tr><td>Interfaccia cantonale viva</td><td>circa tre quarti</td></tr>
@@ -229,14 +272,14 @@
 <p>Dove nessun catalogo esiste e le domande vanno scritte, non si tratta di composizione libera. Ogni domanda redatta porta un'ancora: una stringa ripresa alla lettera da un documento ufficiale pubblicato. In fase di generazione il programma cerca quella stringa nel corpus delle fonti, e su tre cantoni <strong>fallisce in modo duro</strong> se l'ancora non si trova. Nessun risultato, nessuna pubblicazione. Una domanda che non pu&ograve; indicare una frase in un documento ufficiale non parte.</p>
 <p>La stessa disciplina vale per la certezza. I parametri d'esame, quante domande e quale soglia di superamento e quanta durata, non vengono affermati. Ciascuno porta un livello di certezza: <em>ufficiale</em>, <em>stimato</em>, <em>dichiarato dall'ente</em>, <em>non pubblicato</em>, <em>non applicabile</em>. Nell'insieme dei modelli cantonali, decine di questi parametri sono marcati <em>non pubblicato</em>, perch&eacute; il cantone davvero non li pubblica. Mostrarlo onestamente si &egrave; rivelato pi&ugrave; convincente, per lettori istituzionali, di un numero dall'aria pulita.</p>
 
-<h2>4. La sorveglianza notturna, e il controllo che nessuno scrive</h2>
+<h2><span class="chapnum">4.</span>La sorveglianza notturna, e il controllo che nessuno scrive</h2>
 <p>Le fonti si muovono. Un cantone ripubblica un PDF, rinumera una serie, corregge una risposta. Nessuno manda una notifica.</p>
 <p>I cantoni che pubblicano una fonte che possiamo sorvegliare la vedono quindi verificata <strong>ogni notte</strong> da una procedura pianificata, a orari scaglionati. Ogni esecuzione scarica la fonte, ne prende l'impronta, la confronta con il riferimento memorizzato e si risolve in uno di cinque esiti: invariata, cambiata, fonte irraggiungibile, rigenerazione fallita, o scrittura in banca dati fallita. Un disturbo di rete passeggero &egrave; deliberatamente distinto da un guasto vero, perch&eacute; trattare una connessione capricciosa come una fonte rotta produce allarmi che nessuno legge.</p>
 <p>Ogni esecuzione aggiunge una riga firmata a un diario in sola aggiunta, su un ramo separato: l'orario, l'impronta della fonte, lo stato HTTP, la durata dello scaricamento e la revisione del codice eseguito. La riproducibilit&agrave; non &egrave; un'affermazione, &egrave; un registro.</p>
 <p>Ma il controllo verso cui indirizzerei un revisore &egrave; un altro, ed esiste per un fallimento. Il rilevatore confronta le <em>fonti a monte</em> con un riferimento memorizzato. Non pone mai l'unica domanda che conta dopo la pubblicazione: <strong>quello che stiamo servendo corrisponde ancora a quello che abbiamo approvato?</strong> Non corrispondeva, e un cantone ha servito sessantadue domande la cui correzione era stata approvata sei settimane prima e mai pubblicata. In silenzio. Niente nella catena era progettato per accorgersene.</p>
 <p>Un secondo confronto gira quindi ora a <strong>ogni</strong> ciclo, compresi, anzi soprattutto, i cicli in cui non &egrave; cambiato nulla. Ricalcola l'impronta del contenuto dal testo della domanda, dalle risposte e dalla risposta corretta, invece di fidarsi dell'impronta registrata, cos&igrave; che un'impronta vecchia compaia come divergenza invece di nasconderne una. Un cantone che nessuno tocca &egrave; esattamente il posto in cui una divergenza resta ferma senza farsi notare.</p>
 
-<h2>5. Aggiornare senza passare dagli store</h2>
+<h2><span class="chapnum">5.</span>Aggiornare senza passare dagli store</h2>
 <p>Un esame ha una data. Se il cantone di un candidato corregge una risposta tre settimane prima del test, un'app che pu&ograve; consegnare solo attraverso la revisione di uno store non &egrave; uno strumento di studio, &egrave; un rischio.</p>
 <p>Il contenuto quindi non viaggia con il programma. Le correzioni approvate raggiungono i dispositivi attraverso un canale differenziale: all'avvio e al ritorno in primo piano il client chiede tutto ci&ograve; che sta oltre il proprio segnaposto e lo sovrappone al catalogo incorporato. Nessuna sottomissione, nessuna coda di revisione, nessuna attesa che gli utenti aggiornino.</p>
 <p><strong>Circa una domanda pubblicata su venti &egrave; stata rivista almeno una volta dopo la prima pubblicazione</strong>, ed &egrave; arrivata sui dispositivi per questa via. La distribuzione &egrave; disomogenea e racconta la sua storia: la maggior parte di quelle correzioni si concentra in pochi cantoni, prima di tutto Vallese, Vaud e Lucerna. Le domande di un cantone sono alla quinta versione.</p>
@@ -245,19 +288,19 @@
 <p><strong>Niente viene sovrascritto in silenzio.</strong> Ogni modifica archivia per intero la versione precedente della domanda, testo e risposte e risposta corretta e formato, prima che arrivi quella nuova.</p>
 <p>Il ciclo pi&ugrave; rapido finora: una delegata all'integrazione di una regione germanofona ha segnalato che le risposte lunghe venivano troncate. La causa era nostra, e peggio che cosmetica: il troncamento colpiva la risposta corretta ma non i distrattori, cos&igrave; la risposta giusta era sistematicamente quella corta che finiva con i puntini. Un indizio, dentro un simulatore d'esame. La riparazione ha toccato 147 delle 280 righe di quel cantone nelle due lingue, e la produzione ha registrato il cambio di contenuto <strong>due minuti dopo l'approvazione della correzione</strong>, la stessa sera della segnalazione.</p>
 
-<h2>6. La trasparenza come funzione, non come pagina</h2>
+<h2><span class="chapnum">6.</span>La trasparenza come funzione, non come pagina</h2>
 <p>La maggior parte delle app tratta la trasparenza come un documento. Qui &egrave; una propriet&agrave; a tempo di esecuzione, e si vede in tre punti.</p>
 <p><strong>Sulla domanda.</strong> Sotto ogni domanda, in esercitazione come in simulazione, il candidato vede da dove viene, se il formato &egrave; stato adattato dall'originale, se &egrave; presa in prestito dal corpus ufficiale di un altro cantone, se &egrave; stata tradotta, e un contrassegno di verifica che porta la data dell'ultimo controllo della fonte.</p>
 <p><strong>Prima dell'esame.</strong> La simulazione dichiara, cantone per cantone, quali dei suoi parametri sono ufficiali e quali stimati, e distingue la via scritta da quella orale, perch&eacute; in diversi cantoni la valutazione reale &egrave; un colloquio e presentare una simulazione a scelta multipla come &laquo;&nbsp;l'esame&nbsp;&raquo; sarebbe falso.</p>
 <p><strong>In pubblico.</strong> Una <a href="transparency.html">pagina di trasparenza</a>, in quattro lingue, enuncia gli impegni di servizio: fonti verificate ogni ventiquattro ore, aggiornamento ordinario entro sette giorni, correzioni che toccano la correttezza entro settantadue ore. Offre inoltre alle autorit&agrave; cantonali di naturalizzazione, alla Segreteria di Stato della migrazione e a ricercatori accreditati l'ispezione del registro di verifica su richiesta scritta, evasa entro cinque giorni lavorativi.</p>
 <p>Pubblicare un impegno di servizio su cui si pu&ograve; essere misurati &egrave; scomodo. &Egrave; anche l'unica versione della trasparenza che significhi qualcosa.</p>
 
-<h2>7. Un solo sviluppatore, una versione ogni una o due settimane</h2>
+<h2><span class="chapnum">7.</span>Un solo sviluppatore, una versione ogni una o due settimane</h2>
 <p>Il primo commit &egrave; datato 12 aprile 2026. Il 2 maggio l'app era in produzione. Da allora, una versione minore pubblica ogni una o due settimane, centinaia di compilazioni e almeno una compilazione nella maggior parte dei giorni.</p>
 <p>Quel ritmo &egrave; sostenibile solo per quello che ci sta sotto: a settembre 2026, <strong>186 file di test automatici</strong> e <strong>320 migrazioni di banca dati versionate</strong>, e una catena di contenuto che verifica il proprio risultato invece di fidarsene. L'interfaccia &egrave; tenuta a quattro lingue da un test che rifiuta di compilare se una lingua ha una chiave che le altre non hanno. Migliaia di chiavi, identiche in tutte e quattro.</p>
 <p>Niente di tutto questo &egrave; eroico. &Egrave; la conseguenza ordinaria del fatto che una persona sola non pu&ograve; tenere in testa lo stato di ventisei cantoni, e non dovrebbe provarci.</p>
 
-<h2>8. Gli agenti come utenti del sistema</h2>
+<h2><span class="chapnum">8.</span>Gli agenti come utenti del sistema</h2>
 <p>Questo &egrave; il capitolo che non mi aspettavo di scrivere.</p>
 <p>Buona parte di questo progetto &egrave; stata costruita con agenti di programmazione. La parte interessante non &egrave; che abbiano scritto codice. &Egrave; che si sono rivelati <strong>utenti del sistema di produzione</strong>, e utenti costosi.</p>
 <p>In un giorno di agosto il traffico in uscita dalla banca dati del progetto si ripartiva cos&igrave;: gli strumenti, cio&egrave; script e utilit&agrave; interne e agenti che misuravano cose, producevano circa <strong>cinque volte il traffico di tutti gli utenti veri dell'app messi insieme</strong>. L'app non &egrave; mai stata il problema. Lo era <em>misurare</em> l'app. E ha spinto il progetto contro una soglia di fatturazione con una scadenza.</p>
@@ -266,7 +309,7 @@
 <p>Accanto sta una memoria di progetto persistente, un fatto per file, indicizzata, che porta le decisioni che un agente non pu&ograve; ricavare dal codice: quali ambienti si possono scrivere e a quali condizioni, quali correzioni sono gi&agrave; state tentate e sono fallite, quali parti della catena una sessione nuova non deve toccare da sola.</p>
 <p>La lezione va oltre questo progetto. Siamo abituati a ragionare il costo di un agente in gettoni. In un sistema con un backend vero, il costo di un agente &egrave; anche <strong>il carico che mette sulla tua infrastruttura</strong>, e quel numero pu&ograve; schiacciare il primo. Nessuno mi aveva detto di misurarlo. La fattura s&igrave;.</p>
 
-<h2>9. Quanto costa davvero</h2>
+<h2><span class="chapnum">9.</span>Quanto costa davvero</h2>
 <p>L'infrastruttura in s&eacute;, backend e distribuzione e account per sviluppatori, gira nell'ordine di <strong>qualche centinaio di franchi all'anno</strong>. La voce dominante non &egrave; affatto l'infrastruttura: &egrave; lo strumento di intelligenza artificiale che fa gran parte della costruzione, un abbonamento che avrei comunque e che &egrave; condiviso con tutto ci&ograve; su cui lavoro. Attribuito per intero, l'intero esercizio si aggira sui tremila franchi all'anno. Attribuito strettamente a questo progetto, &egrave; una frazione.</p>
 <p>Per quella cifra, nel momento in cui scrivo: <strong>diecimila profili registrati</strong>, e <strong>sette su dieci hanno effettivamente studiato o giocato</strong>, in quasi tutti i cantoni.</p>
 <p>Metto i numeri perch&eacute; sono la parte che si fa pi&ugrave; fatica a credere, e perch&eacute; inquadrano la domanda vera. Non &egrave; una storia sul fare molto con poco come virt&ugrave;. &Egrave; che uno strumento civico su scala nazionale oggi pu&ograve; essere costruito e <em>mantenuto</em> da una persona sola, e che il vincolo si &egrave; spostato. Non &egrave; pi&ugrave; la capacit&agrave; ingegneristica. &Egrave; se le istituzioni che possiedono il contenuto abbiano un modo di partecipare a tenerlo corretto, e a quella domanda nessun codice risponde da solo.</p>
