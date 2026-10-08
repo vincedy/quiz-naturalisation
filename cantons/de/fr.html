@@ -482,6 +482,17 @@
   .ccta a{display:inline-block;background:var(--red);color:#fff;font-weight:800;padding:15px 30px;
     border-radius:999px;box-shadow:var(--shadow)}
   .ccta a:hover{background:var(--red-d)}
+  /* The cantonal services link straight to this page, so a reader can arrive here without
+     ever seeing the landing and its store badges. The badges are the same markup and the
+     same sizes as there, and they sit next to the button rather than replacing it. */
+  /* The cantonal services link straight to this page, so a reader can arrive here without ever
+     seeing the landing. The badges are the landing's own markup and sizes, and they sit in the
+     hero because that reader comes to download, not to scroll. */
+  /* the landing's own rule, copied as it stands: same gap, same two heights, same optical
+     correction on the Google badge, which is taller than Apple's by design */
+  .chero .stores{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-top:20px}
+  .chero .stores img.apple{height:52px}
+  .chero .stores img.google{height:77px;margin:-12px 0}
 
   @media(max-width:700px){
     .source{grid-template-columns:1fr}
@@ -527,6 +538,7 @@
   </div>
   <p class="pills"><span class="pill pill-type">Mündlich</span><span class="pill pill-authored">Aus amtlichen Quellen verfasst</span></p>
   <p class="tag">SENa — der offizielle Staatskundekurs (fr/de)</p>
+  <div class="stores"><a href="https://apps.apple.com/app/id6769993041" aria-label="App Store"><img loading="lazy" class="apple" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store"></a><a href="https://play.google.com/store/apps/details?id=ch.vincedev.swisscitizenship" aria-label="Google Play"><img loading="lazy" class="google" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Google Play"></a></div>
 </div></div>
 
 <div class="wrap"><div class="numbers">
@@ -538,7 +550,7 @@
   <a class="host" href="https://www.fr.ch/vie-quotidienne/permis-de-sejour-et-naturalisation/documentation-pour-preparer-sa-naturalisation" target="_blank" rel="noopener">www.fr.ch &nearr;</a>
   <a class="meta" href="https://www.fr.ch/vie-quotidienne/permis-de-sejour-et-naturalisation/documentation-pour-preparer-sa-naturalisation" target="_blank" rel="noopener">Service de l&#x27;état civil et des naturalisations</a>
   <span class="live"><i></i>jede Nacht geprüft</span>
-  <div class="stamp"><span data-today-label="Heute geprüft">Zuletzt geprüft</span><b data-today>5 Oktober 2026</b></div>
+  <div class="stamp"><span data-today-label="Heute geprüft">Zuletzt geprüft</span><b data-today>8 Oktober 2026</b></div>
 </div></div>
 
 
