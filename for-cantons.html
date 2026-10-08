@@ -236,6 +236,25 @@ section[id]{scroll-margin-top:78px}
   .langmenu a:hover{background:var(--soft,#f6f8fb)}
   .langmenu a[aria-current="true"]{color:var(--red,#DA291C);font-weight:800}
   @media(max-width:720px){ .langpick{margin-left:auto} }
+.langpick{position:relative;margin-left:14px}
+  .langpick summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:7px;
+    padding:6px 10px;border:1px solid var(--border,#e6ebf2);border-radius:999px;font-weight:700;
+    font-size:.82rem;line-height:1;color:inherit;user-select:none}
+  .langpick summary::-webkit-details-marker{display:none}
+  .langpick summary:hover{border-color:var(--red,#DA291C)}
+  .langpick .flag{width:20px;height:14px;border-radius:2px;display:block;flex:none;
+    box-shadow:0 0 0 1px rgba(0,0,0,.08)}
+  .langpick .chev{width:9px;height:9px;border-right:1.6px solid currentColor;
+    border-bottom:1.6px solid currentColor;transform:rotate(45deg) translate(-1px,-1px);opacity:.55}
+  .langpick[open] summary{border-color:var(--red,#DA291C)}
+  .langmenu{position:absolute;right:0;top:calc(100% + 8px);z-index:60;min-width:168px;
+    background:#fff;border:1px solid var(--border,#e6ebf2);border-radius:14px;padding:6px;
+    box-shadow:0 14px 34px rgba(13,20,38,.16)}
+  .langmenu a{display:flex;align-items:center;gap:10px;padding:9px 11px;border-radius:10px;
+    text-decoration:none;color:var(--ink,#141821);font-size:.9rem;font-weight:650}
+  .langmenu a:hover{background:var(--soft,#f6f8fb)}
+  .langmenu a[aria-current="true"]{color:var(--red,#DA291C);font-weight:800}
+  @media(max-width:720px){ .langpick{margin-left:auto} }
 /* the table keeps transparency.html's own look; these rules only add the crest and the link.
      It is the widest thing on the page, so it steps out of the text column on a large screen. */
   .cantontable{table-layout:fixed}
@@ -449,7 +468,7 @@ section[id]{scroll-margin-top:78px}
   <p class="eyebrow">Why</p>
   <h2 class="sec">The context</h2>
   
-  <p class="lead">Candidates for naturalisation <b>prepare in any case</b>. In the absence of any indication from the competent service, they prepare with what they find: paid commercial applications, tools that do not state where their questions come from, materials without any declared verification. The demand exists and it finds a supply; when the authority indicates nothing, <b>it is the market that decides what future citizens study</b>.</p>
+  <p class="lead">Candidates for naturalisation <b>prepare in any case</b>. In the absence of any indication from the competent service, they prepare with what they find: paid commercial applications, tools that do not state where their questions come from, materials without any declared verification. The demand exists and it finds a supply; when the authority indicates nothing, <b>it is the market that decides what future citizens study</b>. The candidate cannot tell them apart: on an app store listing, a tool that can be checked and a tool that declares nothing look alike. Whoever pays therefore does so without knowing whether those questions come from their own canton's catalogue, and <b>no authority has any say over what they bought</b>.</p>
 
   <p>Building one's own tool is possible, and some cantons do so. The structural fact is that the cost does not end with the launch: a preparation application has to be maintained indefinitely.</p>
 

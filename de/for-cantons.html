@@ -236,6 +236,25 @@ section[id]{scroll-margin-top:78px}
   .langmenu a:hover{background:var(--soft,#f6f8fb)}
   .langmenu a[aria-current="true"]{color:var(--red,#DA291C);font-weight:800}
   @media(max-width:720px){ .langpick{margin-left:auto} }
+.langpick{position:relative;margin-left:14px}
+  .langpick summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:7px;
+    padding:6px 10px;border:1px solid var(--border,#e6ebf2);border-radius:999px;font-weight:700;
+    font-size:.82rem;line-height:1;color:inherit;user-select:none}
+  .langpick summary::-webkit-details-marker{display:none}
+  .langpick summary:hover{border-color:var(--red,#DA291C)}
+  .langpick .flag{width:20px;height:14px;border-radius:2px;display:block;flex:none;
+    box-shadow:0 0 0 1px rgba(0,0,0,.08)}
+  .langpick .chev{width:9px;height:9px;border-right:1.6px solid currentColor;
+    border-bottom:1.6px solid currentColor;transform:rotate(45deg) translate(-1px,-1px);opacity:.55}
+  .langpick[open] summary{border-color:var(--red,#DA291C)}
+  .langmenu{position:absolute;right:0;top:calc(100% + 8px);z-index:60;min-width:168px;
+    background:#fff;border:1px solid var(--border,#e6ebf2);border-radius:14px;padding:6px;
+    box-shadow:0 14px 34px rgba(13,20,38,.16)}
+  .langmenu a{display:flex;align-items:center;gap:10px;padding:9px 11px;border-radius:10px;
+    text-decoration:none;color:var(--ink,#141821);font-size:.9rem;font-weight:650}
+  .langmenu a:hover{background:var(--soft,#f6f8fb)}
+  .langmenu a[aria-current="true"]{color:var(--red,#DA291C);font-weight:800}
+  @media(max-width:720px){ .langpick{margin-left:auto} }
 /* the table keeps transparency.html's own look; these rules only add the crest and the link.
      It is the widest thing on the page, so it steps out of the text column on a large screen. */
   .cantontable{table-layout:fixed}
@@ -449,7 +468,7 @@ section[id]{scroll-margin-top:78px}
   <p class="eyebrow">Warum</p>
   <h2 class="sec">Der Kontext</h2>
   
-  <p class="lead">Die Kandidatinnen und Kandidaten für die Einbürgerung <b>bereiten sich in jedem Fall vor</b>. Fehlt ein Hinweis der zuständigen Fachstelle, bereiten sie sich mit dem vor, was sie finden: kostenpflichtige kommerzielle Anwendungen, Instrumente, die nicht angeben, woher sie ihre Fragen nehmen, Materialien ohne jede deklarierte Überprüfung. Die Nachfrage besteht und findet ein Angebot; wenn die Behörde nichts angibt, <b>entscheidet der Markt darüber, womit die künftigen Staatsbürgerinnen und Staatsbürger lernen</b>.</p>
+  <p class="lead">Die Kandidatinnen und Kandidaten für die Einbürgerung <b>bereiten sich in jedem Fall vor</b>. Fehlt ein Hinweis der zuständigen Fachstelle, bereiten sie sich mit dem vor, was sie finden: kostenpflichtige kommerzielle Anwendungen, Instrumente, die nicht angeben, woher sie ihre Fragen nehmen, Materialien ohne jede deklarierte Überprüfung. Die Nachfrage besteht und findet ein Angebot; wenn die Behörde nichts angibt, <b>entscheidet der Markt darüber, womit die künftigen Staatsbürgerinnen und Staatsbürger lernen</b>. Die Kandidatin kann sie nicht unterscheiden: Auf einer Seite im App-Store sehen ein überprüfbares Instrument und eines, das nichts deklariert, gleich aus. Wer bezahlt, tut dies also ohne zu wissen, ob diese Fragen aus dem Katalog des eigenen Kantons stammen, und <b>über das Gekaufte hat keine Behörde etwas zu sagen</b>.</p>
 
   <p>Ein eigenes Instrument zu entwickeln ist möglich, und einige Kantone tun es. Die strukturelle Tatsache ist, dass die Kosten mit der Inbetriebnahme nicht enden: eine Anwendung zur Vorbereitung muss dauerhaft gewartet werden.</p>
 
