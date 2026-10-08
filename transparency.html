@@ -187,9 +187,7 @@ section[id]{scroll-margin-top:78px}
 <a class="link" data-nav="home" href="landing.html">Home</a><a class="link" data-nav="cantons" href="cantons/index.html">Cantons</a>
 <a class="link" data-nav="press" href="landing.html#press">Press</a>
       <a class="link" data-nav="refs" href="landing.html#refs">References</a>
-<a class="link" data-nav="transp" href="transparency.html">Transparency</a><a class="link" data-nav="eng" href="engineering.html">Engineering</a>
-<a class="link" data-nav="privacy" href="privacy-policy.html">Privacy</a>
-<a class="link" data-nav="terms" href="terms.html">Terms</a>
+<a class="link" data-nav="transp" href="transparency.html">Transparency</a>
 <span class="langs"><a data-lang="en" href="transparency.html">EN</a><a data-lang="fr" href="fr/transparency.html">FR</a><a data-lang="de" href="de/transparency.html">DE</a><a data-lang="it" href="it/transparency.html">IT</a></span>
 </nav></div></header>
 <section id="en">
@@ -229,10 +227,7 @@ section[id]{scroll-margin-top:78px}
      It is the widest thing on the page, so it steps out of the text column on a large screen. */
   .cantontable{table-layout:fixed}
   @media (min-width:1100px){
-    /* it used to break 120px out of the column on each side, so the table started to the left of
-   its own title and of every paragraph above it. It stays in the column and scrolls inside
-   its own box when a phone cannot hold it. */
-  .cantontable{width:100%;max-width:100%;margin-left:0}
+    .cantontable{width:calc(100% + 240px);max-width:100vw;margin-left:-120px}
   }
   .cantontable col.c-canton{width:17%}
   .cantontable col.c-offer{width:40%}
@@ -265,35 +260,6 @@ section[id]{scroll-margin-top:78px}
     .cantontable td{border:0;border-top:1px solid #eee}
     .cantontable td:first-child{border-top:0}
   }
-
-  /* ── la carta grafica applicata a questa pagina ────────────────────────────
-     Queste pagine sono più vecchie del resto del sito e portavano ancora i propri colori:
-     link blu di sistema, bordi grigi #ddd, titoli a 18px. Le regole qui sotto non ridisegnano
-     niente, applicano i valori di docs/site/carta-grafica.md: un solo accento, un solo grigio,
-     i bordi in --border, e le due misure di scatola. */
-  :root{--ink:#141821;--muted:#5a6472;--soft:#f6f8fb;--border:#e6ebf2;--red:#DA291C;--red-d:#b31f14;
-        --navy:#0d1426}
-  body{color:var(--ink)}
-  main a,section a,p a,li a,td a,th a{color:var(--red);text-decoration:underline;
-        text-underline-offset:2px;text-decoration-thickness:1px}
-  main a:hover,section a:hover,p a:hover,li a:hover,td a:hover{color:var(--red-d)}
-  header.pagehero a{color:#fff}
-  h2{font-size:1.32rem;font-weight:800;letter-spacing:-.01em;margin:38px 0 12px;color:var(--ink)}
-  h3{font-size:1.02rem;font-weight:750;margin:26px 0 8px}
-  /* scheda: la misura della carta grafica */
-  .sla,.footer-note{background:var(--soft);border:1px solid var(--border);border-left:4px solid var(--red);
-        border-radius:14px;padding:18px 22px;margin:20px 0 0}
-  /* tabella: intestazione in maiuscoletto sul grigio di casa, bordi in --border, angoli 10px */
-  table{border-collapse:separate;border-spacing:0;border:1px solid var(--border);border-radius:10px;
-        overflow:hidden;width:100%}
-  table th,table td{border:0;border-bottom:1px solid var(--border);padding:12px 14px;
-        vertical-align:top;text-align:left}
-  table thead th{background:var(--soft);font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;
-        color:var(--muted);font-weight:800}
-  table tbody tr:last-child td,table tbody tr:last-child th{border-bottom:0}
-  table tbody th{font-weight:700}
-  /* pillola: la terza misura, e l'unica tonda */
-  .pill{border-radius:999px;padding:4px 11px;font-size:.74rem;font-weight:800;letter-spacing:.02em}
 </style>
 
 <table class="cantontable">

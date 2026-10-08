@@ -112,9 +112,15 @@ section[id]{scroll-margin-top:78px}
   :root{--ink:#141821;--muted:#5a6472;--soft:#f6f8fb;--border:#e6ebf2;--red:#DA291C;--red-d:#b31f14;
         --navy:#0d1426}
   body{color:var(--ink)}
-  main a,section a,p a,li a,td a,th a{color:var(--red);text-decoration:underline;
-        text-underline-offset:2px;text-decoration-thickness:1px}
-  main a:hover,section a:hover,p a:hover,li a:hover,td a:hover{color:var(--red-d)}
+  /* Il sito usa il rosso per i link, senza sottolineatura. In una tabella però i link sono
+     decine — qui 78 — e il rosso smette di essere un accento: diventa il colore del testo.
+     Dentro una tabella il link resta color inchiostro e si dichiara con la sottolineatura. */
+  main a,section a,p a,li a{color:var(--red);text-decoration:none}
+  main a:hover,section a:hover,p a:hover,li a:hover{color:var(--red-d);text-decoration:underline;
+        text-underline-offset:2px}
+  table a{color:var(--ink);text-decoration:underline;text-underline-offset:2px;
+        text-decoration-color:var(--border);text-decoration-thickness:1px}
+  table a:hover{color:var(--red);text-decoration-color:currentColor}
   header.pagehero a{color:#fff}
   h2{font-size:1.32rem;font-weight:800;letter-spacing:-.01em;margin:38px 0 12px;color:var(--ink)}
   h3{font-size:1.02rem;font-weight:750;margin:26px 0 8px}
@@ -140,9 +146,7 @@ section[id]{scroll-margin-top:78px}
 <a class="link" data-nav="home" href="landing.html">Home</a><a class="link" data-nav="cantons" href="../cantons/it/index.html">Cantons</a>
 <a class="link" data-nav="press" href="landing.html#press">Press</a>
       <a class="link" data-nav="refs" href="landing.html#refs">References</a>
-<a class="link" data-nav="transp" href="transparency.html">Transparency</a><a class="link" data-nav="eng" href="engineering.html">Engineering</a>
-<a class="link" data-nav="privacy" href="privacy-policy.html">Privacy</a>
-<a class="link" data-nav="terms" href="terms.html">Terms</a>
+<a class="link" data-nav="transp" href="transparency.html">Transparency</a>
 <span class="langs"><a data-lang="en" href="../account-deletion.html">EN</a><a data-lang="fr" href="../fr/account-deletion.html">FR</a><a data-lang="de" href="../de/account-deletion.html">DE</a><a data-lang="it" href="../it/account-deletion.html">IT</a></span>
 </nav></div></header>
 <section id="it">

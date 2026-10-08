@@ -72,6 +72,28 @@
   .stores-top{display:flex;gap:14px;align-items:center;justify-content:center;flex-wrap:wrap;margin:18px 0 6px}
   .stores-top img.apple{height:52px}
   .stores-top img.google{height:77px;margin:-12px 0}
+
+  /* l'eroe del sito, come Trasparenza e le pagine cantone */
+  header.pagehero{background:linear-gradient(160deg,#0d1426,#16203c);color:#fff;padding:54px 24px 46px;
+    margin:0 0 34px;width:100vw;margin-left:calc(50% - 50vw);border-radius:0}
+  header.pagehero .wrap{max-width:888px;margin:0 auto;padding:0 24px}
+  header.pagehero h1{margin:0;color:#fff;font-size:2rem;line-height:1.2;letter-spacing:-.02em}
+  header.pagehero .sub{margin:14px 0 0;color:#aebbd6}
+  header.pagehero .eyebrow{margin:0 0 10px;color:#ff6a5e;font-weight:800;font-size:.8rem;
+    letter-spacing:.1em;text-transform:uppercase}
+  header.pagehero .back{display:inline-block;margin:0 0 14px;color:#aebbd6;text-decoration:none;font-size:.9rem}
+  header.pagehero .stores-top{justify-content:center}
+  @media(max-width:640px){ header.pagehero h1{font-size:1.5rem} }
+
+  /* ── la carta grafica applicata a questa pagina ──────────────────────────── */
+  :root{--ink:#141821;--muted:#5a6472;--soft:#f6f8fb;--border:#e6ebf2;--red:#DA291C;--red-d:#b31f14}
+  main a,section a,p a,li a{color:var(--red);text-decoration:none}
+  main a:hover,section a:hover,p a:hover,li a:hover{color:var(--red-d);text-decoration:underline;
+        text-underline-offset:2px}
+  table a{color:var(--ink);text-decoration:underline;text-underline-offset:2px;
+        text-decoration-color:var(--border)}
+  table a:hover{color:var(--red);text-decoration-color:currentColor}
+  header.pagehero a{color:#fff}
 </style>
 <link rel="canonical" href="https://swissnaturalizationtest.ch/engineering.html">
 <link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/engineering.html">
@@ -89,16 +111,12 @@
 </head>
 <body>
 
-<header class="site"><input type="checkbox" id="mnav"><div class="wrap navbar"><a class="brand" href="landing.html"><img src="app/icon.png" alt="">Swiss Naturalization Test</a><label class="burger" for="mnav" aria-label="Menu"><span></span><span></span><span></span></label><nav class="main"><a class="link" data-nav="home" href="landing.html">Home</a><a class="link" data-nav="cantons" href="cantons/index.html">Cantons</a><a class="link" data-nav="press" href="landing.html#press">Press</a><a class="link" data-nav="refs" href="landing.html#refs">References</a><a class="link" data-nav="transp" href="transparency.html">Transparency</a><a class="link" data-nav="eng" href="engineering.html">Engineering</a><a class="link" data-nav="privacy" href="privacy-policy.html">Privacy</a><a class="link" data-nav="terms" href="terms.html">Terms</a><span class="langs"><a data-lang="en" href="engineering.html">EN</a><a data-lang="fr" href="fr/engineering.html">FR</a><a data-lang="de" href="de/engineering.html">DE</a><a data-lang="it" href="it/engineering.html">IT</a></span></nav></div></header>
+<header class="site"><input type="checkbox" id="mnav"><div class="wrap navbar"><a class="brand" href="landing.html"><img src="app/icon.png" alt="">Swiss Naturalization Test</a><label class="burger" for="mnav" aria-label="Menu"><span></span><span></span><span></span></label><nav class="main"><a class="link" data-nav="home" href="landing.html">Home</a><a class="link" data-nav="cantons" href="cantons/index.html">Cantons</a><a class="link" data-nav="press" href="landing.html#press">Press</a><a class="link" data-nav="refs" href="landing.html#refs">References</a><a class="link" data-nav="transp" href="transparency.html">Transparency</a><span class="langs"><a data-lang="en" href="engineering.html">EN</a><a data-lang="fr" href="fr/engineering.html">FR</a><a data-lang="de" href="de/engineering.html">DE</a><a data-lang="it" href="it/engineering.html">IT</a></span></nav></div></header>
 
 <!-- ═══════════════════════════ EN ═══════════════════════════ -->
 
 <article class="article">
-<a class="back" href="landing.html">&larr; Back to the app</a>
-<p class="eyebrow">Engineering</p>
-<h1>Twenty-six procedures, one app</h1>
-<p class="sub">Engineering a civic study tool when the content belongs to twenty-six administrations</p>
-<div class="stores stores-top"><a href="https://apps.apple.com/app/id6769993041" aria-label="App Store"><img loading="lazy" class="apple" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store"></a><a href="https://play.google.com/store/apps/details?id=ch.vincedev.swisscitizenship" aria-label="Google Play"><img loading="lazy" class="google" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Google Play"></a></div>
+<header class="pagehero"><div class="wrap"><a class="back" href="landing.html">&larr; Back to the app</a><p class="eyebrow">Engineering</p><h1>Twenty-six procedures, one app</h1><p class="sub">Engineering a civic study tool when the content belongs to twenty-six administrations</p><div class="stores stores-top"><a href="https://apps.apple.com/app/id6769993041" aria-label="App Store"><img loading="lazy" class="apple" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store"></a><a href="https://play.google.com/store/apps/details?id=ch.vincedev.swisscitizenship" aria-label="Google Play"><img loading="lazy" class="google" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Google Play"></a></div></div></header>
 <div class="abody">
 
 <h2>0. Where this comes from</h2>
