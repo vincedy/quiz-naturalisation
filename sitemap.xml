@@ -1108,6 +1108,15 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://swissnaturalizationtest.ch/engineering.html"/>
   </url>
   <url>
+    <loc>https://swissnaturalizationtest.ch/de/for-cantons.html</loc>
+    <lastmod>2026-10-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/for-cantons.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/fr/for-cantons.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/de/for-cantons.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://swissnaturalizationtest.ch/it/for-cantons.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://swissnaturalizationtest.ch/for-cantons.html"/>
+  </url>
+  <url>
     <loc>https://swissnaturalizationtest.ch/de/landing.html</loc>
     <lastmod>2026-10-08</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/landing.html"/>
@@ -1162,6 +1171,15 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://swissnaturalizationtest.ch/engineering.html"/>
   </url>
   <url>
+    <loc>https://swissnaturalizationtest.ch/fr/for-cantons.html</loc>
+    <lastmod>2026-10-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/for-cantons.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/fr/for-cantons.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/de/for-cantons.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://swissnaturalizationtest.ch/it/for-cantons.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://swissnaturalizationtest.ch/for-cantons.html"/>
+  </url>
+  <url>
     <loc>https://swissnaturalizationtest.ch/fr/landing.html</loc>
     <lastmod>2026-10-08</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/landing.html"/>
@@ -1214,6 +1232,15 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/de/engineering.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://swissnaturalizationtest.ch/it/engineering.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://swissnaturalizationtest.ch/engineering.html"/>
+  </url>
+  <url>
+    <loc>https://swissnaturalizationtest.ch/it/for-cantons.html</loc>
+    <lastmod>2026-10-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/for-cantons.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/fr/for-cantons.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/de/for-cantons.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://swissnaturalizationtest.ch/it/for-cantons.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://swissnaturalizationtest.ch/for-cantons.html"/>
   </url>
   <url>
     <loc>https://swissnaturalizationtest.ch/it/landing.html</loc>
