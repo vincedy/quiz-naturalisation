@@ -97,7 +97,16 @@
     .pill-orange { background: #fdf0e3; color: #8a4a1d; }
     .pill-federal { background: #eceff3; color: #465063; }
     .pill-teal { background: #efe9fb; color: #5a3d9a; }
-  </style>
+  
+  .forauth{margin-top:16px;padding-top:12px;border-top:1px solid currentColor;border-top-color:rgba(128,140,160,.28);font-size:.86rem}
+  .forauth a{color:inherit;font-weight:800;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1.5px}
+  .forauth a:hover{color:var(--red)}
+
+  /* On a phone the footer carries unbreakable tokens — an address, a long label — and a
+     single one of them gives the whole page a horizontal scrollbar. Measured at 390px on
+     08.10.2026: 652px of scroll width against 591 of viewport. */
+  footer.site{overflow-wrap:anywhere}
+</style>
 <link rel="icon" href="/favicon.png" type="image/png" sizes="192x192">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="canonical" href="https://swissnaturalizationtest.ch/de/transparency.html">
@@ -493,6 +502,7 @@ section[id]{scroll-margin-top:78px}
 
 <footer class="site">
 <a data-nav="home" href="landing.html">Home</a>&middot;<a data-nav="press" href="landing.html#press">Press</a>&middot;<a data-nav="refs" href="landing.html#refs">References</a>&middot;<a data-nav="transp" href="transparency.html">Transparency</a>&middot;<a data-nav="eng" href="engineering.html">Engineering</a>&middot;<a data-nav="privacy" href="privacy-policy.html">Privacy</a>&middot;<a data-nav="terms" href="terms.html">Terms</a>&middot;<a data-nav="del" href="account-deletion.html">Data deletion</a>&middot;<a data-nav="contact" href="mailto:swisscitizenshiptest@gmail.com" onclick="return __contact(event)">Contact</a>
+      <div class="forauth">F&uuml;r kantonale Beh&ouml;rden: <a href="for-cantons.html">die Notiz f&uuml;r die Integrationsfachstellen</a> &rarr;</div>
 </footer>
 <script>
 window.__contact=function(e){if(e&&e.preventDefault)e.preventDefault();

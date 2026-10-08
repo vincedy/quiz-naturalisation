@@ -131,6 +131,7 @@
     .ref:only-child .obody{flex-direction:column;gap:14px}
     .ref:only-child .ocol.side{flex:1 1 auto;width:100%}
   }
+  .refcta{text-align:center;margin:0}a.morebtn{display:inline-block;text-decoration:none;margin-top:16px}a.morebtn:hover{border-color:var(--red);background:var(--soft)}
   .refnote{text-align:center;color:var(--muted);font-size:.82rem;max-width:62ch;margin:26px auto 0;line-height:1.6}
 
   .spot{background:var(--navy);color:#fff}
@@ -199,7 +200,16 @@
   .qgrid.open .quote.more{display:block}
   .morebtn{display:block;margin:22px auto 0;color:var(--red);font-weight:800;font-size:.9rem;border:1px solid var(--border);border-radius:999px;padding:9px 20px;background:var(--bg);cursor:pointer}
   .morebtn:hover{background:var(--soft)}
-  </style>
+  
+  .forauth{margin-top:16px;padding-top:12px;border-top:1px solid currentColor;border-top-color:rgba(128,140,160,.28);font-size:.86rem}
+  .forauth a{color:inherit;font-weight:800;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1.5px}
+  .forauth a:hover{color:var(--red)}
+
+  /* On a phone the footer carries unbreakable tokens — an address, a long label — and a
+     single one of them gives the whole page a horizontal scrollbar. Measured at 390px on
+     08.10.2026: 652px of scroll width against 591 of viewport. */
+  footer.site{overflow-wrap:anywhere}
+</style>
 <link rel="canonical" href="https://swissnaturalizationtest.ch/de/landing.html">
 <link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/landing.html">
 <link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/fr/landing.html">
@@ -350,23 +360,9 @@
           </div>
         </div>
 
-        <!-- KARTE NEUENBURG — ZURUECKGESTELLT, NICHT GELOESCHT. Wieder aktivieren, indem dieser
-         Kommentar entfernt wird, sobald der Kanton seine Verweisung online stellt: die Karte
-         ist fertig, es fehlt nur die echte ne.ch-Adresse anstelle von href="#". Solange jene
-         Seite nicht oeffentlich ist, darf hier nichts angezeigt werden.
-
-        <div class="ref" data-preview="neuchatel" style="outline:2px dashed rgba(216,35,42,.45);outline-offset:6px">
-          <div class="head">
-            <img class="crest" src="../assets/crests/NE.png" alt="">
-            <div class="titles"><div class="ct">Neuenburg</div><div class="who">Service de la coh&eacute;sion multiculturelle</div></div>
-            <img class="logo" src="../assets/offices/ne-canton.svg" alt="R&eacute;publique et Canton de Neuch&acirc;tel">
-          </div>
-          <p class="what">Verweist auf der Website des Kantons auf die App als kostenloses, erg&auml;nzendes Hilfsmittel zur Pr&uuml;fungsvorbereitung und beteiligt sich an den Infrastrukturkosten.</p>
-          <div class="also">Kantonsseite: <a href="#" target="_blank" rel="noopener">ne.ch &nearr;</a></div>
-        </div>
-        -->
       </div>
       <p class="refnote">Es sind die Integrationsstellen, mit ihren eigenen Worten. Kein Kanton hat eine offizielle Empfehlung ausgesprochen, und diese Seite beansprucht keine.</p>
+      <p class="refcta"><a class="morebtn" href="for-cantons.html">F&uuml;r kantonale Fachstellen: keine Kosten, keine Verpflichtung &rarr;</a></p>
     </div></section>
 
     
@@ -381,6 +377,7 @@
 
     <footer class="site"><div class="wrap">
       <div class="fl"><a href="#" onclick="return __toTop()">Start</a> &middot; <a href="#" onclick="return __toPress()">Presse</a> &middot; <a href="#" onclick="return __toRefs()">Referenzen</a> &middot; <a href="../cantons/de/index.html">Kantone</a> &middot; <a href="transparency.html">Transparenz</a> &middot; <a href="engineering.html">Technik</a> &middot; <a href="privacy-policy.html">Datenschutz</a> &middot; <a href="terms.html">Nutzungsbedingungen</a> &middot; <a href="account-deletion.html">Datenlöschung</a> &middot; <a href="mailto:swisscitizenshiptest@gmail.com" onclick="return __contact(event)">Kontakt</a></div>
+      <div class="forauth">F&uuml;r kantonale Beh&ouml;rden: <a href="for-cantons.html">die Notiz f&uuml;r die Integrationsfachstellen</a> &rarr;</div>
       <p class="disc">Swiss Naturalization Test ist ein unabh&auml;ngiger Lernbegleiter, entwickelt von Vincenzo Casini. Er ist mit keiner Regierungsbeh&ouml;rde verbunden. F&uuml;r die offizielle Pr&uuml;fung beziehen Sie sich stets auf die offizielle Plattform Ihres Kantons.</p>
     </div></footer>
     

@@ -131,6 +131,7 @@
     .ref:only-child .obody{flex-direction:column;gap:14px}
     .ref:only-child .ocol.side{flex:1 1 auto;width:100%}
   }
+  .refcta{text-align:center;margin:0}a.morebtn{display:inline-block;text-decoration:none;margin-top:16px}a.morebtn:hover{border-color:var(--red);background:var(--soft)}
   .refnote{text-align:center;color:var(--muted);font-size:.82rem;max-width:62ch;margin:26px auto 0;line-height:1.6}
 
   .pmeta .read{color:var(--red);font-weight:700}
@@ -201,7 +202,16 @@
   .qgrid.open .quote.more{display:block}
   .morebtn{display:block;margin:22px auto 0;color:var(--red);font-weight:800;font-size:.9rem;border:1px solid var(--border);border-radius:999px;padding:9px 20px;background:var(--bg);cursor:pointer}
   .morebtn:hover{background:var(--soft)}
-  </style>
+  
+  .forauth{margin-top:16px;padding-top:12px;border-top:1px solid currentColor;border-top-color:rgba(128,140,160,.28);font-size:.86rem}
+  .forauth a{color:inherit;font-weight:800;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1.5px}
+  .forauth a:hover{color:var(--red)}
+
+  /* On a phone the footer carries unbreakable tokens — an address, a long label — and a
+     single one of them gives the whole page a horizontal scrollbar. Measured at 390px on
+     08.10.2026: 652px of scroll width against 591 of viewport. */
+  footer.site{overflow-wrap:anywhere}
+</style>
 <link rel="canonical" href="https://swissnaturalizationtest.ch/it/landing.html">
 <link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/landing.html">
 <link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/fr/landing.html">
@@ -355,23 +365,9 @@
           </div>
         </div>
 
-        <!-- SCHEDA NEUCHATEL — PARCHEGGIATA, NON CANCELLATA. Si riesuma togliendo questo commento
-         il giorno in cui il cantone mette online il referenziamento: la scheda e pronta e
-         manca solo l'indirizzo vero di ne.ch al posto di href="#". Finche quella pagina non
-         e pubblica, qui non si mostra nulla.
-
-        <div class="ref" data-preview="neuchatel" style="outline:2px dashed rgba(216,35,42,.45);outline-offset:6px">
-          <div class="head">
-            <img class="crest" src="../assets/crests/NE.png" alt="">
-            <div class="titles"><div class="ct">Neuch&acirc;tel</div><div class="who">Service de la coh&eacute;sion multiculturelle</div></div>
-            <img class="logo" src="../assets/offices/ne-canton.svg" alt="R&eacute;publique et Canton de Neuch&acirc;tel">
-          </div>
-          <p class="what">Referenzia l'applicazione sul sito del cantone come strumento complementare e gratuito di preparazione all'esame, e partecipa ai costi d'infrastruttura.</p>
-          <div class="also">Pagina cantonale: <a href="#" target="_blank" rel="noopener">ne.ch &nearr;</a></div>
-        </div>
-        -->
       </div>
       <p class="refnote">Sono gli uffici d'integrazione, con parole loro. Nessun cantone ha emesso una raccomandazione ufficiale, e questa pagina non ne rivendica nessuna.</p>
+      <p class="refcta"><a class="morebtn" href="for-cantons.html">Per i servizi cantonali: nessun costo, nessun impegno &rarr;</a></p>
     </div></section>
 
     <section class="block quotes"><div class="wrap"><p class="eyebrow">Recensioni</p><h2 class="sec">Dicono di lei</h2><div class="qgrid"><div class="quote"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="txt">&laquo;&nbsp;Nel mio comune è cambiato il sindaco da poco e le domande erano già aggiornate. Test passato senza errori.&nbsp;&raquo;</p><div class="by">Carlo A. &middot; Google Play</div></div><div class="quote"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="txt">&laquo;&nbsp;Ho superato l'esame di naturalizzazione in Argovia, 43 su 45, con questa app.&nbsp;&raquo;</p><div class="by">R. &middot; Community</div></div><div class="quote"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="txt">&laquo;&nbsp;Questa app è diventata un rituale quotidiano, in coppia. Imprescindibile.&nbsp;&raquo;</p><div class="by">pyrame &middot; App Store</div></div><div class="quote"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="txt">&laquo;&nbsp;Vorrei che questa app fosse esistita quando studiavo per l'esame: mi ero fatto le flashcard da solo, qui è già tutto pronto.&nbsp;&raquo;</p><div class="by">Swissstarr &middot; App Store</div></div><div class="quote"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="txt">&laquo;&nbsp;Esattamente ciò di cui avevo bisogno. Il coaching adattivo individua i miei punti deboli e la simulazione d'esame è davvero utile.&nbsp;&raquo;</p><div class="by">schachaf a. &middot; Google Play</div></div><div class="quote"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="txt">&laquo;&nbsp;Si vede che è fatta da chi sta davvero preparando il test, non da una software house. Un'attenzione ai dettagli incredibile.&nbsp;&raquo;</p><div class="by">App Store</div></div><div class="quote more"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="txt">&laquo;&nbsp;La consiglio a chiunque voglia richiedere la cittadinanza: essendo una procedura cantonale, guida bene su cosa aspettarsi. Questionari pertinenti e coinvolgenti.&nbsp;&raquo;</p><div class="by">Julia R. &middot; Google Play</div></div><div class="quote more"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="txt">&laquo;&nbsp;Marathon e RapidFire le uso quando ho cinque minuti o sono sui mezzi. Imparo divertendomi senza nemmeno accorgermene.&nbsp;&raquo;</p><div class="by">Maria T. &middot; Google Play</div></div><div class="quote more"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="txt">&laquo;&nbsp;Super facile da usare e molto pratica, la adoro. E il vantaggio più grande: niente pubblicità e nessun paywall. Mi aiuta tantissimo.&nbsp;&raquo;</p><div class="by">Guillaume P. &middot; Google Play</div></div><div class="quote more"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="txt">&laquo;&nbsp;Lo sviluppatore è molto attivo dietro le quinte, l'app è davvero ottima e sembra avere tantissime domande utili per allenarsi.&nbsp;&raquo;</p><div class="by">David L. &middot; Google Play</div></div><div class="quote more"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="txt">&laquo;&nbsp;Sono svizzera ma la adoro: facciamo persino dei piccoli quiz in macchina, è davvero fantastica.&nbsp;&raquo;</p><div class="by">Alex S. &middot; Google Play</div></div><div class="quote more"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="txt">&laquo;&nbsp;Interfaccia pulita, dark mode bellissima, contenuto enorme. La modalità Cantoni con stemmi e mappe è educativa e divertente. Consigliatissima.&nbsp;&raquo;</p><div class="by">Consuela M. &middot; Google Play</div></div><div class="quote more"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="txt">&laquo;&nbsp;Avevo trovato una risposta sbagliata e lo sviluppatore mi ha contattato subito per risolverla. Valutazione portata a 5 stelle.&nbsp;&raquo;</p><div class="by">Giovanni C. &middot; Google Play</div></div><div class="quote more"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="txt">&laquo;&nbsp;La modalità Cantoni con stemmi e mappe è sorprendentemente divertente, anche fuori dalla preparazione. Aggiungi le flashcard a ripetizione spaziata e hai uno strumento completo.&nbsp;&raquo;</p><div class="by">Sophie R. &middot; App Store</div></div><div class="quote more"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="txt">&laquo;&nbsp;La sto usando per studiare e mi piace proprio perch&eacute; nel gioco impari forse di pi&ugrave;. Grazie per l'impegno che ci metti e per darci la possibilit&agrave; di usarla gratis.&nbsp;&raquo;</p><div class="by">Giada &middot; Community</div></div><div class="quote more"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="txt">&laquo;&nbsp;Ho passato l'esame un mesetto fa e la continuo a usare per i giochi. L'aspetto ludico e il sistema di ripasso mi invogliano a usarla tutti i giorni, cosa che altrimenti non avrei fatto.&nbsp;&raquo;</p><div class="by">Francesca &middot; Community</div></div><div class="quote more"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="txt">&laquo;&nbsp;Ottima app, sempre aggiornata, con aggiornamenti regolari e uno sviluppatore affidabile. Un'idea fantastica che merita uno sponsor, perfetta per chiunque debba affrontare la naturalizzazione.&nbsp;&raquo;</p><div class="by">Rony A. &middot; Google Play</div></div><div class="quote more"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="txt">&laquo;&nbsp;Assolutamente fantastica. L'app &egrave; ben progettata e imparare &egrave; divertente. Volevo da tempo esercitarmi e approfondire la conoscenza della Svizzera, e ho trovato uno strumento eccellente.&nbsp;&raquo;</p><div class="by">Clara F. &middot; Google Play</div></div><div class="quote more"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="txt">&laquo;&nbsp;Questo test &egrave; utile, e non solo per chi vuole ottenere la cittadinanza svizzera.&nbsp;&raquo;</p><div class="by">Le suisso-tadjik &middot; App Store</div></div><div class="quote more"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="txt">&laquo;&nbsp;L'applicazione ha fatto di me uno svizzero migliore.&nbsp;&raquo;</p><div class="by">pyrame &middot; App Store</div></div><div class="quote more"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="txt">&laquo;&nbsp;Applicazione stupenda, complimenti, &egrave; fatta bene. La consiglio caldamente, anche agli svizzeri di ceppo. Mi ricorda gli esami del motorino.&nbsp;&raquo;</p><div class="by">Cris-626 &middot; App Store</div></div></div><button type="button" class="morebtn" onclick="__moreRev(this)">Mostra altre recensioni</button></div></section>
@@ -383,6 +379,7 @@
 
     <footer class="site"><div class="wrap">
       <div class="fl"><a href="#" onclick="return __toTop()">Home</a> &middot; <a href="#" onclick="return __toPress()">Stampa</a> &middot; <a href="#" onclick="return __toRefs()">Referenze</a> &middot; <a href="../cantons/it/index.html">Cantoni</a> &middot; <a href="transparency.html">Trasparenza</a> &middot; <a href="engineering.html">Ingegneria</a> &middot; <a href="privacy-policy.html">Privacy</a> &middot; <a href="terms.html">Condizioni</a> &middot; <a href="account-deletion.html">Cancellazione dati</a> &middot; <a href="mailto:swisscitizenshiptest@gmail.com" onclick="return __contact(event)">Contatto</a></div>
+      <div class="forauth">Per le autorit&agrave; cantonali: <a href="for-cantons.html">la nota per i servizi d&rsquo;integrazione</a> &rarr;</div>
       <p class="disc">Swiss Naturalization Test &egrave; un compagno di studio indipendente sviluppato da Vincenzo Casini. Non &egrave; affiliato ad alcuna autorit&agrave; governativa. Per il test ufficiale, fai sempre riferimento alla piattaforma ufficiale del tuo cantone.</p>
     </div></footer>
     

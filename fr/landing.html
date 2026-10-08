@@ -131,6 +131,7 @@
     .ref:only-child .obody{flex-direction:column;gap:14px}
     .ref:only-child .ocol.side{flex:1 1 auto;width:100%}
   }
+  .refcta{text-align:center;margin:0}a.morebtn{display:inline-block;text-decoration:none;margin-top:16px}a.morebtn:hover{border-color:var(--red);background:var(--soft)}
   .refnote{text-align:center;color:var(--muted);font-size:.82rem;max-width:62ch;margin:26px auto 0;line-height:1.6}
 
   .spot{background:var(--navy);color:#fff}
@@ -199,7 +200,16 @@
   .qgrid.open .quote.more{display:block}
   .morebtn{display:block;margin:22px auto 0;color:var(--red);font-weight:800;font-size:.9rem;border:1px solid var(--border);border-radius:999px;padding:9px 20px;background:var(--bg);cursor:pointer}
   .morebtn:hover{background:var(--soft)}
-  </style>
+  
+  .forauth{margin-top:16px;padding-top:12px;border-top:1px solid currentColor;border-top-color:rgba(128,140,160,.28);font-size:.86rem}
+  .forauth a{color:inherit;font-weight:800;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1.5px}
+  .forauth a:hover{color:var(--red)}
+
+  /* On a phone the footer carries unbreakable tokens — an address, a long label — and a
+     single one of them gives the whole page a horizontal scrollbar. Measured at 390px on
+     08.10.2026: 652px of scroll width against 591 of viewport. */
+  footer.site{overflow-wrap:anywhere}
+</style>
 <link rel="canonical" href="https://swissnaturalizationtest.ch/fr/landing.html">
 <link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/landing.html">
 <link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/fr/landing.html">
@@ -350,23 +360,9 @@
           </div>
         </div>
 
-        <!-- CARTE NEUCHATEL — MISE DE COTE, PAS SUPPRIMEE. A reactiver en retirant ce commentaire
-         le jour ou le canton met son referencement en ligne : la carte est prete, il ne manque
-         que la vraie adresse ne.ch a la place de href="#". Tant que cette page n'est pas
-         publique, rien ici ne doit etre affiche.
-
-        <div class="ref" data-preview="neuchatel" style="outline:2px dashed rgba(216,35,42,.45);outline-offset:6px">
-          <div class="head">
-            <img class="crest" src="../assets/crests/NE.png" alt="">
-            <div class="titles"><div class="ct">Neuch&acirc;tel</div><div class="who">Service de la coh&eacute;sion multiculturelle</div></div>
-            <img class="logo" src="../assets/offices/ne-canton.svg" alt="R&eacute;publique et Canton de Neuch&acirc;tel">
-          </div>
-          <p class="what">Il r&eacute;f&eacute;rence l&#39;application sur le site du canton comme outil compl&eacute;mentaire et gratuit de pr&eacute;paration &agrave; l&#39;examen, et participe aux co&ucirc;ts d&#39;infrastructure.</p>
-          <div class="also">Page cantonale&nbsp;: <a href="#" target="_blank" rel="noopener">ne.ch &nearr;</a></div>
-        </div>
-        -->
       </div>
       <p class="refnote">Ce sont les offices d&#39;int&eacute;gration, avec leurs propres mots. Aucun canton n&#39;a &eacute;mis de recommandation officielle, et cette page n&#39;en revendique aucune.</p>
+      <p class="refcta"><a class="morebtn" href="for-cantons.html">Pour les services cantonaux&nbsp;: aucun co&ucirc;t, aucun engagement &rarr;</a></p>
     </div></section>
 
     
@@ -381,6 +377,7 @@
 
     <footer class="site"><div class="wrap">
       <div class="fl"><a href="#" onclick="return __toTop()">Accueil</a> &middot; <a href="#" onclick="return __toPress()">Presse</a> &middot; <a href="#" onclick="return __toRefs()">R&eacute;f&eacute;rences</a> &middot; <a href="../cantons/fr/index.html">Cantons</a> &middot; <a href="transparency.html">Transparence</a> &middot; <a href="engineering.html">Ing&eacute;nierie</a> &middot; <a href="privacy-policy.html">Confidentialit&eacute;</a> &middot; <a href="terms.html">Conditions</a> &middot; <a href="account-deletion.html">Suppression des données</a> &middot; <a href="mailto:swisscitizenshiptest@gmail.com" onclick="return __contact(event)">Contact</a></div>
+      <div class="forauth">Pour les autorit&eacute;s cantonales&nbsp;: <a href="for-cantons.html">la note pour les services d&rsquo;int&eacute;gration</a> &rarr;</div>
       <p class="disc">Swiss Naturalization Test est un compagnon d'&eacute;tude ind&eacute;pendant d&eacute;velopp&eacute; par Vincenzo Casini. Il n'est affili&eacute; &agrave; aucune autorit&eacute; gouvernementale. Pour le test officiel, r&eacute;f&eacute;rez-vous toujours &agrave; la plateforme officielle de votre canton.</p>
     </div></footer>
     

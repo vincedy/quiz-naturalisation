@@ -148,6 +148,7 @@
     .ref:only-child .obody{flex-direction:column;gap:14px}
     .ref:only-child .ocol.side{flex:1 1 auto;width:100%}
   }
+  .refcta{text-align:center;margin:0}a.morebtn{display:inline-block;text-decoration:none;margin-top:16px}a.morebtn:hover{border-color:var(--red);background:var(--soft)}
   .refnote{text-align:center;color:var(--muted);font-size:.82rem;max-width:62ch;margin:26px auto 0;line-height:1.6}
 
   .spot{background:var(--navy);color:#fff}
@@ -216,6 +217,15 @@
   .qgrid.open .quote.more{display:block}
   .morebtn{display:block;margin:22px auto 0;color:var(--red);font-weight:800;font-size:.9rem;border:1px solid var(--border);border-radius:999px;padding:9px 20px;background:var(--bg);cursor:pointer}
   .morebtn:hover{background:var(--soft)}
+  
+  .forauth{margin-top:16px;padding-top:12px;border-top:1px solid currentColor;border-top-color:rgba(128,140,160,.28);font-size:.86rem}
+  .forauth a{color:inherit;font-weight:800;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1.5px}
+  .forauth a:hover{color:var(--red)}
+
+  /* On a phone the footer carries unbreakable tokens — an address, a long label — and a
+     single one of them gives the whole page a horizontal scrollbar. Measured at 390px on
+     08.10.2026: 652px of scroll width against 591 of viewport. */
+  footer.site{overflow-wrap:anywhere}
 
 /* the layout's own rules, from layout.html */
 /* Canton page — the site's tokens, layouts the landing does not have. */
@@ -241,7 +251,7 @@
   .chero p.tag{margin:14px 0 0;max-width:62ch;text-align:left;color:#c7d2e8;font-size:1.06rem}
 
   /* headline numbers: a white band that overlaps the hero */
-  .numbers{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);
+  .numbers{background:var(--bg);border:1px solid var(--border);border-radius:14px;
     box-shadow:var(--shadow);display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
     margin:-34px auto 0;position:relative;z-index:2;overflow:hidden}
   .numbers .n{padding:20px 22px;border-right:1px solid var(--border)}
@@ -263,7 +273,7 @@
 
   /* the ten parameters */
   .specs{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:12px;margin-top:22px}
-  .spec{background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:16px 18px}
+  .spec{background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:18px 22px}
   .sec.tint .spec{background:var(--bg)}
   .spec .k{font-size:.73rem;text-transform:uppercase;letter-spacing:.07em;color:var(--muted)}
   .spec .v{font-size:1.1rem;font-weight:750;margin-top:5px;letter-spacing:-.02em}
@@ -285,7 +295,7 @@
   .intro-oral{margin-bottom:6px}
   .cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:14px;
     margin-top:24px;align-items:start}
-  .panel{background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:6px 20px 12px}
+  .panel{background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:6px 22px 14px}
   .paneltitle{margin:14px 0 2px;font-size:.73rem;text-transform:uppercase;letter-spacing:.09em;
     color:var(--muted);font-weight:800}
   .panel .f:last-child{border-bottom:0}
@@ -314,7 +324,7 @@
   /* the landing stylesheet sizes .ref for its two-card grid (width:480px): on a canton
      page the card owns the whole row, so the width is taken back here. */
   .officeband .ref{width:auto;max-width:none;display:flex;flex-direction:column;gap:10px;background:var(--bg);
-    border:1px solid var(--border);border-radius:var(--radius);padding:22px 24px}
+    border:1px solid var(--border);border-radius:14px;padding:18px 22px}
   .officeband .head{display:flex;align-items:center;gap:12px}
   .officeband .titles{min-width:0}
   .officeband .logo{height:44px;width:auto;max-width:170px;object-fit:contain;margin-left:auto;opacity:.9}
@@ -336,7 +346,7 @@
   .officeband .alsolbl{font-size:.74rem;text-transform:uppercase;letter-spacing:.07em;
     color:var(--muted);font-weight:700;margin-bottom:2px}
   .officeband .alsorow{display:flex;justify-content:space-between;align-items:baseline;gap:14px;
-    padding:10px 12px;border:1px solid var(--border);border-radius:10px;background:var(--bg);transition:.16s}
+    padding:11px 14px;border:1px solid var(--border);border-radius:10px;background:var(--bg);transition:.16s}
   .officeband a.alsorow{text-decoration:none}
   .officeband a.alsorow:hover{border-color:var(--red);background:var(--soft)}
   .officeband .alsorow.static{opacity:.72}
@@ -354,7 +364,7 @@
   .claimband .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:12px 16px;padding:18px 24px}
   .claimband p{margin:0;color:var(--ink);font-size:1.02rem;max-width:78ch}
   .claimband .warnline{flex-basis:100%;display:flex;gap:9px;align-items:flex-start;margin-top:4px;
-    padding:11px 14px;border-radius:12px;background:rgba(214,137,16,.09);border:1px solid rgba(214,137,16,.3);
+    padding:11px 14px;border-radius:10px;background:rgba(214,137,16,.09);border:1px solid rgba(214,137,16,.3);
     color:#8a5709;font-weight:650;font-size:.95rem}
   .claimband .warnline::before{content:"⚠";flex:none;font-size:.95rem}
   /* every badge on the page is one size, whether it sits on a title or on a line */
@@ -370,6 +380,11 @@
      or it is silently dropped — that is what made this title stick to the chips. */
   .sec h2.gridtitle{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;
     margin:30px 0 6px;font-size:1.25rem}
+  /* A phone is 375px wide and this table is not: measured on 08.10.2026 it ran to 548 on the
+     Aargau page and took the whole document into horizontal scroll. The table keeps its
+     columns and scrolls inside its own box, which is the only part that should move. */
+  .tscroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:18px}
+  .tscroll .grid2{margin-top:0;min-width:430px}
   .grid2{width:100%;border-collapse:collapse;margin-top:18px;background:var(--bg);
     border:1px solid var(--border);border-radius:14px;overflow:hidden}
   .grid2 th,.grid2 td{padding:13px 16px;text-align:center;border-bottom:1px solid var(--border)}
@@ -387,7 +402,7 @@
   @media(max-width:600px){.grid2 th,.grid2 td{padding:10px 8px;font-size:.9rem}}
 
   /* what the app holds */
-  .mock{margin-top:20px;padding:24px 26px;border:1px solid var(--border);border-left:4px solid var(--red);
+  .mock{margin-top:20px;padding:18px 22px;border:1px solid var(--border);border-left:4px solid var(--red);
     border-radius:14px;background:var(--bg)}
   .mocktitle{display:flex;flex-wrap:wrap;align-items:center;gap:0 10px;
     margin:0 0 14px;font-weight:800;font-size:1.1rem;letter-spacing:-.02em}
@@ -416,18 +431,24 @@
   .banner span{color:var(--muted);font-size:.92rem}
 
   /* official material */
-  .links{display:grid;gap:10px;margin-top:22px}
+  /* A grid column is as wide as its widest item unless it is told it may shrink: without
+     min-width:0 a long link title pushed the card past a 375px screen. */
+  .links{display:grid;grid-template-columns:minmax(0,1fr);gap:10px;margin-top:22px}
   .links .l{display:flex;align-items:center;justify-content:space-between;gap:18px;background:var(--bg);
-    border:1px solid var(--border);border-radius:14px;padding:16px 20px;transition:transform .15s,box-shadow .15s}
+    border:1px solid var(--border);border-radius:14px;padding:18px 22px;transition:transform .15s,box-shadow .15s}
   a.l:hover{transform:translateY(-1px);box-shadow:var(--shadow);border-color:var(--red)}
-  .links .t{display:block;font-weight:780}
+  .links .l>*{min-width:0}
+  .links .t{display:block;font-weight:780;overflow-wrap:anywhere}
   .links .src{display:block;color:var(--red);font-weight:750;font-size:.86rem;margin-top:2px;
     word-break:break-all}
   .links .m{display:block;color:var(--muted);font-size:.86rem;margin-top:3px}
   .dots i{font-style:normal}
   .dots i + i::before{content:"·";color:var(--muted);opacity:.5;margin:0 7px}
   .links .arrow{color:var(--red);font-weight:800;font-size:1.1rem}
+  /* nowrap held this line open on a phone: the card could not get narrower than the longest
+     label it contains, and the page scrolled sideways. It wraps below 640px. */
   .links .off{color:var(--muted);font-size:.84rem;white-space:nowrap}
+  @media(max-width:640px){ .links .off{white-space:normal;text-align:right} .links .l{gap:12px} }
 
   /* the communes */
   .search{width:100%;max-width:420px;margin-top:20px;padding:13px 18px;border-radius:999px;
@@ -473,15 +494,14 @@
   @keyframes tick{0%{box-shadow:0 0 0 0 rgba(218,41,28,.5)}70%{box-shadow:0 0 0 9px rgba(218,41,28,0)}
     100%{box-shadow:0 0 0 0 rgba(218,41,28,0)}}
   @media (prefers-reduced-motion:reduce){.stamp::after{animation:none}}
-  .quote{margin:22px 0 0;padding-left:20px;border-left:3px solid var(--red);max-width:70ch}
+  /* The same shell as .source right above it: a quotation and its source are two halves of
+     one statement, and they were reading as two unrelated boxes because .quote also picks up
+     the reviews card from the landing stylesheet, with its own radius and a 70ch cap. */
+  .quote{margin:14px 0 0;padding:18px 22px;max-width:none;background:var(--bg);
+    border:1px solid var(--border);border-left:4px solid var(--red);border-radius:14px}
   .quote p{margin:0;font-size:1.08rem}
   .quote cite{display:block;margin-top:8px;font-style:normal;color:var(--muted);font-size:.86rem}
 
-  .ccta{background:var(--soft);border-top:1px solid var(--border);padding:50px 24px;text-align:center}
-  .ccta h2{margin:0 0 18px;font-size:1.7rem}
-  .ccta a{display:inline-block;background:var(--red);color:#fff;font-weight:800;padding:15px 30px;
-    border-radius:999px;box-shadow:var(--shadow)}
-  .ccta a:hover{background:var(--red-d)}
   /* The cantonal services link straight to this page, so a reader can arrive here without
      ever seeing the landing and its store badges. The badges are the same markup and the
      same sizes as there, and they sit next to the button rather than replacing it. */
@@ -610,7 +630,7 @@
   
   <h2 class="gridtitle">Esame scritto simulato — Come vengono estratte le domande
     <span class="cert cert-warn">stima</span></h2>
-  <table class="grid2">
+  <div class="tscroll"><table class="grid2">
     <thead><tr><th>Tema</th><th>federale</th><th>cantonale</th>
       <th class="tot">Totale</th></tr></thead>
     <tbody>
@@ -623,7 +643,7 @@
     </tbody>
     <tfoot><tr><th scope="row">Totale</th><td>25</td><td>25</td>
       <td class="tot">50</td></tr></tfoot>
-  </table>
+  </table></div>
   
   
 </div></section>
@@ -690,13 +710,9 @@
 </div></section>
 
 
-<div class="ccta"><div class="wrap">
-  <h2>Prepara il test di questo cantone</h2>
-  <a href="../../go.html">Scarica l&#x27;app &rarr;</a>
-</div></div>
-
 <footer class="site"><div class="wrap">
       <div class="fl"><a href="../../it/landing.html">Home</a> &middot; <a href="../../it/landing.html#press">Stampa</a> &middot; <a href="../../it/landing.html#refs">Referenze</a> &middot; <a href="../../cantons/it/index.html">Cantoni</a> &middot; <a href="../../it/transparency.html">Trasparenza</a> &middot; <a href="../../it/engineering.html">Ingegneria</a> &middot; <a href="../../it/privacy-policy.html">Privacy</a> &middot; <a href="../../it/terms.html">Condizioni</a> &middot; <a href="../../it/account-deletion.html">Cancellazione dati</a> &middot; <a href="mailto:swisscitizenshiptest@gmail.com" onclick="return __contact(event)">Contatto</a></div>
+      <div class="forauth">Per le autorit&agrave; cantonali: <a href="../../it/for-cantons.html">la nota per i servizi d&rsquo;integrazione</a> &rarr;</div>
       <p class="disc">Swiss Naturalization Test &egrave; un compagno di studio indipendente sviluppato da Vincenzo Casini. Non &egrave; affiliato ad alcuna autorit&agrave; governativa. Per il test ufficiale, fai sempre riferimento alla piattaforma ufficiale del tuo cantone.</p>
     </div></footer>
 

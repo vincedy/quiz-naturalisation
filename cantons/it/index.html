@@ -147,6 +147,7 @@
     .ref:only-child .obody{flex-direction:column;gap:14px}
     .ref:only-child .ocol.side{flex:1 1 auto;width:100%}
   }
+  .refcta{text-align:center;margin:0}a.morebtn{display:inline-block;text-decoration:none;margin-top:16px}a.morebtn:hover{border-color:var(--red);background:var(--soft)}
   .refnote{text-align:center;color:var(--muted);font-size:.82rem;max-width:62ch;margin:26px auto 0;line-height:1.6}
 
   .spot{background:var(--navy);color:#fff}
@@ -215,6 +216,15 @@
   .qgrid.open .quote.more{display:block}
   .morebtn{display:block;margin:22px auto 0;color:var(--red);font-weight:800;font-size:.9rem;border:1px solid var(--border);border-radius:999px;padding:9px 20px;background:var(--bg);cursor:pointer}
   .morebtn:hover{background:var(--soft)}
+  
+  .forauth{margin-top:16px;padding-top:12px;border-top:1px solid currentColor;border-top-color:rgba(128,140,160,.28);font-size:.86rem}
+  .forauth a{color:inherit;font-weight:800;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1.5px}
+  .forauth a:hover{color:var(--red)}
+
+  /* On a phone the footer carries unbreakable tokens — an address, a long label — and a
+     single one of them gives the whole page a horizontal scrollbar. Measured at 390px on
+     08.10.2026: 652px of scroll width against 591 of viewport. */
+  footer.site{overflow-wrap:anywhere}
 
 /* the layout's own rules, from layout.html */
 .ihero{text-align:left;padding:52px 24px 48px}
@@ -489,6 +499,7 @@
 
 <footer class="site"><div class="wrap">
       <div class="fl"><a href="../../it/landing.html">Home</a> &middot; <a href="../../it/landing.html#press">Stampa</a> &middot; <a href="../../it/landing.html#refs">Referenze</a> &middot; <a href="../../cantons/it/index.html">Cantoni</a> &middot; <a href="../../it/transparency.html">Trasparenza</a> &middot; <a href="../../it/engineering.html">Ingegneria</a> &middot; <a href="../../it/privacy-policy.html">Privacy</a> &middot; <a href="../../it/terms.html">Condizioni</a> &middot; <a href="../../it/account-deletion.html">Cancellazione dati</a> &middot; <a href="mailto:swisscitizenshiptest@gmail.com" onclick="return __contact(event)">Contatto</a></div>
+      <div class="forauth">Per le autorit&agrave; cantonali: <a href="../../it/for-cantons.html">la nota per i servizi d&rsquo;integrazione</a> &rarr;</div>
       <p class="disc">Swiss Naturalization Test &egrave; un compagno di studio indipendente sviluppato da Vincenzo Casini. Non &egrave; affiliato ad alcuna autorit&agrave; governativa. Per il test ufficiale, fai sempre riferimento alla piattaforma ufficiale del tuo cantone.</p>
     </div></footer>
 

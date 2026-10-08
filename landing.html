@@ -131,6 +131,7 @@
     .ref:only-child .obody{flex-direction:column;gap:14px}
     .ref:only-child .ocol.side{flex:1 1 auto;width:100%}
   }
+  .refcta{text-align:center;margin:0}a.morebtn{display:inline-block;text-decoration:none;margin-top:16px}a.morebtn:hover{border-color:var(--red);background:var(--soft)}
   .refnote{text-align:center;color:var(--muted);font-size:.82rem;max-width:62ch;margin:26px auto 0;line-height:1.6}
 
   .spot{background:var(--navy);color:#fff}
@@ -199,7 +200,16 @@
   .qgrid.open .quote.more{display:block}
   .morebtn{display:block;margin:22px auto 0;color:var(--red);font-weight:800;font-size:.9rem;border:1px solid var(--border);border-radius:999px;padding:9px 20px;background:var(--bg);cursor:pointer}
   .morebtn:hover{background:var(--soft)}
-  </style>
+  
+  .forauth{margin-top:16px;padding-top:12px;border-top:1px solid currentColor;border-top-color:rgba(128,140,160,.28);font-size:.86rem}
+  .forauth a{color:inherit;font-weight:800;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1.5px}
+  .forauth a:hover{color:var(--red)}
+
+  /* On a phone the footer carries unbreakable tokens — an address, a long label — and a
+     single one of them gives the whole page a horizontal scrollbar. Measured at 390px on
+     08.10.2026: 652px of scroll width against 591 of viewport. */
+  footer.site{overflow-wrap:anywhere}
+</style>
 <link rel="canonical" href="https://swissnaturalizationtest.ch/landing.html">
 <link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/landing.html">
 <link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/fr/landing.html">
@@ -353,6 +363,7 @@
         
       </div>
       <p class="refnote">These are the integration offices, in their own words. No canton has issued an official recommendation, and this page claims none.</p>
+      <p class="refcta"><a class="morebtn" href="for-cantons.html">For cantonal services: no cost, no commitment &rarr;</a></p>
     </div></section>
 
 
@@ -367,6 +378,7 @@
 
     <footer class="site"><div class="wrap">
       <div class="fl"><a href="#" onclick="return __toTop()">Home</a> &middot; <a href="#" onclick="return __toPress()">Press</a> &middot; <a href="#" onclick="return __toRefs()">References</a> &middot; <a href="cantons/index.html">Cantons</a> &middot; <a href="transparency.html">Transparency</a> &middot; <a href="engineering.html">Engineering</a> &middot; <a href="privacy-policy.html">Privacy</a> &middot; <a href="terms.html">Terms</a> &middot; <a href="account-deletion.html">Data deletion</a> &middot; <a href="print/index.html">Print materials</a> &middot; <a href="mailto:swisscitizenshiptest@gmail.com" onclick="return __contact(event)">Contact</a></div>
+      <div class="forauth">For cantonal authorities: <a href="for-cantons.html">the note for integration services</a> &rarr;</div>
       <p class="disc">Swiss Naturalization Test is an independent study companion developed by Vincenzo Casini. It is not affiliated with any government authority. For the official test, always refer to your canton's official platform.</p>
     </div></footer>
     
