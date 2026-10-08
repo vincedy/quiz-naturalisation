@@ -34,7 +34,25 @@
     .lang-nav { margin-bottom: 32px; padding: 12px; background: #f5f5f5; border-radius: 6px; }
     .lang-nav a { margin-right: 16px; }
     section{display:block}
-    </style>
+    
+  /* The site's hero, so this page stops being the odd one out: the same navy band, the same
+     white title, the same centred badges as the landing, the canton pages and the note. */
+  /* full-bleed: the page body is a narrow column, and a hero that stops at its edges reads as a
+     card instead of the band every other page of the site opens with. */
+  header.pagehero{background:linear-gradient(160deg,#0d1426,#16203c);color:#fff;padding:54px 24px 46px;
+    margin:0 0 34px;width:100vw;margin-left:calc(50% - 50vw);border-radius:0}
+  /* the hero's content lines up with the page's own column, not with a wider one: the title
+     and the first paragraph below it must start on the same vertical. */
+  header.pagehero .wrap{max-width:888px;margin:0 auto;padding:0 24px}
+  header.pagehero h1{margin:0;color:#fff;font-size:2rem;line-height:1.2;letter-spacing:-.02em}
+  header.pagehero .meta,header.pagehero .sub{margin:14px 0 0;color:#aebbd6}
+  header.pagehero .meta strong{color:#fff}
+  header.pagehero .eyebrow{margin:0 0 10px;color:#ff6a5e;font-weight:800;font-size:.8rem;
+    letter-spacing:.1em;text-transform:uppercase}
+  header.pagehero .back{display:inline-block;margin:0 0 14px;color:#aebbd6;text-decoration:none;font-size:.9rem}
+  header.pagehero .stores-top{justify-content:center}
+  @media(max-width:640px){ header.pagehero h1{font-size:1.5rem} }
+</style>
 <link rel="icon" href="/favicon.png" type="image/png" sizes="192x192">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="canonical" href="https://swissnaturalizationtest.ch/fr/account-deletion.html">
@@ -85,6 +103,35 @@ body>.lang-nav{display:none!important}
 body{max-width:none!important;margin:0!important;padding:0!important}
 body>section{max-width:840px;margin-left:auto!important;margin-right:auto!important;padding-left:24px;padding-right:24px}
 section[id]{scroll-margin-top:78px}
+
+  /* ── la carta grafica applicata a questa pagina ────────────────────────────
+     Queste pagine sono più vecchie del resto del sito e portavano ancora i propri colori:
+     link blu di sistema, bordi grigi #ddd, titoli a 18px. Le regole qui sotto non ridisegnano
+     niente, applicano i valori di docs/site/carta-grafica.md: un solo accento, un solo grigio,
+     i bordi in --border, e le due misure di scatola. */
+  :root{--ink:#141821;--muted:#5a6472;--soft:#f6f8fb;--border:#e6ebf2;--red:#DA291C;--red-d:#b31f14;
+        --navy:#0d1426}
+  body{color:var(--ink)}
+  main a,section a,p a,li a,td a,th a{color:var(--red);text-decoration:underline;
+        text-underline-offset:2px;text-decoration-thickness:1px}
+  main a:hover,section a:hover,p a:hover,li a:hover,td a:hover{color:var(--red-d)}
+  header.pagehero a{color:#fff}
+  h2{font-size:1.32rem;font-weight:800;letter-spacing:-.01em;margin:38px 0 12px;color:var(--ink)}
+  h3{font-size:1.02rem;font-weight:750;margin:26px 0 8px}
+  /* scheda: la misura della carta grafica */
+  .sla,.footer-note{background:var(--soft);border:1px solid var(--border);border-left:4px solid var(--red);
+        border-radius:14px;padding:18px 22px;margin:20px 0 0}
+  /* tabella: intestazione in maiuscoletto sul grigio di casa, bordi in --border, angoli 10px */
+  table{border-collapse:separate;border-spacing:0;border:1px solid var(--border);border-radius:10px;
+        overflow:hidden;width:100%}
+  table th,table td{border:0;border-bottom:1px solid var(--border);padding:12px 14px;
+        vertical-align:top;text-align:left}
+  table thead th{background:var(--soft);font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;
+        color:var(--muted);font-weight:800}
+  table tbody tr:last-child td,table tbody tr:last-child th{border-bottom:0}
+  table tbody th{font-weight:700}
+  /* pillola: la terza misura, e l'unica tonda */
+  .pill{border-radius:999px;padding:4px 11px;font-size:.74rem;font-weight:800;letter-spacing:.02em}
 </style>
 <header class="site"><input type="checkbox" id="mnav"><div class="wrap navbar">
 <a class="brand" href="landing.html"><img src="../app/icon.png" alt="">Swiss Naturalization Test</a>
@@ -98,16 +145,9 @@ section[id]{scroll-margin-top:78px}
 <a class="link" data-nav="terms" href="terms.html">Terms</a>
 <span class="langs"><a data-lang="en" href="../account-deletion.html">EN</a><a data-lang="fr" href="../fr/account-deletion.html">FR</a><a data-lang="de" href="../de/account-deletion.html">DE</a><a data-lang="it" href="../it/account-deletion.html">IT</a></span>
 </nav></div></header>
-  <div class="lang-nav">
-    <a href="../account-deletion.html">English</a>
-    <a href="../fr/account-deletion.html">Fran&ccedil;ais</a>
-    <a href="../de/account-deletion.html">Deutsch</a>
-    <a href="../it/account-deletion.html">Italiano</a>
-  </div>
-
-  <section id="fr">
-    <h1>Suppression du compte et des données</h1>
-    <p class="meta">App : <strong>Swiss Naturalization Test</strong> · Développeur : Vincenzo Casini · Dernière mise à jour : 24 juin 2026</p>
+<section id="fr">
+    <header class="pagehero"><div class="wrap"><h1>Suppression du compte et des données</h1>
+    <p class="meta">App : <strong>Swiss Naturalization Test</strong> · Développeur : Vincenzo Casini · Dernière mise à jour : 24 juin 2026</p></div></header>
 
     <h2>Quel compte est concerné</h2>
     <p>Cette page explique comment supprimer votre compte et vos données de l'application Swiss Naturalization Test. Elle concerne deux éléments : le <strong>compte facultatif lié à votre connexion Google ou Apple</strong> (créé uniquement si vous choisissez de vous connecter) et le <strong>compte anonyme automatique</strong> que l'application crée sur nos serveurs au premier lancement. Vous pouvez supprimer l'un, l'autre ou les deux.</p>
