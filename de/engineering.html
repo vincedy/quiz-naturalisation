@@ -75,7 +75,10 @@
 
   /* l'eroe del sito, come Trasparenza e le pagine cantone */
   header.pagehero{background:linear-gradient(160deg,#0d1426,#16203c);color:#fff;padding:54px 24px 46px;
-    margin:0 0 34px;width:100vw;margin-left:calc(50% - 50vw);border-radius:0}
+    margin:0 0 34px;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);border-radius:0}
+  /* 100vw conta anche la barra di scorrimento, e la pagina finiva per scorrere in orizzontale
+     su ogni schermo che ne ha una: i due margini negativi fanno la stessa cosa senza mentire
+     sulla larghezza. */
   header.pagehero .wrap{max-width:888px;margin:0 auto;padding:0 24px}
   header.pagehero h1{margin:0;color:#fff;font-size:2rem;line-height:1.2;letter-spacing:-.02em}
   header.pagehero .sub{margin:14px 0 0;color:#aebbd6}
@@ -94,6 +97,11 @@
         text-decoration-color:var(--border)}
   table a:hover{color:var(--red);text-decoration-color:currentColor}
   header.pagehero a{color:#fff}
+
+  /* La fascia a tutta larghezza esce di mezza barra di scorrimento per lato, perché 50vw la
+     conta e 50% no. `clip` taglia quell'eccedenza senza introdurre uno scorrimento, e senza
+     spegnere `position:sticky` come farebbe `hidden`. */
+  html,body{overflow-x:clip}
 </style>
 <link rel="canonical" href="https://swissnaturalizationtest.ch/de/engineering.html">
 <link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/engineering.html">

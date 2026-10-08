@@ -39,7 +39,10 @@
   /* full-bleed: the page body is a narrow column, and a hero that stops at its edges reads as a
      card instead of the band every other page of the site opens with. */
   header.pagehero{background:linear-gradient(160deg,#0d1426,#16203c);color:#fff;padding:54px 24px 46px;
-    margin:0 0 34px;width:100vw;margin-left:calc(50% - 50vw);border-radius:0}
+    margin:0 0 34px;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);border-radius:0}
+  /* 100vw conta anche la barra di scorrimento, e la pagina finiva per scorrere in orizzontale
+     su ogni schermo che ne ha una: i due margini negativi fanno la stessa cosa senza mentire
+     sulla larghezza. */
   /* the hero's content lines up with the page's own column, not with a wider one: the title
      and the first paragraph below it must start on the same vertical. */
   header.pagehero .wrap{max-width:888px;margin:0 auto;padding:0 24px}
@@ -137,6 +140,16 @@ section[id]{scroll-margin-top:78px}
   table tbody th{font-weight:700}
   /* pillola: la terza misura, e l'unica tonda */
   .pill{border-radius:999px;padding:4px 11px;font-size:.74rem;font-weight:800;letter-spacing:.02em}
+
+  .stores-top{display:flex;gap:14px;align-items:center;justify-content:center;flex-wrap:wrap;margin:18px 0 6px}
+  .stores-top img{width:auto}
+  .stores-top img.apple{height:52px}
+  .stores-top img.google{height:77px;margin:-12px 0}
+
+  /* La fascia a tutta larghezza esce di mezza barra di scorrimento per lato, perché 50vw la
+     conta e 50% no. `clip` taglia quell'eccedenza senza introdurre uno scorrimento, e senza
+     spegnere `position:sticky` come farebbe `hidden`. */
+  html,body{overflow-x:clip}
 </style>
 <header class="site">
   <input type="checkbox" id="mnav">
