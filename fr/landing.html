@@ -93,7 +93,7 @@
   /* Références institutionnelles — une carte par canton. Réutilise les jetons de la section
      presse (largeur, bordure, rayon, le rouge de l'exergue) : elle grandit d'une carte quand un
      autre canton s'ajoute, sans qu'aucune carte existante ne soit touchée. */
-  .refs{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;align-items:stretch}
+  .refs{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;align-items:flex-start}
   .ref{display:flex;flex-direction:column;width:480px;max-width:100%;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:22px 24px;gap:10px}
   .ref .head{display:flex;align-items:center;gap:12px}
   .ref .head img.crest{width:34px;height:34px;object-fit:contain;flex:0 0 34px}
@@ -117,7 +117,7 @@
      before; with a single card it opens across the row, because a 480px card beside empty
      space says the opposite of what the section is for. The day Neuchatel comes out of its
      comment, :only-child stops matching and the grid returns on its own. */
-  .ref .obody{display:flex;flex-direction:column;gap:10px}
+  .ref .obody{display:flex;flex-direction:column;gap:10px;flex:1}
   .ref .ocol{display:flex;flex-direction:column;gap:10px;min-width:0}
   .ref .ocol.side{margin-top:auto}
   .ref:only-child{width:100%;max-width:none}
@@ -337,7 +337,7 @@
           <div class="ocol">
           <p class="what">Il r&eacute;f&eacute;rence l&#39;application sur le site cantonal comme un outil gratuit, compl&eacute;mentaire &agrave; son propre cours de pr&eacute;paration.</p>
           <blockquote>
-            <p class="orig">&laquo;&nbsp;En compl&eacute;ment du cours &ldquo;Vivre en Suisse et &agrave; Neuch&acirc;tel&rdquo; et des possibilit&eacute;s de pr&eacute;paration individuelle d&eacute;j&agrave; disponibles, elle permet de s&#39;exercer &agrave; son rythme, o&ugrave; et quand on le souhaite, sur les questions f&eacute;d&eacute;rales et neuch&acirc;teloises, avec la source officielle indiqu&eacute;e sous chaque question.&nbsp;&raquo;</p>
+            <p class="orig">&laquo;&nbsp;"Swiss Naturalization Test" est une application gratuite, sans publicit&eacute;, sans compte et utilisable hors ligne pour se pr&eacute;parer au test de naturalisation. En compl&eacute;ment du cours &laquo;&nbsp;Vivre en Suisse et &agrave; Neuch&acirc;tel&nbsp;&raquo; et des possibilit&eacute;s de pr&eacute;paration individuelle d&eacute;j&agrave; disponibles, elle permet de s&#39;exercer &agrave; son rythme, o&ugrave; et quand on le souhaite, sur les questions f&eacute;d&eacute;rales et neuch&acirc;teloises, avec la source officielle indiqu&eacute;e sous chaque question. Disponible en fran&ccedil;ais, allemand, italien et anglais.&nbsp;&raquo;</p>
             <cite>R&eacute;publique et Canton de Neuch&acirc;tel &mdash; ne.ch, &laquo;&nbsp;Pr&eacute;paration &agrave; la naturalisation&nbsp;&raquo;, octobre 2026</cite>
           </blockquote>
           </div>

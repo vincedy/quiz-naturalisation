@@ -93,7 +93,7 @@
   /* Institutionelle Referenzen — eine Karte pro Kanton. Verwendet die Tokens des Presseblocks
      (Breite, Rahmen, Radius, das Rot der Dachzeile): Kommt ein weiterer Kanton dazu, wächst der
      Block um eine Karte, ohne dass eine bestehende Karte angefasst wird. */
-  .refs{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;align-items:stretch}
+  .refs{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;align-items:flex-start}
   .ref{display:flex;flex-direction:column;width:480px;max-width:100%;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:22px 24px;gap:10px}
   .ref .head{display:flex;align-items:center;gap:12px}
   .ref .head img.crest{width:34px;height:34px;object-fit:contain;flex:0 0 34px}
@@ -117,7 +117,7 @@
      before; with a single card it opens across the row, because a 480px card beside empty
      space says the opposite of what the section is for. The day Neuchatel comes out of its
      comment, :only-child stops matching and the grid returns on its own. */
-  .ref .obody{display:flex;flex-direction:column;gap:10px}
+  .ref .obody{display:flex;flex-direction:column;gap:10px;flex:1}
   .ref .ocol{display:flex;flex-direction:column;gap:10px;min-width:0}
   .ref .ocol.side{margin-top:auto}
   .ref:only-child{width:100%;max-width:none}
@@ -337,7 +337,7 @@
           <div class="ocol">
           <p class="what">Sie verweist auf der kantonalen Website auf die App als kostenloses Angebot, erg&auml;nzend zum eigenen Vorbereitungskurs.</p>
           <blockquote>
-            <p class="orig">&laquo;&nbsp;Erg&auml;nzend zum Kurs &ldquo;Vivre en Suisse et &agrave; Neuch&acirc;tel&rdquo; und zu den bereits bestehenden M&ouml;glichkeiten der individuellen Vorbereitung erlaubt sie es, im eigenen Tempo zu &uuml;ben, wo und wann man m&ouml;chte, mit den eidgen&ouml;ssischen und den Neuenburger Fragen und der offiziellen Quelle unter jeder Frage.&nbsp;&raquo;</p>
+            <p class="orig">&laquo;&nbsp;"Swiss Naturalization Test" ist eine kostenlose Anwendung, ohne Werbung, ohne Konto und offline nutzbar, zur Vorbereitung auf den Einb&uuml;rgerungstest. Erg&auml;nzend zum Kurs &bdquo;Vivre en Suisse et &agrave; Neuch&acirc;tel&ldquo; und zu den bereits bestehenden M&ouml;glichkeiten der individuellen Vorbereitung erlaubt sie es, im eigenen Tempo zu &uuml;ben, wo und wann man m&ouml;chte, mit den eidgen&ouml;ssischen und den Neuenburger Fragen und der offiziellen Quelle unter jeder Frage. Verf&uuml;gbar auf Franz&ouml;sisch, Deutsch, Italienisch und Englisch.&nbsp;&raquo;</p>
             <cite>R&eacute;publique et Canton de Neuch&acirc;tel &mdash; ne.ch, &laquo;&nbsp;Pr&eacute;paration &agrave; la naturalisation&nbsp;&raquo;, Oktober 2026</cite>
           </blockquote>
           </div>

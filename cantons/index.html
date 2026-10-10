@@ -109,7 +109,7 @@
   /* Institutional references — one card per canton. Reuses the press section's own tokens
      (width, border, radius, the eyebrow red): it grows by one card when another canton joins,
      without any existing card being touched. */
-  .refs{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;align-items:stretch}
+  .refs{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;align-items:flex-start}
   .ref{display:flex;flex-direction:column;width:480px;max-width:100%;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:22px 24px;gap:10px}
   .ref .head{display:flex;align-items:center;gap:12px}
   .ref .head img.crest{width:34px;height:34px;object-fit:contain;flex:0 0 34px}
@@ -133,7 +133,7 @@
      before; with a single card it opens across the row, because a 480px card beside empty
      space says the opposite of what the section is for. The day Neuchatel comes out of its
      comment, :only-child stops matching and the grid returns on its own. */
-  .ref .obody{display:flex;flex-direction:column;gap:10px}
+  .ref .obody{display:flex;flex-direction:column;gap:10px;flex:1}
   .ref .ocol{display:flex;flex-direction:column;gap:10px;min-width:0}
   .ref .ocol.side{margin-top:auto}
   .ref:only-child{width:100%;max-width:none}
