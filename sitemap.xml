@@ -28,6 +28,14 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://swissnaturalizationtest.ch/engineering.html"/>
   </url>
   <url>
+    <loc>https://swissnaturalizationtest.ch/media-kit.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/media-kit.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/fr/media-kit.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/de/media-kit.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://swissnaturalizationtest.ch/it/media-kit.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://swissnaturalizationtest.ch/media-kit.html"/>
+  </url>
+  <url>
     <loc>https://swissnaturalizationtest.ch/privacy-policy.html</loc>
     <lastmod>2026-10-08</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/privacy-policy.html"/>
@@ -1126,6 +1134,14 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://swissnaturalizationtest.ch/landing.html"/>
   </url>
   <url>
+    <loc>https://swissnaturalizationtest.ch/de/media-kit.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/media-kit.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/fr/media-kit.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/de/media-kit.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://swissnaturalizationtest.ch/it/media-kit.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://swissnaturalizationtest.ch/media-kit.html"/>
+  </url>
+  <url>
     <loc>https://swissnaturalizationtest.ch/de/privacy-policy.html</loc>
     <lastmod>2026-10-08</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/privacy-policy.html"/>
@@ -1189,6 +1205,14 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://swissnaturalizationtest.ch/landing.html"/>
   </url>
   <url>
+    <loc>https://swissnaturalizationtest.ch/fr/media-kit.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/media-kit.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/fr/media-kit.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/de/media-kit.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://swissnaturalizationtest.ch/it/media-kit.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://swissnaturalizationtest.ch/media-kit.html"/>
+  </url>
+  <url>
     <loc>https://swissnaturalizationtest.ch/fr/privacy-policy.html</loc>
     <lastmod>2026-10-08</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/privacy-policy.html"/>
@@ -1250,6 +1274,14 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/de/landing.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://swissnaturalizationtest.ch/it/landing.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://swissnaturalizationtest.ch/landing.html"/>
+  </url>
+  <url>
+    <loc>https://swissnaturalizationtest.ch/it/media-kit.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/media-kit.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/fr/media-kit.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/de/media-kit.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://swissnaturalizationtest.ch/it/media-kit.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://swissnaturalizationtest.ch/media-kit.html"/>
   </url>
   <url>
     <loc>https://swissnaturalizationtest.ch/it/privacy-policy.html</loc>
