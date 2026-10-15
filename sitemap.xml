@@ -28,6 +28,15 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://swissnaturalizationtest.ch/engineering.html"/>
   </url>
   <url>
+    <loc>https://swissnaturalizationtest.ch/story.html</loc>
+    <lastmod>2026-10-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/story.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/fr/story.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/de/story.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://swissnaturalizationtest.ch/it/story.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://swissnaturalizationtest.ch/story.html"/>
+  </url>
+  <url>
     <loc>https://swissnaturalizationtest.ch/media-kit.html</loc>
     <lastmod>2026-10-14</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/media-kit.html"/>
@@ -1117,6 +1126,15 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://swissnaturalizationtest.ch/engineering.html"/>
   </url>
   <url>
+    <loc>https://swissnaturalizationtest.ch/de/story.html</loc>
+    <lastmod>2026-10-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/story.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/fr/story.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/de/story.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://swissnaturalizationtest.ch/it/story.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://swissnaturalizationtest.ch/story.html"/>
+  </url>
+  <url>
     <loc>https://swissnaturalizationtest.ch/de/for-cantons.html</loc>
     <lastmod>2026-10-12</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/for-cantons.html"/>
@@ -1189,6 +1207,15 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://swissnaturalizationtest.ch/engineering.html"/>
   </url>
   <url>
+    <loc>https://swissnaturalizationtest.ch/fr/story.html</loc>
+    <lastmod>2026-10-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/story.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/fr/story.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/de/story.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://swissnaturalizationtest.ch/it/story.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://swissnaturalizationtest.ch/story.html"/>
+  </url>
+  <url>
     <loc>https://swissnaturalizationtest.ch/fr/for-cantons.html</loc>
     <lastmod>2026-10-12</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/for-cantons.html"/>
@@ -1259,6 +1286,15 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/de/engineering.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://swissnaturalizationtest.ch/it/engineering.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://swissnaturalizationtest.ch/engineering.html"/>
+  </url>
+  <url>
+    <loc>https://swissnaturalizationtest.ch/it/story.html</loc>
+    <lastmod>2026-10-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/story.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/fr/story.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/de/story.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://swissnaturalizationtest.ch/it/story.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://swissnaturalizationtest.ch/story.html"/>
   </url>
   <url>
     <loc>https://swissnaturalizationtest.ch/it/for-cantons.html</loc>
