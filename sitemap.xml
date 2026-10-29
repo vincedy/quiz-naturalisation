@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://swissnaturalizationtest.ch/landing.html</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-28</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/landing.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/fr/landing.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/de/landing.html"/>
@@ -38,7 +38,7 @@
   </url>
   <url>
     <loc>https://swissnaturalizationtest.ch/story.html</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-28</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/story.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/fr/story.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/de/story.html"/>
@@ -89,6 +89,14 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/press/de/badener-tagblatt.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://swissnaturalizationtest.ch/press/it/badener-tagblatt.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://swissnaturalizationtest.ch/press/badener-tagblatt.html"/>
+  </url>
+  <url>
+    <loc>https://swissnaturalizationtest.ch/press/canal-alpha.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/press/canal-alpha.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/press/fr/canal-alpha.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/press/de/canal-alpha.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://swissnaturalizationtest.ch/press/it/canal-alpha.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://swissnaturalizationtest.ch/press/canal-alpha.html"/>
   </url>
   <url>
     <loc>https://swissnaturalizationtest.ch/press/corriere-del-ticino.html</loc>
@@ -308,7 +316,7 @@
   </url>
   <url>
     <loc>https://swissnaturalizationtest.ch/cantons/de/ne.html</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-28</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/cantons/ne.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/cantons/fr/ne.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/cantons/de/ne.html"/>
@@ -560,7 +568,7 @@
   </url>
   <url>
     <loc>https://swissnaturalizationtest.ch/cantons/fr/ne.html</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-28</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/cantons/ne.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/cantons/fr/ne.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/cantons/de/ne.html"/>
@@ -839,7 +847,7 @@
   </url>
   <url>
     <loc>https://swissnaturalizationtest.ch/cantons/it/ne.html</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-28</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/cantons/ne.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/cantons/fr/ne.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/cantons/de/ne.html"/>
@@ -983,7 +991,7 @@
   </url>
   <url>
     <loc>https://swissnaturalizationtest.ch/cantons/ne.html</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-28</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/cantons/ne.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/cantons/fr/ne.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/cantons/de/ne.html"/>
@@ -1136,7 +1144,7 @@
   </url>
   <url>
     <loc>https://swissnaturalizationtest.ch/de/landing.html</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-28</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/landing.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/fr/landing.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/de/landing.html"/>
@@ -1163,7 +1171,7 @@
   </url>
   <url>
     <loc>https://swissnaturalizationtest.ch/de/story.html</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-28</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/story.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/fr/story.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/de/story.html"/>
@@ -1217,7 +1225,7 @@
   </url>
   <url>
     <loc>https://swissnaturalizationtest.ch/fr/landing.html</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-28</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/landing.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/fr/landing.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/de/landing.html"/>
@@ -1244,7 +1252,7 @@
   </url>
   <url>
     <loc>https://swissnaturalizationtest.ch/fr/story.html</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-28</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/story.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/fr/story.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/de/story.html"/>
@@ -1298,7 +1306,7 @@
   </url>
   <url>
     <loc>https://swissnaturalizationtest.ch/it/landing.html</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-28</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/landing.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/fr/landing.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/de/landing.html"/>
@@ -1325,7 +1333,7 @@
   </url>
   <url>
     <loc>https://swissnaturalizationtest.ch/it/story.html</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-28</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/story.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/fr/story.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/de/story.html"/>
@@ -1367,6 +1375,14 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/press/de/badener-tagblatt.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://swissnaturalizationtest.ch/press/it/badener-tagblatt.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://swissnaturalizationtest.ch/press/badener-tagblatt.html"/>
+  </url>
+  <url>
+    <loc>https://swissnaturalizationtest.ch/press/de/canal-alpha.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/press/canal-alpha.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/press/fr/canal-alpha.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/press/de/canal-alpha.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://swissnaturalizationtest.ch/press/it/canal-alpha.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://swissnaturalizationtest.ch/press/canal-alpha.html"/>
   </url>
   <url>
     <loc>https://swissnaturalizationtest.ch/press/de/corriere-del-ticino.html</loc>
@@ -1432,6 +1448,14 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://swissnaturalizationtest.ch/press/badener-tagblatt.html"/>
   </url>
   <url>
+    <loc>https://swissnaturalizationtest.ch/press/fr/canal-alpha.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/press/canal-alpha.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/press/fr/canal-alpha.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/press/de/canal-alpha.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://swissnaturalizationtest.ch/press/it/canal-alpha.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://swissnaturalizationtest.ch/press/canal-alpha.html"/>
+  </url>
+  <url>
     <loc>https://swissnaturalizationtest.ch/press/fr/corriere-del-ticino.html</loc>
     <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/press/corriere-del-ticino.html"/>
@@ -1493,6 +1517,14 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/press/de/badener-tagblatt.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://swissnaturalizationtest.ch/press/it/badener-tagblatt.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://swissnaturalizationtest.ch/press/badener-tagblatt.html"/>
+  </url>
+  <url>
+    <loc>https://swissnaturalizationtest.ch/press/it/canal-alpha.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/press/canal-alpha.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/press/fr/canal-alpha.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/press/de/canal-alpha.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://swissnaturalizationtest.ch/press/it/canal-alpha.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://swissnaturalizationtest.ch/press/canal-alpha.html"/>
   </url>
   <url>
     <loc>https://swissnaturalizationtest.ch/press/it/corriere-del-ticino.html</loc>
