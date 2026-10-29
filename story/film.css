@@ -158,8 +158,8 @@
 .snt-film #s4 .foot { position: absolute; left: 140px; top: 660px; font-family: var(--mono); font-size: 22px; color: var(--muted); opacity: 0; }
 .snt-film #s5 { background: radial-gradient(ellipse at 30% 50%, #16224a 0%, var(--navy) 50%, var(--night) 100%); }
 .snt-film #s5 .phone { left: 230px; top: 40px; }
-.snt-film #s5 .ring { position: absolute; left: 6px; top: 790px; width: 408px; height: 50px; border-radius: 16px; border: 4px solid var(--green); box-shadow: 0 0 40px rgba(69,211,154,.55); opacity: 0; }
-.snt-film #s5 .callout { position: absolute; left: 650px; top: 722px; display: flex; align-items: center; gap: 22px; opacity: 0; }
+.snt-film #s5 .ring { position: absolute; left: 6px; top: 766px; width: 408px; height: 48px; border-radius: 16px; border: 4px solid var(--green); box-shadow: 0 0 40px rgba(69,211,154,.55); opacity: 0; }
+.snt-film #s5 .callout { position: absolute; left: 650px; top: 700px; display: flex; align-items: center; gap: 22px; opacity: 0; }
 .snt-film #s5 .callout i { display: block; width: 90px; height: 3px; background: var(--green); transform-origin: left; }
 .snt-film #s5 .callout span { font-family: var(--mono); font-size: 28px; color: var(--green); }
 .snt-film #s5 .right { position: absolute; left: 900px; top: 110px; width: 900px; display: grid; gap: 40px; }
