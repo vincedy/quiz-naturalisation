@@ -554,6 +554,19 @@
     .numbers .n{border-right:0;border-bottom:1px solid var(--border)}
     .sec{padding:38px 0}
   }
+
+  .samples{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:14px}
+  .samples .sample{background:var(--card,#fff);border:1px solid var(--line,#e6ebf2);
+    border-radius:14px;padding:16px 18px}
+  .samples .sq{margin:0 0 10px;font-weight:650;line-height:1.45}
+  .samples .sa{list-style:none;padding:0;margin:0;display:grid;gap:6px}
+  .samples .sa li{padding:7px 12px;border:1px solid var(--line,#e6ebf2);border-radius:9px;
+    font-size:.94rem;color:var(--muted,#5a6472)}
+  .samples .sa li.ok{border-color:#1f9d55;color:#13703c;font-weight:650;
+    background:color-mix(in srgb,#1f9d55 8%,transparent)}
+  .samples .sa li.ok::before{content:"\2713";margin-right:8px;font-weight:800}
+  .samples .sm{margin:10px 0 0;font-size:.8rem;color:var(--muted,#5a6472);
+    text-transform:uppercase;letter-spacing:.06em}
 </style>
 </head>
 <body>
@@ -713,6 +726,49 @@
   </table></div>
   
 </div></section>
+
+
+<section class="sec"><div class="wrap">
+  <p class="eyebrow">Beispielfragen</p>
+  <h2>Was die Prüfung fragt, in ihren eigenen Worten</h2>
+  <ol class="samples">
+    <li class="sample">
+      <p class="sq ">Wie viele Bezirke gibt es im Wallis?</p>
+      <ul class="sa "><li class="">9, wie die Anzahl der Seitentäler des Wallis</li><li class="ok">13, wie die Anzahl der Sterne auf der Walliser Flagge</li><li class="">11, wie die Anzahl der Hauptortsgemeinden</li><li class="">16, wie die Anzahl der Walliser Alpenpässe</li></ul>
+      <p class="sm">Politique · kantonale Frage</p>
+    </li><li class="sample">
+      <p class="sq ">Wer vertritt den Bezirk?</p>
+      <ul class="sa "><li class="">Der Staatsrat</li><li class="">Der Bezirksammann</li><li class="ok">Der Präfekt</li><li class="">Der kantonale Delegierte</li></ul>
+      <p class="sm">Politique · kantonale Frage</p>
+    </li><li class="sample">
+      <p class="sq ">Wie heisst der Bezirk, in dem sich Ihre Gemeinde befindet?</p>
+      <ul class="sa "><li class="">Das Wallis zählt 8 Bezirke (Ober-, Mittel- und Unterwallis), ohne Halbbezirke, 8 Sterne auf der Flagge</li><li class="">Das Wallis zählt 26 Bezirke (einen pro Gemeindehauptort), 26 Sterne auf der Flagge</li><li class="">Das Wallis zählt nur 2 Bezirke (Oberwallis und Unterwallis), 2 Sterne auf der Flagge</li><li class="ok">Das Wallis zählt 12 Bezirke + 2 Halbbezirke (Östlich Raron und Westlich Raron), 13 Sterne auf der Flagge</li></ul>
+      <p class="sm">Politique · kantonale Frage</p>
+    </li><li class="sample">
+      <p class="sq ">Können Sie die Namen anderer Gemeinden Ihres Bezirks nennen?</p>
+      <ul class="sa "><li class="ok">Das Wallis zählt 160 Gemeinden, zusammengefasst in 13 Einheiten (12 Bezirke + 2 Halbbezirke)</li><li class="">Das Wallis zählt 200 Gemeinden, die in 8 Bezirke mit je etwa 25 Gemeinden gruppiert sind (ohne Halbbezirke)</li><li class="">Das Wallis zählt 100 Gemeinden, die seit der Fusion von 2015 in 5 Bezirke gruppiert sind (ohne Halbbezirke)</li><li class="">Das Wallis zählt 13 Hauptgemeinden (die Hauptorte), von denen jede ihren eigenen Bezirk bildet</li></ul>
+      <p class="sm">Politique · kantonale Frage</p>
+    </li><li class="sample">
+      <p class="sq ">Wo liegt die Sprachgrenze im Wallis?</p>
+      <ul class="sa "><li class="">Der Fluss «die Rhone» zwischen Martinach und Sitten</li><li class="ok">Der Fluss «die Raspille» zwischen Siders und Salgesch</li><li class="">Der Pass «der Simplon» zwischen Brig und Gondo</li><li class="">Die Stadt «Siders» zwischen Ober- und Unterstadt</li></ul>
+      <p class="sm">Politique · kantonale Frage</p>
+    </li><li class="sample">
+      <p class="sq ">Welches ist das politische System in der Schweiz?</p>
+      <ul class="sa "><li class="ok">Die Schweiz ist ein Bundesstaat, eine Demokratie.</li><li class="">Die Schweiz ist eine konstitutionelle Monarchie.</li><li class="">Die Schweiz ist eine Präsidialrepublik.</li><li class="">Die Schweiz ist eine föderale Theokratie.</li></ul>
+      <p class="sm">Politique</p>
+    </li><li class="sample">
+      <p class="sq ">Was bedeutet der Ausdruck «direkte Demokratie»?</p>
+      <ul class="sa "><li class="">Die Regierung (Bundesrat) wird direkt vom Volk gewählt, ohne Vermittlung des Parlaments</li><li class="ok">Das Volk ist «souverän»: Es stimmt über die Gesetze ab (Referendum) und schlägt Verfassungsänderungen vor (Initiative).</li><li class="">Das Volk kann neue Bundesgesetze allein verfassen (Volksgesetzgebung) und verabschieden, ohne den Weg über das Parlament zu gehen.</li><li class="">Die Regierung (Exekutive) trifft ihre Entscheidungen ohne die vorherige Zustimmung der Bürger</li></ul>
+      <p class="sm">Politique</p>
+    </li><li class="sample">
+      <p class="sq ">Aus wie vielen Kantonen besteht die Schweiz?</p>
+      <ul class="sa "><li class="">23, wovon 2 in Halbkantone geteilt sind (Basel: Basel-Stadt und Basel-Landschaft, Appenzell: Appenzell Ausserrhoden und Appenzell Innerrhoden)</li><li class="">20, wovon 4 in Halbkantone geteilt sind (Basel: Basel-Stadt und Basel-Landschaft, Appenzell, Unterwalden: Obwalden und Nidwalden, Graubünden: Nord und Süd)</li><li class="">30, wovon 6 in Halbkantone geteilt sind (Basel, Appenzell, Unterwalden, Glarus: Glarus-Nord und Glarus-Süd, Uri, Schwyz: Innerschwyz und Ausserschwyz)</li><li class="ok">26, wovon 3 in Halbkantone geteilt sind (Basel: Basel-Stadt und Basel-Landschaft, Appenzell: Appenzell Ausserrhoden und Appenzell Innerrhoden, Unterwalden: Obwalden und Nidwalden)</li></ul>
+      <p class="sm">Politique</p>
+    </li>
+  </ol>
+  <p class="note">Fragen und richtige Antworten stammen aus dem offiziellen Fragebogen des Kantons. Wo das Original eine offene Frage ist, sind die drei falschen Antworten unsere.</p>
+</div></section>
+
 
 <section class="sec tint"><div class="wrap">
   <p class="eyebrow">Was die App für diesen Kanton enthält</p>

@@ -554,6 +554,19 @@
     .numbers .n{border-right:0;border-bottom:1px solid var(--border)}
     .sec{padding:38px 0}
   }
+
+  .samples{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:14px}
+  .samples .sample{background:var(--card,#fff);border:1px solid var(--line,#e6ebf2);
+    border-radius:14px;padding:16px 18px}
+  .samples .sq{margin:0 0 10px;font-weight:650;line-height:1.45}
+  .samples .sa{list-style:none;padding:0;margin:0;display:grid;gap:6px}
+  .samples .sa li{padding:7px 12px;border:1px solid var(--line,#e6ebf2);border-radius:9px;
+    font-size:.94rem;color:var(--muted,#5a6472)}
+  .samples .sa li.ok{border-color:#1f9d55;color:#13703c;font-weight:650;
+    background:color-mix(in srgb,#1f9d55 8%,transparent)}
+  .samples .sa li.ok::before{content:"\2713";margin-right:8px;font-weight:800}
+  .samples .sm{margin:10px 0 0;font-size:.8rem;color:var(--muted,#5a6472);
+    text-transform:uppercase;letter-spacing:.06em}
 </style>
 </head>
 <body>
@@ -692,6 +705,49 @@
   
   
 </div></section>
+
+
+<section class="sec"><div class="wrap">
+  <p class="eyebrow">Beispielfragen</p>
+  <h2>Was die Prüfung fragt, in ihren eigenen Worten</h2>
+  <ol class="samples">
+    <li class="sample">
+      <p class="sq ">Welcher Fluss entspringt im Kanton Bern?</p>
+      <ul class="sa "><li class="ok">Aare</li><li class="">Rhein</li><li class="">Reuss</li><li class="">Limmat</li></ul>
+      <p class="sm">Geografie, Geschichte, Sprachen, Religionen, Kultur und Feiertage · kantonale Frage</p>
+    </li><li class="sample">
+      <p class="sq ">Wie heisst die Exekutive des Kantons Bern?</p>
+      <ul class="sa "><li class="">Grosser Rat</li><li class="">Kantonsrat</li><li class="ok">Regierungsrat</li><li class="">Gemeinderat</li></ul>
+      <p class="sm">Demokratie und Föderalismus · kantonale Frage</p>
+    </li><li class="sample">
+      <p class="sq ">Wer trägt die Hauptverantwortung für die Universität Bern?</p>
+      <ul class="sa "><li class="">Der Verband der Gemeinden im Kanton Bern</li><li class="ok">Der Kanton Bern</li><li class="">Das Eidgenössische Departement für Wirtschaft, Bildung und Forschung</li><li class="">Das Eidgenössische Departement für Verteidigung, Bevölkerungsschutz und Sport</li></ul>
+      <p class="sm">Soziale Sicherheit &amp; Gesundheit · kantonale Frage</p>
+    </li><li class="sample">
+      <p class="sq ">Wie heisst das Berner Kernkraftwerk, das man 2019 abschaltete?</p>
+      <ul class="sa "><li class="ok">Kernkraftwerk Mühleberg</li><li class="">Atomkraftwerk Gösgen</li><li class="">Reaktor Lucens</li><li class="">Atomreaktor Beznau</li></ul>
+      <p class="sm">Geografie, Geschichte, Sprachen, Religionen, Kultur und Feiertage · kantonale Frage</p>
+    </li><li class="sample">
+      <p class="sq ">Wie heisst die Regierung des Kantons Bern?</p>
+      <ul class="sa "><li class="">Bundesrat</li><li class="ok">Regierungsrat</li><li class="">Kantonsrat</li><li class="">Direktorium</li></ul>
+      <p class="sm">Demokratie und Föderalismus · kantonale Frage</p>
+    </li><li class="sample">
+      <p class="sq ">Welcher Kanton grenzt an Frankreich?</p>
+      <ul class="sa "><li class="ok">Neuenburg</li><li class="">Tessin</li><li class="">St. Gallen</li><li class="">Aargau</li></ul>
+      <p class="sm">Geografie, Geschichte, Sprachen, Religionen, Kultur und Feiertage</p>
+    </li><li class="sample">
+      <p class="sq ">Wie heisst die grösste (Anzahl Personen) Stadt der Schweiz?</p>
+      <ul class="sa "><li class="">Genf</li><li class="">Lausanne</li><li class="ok">Zürich</li><li class="">Basel</li></ul>
+      <p class="sm">Geografie, Geschichte, Sprachen, Religionen, Kultur und Feiertage</p>
+    </li><li class="sample">
+      <p class="sq ">Die Anzahl der Gemeinden in der Schweiz nimmt durch Fusionen ständig ab. Wie viele Gemeinden gab es 2015?</p>
+      <ul class="sa "><li class="">4055</li><li class="">1233</li><li class="">8065</li><li class="ok">2249</li></ul>
+      <p class="sm">Geografie, Geschichte, Sprachen, Religionen, Kultur und Feiertage</p>
+    </li>
+  </ol>
+  <p class="note">Fragen und richtige Antworten stammen aus dem offiziellen Fragebogen des Kantons. Wo das Original eine offene Frage ist, sind die drei falschen Antworten unsere.</p>
+</div></section>
+
 
 <section class="sec tint"><div class="wrap">
   <p class="eyebrow">Was die App für diesen Kanton enthält</p>

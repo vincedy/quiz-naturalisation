@@ -554,6 +554,19 @@
     .numbers .n{border-right:0;border-bottom:1px solid var(--border)}
     .sec{padding:38px 0}
   }
+
+  .samples{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:14px}
+  .samples .sample{background:var(--card,#fff);border:1px solid var(--line,#e6ebf2);
+    border-radius:14px;padding:16px 18px}
+  .samples .sq{margin:0 0 10px;font-weight:650;line-height:1.45}
+  .samples .sa{list-style:none;padding:0;margin:0;display:grid;gap:6px}
+  .samples .sa li{padding:7px 12px;border:1px solid var(--line,#e6ebf2);border-radius:9px;
+    font-size:.94rem;color:var(--muted,#5a6472)}
+  .samples .sa li.ok{border-color:#1f9d55;color:#13703c;font-weight:650;
+    background:color-mix(in srgb,#1f9d55 8%,transparent)}
+  .samples .sa li.ok::before{content:"\2713";margin-right:8px;font-weight:800}
+  .samples .sm{margin:10px 0 0;font-size:.8rem;color:var(--muted,#5a6472);
+    text-transform:uppercase;letter-spacing:.06em}
 </style>
 </head>
 <body>
@@ -692,6 +705,49 @@
   
   
 </div></section>
+
+
+<section class="sec"><div class="wrap">
+  <p class="eyebrow">Exemples de questions</p>
+  <h2>Ce que l&#x27;examen demande, avec ses propres mots</h2>
+  <ol class="samples">
+    <li class="sample">
+      <p class="sq ">Quel fleuve prend sa source dans le canton de Berne ?</p>
+      <ul class="sa "><li class="ok">L&#x27;Aar</li><li class="">Le Rhin</li><li class="">La Reuss</li><li class="">La Limmat</li></ul>
+      <p class="sm">Geografie, Geschichte, Sprachen, Religionen, Kultur und Feiertage · question cantonale</p>
+    </li><li class="sample">
+      <p class="sq ">Comment s&#x27;appelle le pouvoir exécutif du canton de Berne ?</p>
+      <ul class="sa "><li class="">Le Grand Conseil</li><li class="">Le Conseil cantonal</li><li class="ok">Le Conseil-exécutif</li><li class="">Le Conseil communal</li></ul>
+      <p class="sm">Démocratie et Fédéralisme · question cantonale</p>
+    </li><li class="sample">
+      <p class="sq ">Qui porte la responsabilité principale de l&#x27;Université de Berne ?</p>
+      <ul class="sa "><li class="">L&#x27;association des communes du canton de Berne</li><li class="ok">Le canton de Berne</li><li class="">Le Département fédéral de l&#x27;économie, de la formation et de la recherche</li><li class="">Le Département fédéral de la défense, de la protection de la population et des sports</li></ul>
+      <p class="sm">Sécurité sociale &amp; Santé · question cantonale</p>
+    </li><li class="sample">
+      <p class="sq ">Comment s&#x27;appelle la centrale nucléaire bernoise qui a été arrêtée en 2019 ?</p>
+      <ul class="sa "><li class="ok">Centrale nucléaire de Mühleberg</li><li class="">Centrale nucléaire de Gösgen</li><li class="">Réacteur de Lucens</li><li class="">Réacteur nucléaire de Beznau</li></ul>
+      <p class="sm">Geografie, Geschichte, Sprachen, Religionen, Kultur und Feiertage · question cantonale</p>
+    </li><li class="sample">
+      <p class="sq ">Comment s&#x27;appelle le gouvernement du canton de Berne ?</p>
+      <ul class="sa "><li class="">Conseil fédéral</li><li class="ok">Conseil-exécutif</li><li class="">Conseil cantonal</li><li class="">Directoire</li></ul>
+      <p class="sm">Démocratie et Fédéralisme · question cantonale</p>
+    </li><li class="sample">
+      <p class="sq ">Quel canton est frontalier de la France ?</p>
+      <ul class="sa "><li class="ok">Neuchâtel</li><li class="">Tessin</li><li class="">Saint-Gall</li><li class="">Argovie</li></ul>
+      <p class="sm">Geografie, Geschichte, Sprachen, Religionen, Kultur und Feiertage</p>
+    </li><li class="sample">
+      <p class="sq ">Quelle est la plus grande ville de Suisse (par nombre d&#x27;habitants) ?</p>
+      <ul class="sa "><li class="">Genève</li><li class="">Lausanne</li><li class="ok">Zurich</li><li class="">Bâle</li></ul>
+      <p class="sm">Geografie, Geschichte, Sprachen, Religionen, Kultur und Feiertage</p>
+    </li><li class="sample">
+      <p class="sq ">Le nombre de communes en Suisse diminue constamment en raison des fusions. Combien y avait-il de communes en 2015 ?</p>
+      <ul class="sa "><li class="">4055</li><li class="">1233</li><li class="">8065</li><li class="ok">2249</li></ul>
+      <p class="sm">Geografie, Geschichte, Sprachen, Religionen, Kultur und Feiertage</p>
+    </li>
+  </ol>
+  <p class="note">Les questions et les bonnes réponses viennent du questionnaire officiel du canton. Là où l&#x27;original est une question ouverte, les trois mauvaises réponses sont les nôtres.</p>
+</div></section>
+
 
 <section class="sec tint"><div class="wrap">
   <p class="eyebrow">Ce que contient l&#x27;application pour ce canton</p>

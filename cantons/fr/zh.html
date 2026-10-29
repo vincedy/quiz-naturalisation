@@ -554,6 +554,19 @@
     .numbers .n{border-right:0;border-bottom:1px solid var(--border)}
     .sec{padding:38px 0}
   }
+
+  .samples{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:14px}
+  .samples .sample{background:var(--card,#fff);border:1px solid var(--line,#e6ebf2);
+    border-radius:14px;padding:16px 18px}
+  .samples .sq{margin:0 0 10px;font-weight:650;line-height:1.45}
+  .samples .sa{list-style:none;padding:0;margin:0;display:grid;gap:6px}
+  .samples .sa li{padding:7px 12px;border:1px solid var(--line,#e6ebf2);border-radius:9px;
+    font-size:.94rem;color:var(--muted,#5a6472)}
+  .samples .sa li.ok{border-color:#1f9d55;color:#13703c;font-weight:650;
+    background:color-mix(in srgb,#1f9d55 8%,transparent)}
+  .samples .sa li.ok::before{content:"\2713";margin-right:8px;font-weight:800}
+  .samples .sm{margin:10px 0 0;font-size:.8rem;color:var(--muted,#5a6472);
+    text-transform:uppercase;letter-spacing:.06em}
 </style>
 </head>
 <body>
@@ -689,6 +702,49 @@
   
   
 </div></section>
+
+
+<section class="sec"><div class="wrap">
+  <p class="eyebrow">Exemples de questions</p>
+  <h2>Ce que l&#x27;examen demande, avec ses propres mots</h2>
+  <ol class="samples">
+    <li class="sample">
+      <p class="sq raw">Wie heisst eine Direktion des Kanton Zürichs?</p>
+      <ul class="sa raw"><li class="">Tourismusdirektion</li><li class="ok">Baudirektion</li><li class="">Ernährungsdirektion</li><li class="">Militärdirektion</li></ul>
+      <p class="sm">Démocratie et Fédéralisme · question cantonale</p>
+    </li><li class="sample">
+      <p class="sq raw">Wie heisst in der Stadt Zürich die Exekutive?</p>
+      <ul class="sa raw"><li class="ok">Stadtrat</li><li class="">Nationalrat</li><li class="">Regierungsrat</li><li class="">Bundesrat</li></ul>
+      <p class="sm">Démocratie et Fédéralisme · question cantonale</p>
+    </li><li class="sample">
+      <p class="sq raw">Was ist eine Aufgabe des Kantons Zürich?</p>
+      <ul class="sa raw"><li class="">Abschluss von Verträgen mit der Europäischen Union</li><li class="ok">Organisation der Universität</li><li class="">Digitalisierung der Bundesverwaltung</li><li class="">Organisation der Armee</li></ul>
+      <p class="sm">Démocratie et Fédéralisme · question cantonale</p>
+    </li><li class="sample">
+      <p class="sq raw">Wie können im Kanton Zürich auch Personen ohne Schweizer Pass politisch aktiv werden?</p>
+      <ul class="sa raw"><li class="">mit einem Referendum.</li><li class="ok">mit einer Petition.</li><li class="">mit einem Einsitz in die Regierung.</li><li class="">mit einem parlamentarischen Kommissionsantrag.</li></ul>
+      <p class="sm">Démocratie et Fédéralisme · question cantonale</p>
+    </li><li class="sample">
+      <p class="sq raw">Für was sind die Kantone vor allem zuständig?</p>
+      <ul class="sa raw"><li class="ok">für die Leitung der kantonalen Verwaltung und für kantonale Gesetze</li><li class="">für die Innen- und Aussenpolitik auf nationaler Ebene</li><li class="">für die nationale Verteidigung (Militär)</li><li class="">für die Geldpolitik und die Zölle</li></ul>
+      <p class="sm">Démocratie et Fédéralisme · question cantonale</p>
+    </li><li class="sample">
+      <p class="sq raw">Die Schweiz ist neutral. Was heisst das?</p>
+      <ul class="sa raw"><li class="">Sie unterzeichnet keine internationalen Verträge.</li><li class="">Sie schliesst nur mit Staaten Verträge, die nicht in Kriege verwickelt sind.</li><li class="ok">Sie mischt sich nicht in bewaffnete Konflikte anderer Staaten ein.</li><li class="">Sie will als Transitland wirtschaftlich unabhängig sein.</li></ul>
+      <p class="sm">Démocratie et Fédéralisme</p>
+    </li><li class="sample">
+      <p class="sq raw">Was ist eine Grenzgängerin oder ein Grenzgänger?</p>
+      <ul class="sa raw"><li class="ok">eine Person, die in der Schweiz arbeitet und im Ausland wohnt</li><li class="">eine Person, die nicht im gleichen Kanton wohnt und arbeitet</li><li class="">Schweizer Handelsware, die ins Ausland exportiert wird</li><li class="">Schweizer Handelsware, die vom Ausland in die Schweiz importiert wird</li></ul>
+      <p class="sm">Démocratie et Fédéralisme</p>
+    </li><li class="sample">
+      <p class="sq raw">Confoederatio Helvetica ...</p>
+      <ul class="sa raw"><li class="">ist der Name einer Schweizer Schokolade.</li><li class="ok">ist der lateinische Name für die Schweizer Eidgenossenschaft.</li><li class="">ist der Name des ersten Parlaments der Schweiz.</li><li class="">ist eine Fraktion des Parlaments.</li></ul>
+      <p class="sm">Démocratie et Fédéralisme</p>
+    </li>
+  </ol>
+  <p class="note">Les questions et les bonnes réponses viennent du questionnaire officiel du canton. Là où l&#x27;original est une question ouverte, les trois mauvaises réponses sont les nôtres.</p>
+</div></section>
+
 
 <section class="sec tint"><div class="wrap">
   <p class="eyebrow">Ce que contient l&#x27;application pour ce canton</p>

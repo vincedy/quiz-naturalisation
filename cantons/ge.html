@@ -554,6 +554,19 @@
     .numbers .n{border-right:0;border-bottom:1px solid var(--border)}
     .sec{padding:38px 0}
   }
+
+  .samples{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:14px}
+  .samples .sample{background:var(--card,#fff);border:1px solid var(--line,#e6ebf2);
+    border-radius:14px;padding:16px 18px}
+  .samples .sq{margin:0 0 10px;font-weight:650;line-height:1.45}
+  .samples .sa{list-style:none;padding:0;margin:0;display:grid;gap:6px}
+  .samples .sa li{padding:7px 12px;border:1px solid var(--line,#e6ebf2);border-radius:9px;
+    font-size:.94rem;color:var(--muted,#5a6472)}
+  .samples .sa li.ok{border-color:#1f9d55;color:#13703c;font-weight:650;
+    background:color-mix(in srgb,#1f9d55 8%,transparent)}
+  .samples .sa li.ok::before{content:"\2713";margin-right:8px;font-weight:800}
+  .samples .sm{margin:10px 0 0;font-size:.8rem;color:var(--muted,#5a6472);
+    text-transform:uppercase;letter-spacing:.06em}
 </style>
 </head>
 <body>
@@ -696,6 +709,49 @@
   
   
 </div></section>
+
+
+<section class="sec"><div class="wrap">
+  <p class="eyebrow">Sample questions</p>
+  <h2>What the exam asks, in its own words</h2>
+  <ol class="samples">
+    <li class="sample">
+      <p class="sq raw">Parmi ces écrivains célèbres, lesquels ont habité à Genève ?</p>
+      <ul class="sa raw"><li class="">Balzac et Victor Hugo</li><li class="ok">Rousseau et Voltaire</li><li class="">Stendhal et Zola</li><li class="">Dumas et Flaubert</li></ul>
+      <p class="sm">Histoire · cantonal question</p>
+    </li><li class="sample">
+      <p class="sq raw">Quels sont les deux plus grands cours d&#x27;eau qui traversent notre canton ?</p>
+      <ul class="sa raw"><li class="">Le Rhin et l&#x27;Arve</li><li class="">La Reuse et le Rhône</li><li class="ok">Le Rhône et l&#x27;Arve</li><li class="">La Dranse et le Rhône</li></ul>
+      <p class="sm">Suisse et Cantons · cantonal question</p>
+    </li><li class="sample">
+      <p class="sq raw">Quels sont les 2 éléments qui constituent les armoiries de Genève ?</p>
+      <ul class="sa raw"><li class="">Un lion couronné d&#x27;or, Une étoile à huit branches</li><li class="">Une croix blanche pattée, Un ours noir dressé</li><li class="">Un soleil rayonnant, Une couronne comtale d&#x27;argent</li><li class="ok">Un demi-aigle à deux têtes, La clé de saint Pierre</li></ul>
+      <p class="sm">Suisse et Cantons · cantonal question</p>
+    </li><li class="sample">
+      <p class="sq raw">Quels sont les 4 termes qui caractérisent « L&#x27;Esprit de Genève » ?</p>
+      <ul class="sa raw"><li class="">Fraternité, Égalité, Hospitalité, Neutralité</li><li class="">Ouverture au monde, Fraternité, Égalité, Neutralité</li><li class="">Hospitalité, Neutralité, Égalité, Liberté</li><li class="ok">Ouverture au monde, Pacifisme, Hospitalité, Neutralité</li></ul>
+      <p class="sm">Us et Coutumes · cantonal question</p>
+    </li><li class="sample">
+      <p class="sq raw">Voter constitue-t-il un droit ou un devoir à Genève ?</p>
+      <ul class="sa raw"><li class="">Un droit uniquement</li><li class="">Un devoir obligatoire</li><li class="ok">Un droit et un devoir civique</li><li class="">Ni l&#x27;un ni l&#x27;autre</li></ul>
+      <p class="sm">Droits et Devoirs · cantonal question</p>
+    </li><li class="sample">
+      <p class="sq raw">Quelles sont les 4 langues nationales en Suisse ?</p>
+      <ul class="sa raw"><li class="">Français, allemand, néerlandais et anglais</li><li class="ok">Français, allemand, romanche et italien</li><li class="">Français, allemand, espagnol et latin</li><li class="">Français, anglais, romanche et italien</li></ul>
+      <p class="sm">Suisse et Cantons</p>
+    </li><li class="sample">
+      <p class="sq raw">Quelles sont les deux principales chaînes de montagnes qui traversent la Suisse ?</p>
+      <ul class="sa raw"><li class="">Les Vosges et le Jura</li><li class="ok">Les Alpes et le Jura</li><li class="">Les Alpes et les Ardennes</li><li class="">Le Jura et le Massif central</li></ul>
+      <p class="sm">Suisse et Cantons</p>
+    </li><li class="sample">
+      <p class="sq raw">Dans la liste ci-dessous, quels sont les lacs situés au moins partiellement en Suisse ?</p>
+      <ul class="sa raw"><li class="">Le Lac de Côme et le Lac de Garde</li><li class="">Le Lac d&#x27;Annecy et le Lac du Bourget</li><li class="">Le Lac d&#x27;Orta et le Lac d&#x27;Iseo</li><li class="ok">Le Lac Léman et le Lac des Quatre-Cantons</li></ul>
+      <p class="sm">Suisse et Cantons</p>
+    </li>
+  </ol>
+  <p class="note">Questions and correct answers come from the canton&#x27;s official questionnaire. Where the original is an open question, the three wrong answers are ours.</p>
+</div></section>
+
 
 <section class="sec tint"><div class="wrap">
   <p class="eyebrow">What the app holds for this canton</p>

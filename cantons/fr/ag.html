@@ -554,6 +554,19 @@
     .numbers .n{border-right:0;border-bottom:1px solid var(--border)}
     .sec{padding:38px 0}
   }
+
+  .samples{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:14px}
+  .samples .sample{background:var(--card,#fff);border:1px solid var(--line,#e6ebf2);
+    border-radius:14px;padding:16px 18px}
+  .samples .sq{margin:0 0 10px;font-weight:650;line-height:1.45}
+  .samples .sa{list-style:none;padding:0;margin:0;display:grid;gap:6px}
+  .samples .sa li{padding:7px 12px;border:1px solid var(--line,#e6ebf2);border-radius:9px;
+    font-size:.94rem;color:var(--muted,#5a6472)}
+  .samples .sa li.ok{border-color:#1f9d55;color:#13703c;font-weight:650;
+    background:color-mix(in srgb,#1f9d55 8%,transparent)}
+  .samples .sa li.ok::before{content:"\2713";margin-right:8px;font-weight:800}
+  .samples .sm{margin:10px 0 0;font-size:.8rem;color:var(--muted,#5a6472);
+    text-transform:uppercase;letter-spacing:.06em}
 </style>
 </head>
 <body>
@@ -722,6 +735,49 @@
   
   
 </div></section>
+
+
+<section class="sec"><div class="wrap">
+  <p class="eyebrow">Exemples de questions</p>
+  <h2>Ce que l&#x27;examen demande, avec ses propres mots</h2>
+  <ol class="samples">
+    <li class="sample">
+      <p class="sq raw">Wie heisst das Parlament im Kanton Aargau?</p>
+      <ul class="sa raw"><li class="">Landtag</li><li class="ok">Grosser Rat</li><li class="">Kantonsrat</li><li class="">Regierungsrat</li></ul>
+      <p class="sm">Démocratie et Fédéralisme · question cantonale</p>
+    </li><li class="sample">
+      <p class="sq raw">Wie heisst die Hauptstadt des Kantons Aargau?</p>
+      <ul class="sa raw"><li class="">Baden</li><li class="">Aarburg</li><li class="ok">Aarau</li><li class="">Lenzburg</li></ul>
+      <p class="sm">Démocratie et Fédéralisme · question cantonale</p>
+    </li><li class="sample">
+      <p class="sq raw">Welcher Kanton grenzt an den Aargau?</p>
+      <ul class="sa raw"><li class="">Kanton Freiburg</li><li class="">Kanton Thurgau</li><li class="ok">Kanton Luzern</li><li class="">Kanton Glarus</li></ul>
+      <p class="sm">Démocratie et Fédéralisme · question cantonale</p>
+    </li><li class="sample">
+      <p class="sq raw">In welchem Bereich der Wirtschaft sind im Aargau am meisten Personen beschäftigt?</p>
+      <ul class="sa raw"><li class="">im Tourismus</li><li class="ok">in der Maschinenindustrie</li><li class="">in der Textilindustrie</li><li class="">in der Uhrenindustrie</li></ul>
+      <p class="sm">Démocratie et Fédéralisme · question cantonale</p>
+    </li><li class="sample">
+      <p class="sq raw">Die überwiegende Mehrheit der Gemeinderatsmitglieder im Kanton Aargau ist...</p>
+      <ul class="sa raw"><li class="">Mitglied der Sozialdemokratischen Partei (SP).</li><li class="ok">Parteilos.</li><li class="">Mitglied der Schweizerischen Volkspartei (SVP).</li><li class="">Mitglied der Christdemokratischen Volkspartei (CVP).</li></ul>
+      <p class="sm">Démocratie et Fédéralisme · question cantonale</p>
+    </li><li class="sample">
+      <p class="sq raw">Was bedeutet das „passive Wahlrecht“ in der Demokratie?</p>
+      <ul class="sa raw"><li class="">Man kann zur Teilnahme an Wahlen gezwungen werden.</li><li class="ok">Man ist für ein politisches Amt wählbar.</li><li class="">Man darf für andere Personen den Wahlzettel ausfüllen.</li><li class="">Man muss beim Auszählen der Stimmen helfen.</li></ul>
+      <p class="sm">Démocratie et Fédéralisme</p>
+    </li><li class="sample">
+      <p class="sq raw">Wie viele politische Gemeinden gab es in der Schweiz im Jahre 2024?</p>
+      <ul class="sa raw"><li class="">Etwa 50</li><li class="">Etwa 200</li><li class="ok">Etwa 2&#x27;200</li><li class="">Etwa 8&#x27;000</li></ul>
+      <p class="sm">Démocratie et Fédéralisme</p>
+    </li><li class="sample">
+      <p class="sq raw">Wofür ist der Bundesstaat zuständig?</p>
+      <ul class="sa raw"><li class="">für die Organisation der Volksschule</li><li class="ok">für die Aussenpolitik</li><li class="">für den Erlass von Bauordnungen</li><li class="">für die Wahl der Kantonsrichterinnen und Kantonsrichter</li></ul>
+      <p class="sm">Démocratie et Fédéralisme</p>
+    </li>
+  </ol>
+  <p class="note">Les questions et les bonnes réponses viennent du questionnaire officiel du canton. Là où l&#x27;original est une question ouverte, les trois mauvaises réponses sont les nôtres.</p>
+</div></section>
+
 
 <section class="sec tint"><div class="wrap">
   <p class="eyebrow">Ce que contient l&#x27;application pour ce canton</p>

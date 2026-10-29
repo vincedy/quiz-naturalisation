@@ -554,6 +554,19 @@
     .numbers .n{border-right:0;border-bottom:1px solid var(--border)}
     .sec{padding:38px 0}
   }
+
+  .samples{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:14px}
+  .samples .sample{background:var(--card,#fff);border:1px solid var(--line,#e6ebf2);
+    border-radius:14px;padding:16px 18px}
+  .samples .sq{margin:0 0 10px;font-weight:650;line-height:1.45}
+  .samples .sa{list-style:none;padding:0;margin:0;display:grid;gap:6px}
+  .samples .sa li{padding:7px 12px;border:1px solid var(--line,#e6ebf2);border-radius:9px;
+    font-size:.94rem;color:var(--muted,#5a6472)}
+  .samples .sa li.ok{border-color:#1f9d55;color:#13703c;font-weight:650;
+    background:color-mix(in srgb,#1f9d55 8%,transparent)}
+  .samples .sa li.ok::before{content:"\2713";margin-right:8px;font-weight:800}
+  .samples .sm{margin:10px 0 0;font-size:.8rem;color:var(--muted,#5a6472);
+    text-transform:uppercase;letter-spacing:.06em}
 </style>
 </head>
 <body>
@@ -748,6 +761,49 @@
   </table></div>
   
 </div></section>
+
+
+<section class="sec"><div class="wrap">
+  <p class="eyebrow">Sample questions</p>
+  <h2>What the exam asks, in its own words</h2>
+  <ol class="samples">
+    <li class="sample">
+      <p class="sq raw">Quel est le chef-lieu du canton de Neuchâtel ?</p>
+      <ul class="sa raw"><li class="ok">Neuchâtel</li><li class="">La Chaux-de-Fonds</li><li class="">Le Locle</li><li class="">Boudry</li></ul>
+      <p class="sm">Géographie · cantonal question</p>
+    </li><li class="sample">
+      <p class="sq raw">Où se situe le canton de Neuchâtel ?</p>
+      <ul class="sa raw"><li class="">Le canton de Neuchâtel se situe au centre de la Suisse, sur le Plateau, entre les cantons de Berne et de Fribourg</li><li class="ok">Le canton de Neuchâtel se situe au nord-ouest de la Suisse, dans la région appelée l’Arc jurassien avec les cantons de Berne, Jura et Vaud</li><li class="">Le canton de Neuchâtel se situe au sud-ouest de la Suisse, au bord du Léman, près des cantons de Genève et du Valais</li><li class="">Le canton de Neuchâtel se situe au nord-est de la Suisse, le long du Rhin, à la frontière allemande avec Schaffhouse</li></ul>
+      <p class="sm">Géographie · cantonal question</p>
+    </li><li class="sample">
+      <p class="sq raw">Quels cantons n’ont pas de frontière terrestre avec le canton de Neuchâtel ?</p>
+      <ul class="sa raw"><li class="">Berne</li><li class="">Obwald</li><li class="ok">Soleure</li><li class="">Fribourg</li></ul>
+      <p class="sm">Géographie · cantonal question</p>
+    </li><li class="sample">
+      <p class="sq raw">Quel célèbre cirque rocheux se trouve dans le Val-de-Travers ?</p>
+      <ul class="sa raw"><li class="">Le Chasseral</li><li class="">La Gorge de l&#x27;Areuse</li><li class="">La Tourne</li><li class="ok">Le Creux-du-Van</li></ul>
+      <p class="sm">Géographie · cantonal question</p>
+    </li><li class="sample">
+      <p class="sq raw">Quel est le nom du tunnel autoroutier reliant Neuchâtel à La Chaux-de-Fonds ?</p>
+      <ul class="sa raw"><li class="ok">Le tunnel de la Vue-des-Alpes</li><li class="">Le tunnel du Tassenberg</li><li class="">Le tunnel des Loges</li><li class="">Le tunnel du Chasseral</li></ul>
+      <p class="sm">Géographie · cantonal question</p>
+    </li><li class="sample">
+      <p class="sq raw">Quelle est, approximativement, la superficie de la Suisse ?</p>
+      <ul class="sa raw"><li class="ok">41 000 km2</li><li class="">265 000 km2</li><li class="">133 000 km2</li><li class="">27 000 km2</li></ul>
+      <p class="sm">Géographie</p>
+    </li><li class="sample">
+      <p class="sq raw">Citez les langues nationales suisses et un canton pour chacune de ces langues.</p>
+      <ul class="sa raw"><li class="">Français : Zurich ; Allemand : Genève ; Italien : Berne ; Romanche : Vaud</li><li class="ok">Français : Genève ; Allemand : Zurich ; Italien : Tessin ; Romanche : Grisons</li><li class="">Français : Lucerne ; Allemand : Tessin ; Italien : Jura ; Romanche : Argovie</li><li class="">Français : Soleure ; Allemand : Valais ; Italien : Neuchâtel ; Romanche : Uri</li></ul>
+      <p class="sm">Géographie</p>
+    </li><li class="sample">
+      <p class="sq raw">Citez trois cantons qui composent la Suisse romande</p>
+      <ul class="sa raw"><li class="">Zurich, Lucerne et Schwytz</li><li class="">Soleure, Argovie et Thurgovie</li><li class="ok">Genève, Vaud et Neuchâtel</li><li class="">Bâle, Glaris et Uri</li></ul>
+      <p class="sm">Géographie</p>
+    </li>
+  </ol>
+  <p class="note">Questions and correct answers come from the canton&#x27;s official questionnaire. Where the original is an open question, the three wrong answers are ours.</p>
+</div></section>
+
 
 <section class="sec tint"><div class="wrap">
   <p class="eyebrow">What the app holds for this canton</p>

@@ -554,6 +554,19 @@
     .numbers .n{border-right:0;border-bottom:1px solid var(--border)}
     .sec{padding:38px 0}
   }
+
+  .samples{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:14px}
+  .samples .sample{background:var(--card,#fff);border:1px solid var(--line,#e6ebf2);
+    border-radius:14px;padding:16px 18px}
+  .samples .sq{margin:0 0 10px;font-weight:650;line-height:1.45}
+  .samples .sa{list-style:none;padding:0;margin:0;display:grid;gap:6px}
+  .samples .sa li{padding:7px 12px;border:1px solid var(--line,#e6ebf2);border-radius:9px;
+    font-size:.94rem;color:var(--muted,#5a6472)}
+  .samples .sa li.ok{border-color:#1f9d55;color:#13703c;font-weight:650;
+    background:color-mix(in srgb,#1f9d55 8%,transparent)}
+  .samples .sa li.ok::before{content:"\2713";margin-right:8px;font-weight:800}
+  .samples .sm{margin:10px 0 0;font-size:.8rem;color:var(--muted,#5a6472);
+    text-transform:uppercase;letter-spacing:.06em}
 </style>
 </head>
 <body>
@@ -695,6 +708,49 @@
   
   
 </div></section>
+
+
+<section class="sec"><div class="wrap">
+  <p class="eyebrow">Esempi di domande</p>
+  <h2>Che cosa chiede l&#x27;esame, con le sue parole</h2>
+  <ol class="samples">
+    <li class="sample">
+      <p class="sq raw">Wann wurde der heutige Kanton St.Gallen gegründet?</p>
+      <ul class="sa raw"><li class="ok">1803</li><li class="">1798</li><li class="">1848</li><li class="">1291</li></ul>
+      <p class="sm">Geschichte · domanda cantonale</p>
+    </li><li class="sample">
+      <p class="sq raw">Auf wessen Befehl wurde der Kanton St.Gallen 1803 gegründet?</p>
+      <ul class="sa raw"><li class="">Auf Befehl des Papstes</li><li class="ok">Auf Befehl Napoleons</li><li class="">Auf Beschluss des Wiener Kongresses</li><li class="">Auf Befehl von Wilhelm Tell</li></ul>
+      <p class="sm">Geschichte · domanda cantonale</p>
+    </li><li class="sample">
+      <p class="sq raw">Wie wird der Kanton St.Gallen wegen seiner Gründung 1803 bezeichnet?</p>
+      <ul class="sa raw"><li class="">Als Gründungskanton von 1291</li><li class="">Als ältester Kanton der Schweiz</li><li class="ok">Als einer der jungen Stände der Eidgenossenschaft</li><li class="">Als Halbkanton</li></ul>
+      <p class="sm">Geschichte · domanda cantonale</p>
+    </li><li class="sample">
+      <p class="sq raw">Welchen Status hatten die Fürstabtei St.Gallen und das Toggenburg vor 1803?</p>
+      <ul class="sa raw"><li class="">Gründungskantone der Eidgenossenschaft mit voller Stimme an der Tagsatzung</li><li class="">Vollwertige eidgenössische Orte mit Sitz und Stimme an der Tagsatzung</li><li class="">Ausländische Gebiete ohne jede Bindung an die Eidgenossenschaft</li><li class="ok">«Zugewandte Orte» – nicht voll berechtigte Mitglieder der Eidgenossenschaft</li></ul>
+      <p class="sm">Geschichte · domanda cantonale</p>
+    </li><li class="sample">
+      <p class="sq raw">Welche Industrie prägte im 19. Jahrhundert vor allem den nördlichen Kantonsteil?</p>
+      <ul class="sa raw"><li class="ok">Die Textilindustrie (Spinnereien, Webereien, Stickereien)</li><li class="">Die Uhrenindustrie (Werkstätten, Zulieferer, Manufakturen)</li><li class="">Der Bergbau (Kohlegruben, Steinbrüche, Erzminen)</li><li class="">Die Chemieindustrie (Farbstoffe, Düngemittel, Arzneimittel)</li></ul>
+      <p class="sm">Geschichte · domanda cantonale</p>
+    </li><li class="sample">
+      <p class="sq raw">In wie viele politische Ebenen ist die Schweiz gegliedert?</p>
+      <ul class="sa raw"><li class="">Zwei (Bund, Kanton)</li><li class="ok">Drei (Bund, Kanton, Gemeinde)</li><li class="">Vier (Bund, Kanton, Bezirk, Gemeinde)</li><li class="">Fünf (Bund, Kanton, Bezirk, Gemeinde, Quartier)</li></ul>
+      <p class="sm">Democrazia e Federalismo</p>
+    </li><li class="sample">
+      <p class="sq raw">Welcher Kanton grenzt an Deutschland?</p>
+      <ul class="sa raw"><li class="">Genf</li><li class="ok">Schaffhausen</li><li class="">Tessin</li><li class="">Wallis</li></ul>
+      <p class="sm">Geografie</p>
+    </li><li class="sample">
+      <p class="sq raw">Welche ist die meistgesprochene Landessprache der Schweiz?</p>
+      <ul class="sa raw"><li class="">Französisch</li><li class="">Italienisch</li><li class="ok">Deutsch</li><li class="">Rätoromanisch</li></ul>
+      <p class="sm">Geografie</p>
+    </li>
+  </ol>
+  <p class="note">Le domande e le risposte giuste vengono dal questionario ufficiale del cantone. Dove l&#x27;originale è una domanda aperta, le tre risposte sbagliate sono nostre.</p>
+</div></section>
+
 
 <section class="sec tint"><div class="wrap">
   <p class="eyebrow">Cosa contiene l&#x27;app per questo cantone</p>

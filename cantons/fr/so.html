@@ -554,6 +554,19 @@
     .numbers .n{border-right:0;border-bottom:1px solid var(--border)}
     .sec{padding:38px 0}
   }
+
+  .samples{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:14px}
+  .samples .sample{background:var(--card,#fff);border:1px solid var(--line,#e6ebf2);
+    border-radius:14px;padding:16px 18px}
+  .samples .sq{margin:0 0 10px;font-weight:650;line-height:1.45}
+  .samples .sa{list-style:none;padding:0;margin:0;display:grid;gap:6px}
+  .samples .sa li{padding:7px 12px;border:1px solid var(--line,#e6ebf2);border-radius:9px;
+    font-size:.94rem;color:var(--muted,#5a6472)}
+  .samples .sa li.ok{border-color:#1f9d55;color:#13703c;font-weight:650;
+    background:color-mix(in srgb,#1f9d55 8%,transparent)}
+  .samples .sa li.ok::before{content:"\2713";margin-right:8px;font-weight:800}
+  .samples .sm{margin:10px 0 0;font-size:.8rem;color:var(--muted,#5a6472);
+    text-transform:uppercase;letter-spacing:.06em}
 </style>
 </head>
 <body>
@@ -697,6 +710,37 @@
   
   
 </div></section>
+
+
+<section class="sec"><div class="wrap">
+  <p class="eyebrow">Exemples de questions</p>
+  <h2>Ce que l&#x27;examen demande, avec ses propres mots</h2>
+  <ol class="samples">
+    <li class="sample">
+      <p class="sq raw">Welche Behörde ist im Kanton Solothurn die gesetzgebende Behörde?</p>
+      <ul class="sa raw"><li class="">Der Regierungsrat</li><li class="ok">Der Kantonsrat</li><li class="">Der Landammann</li><li class="">Das Obergericht</li></ul>
+      <p class="sm">Démocratie et Fédéralisme · question cantonale</p>
+    </li><li class="sample">
+      <p class="sq raw">Nach welchem Wahlverfahren wird der Solothurner Kantonsrat gewählt?</p>
+      <ul class="sa raw"><li class="">Nach Majorz</li><li class="">Durch den Regierungsrat ernannt</li><li class="ok">Nach Proporz</li><li class="">Durch Losentscheid</li></ul>
+      <p class="sm">Démocratie et Fédéralisme · question cantonale</p>
+    </li><li class="sample">
+      <p class="sq raw">Aus wie vielen Mitgliedern besteht der Solothurner Regierungsrat?</p>
+      <ul class="sa raw"><li class="">Aus sieben</li><li class="">Aus neun</li><li class="">Aus drei</li><li class="ok">Aus fünf</li></ul>
+      <p class="sm">Démocratie et Fédéralisme · question cantonale</p>
+    </li><li class="sample">
+      <p class="sq raw">Welche Behörde ist im Kanton Solothurn die oberste vollziehende Behörde?</p>
+      <ul class="sa raw"><li class="ok">Der Regierungsrat</li><li class="">Der Kantonsrat</li><li class="">Das Obergericht</li><li class="">Die Staatskanzlei</li></ul>
+      <p class="sm">Démocratie et Fédéralisme · question cantonale</p>
+    </li><li class="sample">
+      <p class="sq raw">Wer wählt im Kanton Solothurn den Landammann?</p>
+      <ul class="sa raw"><li class="">Das Volk</li><li class="ok">Der Regierungsrat</li><li class="">Der Kantonsrat</li><li class="">Der Bundesrat</li></ul>
+      <p class="sm">Démocratie et Fédéralisme · question cantonale</p>
+    </li>
+  </ol>
+  <p class="note">Les questions et les bonnes réponses viennent du questionnaire officiel du canton. Là où l&#x27;original est une question ouverte, les trois mauvaises réponses sont les nôtres.</p>
+</div></section>
+
 
 <section class="sec tint"><div class="wrap">
   <p class="eyebrow">Ce que contient l&#x27;application pour ce canton</p>

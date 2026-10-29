@@ -554,6 +554,19 @@
     .numbers .n{border-right:0;border-bottom:1px solid var(--border)}
     .sec{padding:38px 0}
   }
+
+  .samples{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:14px}
+  .samples .sample{background:var(--card,#fff);border:1px solid var(--line,#e6ebf2);
+    border-radius:14px;padding:16px 18px}
+  .samples .sq{margin:0 0 10px;font-weight:650;line-height:1.45}
+  .samples .sa{list-style:none;padding:0;margin:0;display:grid;gap:6px}
+  .samples .sa li{padding:7px 12px;border:1px solid var(--line,#e6ebf2);border-radius:9px;
+    font-size:.94rem;color:var(--muted,#5a6472)}
+  .samples .sa li.ok{border-color:#1f9d55;color:#13703c;font-weight:650;
+    background:color-mix(in srgb,#1f9d55 8%,transparent)}
+  .samples .sa li.ok::before{content:"\2713";margin-right:8px;font-weight:800}
+  .samples .sm{margin:10px 0 0;font-size:.8rem;color:var(--muted,#5a6472);
+    text-transform:uppercase;letter-spacing:.06em}
 </style>
 </head>
 <body>
@@ -712,6 +725,49 @@
   </table></div>
   
 </div></section>
+
+
+<section class="sec"><div class="wrap">
+  <p class="eyebrow">Esempi di domande</p>
+  <h2>Che cosa chiede l&#x27;esame, con le sue parole</h2>
+  <ol class="samples">
+    <li class="sample">
+      <p class="sq raw">In wie viele Bezirke ist der Kanton Freiburg eingeteilt?</p>
+      <ul class="sa raw"><li class="ok">Sieben</li><li class="">Sechs</li><li class="">Acht</li><li class="">Fünf</li></ul>
+      <p class="sm">Geografie · domanda cantonale</p>
+    </li><li class="sample">
+      <p class="sq raw">Welches ist der Hauptort des Bezirks Greyerz?</p>
+      <ul class="sa raw"><li class="">Tafers</li><li class="ok">Bulle</li><li class="">Romont</li><li class="">Châtel-St-Denis</li></ul>
+      <p class="sm">Geografie · domanda cantonale</p>
+    </li><li class="sample">
+      <p class="sq raw">Welches ist der höchste Berg des Kantons Freiburg?</p>
+      <ul class="sa raw"><li class="">Die Berra</li><li class="">Der Kaiseregg</li><li class="ok">Der Vanil Noir</li><li class="">Der Moléson</li></ul>
+      <p class="sm">Geografie · domanda cantonale</p>
+    </li><li class="sample">
+      <p class="sq raw">Welches ist der Hauptort des Bezirks Sense?</p>
+      <ul class="sa raw"><li class="">Murten</li><li class="">Estavayer-le-Lac</li><li class="">Freiburg</li><li class="ok">Tafers</li></ul>
+      <p class="sm">Geografie · domanda cantonale</p>
+    </li><li class="sample">
+      <p class="sq raw">Aus wie vielen Mitgliedern besteht der Freiburger Staatsrat?</p>
+      <ul class="sa raw"><li class="">Neun</li><li class="">Elf</li><li class="ok">Sieben</li><li class="">Fünf</li></ul>
+      <p class="sm">Staatskunde · domanda cantonale</p>
+    </li><li class="sample">
+      <p class="sq raw">An wie viele Länder grenzt die Schweiz?</p>
+      <ul class="sa raw"><li class="ok">Fünf (Frankreich, Deutschland, Österreich, Liechtenstein, Italien)</li><li class="">Vier (Frankreich, Deutschland, Österreich, Italien)</li><li class="">Sechs (Frankreich, Deutschland, Österreich, Liechtenstein, Italien, Slowenien)</li><li class="">Drei (Frankreich, Deutschland, Italien)</li></ul>
+      <p class="sm">Geografie</p>
+    </li><li class="sample">
+      <p class="sq raw">Wie viele Landessprachen hat die Schweiz?</p>
+      <ul class="sa raw"><li class="">Fünf</li><li class="ok">Vier</li><li class="">Drei</li><li class="">Zwei</li></ul>
+      <p class="sm">Geografie</p>
+    </li><li class="sample">
+      <p class="sq raw">Welches ist der höchste Berg der Schweiz?</p>
+      <ul class="sa raw"><li class="">Der Eiger</li><li class="">Der Mont-Blanc</li><li class="ok">Die Dufourspitze</li><li class="">Das Matterhorn</li></ul>
+      <p class="sm">Geografie</p>
+    </li>
+  </ol>
+  <p class="note">Le domande e le risposte giuste vengono dal questionario ufficiale del cantone. Dove l&#x27;originale è una domanda aperta, le tre risposte sbagliate sono nostre.</p>
+</div></section>
+
 
 <section class="sec tint"><div class="wrap">
   <p class="eyebrow">Cosa contiene l&#x27;app per questo cantone</p>

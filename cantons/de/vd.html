@@ -554,6 +554,19 @@
     .numbers .n{border-right:0;border-bottom:1px solid var(--border)}
     .sec{padding:38px 0}
   }
+
+  .samples{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:14px}
+  .samples .sample{background:var(--card,#fff);border:1px solid var(--line,#e6ebf2);
+    border-radius:14px;padding:16px 18px}
+  .samples .sq{margin:0 0 10px;font-weight:650;line-height:1.45}
+  .samples .sa{list-style:none;padding:0;margin:0;display:grid;gap:6px}
+  .samples .sa li{padding:7px 12px;border:1px solid var(--line,#e6ebf2);border-radius:9px;
+    font-size:.94rem;color:var(--muted,#5a6472)}
+  .samples .sa li.ok{border-color:#1f9d55;color:#13703c;font-weight:650;
+    background:color-mix(in srgb,#1f9d55 8%,transparent)}
+  .samples .sa li.ok::before{content:"\2713";margin-right:8px;font-weight:800}
+  .samples .sm{margin:10px 0 0;font-size:.8rem;color:var(--muted,#5a6472);
+    text-transform:uppercase;letter-spacing:.06em}
 </style>
 </head>
 <body>
@@ -698,6 +711,49 @@
   
   
 </div></section>
+
+
+<section class="sec"><div class="wrap">
+  <p class="eyebrow">Beispielfragen</p>
+  <h2>Was die Prüfung fragt, in ihren eigenen Worten</h2>
+  <ol class="samples">
+    <li class="sample">
+      <p class="sq raw">De quelle couleur est le drapeau vaudois ?</p>
+      <ul class="sa raw"><li class="">Bleu et blanc</li><li class="">Rouge et blanc</li><li class="ok">Vert et blanc</li><li class="">Rouge et noir</li></ul>
+      <p class="sm">Géographie · kantonale Frage</p>
+    </li><li class="sample">
+      <p class="sq raw">Quels mots figurent sur le drapeau du Canton de Vaud ?</p>
+      <ul class="sa raw"><li class="">Liberté, égalité, fraternité</li><li class="ok">Liberté et patrie</li><li class="">Forts et libres</li><li class="">Liberté et prospérité</li></ul>
+      <p class="sm">Géographie · kantonale Frage</p>
+    </li><li class="sample">
+      <p class="sq raw">Au bord de quel lac se trouve la ville d&#x27;Yverdon-les-Bains ?</p>
+      <ul class="sa raw"><li class="">Lac Léman</li><li class="">Lac de Joux</li><li class="ok">Lac de Neuchâtel</li><li class="">Lac Majeur</li></ul>
+      <p class="sm">Géographie · kantonale Frage</p>
+    </li><li class="sample">
+      <p class="sq raw">Quel est le chef-lieu du canton de Vaud ?</p>
+      <ul class="sa raw"><li class="ok">Lausanne</li><li class="">Nyon</li><li class="">Montreux</li><li class="">Aigle</li></ul>
+      <p class="sm">Géographie · kantonale Frage</p>
+    </li><li class="sample">
+      <p class="sq raw">Lausanne se trouve au bord du …</p>
+      <ul class="sa raw"><li class="">Lac Noir</li><li class="">Lac des Quatre-Cantons</li><li class="ok">Lac Léman</li><li class="">Lac de Joux</li></ul>
+      <p class="sm">Géographie · kantonale Frage</p>
+    </li><li class="sample">
+      <p class="sq raw">Quel est le plus grand canton suisse (superficie) ?</p>
+      <ul class="sa raw"><li class="">Zurich</li><li class="ok">Grisons</li><li class="">Valais</li><li class="">Vaud</li></ul>
+      <p class="sm">Géographie</p>
+    </li><li class="sample">
+      <p class="sq raw">Quel est le plus grand lac entièrement suisse ?</p>
+      <ul class="sa raw"><li class="">Le Lac Léman</li><li class="ok">Le Lac de Neuchâtel</li><li class="">Le Lac Majeur</li><li class="">Le Lac de Zurich</li></ul>
+      <p class="sm">Géographie</p>
+    </li><li class="sample">
+      <p class="sq raw">Quel canton est officiellement bilingue (deux langues officielles) ?</p>
+      <ul class="sa raw"><li class="">Genève</li><li class="">Bâle</li><li class="">Vaud</li><li class="ok">Fribourg</li></ul>
+      <p class="sm">Géographie</p>
+    </li>
+  </ol>
+  <p class="note">Fragen und richtige Antworten stammen aus dem offiziellen Fragebogen des Kantons. Wo das Original eine offene Frage ist, sind die drei falschen Antworten unsere.</p>
+</div></section>
+
 
 <section class="sec tint"><div class="wrap">
   <p class="eyebrow">Was die App für diesen Kanton enthält</p>

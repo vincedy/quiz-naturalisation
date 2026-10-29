@@ -554,6 +554,19 @@
     .numbers .n{border-right:0;border-bottom:1px solid var(--border)}
     .sec{padding:38px 0}
   }
+
+  .samples{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:14px}
+  .samples .sample{background:var(--card,#fff);border:1px solid var(--line,#e6ebf2);
+    border-radius:14px;padding:16px 18px}
+  .samples .sq{margin:0 0 10px;font-weight:650;line-height:1.45}
+  .samples .sa{list-style:none;padding:0;margin:0;display:grid;gap:6px}
+  .samples .sa li{padding:7px 12px;border:1px solid var(--line,#e6ebf2);border-radius:9px;
+    font-size:.94rem;color:var(--muted,#5a6472)}
+  .samples .sa li.ok{border-color:#1f9d55;color:#13703c;font-weight:650;
+    background:color-mix(in srgb,#1f9d55 8%,transparent)}
+  .samples .sa li.ok::before{content:"\2713";margin-right:8px;font-weight:800}
+  .samples .sm{margin:10px 0 0;font-size:.8rem;color:var(--muted,#5a6472);
+    text-transform:uppercase;letter-spacing:.06em}
 </style>
 </head>
 <body>
@@ -711,6 +724,49 @@
   </table></div>
   
 </div></section>
+
+
+<section class="sec"><div class="wrap">
+  <p class="eyebrow">Sample questions</p>
+  <h2>What the exam asks, in its own words</h2>
+  <ol class="samples">
+    <li class="sample">
+      <p class="sq raw">In welchem Kanton wohnen Sie?</p>
+      <ul class="sa raw"><li class="">Zürich</li><li class="ok">Luzern</li><li class="">Bern</li><li class="">Basel</li></ul>
+      <p class="sm">Geografie · cantonal question</p>
+    </li><li class="sample">
+      <p class="sq raw">Wie heisst der Luzerner Hausberg?</p>
+      <ul class="sa raw"><li class="">Rigi</li><li class="">Bürgenstock</li><li class="ok">Pilatus</li><li class="">Titlis</li></ul>
+      <p class="sm">Geografie · cantonal question</p>
+    </li><li class="sample">
+      <p class="sq raw">Aus welchen Farben besteht das Wappen Ihres Wohnkantons?</p>
+      <ul class="sa raw"><li class="">Rot und Weiss</li><li class="">Schwarz und Gelb</li><li class="">Grün und Weiss</li><li class="ok">Blau und Weiss</li></ul>
+      <p class="sm">Geografie · cantonal question</p>
+    </li><li class="sample">
+      <p class="sq raw">Zu welcher Region der Schweiz fühlt sich der Kanton Luzern zugehörig?</p>
+      <ul class="sa raw"><li class="ok">Zentralschweiz</li><li class="">Mittelland</li><li class="">Westschweiz</li><li class="">Nordwestschweiz</li></ul>
+      <p class="sm">Geografie · cantonal question</p>
+    </li><li class="sample">
+      <p class="sq raw">Wie heisst der grösste See, der teilweise im Kanton Luzern liegt?</p>
+      <ul class="sa raw"><li class="">Zürichsee</li><li class="">Brienzersee</li><li class="ok">Vierwaldstättersee</li><li class="">Zugersee</li></ul>
+      <p class="sm">Geografie · cantonal question</p>
+    </li><li class="sample">
+      <p class="sq raw">Was ist ein wichtiges Merkmal der Demokratie?</p>
+      <ul class="sa raw"><li class="ok">Die Macht geht vom Stimmvolk aus (durch Wahl und Abstimmung).</li><li class="">Die Macht liegt beim Staatspräsidenten (gewählt durch die Bundesversammlung).</li><li class="">Der Staat wird durch ein Militär regiert (unter Aufsicht des Bundesrats).</li><li class="">Gesetze werden vom Parlament beschlossen (ohne Mitsprache der Bevölkerung).</li></ul>
+      <p class="sm">Democracy and Federalism</p>
+    </li><li class="sample">
+      <p class="sq raw">Was ist das 3-Säulen-Prinzip?</p>
+      <ul class="sa raw"><li class="">Die Altersvorsorge mit AHV, beruflicher Vorsorge und Ergänzungsleistungen.</li><li class="ok">Die Altersvorsorge mit AHV, beruflicher Vorsorge und privater Vorsorge.</li><li class="">Die Altersvorsorge mit AHV, Invalidenversicherung und privater Vorsorge.</li><li class="">Die Altersvorsorge mit AHV, Krankenversicherung und privater Vorsorge.</li></ul>
+      <p class="sm">Democracy and Federalism</p>
+    </li><li class="sample">
+      <p class="sq raw">Welche politischen Rechte erhalten Sie mit der Einbürgerung?</p>
+      <ul class="sa raw"><li class="">Petitionsrecht, Beschwerderecht und Klagerecht (in kantonalen Gerichten).</li><li class="">Niederlassungsrecht, Freizügigkeit und Passbewilligung (mit Schweizer Staatsbürgerschaft).</li><li class="ok">Wahlrecht, Stimmrecht, Volksbegehren (Initiative, Referendum) lancieren und unterzeichnen.</li><li class="">Steuerrecht, Schulrecht und Sozialhilfeanspruch (für dauerhaft in der Schweiz wohnende Personen).</li></ul>
+      <p class="sm">Democracy and Federalism</p>
+    </li>
+  </ol>
+  <p class="note">Questions and correct answers come from the canton&#x27;s official questionnaire. Where the original is an open question, the three wrong answers are ours.</p>
+</div></section>
+
 
 <section class="sec tint"><div class="wrap">
   <p class="eyebrow">What the app holds for this canton</p>

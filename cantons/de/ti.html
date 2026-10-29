@@ -554,6 +554,19 @@
     .numbers .n{border-right:0;border-bottom:1px solid var(--border)}
     .sec{padding:38px 0}
   }
+
+  .samples{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:14px}
+  .samples .sample{background:var(--card,#fff);border:1px solid var(--line,#e6ebf2);
+    border-radius:14px;padding:16px 18px}
+  .samples .sq{margin:0 0 10px;font-weight:650;line-height:1.45}
+  .samples .sa{list-style:none;padding:0;margin:0;display:grid;gap:6px}
+  .samples .sa li{padding:7px 12px;border:1px solid var(--line,#e6ebf2);border-radius:9px;
+    font-size:.94rem;color:var(--muted,#5a6472)}
+  .samples .sa li.ok{border-color:#1f9d55;color:#13703c;font-weight:650;
+    background:color-mix(in srgb,#1f9d55 8%,transparent)}
+  .samples .sa li.ok::before{content:"\2713";margin-right:8px;font-weight:800}
+  .samples .sm{margin:10px 0 0;font-size:.8rem;color:var(--muted,#5a6472);
+    text-transform:uppercase;letter-spacing:.06em}
 </style>
 </head>
 <body>
@@ -691,6 +704,49 @@
   
   
 </div></section>
+
+
+<section class="sec"><div class="wrap">
+  <p class="eyebrow">Beispielfragen</p>
+  <h2>Was die Prüfung fragt, in ihren eigenen Worten</h2>
+  <ol class="samples">
+    <li class="sample">
+      <p class="sq raw">Quale patto firmarono nel 1182 le valli di Blenio e Leventina?</p>
+      <ul class="sa raw"><li class="ok">Il Patto di Torre</li><li class="">Il Patto di Stans</li><li class="">Il Patto del Grütli</li><li class="">Il Patto di Sempach</li></ul>
+      <p class="sm">Storia · kantonale Frage</p>
+    </li><li class="sample">
+      <p class="sq raw">In quante circoscrizioni (baliaggi) erano divisi i territori che nel 1803 formarono il Cantone Ticino?</p>
+      <ul class="sa raw"><li class="">Sei</li><li class="ok">Otto</li><li class="">Dieci</li><li class="">Dodici</li></ul>
+      <p class="sm">Storia · kantonale Frage</p>
+    </li><li class="sample">
+      <p class="sq raw">Dopo quale battaglia del 1515 il confine meridionale ticinese fu portato alla sua posizione attuale?</p>
+      <ul class="sa raw"><li class="">La battaglia di Novara</li><li class="">La battaglia di Pavia</li><li class="ok">La battaglia di Marignano</li><li class="">La battaglia di Morat</li></ul>
+      <p class="sm">Storia · kantonale Frage</p>
+    </li><li class="sample">
+      <p class="sq raw">Nel 1798, per decisione di Napoleone, i baliaggi furono riuniti a formare quali due cantoni?</p>
+      <ul class="sa raw"><li class="">Locarno e Mendrisio</li><li class="">Bellinzona e Locarno</li><li class="">Lugano e Mendrisio</li><li class="ok">Bellinzona e Lugano</li></ul>
+      <p class="sm">Storia · kantonale Frage</p>
+    </li><li class="sample">
+      <p class="sq raw">In quale anno i due cantoni furono unificati nel Cantone Ticino, entrato nella Confederazione?</p>
+      <ul class="sa raw"><li class="ok">1803</li><li class="">1798</li><li class="">1815</li><li class="">1830</li></ul>
+      <p class="sm">Storia · kantonale Frage</p>
+    </li><li class="sample">
+      <p class="sq raw">In quale anno la Svizzera adottò la costituzione federale che la trasformò in Stato federale moderno?</p>
+      <ul class="sa raw"><li class="">1815</li><li class="">1830</li><li class="">1874</li><li class="ok">1848</li></ul>
+      <p class="sm">Storia</p>
+    </li><li class="sample">
+      <p class="sq raw">Quante sono le lingue nazionali della Svizzera?</p>
+      <ul class="sa raw"><li class="ok">Quattro</li><li class="">Tre</li><li class="">Due</li><li class="">Cinque</li></ul>
+      <p class="sm">Geografia</p>
+    </li><li class="sample">
+      <p class="sq raw">Quale delle quattro lingue nazionali svizzere si parla nel Cantone Ticino?</p>
+      <ul class="sa raw"><li class="">Il francese</li><li class="ok">L&#x27;italiano</li><li class="">Il romancio</li><li class="">Il tedesco</li></ul>
+      <p class="sm">Geografia</p>
+    </li>
+  </ol>
+  <p class="note">Fragen und richtige Antworten stammen aus dem offiziellen Fragebogen des Kantons. Wo das Original eine offene Frage ist, sind die drei falschen Antworten unsere.</p>
+</div></section>
+
 
 <section class="sec tint"><div class="wrap">
   <p class="eyebrow">Was die App für diesen Kanton enthält</p>

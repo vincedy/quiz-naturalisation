@@ -554,6 +554,19 @@
     .numbers .n{border-right:0;border-bottom:1px solid var(--border)}
     .sec{padding:38px 0}
   }
+
+  .samples{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:14px}
+  .samples .sample{background:var(--card,#fff);border:1px solid var(--line,#e6ebf2);
+    border-radius:14px;padding:16px 18px}
+  .samples .sq{margin:0 0 10px;font-weight:650;line-height:1.45}
+  .samples .sa{list-style:none;padding:0;margin:0;display:grid;gap:6px}
+  .samples .sa li{padding:7px 12px;border:1px solid var(--line,#e6ebf2);border-radius:9px;
+    font-size:.94rem;color:var(--muted,#5a6472)}
+  .samples .sa li.ok{border-color:#1f9d55;color:#13703c;font-weight:650;
+    background:color-mix(in srgb,#1f9d55 8%,transparent)}
+  .samples .sa li.ok::before{content:"\2713";margin-right:8px;font-weight:800}
+  .samples .sm{margin:10px 0 0;font-size:.8rem;color:var(--muted,#5a6472);
+    text-transform:uppercase;letter-spacing:.06em}
 </style>
 </head>
 <body>
@@ -712,6 +725,49 @@
   </table></div>
   
 </div></section>
+
+
+<section class="sec"><div class="wrap">
+  <p class="eyebrow">Exemples de questions</p>
+  <h2>Ce que l&#x27;examen demande, avec ses propres mots</h2>
+  <ol class="samples">
+    <li class="sample">
+      <p class="sq ">En combien de districts le canton de Fribourg est-il divisé ?</p>
+      <ul class="sa "><li class="ok">Sept</li><li class="">Six</li><li class="">Huit</li><li class="">Cinq</li></ul>
+      <p class="sm">Géographie · question cantonale</p>
+    </li><li class="sample">
+      <p class="sq ">Quel est le chef-lieu du district de la Gruyère ?</p>
+      <ul class="sa "><li class="">Tafers</li><li class="ok">Bulle</li><li class="">Romont</li><li class="">Châtel-St-Denis</li></ul>
+      <p class="sm">Géographie · question cantonale</p>
+    </li><li class="sample">
+      <p class="sq ">Quel est le plus haut sommet du canton de Fribourg ?</p>
+      <ul class="sa "><li class="">La Berra</li><li class="">Le Kaiseregg</li><li class="ok">Le Vanil Noir</li><li class="">Le Moléson</li></ul>
+      <p class="sm">Géographie · question cantonale</p>
+    </li><li class="sample">
+      <p class="sq ">Quel est le chef-lieu du district de la Singine ?</p>
+      <ul class="sa "><li class="">Morat</li><li class="">Estavayer-le-Lac</li><li class="">Fribourg</li><li class="ok">Tafers</li></ul>
+      <p class="sm">Géographie · question cantonale</p>
+    </li><li class="sample">
+      <p class="sq ">Combien de membres compte le Conseil d&#x27;État fribourgeois ?</p>
+      <ul class="sa "><li class="">Neuf</li><li class="">Onze</li><li class="ok">Sept</li><li class="">Cinq</li></ul>
+      <p class="sm">Politique · question cantonale</p>
+    </li><li class="sample">
+      <p class="sq ">Combien de pays la Suisse a-t-elle pour voisins ?</p>
+      <ul class="sa "><li class="ok">Cinq (France, Allemagne, Autriche, Liechtenstein, Italie)</li><li class="">Quatre (France, Allemagne, Autriche, Italie)</li><li class="">Six (France, Allemagne, Autriche, Liechtenstein, Italie, Slovénie)</li><li class="">Trois (France, Allemagne, Italie)</li></ul>
+      <p class="sm">Géographie</p>
+    </li><li class="sample">
+      <p class="sq ">Combien de langues nationales la Suisse compte-t-elle ?</p>
+      <ul class="sa "><li class="">Cinq</li><li class="ok">Quatre</li><li class="">Trois</li><li class="">Deux</li></ul>
+      <p class="sm">Géographie</p>
+    </li><li class="sample">
+      <p class="sq ">Quel est le plus haut sommet de Suisse ?</p>
+      <ul class="sa "><li class="">L&#x27;Eiger</li><li class="">Le Mont-Blanc</li><li class="ok">La Dufourspitze</li><li class="">Le Cervin</li></ul>
+      <p class="sm">Géographie</p>
+    </li>
+  </ol>
+  <p class="note">Les questions et les bonnes réponses viennent du questionnaire officiel du canton. Là où l&#x27;original est une question ouverte, les trois mauvaises réponses sont les nôtres.</p>
+</div></section>
+
 
 <section class="sec tint"><div class="wrap">
   <p class="eyebrow">Ce que contient l&#x27;application pour ce canton</p>
