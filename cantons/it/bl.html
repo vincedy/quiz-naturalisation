@@ -249,13 +249,8 @@
   .langmenu a:hover{background:var(--soft,#f6f8fb)}
   .langmenu a[aria-current="true"]{color:var(--red,#DA291C);font-weight:800}
   @media(max-width:720px){ .langpick{margin-left:auto} }
-.ctlinks{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:8px;
-    grid-template-columns:repeat(auto-fill,minmax(236px,1fr))}
-  .ctlinks a{display:flex;align-items:center;gap:9px;padding:9px 12px;color:inherit;
-    border:1px solid var(--line,#e6ebf2);border-radius:10px;background:var(--card,#fff);
-    text-decoration:none;font-size:.86rem;line-height:1.3}
-  .ctlinks a:hover{border-color:var(--red,#d8232a);color:var(--red,#d8232a)}
-  .ctlinks img{width:19px;height:19px;object-fit:contain;flex:0 0 19px}
+a.cchip{text-decoration:none;font-weight:700;transition:border-color .18s,color .18s}
+  a.cchip:hover{border-color:var(--red);color:var(--red)}
 
 /* the layout's own rules, from layout.html */
 /* Canton page — the site's tokens, layouts the landing does not have. */
@@ -574,18 +569,18 @@
   .samples .sa li.ok::before{content:"\2713";margin-right:8px;font-weight:800}
   .samples .sm{margin:10px 0 0;font-size:.8rem;color:var(--muted,#5a6472);
     text-transform:uppercase;letter-spacing:.06em}
-.others{list-style:none;padding:0;margin:16px 0 0;display:grid;gap:8px;
-    grid-template-columns:repeat(auto-fill,minmax(236px,1fr))}
-  .others a{display:flex;align-items:center;gap:9px;padding:9px 12px;color:inherit;
-    border:1px solid var(--line,#e6ebf2);border-radius:10px;background:var(--card,#fff);
-    text-decoration:none;font-size:.86rem;line-height:1.3}
-  .others a:hover{border-color:var(--red,#d8232a);color:var(--red,#d8232a)}
-  .others img{width:19px;height:19px;object-fit:contain;flex:0 0 19px}
+/* the crest chips of the landing's "Most active cantons", same measures */
+  .others{display:flex;flex-wrap:wrap;gap:9px;margin:16px 0 0}
+  .others a{display:inline-flex;align-items:center;gap:7px;background:var(--bg);border:1px solid var(--border);
+    border-radius:999px;padding:5px 13px 5px 8px;font-weight:700;color:var(--ink);font-size:.95rem;
+    text-decoration:none;transition:border-color .18s,color .18s}
+  .others a:hover{border-color:var(--red);color:var(--red)}
+  .others img{width:20px;height:24px;object-fit:contain}
   .faq{margin:16px 0 0;display:grid;gap:10px}
-  .faq .qa{border:1px solid var(--line,#e6ebf2);border-radius:12px;background:var(--card,#fff);padding:14px 16px}
+  .faq .qa{border:1px solid var(--border);border-radius:12px;background:var(--bg);padding:14px 16px}
   .faq h3{margin:0 0 6px;font-size:1rem;line-height:1.35}
-  .faq p{margin:0;color:var(--muted,#5a6472);font-size:.93rem;line-height:1.55}
-  .faq a{color:var(--red,#d8232a)}
+  .faq p{margin:0;color:var(--muted);font-size:.93rem;line-height:1.55}
+  .faq a{color:var(--red)}
 </style>
 </head>
 <body>
@@ -646,7 +641,7 @@
   <a class="host" href="https://www.baselland.ch/themen/einbuergerung" target="_blank" rel="noopener">www.baselland.ch &nearr;</a>
   <a class="meta" href="https://www.baselland.ch/politik-und-behorden/direktionen/sicherheitsdirektion/amt_fuer_migration" target="_blank" rel="noopener">Amt für Migration, Integration und Bürgerrecht, Sicherheitsdirektion</a>
   
-  <div class="stamp"><span data-today-label="Verificata oggi">Ultima verifica</span><b data-today>29 ottobre 2026</b></div>
+  <div class="stamp"><span data-today-label="Verificata oggi">Ultima verifica</span><b data-today>30 ottobre 2026</b></div>
 </div></div>
 
 
@@ -825,9 +820,9 @@
 <section class="sec"><div class="wrap">
   <h2>Il test in tutti gli altri cantoni</h2>
   <p class="note">Ogni cantone stabilisce il proprio esame. Queste pagine dicono che cosa chiede ciascuno, secondo quello che il cantone pubblica.</p>
-  <ul class="others">
-    <li><a href="ar.html"><img loading="lazy" src="../../assets/crests/AR.png" alt=""><span>Test di naturalizzazione Appenzello Esterno</span></a></li><li><a href="ai.html"><img loading="lazy" src="../../assets/crests/AI.png" alt=""><span>Test di naturalizzazione Appenzello Interno</span></a></li><li><a href="ag.html"><img loading="lazy" src="../../assets/crests/AG.png" alt=""><span>Test di naturalizzazione Argovia</span></a></li><li><a href="bs.html"><img loading="lazy" src="../../assets/crests/BS.png" alt=""><span>Test di naturalizzazione Basilea Città</span></a></li><li><a href="be.html"><img loading="lazy" src="../../assets/crests/BE.png" alt=""><span>Test di naturalizzazione Berna</span></a></li><li><a href="fr.html"><img loading="lazy" src="../../assets/crests/FR.png" alt=""><span>Test di naturalizzazione Friburgo</span></a></li><li><a href="ge.html"><img loading="lazy" src="../../assets/crests/GE.png" alt=""><span>Test di naturalizzazione Ginevra</span></a></li><li><a href="ju.html"><img loading="lazy" src="../../assets/crests/JU.png" alt=""><span>Test di naturalizzazione Giura</span></a></li><li><a href="gl.html"><img loading="lazy" src="../../assets/crests/GL.png" alt=""><span>Test di naturalizzazione Glarona</span></a></li><li><a href="gr.html"><img loading="lazy" src="../../assets/crests/GR.png" alt=""><span>Test di naturalizzazione Grigioni</span></a></li><li><a href="lu.html"><img loading="lazy" src="../../assets/crests/LU.png" alt=""><span>Test di naturalizzazione Lucerna</span></a></li><li><a href="ne.html"><img loading="lazy" src="../../assets/crests/NE.png" alt=""><span>Test di naturalizzazione Neuchâtel</span></a></li><li><a href="nw.html"><img loading="lazy" src="../../assets/crests/NW.png" alt=""><span>Test di naturalizzazione Nidvaldo</span></a></li><li><a href="ow.html"><img loading="lazy" src="../../assets/crests/OW.png" alt=""><span>Test di naturalizzazione Obvaldo</span></a></li><li><a href="sg.html"><img loading="lazy" src="../../assets/crests/SG.png" alt=""><span>Test di naturalizzazione San Gallo</span></a></li><li><a href="sh.html"><img loading="lazy" src="../../assets/crests/SH.png" alt=""><span>Test di naturalizzazione Sciaffusa</span></a></li><li><a href="so.html"><img loading="lazy" src="../../assets/crests/SO.png" alt=""><span>Test di naturalizzazione Soletta</span></a></li><li><a href="sz.html"><img loading="lazy" src="../../assets/crests/SZ.png" alt=""><span>Test di naturalizzazione Svitto</span></a></li><li><a href="ti.html"><img loading="lazy" src="../../assets/crests/TI.png" alt=""><span>Test di naturalizzazione Ticino</span></a></li><li><a href="tg.html"><img loading="lazy" src="../../assets/crests/TG.png" alt=""><span>Test di naturalizzazione Turgovia</span></a></li><li><a href="ur.html"><img loading="lazy" src="../../assets/crests/UR.png" alt=""><span>Test di naturalizzazione Uri</span></a></li><li><a href="vs.html"><img loading="lazy" src="../../assets/crests/VS.png" alt=""><span>Test di naturalizzazione Vallese</span></a></li><li><a href="vd.html"><img loading="lazy" src="../../assets/crests/VD.png" alt=""><span>Test di naturalizzazione Vaud</span></a></li><li><a href="zg.html"><img loading="lazy" src="../../assets/crests/ZG.png" alt=""><span>Test di naturalizzazione Zugo</span></a></li><li><a href="zh.html"><img loading="lazy" src="../../assets/crests/ZH.png" alt=""><span>Test di naturalizzazione Zurigo</span></a></li>
-  </ul>
+  <div class="others">
+    <a href="ar.html" title="Test di naturalizzazione Appenzello Esterno"><img loading="lazy" src="../../assets/crests/AR.png" alt="">Appenzello Esterno</a><a href="ai.html" title="Test di naturalizzazione Appenzello Interno"><img loading="lazy" src="../../assets/crests/AI.png" alt="">Appenzello Interno</a><a href="ag.html" title="Test di naturalizzazione Argovia"><img loading="lazy" src="../../assets/crests/AG.png" alt="">Argovia</a><a href="bs.html" title="Test di naturalizzazione Basilea Città"><img loading="lazy" src="../../assets/crests/BS.png" alt="">Basilea Città</a><a href="be.html" title="Test di naturalizzazione Berna"><img loading="lazy" src="../../assets/crests/BE.png" alt="">Berna</a><a href="fr.html" title="Test di naturalizzazione Friburgo"><img loading="lazy" src="../../assets/crests/FR.png" alt="">Friburgo</a><a href="ge.html" title="Test di naturalizzazione Ginevra"><img loading="lazy" src="../../assets/crests/GE.png" alt="">Ginevra</a><a href="ju.html" title="Test di naturalizzazione Giura"><img loading="lazy" src="../../assets/crests/JU.png" alt="">Giura</a><a href="gl.html" title="Test di naturalizzazione Glarona"><img loading="lazy" src="../../assets/crests/GL.png" alt="">Glarona</a><a href="gr.html" title="Test di naturalizzazione Grigioni"><img loading="lazy" src="../../assets/crests/GR.png" alt="">Grigioni</a><a href="lu.html" title="Test di naturalizzazione Lucerna"><img loading="lazy" src="../../assets/crests/LU.png" alt="">Lucerna</a><a href="ne.html" title="Test di naturalizzazione Neuchâtel"><img loading="lazy" src="../../assets/crests/NE.png" alt="">Neuchâtel</a><a href="nw.html" title="Test di naturalizzazione Nidvaldo"><img loading="lazy" src="../../assets/crests/NW.png" alt="">Nidvaldo</a><a href="ow.html" title="Test di naturalizzazione Obvaldo"><img loading="lazy" src="../../assets/crests/OW.png" alt="">Obvaldo</a><a href="sg.html" title="Test di naturalizzazione San Gallo"><img loading="lazy" src="../../assets/crests/SG.png" alt="">San Gallo</a><a href="sh.html" title="Test di naturalizzazione Sciaffusa"><img loading="lazy" src="../../assets/crests/SH.png" alt="">Sciaffusa</a><a href="so.html" title="Test di naturalizzazione Soletta"><img loading="lazy" src="../../assets/crests/SO.png" alt="">Soletta</a><a href="sz.html" title="Test di naturalizzazione Svitto"><img loading="lazy" src="../../assets/crests/SZ.png" alt="">Svitto</a><a href="ti.html" title="Test di naturalizzazione Ticino"><img loading="lazy" src="../../assets/crests/TI.png" alt="">Ticino</a><a href="tg.html" title="Test di naturalizzazione Turgovia"><img loading="lazy" src="../../assets/crests/TG.png" alt="">Turgovia</a><a href="ur.html" title="Test di naturalizzazione Uri"><img loading="lazy" src="../../assets/crests/UR.png" alt="">Uri</a><a href="vs.html" title="Test di naturalizzazione Vallese"><img loading="lazy" src="../../assets/crests/VS.png" alt="">Vallese</a><a href="vd.html" title="Test di naturalizzazione Vaud"><img loading="lazy" src="../../assets/crests/VD.png" alt="">Vaud</a><a href="zg.html" title="Test di naturalizzazione Zugo"><img loading="lazy" src="../../assets/crests/ZG.png" alt="">Zugo</a><a href="zh.html" title="Test di naturalizzazione Zurigo"><img loading="lazy" src="../../assets/crests/ZH.png" alt="">Zurigo</a>
+  </div>
 </div></section>
 
 
