@@ -291,6 +291,9 @@ a.cchip{text-decoration:none;font-weight:700;transition:border-color .18s,color 
   .sec.tint{background:var(--soft)}
   .sec .eyebrow{text-align:left;margin:0 0 14px}
   .sec h2{font-size:1.65rem;margin:0 0 12px}
+  /* a section with no title of its own uses its eyebrow as the heading, so the page's outline
+     names every part of it; it must still look exactly like the <p class="eyebrow"> it was. */
+  .sec h2.eyebrow{font-size:.8rem;line-height:inherit}
   .lead{color:var(--muted);max-width:70ch;margin:0;font-size:1.02rem}
   /* words inherited from the canton's own files, in the language the canton published them:
      never translated here, never dropped — set in italics so they read as a quotation. */
@@ -641,7 +644,7 @@ a.cchip{text-decoration:none;font-weight:700;transition:border-color .18s,color 
   <a class="host" href="https://www.ge.ch/connaitre-suisse-geneve" target="_blank" rel="noopener">www.ge.ch &nearr;</a>
   <a class="meta" href="https://www.ge.ch/organisation/office-cantonal-population-migrations-ocpm" target="_blank" rel="noopener">Office cantonal de la population et des migrations (OCPM), République et canton de Genève</a>
   <span class="live"><i></i>checked every night</span>
-  <div class="stamp"><span data-today-label="Checked today">Last checked</span><b data-today>30 October 2026</b></div>
+  <div class="stamp"><span data-today-label="Checked today">Last checked</span><b data-today>31 October 2026</b></div>
 </div></div>
 
 
@@ -676,7 +679,7 @@ a.cchip{text-decoration:none;font-weight:700;transition:border-color .18s,color 
 
 
 <section class="sec tint"><div class="wrap">
-  <p class="eyebrow">The interview</p>
+  <h2 class="eyebrow">The interview</h2>
   <p class="lead intro-oral">There is no oral test on knowledge in Geneva: it is checked only in writing. An integration hearing (personality enquiry) does take place, conducted by a sworn investigator from the canton or the municipality — it concerns integration and respect for fundamental rights, not a civic quiz.</p>
   
 
@@ -701,7 +704,7 @@ a.cchip{text-decoration:none;font-weight:700;transition:border-color .18s,color 
 
 
 <section class="sec"><div class="wrap">
-  <p class="eyebrow">What the test covers</p>
+  <h2 class="eyebrow">What the test covers</h2>
   <div class="chips"><span class="chip" style="--c:var(--cat-history)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 22h18"/><path d="M6 18v-7"/><path d="M10 18v-7"/><path d="M14 18v-7"/><path d="M18 18v-7"/><path d="M4 11h16"/><path d="m12 2 8 6H4z"/></svg>History</span><span class="chip" style="--c:var(--cat-geography)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10"/></svg>Switzerland &amp; Cantons</span><span class="chip" style="--c:var(--cat-politics)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg>Politics</span><span class="chip" style="--c:var(--cat-customs)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>Customs &amp; Traditions</span><span class="chip" style="--c:var(--cat-rights)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>Rights &amp; Duties</span></div>
   
   <h2 class="gridtitle">Simulated written exam — How the questions are drawn
@@ -768,7 +771,7 @@ a.cchip{text-decoration:none;font-weight:700;transition:border-color .18s,color 
 
 
 <section class="sec tint"><div class="wrap">
-  <p class="eyebrow">What the app holds for this canton</p>
+  <h2 class="eyebrow">What the app holds for this canton</h2>
   <div class="stats">
     <div class="s"><b>90</b><span>federal questions</span></div><div class="s"><b>57</b><span>cantonal questions</span></div>
   </div>
@@ -789,7 +792,7 @@ a.cchip{text-decoration:none;font-weight:700;transition:border-color .18s,color 
 
 
 <section class="sec"><div class="wrap">
-  <p class="eyebrow">Official material</p>
+  <h2 class="eyebrow">Official material</h2>
   <div class="links">
     
       <a class="l" href="https://www.ge.ch/document/25243/annexe/file/553372" target="_blank" rel="noopener">
@@ -830,7 +833,7 @@ a.cchip{text-decoration:none;font-weight:700;transition:border-color .18s,color 
 
 
 <section class="sec"><div class="wrap">
-  <p class="eyebrow">Official source</p>
+  <h2 class="eyebrow">Official source</h2>
   <div class="source">
     <div class="sleft">
       <a class="host" href="https://www.ge.ch/connaitre-suisse-geneve" target="_blank" rel="noopener">www.ge.ch &nearr;</a>

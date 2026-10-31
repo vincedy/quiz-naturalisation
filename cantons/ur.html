@@ -291,6 +291,9 @@ a.cchip{text-decoration:none;font-weight:700;transition:border-color .18s,color 
   .sec.tint{background:var(--soft)}
   .sec .eyebrow{text-align:left;margin:0 0 14px}
   .sec h2{font-size:1.65rem;margin:0 0 12px}
+  /* a section with no title of its own uses its eyebrow as the heading, so the page's outline
+     names every part of it; it must still look exactly like the <p class="eyebrow"> it was. */
+  .sec h2.eyebrow{font-size:.8rem;line-height:inherit}
   .lead{color:var(--muted);max-width:70ch;margin:0;font-size:1.02rem}
   /* words inherited from the canton's own files, in the language the canton published them:
      never translated here, never dropped — set in italics so they read as a quotation. */
@@ -641,7 +644,7 @@ a.cchip{text-decoration:none;font-weight:700;transition:border-color .18s,color 
   <a class="host" href="https://www.ur.ch/dienstleistungen/3394" target="_blank" rel="noopener">www.ur.ch &nearr;</a>
   <a class="meta" href="https://www.ur.ch/dienstleistungen/3394" target="_blank" rel="noopener">Justizdirektion Uri, Abteilung Justiz und Handelsregister</a>
   
-  <div class="stamp"><span data-today-label="Checked today">Last checked</span><b data-today>30 October 2026</b></div>
+  <div class="stamp"><span data-today-label="Checked today">Last checked</span><b data-today>31 October 2026</b></div>
 </div></div>
 
 
@@ -675,7 +678,7 @@ a.cchip{text-decoration:none;font-weight:700;transition:border-color .18s,color 
 
 
 <section class="sec tint"><div class="wrap">
-  <p class="eyebrow">The interview</p>
+  <h2 class="eyebrow">The interview</h2>
   <p class="lead intro-oral">Besides the written «Staatskundetest» (bwz uri), the commune runs an ORAL integration interview (integration, language, local anchoring), not standardised and set by each commune. No published guide or sample questions.</p>
   
 
@@ -700,7 +703,7 @@ a.cchip{text-decoration:none;font-weight:700;transition:border-color .18s,color 
 
 
 <section class="sec"><div class="wrap">
-  <p class="eyebrow">What the test covers</p>
+  <h2 class="eyebrow">What the test covers</h2>
   <div class="chips"><span class="chip" style="--c:var(--muted)">Democracy &amp; Federalism</span><span class="chip" style="--c:var(--muted)">Social welfare &amp; Civil society</span><span class="chip" style="--c:var(--muted)">History</span><span class="chip" style="--c:var(--muted)">Geography</span><span class="chip" style="--c:var(--muted)">Culture &amp; Everyday life</span></div>
   
   
@@ -709,7 +712,7 @@ a.cchip{text-decoration:none;font-weight:700;transition:border-color .18s,color 
 
 
 <section class="sec tint"><div class="wrap">
-  <p class="eyebrow">What the app holds for this canton</p>
+  <h2 class="eyebrow">What the app holds for this canton</h2>
   
   
   <div class="mock">
@@ -728,7 +731,7 @@ a.cchip{text-decoration:none;font-weight:700;transition:border-color .18s,color 
 
 
 <section class="sec"><div class="wrap">
-  <p class="eyebrow">Official material</p>
+  <h2 class="eyebrow">Official material</h2>
   <div class="links">
     
       <a class="l" href="https://www.ur.ch/_doc/443059" target="_blank" rel="noopener">
@@ -775,7 +778,7 @@ a.cchip{text-decoration:none;font-weight:700;transition:border-color .18s,color 
 
 
 <section class="sec"><div class="wrap">
-  <p class="eyebrow">Official source</p>
+  <h2 class="eyebrow">Official source</h2>
   <div class="source">
     <div class="sleft">
       <a class="host" href="https://www.ur.ch/dienstleistungen/3394" target="_blank" rel="noopener">www.ur.ch &nearr;</a>

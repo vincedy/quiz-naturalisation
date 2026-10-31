@@ -291,6 +291,9 @@ a.cchip{text-decoration:none;font-weight:700;transition:border-color .18s,color 
   .sec.tint{background:var(--soft)}
   .sec .eyebrow{text-align:left;margin:0 0 14px}
   .sec h2{font-size:1.65rem;margin:0 0 12px}
+  /* a section with no title of its own uses its eyebrow as the heading, so the page's outline
+     names every part of it; it must still look exactly like the <p class="eyebrow"> it was. */
+  .sec h2.eyebrow{font-size:.8rem;line-height:inherit}
   .lead{color:var(--muted);max-width:70ch;margin:0;font-size:1.02rem}
   /* words inherited from the canton's own files, in the language the canton published them:
      never translated here, never dropped — set in italics so they read as a quotation. */
@@ -641,7 +644,7 @@ a.cchip{text-decoration:none;font-weight:700;transition:border-color .18s,color 
   <a class="host" href="https://so.ch/verwaltung/volkswirtschaftsdepartement/amt-fuer-gemeinden/buergerrecht/neubuergerkurse/" target="_blank" rel="noopener">so.ch &nearr;</a>
   <a class="meta" href="https://so.ch/verwaltung/volkswirtschaftsdepartement/amt-fuer-gemeinden/buergerrecht/neubuergerkurse/" target="_blank" rel="noopener">Amt für Gemeinden, Volkswirtschaftsdepartement</a>
   <span class="live"><i></i>vérifiée chaque nuit</span>
-  <div class="stamp"><span data-today-label="Vérifiée aujourd&#x27;hui">Dernière vérification</span><b data-today>30 octobre 2026</b></div>
+  <div class="stamp"><span data-today-label="Vérifiée aujourd&#x27;hui">Dernière vérification</span><b data-today>31 octobre 2026</b></div>
 </div></div>
 
 
@@ -675,7 +678,7 @@ a.cchip{text-decoration:none;font-weight:700;transition:border-color .18s,color 
 
 
 <section class="sec tint"><div class="wrap">
-  <p class="eyebrow">L&#x27;entretien</p>
+  <h2 class="eyebrow">L&#x27;entretien</h2>
   <p class="lead intro-oral">Outre l&#x27;examen écrit final, il y a des entretiens personnels (Oberamt et commune bourgeoise) qui évaluent l&#x27;intégration, pas les connaissances, et ne sont pas standardisés. Aucune liste de questions n&#x27;est publiée pour ces entretiens.</p>
   
 
@@ -702,7 +705,7 @@ a.cchip{text-decoration:none;font-weight:700;transition:border-color .18s,color 
 
 
 <section class="sec"><div class="wrap">
-  <p class="eyebrow">Ce que couvre le test</p>
+  <h2 class="eyebrow">Ce que couvre le test</h2>
   <div class="chips"><span class="chip" style="--c:var(--muted)">Démocratie et fédéralisme</span><span class="chip" style="--c:var(--muted)">État social et société civile</span><span class="chip" style="--c:var(--muted)">Histoire</span><span class="chip" style="--c:var(--muted)">Géographie</span><span class="chip" style="--c:var(--muted)">Culture et vie quotidienne</span></div>
   
   <h2 class="gridtitle">Examen écrit blanc — Comment les questions sont tirées
@@ -757,7 +760,7 @@ a.cchip{text-decoration:none;font-weight:700;transition:border-color .18s,color 
 
 
 <section class="sec tint"><div class="wrap">
-  <p class="eyebrow">Ce que contient l&#x27;application pour ce canton</p>
+  <h2 class="eyebrow">Ce que contient l&#x27;application pour ce canton</h2>
   <div class="stats">
     <div class="s"><b>109</b><span>questions cantonales</span></div>
   </div>
@@ -778,7 +781,7 @@ a.cchip{text-decoration:none;font-weight:700;transition:border-color .18s,color 
 
 
 <section class="sec"><div class="wrap">
-  <p class="eyebrow">Matériel officiel</p>
+  <h2 class="eyebrow">Matériel officiel</h2>
   <div class="links">
     
       <a class="l" href="https://so.ch/fileadmin/internet/vwd/vwd-agem/pdf/Buergerrecht/2026_01_01_Kurs-_und_Pruefungsreglement_NBK.pdf" target="_blank" rel="noopener">
@@ -819,7 +822,7 @@ a.cchip{text-decoration:none;font-weight:700;transition:border-color .18s,color 
 
 
 <section class="sec"><div class="wrap">
-  <p class="eyebrow">Source officielle</p>
+  <h2 class="eyebrow">Source officielle</h2>
   <div class="source">
     <div class="sleft">
       <a class="host" href="https://so.ch/verwaltung/volkswirtschaftsdepartement/amt-fuer-gemeinden/buergerrecht/neubuergerkurse/" target="_blank" rel="noopener">so.ch &nearr;</a>

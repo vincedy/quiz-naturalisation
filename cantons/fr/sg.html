@@ -291,6 +291,9 @@ a.cchip{text-decoration:none;font-weight:700;transition:border-color .18s,color 
   .sec.tint{background:var(--soft)}
   .sec .eyebrow{text-align:left;margin:0 0 14px}
   .sec h2{font-size:1.65rem;margin:0 0 12px}
+  /* a section with no title of its own uses its eyebrow as the heading, so the page's outline
+     names every part of it; it must still look exactly like the <p class="eyebrow"> it was. */
+  .sec h2.eyebrow{font-size:.8rem;line-height:inherit}
   .lead{color:var(--muted);max-width:70ch;margin:0;font-size:1.02rem}
   /* words inherited from the canton's own files, in the language the canton published them:
      never translated here, never dropped — set in italics so they read as a quotation. */
@@ -641,7 +644,7 @@ a.cchip{text-decoration:none;font-weight:700;transition:border-color .18s,color 
   <a class="host" href="https://www.arge.ch/bilang/angebot/einbuergerung-und-staatskunde/staatskundetest" target="_blank" rel="noopener">www.arge.ch &nearr;</a>
   <a class="meta" href="https://www.sg.ch/recht/buergerrecht-zivilstand.html" target="_blank" rel="noopener">Amt für Gemeinden und Bürgerrecht</a>
   <span class="live"><i></i>vérifiée chaque nuit</span>
-  <div class="stamp"><span data-today-label="Vérifiée aujourd&#x27;hui">Dernière vérification</span><b data-today>30 octobre 2026</b></div>
+  <div class="stamp"><span data-today-label="Vérifiée aujourd&#x27;hui">Dernière vérification</span><b data-today>31 octobre 2026</b></div>
 </div></div>
 
 
@@ -674,7 +677,7 @@ a.cchip{text-decoration:none;font-weight:700;transition:border-color .18s,color 
 
 
 <section class="sec tint"><div class="wrap">
-  <p class="eyebrow">L&#x27;entretien</p>
+  <h2 class="eyebrow">L&#x27;entretien</h2>
   <p class="lead intro-oral">Dans toute naturalisation ordinaire, la commune mène un entretien de naturalisation contraignant (BRV Art. 7) — il vérifie les connaissances ET l&#x27;intégration, mené librement, sans liste de questions publiée. C&#x27;est l&#x27;élément prescrit à l&#x27;échelle cantonale (le test écrit, lui, est communal/facultatif).</p>
   <p class="lead note raw">Reicht von einem formellen Einbürgerungsrat-Gespräch (Stadt SG) bis zur Abstimmung an der Gemeindeversammlung (Oberriet/Rheintal — ~jede zweite Person über neun Jahre abgelehnt; das Verwaltungsgericht erzwang wiederholt Einbürgerungen).</p><p class="lead note raw">DAS mündliche Einbürgerungsgespräch ist das gesetzlich UNIVERSELLE Element: BRV Art. 7 verlangt von jeder Gemeinde eine « Zusammenfassung des Einbürgerungsgesprächs » in jedem ordentlichen Verfahren. (Umgekehrt zum schriftlichen Test, der diskretionär/kommunal ist.)</p>
 
@@ -701,7 +704,7 @@ a.cchip{text-decoration:none;font-weight:700;transition:border-color .18s,color 
 
 
 <section class="sec"><div class="wrap">
-  <p class="eyebrow">Ce que couvre le test</p>
+  <h2 class="eyebrow">Ce que couvre le test</h2>
   <div class="chips"><span class="chip" style="--c:var(--cat-politics)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg>Démocratie et fédéralisme</span><span class="chip" style="--c:var(--cat-geography)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10"/></svg>Géographie</span><span class="chip" style="--c:var(--cat-history)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 22h18"/><path d="M6 18v-7"/><path d="M10 18v-7"/><path d="M14 18v-7"/><path d="M18 18v-7"/><path d="M4 11h16"/><path d="m12 2 8 6H4z"/></svg>Histoire</span><span class="chip" style="--c:var(--cat-society)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>État social et société civile</span></div>
   
   <h2 class="gridtitle">Examen écrit blanc — Comment les questions sont tirées
@@ -767,7 +770,7 @@ a.cchip{text-decoration:none;font-weight:700;transition:border-color .18s,color 
 
 
 <section class="sec tint"><div class="wrap">
-  <p class="eyebrow">Ce que contient l&#x27;application pour ce canton</p>
+  <h2 class="eyebrow">Ce que contient l&#x27;application pour ce canton</h2>
   <div class="stats">
     <div class="s"><b>8</b><span>questions fédérales</span></div><div class="s"><b>82</b><span>questions cantonales</span></div>
   </div>
@@ -788,7 +791,7 @@ a.cchip{text-decoration:none;font-weight:700;transition:border-color .18s,color 
 
 
 <section class="sec"><div class="wrap">
-  <p class="eyebrow">Matériel officiel</p>
+  <h2 class="eyebrow">Matériel officiel</h2>
   <div class="links">
     
       <a class="l" href="https://www.arge.ch/bilang/angebot/einbuergerung-und-staatskunde/staatskundetest" target="_blank" rel="noopener">
@@ -823,7 +826,7 @@ a.cchip{text-decoration:none;font-weight:700;transition:border-color .18s,color 
 
 
 <section class="sec"><div class="wrap">
-  <p class="eyebrow">Source officielle</p>
+  <h2 class="eyebrow">Source officielle</h2>
   <div class="source">
     <div class="sleft">
       <a class="host" href="https://www.arge.ch/bilang/angebot/einbuergerung-und-staatskunde/staatskundetest" target="_blank" rel="noopener">www.arge.ch &nearr;</a>

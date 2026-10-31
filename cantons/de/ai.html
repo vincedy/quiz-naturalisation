@@ -291,6 +291,9 @@ a.cchip{text-decoration:none;font-weight:700;transition:border-color .18s,color 
   .sec.tint{background:var(--soft)}
   .sec .eyebrow{text-align:left;margin:0 0 14px}
   .sec h2{font-size:1.65rem;margin:0 0 12px}
+  /* a section with no title of its own uses its eyebrow as the heading, so the page's outline
+     names every part of it; it must still look exactly like the <p class="eyebrow"> it was. */
+  .sec h2.eyebrow{font-size:.8rem;line-height:inherit}
   .lead{color:var(--muted);max-width:70ch;margin:0;font-size:1.02rem}
   /* words inherited from the canton's own files, in the language the canton published them:
      never translated here, never dropped — set in italics so they read as a quotation. */
@@ -641,7 +644,7 @@ a.cchip{text-decoration:none;font-weight:700;transition:border-color .18s,color 
   <a class="host" href="https://www.ai.ch/themen/auslaender/einbuergerung" target="_blank" rel="noopener">www.ai.ch &nearr;</a>
   <a class="meta" href="https://www.ai.ch/themen/auslaender/einbuergerung" target="_blank" rel="noopener">Zivilstandsamt Appenzell Innerrhoden</a>
   
-  <div class="stamp"><span data-today-label="Heute geprüft">Zuletzt geprüft</span><b data-today>30 Oktober 2026</b></div>
+  <div class="stamp"><span data-today-label="Heute geprüft">Zuletzt geprüft</span><b data-today>31 Oktober 2026</b></div>
 </div></div>
 
 
@@ -674,7 +677,7 @@ a.cchip{text-decoration:none;font-weight:700;transition:border-color .18s,color 
 
 
 <section class="sec tint"><div class="wrap">
-  <p class="eyebrow">Das Gespräch</p>
+  <h2 class="eyebrow">Das Gespräch</h2>
   
   
 
@@ -704,7 +707,7 @@ a.cchip{text-decoration:none;font-weight:700;transition:border-color .18s,color 
 
 
 <section class="sec"><div class="wrap">
-  <p class="eyebrow">Was der Test abfragt</p>
+  <h2 class="eyebrow">Was der Test abfragt</h2>
   <div class="chips"><span class="chip" style="--c:var(--muted)">Demokratie und Föderalismus</span><span class="chip" style="--c:var(--muted)">Sozialstaat und Zivilgesellschaft</span><span class="chip" style="--c:var(--muted)">Geschichte</span><span class="chip" style="--c:var(--muted)">Geografie</span><span class="chip" style="--c:var(--muted)">Kultur und Alltagskultur</span></div>
   
   
@@ -713,7 +716,7 @@ a.cchip{text-decoration:none;font-weight:700;transition:border-color .18s,color 
 
 
 <section class="sec tint"><div class="wrap">
-  <p class="eyebrow">Was die App für diesen Kanton enthält</p>
+  <h2 class="eyebrow">Was die App für diesen Kanton enthält</h2>
   
   
   <div class="mock">
@@ -738,7 +741,7 @@ a.cchip{text-decoration:none;font-weight:700;transition:border-color .18s,color 
 
 
 <section class="sec"><div class="wrap">
-  <p class="eyebrow">Offizielles Material</p>
+  <h2 class="eyebrow">Offizielles Material</h2>
   <div class="links">
     
       <a class="l" href="https://www.ai.ch/themen/auslaender/einbuergerung/publikationen/handreichung-2025.pdf/@@download/file/Handreichung%20April%202025.pdf" target="_blank" rel="noopener">
@@ -773,7 +776,7 @@ a.cchip{text-decoration:none;font-weight:700;transition:border-color .18s,color 
 
 
 <section class="sec"><div class="wrap">
-  <p class="eyebrow">Offizielle Quelle</p>
+  <h2 class="eyebrow">Offizielle Quelle</h2>
   <div class="source">
     <div class="sleft">
       <a class="host" href="https://www.ai.ch/themen/auslaender/einbuergerung" target="_blank" rel="noopener">www.ai.ch &nearr;</a>

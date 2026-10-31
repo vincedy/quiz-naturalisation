@@ -291,6 +291,9 @@ a.cchip{text-decoration:none;font-weight:700;transition:border-color .18s,color 
   .sec.tint{background:var(--soft)}
   .sec .eyebrow{text-align:left;margin:0 0 14px}
   .sec h2{font-size:1.65rem;margin:0 0 12px}
+  /* a section with no title of its own uses its eyebrow as the heading, so the page's outline
+     names every part of it; it must still look exactly like the <p class="eyebrow"> it was. */
+  .sec h2.eyebrow{font-size:.8rem;line-height:inherit}
   .lead{color:var(--muted);max-width:70ch;margin:0;font-size:1.02rem}
   /* words inherited from the canton's own files, in the language the canton published them:
      never translated here, never dropped — set in italics so they read as a quotation. */
@@ -641,7 +644,7 @@ a.cchip{text-decoration:none;font-weight:700;transition:border-color .18s,color 
   <a class="host" href="https://ar.ch/verwaltung/departement-inneres-und-sicherheit/amt-fuer-inneres/abteilung-buergerrecht-und-zivilstand/einbuergerungen/staatskundetest/" target="_blank" rel="noopener">ar.ch &nearr;</a>
   <a class="meta" href="https://ar.ch/verwaltung/departement-inneres-und-sicherheit/amt-fuer-inneres/abteilung-buergerrecht-und-zivilstand/" target="_blank" rel="noopener">Amt für Inneres, Abteilung Bürgerrecht und Zivilstand</a>
   
-  <div class="stamp"><span data-today-label="Vérifiée aujourd&#x27;hui">Dernière vérification</span><b data-today>30 octobre 2026</b></div>
+  <div class="stamp"><span data-today-label="Vérifiée aujourd&#x27;hui">Dernière vérification</span><b data-today>31 octobre 2026</b></div>
 </div></div>
 
 
@@ -676,7 +679,7 @@ a.cchip{text-decoration:none;font-weight:700;transition:border-color .18s,color 
 
 
 <section class="sec"><div class="wrap">
-  <p class="eyebrow">Ce que couvre le test</p>
+  <h2 class="eyebrow">Ce que couvre le test</h2>
   <div class="chips"><span class="chip" style="--c:var(--muted)">Démocratie et fédéralisme</span><span class="chip" style="--c:var(--muted)">État social et société civile</span><span class="chip" style="--c:var(--muted)">Histoire</span><span class="chip" style="--c:var(--muted)">Géographie</span><span class="chip" style="--c:var(--muted)">Culture et vie quotidienne</span></div>
   
   
@@ -685,7 +688,7 @@ a.cchip{text-decoration:none;font-weight:700;transition:border-color .18s,color 
 
 
 <section class="sec tint"><div class="wrap">
-  <p class="eyebrow">Ce que contient l&#x27;application pour ce canton</p>
+  <h2 class="eyebrow">Ce que contient l&#x27;application pour ce canton</h2>
   
   
   <div class="mock">
@@ -704,7 +707,7 @@ a.cchip{text-decoration:none;font-weight:700;transition:border-color .18s,color 
 
 
 <section class="sec"><div class="wrap">
-  <p class="eyebrow">Matériel officiel</p>
+  <h2 class="eyebrow">Matériel officiel</h2>
   <div class="links">
     
       <a class="l" href="https://www.ch-info.swiss/" target="_blank" rel="noopener">
@@ -745,7 +748,7 @@ a.cchip{text-decoration:none;font-weight:700;transition:border-color .18s,color 
 
 
 <section class="sec"><div class="wrap">
-  <p class="eyebrow">Source officielle</p>
+  <h2 class="eyebrow">Source officielle</h2>
   <div class="source">
     <div class="sleft">
       <a class="host" href="https://ar.ch/verwaltung/departement-inneres-und-sicherheit/amt-fuer-inneres/abteilung-buergerrecht-und-zivilstand/einbuergerungen/staatskundetest/" target="_blank" rel="noopener">ar.ch &nearr;</a>

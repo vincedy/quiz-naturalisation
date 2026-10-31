@@ -291,6 +291,9 @@ a.cchip{text-decoration:none;font-weight:700;transition:border-color .18s,color 
   .sec.tint{background:var(--soft)}
   .sec .eyebrow{text-align:left;margin:0 0 14px}
   .sec h2{font-size:1.65rem;margin:0 0 12px}
+  /* a section with no title of its own uses its eyebrow as the heading, so the page's outline
+     names every part of it; it must still look exactly like the <p class="eyebrow"> it was. */
+  .sec h2.eyebrow{font-size:.8rem;line-height:inherit}
   .lead{color:var(--muted);max-width:70ch;margin:0;font-size:1.02rem}
   /* words inherited from the canton's own files, in the language the canton published them:
      never translated here, never dropped — set in italics so they read as a quotation. */
@@ -641,7 +644,7 @@ a.cchip{text-decoration:none;font-weight:700;transition:border-color .18s,color 
   <a class="host" href="https://www.baselland.ch/themen/einbuergerung" target="_blank" rel="noopener">www.baselland.ch &nearr;</a>
   <a class="meta" href="https://www.baselland.ch/politik-und-behorden/direktionen/sicherheitsdirektion/amt_fuer_migration" target="_blank" rel="noopener">Amt für Migration, Integration und Bürgerrecht, Sicherheitsdirektion</a>
   
-  <div class="stamp"><span data-today-label="Vérifiée aujourd&#x27;hui">Dernière vérification</span><b data-today>30 octobre 2026</b></div>
+  <div class="stamp"><span data-today-label="Vérifiée aujourd&#x27;hui">Dernière vérification</span><b data-today>31 octobre 2026</b></div>
 </div></div>
 
 
@@ -674,7 +677,7 @@ a.cchip{text-decoration:none;font-weight:700;transition:border-color .18s,color 
 
 
 <section class="sec tint"><div class="wrap">
-  <p class="eyebrow">L&#x27;entretien</p>
+  <h2 class="eyebrow">L&#x27;entretien</h2>
   
   <p class="lead note raw">§10 SGS 110 verlangt mündliche UND schriftliche Sprachkompetenzen mindestens auf Referenzniveau B1 — also B1 in allen vier Fertigkeiten. Das ist strenger als der eidgenössische Mindeststandard (B1 mündlich / A2 schriftlich). Wohnsitzfristen: 10 Jahre Schweiz, 5 Jahre Kanton, in der Regel 5 Jahre Gemeinde (das kommunale Reglement darf weder unter 2 noch über 5 Jahre gehen, §8 Abs. 4).</p>
 
@@ -701,7 +704,7 @@ a.cchip{text-decoration:none;font-weight:700;transition:border-color .18s,color 
 
 
 <section class="sec"><div class="wrap">
-  <p class="eyebrow">Ce que couvre le test</p>
+  <h2 class="eyebrow">Ce que couvre le test</h2>
   <div class="chips"><span class="chip" style="--c:var(--muted)">Démocratie et fédéralisme</span><span class="chip" style="--c:var(--muted)">État social et société civile</span><span class="chip" style="--c:var(--muted)">Histoire</span><span class="chip" style="--c:var(--muted)">Géographie</span><span class="chip" style="--c:var(--muted)">Culture et vie quotidienne</span></div>
   
   
@@ -710,7 +713,7 @@ a.cchip{text-decoration:none;font-weight:700;transition:border-color .18s,color 
 
 
 <section class="sec tint"><div class="wrap">
-  <p class="eyebrow">Ce que contient l&#x27;application pour ce canton</p>
+  <h2 class="eyebrow">Ce que contient l&#x27;application pour ce canton</h2>
   
   
   <div class="mock">
@@ -735,7 +738,7 @@ a.cchip{text-decoration:none;font-weight:700;transition:border-color .18s,color 
 
 
 <section class="sec"><div class="wrap">
-  <p class="eyebrow">Matériel officiel</p>
+  <h2 class="eyebrow">Matériel officiel</h2>
   <div class="links">
     
       <a class="l" href="https://www.bg-muttenz.ch/public/upload/assets/717/Einbuergerungs_Quiz.pdf" target="_blank" rel="noopener">
@@ -794,7 +797,7 @@ a.cchip{text-decoration:none;font-weight:700;transition:border-color .18s,color 
 
 
 <section class="sec"><div class="wrap">
-  <p class="eyebrow">Source officielle</p>
+  <h2 class="eyebrow">Source officielle</h2>
   <div class="source">
     <div class="sleft">
       <a class="host" href="https://www.baselland.ch/themen/einbuergerung" target="_blank" rel="noopener">www.baselland.ch &nearr;</a>
