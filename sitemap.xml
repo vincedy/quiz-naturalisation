@@ -82,6 +82,14 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://swissnaturalizationtest.ch/press/24-heures.html"/>
   </url>
   <url>
+    <loc>https://swissnaturalizationtest.ch/press/arcinfo.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/press/arcinfo.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/press/fr/arcinfo.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/press/de/arcinfo.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://swissnaturalizationtest.ch/press/it/arcinfo.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://swissnaturalizationtest.ch/press/arcinfo.html"/>
+  </url>
+  <url>
     <loc>https://swissnaturalizationtest.ch/press/badener-tagblatt.html</loc>
     <lastmod>2026-10-29</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/press/badener-tagblatt.html"/>
@@ -1369,6 +1377,14 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://swissnaturalizationtest.ch/press/24-heures.html"/>
   </url>
   <url>
+    <loc>https://swissnaturalizationtest.ch/press/de/arcinfo.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/press/arcinfo.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/press/fr/arcinfo.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/press/de/arcinfo.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://swissnaturalizationtest.ch/press/it/arcinfo.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://swissnaturalizationtest.ch/press/arcinfo.html"/>
+  </url>
+  <url>
     <loc>https://swissnaturalizationtest.ch/press/de/badener-tagblatt.html</loc>
     <lastmod>2026-10-29</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/press/badener-tagblatt.html"/>
@@ -1441,6 +1457,14 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://swissnaturalizationtest.ch/press/24-heures.html"/>
   </url>
   <url>
+    <loc>https://swissnaturalizationtest.ch/press/fr/arcinfo.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/press/arcinfo.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/press/fr/arcinfo.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/press/de/arcinfo.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://swissnaturalizationtest.ch/press/it/arcinfo.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://swissnaturalizationtest.ch/press/arcinfo.html"/>
+  </url>
+  <url>
     <loc>https://swissnaturalizationtest.ch/press/fr/badener-tagblatt.html</loc>
     <lastmod>2026-10-29</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/press/badener-tagblatt.html"/>
@@ -1511,6 +1535,14 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/press/de/24-heures.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://swissnaturalizationtest.ch/press/it/24-heures.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://swissnaturalizationtest.ch/press/24-heures.html"/>
+  </url>
+  <url>
+    <loc>https://swissnaturalizationtest.ch/press/it/arcinfo.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/press/arcinfo.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/press/fr/arcinfo.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/press/de/arcinfo.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://swissnaturalizationtest.ch/press/it/arcinfo.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://swissnaturalizationtest.ch/press/arcinfo.html"/>
   </url>
   <url>
     <loc>https://swissnaturalizationtest.ch/press/it/badener-tagblatt.html</loc>
