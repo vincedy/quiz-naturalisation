@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://swissnaturalizationtest.ch/</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-08</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/fr/landing.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/de/landing.html"/>
@@ -38,7 +38,7 @@
   </url>
   <url>
     <loc>https://swissnaturalizationtest.ch/story.html</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-08</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/story.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/fr/story.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/de/story.html"/>
@@ -1154,7 +1154,7 @@
   </url>
   <url>
     <loc>https://swissnaturalizationtest.ch/de/landing.html</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-08</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/fr/landing.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/de/landing.html"/>
@@ -1181,7 +1181,7 @@
   </url>
   <url>
     <loc>https://swissnaturalizationtest.ch/de/story.html</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-08</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/story.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/fr/story.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/de/story.html"/>
@@ -1235,7 +1235,7 @@
   </url>
   <url>
     <loc>https://swissnaturalizationtest.ch/fr/landing.html</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-08</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/fr/landing.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/de/landing.html"/>
@@ -1262,7 +1262,7 @@
   </url>
   <url>
     <loc>https://swissnaturalizationtest.ch/fr/story.html</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-08</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/story.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/fr/story.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/de/story.html"/>
@@ -1316,7 +1316,7 @@
   </url>
   <url>
     <loc>https://swissnaturalizationtest.ch/it/landing.html</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-08</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/fr/landing.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/de/landing.html"/>
@@ -1343,7 +1343,7 @@
   </url>
   <url>
     <loc>https://swissnaturalizationtest.ch/it/story.html</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-08</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/story.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/fr/story.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/de/story.html"/>
@@ -1421,6 +1421,14 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/press/de/leman-bleu.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://swissnaturalizationtest.ch/press/it/leman-bleu.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://swissnaturalizationtest.ch/press/leman-bleu.html"/>
+  </url>
+  <url>
+    <loc>https://swissnaturalizationtest.ch/press/de/lfm.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/press/lfm.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/press/fr/lfm.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/press/de/lfm.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://swissnaturalizationtest.ch/press/it/lfm.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://swissnaturalizationtest.ch/press/lfm.html"/>
   </url>
   <url>
     <loc>https://swissnaturalizationtest.ch/press/de/tsri.html</loc>
@@ -1504,6 +1512,14 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://swissnaturalizationtest.ch/press/leman-bleu.html"/>
   </url>
   <url>
+    <loc>https://swissnaturalizationtest.ch/press/fr/lfm.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/press/lfm.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/press/fr/lfm.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/press/de/lfm.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://swissnaturalizationtest.ch/press/it/lfm.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://swissnaturalizationtest.ch/press/lfm.html"/>
+  </url>
+  <url>
     <loc>https://swissnaturalizationtest.ch/press/fr/tsri.html</loc>
     <lastmod>2026-10-29</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/press/tsri.html"/>
@@ -1583,6 +1599,14 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/press/de/leman-bleu.html"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://swissnaturalizationtest.ch/press/it/leman-bleu.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://swissnaturalizationtest.ch/press/leman-bleu.html"/>
+  </url>
+  <url>
+    <loc>https://swissnaturalizationtest.ch/press/it/lfm.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://swissnaturalizationtest.ch/press/lfm.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://swissnaturalizationtest.ch/press/fr/lfm.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://swissnaturalizationtest.ch/press/de/lfm.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://swissnaturalizationtest.ch/press/it/lfm.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://swissnaturalizationtest.ch/press/lfm.html"/>
   </url>
   <url>
     <loc>https://swissnaturalizationtest.ch/press/it/tsri.html</loc>
