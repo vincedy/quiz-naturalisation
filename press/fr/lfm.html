@@ -186,11 +186,14 @@
 (function(){
   // Nothing of the broadcaster's is loaded until the reader clicks the poster: no iframe,
   // no script of theirs, no cookie of theirs. With javascript off the link still works and
-  // leads where it led before.
+  // leads where it led before. data-ratio and data-maxw reshape the box for a vertical reel.
   document.querySelectorAll("a.aherov[data-embed]").forEach(function(a){
     a.addEventListener("click",function(e){
       e.preventDefault();
       var box=document.createElement("div");box.className="aplayer";
+      var r=a.getAttribute("data-ratio");if(r)box.style.aspectRatio=r;
+      var w=a.getAttribute("data-maxw");
+      if(w){box.style.maxWidth=w+"px";box.style.marginLeft="auto";box.style.marginRight="auto";}
       if(a.getAttribute("data-kind")==="video"){
         var v=document.createElement("video");
         v.controls=true;v.autoplay=true;v.playsInline=true;v.preload="auto";
