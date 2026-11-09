@@ -43,6 +43,10 @@
   .aherov .ahero{margin:0}
   .playbadge{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:76px;height:76px;border-radius:50%;background:rgba(218,41,28,.94);box-shadow:0 10px 26px rgba(0,0,0,.4);display:flex;align-items:center;justify-content:center;transition:transform .15s ease,background .15s ease}
   .aherov:hover .playbadge{transform:translate(-50%,-50%) scale(1.07);background:var(--red)}
+  /* The broadcaster's player, put in the poster's place when it is clicked. */
+  .aplayer{width:100%;aspect-ratio:16/9;border-radius:18px;border:1px solid var(--border);
+    box-shadow:var(--shadow);margin:0 0 26px;display:block;background:#000;overflow:hidden}
+  .aplayer iframe,.aplayer video{width:100%;height:100%;border:0;display:block;background:#000}
   .playbadge::after{content:"";display:block;width:0;height:0;border-style:solid;border-width:15px 0 15px 24px;border-color:transparent transparent transparent #fff;margin-left:6px}
   .abody{font-size:1.06rem;color:#2a3140}
   .abody p{margin:0 0 18px}
@@ -123,7 +127,7 @@
     </nav>
   </div>
 </header>
-<article class="article"><a class="back" href="../../fr/landing.html#press">← Toute la revue de presse</a><p class="eyebrow">On en parle &middot; Léman Bleu</p><a class="aherov" href="https://www.lemanbleu.ch/fr/Actualite/Suisse/Devenir-Suisse-ca-se-revise-aussi-sur-son-telephone.html" target="_blank" rel="noopener"><img class="ahero" src="https://www.lemanbleu.ch/Htdocs/Files/Videos/Pictures/25271.jpg?CacheBusterGUID=c6cb0415-04f9-42dc-a0fb-d364dfcd23c5" alt=""><span class="playbadge" aria-hidden="true"></span></a><div class="abody">
+<article class="article"><a class="back" href="../../fr/landing.html#press">← Toute la revue de presse</a><p class="eyebrow">On en parle &middot; Léman Bleu</p><a class="aherov" data-embed="https://videos.lemanbleu.ch/Htdocs/Files/v/25271.mp4" data-kind="video" href="https://www.lemanbleu.ch/fr/Actualite/Suisse/Devenir-Suisse-ca-se-revise-aussi-sur-son-telephone.html" target="_blank" rel="noopener"><img class="ahero" src="https://www.lemanbleu.ch/Htdocs/Files/Videos/Pictures/25271.jpg?CacheBusterGUID=c6cb0415-04f9-42dc-a0fb-d364dfcd23c5" alt=""><span class="playbadge" aria-hidden="true"></span></a><div class="abody">
 <h1>Devenir Suisse, ça se révise aussi sur son téléphone</h1>
 <p><em>Par Lucie Hainaut · 19.08.2026 · Léman Bleu</em></p>
 <p><em>Un développeur italien installé dans le canton de Vaud a créé une application pour préparer son propre test de naturalisation suisse. L'outil séduit aussi à Genève, où il compte plus de 700 utilisateurs.</em></p>
@@ -187,5 +191,30 @@
 })();
 </script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "4acc64c862554fd7a6eff428c13f9a5d"}'></script>
+<script>
+(function(){
+  // Nothing of the broadcaster's is loaded until the reader clicks the poster: no iframe,
+  // no script of theirs, no cookie of theirs. With javascript off the link still works and
+  // leads where it led before.
+  document.querySelectorAll("a.aherov[data-embed]").forEach(function(a){
+    a.addEventListener("click",function(e){
+      e.preventDefault();
+      var box=document.createElement("div");box.className="aplayer";
+      if(a.getAttribute("data-kind")==="video"){
+        var v=document.createElement("video");
+        v.controls=true;v.autoplay=true;v.playsInline=true;v.preload="auto";
+        var img=a.querySelector("img");if(img)v.poster=img.src;
+        v.src=a.getAttribute("data-embed");box.appendChild(v);
+      }else{
+        var f=document.createElement("iframe");
+        f.src=a.getAttribute("data-embed");
+        f.setAttribute("allow","autoplay; fullscreen; encrypted-media; picture-in-picture");
+        f.setAttribute("allowfullscreen","");box.appendChild(f);
+      }
+      a.parentNode.replaceChild(box,a);
+    });
+  });
+})();
+</script>
 </body>
 </html>
