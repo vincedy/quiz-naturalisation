@@ -126,11 +126,11 @@
 .snt-film .review .rq { font-size: 50px; font-weight: 700; letter-spacing: -.015em; line-height: 1.16; }
 .snt-film .review .who { font-family: var(--mono); font-size: 26px; color: var(--muted); letter-spacing: .06em; opacity: 0; }
 /* three reviews on one slide: three columns, smaller text */
-.snt-film .review .pair:has(> .rcard:nth-child(3)) { grid-template-columns: 1fr 1fr 1fr; gap: 40px; }
-.snt-film .review .pair:has(> .rcard:nth-child(3)) .rcard { padding: 40px 40px; gap: 24px; }
-.snt-film .review .pair:has(> .rcard:nth-child(3)) .stars svg { width: 38px; height: 38px; }
-.snt-film .review .pair:has(> .rcard:nth-child(3)) .rq { font-size: 42px; }
-.snt-film .review .pair:has(> .rcard:nth-child(3)) .who { font-size: 22px; }
+.snt-film .review .pair.three { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; }
+.snt-film .review .pair.three .rcard { padding: 40px 40px; gap: 24px; }
+.snt-film .review .pair.three .stars svg { width: 38px; height: 38px; }
+.snt-film .review .pair.three .rq { font-size: 42px; hyphens: auto; -webkit-hyphens: auto; }
+.snt-film .review .pair.three .who { font-size: 22px; }
 .snt-film .ref { background: radial-gradient(ellipse at 80% 25%, #1b2a55 0%, var(--navy) 50%, var(--night) 100%); }
 .snt-film .ref .rcopy { position: absolute; left: 140px; top: 170px; width: 1640px; display: grid; gap: 26px; }
 .snt-film .ref .office { display: flex; align-items: center; gap: 36px; opacity: 0; transform: translateY(30px); }
@@ -279,9 +279,10 @@
 .snt-film.portrait .review .eyebrow { left: 80px; top: 170px; }
 .snt-film.portrait .review .pair { left: 80px; right: 80px; top: 270px; grid-template-columns: 1fr; gap: 40px; }
 .snt-film.portrait .review .rq { font-size: 52px; }
-.snt-film.portrait .review .pair:has(> .rcard:nth-child(3)) { grid-template-columns: 1fr; gap: 32px; }
-.snt-film.portrait .review .pair:has(> .rcard:nth-child(3)) .rcard { padding: 36px 44px; }
-.snt-film.portrait .review .pair:has(> .rcard:nth-child(3)) .rq { font-size: 48px; }
+.snt-film.portrait .review .pair.three { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+.snt-film.portrait .review .pair.three .rcard { padding: 36px 44px; }
+.snt-film.portrait .review .pair.three .rq { font-size: 52px; }
+.snt-film.portrait .review .pair.three .who { font-size: 26px; }
 .snt-film.portrait .ref .rcopy { left: 80px; top: 170px; width: 920px; }
 .snt-film.portrait .ref .office { flex-wrap: wrap; gap: 24px; }
 .snt-film.portrait .ref .oname b { font-size: 46px; }
