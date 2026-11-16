@@ -37,14 +37,68 @@
     .card .go{margin-top:auto;padding:14px 22px;border-top:1px solid var(--border);font-weight:700;color:var(--red);font-size:.95rem}
     .note{color:var(--muted);font-size:.9rem;text-align:center;padding:0 0 40px}
     .back{display:inline-block;margin-top:14px;color:#9fb0e8;font-weight:600}
+/* injected shared header/footer (does not touch legal copy) */
+header.site{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid #e6ebf2;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+header.site .wrap{max-width:1040px;margin:0 auto;padding:0 24px;box-sizing:border-box}
+header.site .navbar{display:flex;align-items:center;gap:18px;height:64px}
+header.site .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.02rem;color:#141821;text-decoration:none;letter-spacing:-.02em}
+header.site .brand img{width:30px;height:30px;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,.15)}
+header.site nav.main{margin-left:auto;display:flex;align-items:center;gap:4px}
+header.site nav.main a.link{padding:8px 12px;border-radius:9px;font-weight:600;font-size:.93rem;color:#5a6472;text-decoration:none;cursor:pointer}
+header.site nav.main a.link:hover{background:#f6f8fb;color:#141821}
+#mnav{display:none}
+header.site .burger{margin-left:auto;display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
+header.site .burger span{width:24px;height:2px;background:#141821;border-radius:2px}
+header.site .brand,header.site nav.main a.link{white-space:nowrap}
+@media(max-width:1280px){header.site nav.main{position:fixed;inset:64px 0 auto 0;flex-direction:column;align-items:stretch;background:#fff;border-bottom:1px solid #e6ebf2;padding:12px 24px 20px;gap:6px;transform:translateY(-140%);transition:transform .25s;box-shadow:0 10px 30px rgba(16,24,40,.1)}#mnav:checked ~ .navbar nav.main{transform:translateY(0)}header.site .burger{display:flex}}
+footer.site{background:#0d1426;color:#9fb0cc;padding:34px 24px;text-align:center;font-size:.9rem;margin-top:44px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+footer.site a{color:#cdd9ee;text-decoration:none;margin:0 8px;font-weight:600}
+footer.site a:hover{text-decoration:underline}
+footer.site .forauth{margin-top:16px;padding-top:12px;border-top:1px solid rgba(128,140,160,.28);font-size:.86rem}
+footer.site .forauth a{color:inherit;font-weight:800;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1.5px;margin:0}
+footer.site .disc{margin:14px 0 0;font-size:.8rem;color:#7f8fab}
   </style>
 </head>
 <body>
+  <style>
+  .langpick{position:relative;margin-left:14px}
+  .langpick summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:7px;
+    padding:6px 10px;border:1px solid var(--border,#e6ebf2);border-radius:999px;font-weight:700;
+    font-size:.82rem;line-height:1;color:inherit;user-select:none}
+  .langpick summary::-webkit-details-marker{display:none}
+  .langpick summary:hover{border-color:var(--red,#DA291C)}
+  .langpick .flag{width:20px;height:14px;border-radius:2px;display:block;flex:none;
+    box-shadow:0 0 0 1px rgba(0,0,0,.08)}
+  .langpick .chev{width:9px;height:9px;border-right:1.6px solid currentColor;
+    border-bottom:1.6px solid currentColor;transform:rotate(45deg) translate(-1px,-1px);opacity:.55}
+  .langpick[open] summary{border-color:var(--red,#DA291C)}
+  .langmenu{position:absolute;right:0;top:calc(100% + 8px);z-index:60;min-width:168px;
+    background:#fff;border:1px solid var(--border,#e6ebf2);border-radius:14px;padding:6px;
+    box-shadow:0 14px 34px rgba(13,20,38,.16)}
+  .langmenu a{display:flex;align-items:center;gap:10px;padding:9px 11px;border-radius:10px;
+    text-decoration:none;color:var(--ink,#141821);font-size:.9rem;font-weight:650}
+  .langmenu a:hover{background:var(--soft,#f6f8fb)}
+  .langmenu a[aria-current="true"]{color:var(--red,#DA291C);font-weight:800}
+  @media(max-width:720px){ .langpick{margin-left:auto} }
+</style><header class="site">
+  <input type="checkbox" id="mnav">
+  <div class="wrap navbar">
+    <a class="brand" href="../landing.html"><img src="../app/icon.png" alt="">Swiss Naturalization Test</a>
+    <label class="burger" for="mnav" aria-label="Menu"><span></span><span></span><span></span></label>
+    <nav class="main">
+      <a class="link" data-nav="home" href="../landing.html">Home</a>
+      <a class="link" data-nav="cantons" href="../cantons/index.html">Cantons</a>
+      <a class="link" data-nav="press" href="../landing.html#press">Press</a>
+      <a class="link" data-nav="refs" href="../landing.html#refs">References</a>
+      <a class="link" data-nav="transp" href="../transparency.html">Transparency</a>
+      
+    </nav>
+  </div>
+</header>
+
   <header class="h">
-    <div class="brand"><img src="../app/icon.png" alt=""> Swiss Naturalization Test</div>
     <h1>Printable materials</h1>
     <p>Posters and flyers to print and display.</p>
-    <a class="back" href="../landing.html">&larr; Back to the site</a>
   </header>
 
   <div class="wrap">
@@ -97,6 +151,11 @@
     </div>
     <p class="note">Open a material, then print with Cmd/Ctrl + P at the size shown (A3 or A5).</p>
   </div>
+<footer class="site"><div class="wrap">
+      <div class="fl"><a href="../landing.html">Home</a> &middot; <a href="../landing.html#press">Press</a> &middot; <a href="../landing.html#refs">References</a> &middot; <a href="../cantons/index.html">Cantons</a> &middot; <a href="../transparency.html">Transparency</a> &middot; <a href="../media-kit.html">Logos and images</a> &middot; <a href="../engineering.html">Engineering</a> &middot; <a href="../story.html">Our story</a> &middot; <a href="../privacy-policy.html">Privacy</a> &middot; <a href="../terms.html">Terms</a> &middot; <a href="../account-deletion.html">Data deletion</a> &middot; <a href="mailto:swisscitizenshiptest@gmail.com">Contact</a></div>
+      <div class="forauth">For cantonal authorities: <a href="../for-cantons.html">the note for integration services</a> &rarr;</div>
+      <p class="disc"></p>
+</div></footer>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "4acc64c862554fd7a6eff428c13f9a5d"}'></script>
 </body>
 </html>
